@@ -1,4 +1,4 @@
-/obj/item/kharmaan_egg
+/*/obj/item/kharmaan_egg
 	name = "crystalline egg"
 	desc = "A lumpy, gooey egg with a thin crystalline exterior."
 	icon = 'icons/obj/ascent.dmi'
@@ -66,4 +66,4 @@
 	if(!(grabber.species.get_bodytype() in friendly_species))
 		to_chat(grabber, SPAN_WARNING("\The [src] wriggles out of your hands before you can pick it up!"))
 		return
-	else return ..()
+	else return ..()*/
