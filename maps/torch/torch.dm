@@ -151,6 +151,8 @@
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
+	#include "../away/ascent/ascent.dm"
+	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
 	#include "../away/smugglers/smugglers.dm"
 	#include "../away/magshield/magshield.dm"
