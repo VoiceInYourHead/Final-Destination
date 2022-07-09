@@ -32,3 +32,11 @@
 	prescription = 5
 	light_protection = 7
 	electric = TRUE
+
+/obj/item/clothing/glasses/elysium_zakat
+	name = "corrective glasses"
+	desc = "A set of corrective lenses in a cheap frame."
+	icon_state = "binoclard_lenses"
+	item_state = "binoclard_lenses"
+	body_parts_covered = EMPTY_BITFIELD
+	prescription = 7
