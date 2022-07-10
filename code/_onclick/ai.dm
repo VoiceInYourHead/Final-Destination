@@ -99,6 +99,11 @@
 		return
 	..()
 
+/mob/living/silicon/ai/CtrlShiftClickOn(var/atom/A)
+	if(!control_disabled && A.AICtrlShiftClick(src))
+		return
+	..()
+
 /mob/living/silicon/ai/ShiftClickOn(var/atom/A)
 	if(!control_disabled && A.AIShiftClick(src))
 		return
@@ -138,7 +143,18 @@
 	return 1
 
 /atom/proc/AICtrlShiftClick()
-	return
+
+/obj/item/modular_computer/AICtrlShiftClick(mob/user) //Open Console
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
+	if(os)
+		os.open_terminal(user)
+	return 1
+
+/obj/machinery/computer/modular/AICtrlShiftClick(mob/user) //Open Console
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
+	if(os)
+		os.open_terminal(user)
+	return 1
 
 /atom/proc/AIShiftClick()
 	return
