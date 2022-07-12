@@ -121,6 +121,9 @@
 /obj/machinery/alarm/nobreach
 	breach_pressure = -1
 
+/obj/machinery/alarm/noaccess
+	req_access = list()
+
 /obj/machinery/alarm/monitor
 	report_danger_level = 0
 	breach_pressure = -1
