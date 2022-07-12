@@ -6,6 +6,7 @@
 
 	var/known = 1		//shows up on nav computers automatically
 	var/scannable       //if set to TRUE will show up on ship sensors for detailed scans
+	var/overmap_effect_state //Our overmap effect state.
 
 //Overlay of how this object should look on other skyboxes
 /obj/effect/overmap/proc/get_skybox_representation()
@@ -22,6 +23,8 @@
 	if(known)
 		layer = ABOVE_LIGHTING_LAYER
 		plane = EFFECTS_ABOVE_LIGHTING_PLANE
+
+	overmap_effect_state = icon_state
 
 	update_icon()
 

@@ -24,6 +24,7 @@
 #define SPEEDLOADER 	2	//Transfers casings from the mag to the gun when used.
 #define MAGAZINE 		4	//The magazine item itself goes inside the gun
 
+#define CALIBER_ROCKET	"rocket"
 
 #define GUN_BULK_RIFLE  5
 

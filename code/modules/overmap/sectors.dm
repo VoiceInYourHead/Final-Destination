@@ -19,6 +19,7 @@
 
 	var/base = 0		//starting sector, counts as station_levels
 	var/in_space = 1	//can be accessed via lucky EVA
+	var/fore_dir = NORTH                //what dir is considered north for the actual map
 
 	var/hide_from_reports = FALSE
 
