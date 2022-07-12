@@ -4,6 +4,7 @@
 	icon_state = "object"
 	color = "#fffffe"
 
+	var/sector_flags = OVERMAP_SECTOR_KNOWN|OVERMAP_SECTOR_IN_SPACE
 	var/known = 1		//shows up on nav computers automatically
 	var/scannable       //if set to TRUE will show up on ship sensors for detailed scans
 	var/overmap_effect_state //Our overmap effect state.

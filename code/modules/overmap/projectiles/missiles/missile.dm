@@ -24,7 +24,7 @@
 	var/active = FALSE
 	var/entered_away = FALSE
 	var/list/equipment = list()
-	var/obj/effect/overmap/visitable/projectile/overmap_missile = null
+	var/obj/effect/overmap/projectile/overmap_missile = null
 	var/lifetime = 60 SECONDS
 	var/obj/effect/overmap/origin = null
 
@@ -160,7 +160,7 @@
 
 	active = TRUE
 
-	overmap_missile = new /obj/effect/overmap/visitable/projectile(null, start_object.x, start_object.y)
+	overmap_missile = new /obj/effect/overmap/projectile(null, start_object.x, start_object.y)
 	overmap_missile.set_missile(src)
 
 	for(var/obj/item/missile_equipment/E in equipment)

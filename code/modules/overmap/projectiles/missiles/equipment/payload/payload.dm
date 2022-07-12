@@ -3,7 +3,7 @@
 	name = "missile payload"
 	desc = "dangerous equipment!!"
 
-/obj/item/missile_equipment/payload/on_missile_activated(var/obj/effect/overmap/visitable/projectile/P)
+/obj/item/missile_equipment/payload/on_missile_activated(var/obj/effect/overmap/projectile/P)
 	P.set_dangerous(TRUE)
 	P.set_enter_zs(TRUE)
 
