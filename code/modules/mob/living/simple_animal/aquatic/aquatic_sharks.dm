@@ -43,4 +43,30 @@
 	skin_amount = 30
 
 /obj/item/natural_weapon/bite/giantshark
-	force = 40 
+	force = 40
+
+/mob/living/simple_animal/hostile/aquatic/deathsquid
+	name = "giant squid"
+	desc = "RELEASE THE KRAKEN!"
+	icon = 'icons/mob/deathsquid_large.dmi'
+	icon_state = "deathsquid"
+	icon_living = "deathsquid"
+	icon_dead = "deathsquiddead"
+	faction = list("shark", "fishes")
+	meat_amount = 30
+	meat_type = /obj/item/reagent_containers/food/snacks/fish
+	maxHealth = 3000
+	health = 3000
+	harm_intent_damage = 5
+	natural_weapon = /obj/item/natural_weapon/bite/deathsquid
+	turns_per_move = 3
+	move_to_delay = 1
+	attack_same = 0
+	speed = 1
+	pixel_x = -32
+	pixel_y = -32
+	mob_size = MOB_LARGE
+	break_stuff_probability = 80
+
+/obj/item/natural_weapon/bite/deathsquid
+	force = 60
