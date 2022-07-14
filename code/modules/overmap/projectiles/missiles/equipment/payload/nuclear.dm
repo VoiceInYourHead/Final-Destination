@@ -10,7 +10,7 @@
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(100000)
 	else
-		explosion(get_turf(src), 15, 25, 25, 25)
+		explosion(get_turf(src), 20, 30, 30, 30)
 		empulse(get_turf(src), rand(25,50), rand(50,100))
 
 	for(var/mob/living/carbon/human/M in GLOB.player_list)
