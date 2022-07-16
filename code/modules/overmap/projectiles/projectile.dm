@@ -126,9 +126,9 @@
 		actual_missile.enter_level(pick(winner.map_z), winner.fore_dir, winner.dir)
 
 /obj/effect/overmap/projectile/on_update_icon()
-	overmap_effect_state  = "projectile"
+	icon_state  = "projectile"
 	if(walking)
-		overmap_effect_state  += "_moving"
+		icon_state  += "_moving"
 
 	if(dangerous)
-		overmap_effect_state  += "_danger"
+		icon_state  += "_danger"
