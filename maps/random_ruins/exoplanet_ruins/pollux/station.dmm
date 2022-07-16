@@ -829,7 +829,7 @@
 "pW" = (/obj/structure/girder,/turf/simulated/floor/airless/ceiling,/area/meatstation/kitchen)
 "pX" = (/obj/random/trash,/turf/simulated/floor/airless/ceiling,/area/meatstation/kitchen)
 "pY" = (/obj/structure/closet/emcloset,/obj/effect/landmark/clear,/turf/template_noop,/area/template_noop)
-"pZ" = (/obj/structure/fd/nav_console{layer = 3.01; plane = 0},/obj/effect/floor_decal/spline/plain/black{icon_state = "spline_plain"; dir = 1},/turf/simulated/floor/tiled/steel_ridged,/area/meatstation/lab)
+"pZ" = (/obj/effect/floor_decal/spline/plain/black{icon_state = "spline_plain"; dir = 1},/obj/structure/fd/nav_console,/turf/simulated/floor/tiled/steel_ridged,/area/meatstation/lab)
 "qa" = (/obj/item/storage/box/condimentbottles,/obj/effect/landmark/clear,/turf/template_noop,/area/template_noop)
 "qb" = (/obj/item/material/kitchen/utensil/fork,/obj/effect/landmark/clear,/turf/template_noop,/area/template_noop)
 "qc" = (/obj/item/towel/random,/obj/effect/landmark/clear,/turf/template_noop,/area/template_noop)
@@ -1278,6 +1278,7 @@
 "yD" = (/obj/structure/table/glass,/obj/machinery/reagent_temperature/cooler,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/tiled/white,/area/meatstation/lab)
 "yE" = (/obj/structure/table/glass,/obj/item/paper_bin,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/tiled/white,/area/meatstation/lab)
 "yF" = (/obj/structure/table/glass,/obj/item/device/flashlight/pen,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white,/area/meatstation/lab)
+"yG" = (/obj/effect/landmark/clear,/obj/structure/missile/nuke{icon_state = "base"; dir = 2},/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -1288,7 +1289,7 @@ aaaeaeaeaeaeaeaeaeaeaeaeaaaeaeaeaeaeaeaeaeaaaaaaaaaaaaaeaeaaaeaeaeaeaeaeaeaeaaaa
 aeabacadagabacadagabacadagabacadagabacadaeaeaaaaaaaaahaiaeaeaeaeaeaeaeaeajaeaeaeaeaeaeaeaoaeaeaeaeaeapaeaeaeaeaaaaaeaeaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aeabakadaeabakadaeabakadaeabakadaeabakadaealalalalalamanaqaeaeaeaeaeahaeaeahaeaeauaeaeaeaeaeaeaCaeaeaeaeaeaeaearasasatatatatatatatatatatatatatatatatatatatatataaaaaaaaaaaaaaaaaaaaaa
 aeabakadaeabakadaeabakadaeabakadaeabakadaealalalalalalamanaDaeaeaeaeaeaeaeaeaeaeaeaeaeaeapaeahaeaeaeaeaeaeaoaeaaatavatatatatatatatatatatatatatatatatatatatatataaaaaaaaaaaaaaaaaaaaaa
-aeabakadagabakadagabakadagabakadagabakadagalalawaxayazaAaBaEaeaeaeaFaeaeaeaZaeaeaeaeaeaeaeaeaeaeaebaaeaeaoaeaeasasaGaGaHaIaJaKaIaHaLaMaNaLaHaOaPaHaQaRaSaTatataaaaaaaaaaaaaaaaaaaaaa
+aeabakadagabakadagabakadagabakadagabakadagalalawaxayazaAaBaEaeaeaeaFaeaeaeaZaeaeaeyGaeaeaeaeaeaeaebaaeaeaoaeaeasasaGaGaHaIaJaKaIaHaLaMaNaLaHaOaPaHaQaRaSaTatataaaaaaaaaaaaaaaaaaaaaa
 aeabakadaeabakadaeabakadaeabakadaeabakadaealalaUaVaWaAaXaYaebbaebmaeaebnaeaeaeaeaeahaeaeaeaeaeaeaeaeaeaeaeaeaeasbcasaGaHbdbebebeaHbfbfbgbfaHaGaGaHbhbhbibhatataaaaaaaaaaaaaaaaaaaaaa
 aeabakadaeabakadaeabakadaeabakadaeabakadaealaloPbkblaAaAanaeboaeaeaeaeaeaeaebpajaeaeaeaeahaeaeaeaeaeaeaebBbCaebqasbraGaHbebebsbeaHbfbfbtbfaHbubvaHbhbwbxbhatataaaaaaaaaaaaaaaaaaaaaa
 aeabakadagabakadagabakadagabakadagabakadagalalbjbyblbzaAbAaebDbZcecfcgcgcBcgcgcgcgcCcgcgcgcgcgcgcgcgcDcgcgcgcgasasasaGaHbEbFbebGaHbHbIbfbJaHbKbLaHbMbhbNbOatataaaaaaaaaaaaaaaaaaaaaa

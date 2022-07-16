@@ -31,8 +31,8 @@
 	icon_state = "placeholder1"
 	density = TRUE
 	anchored = TRUE
-	bound_x = 64
-	bound_y = 64
+//	bound_x = 64
+//	bound_y = 64
 
 /obj/structure/fd/sputnik
 	name = "crashed satellite"

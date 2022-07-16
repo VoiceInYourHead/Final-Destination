@@ -163,7 +163,7 @@
 "dg" = (/obj/structure/missile/he{icon_state = "base"; dir = 1},/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "dh" = (/obj/structure/missile/diffusive{icon_state = "base"; dir = 1},/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "di" = (/obj/machinery/light/ascent,/obj/structure/window/phoronreinforced{dir = 4},/obj/structure/missile/he{icon_state = "base"; dir = 1},/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
-"dj" = (/obj/machinery/conveyor_switch/ammobelt{id = "ammobelt9"},/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
+"dj" = (/obj/machinery/conveyor_switch/ammobelt{id = "ammobelt8"},/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "dF" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/visible/supply{dir = 4; icon_state = "intact-supply"},/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{dir = 4; icon_state = "intact-scrubbers"},/obj/machinery/portable_atmospherics/canister/methyl_bromide,/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "in" = (/obj/machinery/computer/ship/engines/ascent,/turf/simulated/floor/ascent/tiled,/area/ship/ascent_caulship)
 "sH" = (/obj/machinery/atmospherics/pipe/simple/visible/supply{dir = 9; icon_state = "intact-supply"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
