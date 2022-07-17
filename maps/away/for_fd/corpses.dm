@@ -24,17 +24,13 @@
 
 /decl/hierarchy/outfit/cityciv
 	name = OUTFIT_JOB_NAME ("Dead Civilian")
-//	uniform =
+	uniform = /obj/item/clothing/under/lawyer/infil
 //	suit =
-//	shoes =
+	shoes = /obj/item/clothing/shoes/dress
 //	gloves =
 //	head =
 //	back =
 //	l_ear =
-
-/decl/hierarchy/outfit/cityciv/New()
-	shoes = pick(/obj/item/clothing/shoes/dress,/obj/item/clothing/shoes/dutyboots)
-	uniform = pick(/obj/item/clothing/under/suit_jacket/really_black,/obj/item/clothing/under/overalls,/obj/item/clothing/under/lawyer/infil,/obj/item/clothing/under/lawyer/oldman,/obj/item/clothing/under/frontier,/obj/item/clothing/under/blazer)
 
 /decl/hierarchy/outfit/citytrooper
 	name = OUTFIT_JOB_NAME ("Dead Trooper")
