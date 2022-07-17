@@ -73,3 +73,13 @@
 	icon_state = "radar"
 	density = TRUE
 	anchored = TRUE
+
+/obj/structure/fd/bluespace_drive
+	name = "Bluespace Drive"
+	desc = "Fully working and repaired bluespace drive, used to perform bluespace jumps at FTL speed."
+	icon = 'icons/fd/structures/slipspace_drive.dmi'
+	icon_state = "slipspace"
+	density = TRUE
+	anchored = FALSE
+	pixel_x = -16
+	pixel_y = -15
