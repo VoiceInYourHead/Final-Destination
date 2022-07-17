@@ -19,8 +19,9 @@
 	desc = "Sensor array detects a small Vessel of unknown origin with the ability to hide in any space."
 	fore_dir = NORTH
 	color = "#0751f3"
-	alpha = 40
+	alpha = 30
 	skill_needed = SKILL_BASIC
+	vessel_mass = 750
 	vessel_size = SHIP_SIZE_SMALL
 
 /obj/machinery/computer/shuttle_control/explore/jinx

@@ -130,7 +130,7 @@
 "as" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
-	id_tag = "jinxairlock_interior_door";
+	id_tag = "jinxairlock_inner";
 	locked = 1
 	},
 /obj/structure/cable/green{
@@ -504,7 +504,9 @@
 /turf/space,
 /area/space)
 "bG" = (
-/obj/structure/closet/secure_closet/guncabinet,
+/obj/structure/closet/secure_closet/guncabinet{
+	req_access = list()
+	},
 /obj/item/gun/energy/xray,
 /obj/item/gun/energy/xray,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -1853,13 +1855,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/security/lobby)
 "fW" = (
-/obj/structure/closet/secure_closet/guncabinet,
 /obj/item/gun/projectile/automatic/assault_rifle,
 /obj/item/ammo_magazine/rifle,
 /obj/item/ammo_magazine/rifle,
 /obj/item/ammo_magazine/rifle,
 /obj/item/ammo_magazine/rifle,
 /obj/item/ammo_magazine/rifle,
+/obj/structure/closet/secure_closet/guncabinet{
+	req_access = list()
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/bridge)
 "fX" = (
@@ -1899,6 +1903,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/shuttle_landmark/jinx,
 /turf/simulated/floor/plating,
 /area/venera/hallway/eva)
 "gi" = (
@@ -2044,6 +2049,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/jinx/engine)
@@ -2208,8 +2217,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
 "hM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/blue{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10;
+	icon_state = "intact"
 	},
 /turf/simulated/wall/r_titanium,
 /area/jinx/cockpit)
@@ -2321,6 +2331,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock/command{
+	name = "Missile Launcher"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
@@ -2726,7 +2739,7 @@
 /turf/simulated/floor/tiled,
 /area/venera/engine)
 "kl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/blue{
+/obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
 /turf/simulated/wall/r_titanium,
@@ -2870,7 +2883,6 @@
 /turf/simulated/wall/r_wall/hull,
 /area/venera/security/equipment)
 "kV" = (
-/obj/effect/shuttle_landmark/jinx,
 /obj/effect/overmap/visitable/ship/landable/jinx,
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3193,6 +3205,9 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /obj/structure/table/rack,
+/obj/random/powercell,
+/obj/random/powercell,
+/obj/random/powercell,
 /turf/simulated/floor/tiled/techfloor,
 /area/jinx/engine)
 "mh" = (
@@ -3319,7 +3334,7 @@
 	pixel_x = -24
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1379;
 	id_tag = "venera_eva_airlock_sensor";
 	pixel_y = -25
 	},
@@ -3351,7 +3366,7 @@
 /area/venera/bridge)
 "mI" = (
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1380;
+	frequency = 1379;
 	master_tag = "venera_eva_airlock";
 	pixel_y = -23
 	},
@@ -4358,6 +4373,14 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/venera/maint/port)
+"qT" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/jinx/cockpit)
 "qX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -4424,7 +4447,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/access_button/airlock_interior{
-	frequency = 1380;
+	frequency = 1379;
 	master_tag = "venera_eva_airlock";
 	pixel_x = 3;
 	pixel_y = -23
@@ -4735,6 +4758,11 @@
 	drive_range = 70;
 	id_tag = "jinx_md_57"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
 "sF" = (
@@ -4795,6 +4823,11 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/jinx/engine)
@@ -5117,8 +5150,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/main)
 "um" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/blue{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1;
+	icon_state = "map"
 	},
 /turf/simulated/wall/r_titanium,
 /area/jinx/cockpit)
@@ -5236,7 +5270,7 @@
 /area/venera/disperser/storage)
 "uY" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+	frequency = 1379;
 	icon_state = "closed";
 	id_tag = "venera_eva_airlock_outer";
 	locked = 1;
@@ -5416,7 +5450,7 @@
 /obj/machinery/ion_engine{
 	burn_cost = 100;
 	dir = 1;
-	generated_thrust = 4
+	generated_thrust = 5
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -5489,12 +5523,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/venera/living/mess)
 "wp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	id_tag = "jinxairlock_pump_out_external";
-	power_rating = 25000
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/jinx/main)
+/area/jinx/cockpit)
 "wr" = (
 /obj/effect/floor_decal/corner/paleblue,
 /obj/structure/closet/secure_closet/medical_wall{
@@ -5928,7 +5963,7 @@
 "xZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+	frequency = 1379;
 	icon_state = "closed";
 	id_tag = "venera_eva_airlock_inner";
 	locked = 1;
@@ -6041,7 +6076,7 @@
 /area/venera/disperser)
 "yF" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1380;
+	frequency = 1379;
 	id_tag = "venera_eva_airlock";
 	pixel_y = 20;
 	tag_airpump = "venera_eva_airlock_pump";
@@ -6239,6 +6274,10 @@
 	pixel_x = 25;
 	pixel_y = -3;
 	pixel_z = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
+	dir = 1;
+	id_tag = "jinxairlock_pump_out_external"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/jinx/main)
@@ -6699,6 +6738,10 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/reinforced/airless,
 /area/jinx/cockpit)
 "BD" = (
@@ -6979,7 +7022,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/blue{
+/obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
 	},
 /turf/simulated/floor/plating,
@@ -7550,6 +7593,11 @@
 /obj/machinery/door/blast/regular{
 	id_tag = "jinx_md_bd932";
 	name = "Mass Driver Blast Door"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
@@ -8775,8 +8823,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/blue{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 8;
+	icon_state = "map"
 	},
 /turf/simulated/floor/plating,
 /area/jinx/main)
@@ -9290,10 +9339,15 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
 "NL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/blue,
+/obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/wall/titanium,
 /area/jinx/engine)
 "NM" = (
@@ -9511,6 +9565,22 @@
 	dir = 1;
 	pixel_y = -23
 	},
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1;
+	desc = "A upgraded power generator that utilizes uranium sheets as fuel. Can run for much longer than the standard PACMAN type generators. Rated for 80 kW max safe output.";
+	max_overheat = 300;
+	max_power_output = 6;
+	max_safe_output = 5;
+	max_sheets = 200;
+	max_temperature = 500;
+	name = "Upgraded S.U.P.E.R.P.A.C.M.A.N.-type Mark 4 Generator";
+	rad_power = 1;
+	sheet_left = 20;
+	sheets = 20;
+	temperature_gain = 10;
+	time_per_sheet = 900
+	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/techfloor,
 /area/jinx/engine)
 "OR" = (
@@ -10372,8 +10442,8 @@
 /turf/simulated/floor/plating,
 /area/venera/maint/starboard/bridge)
 "SS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/blue{
-	dir = 5
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
 	},
 /turf/simulated/wall/r_titanium,
 /area/jinx/main)
@@ -10705,9 +10775,9 @@
 	pixel_y = 19;
 	tag_airpump = "jinxairlock_pump";
 	tag_chamber_sensor = "jinxairlock_sensor_chamber";
-	tag_exterior_door = "jinxairlock_exterior_door";
+	tag_exterior_door = "jinxairlock_outer";
 	tag_exterior_sensor = "jinxairlock_sensor_external";
-	tag_interior_door = "jinxairlock_inerior_door"
+	tag_interior_door = "jinxairlock_inner"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
@@ -10744,7 +10814,7 @@
 "UF" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
-	id_tag = "jinxairlock_exterior_door";
+	id_tag = "jinxairlock_outer";
 	locked = 1
 	},
 /obj/structure/cable/green{
@@ -28075,7 +28145,7 @@ aa
 aa
 yO
 JD
-wp
+JD
 SS
 zj
 hF
@@ -28374,7 +28444,7 @@ aa
 aa
 aa
 aa
-vI
+wp
 FP
 sD
 NI
@@ -28526,7 +28596,7 @@ aa
 aa
 aa
 aa
-vI
+qT
 ZS
 qu
 Dg
@@ -28678,7 +28748,7 @@ aa
 aa
 aa
 aa
-vI
+qT
 ZS
 vQ
 mq

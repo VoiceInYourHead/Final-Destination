@@ -138,7 +138,7 @@
 /turf/space,
 /area/space)
 "xE" = (
-/obj/effect/shuttle_landmark/transit/jinx,
+/obj/effect/shuttle_landmark/jinx,
 /turf/space/transit/north,
 /area/space)
 "yk" = (
@@ -1010,7 +1010,7 @@ dK
 dK
 dK
 dK
-dK
+xE
 dK
 dK
 dK
@@ -2222,7 +2222,7 @@ dK
 dK
 dK
 dK
-xE
+dK
 dK
 dK
 dK

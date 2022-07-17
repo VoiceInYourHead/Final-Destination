@@ -9,7 +9,6 @@
 	name = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	id = "awaysite_ascent_seedship_inf"
 	description = "A small Ascent colony ship. Looks like it was damaged."
-	prefix = "maps/away_inf/"
 	suffixes = list("ascent/ascent-1.dmm")
 	spawn_cost = 1000 // Отключено до лучших времен. Было 2 ~Laxesh
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
