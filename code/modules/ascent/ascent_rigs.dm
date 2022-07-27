@@ -208,10 +208,10 @@
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "injector"
 	charges = list(
-		list("bromide",             "bromide",             /datum/reagent/toxin/bromide, 20),
-		list("crystallizing agent", "crystallizing agent", /datum/reagent/crystal,       20),
-		list("spaceacillin",        "spaceacillin",        /datum/reagent/spaceacillin,  20),
-		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      20)
+		list("bromide",             "bromide",             /datum/reagent/toxin/bromide, 30),
+		list("crystallizing agent", "crystallizing agent", /datum/reagent/crystal,       30),
+		list("dylovene",        	"dylovene",      	   /datum/reagent/dylovene,      30),
+		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      30)
 	)
 
 /obj/item/rig_module/chem_dispenser/nabber
@@ -222,11 +222,12 @@
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "injector"
 	charges = list(
-		list("tramadol",            "tramadol",            /datum/reagent/tramadol,     	  20),
-		list("dexalin plus",        "dexalin plus",        /datum/reagent/dexalinp,     	  20),
-		list("inaprovaline",        "inaprovaline",        /datum/reagent/inaprovaline,  	  20),
-		list("spaceacillin",  		"spaceacillin",		   /datum/reagent/spaceacillin,       20),
-		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  20)
+		list("tramadol",            "tramadol",            /datum/reagent/tramadol,     	  30),
+		list("dexalin plus",        "dexalin plus",        /datum/reagent/dexalinp,     	  30),
+		list("inaprovaline",        "inaprovaline",        /datum/reagent/inaprovaline,  	  30),
+		list("spaceacillin",  		"spaceacillin",		   /datum/reagent/spaceacillin,       30),
+		list("dylovene",        	"dylovene",      	   /datum/reagent/dylovene,   		  30),
+		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  30)
 	)
 
 // Rig definitions.
@@ -282,6 +283,18 @@
 		/obj/item/stack/medical/resin,
 		/obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
 	)
+	initial_modules = list(
+		/obj/item/rig_module/vision/thermal,
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/electrowarfare_suite,
+		/obj/item/rig_module/chem_dispenser/nabber,
+		/obj/item/rig_module/device/multitool,
+		/obj/item/rig_module/device/cable_coil,
+		/obj/item/rig_module/device/welder,
+		/obj/item/rig_module/device/clustertool,
+		/obj/item/rig_module/mounted/plasmacutter,
+		/obj/item/rig_module/maneuvering_jets
+		)
 
 /obj/item/clothing/suit/space/rig/mantid/serpentid
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS

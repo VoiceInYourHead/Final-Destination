@@ -574,6 +574,10 @@
 /decl/closet_appearance/crate/freezer
 	color = COLOR_BABY_BLUE
 
+/decl/closet_appearance/crate/freezer/ascent
+	color = null
+	base_icon = 'icons/obj/ascent_doodads.dmi'
+
 /decl/closet_appearance/crate/secure
 	can_lock = TRUE
 

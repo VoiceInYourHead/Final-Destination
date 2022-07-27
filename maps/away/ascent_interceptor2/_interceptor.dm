@@ -1,33 +1,38 @@
 #include "ascent_areas.dm"
 #include "ascent_jobs.dm"
-#include "ascent_props.dm"
 #include "ascent_shuttles.dm"
 
-// Map template data.
-/datum/map_template/ruin/away_site/ascent_caulship_docking_ring
-	name = "Ascent Caulship"
-	id = "awaysite_ascent_caulship"
-	description = "A small Ascent caulship with a tiny crew."
-	suffixes = list("ascent_caulship/ascent-1.dmm")
-	area_usage_test_exempted_areas = list(
-		/area/ship/ascent_caulship
-	)
-	spawn_cost = 1000 // Сегодня без спавна :d ~danilcus
-	player_cost = 4 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
-	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/ascent)
+/obj/structure/wall_frame/titanium/ascent
+	paint_color = COLOR_PURPLE
 
-/obj/effect/overmap/visitable/sector/ascent_caulship_ring
-	name = "Ruined Bluespace Jump Ring"
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium/ascent
+	frame_path = /obj/structure/wall_frame/titanium/ascent
+
+// Map template data.
+/datum/map_template/ruin/away_site/ascent_interceptor2_docking_ring
+	name = "Ascent Interceptor(2)"
+	id = "awaysite_ascent_interceptor2"
+	description = "A small Ascent interceptor with a tiny crew."
+	suffixes = list("ascent_interceptor2/ascent-3.dmm")
+	area_usage_test_exempted_areas = list(
+		/area/ship/ascent_interceptor2
+	)
+	spawn_cost = 1000 //NO SPAWN
+	player_cost = 4 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/ascent_interceptor2)
+
+/obj/effect/overmap/visitable/sector/ascent_interceptor2_ring
+	name = "Ruined Bluespace Jump Ring(2)"
 	desc = "A ruined jumpdrive ring of Ascent design, used to transport individual ships at FTL speeds."
 	icon_state = "event"
 	hide_from_reports = TRUE
 
-/obj/effect/submap_landmark/joinable_submap/ascent_caulship
-	name = "Ascent Caulship"
-	archetype = /decl/submap_archetype/ascent_caulship
-	submap_datum_type = /datum/submap/ascent
+/obj/effect/submap_landmark/joinable_submap/ascent_interceptor2
+	name = "Ascent Interceptor(2)"
+	archetype = /decl/submap_archetype/ascent_interceptor2
+	submap_datum_type = /datum/submap/ascent_interceptor2
 
-/obj/effect/submap_landmark/joinable_submap/ascent_caulship/Initialize(mapload)
+/obj/effect/submap_landmark/joinable_submap/ascent_interceptor2/Initialize(mapload)
 	var/list/all_elements = list(
 		"Hydrogen",      "Helium",     "Lithium",     "Beryllium",    "Carbon",       "Nitrogen",      "Oxygen",
 		"Fluorine",      "Neon",       "Sodium",      "Magnesium",    "Silicon",      "Phosphorus",    "Sulfur",

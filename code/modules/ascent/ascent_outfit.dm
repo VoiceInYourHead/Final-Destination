@@ -13,12 +13,24 @@
 	name = "Ascent - Attendant"
 	back = /obj/item/rig/mantid
 
+/decl/hierarchy/outfit/job/ascent/pilot
+	name = "Ascent - Pilot"
+	back = /obj/item/rig/mantid
+	uniform =  /obj/item/clothing/under/harness
+	belt = /obj/item/clothing/suit/storage/ascent
+	shoes = null
+
 /decl/hierarchy/outfit/job/ascent/tech
 	name = "Ascent - Technician"
 	belt = /obj/item/clothing/suit/storage/ascent
 
 /decl/hierarchy/outfit/job/ascent/worker
 	name = "Ascent - Serpentid Adjunct"
+	uniform =  /obj/item/clothing/under/harness
+	belt = /obj/item/clothing/suit/storage/ascent
+
+/decl/hierarchy/outfit/job/ascent/soldier
+	name = "Ascent - Serpentid Soldier"
 	uniform =  /obj/item/clothing/under/harness
 	belt = /obj/item/clothing/suit/storage/ascent
 
@@ -60,6 +72,7 @@
 /obj/item/clothing/shoes/magboots/ascent
 	name = "mantid mag-claws"
 	desc = "A set of powerful gripping claws."
+	icon = 'icons/obj/ascent_doodads.dmi'
 	icon_state = "ascent_boots0"
 	icon_base = "ascent_boots"
 	species_restricted = list(SPECIES_MANTID_ALATE, SPECIES_MANTID_GYNE)
@@ -75,6 +88,10 @@
 	icon_state = "ascent"
 	worn_state = "ascent"
 	color = COLOR_DARK_GUNMETAL
+	sprite_sheets = list(
+		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_under_gyne.dmi',
+		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_under_alate.dmi'
+	)
 
 /obj/item/clothing/suit/storage/ascent
 	name = "mantid gear harness"

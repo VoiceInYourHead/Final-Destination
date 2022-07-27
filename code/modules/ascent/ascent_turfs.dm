@@ -41,10 +41,10 @@
 	icon_state = "jaggy"
 	color = COLOR_GRAY40
 
-/turf/simulated/floor/ascent/airless
+/turf/simulated/floor/ascent/tiled/airless
 	initial_gas = null
 	temperature = TCMB
 
-/turf/simulated/floor/tiled/ascent/airless
+/turf/simulated/floor/ascent/airless
 	initial_gas = null
 	temperature = TCMB
