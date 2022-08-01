@@ -28,15 +28,17 @@
 	name = "Ascent - Serpentid Adjunct"
 	uniform =  /obj/item/clothing/under/harness
 	belt = /obj/item/clothing/suit/storage/ascent
+	shoes = null
 
 /decl/hierarchy/outfit/job/ascent/soldier
 	name = "Ascent - Serpentid Soldier"
-	uniform =  /obj/item/clothing/under/harness
-	belt = /obj/item/clothing/suit/storage/ascent
+	uniform = /obj/item/clothing/under/harness
+	shoes = null
 
 /decl/hierarchy/outfit/job/ascent/queen
 	name = "Ascent - Serpentid Queen"
 	belt = /obj/item/clothing/suit/storage/ascent
+	shoes = null
 
 /obj/item/clothing/mask/gas/ascent
 	name = "mantid facemask"

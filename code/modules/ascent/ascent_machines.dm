@@ -174,7 +174,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	req_access = list(access_ascent)
 	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
 	base_type = /obj/machinery/computer/ship/sensors
-	print_language = LANGUAGE_MANTID_VOCAL
+	print_language = LANGUAGE_SPACER
 
 /obj/machinery/computer/ship/missiles/ascent
 	icon_state = "ascent"
