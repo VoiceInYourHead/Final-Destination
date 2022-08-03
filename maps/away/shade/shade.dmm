@@ -37,7 +37,7 @@
 "aK" = (/obj/effect/floor_decal/techfloor{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/shade)
 "aL" = (/obj/effect/floor_decal/borderfloorblack/corner{icon_state = "borderfloorcorner_white"; dir = 8},/turf/simulated/floor/tiled/dark,/area/ship/shade)
 "aM" = (/obj/effect/floor_decal/borderfloorblack{icon_state = "borderfloor_white"; dir = 4},/obj/effect/floor_decal/spline/fancy/black/corner{icon_state = "spline_fancy_corner"; dir = 4},/turf/simulated/floor/tiled/dark,/area/ship/shade)
-"aN" = (/obj/machinery/hologram/holopad/longrange,/obj/effect/floor_decal/industrial/outline/orange,/turf/simulated/floor/tiled/dark,/area/ship/shade)
+"aN" = (/obj/effect/floor_decal/industrial/outline/orange,/obj/machinery/hologram/holopad/longrange/remoteship,/turf/simulated/floor/tiled/dark,/area/ship/shade)
 "aO" = (/obj/effect/floor_decal/techfloor{dir = 5; icon_state = "techfloor_edges"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/shade)
 "aP" = (/obj/effect/floor_decal/techfloor/corner{dir = 8; icon_state = "techfloor_corners"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/shade)
 "aQ" = (/obj/effect/floor_decal/techfloor{dir = 4; icon_state = "techfloor_edges"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/shade)

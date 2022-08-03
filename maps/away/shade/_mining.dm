@@ -28,6 +28,7 @@
 	color = "#3b0404"
 
 /obj/machinery/suit_storage_unit/mining/shade
+	req_access = null
 	islocked = 0
 
 /obj/structure/sign/gml
