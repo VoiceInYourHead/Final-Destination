@@ -1,0 +1,751 @@
+"aa" = (/obj/effect/shuttle_landmark/scavver_gantry/generic/aquila,/turf/space,/area/space)
+"ab" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/effect/floor_decal/corner_steel_grid{dir = 5},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/power/apc{dir = 8; locked = 0; name = "west bump"; pixel_x = -24; req_access = list()},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"ac" = (/obj/structure/scrap_cube,/turf/space,/area/space)
+"ad" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ae" = (/obj/structure/table/marble,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"af" = (/obj/structure/table/marble,/obj/machinery/microwave{pixel_x = -3; pixel_y = 6},/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ag" = (/obj/structure/kitchenspike,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ah" = (/obj/machinery/gibber,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ai" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aj" = (/obj/structure/table/marble,/obj/machinery/cooker/candy,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ak" = (/obj/machinery/suspension_gen,/turf/simulated/floor/airless,/area/scavver/calypso)
+"al" = (/obj/item/rcd,/turf/space,/area/space)
+"am" = (/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"an" = (/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ao" = (/obj/machinery/icecream_vat,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ap" = (/obj/item/robot_parts/robot_suit,/turf/space,/area/space)
+"aq" = (/obj/item/stack/material/rods,/turf/space,/area/space)
+"ar" = (/obj/effect/paint/black,/turf/simulated/wall,/area/scavver/gantry/down3)
+"as" = (/obj/structure/table/marble,/obj/machinery/reagentgrinder/juicer,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"at" = (/obj/structure/table/marble,/obj/machinery/cooker/cereal,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"au" = (/obj/machinery/cooker/oven,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"av" = (/obj/structure/inflatable/wall,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"aw" = (/obj/machinery/cooker/fryer,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ax" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 6},/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"ay" = (/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 6},/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"az" = (/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/obj/structure/table/marble,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aA" = (/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/obj/structure/table/marble,/obj/machinery/reagent_temperature,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aB" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/table/marble,/obj/machinery/reagent_temperature/cooler,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aC" = (/obj/structure/closet/fridge,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aD" = (/obj/machinery/light{dir = 8; on = 1},/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aE" = (/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"aF" = (/obj/machinery/fabricator/hacked,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aG" = (/obj/item/stack/material/scrap,/turf/space,/area/space)
+"aH" = (/obj/machinery/cooker/grill,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aI" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"aJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 9},/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aK" = (/obj/machinery/light,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aL" = (/obj/structure/table/marble,/obj/item/tray,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aM" = (/obj/item/stack/material/uranium/ten,/turf/space,/area/space)
+"aN" = (/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aO" = (/obj/effect/floor_decal/steeldecal/steel_decals_central7,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"aP" = (/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aQ" = (/obj/machinery/door/airlock/hatch,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aR" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aS" = (/obj/effect/floor_decal/carpet/red,/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 1},/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 9},/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 10},/obj/item/stool/bar/padded,/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4},/turf/simulated/floor/carpet/red,/area/scavver/gantry/down3)
+"aT" = (/obj/machinery/suit_storage_unit/engineering/salvage/gantry/bar2,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aU" = (/obj/structure/closet/secure_closet/freezer/kitchen{req_access = newlist()},/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aV" = (/obj/machinery/chem_master/condimaster,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"aW" = (/obj/structure/closet/secure_closet/freezer/fridge/scavver,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"aX" = (/obj/structure/table/standard,/obj/machinery/chemical_dispenser/bar_alc/full{pixel_y = 8},/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aY" = (/obj/structure/shotgun_rack/double_pellet{pixel_y = 28},/obj/structure/table/standard,/obj/machinery/chemical_dispenser/bar_soft/full{pixel_y = 8},/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"aZ" = (/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"ba" = (/obj/machinery/vending/boozeomat{req_access = newlist()},/obj/machinery/light{dir = 1},/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"bb" = (/obj/machinery/suit_storage_unit/engineering/salvage/gantry/bar,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bc" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/meter,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bd" = (/obj/machinery/atmospherics/binary/pump/on{icon_state = "map_on"; dir = 1},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"be" = (/obj/structure/table/marble,/obj/machinery/light{dir = 8; on = 1},/obj/item/newspaper,/obj/item/book/manual/chef_recipes,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"bf" = (/obj/item/material/twohanded/fireaxe,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"bg" = (/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{icon_state = "2-8"},/turf/simulated/floor/airless,/area/space)
+"bh" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 8; icon_state = "warningcorner"},/obj/effect/floor_decal/corner_steel_grid{dir = 5},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"bi" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/item/device/flashlight/lantern,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"bj" = (/obj/machinery/light/spot{dir = 1},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"bk" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/light/spot{dir = 1},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"bl" = (/obj/machinery/door/airlock/hatch,/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"bm" = (/obj/machinery/hologram/holopad/longrange,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"bn" = (/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/canister/air,/obj/machinery/light{dir = 4},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bo" = (/obj/machinery/atmospherics/pipe/manifold/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"bp" = (/obj/structure/inflatable/wall,/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bq" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/closet/crate/plastic,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/storage/box/glowsticks,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"br" = (/obj/machinery/vending/tool{dir = 4; icon_state = "tool"; pixel_x = -4},/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bs" = (/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/red{icon_state = "map"; dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bt" = (/obj/structure/hygiene/sink{dir = 1; pixel_y = 16},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bu" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"bv" = (/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 8},/obj/machinery/meter,/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 6},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bw" = (/obj/structure/ladder/up,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"bx" = (/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 1},/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"by" = (/obj/machinery/atmospherics/unary/tank/air{dir = 4; start_pressure = 4559.63},/obj/machinery/light{dir = 8},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bz" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bA" = (/obj/structure/synthesized_instrument/synthesizer/piano,/obj/machinery/light{dir = 8},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bB" = (/obj/structure/bed/chair/office/dark{dir = 8},/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 5},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bC" = (/obj/machinery/light/small{dir = 8},/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/airless,/area/scavver/calypso)
+"bD" = (/obj/machinery/atmospherics/unary/tank/air{dir = 8; start_pressure = 4559.63},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bE" = (/obj/structure/sign/poster/humpost/hum_18{pixel_y = 32},/obj/machinery/jukebox/old/futuristic,/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 10},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bF" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bG" = (/obj/machinery/atmospherics/pipe/cap/visible/fuel{dir = 8},/turf/space,/area/space)
+"bH" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 10; icon_state = "intact"},/obj/effect/floor_decal/carpet/red,/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 1},/obj/item/stool/bar/padded,/turf/simulated/floor/carpet/red,/area/scavver/gantry/down3)
+"bI" = (/obj/machinery/atmospherics/unary/tank/carbon_dioxide{dir = 4},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"bJ" = (/obj/effect/floor_decal/carpet/red,/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 1},/obj/item/stool/bar/padded,/turf/simulated/floor/carpet/red,/area/scavver/gantry/down3)
+"bK" = (/obj/effect/floor_decal/carpet/red,/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 1},/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 6},/obj/effect/floor_decal/carpet/red{icon_state = "red_edges"; dir = 5},/obj/item/stool/bar/padded,/turf/simulated/floor/carpet/red,/area/scavver/gantry/down3)
+"bL" = (/obj/machinery/mineral/stacking_machine{input_turf = 2},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/airless,/area/scavver/calypso)
+"bM" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 9},/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"bN" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"bO" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"bP" = (/obj/machinery/atmospherics/unary/tank/air{dir = 4; start_pressure = 4559.63},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bQ" = (/obj/machinery/power/smes/buildable/preset/scavver/smes{charge = 10000},/obj/structure/cable{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"bR" = (/obj/structure/cable{d2 = 4; icon_state = "0-4"},/obj/machinery/power/apc{dir = 8; locked = 0; name = "west bump"; pixel_x = -24; req_access = list()},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bS" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/simple/hidden/blue,/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bT" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bU" = (/obj/structure/table/marble,/obj/machinery/light{dir = 4},/obj/item/book/manual/chemistry_recipes,/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"bV" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bW" = (/obj/effect/submap_landmark/spawnpoint/scavver_bar,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"bX" = (/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 10},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bY" = (/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"bZ" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"ca" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"cb" = (/obj/machinery/atmospherics/pipe/manifold/hidden/red{icon_state = "map"; dir = 4},/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"cc" = (/obj/structure/janitorialcart,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cd" = (/obj/machinery/access_button/airlock_interior{master_tag = "sd_port"; name = "interior access button"; pixel_x = 24; req_access = newlist()},/obj/machinery/door/airlock/external/glass/bolted/cycling{id_tag = "sd_port_inner"; name = "Internal Airlock"},/obj/effect/floor_decal/techfloor{dir = 8},/obj/effect/floor_decal/techfloor{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down3)
+"ce" = (/obj/machinery/light{dir = 8; on = 1},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cf" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cg" = (/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/obj/machinery/meter,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown/thrusters)
+"ch" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/machinery/field_generator,/turf/space,/area/space)
+"ci" = (/obj/structure/mattress/dirty,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cj" = (/obj/machinery/vitals_monitor,/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/alarm{dir = 8; locked = 0; pixel_x = 25; req_access = list()},/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"ck" = (/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cl" = (/obj/structure/catwalk,/obj/effect/floor_decal/industrial/warning/cee{dir = 1},/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{dir = 4; id_tag = "sd_port_pump"},/obj/machinery/airlock_sensor{id_tag = "sd_port_sensor"; master_tag = "sd_port"; pixel_x = -24},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cm" = (/obj/effect/floor_decal/techfloor{dir = 8},/obj/effect/floor_decal/techfloor{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold4w/hidden/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down3)
+"cn" = (/obj/structure/catwalk,/obj/effect/floor_decal/industrial/warning/cee{dir = 1},/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{dir = 8; id_tag = "sd_port_pump"},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"co" = (/obj/structure/bed/chair/padded/light{icon_state = "chair_preview"; dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cp" = (/obj/structure/lattice,/obj/item/storage/mre/random,/turf/space,/area/space)
+"cq" = (/obj/structure/table/steel,/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cr" = (/obj/machinery/power/terminal{dir = 4},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"cs" = (/obj/structure/sign/poster/humpost/hum_3{pixel_x = 32},/obj/structure/bed/chair/padded/light{dir = 8},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"ct" = (/obj/structure/table/steel_reinforced,/obj/machinery/light{dir = 8; on = 1},/obj/machinery/fabricator/micro/bartender,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"cu" = (/obj/effect/floor_decal/steeldecal/steel_decals_central4{dir = 8},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"cv" = (/obj/structure/lattice,/obj/machinery/light/navigation/delay5,/turf/space,/area/space)
+"cw" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"cx" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cy" = (/obj/structure/catwalk,/obj/effect/floor_decal/industrial/warning/cee,/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{dir = 4; id_tag = "sd_port_pump"},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cz" = (/obj/effect/floor_decal/techfloor{dir = 8},/obj/effect/floor_decal/techfloor{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/hidden/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down3)
+"cA" = (/obj/structure/catwalk,/obj/effect/floor_decal/industrial/warning/cee,/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{dir = 8; id_tag = "sd_port_pump"},/obj/machinery/embedded_controller/radio/airlock/airlock_controller{dir = 8; id_tag = "sd_port"; name = "Second Deck Port Airlock Controller"; pixel_x = 20; req_access = newlist()},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cB" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/closet/crate/internals/fuel,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"cC" = (/obj/structure/table/steel,/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cD" = (/obj/structure/table/steel,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cE" = (/obj/effect/floor_decal/steeldecal/steel_decals_central4{dir = 4},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"cF" = (/obj/structure/bed/chair/padded/light{dir = 8},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"cG" = (/obj/machinery/door/airlock/external/bolted/cycling{id_tag = "sd_port_outer"; name = "External Airlock"},/obj/machinery/access_button/airlock_exterior{master_tag = "sd_port"; name = "exterior access button"; pixel_x = 24; req_access = newlist()},/obj/effect/floor_decal/techfloor{dir = 8},/obj/effect/floor_decal/techfloor{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down3)
+"cH" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/obj/machinery/vending/engivend{dir = 4; icon_state = "engivend"; pixel_x = -4},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"cI" = (/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/table/steel_reinforced,/turf/simulated/floor/airless,/area/space)
+"cJ" = (/obj/structure/closet/secure_closet/bar_sierra{req_access = newlist()},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"cK" = (/obj/effect/submap_landmark/spawnpoint/scavver_cook,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"cL" = (/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"cM" = (/turf/simulated/wall/r_titanium,/area/scavver/gantry/down4)
+"cN" = (/obj/structure/inflatable,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"cO" = (/obj/structure/inflatable,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"cP" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/airless,/area/scavver/calypso)
+"cQ" = (/obj/structure/inflatable/door,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"cR" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/item/scrap_lump,/turf/space,/area/space)
+"cS" = (/obj/structure/table/reinforced,/obj/machinery/light{dir = 1},/obj/item/tank/hydrogen,/obj/item/stock_parts/circuitboard/rdserver,/obj/item/stock_parts/circuitboard/rdservercontrol,/obj/item/stock_parts/circuitboard/rdconsole,/obj/item/stock_parts/circuitboard/rdconsole,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"cT" = (/obj/structure/table/reinforced,/obj/machinery/microscope{pixel_x = -7; pixel_y = 5},/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"cU" = (/obj/structure/closet/chefcloset,/obj/machinery/alarm{dir = 4; locked = 0; pixel_x = -25; pixel_y = 0; req_access = list()},/turf/simulated/floor/tiled/freezer,/area/scavver/gantry/down3)
+"cV" = (/obj/machinery/organ_printer/robot/mapped,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"cW" = (/obj/structure/table/steel_reinforced,/obj/machinery/light{dir = 4},/obj/item/tray,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"cX" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 24; req_access = newlist()},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"cY" = (/obj/machinery/robotic_fabricator,/obj/item/stack/material/steel/fifty,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"cZ" = (/obj/machinery/vending/robotics/sierra{req_access = newlist()},/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"da" = (/obj/item/stock_parts/circuitboard/autolathe,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"db" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/machinery/shieldgen,/obj/effect/floor_decal/corner_steel_grid{dir = 8},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"dc" = (/obj/machinery/light{dir = 1},/obj/machinery/computer/modular,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dd" = (/obj/structure/table/reinforced,/obj/machinery/artifact_analyser,/obj/item/book/manual/anomaly_testing,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"de" = (/obj/machinery/artifact_scanpad,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"df" = (/obj/item/storage/mre/random,/obj/item/storage/mre/random,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"dg" = (/obj/structure/table/steel_reinforced,/obj/item/storage/belt/utility/full,/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"dh" = (/obj/structure/anomaly_container,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"di" = (/obj/machinery/door/blast/regular{dir = 4; id_tag = "500"},/obj/effect/floor_decal/industrial/danger{dir = 4},/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"dj" = (/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dk" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/item/crowbar/power,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dl" = (/obj/item/clothing/suit/space/void/excavation/prepared,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dm" = (/obj/item/robot_parts/chest,/obj/item/robot_parts/l_arm,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dn" = (/obj/structure/table/reinforced,/obj/item/wrench,/obj/item/storage/mre/random,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"do" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dp" = (/obj/machinery/power/engine/ion{icon_state = "nozzle"; dir = 4},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dq" = (/obj/machinery/field_generator,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"dr" = (/obj/machinery/field_generator,/turf/space,/area/space)
+"ds" = (/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"dt" = (/obj/structure/bed/chair/shuttle/black{icon_state = "shuttle_chair_preview"; dir = 8},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"du" = (/obj/structure/bed/chair/shuttle/black{icon_state = "shuttle_chair_preview"; dir = 4},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dv" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/obj/machinery/light/spot{dir = 8},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"dw" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/mech_recharger,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dx" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/bed/chair/shuttle/black{icon_state = "shuttle_chair_preview"; dir = 8},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dy" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/bed/chair/shuttle/black{icon_state = "shuttle_chair_preview"; dir = 4},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dz" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dA" = (/obj/structure/bed/chair/shuttle/black{icon_state = "shuttle_chair_preview"; dir = 4},/obj/structure/cable{icon_state = "2-8"},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dB" = (/obj/machinery/constructable_frame/computerframe{dir = 8},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dC" = (/obj/item/robot_parts/robot_component/camera,/obj/item/gun/projectile/pistol/military/icarus,/turf/simulated/floor/reinforced,/area/scavver/gantry/down4)
+"dD" = (/obj/item/stack/material/uranium,/turf/space,/area/space)
+"dE" = (/obj/item/robot_parts/head,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dF" = (/obj/item/stock_parts/circuitboard/broken,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dG" = (/obj/structure/stasis_cage,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dH" = (/obj/item/book/manual/excavation,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dI" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dJ" = (/obj/structure/table/reinforced,/obj/machinery/cell_charger,/obj/item/stock_parts/circuitboard/helm,/obj/item/stock_parts/circuitboard/protolathe,/obj/item/ladder_mobile,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dK" = (/obj/item/stack/material/rods/ten,/turf/space,/area/space)
+"dL" = (/obj/machinery/alarm{dir = 4; locked = 0; pixel_x = -25; pixel_y = 0; req_access = list()},/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"dM" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 9},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"dN" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/grey/diagonal,/obj/item/tray,/obj/item/tray,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"dO" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/grey/diagonal,/obj/item/paper_bin,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"dP" = (/obj/machinery/field_generator,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dQ" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white/airless,/area/scavver/calypso)
+"dR" = (/obj/machinery/light,/obj/machinery/button/blast_door{id_tag = "500"; pixel_x = -32},/obj/item/stack/material/plasteel/ten,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dS" = (/obj/structure/table/reinforced,/obj/item/stock_parts/smes_coil/weak,/obj/item/stock_parts/circuitboard/cryo_cell,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dT" = (/obj/machinery/r_n_d/protolathe,/turf/simulated/floor/plating,/area/scavver/gantry/down4)
+"dU" = (/obj/machinery/optable,/obj/item/robot_parts/robot_component/armour,/obj/item/gun/magnetic/preloaded,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dV" = (/obj/structure/table/reinforced,/obj/machinery/fabricator/micro,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dW" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dX" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/structure/cable,/obj/machinery/power/port_gen/pacman/super{anchored = 1; sheets = 25},/obj/machinery/light,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dY" = (/obj/machinery/door/airlock/external,/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"dZ" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/airlock/external,/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down4)
+"ea" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 5},/obj/machinery/alarm{dir = 1; locked = 0; pixel_y = -20; req_access = list()},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"eb" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/space,/area/space)
+"ec" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown/thrusters)
+"ed" = (/obj/machinery/power/port_gen/pacman,/turf/simulated/floor/plating,/area/scavver/gantry/down3)
+"ee" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped,/obj/item/scrap_lump,/turf/space,/area/space)
+"ef" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/space,/area/space)
+"eg" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/space,/area/space)
+"eh" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/space,/area/space)
+"ei" = (/obj/structure/table/steel,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/item/pizzabox/margherita,/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"ej" = (/obj/item/storage/mre/random,/turf/space,/area/space)
+"ek" = (/obj/item/robot_parts/robot_suit/flyer,/turf/space,/area/space)
+"el" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 8},/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"em" = (/obj/effect/shuttle_landmark/scavver_gantry/generic/three,/turf/space,/area/space)
+"en" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/space,/area/space)
+"eo" = (/obj/machinery/floodlight,/turf/space,/area/space)
+"ep" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/space,/area/space)
+"eq" = (/obj/structure/table/steel_reinforced,/obj/item/book/manual/barman_recipes,/turf/simulated/floor/tiled/dark,/area/scavver/gantry/down3)
+"er" = (/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/table/steel_reinforced,/obj/item/stack/material/refined_scrap,/obj/item/stack/material/refined_scrap,/turf/simulated/floor/airless,/area/space)
+"es" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"et" = (/obj/structure/cable,/obj/machinery/atmospherics/pipe/simple/hidden/red,/obj/machinery/power/port_gen/pacman/super{anchored = 1; sheets = 25},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
+"eu" = (/turf/simulated/floor/airless,/area/space)
+"ev" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 6},/turf/space,/area/space)
+"ew" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/space,/area/space)
+"ex" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/space,/area/space)
+"ey" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/random/gloves,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/space,/area/space)
+"ez" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/space,/area/space)
+"eA" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/random/tech_supply,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/space,/area/space)
+"eB" = (/obj/structure/lattice,/obj/machinery/light/navigation/delay2,/turf/space,/area/space)
+"eC" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/white/airless,/area/scavver/calypso)
+"eD" = (/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/space)
+"eE" = (/obj/effect/catwalk_plated/dark,/turf/simulated/floor/airless,/area/space)
+"eF" = (/obj/effect/catwalk_plated/dark,/obj/machinery/scrap/stacking_machine,/obj/structure/cable{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/airless,/area/space)
+"eG" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 1},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/space,/area/space)
+"eH" = (/obj/structure/lattice,/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 1},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/space,/area/space)
+"eI" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/space,/area/space)
+"eJ" = (/obj/machinery/optable,/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/light{dir = 1},/obj/item/defibrillator/compact/loaded,/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"eK" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/space,/area/space)
+"eL" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 10; icon_state = "intact"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/item/wheelchair_kit,/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"eM" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/item/device/paint_sprayer,/obj/structure/table/rack,/obj/item/device/cable_painter,/obj/item/hand_labeler,/obj/item/blueprints,/obj/item/blueprints,/obj/item/blueprints,/obj/item/blueprints,/obj/item/blueprints,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"eN" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/table/rack,/obj/item/stack/flag/teal,/obj/item/stack/flag/teal,/obj/item/device/binoculars,/obj/item/rpd,/obj/item/clamp,/obj/item/clamp,/obj/item/clamp,/obj/item/ladder_mobile,/obj/item/ladder_mobile,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"eO" = (/obj/structure/table/rack,/obj/structure/railing/mapped,/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/obj/random/powercell,/obj/random/powercell,/obj/random/accessory,/obj/item/airlock_brace,/obj/item/airlock_brace,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"eP" = (/obj/structure/railing/mapped,/obj/structure/table/rack,/obj/item/storage/briefcase/inflatable,/obj/item/storage/briefcase/inflatable,/obj/item/storage/briefcase/inflatable,/obj/item/storage/briefcase/inflatable,/obj/item/device/spaceflare,/obj/item/blueprints,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"eQ" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/item/weldpack,/turf/simulated/floor/airless,/area/scavver/calypso)
+"eR" = (/obj/machinery/light/spot,/obj/machinery/power/port_gen/pacman{anchored = 1; sheets = 25},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"eS" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/port_gen/pacman{anchored = 1; sheets = 25},/obj/machinery/power/apc/super{dir = 1; locked = 0; name = "north bump"; pixel_y = 24; req_access = list()},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"eT" = (/obj/machinery/pipedispenser,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"eU" = (/obj/machinery/light{dir = 4},/obj/effect/submap_landmark/spawnpoint/scavver_cyborg,/turf/simulated/floor/airless,/area/scavver/calypso)
+"eV" = (/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/space)
+"eW" = (/obj/effect/paint/meatstation/lab,/turf/simulated/wall/r_wall,/area/scavver/gantry/down5)
+"eX" = (/obj/effect/paint/dark_gunmetal,/turf/simulated/wall/r_wall,/area/scavver/gantry/down5)
+"eY" = (/obj/effect/floor_decal/corner_steel_grid{dir = 10},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"eZ" = (/turf/simulated/floor/plating,/area/scavver/gantry/down5)
+"fa" = (/obj/machinery/computer/ship/navigation,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fb" = (/obj/machinery/computer/ship/disperser{id_tag = "ofdp"},/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fc" = (/obj/machinery/computer/ship/engines{dir = 8; icon_state = "computer"},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"fd" = (/obj/effect/floor_decal/steeldecal/steel_decals_central4{dir = 8},/obj/structure/ship_munition/disperser_charge/explosive,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"fe" = (/obj/structure/sign/warning/bomb_range,/obj/effect/paint/dark_gunmetal,/turf/simulated/wall/r_wall,/area/scavver/gantry/down5)
+"ff" = (/obj/machinery/button/blast_door{desc = "A remote control-switch for the torpedos launcher door."; id_tag = "bsap_space"; name = "OFD Blast Doors Control"; pixel_y = 24},/obj/machinery/conveyor_switch{id = "bsap"},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/plating,/area/scavver/gantry/down5)
+"fg" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fh" = (/obj/item/stool,/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fi" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 23; req_access = newlist()},/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fj" = (/obj/machinery/shield_diffuser,/turf/simulated/floor/reinforced/airless,/area/scavver/gantry/down5)
+"fk" = (/obj/machinery/disperser/front{dir = 8},/obj/machinery/door/blast/regular{dir = 4; id_tag = "bsap_space"; name = "OFD Compartament Hatch"},/turf/simulated/floor/reinforced/airless,/area/scavver/gantry/down5)
+"fl" = (/obj/machinery/disperser/middle{dir = 8; id_tag = "ofdp"},/turf/simulated/floor/reinforced/airless,/area/scavver/gantry/down5)
+"fm" = (/obj/machinery/disperser/back{dir = 8; id_tag = "ofdp"},/turf/simulated/floor/reinforced/airless,/area/scavver/gantry/down5)
+"fn" = (/obj/machinery/conveyor{dir = 8; id = "bsap"},/turf/simulated/floor/reinforced/airless,/area/scavver/gantry/down5)
+"fo" = (/obj/machinery/door/firedoor,/obj/structure/plasticflaps/airtight,/obj/machinery/conveyor{dir = 8; id = "bsap"},/obj/machinery/door/blast/regular{density = 0; dir = 4; icon_state = "pdoor0"; id_tag = "bsap_space"; name = "OFD Compartament Hatch"; opacity = 0},/turf/simulated/floor/reinforced,/area/scavver/gantry/down5)
+"fp" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fq" = (/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fr" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"fs" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/effect/floor_decal/corner/blue{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"ft" = (/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fu" = (/obj/structure/railing/mapped,/turf/simulated/floor/plating,/area/scavver/gantry/down5)
+"fv" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fw" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/scavver/gantry/down5)
+"fx" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/sign/warning/secure_area{dir = 4; pixel_x = -32},/obj/machinery/light,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fy" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/turf/space,/area/scavver/yachtdown)
+"fz" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"fA" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/terminal{dir = 4},/turf/simulated/floor/airless,/area/scavver/calypso)
+"fB" = (/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fC" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/scavver/gantry/down5)
+"fD" = (/obj/structure/ship_munition/disperser_charge/emp,/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fE" = (/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/power/apc{dir = 4; locked = 0; name = "west bump"; pixel_x = 24; req_access = list()},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"fF" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{dir = 1; id_tag = "scav_calypso_pump"; power_rating = 25000},/turf/simulated/floor/plating,/area/scavver/calypso)
+"fG" = (/obj/machinery/atmospherics/binary/pump,/obj/structure/lattice,/turf/space,/area/scavver/yachtdown)
+"fH" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/scavver/yachtdown)
+"fI" = (/obj/structure/closet/crate/plastic,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/glass/fifty,/obj/item/stack/material/glass/fifty,/obj/item/stack/material/plasteel/fifty,/obj/effect/floor_decal/industrial/loading{dir = 8},/turf/simulated/floor/airless,/area/scavver/calypso)
+"fJ" = (/obj/structure/cable{icon_state = "2-8"},/turf/simulated/floor/plating,/area/scavver/yachtdown)
+"fK" = (/obj/structure/ship_munition/disperser_charge/mining,/obj/effect/floor_decal/industrial/outline/orange,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fL" = (/obj/structure/sign/warning/moving_parts{dir = 1; pixel_y = -32},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/plating,/area/scavver/gantry/down5)
+"fM" = (/obj/effect/floor_decal/industrial/outline/red,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fN" = (/obj/structure/ship_munition/disperser_charge/emp,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"fO" = (/obj/machinery/light{dir = 1},/obj/structure/ship_munition/disperser_charge/mining,/turf/simulated/floor/tiled/techfloor/grid,/area/scavver/gantry/down5)
+"fP" = (/obj/structure/ship_munition/disperser_charge/emp,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"gf" = (/obj/machinery/power/breakerbox,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"gk" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"gs" = (/obj/effect/wallframe_spawn/reinforced/titanium,/turf/simulated/floor/airless,/area/scavver/calypso)
+"gU" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/machinery/meter,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"gV" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/floor_decal/corner_steel_grid{dir = 6},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"gZ" = (/obj/machinery/atmospherics/unary/engine{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"hr" = (/obj/machinery/atmospherics/unary/tank/carbon_dioxide{dir = 8},/obj/machinery/light/spot{dir = 4},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"hu" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/airless,/area/scavver/calypso)
+"hB" = (/obj/random/ammo,/obj/machinery/atmospherics/pipe/manifold4w/visible/blue,/turf/simulated/floor/airless,/area/scavver/calypso)
+"hC" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 8},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"hK" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"hM" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/corner/blue{dir = 6},/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"iB" = (/obj/structure/cable,/obj/machinery/power/solar,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"iI" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"iK" = (/obj/machinery/atmospherics/unary/tank/carbon_dioxide{dir = 8},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"iL" = (/obj/structure/railing/mapped,/obj/structure/ladder/up,/obj/effect/floor_decal/corner_steel_grid,/obj/structure/cable,/obj/structure/cable{d1 = 16; d2 = 0; icon_state = "16-0"; pixel_y = 0},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"iM" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 9},/obj/effect/catwalk_plated/dark,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"jg" = (/obj/machinery/atmospherics/pipe/cap/visible/fuel{dir = 4},/obj/structure/lattice,/turf/space,/area/space)
+"ji" = (/obj/machinery/atmospherics/omni/mixer{tag_north = 2; tag_south = 1; tag_south_con = 0.85; tag_west = 1; tag_west_con = 0.15},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"jm" = (/obj/effect/shuttle_landmark/lift/gantry/bottom,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"jr" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"jt" = (/obj/structure/lattice,/obj/structure/sign/warning/docking_area{dir = 4; pixel_x = -34},/turf/space,/area/space)
+"ju" = (/obj/machinery/floodlight,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"jx" = (/obj/random/tool,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"jy" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped,/turf/space,/area/space)
+"jz" = (/obj/effect/floor_decal/corner/blue{dir = 6},/obj/machinery/computer/cryopod{pixel_y = -32},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"jH" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4},/turf/space,/area/space)
+"jJ" = (/obj/structure/iv_drip,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/effect/floor_decal/corner/blue{dir = 10},/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"jR" = (/obj/machinery/atmospherics/pipe/manifold/hidden/blue,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/airless,/area/scavver/calypso)
+"jZ" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc/super{dir = 1; locked = 0; name = "north bump"; pixel_y = 24; req_access = list()},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"kl" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/portable_atmospherics/canister/nitrogen/engine_setup,/turf/simulated/floor/airless,/area/scavver/calypso)
+"kt" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 9},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"kx" = (/turf/simulated/floor/tiled/white/airless,/area/scavver/calypso)
+"ky" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/calypso)
+"kK" = (/obj/effect/floor_decal/corner/blue/mono,/obj/random/loot,/obj/structure/table/steel_reinforced,/obj/item/device/radio/intercom/map_preset/scavver{default_hailing = 1; dir = 8; pixel_x = 20},/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"kU" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/power/solar,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"kW" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/inflatable/door,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"la" = (/obj/structure/railing/mapped,/obj/structure/table/rack,/obj/item/stock_parts/micro_laser/ultra,/obj/item/stock_parts/circuitboard/unary_atmos/cooler,/obj/item/stock_parts/circuitboard/unary_atmos/heater,/obj/item/stock_parts/circuitboard/oxyregenerator,/obj/item/stock_parts/matter_bin/super,/obj/item/stock_parts/circuitboard/biogenerator,/obj/random/tech_supply,/obj/random/tech_supply,/obj/random/tech_supply,/obj/random/tech_supply,/obj/item/module/power_control,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"lp" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/vehicle/train/cargo/engine,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"lz" = (/obj/structure/closet/crate/plastic,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/seeds/algaeseed,/obj/item/reagent_containers/glass/bottle/eznutrient,/obj/item/reagent_containers/glass/bottle/eznutrient,/obj/item/reagent_containers/glass/bottle/eznutrient,/obj/item/reagent_containers/glass/bottle/eznutrient,/obj/item/reagent_containers/glass/bottle/eznutrient,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"lD" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/random/loot,/turf/space,/area/space)
+"lV" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled,/area/scavver/calypso)
+"mb" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 8},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"mi" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/turf/space,/area/space)
+"mo" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/space,/area/space)
+"mU" = (/obj/structure/lattice,/turf/space,/area/scavver/yachtdown)
+"mV" = (/obj/structure/table/steel_reinforced,/obj/item/storage/firstaid/adv,/obj/item/roller,/obj/item/storage/backpack/satchel/med,/obj/effect/floor_decal/corner/blue/mono,/obj/random/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/item/device/radio/intercom/map_preset/scavver{dir = 8; pixel_x = 20},/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"na" = (/obj/structure/anomaly_container,/turf/simulated/floor/airless,/area/scavver/calypso)
+"nb" = (/turf/simulated/wall/titanium,/area/scavver/yachtdown/thrusters)
+"nd" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"np" = (/obj/structure/closet/crate/freezer,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/effect/floor_decal/corner/blue/mono,/obj/item/reagent_containers/food/drinks/cans/waterbottle,/obj/item/reagent_containers/food/drinks/cans/waterbottle,/obj/item/reagent_containers/ivbag,/obj/item/reagent_containers/ivbag,/obj/item/storage/box/gloves,/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"ny" = (/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"nC" = (/obj/effect/shuttle_landmark/scavver_gantry/six,/turf/space,/area/space)
+"nS" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/turf/space,/area/space)
+"nT" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"nU" = (/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"oe" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/machinery/mech_recharger,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"ox" = (/obj/machinery/floodlight,/turf/simulated/floor/airless,/area/scavver/calypso)
+"oC" = (/obj/machinery/atmospherics/binary/pump,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"oE" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"oG" = (/obj/machinery/power/apc{dir = 2; locked = 0; name = "south bump"; operating = 1; pixel_y = -28; req_access = list()},/obj/structure/cable,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"oH" = (/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/computer/ship/navigation/telescreen{pixel_x = 32},/obj/machinery/firealarm{dir = 1; pixel_y = -24},/obj/machinery/cryopod,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"oW" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/computer/air_control{input_tag = "scavver_burn_in"; output_tag = "scavver_burn_out"; sensor_name = "Yacht Thrust Burn Chamber"; sensor_tag = "scavver_burn_sensor"},/obj/machinery/status_light{id_tag = "scavver_burn_sensor"; pixel_x = -24},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"oX" = (/obj/machinery/computer/mining,/turf/simulated/wall,/area/scavver/calypso)
+"pf" = (/obj/structure/lattice,/turf/space,/area/scavver/yachtdown/thrusters)
+"po" = (/obj/machinery/atmospherics/valve{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"pq" = (/obj/machinery/atmospherics/binary/passive_gate{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"pG" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner_steel_grid{dir = 10},/obj/machinery/atmospherics/pipe/cap/visible/fuel,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"pL" = (/obj/effect/shuttle_landmark/scavver_gantry/generic,/turf/space,/area/space)
+"pM" = (/obj/structure/ladder/up,/obj/machinery/light{dir = 1},/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"pQ" = (/obj/structure/girder,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"qe" = (/obj/machinery/microwave,/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/white/airless,/area/scavver/calypso)
+"qf" = (/obj/structure/closet/toolcloset/excavation/awaysite,/turf/simulated/floor/airless,/area/scavver/calypso)
+"qC" = (/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"qH" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped,/turf/space,/area/space)
+"qK" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/visible/fuel,/turf/space,/area/scavver/yachtdown)
+"qP" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"qQ" = (/obj/structure/inflatable/wall,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"qY" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"rb" = (/obj/machinery/hologram/holopad/longrange,/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 10; icon_state = "intact"},/obj/effect/floor_decal/corner/blue{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled,/area/scavver/calypso)
+"rr" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/obj/machinery/door/airlock/external/bolted,/turf/simulated/floor/airless,/area/scavver/calypso)
+"ry" = (/turf/simulated/wall/titanium,/area/scavver/calypso)
+"rO" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"rW" = (/obj/structure/lattice,/obj/machinery/light/navigation,/turf/space,/area/space)
+"rZ" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/machinery/portable_atmospherics/hydroponics{closed_system = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"sj" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/space,/area/space)
+"sG" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/airless,/area/scavver/calypso)
+"sL" = (/obj/machinery/atmospherics/pipe/cap/visible{dir = 8},/turf/space,/area/scavver/yachtdown/thrusters)
+"sN" = (/obj/machinery/computer/ship/engines,/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"sO" = (/obj/machinery/light/small{dir = 1},/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{id_tag = "scav_calypso_pump"; power_rating = 25000},/turf/simulated/floor/plating,/area/scavver/calypso)
+"te" = (/obj/machinery/mineral/unloading_machine{output_turf = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/railing/mapped,/turf/simulated/floor/airless,/area/scavver/calypso)
+"to" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/closet/firecloset,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"tE" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/effect/floor_decal/corner/blue{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"tL" = (/obj/structure/lattice,/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket,/turf/space,/area/scavver/calypso)
+"tO" = (/obj/machinery/portable_atmospherics/canister/hydrogen,/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"tX" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/vehicle/train/cargo/trolley,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"ua" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/space,/area/space)
+"uo" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"uq" = (/obj/machinery/atmospherics/pipe/manifold/visible/blue{dir = 8},/obj/effect/catwalk_plated,/turf/simulated/floor/plating,/area/scavver/calypso)
+"uB" = (/obj/machinery/computer/ship/sensors/spacer,/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"uG" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"uM" = (/obj/structure/lattice,/obj/machinery/atmospherics/binary/pump/high_power{dir = 8},/turf/space,/area/scavver/yachtdown)
+"uO" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/railing/mapped{dir = 8},/obj/structure/railing/mapped{dir = 4},/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/airless,/area/scavver/calypso)
+"uR" = (/obj/effect/catwalk_plated/dark,/obj/structure/lattice,/turf/space,/area/space)
+"uY" = (/turf/space,/area/scavver/calypso)
+"ve" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/random/tech_supply,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"vf" = (/obj/effect/floor_decal/corner/blue{dir = 6},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"vg" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"vs" = (/obj/structure/inflatable/wall,/turf/simulated/floor/plating,/area/scavver/yachtdown)
+"vD" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/meter,/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"vM" = (/obj/structure/lattice,/turf/space,/area/space)
+"vN" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/machinery/light/spot{dir = 4},/obj/machinery/portable_atmospherics/hydroponics{closed_system = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"vU" = (/obj/structure/lattice,/obj/structure/sign/warning/docking_area{dir = 8; pixel_x = 32},/turf/space,/area/space)
+"vX" = (/obj/effect/floor_decal/corner/blue{dir = 5},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"wh" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/closet/crate/plastic,/obj/item/reagent_containers/glass/paint/random,/obj/item/crowbar/brace_jack,/obj/item/stack/material/phoron/fifty,/obj/item/stack/material/phoron/fifty,/obj/item/stack/material/phoron/fifty,/obj/item/stack/material/phoron/fifty,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/gloves/insulated,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"wQ" = (/obj/machinery/atmospherics/pipe/cap/visible/fuel,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"wS" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/space,/area/scavver/calypso)
+"xa" = (/obj/effect/shuttle_landmark/scavver_gantry/generic/two,/turf/space,/area/space)
+"xe" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/machinery/button/blast_door{id_tag = "scavver_vent"; name = "Burn Chamber Vent"; pixel_x = -23; pixel_y = -10},/obj/machinery/button/ignition{id_tag = "scavver"; pixel_x = -23},/obj/machinery/button/blast_door{id_tag = "scavver_window"; name = "Burn Chamber Window Blast Doors"; pixel_x = -23; pixel_y = 10},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"xm" = (/obj/machinery/door/airlock/external{frequency = 1380; id_tag = "scav_calypso_exterior_door"; locked = 1},/obj/machinery/access_button/airlock_exterior{frequency = 1380; master_tag = "scav_calypso"; pixel_y = 22; pixel_z = 1},/turf/simulated/floor/plating,/area/scavver/calypso)
+"xr" = (/obj/machinery/mineral/processing_unit{input_turf = 4; output_turf = 1},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/airless,/area/scavver/calypso)
+"xw" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/airless,/area/scavver/calypso)
+"xA" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/machinery/portable_atmospherics/canister/oxygen,/obj/effect/floor_decal/corner_steel_grid{dir = 1},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"xE" = (/obj/machinery/atmospherics/binary/passive_gate,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"xK" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/table/rack,/obj/random/toolbox,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"xL" = (/obj/structure/bed/chair/shuttle/white{dir = 8},/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"xQ" = (/obj/structure/railing/mapped,/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"yb" = (/obj/structure/lattice,/turf/space,/area/scavver/calypso)
+"yc" = (/obj/machinery/power/smes/buildable/preset/scavver/smes{charge = 100000},/obj/structure/cable{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/airless,/area/scavver/calypso)
+"yo" = (/obj/effect/floor_decal/corner/blue{dir = 5},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"yD" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/catwalk_plated/dark,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"zf" = (/obj/effect/floor_decal/corner_steel_grid{dir = 6},/obj/random/assembly,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"zx" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"zV" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/obj/machinery/meter,/turf/space,/area/scavver/yachtdown)
+"Aa" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 8},/obj/item/stool,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Aj" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 8},/obj/machinery/meter,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"Ap" = (/turf/simulated/wall/walnut,/area/scavver/yachtdown/thrusters)
+"AE" = (/obj/item/storage/firstaid/surgery,/obj/item/clothing/head/surgery,/obj/structure/table/steel_reinforced,/obj/item/reagent_containers/spray/sterilizine,/obj/item/reagent_containers/spray/cleaner{pixel_x = -5},/obj/item/device/robotanalyzer,/obj/effect/floor_decal/corner/blue/mono,/obj/item/device/scanner/health,/obj/machinery/vending/wallmed1{pixel_y = 32},/obj/item/clothing/suit/chef/classic,/turf/simulated/floor/tiled/white/monotile,/area/scavver/calypso)
+"AK" = (/obj/machinery/access_button/airlock_interior{frequency = 1380; master_tag = "scav_calypso"; pixel_y = -22},/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"AQ" = (/obj/machinery/door/blast/regular{dir = 4; id_tag = "scavver_vent"; name = "Vent"},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"AS" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/closet/crate/plastic,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/glass/fifty,/obj/item/stack/material/glass/fifty,/obj/item/stack/material/plasteel/fifty,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"AV" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Ba" = (/obj/effect/floor_decal/industrial/loading{dir = 4},/obj/structure/ore_box,/obj/structure/railing/mapped,/turf/simulated/floor/airless,/area/scavver/calypso)
+"Bd" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/steeldecal/steel_decals_central1,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Bi" = (/obj/effect/floor_decal/steeldecal/steel_decals_central1,/obj/machinery/light/spot{dir = 4},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Br" = (/obj/machinery/atmospherics/pipe/manifold4w/visible/blue,/obj/machinery/meter,/obj/effect/catwalk_plated,/turf/simulated/floor/plating,/area/scavver/calypso)
+"Bt" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"BA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/airless,/area/scavver/calypso)
+"BJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/door/airlock/external/bolted,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel_ridged,/area/scavver/calypso)
+"BM" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/space,/area/space)
+"BO" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/light/spot{dir = 8},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"BP" = (/obj/structure/cable{d2 = 4; icon_state = "0-4"},/obj/machinery/power/smes/buildable/preset/scavver/smes{charge = 100000; input_level = 80000},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"BR" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/binary/pump/high_power{dir = 1},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"Ce" = (/turf/space,/area/scavver/yachtdown/thrusters)
+"Cl" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/hidden/universal,/obj/machinery/meter,/turf/space,/area/scavver/calypso)
+"Cq" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/machinery/portable_atmospherics/powered/pump/filled,/obj/effect/floor_decal/corner_steel_grid{dir = 1},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Cr" = (/obj/machinery/atmospherics/pipe/simple/hidden/universal,/obj/machinery/meter,/turf/simulated/floor/airless,/area/scavver/calypso)
+"Cx" = (/obj/machinery/meter,/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 2},/obj/machinery/light/spot,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Cz" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/effect/floor_decal/corner/blue{dir = 9},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"CC" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"CE" = (/obj/effect/wallframe_spawn/reinforced/titanium,/turf/simulated/floor/plating,/area/scavver/calypso)
+"CM" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"CZ" = (/obj/effect/paint/black,/turf/simulated/wall,/area/scavver/gantry/down1)
+"DB" = (/obj/effect/floor_decal/corner/blue{dir = 5},/obj/effect/floor_decal/corner/blue{dir = 10},/obj/machinery/sleeper,/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"DF" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/ladder/up,/obj/effect/floor_decal/corner_steel_grid,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"DK" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"DW" = (/obj/structure/railing/mapped,/obj/machinery/portable_atmospherics/canister/air,/obj/effect/floor_decal/corner_steel_grid,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Ee" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/machinery/light/spot,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Eg" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Eq" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Es" = (/obj/item/towel/random,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/rogue_drone{desc = "A small robot. It looks angry. Someone has scratched 'See no Evil' onto the chassis. Odd."},/turf/simulated/floor/tiled/freezer,/area/scavver/yachtdown)
+"EP" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/railing/mapped{dir = 4},/turf/simulated/floor/airless,/area/scavver/calypso)
+"EU" = (/obj/machinery/light/spot{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Fj" = (/obj/structure/sign/warning/docking_area{pixel_y = 24},/turf/space,/area/space)
+"Fs" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/machinery/meter,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Fz" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"FJ" = (/obj/machinery/atmospherics/unary/tank/carbon_dioxide{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"FK" = (/obj/structure/hygiene/shower{pixel_y = 20},/obj/effect/decal/cleanable/dirt,/obj/random/loot,/turf/simulated/floor/tiled/freezer,/area/scavver/yachtdown)
+"FM" = (/obj/machinery/portable_atmospherics/canister/air,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/structure/railing/mapped,/turf/simulated/floor/airless,/area/scavver/calypso)
+"FS" = (/obj/machinery/atmospherics/unary/tank/carbon_dioxide{dir = 8},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"Ga" = (/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"Gl" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Gq" = (/obj/machinery/alarm{dir = 4; locked = 0; pixel_x = -25; pixel_y = 0; req_access = list()},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/effect/floor_decal/corner/blue{dir = 10},/obj/machinery/light,/turf/simulated/floor/tiled,/area/scavver/calypso)
+"Gr" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 2},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Gz" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"GB" = (/obj/machinery/pointdefense{initial_id_tag = "Salvage_Gantry"},/obj/structure/cable{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"GK" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"GM" = (/obj/machinery/atmospherics/binary/pump{dir = 8},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Hb" = (/obj/random/trash,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"Hn" = (/obj/machinery/computer/ship/helm,/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"Hq" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/table/rack,/obj/random/toolbox,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"Hs" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 9},/obj/machinery/light/spot{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Ht" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"HH" = (/obj/machinery/atmospherics/unary/vent_pump/tank{external_pressure_bound = 0; external_pressure_bound_default = 0; icon_state = "map_vent_in"; id_tag = "scavver_burn_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0},/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 4},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"HJ" = (/obj/machinery/door/airlock/hatch,/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel_ridged,/area/scavver/calypso)
+"HU" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"HY" = (/obj/effect/floor_decal/corner/blue{dir = 6},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"ID" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/space,/area/space)
+"IF" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/space,/area/space)
+"IJ" = (/obj/machinery/air_sensor{id_tag = "scavver_burn_sensor"},/obj/effect/decal/cleanable/liquid_fuel,/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 5},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"IV" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Ja" = (/obj/structure/ore_box,/turf/simulated/floor/airless,/area/scavver/calypso)
+"JF" = (/obj/structure/lattice,/obj/structure/sign/warning/docking_area{dir = 1; pixel_y = -34},/turf/space,/area/space)
+"JN" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/table/rack,/obj/random/advdevice,/obj/random/advdevice,/obj/random/advdevice,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"Ke" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 8},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"KL" = (/obj/structure/lattice,/obj/random/loot,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped,/turf/space,/area/space)
+"KP" = (/obj/effect/catwalk_plated/dark,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/visible/fuel,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Lg" = (/obj/structure/sign/warning/docking_area{dir = 8; pixel_x = 32},/turf/space,/area/space)
+"Ly" = (/obj/machinery/atmospherics/unary/tank/carbon_dioxide{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/light/spot{dir = 4},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"LD" = (/obj/structure/railing/mapped,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/portable_atmospherics/canister/nitrogen/engine_setup,/turf/simulated/floor/airless,/area/scavver/calypso)
+"LR" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/table/steel_reinforced,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/effect/floor_decal/corner_steel_grid{dir = 1},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"Me" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel,/turf/simulated/wall/ocp_wall,/area/scavver/yachtdown)
+"Mf" = (/obj/structure/lattice,/obj/structure/railing/mapped,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/turf/space,/area/scavver/calypso)
+"Mz" = (/turf/space,/area/scavver/yachtdown)
+"MT" = (/obj/structure/hygiene/toilet{dir = 8},/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/rogue_drone{desc = "A small robot. It looks angry. Someone has scratched 'Speak no Evil' onto the chassis. Odd."},/turf/simulated/floor/tiled/freezer,/area/scavver/yachtdown)
+"Np" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/turf/space,/area/scavver/yachtdown)
+"NK" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/airless,/area/scavver/calypso)
+"NP" = (/obj/structure/cable,/obj/machinery/power/solar_control/autostart{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Om" = (/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/pointdefense_control{initial_id_tag = "Salvage_Gantry"; name = "Point Defense Controller"},/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"Oq" = (/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Or" = (/obj/structure/cable{icon_state = "2-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"OD" = (/obj/random/tool,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"OS" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/obj/structure/inflatable/door,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Pd" = (/obj/structure/railing/mapped,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/airless,/area/scavver/calypso)
+"Pn" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/dark,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"PA" = (/obj/structure/bed/chair/shuttle/white{dir = 1},/obj/effect/floor_decal/corner/blue{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"PD" = (/obj/machinery/door/airlock/external/bolted_open,/obj/machinery/atmospherics/pipe/simple/visible/fuel,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown/thrusters)
+"PE" = (/turf/simulated/wall/ocp_wall,/area/scavver/yachtdown)
+"PN" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/turf/simulated/floor/airless,/area/scavver/calypso)
+"PO" = (/obj/effect/decal/cleanable/liquid_fuel,/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 4},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"PT" = (/obj/structure/lattice,/obj/item/reagent_containers/food/snacks/donkpocket,/turf/space,/area/scavver/yachtdown)
+"PY" = (/turf/simulated/floor/airless,/area/scavver/calypso)
+"Qf" = (/obj/machinery/atmospherics/unary/outlet_injector{frequency = 1441; icon_state = "map_injector"; id = "scavver_burn_in"; use_power = 1},/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{dir = 8},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"QF" = (/obj/machinery/atmospherics/valve{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"QL" = (/obj/machinery/door/airlock/external{frequency = 1380; id_tag = "scav_calypso_interior_door"},/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 4; icon_state = "intact"},/turf/simulated/floor/tiled/steel_ridged,/area/scavver/calypso)
+"QQ" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/space,/area/space)
+"QR" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/effect/floor_decal/corner_steel_grid,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Rc" = (/obj/machinery/power/terminal{dir = 1; icon_state = "term"},/obj/structure/cable{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"RC" = (/obj/machinery/atmospherics/binary/pump/on,/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"RD" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/hydrogen,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"RQ" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/machinery/floodlight,/obj/effect/floor_decal/corner_steel_grid{dir = 1},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"RT" = (/obj/structure/table/rack,/obj/item/storage/belt/utility/full,/obj/item/storage/belt/utility/full,/obj/item/device/radio/map_preset/scavver,/obj/item/device/radio/map_preset/scavver,/obj/item/clothing/gloves/insulated,/obj/item/clothing/gloves/insulated,/obj/item/device/multitool,/obj/effect/floor_decal/corner/blue/mono,/obj/machinery/alarm{dir = 4; locked = 0; pixel_x = -25; pixel_y = 0; req_access = list()},/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 6},/turf/simulated/floor/tiled/monotile,/area/scavver/calypso)
+"Sj" = (/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown/thrusters)
+"Sl" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/portables_connector{dir = 4},/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Sq" = (/obj/structure/inflatable/wall,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Ss" = (/obj/structure/railing/mapped,/obj/machinery/light/small{dir = 4},/turf/simulated/floor/airless,/area/scavver/calypso)
+"St" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/effect/floor_decal/corner/blue{dir = 6},/obj/machinery/atmospherics/pipe/manifold/hidden/blue{dir = 4},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"Sw" = (/obj/structure/lattice,/obj/structure/sign/warning/docking_area{pixel_y = 24},/turf/space,/area/space)
+"Sz" = (/obj/machinery/atmospherics/valve/shutoff/scrubbers{dir = 4},/obj/machinery/atmospherics/valve/shutoff/supply{dir = 4},/obj/machinery/light/small,/turf/simulated/floor/airless,/area/scavver/calypso)
+"SF" = (/turf/simulated/wall/titanium,/area/scavver/yachtdown)
+"SQ" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/machinery/portable_atmospherics/hydroponics{closed_system = 1},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown/thrusters)
+"SW" = (/obj/machinery/atmospherics/binary/passive_gate,/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"SY" = (/obj/machinery/atmospherics/pipe/zpipe/up/fuel{dir = 8},/obj/machinery/firealarm{dir = 1; pixel_y = -24},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"SZ" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"TK" = (/obj/machinery/atmospherics/binary/passive_gate{dir = 8},/obj/structure/lattice,/turf/space,/area/space)
+"TU" = (/obj/machinery/embedded_controller/radio/airlock/airlock_controller{frequency = 1380; id_tag = "scav_calypso"; pixel_y = 26; tag_airpump = "scav_calypso_pump"; tag_chamber_sensor = "scav_calypso_sensor_chamber"; tag_exterior_door = "scav_calypso_exterior_door"; tag_interior_door = "scav_calypso_interior_door"},/obj/machinery/airlock_sensor{frequency = 1380; id_tag = "scav_calypso_sensor_chamber"; pixel_x = -22},/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{id_tag = "scav_calypso_pump"; power_rating = 25000},/turf/simulated/floor/airless,/area/scavver/calypso)
+"TV" = (/obj/machinery/atmospherics/portables_connector{dir = 4},/obj/machinery/portable_atmospherics/hydroponics{closed_system = 1},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown/thrusters)
+"TZ" = (/obj/effect/floor_decal/steeldecal/steel_decals_central1,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"Uh" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Uk" = (/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/obj/machinery/meter,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Up" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"Uv" = (/obj/structure/cable{d2 = 4; icon_state = "0-4"},/obj/machinery/power/tracker,/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"UH" = (/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"UJ" = (/obj/machinery/atmospherics/portables_connector{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"UM" = (/turf/space,/area/space)
+"UP" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/obj/machinery/portable_atmospherics/canister/hydrogen,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"UU" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"UV" = (/obj/machinery/recharge_station,/obj/structure/fireaxecabinet{pixel_x = 32},/turf/simulated/floor/airless,/area/scavver/calypso)
+"UY" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/turf/space,/area/scavver/yachtdown)
+"Va" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/meter,/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"Vr" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/girder/displaced,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"Vs" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"Vx" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"VT" = (/obj/machinery/sparker{id_tag = "scavver"; pixel_x = -18},/obj/effect/decal/cleanable/liquid_fuel,/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 6},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"Wo" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white,/area/scavver/calypso)
+"Wp" = (/obj/structure/inflatable/door,/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"WI" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/machinery/door/airlock/external/bolted,/obj/machinery/door/blast/regular{dir = 2; id_tag = "scavver_window"; name = "Window Blast Door"},/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"WM" = (/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"WQ" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{dir = 8},/obj/effect/decal/cleanable/liquid_fuel,/turf/simulated/floor/reinforced/airless,/area/scavver/yachtdown)
+"Xb" = (/obj/machinery/light/small{dir = 8},/obj/structure/hygiene/sink{pixel_y = 20},/obj/item/bikehorn/rubberducky,/obj/effect/decal/cleanable/dirt,/obj/random/soap,/mob/living/simple_animal/hostile/rogue_drone{desc = "A small robot. It looks angry. Someone has scratched 'Hear no Evil' onto the chassis. Odd."},/turf/simulated/floor/tiled/freezer,/area/scavver/yachtdown)
+"Xn" = (/turf/simulated/wall/walnut,/area/scavver/yachtdown)
+"Xp" = (/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,/obj/machinery/portable_atmospherics/canister/hydrogen,/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"XA" = (/obj/effect/catwalk_plated/dark,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/lattice,/turf/space,/area/space)
+"XC" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"XE" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/scavver/yachtdown)
+"XH" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/closet/crate/freezer/rations,/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+"XN" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue,/obj/effect/floor_decal/corner/blue{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled,/area/scavver/calypso)
+"XQ" = (/obj/machinery/shipsensors/weak{use_power = 0},/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 10; icon_state = "intact"},/turf/simulated/floor/airless,/area/scavver/calypso)
+"XV" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"Yc" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/effect/floor_decal/corner/blue{dir = 6},/turf/simulated/floor/tiled,/area/scavver/calypso)
+"YV" = (/obj/effect/paint/black,/turf/simulated/wall,/area/scavver/gantry/down2)
+"Zg" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/zpipe/up/supply,/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers,/turf/space,/area/space)
+"Zr" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 10},/turf/simulated/wall/ocp_wall,/area/scavver/yachtdown)
+"ZF" = (/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/wood/yew,/area/scavver/yachtdown)
+"ZG" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/airless,/area/scavver/yachtdown/thrusters)
+"ZS" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/airless,/area/scavver/gantry/down1)
+
+(1,1,1) = {"
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMemUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMpLUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMIDmomomomomomomomomoIFUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQeBUMUMnSGBUMUMUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQvMvMvMnSSZUMUMUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMalUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQUMLgYVabLRtoYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQnSnSUHSZfdGaHqUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQUMUMRQSZGajxJNUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMapUMUMUMUMUMUMIDmomomomomomomomomomonSUMUMYVveGaGaYVvMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQararararararararararnSUMUMYVBOGaHbYVjtvMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMaqUMUMUMUMUMUMUMUMUMaGUMUMUMUMUMUMUMUMUMQQaraeaLafagahaiaeajarnSUMUMYVSZGaGaYVUMrWBMUMUMUMUMUMUMUMUMUMaaUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMaqUMUMUMUMaMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQarbeamanbfanaoanbUarnSnSnSUHSZcuGaDFUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMmochvMmomocpvMmomomomocRmomomonSarcUadanasaeatanauarnSUMUMxASZcEGazfnSnSBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMaGUMUMUMUMUMUMUMUMUMacUMQQaravavarararawadayazaAaBanaCarnSUMvMYVSZGaGaYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMcLUMUMcMcMcNcNcMcMcNcMcMcMUMUMUMUMQQaraDedaFcWaraHaxaJanaKananaCarnSvMvMYVBOGaGaYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMcMcMcOcQcNcMcScTcVcXcYcZdadccMcMUMacQQardgaEaPaNaQanaRaUarararaQararnSUMUMYVSZGaGaYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMcMdddedfdhdidjcLcLdkdjdjdldmdndoUMUMQQavaTcKbcaVaraeaRaWaraXaYaZbaarnSUMUMcBSZGaGaVsUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMdrUMUMdpcNdqdsdsdidjdtdudwdxdydzdAdBdoUMUMQQarbbbWbdbnararblararaZbmaZaZarnSUMUMxKSZGaGaCCUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMdDUMUMUMUMUMUMcLdCdidEcLdjcLdFdGdHdIdJdodKUMQQardLaEbvbobpbrbsbtardNbubudOarnSUMUMYVSZaOGaYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMacUMdsdPcNcMdRcLdSdTdUdVdWdXcMcMUMUMQQarbybxbzbDarbAbBaIbEaSbHbJbKarnSUMUMYVBOGaGaYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMacUMcLcMcMcMdYcMcMcMcMdZcMcMUMUMaqQQarbPbMbObDarbRbSbTeabVbFbXbYbZnSrWvUYVSZGaGaYVUMUMBMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMdDUMUMQQUMUMUMUMebUMUMacUMUMQQarcJcacbccararcdararcecfetbYbZnSUMUMdbSZGaGawhvMUMBMUMUMUMUMUMrygsgsgsryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMjyjyjyjyjyeejyefegegegegegeharciaNckaNarclcmcnarcoeicqcsarnSnSnSUHSZcuGabqvMUMBMUMUMUMUMUMgssNHnuBgsUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMejUMUMUMekUMUMUMUMUMenUMUMeoUMUMeparcteqcwcxarcyczcAarcocCcDcFarnSUMUMYVSZGaGaYVjtcvBMUMUMUMUMUMgsvXPAyogsUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMcIernSnSvMUMUMUMeparararararararcGarararbZbZararnSUMUMYVBOGaGaYVUMUMBMUMUMUMUMryryGqrbkKryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMaqUMUMQQeueEnSvMUMUMUMewexeyezezezezeAbgnSnSnSnSnSnSnSuRUMUMYVSZGaGaYVUMUMBMUMUMUMryryryryHJCEryryryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQeFeVezezeGeHeGegeIUMvMvMUMUMUMeDUMUMUMUMUMrWUMUMUMUMvgSZGaGatXUMUMBMUMUMybrytLqerytEDBAEeJcjryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMqHjyjyjyeKUMUMUMUMQQvMvMUMUMUMUMeDUMUMUMUMUMJFUMUMUMUMoeSZGaGalpUMUMBMUMUMPYuYeCcPqQeleLbNWohMfEryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMmiUMLgCZCZCZCZbhCqCZCZASXHCZCZCZeMeNCZBdTZBiCZUMUMBMUMUMybrysGkxCEjJfsnpmVryryryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMmirWvMZSnyjmnybiuGbjuGuGuGuGbjuGuGuGbkAVuGhKQRUMUMXAUMUMfAycdQybryCEHJCEryryvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMmiUMUMEenynynyGKnynynynyODnyfNfNnynyoGnyfrVxgVPnPnIVkykyxwryryryryRTlVvfpMryvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQUMUMCZCZCZCZeOxQCZCZDWeYCZCZCZlaePCZCZiLpGCZUMUMBMUMUMUMryTUsOCERCCzHYxLCEUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMQQUMUMvMUMUMUMUMvMFjUMUMnSUMSwUMUMUMUMvMvMKPvMUMUMnSnSnSuRxmuqBrQLSthCYcOmCEUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMlDUMUMrWUMUMUMUMrWUMUMUMnSUMrWvMUMUMUMrWUMKPvMUMUMBMUMUMUMCEfFfFCEAKXNjzoHryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMqHjyjyjyjyjyjyjyjyjyjyjyjyjyjyjyjyjyjyjyeviMjyjyjyBMvMvMUMryryryryryBJryryryvMvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMvMUMUMUMUMUMUMUMvMUMvMvMUMUMfGyDUMUMUMjHUMZgNKryrynaoxqfhuUVryryryvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMeWUMUMeXeXeXeXvMvMvMvMvMSFXnXnXnqCqKyDXnSFvMjHUMuafIbLoXybakPYhueUrybCryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMxaUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMeWUMeWeZeXfafbfOeXUMUMUMUMvMSFXbFKXnbInTVaFSSFUMjHvMsjwSuOwSSzkleQjRPNrrhBXQryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMeWeWeXeZfefffgfhfgfiUMUMUMUMSFSFEsMTXnbIZFmbhrSFSFjHUMUMoXxrryryBAClCrryryFMFMryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMfjfkflfmfnfofpfqftfufvfwUMUMUMMzXnvsXnXnbIZFXViIiKSFnSnSnSryEPJaryLDMfPdryryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMeWeWeXeXeXfxfBfCfDeXUMUMUMUMfHfJMzmUbIiIktqCmbFSSFnSKLjyBateSsryUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMeWUMeWeXeXfKfLfMeXvMvMvMvMmUmUfHmUXnmbXErOndFSSFSFmUUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMeWeWeXeXeXeXUMUMUMUMSFSFXnXnXnmUmbFJXnXnXnSFMzmUUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMUMvMUMUMUMUMPEPEPEPEPEuomUAjLyXnMzMzPTMzmUUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMUMvMUMUMUMUMPEVTPOWQZrSqXnmbgkOSuMzVUYNpmUUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMUMvMUMUMUMUMAQIJHHQfMepoEgSWBRXnmUMzmUfyUYbGUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMUMvMUMUMUMvMPEPEWIWIPEgfEqvDdMXnmUmUnbnbnbUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMUMvMUMUMUMvMSFSFxeHUjZVrpQPDApApApGznbjunbUMUMnCUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUUMvMSFoWFsUhgUnbTVnUecSQApOqfPOqnbUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMGlCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMOrSFbQUUoESljinbTVcgSjSQApUJGMsLpfUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBqPWMRcWMoEqPRDnbTVSjnUvNApOqOqCepfUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMXCDKFzeRoEqPEUnbTVSjGrSQApwQOqCeCeUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUkUqPSFNPSFcHUpWMnbTVSjrZnbnbHtnbpfpfUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUvCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMCMUUvMSFSFnbkWnbnbnbKeqYnblzpqnbnbnbUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBWMUMUMnbnbZGcrBPeSoCxEeTOqAaSYnbvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMnbnbdvBtBtBtUknUBtQFHsnbnbUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMvMnbbwOqOqOqoCxEOqOqfcnbUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMjgTKWpzxUPtOUPCxXpfzesjrnbvMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMnbgZgZgZgZnbgZgZgZgZnbUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+UMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUMUM
+"}
