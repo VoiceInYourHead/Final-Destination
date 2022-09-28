@@ -161,6 +161,7 @@
 	#include "../away/ascent_interceptor2/_interceptor.dm"
 	#include "../away/ascent_gunboat/_gunboat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
+	#include "../away/smugglers_ship/_smuggler.dm"
 	#include "../away/smugglers/smugglers.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
