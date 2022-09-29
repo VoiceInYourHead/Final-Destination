@@ -14,6 +14,7 @@
 		/datum/job/submap/ascent_corvette/alate,
 		/datum/job/submap/ascent_corvette/alate/pilot,
 		/datum/job/submap/ascent_corvette/serpentid,
+		/datum/job/submap/ascent_corvette/queen,
 //		/datum/job/submap/ascent/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT_CORVETTE
@@ -24,7 +25,7 @@
 /datum/submap/ascent_corvette/sync_cell(obj/effect/overmap/visitable/cell)
 	return
 
-/*/mob/living/carbon/human/proc/gyne_rename_lineage()
+/mob/living/carbon/human/proc/gyne_rename_lineage()
 	set name = "Name Nest-Lineage"
 	set category = "IC"
 	set desc = "Rename yourself and your alates."
@@ -37,7 +38,7 @@
 			var/new_number = input("What is your position in your lineage?", "Name Nest-Lineage") as num|null
 			if(!new_number)
 				return
-			new_number = Clamp(new_number, 1, 999)
+			new_number = clamp(new_number, 1, 999)
 			var/new_name = sanitize(input("What is the true name of your nest-lineage?", "Name Nest-Lineage") as text|null, MAX_NAME_LEN)
 			if(!new_name)
 				return
@@ -62,12 +63,12 @@
 				H.fully_replace_character_name("[new_alate_number] [new_name]")
 				to_chat(H, SPAN_NOTICE("<font size = 3>Your gyne, [real_name], has awakened, and you recall your place in the nest-lineage: <b>[H.real_name]</b>.</font>"))
 
-	verbs -= /mob/living/carbon/human/proc/gyne_rename_lineage*/
+	verbs -= /mob/living/carbon/human/proc/gyne_rename_lineage
 
 // Jobs.
 /datum/job/submap/ascent_corvette
 	title = "Ascent Gyne"
-	total_positions = 0
+	total_positions = 1
 	supervisors = "nobody but yourself"
 	info = "You are a Gyne of the Ascent, fleeing the murderous Kharmaani political sphere after your first molt. Your search for safe harbour has brought you to this remote unsettled sector. Find a safe nest, and bring prosperity to your lineage."
 	outfit_type = /decl/hierarchy/outfit/job/ascent
@@ -125,12 +126,12 @@
 
 /datum/job/submap/ascent_corvette/alate
 	title = "Ascent Alate Worker"
-	total_positions = 11
+	total_positions = 10
 	supervisors = "the Gyne"
 	info = "You are an Alate of a powerful Gyne. She has led you to this remote sector to guard it's territories. Follow given instructions and bring prosperity to your nest-lineage."
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
-	requires_supervisor = FALSE
+	requires_supervisor = "Ascent Gyne"
 	use_species_whitelist = null
 	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
@@ -151,13 +152,28 @@
 	skill_points = 18
 
 /datum/job/submap/ascent_corvette/serpentid
-	title = "Ascent Serpentid Soldier"
+	title = "Ascent Monarch Soldier"
 	total_positions = 6
 	supervisors = "the Queen"
 	info = "You are an Monarch Serpentid soldier of a powerful Queen. She has led you to this remote sector to guard it's territories. Follow given instructions and bring prosperity to your Monarch Queen."
 	set_species_on_join = SPECIES_MONARCH_WORKER
 	outfit_type = /decl/hierarchy/outfit/job/ascent/soldier
-	requires_supervisor = FALSE
+	requires_supervisor = "Ascent Gyne"
+	use_species_whitelist = null
+	min_skill = list(SKILL_EVA = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_COMBAT = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_MEDICAL = SKILL_BASIC)
+	skill_points = 18
+
+/datum/job/submap/ascent_corvette/serpentid/queen
+	title = "Ascent Monarch Queen"
+	total_positions = 1
+	supervisors = "the Gyne"
+	info = "You are an Monarch Serpentid Queen. Follow youre gyne orders."
+	set_species_on_join = SPECIES_MONARCH_QUEEN
+	outfit_type = /decl/hierarchy/outfit/job/ascent/queen
 	use_species_whitelist = null
 	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
@@ -178,7 +194,7 @@
 // Spawn points.
 
 /obj/effect/submap_landmark/spawnpoint/ascent_corvette
-	name = "Ascent Alate Worker"
+	name = "Ascent Gyne"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/ascent_corvette/pilot
@@ -186,7 +202,15 @@
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/ascent_corvette/serpentid
-	name = "Ascent Serpentid Soldier"
+	name = "Ascent Monarch Soldier"
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+
+/obj/effect/submap_landmark/spawnpoint/ascent_corvette/worker
+	name = "Ascent Alate Worker"
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+
+/obj/effect/submap_landmark/spawnpoint/ascent_corvette/queen
+	name = "Ascent Monarch Queen"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 #undef WEBHOOK_SUBMAP_LOADED_ASCENT_CORVETTE
