@@ -134,7 +134,7 @@
 	requires_supervisor = "Ascent Gyne"
 	use_species_whitelist = null
 	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
+					SKILL_HAULING = SKILL_BASIC,
 					SKILL_COMBAT = SKILL_BASIC,
 					SKILL_WEAPONS = SKILL_BASIC,
 					SKILL_MEDICAL = SKILL_BASIC,
@@ -175,11 +175,13 @@
 	set_species_on_join = SPECIES_MONARCH_QUEEN
 	outfit_type = /decl/hierarchy/outfit/job/ascent/queen
 	use_species_whitelist = null
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
-					SKILL_MEDICAL = SKILL_BASIC)
+	min_skill = list(
+		SKILL_EVA = SKILL_ADEPT,
+		SKILL_PILOT = SKILL_BASIC,
+		SKILL_HAULING = SKILL_ADEPT,
+		SKILL_SCIENCE = SKILL_ADEPT,
+		SKILL_MEDICAL = SKILL_BASIC
+	)
 	skill_points = 18
 
 /*/datum/job/submap/ascent/drone
