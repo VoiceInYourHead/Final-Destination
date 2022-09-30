@@ -37,7 +37,7 @@
 
 /decl/hierarchy/outfit/job/ascent/queen
 	name = "Ascent - Serpentid Queen"
-	belt = /obj/item/clothing/suit/storage/ascent
+	uniform = /obj/item/clothing/under/harness
 	shoes = null
 
 /obj/item/clothing/mask/gas/ascent

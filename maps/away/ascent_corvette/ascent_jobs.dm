@@ -14,7 +14,7 @@
 		/datum/job/submap/ascent_corvette/alate,
 		/datum/job/submap/ascent_corvette/alate/pilot,
 		/datum/job/submap/ascent_corvette/serpentid,
-		/datum/job/submap/ascent_corvette/queen,
+		/datum/job/submap/ascent_corvette/serpentid/queen,
 //		/datum/job/submap/ascent/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT_CORVETTE
