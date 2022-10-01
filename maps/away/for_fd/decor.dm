@@ -83,3 +83,20 @@
 	anchored = FALSE
 	pixel_x = -16
 	pixel_y = -15
+
+/obj/structure/fd/aaaa/notes
+	name = "statue"
+	desc = "Very strange statue"
+	icon = 'icons/32x48.dmi'
+	icon_state = "silent_2"
+	density = TRUE
+	anchored = TRUE
+
+/obj/structure/fd/aaaa/eyes
+	name = "webs"
+	desc = "Very strange black thing"
+	icon = 'icons/48x48.dmi'
+	icon_state = "spider"
+	density = TRUE
+	anchored = TRUE
+	pixel_x = -8

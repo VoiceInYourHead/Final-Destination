@@ -3262,6 +3262,7 @@
 #include "maps\away\for_fd\corpses.dm"
 #include "maps\away\for_fd\decor.dm"
 #include "maps\away\for_fd\items.dm"
+#include "maps\away\for_fd\mobs.dm"
 #include "maps\away\for_fd\overmap.dm"
 #include "maps\away\for_fd\papers.dm"
 #include "proxima\code\_helpers\colors.dm"
