@@ -155,7 +155,7 @@
 	#include "../away/ascent/ascent.dm"
 	#include "../away/ares/_ares.dm"
 	#include "../away/ascent_caulship/_ascent_caulship.dm"
-//	#include "../away/ascent_corvette/_corvette.dm"
+	#include "../away/ascent_corvette/_corvette.dm"
 	#include "../away/ascent_interceptor/_interceptor.dm"
 	#include "../away/ascent_fighter/_fighter.dm"
 	#include "../away/ascent_interceptor2/_interceptor.dm"
@@ -180,7 +180,6 @@
 	#include "../away/mininghome/mininghome.dm"
 	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/scavver_alt/scavver_gantry_alt.dm"
-	#include "../away/ascent_corvette/_corvette.dm"
 
 	#define using_map_DATUM /datum/map/torch
 
