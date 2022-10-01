@@ -46,3 +46,11 @@
 	maxHealth = 5000
 	health = 5000
 	icon_state = "fragment_breach"
+
+/mob/living/simple_animal/fd/mnogonojka
+	name = "???"
+	desc = "???"
+	icon = 'icons/mob/simple_animal/nightmaremonsters.dmi'
+	maxHealth = 5000
+	health = 5000
+	icon_state = "lesser_ling"
