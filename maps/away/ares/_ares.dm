@@ -27,7 +27,6 @@
 	icon_state = "gml"
 
 /obj/machinery/vending/cigarette/noprice
-	..()
 	prices = null
 
 /decl/stock_part_preset/radio/receiver/vent_pump/ares
