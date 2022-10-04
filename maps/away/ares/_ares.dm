@@ -2,8 +2,8 @@
 #include "ares_jobs.dm"
 #include "ares_shuttles.dm"
 
-///obj/effect/paint/red/dark
-//	color = "#3b0404"
+/obj/effect/paint/red/dark
+	color = "#3b0404"
 
 /obj/machinery/door/airlock/multi_tile/ares
 	door_color = COLOR_DARK_GUNMETAL
@@ -17,8 +17,8 @@
 	door_color = COLOR_DARK_GUNMETAL
 	stripe_color = COLOR_SILVER
 
-///obj/machinery/suit_storage_unit/mining/shade
-//	islocked = 0
+/obj/machinery/suit_storage_unit/mining/shade
+	islocked = 0
 
 /obj/structure/sign/gml
 	name = "\improper GMLtd. sign"
