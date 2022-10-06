@@ -14,7 +14,7 @@
 	icon_state = "base"
 
 	density = 1
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_NO_CONTAINER
 	dir = WEST
 	does_spin = FALSE
 
@@ -277,7 +277,7 @@
 
 
 	if(overmap_missile.dangerous)
-		log_and_message_admins("A dangerous missile has entered z level [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
+		log_and_message_admins("A dangerous missile has entered z level [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>)")
 
 
 	// if we enter into a dense place, just detonate immediately
