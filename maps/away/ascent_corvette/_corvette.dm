@@ -1,12 +1,6 @@
 #include "ascent_areas.dm"
 #include "ascent_jobs.dm"
 
-/obj/structure/wall_frame/titanium/ascent
-	paint_color = COLOR_PURPLE
-
-/obj/effect/wallframe_spawn/reinforced_phoron/titanium/ascent
-	frame_path = /obj/structure/wall_frame/titanium/ascent
-
 // Map template data.
 /datum/map_template/ruin/away_site/ascent_corvette
 	name = "Ascent Corvette"
