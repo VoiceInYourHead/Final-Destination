@@ -4,6 +4,7 @@ MANTIDIFY(/obj/machinery/atmospherics/unary/vent_scrubber/on, "mantid atmosphere
 MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad")
 MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
 MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
+MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic lifeform-defense system", "turret")
 
 /obj/machinery/optable/ascent
 	construct_state = /decl/machine_construction/default/no_deconstruct
@@ -318,3 +319,14 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	name = "unstable mantid fusion stack"
 	output_power = 2631 KILOWATTS
 	field_color = COLOR_RED
+
+/obj/machinery/porta_turret/ascent
+	ailock = 1
+	check_synth	 = 0
+	check_access = 1
+	check_anomalies = 1
+	check_arrest = 0
+	check_records = 0
+	req_access = list(access_ascent)
+	installation = /obj/item/gun/energy/particle
+	shot_sound = 'sound/weapons/Laser3.ogg'

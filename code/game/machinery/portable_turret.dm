@@ -154,6 +154,11 @@
 			eshot_sound = 'sound/weapons/Laser.ogg'
 			egun = 1
 
+		if(/obj/item/gun/energy/particle)
+			eprojectile = /obj/item/projectile/beam/particle
+			shot_sound = 'sound/weapons/Laser3.ogg'
+			shot_sound = 'sound/weapons/Laser3.ogg'
+
 var/list/turret_icons
 
 /obj/machinery/porta_turret/on_update_icon()

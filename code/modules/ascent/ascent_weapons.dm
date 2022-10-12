@@ -90,6 +90,7 @@
 	icon_state = "particle"
 	damage = 35
 	armor_penetration = 50
+	fire_sound= 'sound/weapons/laser3.ogg'
 	muzzle_type = /obj/effect/projectile/laser_particle/muzzle
 	tracer_type = /obj/effect/projectile/laser_particle/tracer
 	impact_type = /obj/effect/projectile/laser_particle/impact
@@ -99,6 +100,7 @@
 	name = "particle beam"
 	damage = 20
 	armor_penetration = 20
+	fire_sound= 'sound/weapons/scan.ogg'
 	penetration_modifier = 0.3
 
 /obj/item/gun/energy/particle/on_update_icon()
