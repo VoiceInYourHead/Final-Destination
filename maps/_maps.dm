@@ -35,6 +35,7 @@
 #include "random_ruins\exoplanet_ruins\radshrine\radshrine.dm"
 #include "random_ruins\exoplanet_ruins\spider_nest\spider_nest.dm"
 #include "random_ruins\exoplanet_ruins\tar_anomaly\tar_anomaly.dm"
+#include "random_ruins\exoplanet_ruins\scg_city_restored\scg_city_restored.dm"
 #include "random_ruins\exoplanet_ruins\scg_ruined_city\scg_ruined_city.dm"
 #include "random_ruins\exoplanet_ruins\trash_heap\trash_heap.dm"
 #include "random_ruins\exoplanet_ruins\pollux\station.dm"
