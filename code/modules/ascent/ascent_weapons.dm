@@ -1,3 +1,6 @@
+// MANTIDIFY(/obj/item/magnetic_ammo/skrell, "mantid flechette cylinder", "A magazine containing steel flechettes.")
+// MANTIDIFY(/obj/item/gun/magnetic/railgun/flechette, "mantid flechette rifle", "A viciously pronged rifle-like weapon.")
+
 /obj/item/gun/energy/particle
 	name = "particle lance"
 	desc = "A long, thick-bodied energy rifle of some kind, clad in a curious indigo polymer and lit from within by Cherenkov radiation. The grip is clearly not designed for human hands."
@@ -62,9 +65,43 @@
 		list(mode_name="lethal", projectile_type = /obj/item/projectile/beam/particle/small)
 		)
 
-//	bulk = GUN_BULK_SMG
-	w_class = ITEM_SIZE_NORMAL
-	one_hand_penalty = 0
+/obj/item/gun/energy/particle/railgun
+	name = "mantid flechette rifle"
+	desc = "A viciously pronged rifle-like weapon."
+	icon = 'icons/obj/guns/skrell_rifle.dmi'
+	icon_state = "skrell_rifle"
+	item_state = "skrell_rifle"
+	force = 30
+	max_shots = 6
+	charge_cost = 50
+	burst = 1
+	fire_delay = 10
+	move_delay = 5
+	projectile_type = /obj/item/projectile/bullet/magnetic/flechette
+	firemodes = list(
+		list(mode_name="lethal", projectile_type = /obj/item/projectile/bullet/magnetic/flechette)
+		)
+
+	bulk = GUN_BULK_RIFLE + 3
+	one_hand_penalty = 7
+
+/obj/item/projectile/beam/particle
+	name = "particle lance"
+	icon_state = "particle"
+	damage = 35
+	armor_penetration = 50
+	fire_sound= 'sound/weapons/laser3.ogg'
+	muzzle_type = /obj/effect/projectile/laser_particle/muzzle
+	tracer_type = /obj/effect/projectile/laser_particle/tracer
+	impact_type = /obj/effect/projectile/laser_particle/impact
+	penetration_modifier = 0.5
+
+/obj/item/projectile/beam/particle/small
+	name = "particle beam"
+	damage = 20
+	armor_penetration = 20
+	fire_sound= 'sound/weapons/scan.ogg'
+	penetration_modifier = 0.3
 
 /obj/item/gun/energy/particle/on_update_icon()
 	. = ..()
@@ -98,14 +135,21 @@
 					return overlay_image('icons/mob/species/nabber/onmob_righthand_particle_rifle.dmi', item_state_slots[slot_r_hand_str], color, RESET_COLOR)
 	. = ..(user, slot)
 
+/*
 /obj/item/gun/magnetic/railgun/flechette/ascent
-	name = "mantid flechette rifle"
-	desc = "A viciously pronged rifle-like weapon."
+	one_hand_penalty = 7
+	fire_delay = 10
+	slowdown_held = 1
+	slowdown_worn = 1
+	removable_components = FALSE
 	has_safety = FALSE
 	cell = /obj/item/cell/mantid
 	capacitor = /obj/item/stock_parts/capacitor/super
-	one_hand_penalty = 6
-	var/charge_per_shot = 10
+	load_type = /obj/item/magnetic_ammo/skrell
+	loaded = /obj/item/magnetic_ammo/skrell/ascent
+	projectile_type = /obj/item/projectile/bullet/magnetic/flechette
+	slot_flags = SLOT_BACK
+	power_cost = 100
 	var/global/list/species_can_use = list(
 		SPECIES_MANTID_ALATE,
 		SPECIES_MANTID_GYNE,
@@ -124,18 +168,6 @@
 		if(!istype(user) || !(user.species.get_bodytype(user) in species_can_use))
 			return FALSE
 
-/obj/item/gun/magnetic/railgun/flechette/ascent/get_cell()
-	if(isrobot(loc) || istype(loc, /obj/item/rig_module))
-		return loc.get_cell()
-
-/obj/item/gun/magnetic/railgun/flechette/ascent/show_ammo(var/mob/user)
-	var/obj/item/cell/cell = get_cell()
-	to_chat(user, "<span class='notice'>There are [cell ? Floor(cell.charge/charge_per_shot) : 0] shot\s remaining.</span>")
-
-/obj/item/gun/magnetic/railgun/flechette/ascent/check_ammo()
-	var/obj/item/cell/cell = get_cell()
-	return cell && cell.charge >= charge_per_shot
-
-/obj/item/gun/magnetic/railgun/flechette/ascent/use_ammo()
-	var/obj/item/cell/cell = get_cell()
-	if(cell) cell.use(charge_per_shot)
+/obj/item/magnetic_ammo/skrell/ascent
+	projectile_name = "flechette"
+*/

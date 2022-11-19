@@ -287,6 +287,10 @@
 	},
 /turf/space/bluespace,
 /area/space)
+"Or" = (
+/obj/effect/shuttle_landmark/transit/lovely,
+/turf/space,
+/area/space)
 "Pr" = (
 /obj/effect/shuttle_landmark/escape_pod/out/pod6,
 /turf/space,
@@ -31073,7 +31077,7 @@ Vj
 Vj
 Vj
 Vj
-Vj
+Or
 Vj
 Vj
 Vj

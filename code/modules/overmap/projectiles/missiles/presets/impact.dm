@@ -6,11 +6,11 @@
 
 	equipment = list(
 		/obj/item/missile_equipment/thruster,
-		/obj/item/missile_equipment/autoarm
+		/obj/item/missile_equipment/autoarm/impact
 	)
 
 	// how many pieces of dense objects can this missile still punch through
-	var/inertia = 4
+	var/inertia = 15
 
 // This doesn't have a detonation mechanism, it simply punches through hulls.
 // Note if changing the equipment list: this overrides Bump, so detonate() and thus on_trigger() isn't called on the equipment
@@ -23,10 +23,10 @@
 		if(istype(obstacle, /obj/effect/shield))
 			inertia = 0
 		else
-			qdel(obstacle)
+			obstacle.ex_act(1)
 			inertia--
 
 		if(!inertia)
 			walk(src, 0)
-			active = FALSE
 			qdel(src)
+			log_and_message_admins("An impact missile reached it's destignation (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[obstacle.x];Y=[obstacle.y];Z=[obstacle.z]'>JMP</a>)")
