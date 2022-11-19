@@ -6,6 +6,14 @@
 	pixel_x = -16
 	layer = ABOVE_HUMAN_LAYER
 
+/obj/structure/flora/tree/attackby(obj/item/W, mob/user)
+	if( istype(W,/obj/item/material/hatchet) )
+		visible_message("<span class='notice'>\The [user] starts chopping \the [src]</span>")
+		if( do_after(user, 50) )
+			visible_message("<span class='notice'>\The [user] cutted \the [src]!</span>")
+			new /obj/item/stack/material/wood/ten(get_turf(src))
+			qdel(src)
+
 /obj/structure/flora/tree/pine
 	name = "pine tree"
 	icon = 'icons/obj/flora/pinetrees.dmi'

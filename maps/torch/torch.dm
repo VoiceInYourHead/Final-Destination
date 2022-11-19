@@ -180,6 +180,7 @@
 	#include "../away/mininghome/mininghome.dm"
 	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/scavver_alt/scavver_gantry_alt.dm"
+	#include "../away/stranded/stranded.dm"
 
 	#define using_map_DATUM /datum/map/torch
 

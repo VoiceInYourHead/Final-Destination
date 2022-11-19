@@ -150,3 +150,9 @@
 /obj/screen/fullscreen/pain
 	icon_state = "brutedamageoverlay6"
 	alpha = 0
+
+/obj/screen/fullscreen/snowstorm
+	icon = 'maps/away/stranded/weather.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "snowfall_heavy_old"
+	alpha = 25

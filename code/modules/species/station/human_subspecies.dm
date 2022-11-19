@@ -29,7 +29,7 @@
 	. = ..()
 	if(.)
 		return H.skill_check(SKILL_HAULING, SKILL_EXPERT) //Hard for them to swim
-	
+
 /datum/species/human/spacer
 	name = SPECIES_SPACER
 	name_plural = "Space-Adapted Humans"
