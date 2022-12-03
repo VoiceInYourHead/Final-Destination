@@ -12,3 +12,15 @@
 
 /obj/structure/missile/nuke/attackby(var/obj/item/I, var/mob/user)// :)
 	return
+
+// Nuclear, for specific uses and admin shittery.
+/obj/structure/missile/nuke/doomsday
+	name = "doomsday missile"
+	overmap_name = "ballistic missile"
+	desc = "Start praying."
+
+	equipment = list(
+		/obj/item/missile_equipment/thruster/point,
+		/obj/item/missile_equipment/autoarm,
+		/obj/item/missile_equipment/payload/nuclear/doomsday
+	)

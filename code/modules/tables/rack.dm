@@ -36,3 +36,8 @@
 
 /obj/structure/table/rack/dark
 	color = COLOR_GRAY40
+	material = MATERIAL_STEEL_A //несусветный костыль но чё поделать((
+
+/obj/structure/table/rack/dark/on_update_icon()
+	color = COLOR_GRAY40
+	alpha = 255

@@ -19,7 +19,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/merc
 	name = "Cyclopes"
-	desc = "An older model cargo shuttle with a number of visible modifications. The hull plating is deflecting attempts at more thorough scans."
+	desc = "An older model cargo shuttle with a number of visible modifications. The hull plating is deflecting attempts at more through scans."
 	shuttle = "Cyclopes"
 	fore_dir = NORTH
 	vessel_size = SHIP_SIZE_SMALL

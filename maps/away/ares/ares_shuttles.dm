@@ -1,12 +1,12 @@
 /obj/effect/overmap/visitable/ship/landable/ares
-	name = "GML Ares"
+	name = "GMMV Ares"
 	shuttle = "Ares"
-	desc = "Sensor array is detecting a mining vessel, property of Grayson Manufactories Ltd."
+	desc = "Sensor array is detecting a small mining vessel, property of Grayson Manufactories Ltd."
 	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
-	skill_needed = SKILL_ADEPT
+	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
 	color = "#6e0000"
@@ -27,7 +27,6 @@
 
 /datum/shuttle/autodock/overmap/ares
 	name = "Ares"
-	warmup_time = 3
 	range = 1
 	shuttle_area = list(/area/ship/ares/bridge, /area/ship/ares/interior, /area/ship/ares/kitchen, /area/ship/ares/bar, /area/ship/ares/mess_hall, /area/ship/ares/eng, /area/ship/ares/cargo, /area/ship/ares/mining, /area/ship/ares/janitor)
 	defer_initialisation = TRUE

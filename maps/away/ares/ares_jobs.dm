@@ -1,4 +1,4 @@
-#define WEBHOOK_SUBMAP_LOADED_ARES "webhook_submap_ascent_fighter"
+#define WEBHOOK_SUBMAP_LOADED_ARES "webhook_submap_ares"
 
 // Submap datum and archetype.
 /decl/webhook/submap_loaded/ares
@@ -11,6 +11,7 @@
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ARES
 
 /decl/hierarchy/outfit/job/cargo/mining/ares
+	uniform = /obj/item/clothing/under/grayson
 	pda_type = null
 	l_ear = null
 
@@ -29,7 +30,7 @@
 	)
 
 /datum/job/submap/ares_cyborg
-	title = "corporate bot"
+	title = "Corporate Bot"
 	total_positions = 1
 	supervisors = "your laws and corporate miners"
 	minimal_player_age = 7
@@ -57,7 +58,7 @@
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/ares/cyborg
-	name = "corporate bot"
+	name = "Corporate Bot"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 #undef WEBHOOK_SUBMAP_LOADED_ARES

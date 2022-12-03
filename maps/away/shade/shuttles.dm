@@ -1,11 +1,11 @@
 /obj/effect/overmap/visitable/ship/landable/shade
-	name = "GML Shade"
+	name = "GMMV Shade"
 	shuttle = "Shade"
 	desc = "Sensor array is detecting a small mining vessel, property of Grayson Manufactories Ltd."
 	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
-	vessel_mass = 3500
+	vessel_mass = 3000
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = NORTH
@@ -25,7 +25,6 @@
 
 /datum/shuttle/autodock/overmap/shade
 	name = "Shade"
-	warmup_time = 3
 	range = 1
 	shuttle_area = /area/ship/shade
 	defer_initialisation = TRUE

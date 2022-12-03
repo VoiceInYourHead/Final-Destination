@@ -160,6 +160,7 @@
 	#include "../away/ascent_fighter/_fighter.dm"
 	#include "../away/ascent_interceptor2/_interceptor.dm"
 	#include "../away/ascent_gunboat/_gunboat.dm"
+	#include "../away/glasburg/_glasburg.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
 	#include "../away/smugglers_ship/_smuggler.dm"
 	#include "../away/smugglers/smugglers.dm"
