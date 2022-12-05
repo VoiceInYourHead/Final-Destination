@@ -165,14 +165,10 @@ scarves
 /******
 ribbons
 ******/
-/obj/item/clothing/accessory/ribbon
-	on_rolled_down = ACCESSORY_ROLLED_NONE
-
 /obj/item/clothing/accessory/ribbon/solgov
 	name = "ribbon"
 	desc = "A military decoration. This one seems to be blank."
 	icon_state = "ribbon_marksman"
-	on_rolled_down = ACCESSORY_ROLLED_NONE
 	slot = ACCESSORY_SLOT_MEDAL
 	icon = 'maps/torch/icons/obj/obj_accessories_solgov.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'maps/torch/icons/mob/onmob_accessories_solgov.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/onmob_accessories_solgov.dmi')
