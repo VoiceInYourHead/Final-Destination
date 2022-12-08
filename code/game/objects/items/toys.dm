@@ -791,6 +791,12 @@
 	icon_state = "kittenplushie"
 
 
+/obj/item/toy/plushie/pig
+	name = "piggy plush"
+	desc = "A plushie of a funny little piggy! Watch as it oink's it's way right into your heart."
+	icon_state = "pigplushie"
+
+
 /obj/item/toy/plushie/lizard
 	name = "lizard plush"
 	desc = "A plushie of a scaly lizard! Very controversial, after being accused as \"racist\" by some Unathi."

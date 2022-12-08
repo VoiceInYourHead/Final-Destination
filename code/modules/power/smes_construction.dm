@@ -28,6 +28,7 @@
 // 500% Charge Capacity, 40% I/O Capacity. Holds a lot of energy, but charges slowly if not combined with other coils. Ideal for backup storage.
 /obj/item/stock_parts/smes_coil/super_capacity
 	name = "superconductive capacitance coil"
+	icon_state = "smes_coil_cap"
 	desc = "Specialised version of standard superconductive magnetic coil. This one has significantly stronger containment field, allowing for significantly larger power storage. It's IO rating is much lower, however."
 	ChargeCapacity = 250 KILOWATTS
 	IOCapacity = 100 KILOWATTS
@@ -35,6 +36,7 @@
 // 40% Charge Capacity, 500% I/O Capacity. Technically turns SMES into large super capacitor. Ideal for shields.
 /obj/item/stock_parts/smes_coil/super_io
 	name = "superconductive transmission coil"
+	icon_state = "smes_coil_io"
 	desc = "Specialised version of standard superconductive magnetic coil. While this one won't store almost any power, it rapidly transfers power, making it useful in systems which require large throughput."
 	ChargeCapacity = 20 KILOWATTS
 	IOCapacity = 1.25 MEGAWATTS
@@ -43,8 +45,8 @@
 /obj/item/stock_parts/smes_coil/advanced
 	name = "advanced magnetic coil"
 	desc = " An advanced magnetic coil made from rare materials. Can store and transfer more power than any previous designs."
-	ChargeCapacity = 500 KILOWATTS
-	IOCapacity = 2.5 MEGAWATTS
+	ChargeCapacity = 320 KILOWATTS
+	IOCapacity = 1.5 MEGAWATTS
 
 
 // DEPRECATED
