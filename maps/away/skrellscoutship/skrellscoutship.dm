@@ -251,6 +251,8 @@
 	light_type = /obj/item/light/tube/skrell
 	desc = "Some kind of strange alien lighting technology."
 
+/obj/machinery/light/skrell/invisible
+	invisibility = 101
 
 /obj/item/light/tube/skrell
 	name = "skrellian light filament"

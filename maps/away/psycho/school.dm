@@ -71,7 +71,6 @@
 /obj/effect/submap_landmark/spawnpoint/camp/cook
 	name = "Cook"
 
-
 /datum/map_template/ruin/away_site/camp
 	name = "Jungle Planet"
 	id = "awaysite_camp"

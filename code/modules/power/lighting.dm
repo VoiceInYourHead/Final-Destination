@@ -190,6 +190,9 @@
 	/// The light's current lighting mode. One of `LIGHTMODE_*`.
 	var/current_mode = null
 
+/obj/machinery/light/invisible
+	invisibility = 101
+
 /obj/machinery/light/get_color()
 	return lightbulb ? lightbulb.get_color() : null
 
