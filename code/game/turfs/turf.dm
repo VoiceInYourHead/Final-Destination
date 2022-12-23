@@ -40,6 +40,9 @@
 	/// List of 'dangerous' objs that the turf holds that can cause something bad to happen when stepped on, used for AI mobs.
 	var/list/dangerous_objects
 
+	/// Reference to the turf fire on the turf
+	var/obj/effect/turf_fire/turf_fire
+
 	var/has_dense_atom
 	var/has_opaque_atom
 
@@ -455,3 +458,6 @@ var/const/enterloopsanity = 100
 	else
 		has_dense_atom = null
 		has_opaque_atom = null
+
+/turf/proc/IgniteTurf(power, fire_colour)
+	return

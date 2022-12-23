@@ -26,6 +26,8 @@
 	var/alpha = 255
 	var/flags = 0
 	var/hidden_from_codex
+	var/accelerant_quality = 0
+	var/fire_colour = null //In case this reagent would burn a cool different colour
 
 	var/glass_icon = DRINK_ICON_DEFAULT
 	var/glass_name = "something"

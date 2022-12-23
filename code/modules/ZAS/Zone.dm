@@ -1,42 +1,31 @@
 /*
-
 Overview:
 	Each zone is a self-contained area where gas values would be the same if tile-based equalization were run indefinitely.
 	If you're unfamiliar with ZAS, FEA's air groups would have similar functionality if they didn't break in a stiff breeze.
-
 Class Vars:
 	name - A name of the format "Zone [#]", used for debugging.
 	invalid - True if the zone has been erased and is no longer eligible for processing.
 	needs_update - True if the zone has been added to the update list.
 	edges - A list of edges that connect to this zone.
 	air - The gas mixture that any turfs in this zone will return. Values are per-tile with a group multiplier.
-
 Class Procs:
 	add(turf/simulated/T)
 		Adds a turf to the contents, sets its zone and merges its air.
-
 	remove(turf/simulated/T)
 		Removes a turf, sets its zone to null and erases any gas graphics.
 		Invalidates the zone if it has no more tiles.
-
 	c_merge(zone/into)
 		Invalidates this zone and adds all its former contents to into.
-
 	c_invalidate()
 		Marks this zone as invalid and removes it from processing.
-
 	rebuild()
 		Invalidates the zone and marks all its former tiles for updates.
-
 	add_tile_air(turf/simulated/T)
 		Adds the air contained in T.air to the zone's air supply. Called when adding a turf.
-
 	tick()
 		Called only when the gas content is changed. Archives values and changes gas graphics.
-
 	dbg_data(mob/M)
 		Sends M a printout of important figures for the zone.
-
 */
 
 
@@ -45,14 +34,12 @@ Class Procs:
 	var/invalid = 0
 	var/list/contents = list()
 	var/list/fire_tiles = list()
-	var/list/fuel_objs = list()
 	var/needs_update = 0
 	var/list/edges = list()
 	var/datum/gas_mixture/air = new
 	var/list/graphic_add = list()
 	var/list/graphic_remove = list()
 	var/last_air_temperature = TCMB
-	var/firelevel = 0
 
 /zone/New()
 	SSair.add_zone(src)
@@ -71,11 +58,9 @@ Class Procs:
 	add_tile_air(turf_air)
 	T.zone = src
 	contents.Add(T)
-	if(T.fire)
-		var/obj/effect/decal/cleanable/liquid_fuel/fuel = locate() in T
+	if(T.hotspot)
 		fire_tiles.Add(T)
 		SSair.active_fire_zones |= src
-		if(fuel) fuel_objs += fuel
 	T.update_graphic(air.graphic)
 
 /zone/proc/remove(turf/simulated/T)
@@ -87,9 +72,6 @@ Class Procs:
 #endif
 	contents.Remove(T)
 	fire_tiles.Remove(T)
-	if(T.fire)
-		var/obj/effect/decal/cleanable/liquid_fuel/fuel = locate() in T
-		fuel_objs -= fuel
 	T.zone = null
 	T.update_graphic(graphic_remove = air.graphic)
 	if(contents.len)
@@ -147,7 +129,7 @@ Class Procs:
 /zone/proc/tick()
 
 	// Update fires.
-	if(air.temperature >= PHORON_FLASHPOINT && !(src in SSair.active_fire_zones) && length(contents) && air.check_combustability())
+	if(air.temperature >= PHORON_FLASHPOINT && !(src in SSair.active_fire_zones) && air.check_combustability() && contents.len)
 		var/turf/T = pick(contents)
 		if(istype(T))
 			T.create_fire(vsc.fire_firelevel_multiplier)

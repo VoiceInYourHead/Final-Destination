@@ -407,146 +407,61 @@
 	color = WOOD_COLOR_RICH
 	pew_material = MATERIAL_MAHOGANY
 
-/obj/structure/bed/chair/sofa
-	name = "sofa"
-	icon = 'icons/obj/sofas.dmi'
-	icon_state = "sofamiddle"
-	anchored = 1
-	buckle_lying = 0
+//INF FILE
+/obj/structure/bed/sofa
+	name = "leather sofa"
+	desc = "A wide and comfy sofa - no one assistant was ate by it due production! It's made of steel and covered with synthetic leather."
+	icon = 'icons/fd/structures/furniture.dmi'
+	icon_state = "sofa_right"
 	buckle_dir = 0
-	var/material/sofa_material = MATERIAL_CARPET
+	buckle_lying = 0
 
-/obj/structure/bed/chair/sofa/left
-	icon_state = "sofaend_left"
+/obj/structure/bed/sofa/left
+	icon_state = "sofa_left"
 
-/obj/structure/bed/chair/sofa/New(var/newloc)
-	..(newloc, sofa_material)
+/obj/structure/bed/sofa/New(var/newloc)
+	base_icon = icon_state
+	..(newloc,MATERIAL_LEATHER_GENERIC)
 
-//color variations
+/obj/structure/bed/sofa/post_buckle_mob()
+	update_icon()
+	return ..()
 
-/obj/structure/bed/chair/sofa/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, MATERIAL_LEATHER_GENERIC)
+/obj/structure/bed/sofa/on_update_icon()
+	overlays.Cut()
+	var/image/I = image(src, "[base_icon]_over")
+//	I.plane = ABOVE_HUMAN_PLANE
+	I.layer = ABOVE_HUMAN_LAYER
+	overlays |= I
+	if(buckled_mob)
+		var/image/D = image(src, "[base_icon]_armrest")
+//		D.plane = ABOVE_HUMAN_PLANE
+		D.layer = ABOVE_HUMAN_LAYER
+		overlays |= D
 
-/obj/structure/bed/chair/sofa/teal
-	color = "teal"
+/obj/structure/bed/sofa/black
+	icon_state = "couchblack_middle"
 
-/obj/structure/bed/chair/sofa/black
-	color = "black"
+/obj/structure/bed/sofa/black/left
+	icon_state = "couchblack_left"
 
-/obj/structure/bed/chair/sofa/green
-	color = "green"
+/obj/structure/bed/sofa/black/right
+	icon_state = "couchblack_right"
 
-/obj/structure/bed/chair/sofa/purp
-	color = "purple"
+/obj/structure/bed/sofa/beige
+	icon_state = "couchbeige_middle"
 
-/obj/structure/bed/chair/sofa/blue
-	color = "blue"
+/obj/structure/bed/sofa/beige/left
+	icon_state = "couchbeige_left"
 
-/obj/structure/bed/chair/sofa/beige
-	sofa_material = "beige"
+/obj/structure/bed/sofa/beige/right
+	icon_state = "couchbeige_right"
 
-/obj/structure/bed/chair/sofa/lime
-	color = "lime"
+/obj/structure/bed/sofa/brown
+	icon_state = "couchbrown_middle"
 
-/obj/structure/bed/chair/sofa/yellow
-	color = "yellow"
+/obj/structure/bed/sofa/brown/left
+	icon_state = "couchbrown_left"
 
-//sofa directions
-
-/obj/structure/bed/chair/sofa/corner/New()
-	..()
-	buckle_dir = SOUTH
-
-/obj/structure/bed/chair/sofa/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/brown/left
-	icon_state = "sofaend_left"
-
-
-/obj/structure/bed/chair/sofa/brown/right
-	icon_state = "sofaend_right"
-
-
-/obj/structure/bed/chair/sofa/brown/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/teal/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/teal/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/teal/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/black/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/black/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/black/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/green/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/green/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/green/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/purp/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/purp/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/purp/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/blue/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/blue/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/blue/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/beige/left
-	icon_state = "sofaend_left"
-
-
-/obj/structure/bed/chair/sofa/beige/right
-	icon_state = "sofaend_right"
-
-
-/obj/structure/bed/chair/sofa/beige/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/lime/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/lime/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/lime/corner
-	icon_state = "sofacorner"
-
-/obj/structure/bed/chair/sofa/yellow/left
-	icon_state = "sofaend_left"
-
-/obj/structure/bed/chair/sofa/yellow/right
-	icon_state = "sofaend_right"
-
-/obj/structure/bed/chair/sofa/yellow/corner
-	icon_state = "sofacorner"
+/obj/structure/bed/sofa/brown/right
+	icon_state = "couchbrown_right"

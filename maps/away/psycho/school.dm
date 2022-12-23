@@ -27,7 +27,6 @@
 
 /decl/hierarchy/outfit/job/psionic
 	name = OUTFIT_JOB_NAME("Camp Psionic")
-	uniform = /obj/item/clothing/under/space
 	id_types = null
 	pda_type = null
 

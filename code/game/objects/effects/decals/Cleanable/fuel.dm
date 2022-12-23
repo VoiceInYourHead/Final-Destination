@@ -26,7 +26,7 @@
 			amount *= 0.75
 
 
-/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel
+/*/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel
 	icon_state = "mustard"
 	anchored = FALSE
 
@@ -48,7 +48,7 @@
 			new/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(O,amount*0.25,d)
 			O.hotspot_expose((T20C*2) + 380,500) //Light flamethrower fuel on fire immediately.
 
-	amount *= 0.25
+	amount *= 0.25*/
 
 /obj/effect/decal/cleanable/liquid_fuel/Initialize(mapload, amt=1, nologs=FALSE)
 	if(!nologs && !mapload)

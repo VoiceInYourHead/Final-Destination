@@ -1,64 +1,47 @@
 /*
-
 Overview:
 	The air controller does everything. There are tons of procs in here.
-
 Class Vars:
 	zones - All zones currently holding one or more turfs.
 	edges - All processing edges.
-
 	tiles_to_update - Tiles scheduled to update next tick.
 	zones_to_update - Zones which have had their air changed and need air archival.
 	active_hotspots - All processing fire objects.
-
 	active_zones - The number of zones which were archived last tick. Used in debug verbs.
 	next_id - The next UID to be applied to a zone. Mostly useful for debugging purposes as zones do not need UIDs to function.
-
 Class Procs:
-
 	mark_for_update(turf/T)
 		Adds the turf to the update list. When updated, update_air_properties() will be called.
 		When stuff changes that might affect airflow, call this. It's basically the only thing you need.
-
 	add_zone(zone/Z) and remove_zone(zone/Z)
 		Adds zones to the zones list. Does not mark them for update.
-
 	air_blocked(turf/A, turf/B)
 		Returns a bitflag consisting of:
 		AIR_BLOCKED - The connection between turfs is physically blocked. No air can pass.
 		ZONE_BLOCKED - There is a door between the turfs, so zones cannot cross. Air may or may not be permeable.
-
 	has_valid_zone(turf/T)
 		Checks the presence and validity of T's zone.
 		May be called on unsimulated turfs, returning 0.
-
 	merge(zone/A, zone/B)
 		Called when zones have a direct connection and equivalent pressure and temperature.
 		Merges the zones to create a single zone.
-
 	connect(turf/simulated/A, turf/B)
 		Called by turf/update_air_properties(). The first argument must be simulated.
 		Creates a connection between A and B.
-
 	mark_zone_update(zone/Z)
 		Adds zone to the update list. Unlike mark_for_update(), this one is called automatically whenever
 		air is returned from a simulated turf.
-
 	equivalent_pressure(zone/A, zone/B)
 		Currently identical to A.air.compare(B.air). Returns 1 when directly connected zones are ready to be merged.
-
 	get_edge(zone/A, zone/B)
 	get_edge(zone/A, turf/B)
 		Gets a valid connection_edge between A and B, creating a new one if necessary.
-
 	has_same_air(turf/A, turf/B)
 		Used to determine if an unsimulated edge represents a specific turf.
 		Simulated edges use connection_edge/contains_zone() for the same purpose.
 		Returns 1 if A has identical gases and temperature to B.
-
 	remove_edge(connection_edge/edge)
 		Called when an edge is erased. Removes it from processing.
-
 */
 
 SUBSYSTEM_DEF(air)
@@ -87,9 +70,6 @@ SUBSYSTEM_DEF(air)
 	var/active_zones = 0
 	var/next_id = 1
 
-	var/active_edges_firelimit = 20
-	var/times_failed_to_calc_firelevel = 0
-
 /datum/controller/subsystem/air/proc/reboot()
 	// Stop processing while we rebuild.
 	can_fire = FALSE
@@ -114,55 +94,45 @@ SUBSYSTEM_DEF(air)
 	active_edges.Cut()
 
 	// Re-run setup without air settling.
-	Initialize(REALTIMEOFDAY, simulate = FALSE)
+	Initialize(REALTIMEOFDAY, FALSE)
 
 	// Update next_fire so the MC doesn't try to make up for missed ticks.
 	next_fire = world.time + wait
 	can_fire = TRUE
 
-/datum/controller/subsystem/air/stat_entry(text, force)
-	IF_UPDATE_STAT
-		force = TRUE
-		text = {"\
-			[text] | \
-			TtU: [tiles_to_update.len] \
-			ZtU: [zones_to_update.len] \
-			AFZ: [active_fire_zones.len] \
-			AH: [active_hotspots.len] \
-			AE: [active_edges.len]\
-		"}
-	..(text, force)
 
-/datum/controller/subsystem/air/Initialize(timeofday, simulate = TRUE)
+/datum/controller/subsystem/air/UpdateStat(time)
+	if (PreventUpdateStat(time))
+		return ..()
+	..({"\
+		TtU: [tiles_to_update.len] \
+		ZtU: [zones_to_update.len] \
+		AFZ: [active_fire_zones.len] \
+		AH: [active_hotspots.len] \
+		AE: [active_edges.len]\
+	"})
 
-	var/starttime = REALTIMEOFDAY
+
+/datum/controller/subsystem/air/Initialize(start_uptime, simulate = TRUE)
 	report_progress("Processing Geometry...")
-
 	var/simulated_turf_count = 0
 	for(var/turf/simulated/S)
 		simulated_turf_count++
 		S.update_air_properties()
-
 		CHECK_TICK
-
 	report_progress({"Total Simulated Turfs: [simulated_turf_count]
 Total Zones: [zones.len]
 Total Edges: [edges.len]
 Total Active Edges: [active_edges.len ? "<span class='danger'>[active_edges.len]</span>" : "None"]
 Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_count]
+Geometry processing completed in [(REALTIMEOFDAY - start_uptime)/10] seconds!
 "})
-
-	report_progress("Geometry processing completed in [(REALTIMEOFDAY - starttime)/10] seconds!")
-
 	if (simulate)
 		report_progress("Settling air...")
-
-		starttime = REALTIMEOFDAY
+		start_uptime = REALTIMEOFDAY
 		fire(FALSE, TRUE)
+		report_progress("Air settling completed in [(REALTIMEOFDAY - start_uptime)/10] seconds!")
 
-		report_progress("Air settling completed in [(REALTIMEOFDAY - starttime)/10] seconds!")
-
-	..(timeofday)
 
 /datum/controller/subsystem/air/fire(resumed = FALSE, no_mc_tick = FALSE)
 	if (!resumed)
@@ -213,16 +183,6 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 		else if (MC_TICK_CHECK)
 			return
 
-	var/halt_firelevel_calculations = 0
-	if(tick_usage * world.tick_lag > Master.current_ticklimit || length(processing_edges) > active_edges_firelimit)
-		halt_firelevel_calculations = 1
-		times_failed_to_calc_firelevel++
-		if(times_failed_to_calc_firelevel > 60)
-			active_edges_firelimit += 5
-			times_failed_to_calc_firelevel = 0
-	else
-		times_failed_to_calc_firelevel = 0
-
 	while (curr_defer.len)
 		var/turf/T = curr_defer[curr_defer.len]
 		curr_defer.len--
@@ -261,12 +221,6 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 	while (curr_fire.len)
 		var/zone/Z = curr_fire[curr_fire.len]
 		curr_fire.len--
-		if(halt_firelevel_calculations)
-			if(length(Z.fire_tiles) && !Z.firelevel)
-				Z.firelevel = vsc.fire_firelevel_multiplier
-		else
-			Z.calculate_fire_level()
-
 
 		Z.process_fire()
 
@@ -276,7 +230,7 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 			return
 
 	while (curr_hotspot.len)
-		var/obj/fire/F = curr_hotspot[curr_hotspot.len]
+		var/obj/hotspot/F = curr_hotspot[curr_hotspot.len]
 		curr_hotspot.len--
 
 		F.Process()
