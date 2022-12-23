@@ -6,6 +6,9 @@
 	anchored = TRUE
 	density = TRUE
 
+/obj/structure/fd/placeholder/better
+	opacity = 1
+
 /obj/structure/fd/gateway
 	name = "gateway"
 	desc = "The pretty old trchnology, used in the past to transport people from place to place in few seconds."

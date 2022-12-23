@@ -182,6 +182,7 @@
 	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/scavver_alt/scavver_gantry_alt.dm"
 	#include "../away/stranded/stranded.dm"
+	#include "../away/psycho/school.dm"
 
 	#define using_map_DATUM /datum/map/torch
 
