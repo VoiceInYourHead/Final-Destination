@@ -1,18 +1,19 @@
 /obj/item/psychic_power/psiblade
 	name = "psychokinetic slash"
-	force = 10
+	force = 15
 	sharp = TRUE
 	edge = TRUE
 	maintain_cost = 1
 	icon_state = "psiblade_short"
 	item_state = "psiblade"
+	attack_cooldown = 8
 
 /obj/item/psychic_power/psiblade/master
-	force = 20
+	force = 25
 	maintain_cost = 2
 
 /obj/item/psychic_power/psiblade/master/grand
-	force = 30
+	force = 35
 	maintain_cost = 3
 	icon_state = "psiblade_long"
 

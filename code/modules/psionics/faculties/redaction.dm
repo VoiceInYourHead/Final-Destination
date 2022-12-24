@@ -25,7 +25,7 @@
 	cost =            3
 	cooldown =        30
 	use_grab =        TRUE
-	min_rank =        PSI_RANK_OPERANT
+	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
 	use_description = "Grab a patient, target the chest, then switch to help intent and use the grab on them to perform a check for wounds and damage."
 
@@ -43,7 +43,7 @@
 	cost =            7
 	cooldown =        50
 	use_melee =       TRUE
-	min_rank =        PSI_RANK_OPERANT
+	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
 	use_description = "Target a patient while on help intent at melee range to mend a variety of maladies, such as bleeding or broken bones. Higher ranks in this faculty allow you to mend a wider range of problems."
 
@@ -65,9 +65,11 @@
 		user.visible_message(SPAN_NOTICE("<i>\The [user] rests a hand on \the [target]'s [E.name]...</i>"))
 		to_chat(target, SPAN_NOTICE("A healing warmth suffuses you."))
 
+		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "green_sparkles")
+
 		var/redaction_rank = user.psi.get_rank(PSI_REDACTION)
 		var/pk_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
-		if(pk_rank >= PSI_RANK_LATENT && redaction_rank >= PSI_RANK_MASTER)
+		if(pk_rank >= PSI_RANK_LATENT && redaction_rank >= PSI_RANK_OPERANT)
 			var/removal_size = clamp(5-pk_rank, 0, 5)
 			var/valid_objects = list()
 			for(var/thing in E.implants)
@@ -84,7 +86,7 @@
 				to_chat(user, SPAN_NOTICE("You extend a tendril of psychokinetic-redactive power and carefully tease \the [removing] free of \the [E]."))
 				return TRUE
 
-		if(redaction_rank >= PSI_RANK_MASTER)
+		if(redaction_rank >= PSI_RANK_OPERANT)
 			if(E.status & ORGAN_ARTERY_CUT)
 				to_chat(user, SPAN_NOTICE("You painstakingly mend the torn veins in \the [E], stemming the internal bleeding."))
 				E.status &= ~ORGAN_ARTERY_CUT
@@ -106,7 +108,7 @@
 
 		for(var/datum/wound/W in E.wounds)
 			if(W.bleeding())
-				if(redaction_rank >= PSI_RANK_OPERANT || W.wound_damage() < 30)
+				if(redaction_rank >= PSI_RANK_APPRENTICE || W.wound_damage() < 30)
 					to_chat(user, SPAN_NOTICE("You knit together severed veins and broken flesh, stemming the bleeding."))
 					W.bleed_timer = 0
 					W.clamped = TRUE
@@ -115,12 +117,12 @@
 				else
 					to_chat(user, SPAN_NOTICE("This [W.desc] is beyond your power to heal."))
 
-		if(redaction_rank >= PSI_RANK_GRANDMASTER)
+		if(redaction_rank >= PSI_RANK_MASTER)
 			for(var/obj/item/organ/internal/I in E.internal_organs)
 				if(!BP_IS_ROBOTIC(I) && !BP_IS_CRYSTAL(I) && I.damage > 0)
 					to_chat(user, SPAN_NOTICE("You encourage the damaged tissue of \the [I] to repair itself."))
 					var/heal_rate = redaction_rank
-					I.damage = max(0, I.damage - rand(heal_rate,heal_rate*2))
+					I.damage = max(0, I.damage - rand(heal_rate,heal_rate*3))
 					return TRUE
 
 		to_chat(user, SPAN_NOTICE("You can find nothing within \the [target]'s [E.name] to mend."))
@@ -131,7 +133,7 @@
 	cost =            9
 	cooldown =        60
 	use_melee =       TRUE
-	min_rank =        PSI_RANK_GRANDMASTER
+	min_rank =        PSI_RANK_MASTER
 	suppress_parent_proc = TRUE
 	use_description = "Target a patient while on help intent at melee range to cleanse radiation and genetic damage from a patient."
 
@@ -164,7 +166,7 @@
 	cost =            25
 	cooldown =        80
 	use_grab =        TRUE
-	min_rank =        PSI_RANK_PARAMOUNT
+	min_rank =        PSI_RANK_GRANDMASTER
 	faculty =         PSI_REDACTION
 	use_description = "Obtain a grab on a dead target, target the head, then select help intent and use the grab against them to attempt to bring them back to life. The process is lengthy and failure is punished harshly."
 	admin_log = FALSE
@@ -183,6 +185,7 @@
 			return TRUE
 
 		user.visible_message(SPAN_NOTICE("<i>\The [user] splays out their hands over \the [target]'s body...</i>"))
+		new /obj/effect/temporary(get_turf(target),6, 'icons/effects/effects.dmi', "green_sparkles")
 		if(!do_after(user, 100, target))
 			user.psi.backblast(rand(10,25))
 			return TRUE
@@ -193,6 +196,7 @@
 				break
 		to_chat(target, SPAN_NOTICE("<font size = 3><b>Life floods back into your body!</b></font>"))
 		target.visible_message(SPAN_NOTICE("\The [target] shudders violently!"))
-		target.adjustOxyLoss(-rand(15,20))
+		new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "rune_convert")
+		target.adjustOxyLoss(-rand(30,45))
 		target.basic_revival()
 		return TRUE

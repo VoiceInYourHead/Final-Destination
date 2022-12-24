@@ -58,7 +58,7 @@
 	var/obj/item/bolt
 	var/tension = 0                         // Current draw on the bow.
 	var/max_tension = 3                     // Highest possible tension.
-	var/release_speed = 10                  // Speed per unit of tension.
+	var/release_speed = 13                  // Speed per unit of tension.
 	var/obj/item/cell/cell = null    // Used for firing superheated rods.
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
 	var/draw_time = 20						// Time needed to draw the bow back by one "tension"

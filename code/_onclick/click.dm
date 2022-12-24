@@ -236,7 +236,20 @@
 
 
 	if(psi)
-		INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_intent[a_intent]), A)
+		if(a_intent == I_HURT)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Cryokinesis"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Electronics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Energistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Electromagnetics"]), A)
+		if(a_intent == I_GRAB)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Manifestation"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psi-Archery"]), A)
+		if(a_intent == I_DISARM)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Consciousness"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Coercion"]), A)
+		if(a_intent == I_HELP)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Redaction"]), A)
 	return 1
 
 /*
@@ -257,12 +270,21 @@
 
 /mob/living/RangedAttack(var/atom/A, var/params)
 	if(psi)
-		INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_intent[a_intent]), A)
+		if(a_intent == I_HURT)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Energistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Psychoballistics"]), A)
+		if(a_intent == I_GRAB)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
+		if(a_intent == I_DISARM)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Coercion"]), A)
 	..()
 
 /mob/living/proc/check_psi_grab(var/obj/item/grab/grab)
 	if(psi && ismob(grab.affecting))
-		INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_intent[a_intent]), grab.affecting)
+		if(a_intent == I_DISARM)
+			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_suka["Consciousness"]), grab.affecting)
+		if(a_intent == I_HELP)
+			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_suka["Redaction"]), grab.affecting)
 
 /*
 	Restrained ClickOn

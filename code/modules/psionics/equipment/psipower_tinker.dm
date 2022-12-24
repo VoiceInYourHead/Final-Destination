@@ -1,6 +1,7 @@
 /obj/item/psychic_power/tinker
 	name = "psychokinetic crowbar"
 	icon_state = "tinker"
+	item_state = "psiblade"
 	force = 1
 	var/emulating = "Crowbar"
 

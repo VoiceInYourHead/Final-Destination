@@ -1,0 +1,46 @@
+#define WEBHOOK_SUBMAP_LOADED_SMUGGLER "webhook_submap_smuggler"
+
+// Submap datum and archetype.
+/decl/webhook/submap_loaded/smuggler
+	id = WEBHOOK_SUBMAP_LOADED_SMUGGLER
+
+/decl/submap_archetype/smuggler
+	descriptor = "Suspicious Transport Ship"
+	map = "Smuggler"
+	crew_jobs = list(/datum/job/submap/smuggler)
+	call_webhook = WEBHOOK_SUBMAP_LOADED_SMUGGLER
+
+/datum/job/submap/smuggler
+	title = "Smuggler"
+	total_positions = 5
+	supervisors = "nobody but yourself"
+	info = "You are the crewman of your small Smuggler's vessel. Keep an eye on your cargo, and avoid other ships. Pursue your goals, trade, smuggle; try not to get caught"
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	is_semi_antagonist = TRUE
+	outfit_type = /decl/hierarchy/outfit/job/smuggler
+	loadout_allowed = TRUE
+	min_skill = list(
+		SKILL_EVA = SKILL_ADEPT,
+		SKILL_HAULING = SKILL_BASIC,
+		SKILL_COMBAT = SKILL_BASIC,
+		SKILL_WEAPONS = SKILL_BASIC,
+		SKILL_PILOT = SKILL_BASIC
+	)
+
+/decl/hierarchy/outfit/job/smuggler
+	name = "Smuggler Crewman"
+	r_ear = null
+	uniform = /obj/item/clothing/under/color/black
+	r_pocket = /obj/item/material/knife/folding
+	l_pocket = /obj/item/device/flashlight/maglight
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = null
+	belt = /obj/item/gun/energy/gun/small
+	id_types = null
+	pda_type = null
+
+/obj/effect/submap_landmark/spawnpoint/smuggler
+	name = "Smuggler"
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+
+#undef WEBHOOK_SUBMAP_LOADED_SMUGGLER

@@ -282,9 +282,9 @@
 
 /datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
 	if(H.mind?.role_alt_title == "Psionic Counselor")
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_APPRENTICE)
 	if(H.mind?.role_alt_title == "Mentalist")
-		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_APPRENTICE)
 	return ..()
 
 

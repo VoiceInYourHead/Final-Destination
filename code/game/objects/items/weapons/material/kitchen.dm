@@ -18,6 +18,8 @@
 	var/loaded      //Descriptive string for currently loaded food object.
 	var/scoop_food = 1
 
+	var/broken = 0 //some psi shit and on
+
 /obj/item/material/kitchen/utensil/New()
 	..()
 	if (prob(60))
@@ -28,6 +30,16 @@
 /obj/item/material/kitchen/utensil/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(!istype(M))
 		return ..()
+
+	if(broken == 1)
+		user.visible_message("<span class='warning'>\The [src] is broken in half, you can't use it!</span>")
+		return
+
+	if(user.psi && user.a_intent == I_HURT && broken == 0)
+		to_chat(M, SPAN_NOTICE("You focus on \the [src], soon snapping it in half with your psionic powers."))
+		M.visible_message("<span class='warning'>\The [user] holds out a [src], and snaps it in half without any touching!</span>")
+		broken = 1
+		return
 
 	if(user.a_intent != I_HELP)
 		if(user.zone_sel.selecting == BP_HEAD || user.zone_sel.selecting == BP_EYES)

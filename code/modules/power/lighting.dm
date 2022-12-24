@@ -542,7 +542,7 @@
 
 		if(prot || (MUTATION_COLD_RESISTANCE in user.mutations))
 			to_chat(user, SPAN_NOTICE("You remove the [get_fitting_name()]."))
-		else if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_PSYCHOKINESIS) >= PSI_RANK_OPERANT)
+		else if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_PSYCHOKINESIS) >= PSI_RANK_APPRENTICE)
 			to_chat(user, SPAN_NOTICE("You telekinetically remove the [get_fitting_name()]."))
 		else if(user.a_intent != I_HELP)
 			var/obj/item/organ/external/hand = H.organs_by_name[user.hand ? BP_L_HAND : BP_R_HAND]

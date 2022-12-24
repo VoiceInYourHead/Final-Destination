@@ -2,73 +2,35 @@
 	id = PSI_PSYCHOKINESIS
 	name = "Psychokinesis"
 	associated_intent = I_GRAB
-	armour_types = list("melee", "bullet")
+	armour_types = list("bullet", "melee")
 
 /decl/psionic_power/psychokinesis
 	faculty = PSI_PSYCHOKINESIS
-	use_manifest = TRUE
 	use_sound = null
-
-/decl/psionic_power/psychokinesis/psiblade
-	name =            "Psiblade"
-	cost =            10
-	cooldown =        30
-	min_rank =        PSI_RANK_OPERANT
-	use_description = "Click on or otherwise activate an empty hand while on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
-	admin_log = FALSE
-
-/decl/psionic_power/psychokinesis/psiblade/invoke(var/mob/living/user, var/mob/living/target)
-	if((target && user != target) || user.a_intent != I_HURT)
-		return FALSE
-	. = ..()
-	if(.)
-		switch(user.psi.get_rank(faculty))
-			if(PSI_RANK_PARAMOUNT)
-				return new /obj/item/psychic_power/psiblade/master/grand/paramount(user, user)
-			if(PSI_RANK_GRANDMASTER)
-				return new /obj/item/psychic_power/psiblade/master/grand(user, user)
-			if(PSI_RANK_MASTER)
-				return new /obj/item/psychic_power/psiblade/master(user, user)
-			else
-				return new /obj/item/psychic_power/psiblade(user, user)
-
-/decl/psionic_power/psychokinesis/tinker
-	name =            "Tinker"
-	cost =            5
-	cooldown =        10
-	min_rank =        PSI_RANK_MASTER
-	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest a psychokinetic tool. Use it in-hand to switch between tool types."
-	admin_log = FALSE
-
-/decl/psionic_power/psychokinesis/tinker/invoke(var/mob/living/user, var/mob/living/target)
-	if((target && user != target) || user.a_intent != I_HELP)
-		return FALSE
-	. = ..()
-	if(.)
-		return new /obj/item/psychic_power/tinker(user)
 
 /decl/psionic_power/psychokinesis/telekinesis
 	name =            "Telekinesis"
-	cost =            5
-	cooldown =        10
+	cost =            10
+	cooldown =        15
 	use_ranged =      TRUE
-	use_manifest =    FALSE
-	min_rank =        PSI_RANK_GRANDMASTER
+	min_rank =        PSI_RANK_OPERANT
 	use_description = "Click on a distant target while on grab intent to manifest a psychokinetic grip. Use it manipulate objects at a distance."
 	admin_log = FALSE
 	use_sound = 'sound/effects/psi/power_used.ogg'
 	var/global/list/valid_machine_types = list(
-		/obj/machinery/door
+		/obj/machinery
 	)
 
 /decl/psionic_power/psychokinesis/telekinesis/invoke(var/mob/living/user, var/mob/living/target)
+	if((user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+		return FALSE
 	if(user.a_intent != I_GRAB)
 		return FALSE
 	. = ..()
 	if(.)
 
 		var/distance = get_dist(user, target)
-		if(distance > user.psi.get_rank(PSI_PSYCHOKINESIS))
+		if(distance > user.psi.get_rank(PSI_PSYCHOKINESIS) + 2)
 			to_chat(user, "<span class='warning'>Your telekinetic power won't reach that far.</span>")
 			return FALSE
 
@@ -90,3 +52,34 @@
 				return tk
 
 	return FALSE
+
+/decl/psionic_power/psychokinesis/gravigeddon
+	name =           "Gravigeddon"
+	cost =           60
+	cooldown =       150
+	use_ranged =     TRUE
+	use_melee =      TRUE
+	min_rank =       PSI_RANK_APPRENTICE
+	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone near you in a random direction."
+
+/decl/psionic_power/psychokinesis/gravigeddon/invoke(var/mob/living/user, var/mob/living/target)
+	if(!(user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+		return FALSE
+	. = ..()
+	if(.)
+		user.visible_message(SPAN_DANGER("\The [user] suddenly throws up their hands, as though screaming silently!"))
+		to_chat(user, SPAN_DANGER("You strike at all around you with a psionic wave, pushing them away!"))
+		var/pk_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
+		new /obj/effect/temporary(get_turf(user),9, 'icons/effects/effects.dmi', "summoning")
+		for(var/mob/living/M in range(user, user.psi.get_rank(PSI_PSYCHOKINESIS)))
+			if(M == user)
+				continue
+			if(prob(20) && iscarbon(M))
+				var/mob/living/carbon/C = M
+				if(C.can_feel_pain())
+					M.emote("scream")
+			if(!M.anchored)
+				to_chat(M, SPAN_DANGER("A violent force slams into you, pushing you away!"))
+				new /obj/effect/temporary(get_turf(M),4, 'icons/effects/effects.dmi', "smash")
+				M.throw_at(get_edge_target_turf(M, pick(GLOB.alldirs)), pk_rank*1, pk_rank*2, user)
+		return TRUE

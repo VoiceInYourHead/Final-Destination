@@ -192,9 +192,9 @@
 #define FIRE_MAX_STACKS           25
 #define FIRE_MAX_FIRESUIT_STACKS  20 // If the number of stacks goes above this firesuits won't protect you anymore. If not, you can walk around while on fire like a badass.
 
-#define THROWFORCE_SPEED_DIVISOR    5  // The throwing speed value at which the throwforce multiplier is exactly 1.
-#define THROWNOBJ_KNOCKBACK_SPEED   15 // The minumum speed of a w_class 2 thrown object that will cause living mobs it hits to be knocked back. Heavier objects can cause knockback at lower speeds.
-#define THROWNOBJ_KNOCKBACK_DIVISOR 2  // Affects how much speed the mob is knocked back with.
+#define THROWFORCE_SPEED_DIVISOR    10  // The throwing speed value at which the throwforce multiplier is exactly 1.
+#define THROWNOBJ_KNOCKBACK_SPEED   20 // The minumum speed of a w_class 2 thrown object that will cause living mobs it hits to be knocked back. Heavier objects can cause knockback at lower speeds.
+#define THROWNOBJ_KNOCKBACK_DIVISOR 3  // Affects how much speed the mob is knocked back with.
 
 // Suit sensor levels
 #define SUIT_SENSOR_OFF      0

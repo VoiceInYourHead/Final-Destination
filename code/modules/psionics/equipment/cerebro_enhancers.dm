@@ -12,8 +12,8 @@
 
 	var/operating = FALSE
 	var/list/boosted_faculties
-	var/boosted_rank = PSI_RANK_PARAMOUNT
-	var/unboosted_rank = PSI_RANK_MASTER
+	var/boosted_rank = PSI_RANK_GRANDMASTER
+	var/unboosted_rank = PSI_RANK_OPERANT
 	var/max_boosted_faculties = 3
 	var/boosted_psipower = 120
 
@@ -25,8 +25,8 @@
 	body_parts_covered = 0
 
 	max_boosted_faculties = 1
-	boosted_rank = PSI_RANK_MASTER
-	unboosted_rank = PSI_RANK_OPERANT
+	boosted_rank = PSI_RANK_OPERANT
+	unboosted_rank = PSI_RANK_APPRENTICE
 	boosted_psipower = 50
 
 /obj/item/clothing/head/helmet/space/psi_amp/Initialize()
@@ -91,7 +91,7 @@
 
 	sleep(80)
 
-	if(H.psi) 
+	if(H.psi)
 		H.psi.reset()
 
 	to_chat(H, SPAN_NOTICE("\The [src] chimes quietly as it finishes removing the slave-minds from your brain."))
