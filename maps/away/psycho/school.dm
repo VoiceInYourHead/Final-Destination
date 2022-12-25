@@ -221,3 +221,46 @@
 
 /area/psionic_school/indoor/medbay/ward4
 	name = "\improper Hospital Ward 4"
+
+// ACCESS
+/var/const/access_camp_teacher1 = "ACCESS_CAMP_TEACHER1"
+
+/datum/access/access_camp_teacher1
+	id = access_camp_teacher1
+	desc = "Teacher 1"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_camp_teacher2 = "ACCESS_CAMP_TEACHER2"
+
+/datum/access/access_camp_teacher2
+	id = access_camp_teacher2
+	desc = "Teacher 2"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_camp_teacher3 = "ACCESS_CAMP_TEACHER3"
+
+/datum/access/access_camp_teacher3
+	id = access_camp_teacher3
+	desc = "Teacher 3"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_camp_teacher4 = "ACCESS_CAMP_TEACHER4"
+
+/datum/access/access_camp_teacher4
+	id = access_camp_teacher4
+	desc = "Teacher 4"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_camp_teacher5 = "ACCESS_CAMP_TEACHER5"
+
+/datum/access/access_camp_teacher5
+	id = access_camp_teacher5
+	desc = "Teacher 5"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_camp_med = "ACCESS_CAMP_MED"
+
+/datum/access/access_camp_med
+	id = access_camp_med
+	desc = "Teacher"
+	region = ACCESS_REGION_NONE
