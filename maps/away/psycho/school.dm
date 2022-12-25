@@ -1,4 +1,4 @@
-
+#include "school_radio.dm"
 /obj/effect/overmap/visitable/sector/camp
 	name = "jungle planet"
 	desc = "An arctic planet with a small number of signatures on the surface."
@@ -26,16 +26,36 @@
 	)
 
 /decl/hierarchy/outfit/job/psionic
-	name = OUTFIT_JOB_NAME("Camp Psionic")
 	hierarchy_type = /decl/hierarchy/outfit/job/psionic
 	uniform = /obj/item/clothing/under/syndicate/tacticool
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = null
 	pda_type = null
+
+/decl/hierarchy/outfit/job/psionic/student
+	uniform = /obj/item/clothing/under/syndicate/tacticool
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_types = null
+	pda_type = null
+	back = NULL
+	l_ear = NULL
+	r_pocket = /obj/item/pen
+
+/decl/hierarchy/outfit/job/psionic/staff
+	id_types = null
+	pda_type = null
+	uniform = /obj/item/clothing/under/lawyer/black
+	shoes = /obj/item/clothing/shoes/dress
+	glasses = /obj/item/clothing/glasses/prescription
+	r_pocket = /obj/item/device/radio/map_preset/psy_school
+	l_pocket = /obj/item/device/flashlight/maglight
+	l_ear = /obj/item/device/radio/headset/map_preset/psy_school
+	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 
 /datum/job/submap/camp/psionic
 	title = "Psionic student"
 	info = "You here to learn how to beat the bad guys"
-	outfit_type = /decl/hierarchy/outfit/job/psionic
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
 	total_positions = 30
 	skill_points = 15
 
@@ -45,7 +65,7 @@
 /datum/job/submap/camp/teacher
 	title = "Psionic teacher"
 	info = "You here to teach some dumbasses how to beat bad guys and not die in progress"
-	outfit_type = /decl/hierarchy/outfit/job/psionic
+	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 3
 	skill_points = 30
 
@@ -221,6 +241,15 @@
 
 /area/psionic_school/indoor/medbay/ward4
 	name = "\improper Hospital Ward 4"
+
+/area/psionic_school/indoor/medbay/storage
+	name = "\improper Hospital Storage"
+
+/area/psionic_school/indoor/medbay/office
+	name = "\improper Phisician's Office"
+
+/area/psionic_school/indoor/tcomms
+	name = "\improper Telecommunications"
 
 // ACCESS
 /var/const/access_camp_teacher1 = "ACCESS_CAMP_TEACHER1"

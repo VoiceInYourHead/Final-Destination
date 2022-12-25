@@ -46,7 +46,7 @@
 		return
 
 	// Clear the cached values
-	ntnet_status = null
+	ntnet_status = TRUE
 	network_tag = null
 
 	if(updating)
