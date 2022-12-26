@@ -37,8 +37,8 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = null
 	pda_type = null
-	back = NULL
-	l_ear = NULL
+	back = null
+	l_ear = null
 	r_pocket = /obj/item/pen
 
 /decl/hierarchy/outfit/job/psionic/staff
