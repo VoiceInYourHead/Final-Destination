@@ -135,6 +135,7 @@
 	log_game("Z-level [name] loaded at [x],[y],[world.maxz]")
 	loaded++
 
+	SSzcopy.calculate_zstack_limits()
 	return locate(world.maxx/2, world.maxy/2, world.maxz)
 
 /datum/map_template/proc/load(turf/T, centered=FALSE)

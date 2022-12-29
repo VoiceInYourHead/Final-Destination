@@ -1,7 +1,7 @@
 #include "school_radio.dm"
 /obj/effect/overmap/visitable/sector/camp
 	name = "jungle planet"
-	desc = "An arctic planet with a small number of signatures on the surface."
+	desc = "A jungle planet with high amount of hostile xenofauna and environment."
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	icon_state = "globe"
 	color = "#6db8b8"
@@ -26,11 +26,14 @@
 	)
 
 /decl/hierarchy/outfit/job/psionic
+	backpack_overrides = null
 	hierarchy_type = /decl/hierarchy/outfit/job/psionic
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = null
 	pda_type = null
+	back = null
+	flags = OUTFIT_RESET_EQUIPMENT
 
 /decl/hierarchy/outfit/job/psionic/student
 	uniform = /obj/item/clothing/under/syndicate/tacticool
@@ -55,6 +58,7 @@
 /datum/job/submap/camp/psionic
 	title = "Psionic student"
 	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
 	total_positions = 30
 	skill_points = 15
@@ -65,6 +69,7 @@
 /datum/job/submap/camp/teacher
 	title = "Psionic teacher"
 	info = "You here to teach some dumbasses how to beat bad guys and not die in progress"
+	supervisors = "your fantasy and Void google doc."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 3
 	skill_points = 30
@@ -74,8 +79,9 @@
 
 /datum/job/submap/camp/doctor
 	title = "Doctor"
-	info = "You here to heal people, what else do you expecting?"
-	outfit_type = /decl/hierarchy/outfit/job/psionic
+	info = "You here to heal people, your'e the greatest biomant in this whole place."
+	supervisors = "the Hippocratic oath."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 1
 	skill_points = 30
 
@@ -85,7 +91,8 @@
 /datum/job/submap/camp/cook
 	title = "Cook"
 	info = "You here to cook food for people, what else do you expecting?"
-	outfit_type = /decl/hierarchy/outfit/job/psionic
+	supervisors = "your imagination."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 1
 	skill_points = 20
 
@@ -97,9 +104,8 @@
 	id = "awaysite_camp"
 	spawn_cost = 2
 	player_cost = 4
-	description = "Arctic planet with three z-lvls"
+	description = "PSY School with students and teachers. For events only."
 	suffixes = list("psycho/school-1.dmm", "psycho/school-2.dmm")
-	generate_mining_by_z = 2
 	area_usage_test_exempted_root_areas = list(/area/psionic_school)
 	apc_test_exempt_areas = list(
 		/area/psionic_school = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -133,15 +139,22 @@
 	icon_state = "centcom"
 	requires_power = 0
 	dynamic_lighting = 1
+	lighting_tone = AREA_LIGHTING_COOL
+	sound_env = LARGE_ENCLOSED
 
 /area/psionic_school/indoor
 	name = "\improper Indoor"
 	icon_state = "centcom"
 	requires_power = 0
 	dynamic_lighting = 1
+	lighting_tone = AREA_LIGHTING_WARM
 
 /area/psionic_school/indoor/library
 	name = "\improper Library"
+
+/area/psionic_school/indoor/stud_hall
+	name = "\improper Student's Hallway"
+	lighting_tone = AREA_LIGHTING_WHITE
 
 /area/psionic_school/indoor/studentsbath1
 	name = "\improper Bath 1"
@@ -151,6 +164,7 @@
 
 /area/psionic_school/indoor/toilet
 	name = "\improper Restroom"
+	lighting_tone = AREA_LIGHTING_WHITE
 
 /area/psionic_school/indoor/room1
 	name = "\improper Room 1"
@@ -200,6 +214,10 @@
 /area/psionic_school/indoor/room16
 	name = "\improper Room 16"
 
+/area/psionic_school/indoor/teacher_hall
+	name = "\improper Teacher's Hallway"
+	lighting_tone = AREA_LIGHTING_WHITE
+
 /area/psionic_school/indoor/teacherroom1
 	name = "\improper Teacher room 1"
 
@@ -216,7 +234,14 @@
 	name = "\improper Teacher room 5"
 
 /area/psionic_school/indoor/kitchen
+	name = "\improper Kitchen"
+	lighting_tone = AREA_LIGHTING_COOL
+
+/area/psionic_school/indoor/kitchen/canteen
 	name = "\improper Canteen"
+
+/area/psionic_school/indoor/gym
+	name = "\improper Gym"
 
 /area/psionic_school/indoor/class1
 	name = "\improper Classroom 1"
@@ -229,6 +254,7 @@
 
 /area/psionic_school/indoor/medbay
 	name = "\improper Hospital"
+	lighting_tone = AREA_LIGHTING_WHITE
 
 /area/psionic_school/indoor/medbay/ward1
 	name = "\improper Hospital Ward 1"
@@ -247,6 +273,7 @@
 
 /area/psionic_school/indoor/medbay/office
 	name = "\improper Phisician's Office"
+	lighting_tone = AREA_LIGHTING_WARM
 
 /area/psionic_school/indoor/tcomms
 	name = "\improper Telecommunications"

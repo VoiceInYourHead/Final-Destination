@@ -41,7 +41,7 @@
 "aO" = (/obj/structure/table/steel,/obj/machinery/light{dir = 1},/obj/item/reagent_containers/food/drinks/glass2/carafe,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward1)
 "aP" = (/obj/structure/table/steel,/obj/structure/flora/pottedplant/tropical{pixel_y = 15},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward1)
 "aQ" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward1)
-"aR" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
+"aR" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
 "aS" = (/obj/structure/curtain/medical,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/medbay/ward1)
 "aT" = (/obj/effect/floor_decal/corner/paleblue/bordercee,/obj/machinery/disposal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
 "aU" = (/obj/structure/bed/sofa/black/left{dir = 6},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/library)
@@ -55,7 +55,7 @@
 "bc" = (/obj/structure/undies_wardrobe,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/medbay/ward1)
 "bd" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/medbay/ward1)
 "be" = (/obj/structure/bed,/obj/item/toy/plushie/farwa,/obj/item/bedsheet/blue,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/medbay/ward1)
-"bf" = (/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor)
+"bf" = (/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/stud_hall)
 "bg" = (/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward1)
 "bh" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/paleblue/border{dir = 8},/obj/effect/floor_decal/corner/paleblue/border{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
 "bi" = (/obj/structure/stairs/north,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
@@ -144,8 +144,8 @@
 "cN" = (/obj/effect/floor_decal/corner/green/border{dir = 5},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/library)
 "cO" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/freezer,/area/psionic_school/indoor/toilet)
 "cP" = (/obj/structure/table/steel,/obj/machinery/light,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward1)
-"cQ" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"cR" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"cQ" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"cR" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
 "cS" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/studentsbath1)
 "cT" = (/obj/structure/closet/athletic_mixed,/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/studentsbath1)
 "cU" = (/obj/structure/table/standard,/obj/item/soap,/obj/item/haircomb/brush,/obj/item/haircomb/random,/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/studentsbath1)
@@ -178,19 +178,19 @@
 "dv" = (/obj/machinery/door/airlock/civilian,/turf/simulated/floor/tiled/freezer,/area/psionic_school/indoor/toilet)
 "dw" = (/obj/structure/table/steel,/obj/machinery/light{dir = 1},/obj/item/reagent_containers/food/drinks/glass2/carafe,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward2)
 "dx" = (/obj/structure/table/steel,/obj/structure/flora/pottedplant/flower{pixel_y = 12},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward2)
-"dy" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dz" = (/obj/effect/floor_decal/corner/green/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dA" = (/obj/machinery/light{dir = 1},/obj/effect/floor_decal/corner/green/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dB" = (/obj/effect/floor_decal/corner/green/border{dir = 5},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"dy" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"dz" = (/obj/effect/floor_decal/corner/green/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"dA" = (/obj/machinery/light{dir = 1},/obj/effect/floor_decal/corner/green/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"dB" = (/obj/effect/floor_decal/corner/green/border{dir = 5},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
 "dC" = (/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dD" = (/obj/structure/stairs/east,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"dD" = (/obj/structure/stairs/east,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
 "dE" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/medbay/ward2)
 "dF" = (/obj/structure/curtain/medical,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/medbay/ward2)
 "dG" = (/obj/structure/flora/pottedplant/decorative,/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/paleblue/border{dir = 6},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
-"dH" = (/obj/effect/floor_decal/corner/green/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dI" = (/obj/effect/floor_decal/corner/green/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dJ" = (/obj/machinery/light,/obj/effect/floor_decal/corner/green/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"dK" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"dH" = (/obj/effect/floor_decal/corner/green/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"dI" = (/obj/effect/floor_decal/corner/green/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"dJ" = (/obj/machinery/light,/obj/effect/floor_decal/corner/green/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"dK" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
 "dL" = (/obj/machinery/door/airlock/medical,/obj/effect/floor_decal/corner/paleblue/border{dir = 4},/obj/effect/floor_decal/corner/paleblue/border{dir = 8},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
 "dM" = (/obj/effect/paint_stripe/green,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/studentsbath2)
 "dN" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/studentsbath2)
@@ -255,7 +255,7 @@
 "eU" = (/obj/item/stool/wood,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/room1)
 "eV" = (/obj/effect/submap_landmark/spawnpoint/camp/psionic,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/room1)
 "eW" = (/obj/machinery/button/alternate/door/bolts{id_tag = "first_room2"; pixel_x = 28},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/room1)
-"eX" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"eX" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
 "eY" = (/obj/machinery/button/alternate/door/bolts{id_tag = "second_room2"; pixel_x = -28},/turf/simulated/floor/wood,/area/psionic_school/indoor/room2)
 "eZ" = (/obj/effect/submap_landmark/spawnpoint/camp/psionic,/turf/simulated/floor/wood,/area/psionic_school/indoor/room2)
 "fa" = (/obj/effect/floor_decal/floordetail/edgedrain{dir = 8},/obj/effect/floor_decal/corner/paleblue{dir = 6},/obj/structure/hygiene/sink{dir = 8; pixel_x = -12; pixel_y = 2},/obj/item/device/radio/intercom/department/medbay{dir = 4; pixel_x = -24},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
@@ -297,7 +297,7 @@
 "fK" = (/obj/structure/bed,/obj/item/bedsheet/brown,/turf/simulated/floor/wood,/area/psionic_school/indoor/room2)
 "fL" = (/obj/machinery/door/airlock/medical,/obj/effect/floor_decal/corner/paleblue/border{dir = 8},/obj/effect/floor_decal/corner/paleblue/border{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
 "fM" = (/obj/machinery/door/airlock/multi_tile/glass/medical,/obj/effect/floor_decal/corner/paleblue/border{dir = 10},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
-"fN" = (/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"fN" = (/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "fO" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
 "fP" = (/obj/machinery/light_switch{pixel_y = 28; on = 1; icon_state = "light1"},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
 "fQ" = (/obj/machinery/papershredder,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
@@ -330,18 +330,18 @@
 "gr" = (/obj/structure/bed/chair/comfy/blue{dir = 4},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/medbay/office)
 "gs" = (/obj/structure/table/steel_reinforced,/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/medbay/office)
 "gt" = (/obj/structure/bed/chair/office/dark{dir = 8},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
-"gu" = (/obj/structure/closet/secure_closet/medical_torchsenior{req_access = list("ACCESS_CAMP_MED")},/obj/item/storage/fancy/pencilcase,/obj/item/device/flash/advanced,/obj/item/defibrillator/compact/loaded,/obj/item/storage/backpack/satchel/med,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
+"gu" = (/obj/item/storage/fancy/pencilcase,/obj/item/device/flash/advanced,/obj/item/defibrillator/compact/loaded,/obj/structure/closet/secure_closet/medical_torchsenior{req_access = list("ACCESS_CAMP_MED")},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
 "gv" = (/obj/machinery/light/small{dir = 8},/obj/effect/floor_decal/spline/plain/white{dir = 9},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "gw" = (/obj/effect/floor_decal/spline/plain/white{dir = 1},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "gx" = (/obj/machinery/light/small{dir = 4},/obj/effect/floor_decal/spline/plain/white{dir = 5},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "gy" = (/obj/item/stool/wood,/turf/simulated/floor/carpet/purple,/area/psionic_school/indoor/room3)
 "gz" = (/obj/effect/submap_landmark/spawnpoint/camp/psionic,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/room3)
 "gA" = (/obj/machinery/button/alternate/door/bolts{id_tag = "fourth_room2"; pixel_x = 28},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/room3)
-"gB" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"gB" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
 "gC" = (/obj/machinery/button/alternate/door/bolts{id_tag = "third_room2"; pixel_x = -28},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/room4)
 "gD" = (/obj/structure/ladder/up,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "gE" = (/obj/machinery/disposal,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/room4)
-"gF" = (/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
+"gF" = (/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
 "gG" = (/obj/structure/table/steel_reinforced,/obj/item/toy/therapy_green,/obj/item/sticky_pad/random{pixel_x = -8},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/medbay/office)
 "gH" = (/obj/structure/flora/pottedplant/crystal,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
 "gI" = (/obj/machinery/light/small{dir = 1},/obj/effect/floor_decal/spline/plain/white{dir = 9},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
@@ -525,71 +525,71 @@
 "ke" = (/obj/structure/bed,/obj/item/bedsheet/brown,/turf/simulated/floor/wood/yew,/area/psionic_school/indoor/room8)
 "kf" = (/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "kg" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
-"kh" = (/obj/structure/bed/chair/padded/green,/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"ki" = (/obj/structure/bed/chair/padded/green,/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"kj" = (/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"kk" = (/obj/structure/bed/chair/padded/green,/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
+"kh" = (/obj/structure/bed/chair/padded/green,/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"ki" = (/obj/structure/bed/chair/padded/green,/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"kj" = (/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"kk" = (/obj/structure/bed/chair/padded/green,/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
 "kl" = (/obj/structure/holoplant,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
-"km" = (/obj/machinery/door/airlock/multi_tile/glass/civilian,/obj/effect/floor_decal/corner/green/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"kn" = (/obj/effect/floor_decal/corner/green/border{dir = 6},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"km" = (/obj/machinery/door/airlock/multi_tile/glass/civilian,/obj/effect/floor_decal/corner/green/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"kn" = (/obj/effect/floor_decal/corner/green/border{dir = 6},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
 "ko" = (/obj/machinery/door/airlock/civilian,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "kp" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "kq" = (/obj/structure/target_stake,/obj/item/target/syndicate,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/training)
 "kr" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "ks" = (/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/training)
 "kt" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
-"ku" = (/obj/structure/table/standard,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen)
-"kv" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 8},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"kw" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"kx" = (/obj/structure/table/standard,/obj/item/board,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen)
+"ku" = (/obj/structure/table/standard,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen/canteen)
+"kv" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 8},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"kw" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"kx" = (/obj/structure/table/standard,/obj/item/board,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen/canteen)
 "ky" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/kitchen)
-"kz" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kA" = (/obj/structure/table/woodentable_reinforced/ebony,/obj/machinery/chemical_dispenser/bar_coffee/full{pixel_y = 12},/obj/machinery/media/music_writer{anchored = 1; pixel_y = 29},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kB" = (/obj/structure/table/woodentable_reinforced/ebony,/obj/machinery/microwave{pixel_y = 12},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kC" = (/obj/structure/reagent_dispensers/water_cooler{pixel_x = 15; pixel_y = 11; density = 0},/obj/machinery/light{dir = 1},/obj/structure/bed/chair/wood/maple,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kD" = (/obj/structure/flora/pottedplant/smelly{pixel_x = 8; pixel_y = 12},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kE" = (/obj/structure/flora/pottedplant/sticky{pixel_x = 9; pixel_y = 12},/obj/structure/flora/pottedplant/unusual,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kF" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"kz" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kA" = (/obj/structure/table/woodentable_reinforced/ebony,/obj/machinery/chemical_dispenser/bar_coffee/full{pixel_y = 12},/obj/machinery/media/music_writer{anchored = 1; pixel_y = 29},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kB" = (/obj/structure/table/woodentable_reinforced/ebony,/obj/machinery/microwave{pixel_y = 12},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kC" = (/obj/structure/reagent_dispensers/water_cooler{pixel_x = 15; pixel_y = 11; density = 0},/obj/machinery/light{dir = 1},/obj/structure/bed/chair/wood/maple,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kD" = (/obj/structure/flora/pottedplant/smelly{pixel_x = 8; pixel_y = 12},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kE" = (/obj/structure/flora/pottedplant/sticky{pixel_x = 9; pixel_y = 12},/obj/structure/flora/pottedplant/unusual,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kF" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "kG" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/medbay)
 "kH" = (/obj/machinery/light{dir = 8},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "kI" = (/obj/machinery/light{dir = 4},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
-"kJ" = (/obj/structure/bed/chair/padded/green{dir = 1},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
+"kJ" = (/obj/structure/bed/chair/padded/green{dir = 1},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
 "kK" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
-"kL" = (/obj/structure/extinguisher_cabinet{pixel_x = 26},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kM" = (/obj/machinery/door/airlock/multi_tile/civilian,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kN" = (/obj/structure/table/standard,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen)
-"kO" = (/obj/structure/coatrack,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kP" = (/obj/structure/bed/sofa/black/left,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"kQ" = (/obj/structure/bed/sofa/black,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"kR" = (/obj/structure/bed/sofa/black/left{dir = 10},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"kS" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/red/border{dir = 9},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
-"kT" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"kU" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"kV" = (/obj/structure/coatrack{pixel_y = 10},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kW" = (/obj/machinery/jukebox,/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"kX" = (/obj/structure/table/woodentable/maple,/obj/machinery/recharger,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"kY" = (/obj/structure/table/woodentable/maple,/mob/living/simple_animal/passive/chick{dir = 4},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"kZ" = (/obj/structure/table/woodentable/maple,/obj/structure/bedsheetbin,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"la" = (/obj/structure/bed/sofa/black{dir = 8},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"lb" = (/obj/effect/floor_decal/corner/red/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"kL" = (/obj/structure/extinguisher_cabinet{pixel_x = 26},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kM" = (/obj/machinery/door/airlock/multi_tile/civilian,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kN" = (/obj/structure/table/standard,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen/canteen)
+"kO" = (/obj/structure/coatrack,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kP" = (/obj/structure/bed/sofa/black/left,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"kQ" = (/obj/structure/bed/sofa/black,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"kR" = (/obj/structure/bed/sofa/black/left{dir = 10},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"kS" = (/obj/effect/floor_decal/corner/red{dir = 6},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"kT" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"kU" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"kV" = (/obj/structure/coatrack{pixel_y = 10},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kW" = (/obj/machinery/jukebox,/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"kX" = (/obj/structure/table/woodentable/maple,/obj/machinery/recharger,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"kY" = (/obj/structure/table/woodentable/maple,/mob/living/simple_animal/passive/chick{dir = 4},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"kZ" = (/obj/structure/table/woodentable/maple,/obj/structure/bedsheetbin,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"la" = (/obj/structure/bed/sofa/black{dir = 8},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"lb" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "lc" = (/obj/effect/floor_decal/spline/plain/green{dir = 8},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "ld" = (/obj/effect/floor_decal/spline/plain/white{dir = 5},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "le" = (/obj/effect/floor_decal/spline/plain/white{dir = 9},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
-"lf" = (/obj/structure/table/woodentable/maple,/obj/item/storage/pill_bottle/dice_nerd,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"lg" = (/obj/structure/table/woodentable/maple,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"lh" = (/obj/structure/table/woodentable/maple,/obj/item/toy/desk/newtoncradle{pixel_x = -15; pixel_y = 12},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
+"lf" = (/obj/structure/table/woodentable/maple,/obj/item/storage/pill_bottle/dice_nerd,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"lg" = (/obj/structure/table/woodentable/maple,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"lh" = (/obj/structure/table/woodentable/maple,/obj/item/toy/desk/newtoncradle{pixel_x = -15; pixel_y = 12},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
 "li" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/class2)
-"lj" = (/obj/machinery/door/airlock/civilian,/obj/effect/floor_decal/corner/red/full,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"lj" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/stud_hall)
 "lk" = (/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "ll" = (/obj/machinery/light,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
-"lm" = (/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen)
-"ln" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"lo" = (/obj/machinery/door/airlock/multi_tile/glass/civilian,/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
+"lm" = (/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen/canteen)
+"ln" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"lo" = (/obj/machinery/door/airlock/multi_tile/glass/civilian,/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
 "lp" = (/obj/machinery/light/small{dir = 1},/obj/effect/floor_decal/spline/plain/white{dir = 1},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
-"lq" = (/obj/structure/dogbed,/mob/living/simple_animal/passive/corgi/puppy{dir = 4},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor)
-"lr" = (/obj/structure/bed/sofa/black/left{dir = 1},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"ls" = (/obj/structure/bed/sofa/black{dir = 1},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
-"lt" = (/obj/structure/bed/sofa/black{dir = 9},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor)
+"lq" = (/obj/structure/dogbed,/mob/living/simple_animal/passive/corgi/puppy{dir = 4},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/stud_hall)
+"lr" = (/obj/structure/bed/sofa/black/left{dir = 1},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"ls" = (/obj/structure/bed/sofa/black{dir = 1},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
+"lt" = (/obj/structure/bed/sofa/black{dir = 9},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/stud_hall)
 "lu" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
 "lv" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
 "lw" = (/obj/machinery/light_switch{pixel_y = 28},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
@@ -599,12 +599,12 @@
 "lA" = (/obj/effect/floor_decal/corner/green/border{dir = 5},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "lB" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/training)
 "lC" = (/obj/structure/table/steel_reinforced,/obj/item/gun/energy/laser/practice,/obj/item/gun/energy/laser/practice,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/training)
-"lD" = (/obj/structure/railing/mapped,/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"lE" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 6},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"lF" = (/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen)
+"lD" = (/obj/structure/railing/mapped,/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"lE" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 6},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"lF" = (/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen/canteen)
 "lG" = (/obj/machinery/light/small,/obj/effect/floor_decal/spline/plain/white{dir = 10},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
-"lH" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor)
-"lI" = (/obj/machinery/light,/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"lH" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/stud_hall)
+"lI" = (/obj/machinery/light,/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "lJ" = (/obj/machinery/disposal,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/room7)
 "lK" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/class2)
 "lL" = (/obj/structure/bed/chair/comfy/green{dir = 4},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/class2)
@@ -617,12 +617,12 @@
 "lS" = (/obj/effect/floor_decal/corner_techfloor_grid,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
 "lT" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 10},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
 "lU" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
-"lV" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"lV" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "lW" = (/obj/machinery/disposal,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
-"lX" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
-"lY" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen)
+"lX" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lime/diagonal,/obj/effect/floor_decal/spline/plain/paleblue{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
+"lY" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/kitchen/canteen)
 "lZ" = (/obj/machinery/light/small{dir = 8},/obj/effect/floor_decal/spline/plain/white{dir = 10},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
-"ma" = (/obj/structure/curtain/open/bed,/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor)
+"ma" = (/obj/structure/curtain/open/bed,/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/teacher_hall)
 "mb" = (/obj/structure/table/woodentable/walnut,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/class2)
 "mc" = (/obj/structure/coatrack,/turf/simulated/floor/carpet,/area/psionic_school/indoor/class2)
 "md" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
@@ -630,7 +630,7 @@
 "mf" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 6},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
 "mg" = (/obj/effect/floor_decal/corner_techfloor_grid/diagonal,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
 "mh" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 9},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/training)
-"mi" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/disposal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
+"mi" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/disposal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen/canteen)
 "mj" = (/obj/structure/table/marble,/obj/effect/floor_decal/corner/grey/diagonal,/obj/effect/floor_decal/spline/plain/green{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
 "mk" = (/obj/structure/table/marble,/obj/effect/floor_decal/spline/plain/green,/obj/effect/floor_decal/corner/grey/diagonal,/obj/effect/floor_decal/spline/plain/green{dir = 1},/obj/item/paper_bin,/obj/item/pen,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
 "ml" = (/obj/machinery/vending/cola{dir = 4},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
@@ -669,8 +669,8 @@
 "mS" = (/obj/structure/closet/secure_closet/freezer/meat,/obj/effect/floor_decal/corner/grey/diagonal,/obj/item/reagent_containers/food/snacks/meat/beef,/obj/item/reagent_containers/food/snacks/meat/beef,/obj/item/reagent_containers/food/snacks/meat/beef,/obj/item/reagent_containers/food/snacks/meat/beef,/obj/item/reagent_containers/food/snacks/meat/chicken,/obj/item/reagent_containers/food/snacks/meat/chicken,/obj/item/reagent_containers/food/snacks/meat/chicken,/obj/item/reagent_containers/food/snacks/meat/goat,/obj/item/reagent_containers/food/snacks/meat/goat,/obj/item/reagent_containers/food/snacks/meat/goat,/obj/item/reagent_containers/food/snacks/meat/goat,/obj/item/reagent_containers/food/snacks/fish/salmon,/obj/item/reagent_containers/food/snacks/fish/salmon,/obj/item/reagent_containers/food/snacks/fish/salmon,/obj/item/reagent_containers/food/snacks/fish/salmon,/obj/item/reagent_containers/food/snacks/fish/salmon,/obj/item/reagent_containers/food/snacks/fish/salmon,/obj/item/reagent_containers/food/snacks/fish/catfish,/obj/item/reagent_containers/food/snacks/fish/catfish,/obj/item/reagent_containers/food/snacks/fish/catfish,/obj/item/reagent_containers/food/snacks/fish/catfish,/obj/item/reagent_containers/food/snacks/fish/tuna,/obj/item/reagent_containers/food/snacks/fish/tuna,/obj/item/reagent_containers/food/snacks/fish/tuna,/obj/item/reagent_containers/food/snacks/fish/tuna,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
 "mT" = (/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "mU" = (/obj/effect/paint_stripe/red,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/kitchen)
-"mV" = (/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"mW" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor)
+"mV" = (/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"mW" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/teacher_hall)
 "mX" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/class2)
 "mY" = (/obj/effect/floor_decal/corner/green/diagonal,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "mZ" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
@@ -692,18 +692,18 @@
 "np" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "nq" = (/obj/structure/coatrack,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "nr" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
-"ns" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
-"nt" = (/obj/structure/noticeboard{pixel_y = 28},/obj/machinery/disposal,/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
-"nu" = (/obj/effect/floor_decal/spline/plain/orange,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nv" = (/obj/structure/sign/warning/nosmoking_1{pixel_y = 26},/obj/effect/floor_decal/spline/plain/orange,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nw" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nx" = (/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"ny" = (/obj/structure/reagent_dispensers/water_cooler{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nz" = (/obj/effect/floor_decal/corner/green/border{dir = 9},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"nA" = (/obj/effect/floor_decal/corner/green/border{dir = 5},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"ns" = (/obj/machinery/disposal,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
+"nt" = (/obj/structure/noticeboard{pixel_y = 28},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
+"nu" = (/obj/effect/floor_decal/spline/plain/orange,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nv" = (/obj/structure/sign/warning/nosmoking_1{pixel_y = 26},/obj/effect/floor_decal/spline/plain/orange,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nw" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nx" = (/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"ny" = (/obj/structure/reagent_dispensers/water_cooler{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nz" = (/obj/effect/floor_decal/corner/green/border{dir = 9},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"nA" = (/obj/effect/floor_decal/corner/green/border{dir = 5},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
 "nB" = (/obj/structure/table/woodentable/walnut,/obj/item/storage/slide_projector,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/class2)
-"nC" = (/obj/structure/table/glass,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
-"nD" = (/obj/structure/table/glass,/obj/machinery/microwave{pixel_y = 3},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
+"nC" = (/obj/structure/table/glass,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"nD" = (/obj/structure/table/glass,/obj/machinery/microwave{pixel_y = 3},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
 "nE" = (/obj/structure/bed/chair/padded/lime{dir = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
 "nF" = (/obj/structure/bed/chair/padded/lime,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
 "nG" = (/obj/structure/bed/chair/padded/lime{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
@@ -719,16 +719,16 @@
 "nQ" = (/obj/structure/table/reinforced,/obj/structure/window/basic{dir = 8},/obj/machinery/chemical_dispenser/bar_coffee/full{dir = 4},/obj/effect/floor_decal/spline/plain/green{dir = 8},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
 "nR" = (/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
 "nS" = (/obj/structure/table/marble,/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
-"nT" = (/obj/structure/sign/poster/bay_50{pixel_x = -32},/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nU" = (/obj/structure/fitness/weightlifter,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/kitchen)
-"nV" = (/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/kitchen)
-"nW" = (/obj/effect/floor_decal/spline/plain/orange{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nX" = (/obj/structure/closet/boxinggloves,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"nY" = (/obj/effect/floor_decal/corner/green/border{dir = 10},/obj/machinery/door/airlock/multi_tile/civilian,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"nZ" = (/obj/effect/floor_decal/corner/green/border,/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"oa" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 8},/obj/effect/submap_landmark/spawnpoint/camp/doctor,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"ob" = (/obj/effect/submap_landmark/spawnpoint/camp/cook,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
-"oc" = (/obj/machinery/disposal,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
+"nT" = (/obj/structure/sign/poster/bay_50{pixel_x = -32},/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nU" = (/obj/structure/fitness/weightlifter,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/gym)
+"nV" = (/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/gym)
+"nW" = (/obj/effect/floor_decal/spline/plain/orange{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nX" = (/obj/structure/closet/boxinggloves,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"nY" = (/obj/effect/floor_decal/corner/green/border{dir = 10},/obj/machinery/door/airlock/multi_tile/civilian,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"nZ" = (/obj/effect/floor_decal/corner/green/border,/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"oa" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"ob" = (/obj/effect/floor_decal/spline/fancy/black{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"oc" = (/obj/machinery/disposal,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
 "od" = (/obj/structure/table/reinforced,/obj/machinery/fabricator/micro/bartender,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
 "oe" = (/obj/effect/floor_decal/corner/grey/diagonal,/obj/effect/floor_decal/spline/plain/green{dir = 1},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
 "of" = (/obj/structure/table/reinforced,/obj/structure/window/basic{dir = 8},/obj/machinery/chemical_dispenser/bar_soft/full{dir = 4},/obj/effect/floor_decal/spline/plain/green{dir = 8},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
@@ -736,13 +736,13 @@
 "oh" = (/obj/structure/bed/chair/wood/mahogany{dir = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "oi" = (/obj/structure/table/gamblingtable,/obj/item/material/ashtray/bronze,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "oj" = (/obj/structure/bed/chair/wood/mahogany{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
-"ok" = (/obj/effect/floor_decal/spline/plain/orange,/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
+"ok" = (/obj/effect/floor_decal/spline/plain/orange,/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
 "ol" = (/obj/effect/paint_stripe/green,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacherroom1)
 "om" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacherroom1)
-"on" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/effect/submap_landmark/spawnpoint/camp/teacher,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"oo" = (/obj/effect/submap_landmark/spawnpoint/camp/teacher,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
-"op" = (/obj/structure/bed/sofa/black/left,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
-"oq" = (/obj/structure/bed/sofa/black/left{dir = 10},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
+"on" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"oo" = (/obj/structure/closet,/obj/structure/window/reinforced{dir = 8},/obj/effect/floor_decal/corner/red/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"op" = (/obj/structure/bed/sofa/black/left,/obj/effect/submap_landmark/spawnpoint/camp/cook,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
+"oq" = (/obj/structure/bed/sofa/black/left{dir = 10},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
 "or" = (/obj/effect/floor_decal/corner/green/bordercorner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "os" = (/obj/machinery/light,/obj/effect/floor_decal/corner/green/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "ot" = (/obj/effect/floor_decal/corner/green/border,/obj/effect/floor_decal/corner/green/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
@@ -757,18 +757,18 @@
 "oC" = (/obj/machinery/light,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/kitchen)
 "oD" = (/obj/effect/floor_decal/spline/plain/green{dir = 8},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
 "oE" = (/obj/structure/table/gamblingtable,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
-"oF" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"oG" = (/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"oH" = (/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/kitchen)
+"oF" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"oG" = (/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"oH" = (/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/gym)
 "oI" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/teacherroom1)
 "oJ" = (/obj/structure/coatrack,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "oK" = (/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "oL" = (/obj/machinery/button/alternate/door/bolts{id_tag = "tenth_room"; pixel_y = 28},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "oM" = (/obj/machinery/light_switch{pixel_y = 28},/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/teacherroom1)
-"oN" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/effect/submap_landmark/spawnpoint/camp/teacher,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"oO" = (/obj/machinery/jukebox/old,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
-"oP" = (/obj/structure/table/woodentable/maple,/obj/item/device/flashlight/lamp/green,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
-"oQ" = (/obj/structure/bed/sofa/black{dir = 8},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
+"oN" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/teacher_hall)
+"oO" = (/obj/machinery/jukebox/old,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"oP" = (/obj/structure/table/woodentable/maple,/obj/item/device/flashlight/lamp/green,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
+"oQ" = (/obj/structure/bed/sofa/black{dir = 8},/obj/effect/submap_landmark/spawnpoint/camp/teacher,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
 "oR" = (/obj/structure/table/woodentable/maple,/obj/machinery/light{dir = 4},/obj/item/pen,/obj/item/paper,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
 "oS" = (/obj/effect/floor_decal/corner/green/bordercorner{dir = 8},/obj/effect/floor_decal/corner/green/bordercorner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "oT" = (/obj/effect/floor_decal/corner/green/border{dir = 6},/obj/structure/holoplant,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
@@ -776,12 +776,12 @@
 "oV" = (/obj/effect/floor_decal/corner/green/border{dir = 10},/obj/structure/holoplant,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "oW" = (/obj/effect/floor_decal/corner/green/bordercorner,/obj/effect/floor_decal/corner/green/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "oX" = (/obj/machinery/door/airlock/civilian,/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
-"oY" = (/obj/structure/railing/mapped,/obj/effect/floor_decal/spline/plain/orange,/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"oZ" = (/obj/structure/fitness/punchingbag,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/kitchen)
+"oY" = (/obj/structure/railing/mapped,/obj/effect/floor_decal/spline/plain/orange,/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"oZ" = (/obj/structure/fitness/punchingbag,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/gym)
 "pa" = (/obj/structure/closet/cabinet,/obj/machinery/light{dir = 8},/obj/item/storage/briefcase/foundation,/obj/item/gun/projectile/pistol/holdout,/obj/item/device/camera,/obj/item/device/camera_film,/obj/item/device/camera_film,/obj/item/device/taperecorder,/obj/item/device/tape/random,/obj/item/device/tape/random,/obj/item/device/tape/random,/obj/item/clothing/accessory/badge/holo/NT/cord,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "pb" = (/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/teacherroom1)
 "pc" = (/obj/machinery/door/airlock/civilian{id_tag = "tenth_room"; name = "Teacher Ellioth's Room"},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
-"pd" = (/obj/structure/table/woodentable/maple,/obj/item/deck/cards,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
+"pd" = (/obj/structure/table/woodentable/maple,/obj/item/deck/cards,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
 "pe" = (/obj/structure/bed/chair/padded/lime{dir = 4},/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
 "pf" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "pg" = (/obj/effect/floor_decal/corner_techfloor_grid/full{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
@@ -791,20 +791,20 @@
 "pk" = (/obj/effect/floor_decal/corner_techfloor_grid/full{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "pl" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "pm" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/kitchen)
-"pn" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
+"pn" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
 "po" = (/obj/machinery/jukebox/old,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "pp" = (/obj/structure/table/gamblingtable,/obj/machinery/light,/obj/item/newspaper,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
-"pq" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"pr" = (/obj/effect/floor_decal/corner_techfloor_gray/diagonal,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/kitchen)
-"ps" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"pt" = (/obj/structure/sign/poster/bay_50{pixel_x = 32},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/kitchen)
+"pq" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"pr" = (/obj/effect/floor_decal/corner_techfloor_gray/diagonal,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/gym)
+"ps" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"pt" = (/obj/structure/sign/poster/bay_50{pixel_x = 32},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/gym)
 "pu" = (/obj/structure/table/steel_reinforced,/obj/structure/window/reinforced/tinted{dir = 1},/obj/machinery/photocopier/faxmachine{department = "Camp Apartments"},/obj/item/device/flashlight/lamp,/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/teacherroom1)
 "pv" = (/obj/structure/table/steel_reinforced,/obj/structure/window/reinforced/tinted{dir = 1},/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/teacherroom1)
 "pw" = (/obj/structure/table/steel_reinforced,/obj/structure/window/reinforced/tinted{dir = 1},/obj/structure/window/reinforced/tinted{dir = 4},/obj/item/folder/envelope,/obj/item/folder/nt,/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/teacherroom1)
-"px" = (/obj/machinery/disposal,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
-"py" = (/obj/structure/reagent_dispensers/water_cooler{dir = 4; pixel_x = -8},/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
-"pz" = (/obj/structure/bed/sofa/black/left{dir = 1},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
-"pA" = (/obj/structure/bed/sofa/black{dir = 9},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor)
+"px" = (/obj/machinery/disposal,/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"py" = (/obj/structure/reagent_dispensers/water_cooler{dir = 4; pixel_x = -8},/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"pz" = (/obj/structure/bed/sofa/black/left{dir = 1},/obj/effect/submap_landmark/spawnpoint/camp/doctor,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
+"pA" = (/obj/structure/bed/sofa/black{dir = 9},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/teacher_hall)
 "pB" = (/obj/machinery/disposal{pixel_x = -8},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "pC" = (/obj/effect/floor_decal/corner_techfloor_grid/full{dir = 8},/obj/structure/bed/chair/padded/red{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "pD" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
@@ -825,30 +825,30 @@
 "pS" = (/obj/structure/railing/mapped,/obj/effect/floor_decal/spline/plain/orange,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "pT" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/unsimulated/beach/sand,/area/psionic_school/indoor/training)
 "pU" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 6},/obj/structure/bed/chair/padded/red{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
-"pV" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"pW" = (/obj/structure/holohoop,/obj/effect/floor_decal/corner/red{dir = 5},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"pX" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
+"pV" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"pW" = (/obj/structure/holohoop,/obj/effect/floor_decal/corner/red{dir = 5},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"pX" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
 "pY" = (/obj/machinery/disposal,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/class2)
-"pZ" = (/obj/effect/floor_decal/corner_steel_grid{dir = 5},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
-"qa" = (/obj/structure/fitness/punchingbag,/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/kitchen)
+"pZ" = (/obj/effect/floor_decal/corner_steel_grid{dir = 5},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
+"qa" = (/obj/structure/fitness/punchingbag,/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/gym)
 "qb" = (/obj/structure/curtain/open/shower,/obj/effect/floor_decal/spline/plain/paleblue,/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/teacherroom1)
 "qc" = (/obj/structure/filingcabinet/chestdrawer{pixel_x = -8; pixel_y = 5},/obj/item/reagent_containers/food/drinks/glass2/coffeecup/foundation{pixel_x = -8; pixel_y = 12},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "qd" = (/obj/machinery/photocopier{density = 0; pixel_y = 10},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
-"qe" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"qe" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
 "qf" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/class1)
 "qg" = (/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/green/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "qh" = (/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/unsimulated/beach/sand,/area/psionic_school/indoor/training)
 "qi" = (/turf/unsimulated/beach/sand,/area/psionic_school/indoor/training)
 "qj" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/unsimulated/beach/sand,/area/psionic_school/indoor/training)
 "qk" = (/obj/machinery/light/skrell,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
-"ql" = (/obj/effect/floor_decal/corner/red{dir = 9},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"qm" = (/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"qn" = (/obj/effect/floor_decal/corner/red{dir = 6},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"qo" = (/obj/structure/window/reinforced{dir = 8},/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
-"qp" = (/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
-"qq" = (/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
-"qr" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
-"qs" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/machinery/light,/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/kitchen)
+"ql" = (/obj/effect/floor_decal/corner/red{dir = 9},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"qm" = (/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"qn" = (/obj/effect/floor_decal/corner/red{dir = 6},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"qo" = (/obj/structure/window/reinforced{dir = 8},/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
+"qp" = (/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
+"qq" = (/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
+"qr" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
+"qs" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/machinery/light,/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/gym)
 "qt" = (/obj/structure/hygiene/sink{dir = 8; pixel_x = -12; pixel_y = 2},/obj/item/storage/mirror{pixel_x = -26; pixel_y = 6},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/teacherroom1)
 "qu" = (/obj/machinery/door/unpowered/simple/walnut{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/teacherroom1)
 "qv" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
@@ -862,9 +862,9 @@
 "qD" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/obj/machinery/light/skrell{dir = 8},/turf/unsimulated/beach/sand,/area/psionic_school/outdoor)
 "qE" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/unsimulated/beach/sand,/area/psionic_school/outdoor)
 "qF" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/obj/machinery/light/skrell{dir = 4},/turf/unsimulated/beach/sand,/area/psionic_school/outdoor)
-"qG" = (/obj/effect/floor_decal/corner/red{dir = 9},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"qH" = (/obj/effect/floor_decal/corner/red{dir = 5},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"qI" = (/obj/structure/bed/chair/padded/green{dir = 8},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
+"qG" = (/obj/effect/floor_decal/corner/red{dir = 9},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"qH" = (/obj/effect/floor_decal/corner/red{dir = 5},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"qI" = (/obj/structure/bed/chair/padded/green{dir = 8},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
 "qJ" = (/obj/structure/hygiene/toilet{dir = 1},/obj/machinery/light/small,/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/teacherroom1)
 "qK" = (/obj/machinery/washing_machine,/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
 "qL" = (/obj/structure/table/woodentable/ebony,/obj/item/towel/random,/obj/item/device/megaphone,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom1)
@@ -879,16 +879,16 @@
 "qU" = (/obj/effect/floor_decal/spline/plain/orange{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "qV" = (/obj/effect/floor_decal/spline/plain/orange{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "qW" = (/obj/machinery/light/skrell{dir = 1},/turf/unsimulated/beach/sand,/area/psionic_school/outdoor)
-"qX" = (/obj/structure/bed/chair/padded/green{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
+"qX" = (/obj/structure/bed/chair/padded/green{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
 "qY" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacherroom4)
 "qZ" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/teacherroom4)
 "ra" = (/obj/effect/paint_stripe/green,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacherroom4)
 "rb" = (/obj/structure/table/woodentable/mahogany,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/class1)
-"rc" = (/obj/effect/floor_decal/corner/red/three_quarters,/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rd" = (/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"re" = (/obj/item/beach_ball/holoball,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rf" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 4},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rg" = (/obj/machinery/door/window{icon_state = "right"; dir = 8},/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
+"rc" = (/obj/effect/floor_decal/corner/red/three_quarters,/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rd" = (/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"re" = (/obj/item/beach_ball/holoball,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rf" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 4},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rg" = (/obj/machinery/door/window{icon_state = "right"; dir = 8},/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
 "rh" = (/obj/effect/paint_stripe/green,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacherroom2)
 "ri" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/teacherroom2)
 "rj" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacherroom2)
@@ -897,16 +897,16 @@
 "rm" = (/obj/structure/table/woodentable/mahogany,/obj/machinery/media/music_writer{pixel_y = 28},/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/teacherroom2)
 "rn" = (/obj/machinery/button/alternate/door/bolts{id_tag = "eleventh_room"; pixel_y = 27},/obj/structure/closet/crate/secure/weapon{req_access = list("ACCESS_CAMP_TEACHER2")},/obj/item/melee/energy/minuano,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
 "ro" = (/obj/machinery/photocopier{pixel_x = -9; pixel_y = 11},/obj/machinery/washing_machine,/obj/structure/flora/pottedplant/smallcactus{pixel_x = -3; pixel_y = 22},/obj/machinery/light_switch{pixel_y = 28},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
-"rp" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/sign/poster/bay_50{pixel_y = 32},/obj/effect/floor_decal/corner_steel_grid/full{dir = 8},/obj/machinery/disposal,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
+"rp" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/sign/poster/bay_50{pixel_y = 32},/obj/effect/floor_decal/corner_steel_grid/full{dir = 8},/obj/machinery/disposal,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
 "rq" = (/obj/machinery/button/alternate/door/bolts{id_tag = "fourteenth_room"; pixel_y = 28},/obj/machinery/photocopier{density = 0; pixel_y = 11},/obj/machinery/papershredder{density = 0; pixel_x = -10; pixel_y = 2},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom4)
 "rr" = (/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom4)
 "rs" = (/obj/structure/bed/chair/comfy/black,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom4)
 "rt" = (/obj/structure/table/woodentable/ebony,/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom4)
 "ru" = (/obj/structure/table/woodentable/ebony,/obj/item/pen,/obj/item/paper,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/class1)
-"rv" = (/obj/effect/floor_decal/corner/green/three_quarters{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rw" = (/obj/effect/floor_decal/corner/green{dir = 5},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rx" = (/obj/effect/floor_decal/corner/green/three_quarters{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"ry" = (/obj/machinery/door/window{dir = 8},/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
+"rv" = (/obj/effect/floor_decal/corner/green/three_quarters{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rw" = (/obj/effect/floor_decal/corner/green{dir = 5},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rx" = (/obj/effect/floor_decal/corner/green/three_quarters{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"ry" = (/obj/machinery/door/window{dir = 8},/obj/effect/floor_decal/corner_steel_grid{dir = 9},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
 "rz" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
 "rA" = (/obj/structure/bed/chair/office/comfy/brown,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/teacherroom2)
 "rB" = (/obj/structure/table/woodentable/mahogany,/obj/item/reagent_containers/food/drinks/glass2/coffeecup/SCG{pixel_x = 6; pixel_y = 8},/obj/item/device/flashlight/lamp/lava/pink{pixel_x = -6; pixel_y = -4},/obj/item/card/id/captains_spare{desc = "A card issued to curator."; name = "Nayoki Yano's card"; assignment = "Curator"; registered_name = "Nayoki Yano"},/obj/item/device/radio/headset/map_preset/psy_school{pixel_x = 9},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/teacherroom2)
@@ -918,8 +918,8 @@
 "rH" = (/obj/structure/table/woodentable/ebony,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom4)
 "rI" = (/obj/structure/bed/chair/padded/blue{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/class1)
 "rJ" = (/obj/structure/bed/chair/padded/blue{dir = 1},/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/class1)
-"rK" = (/obj/effect/floor_decal/corner/green{dir = 9},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rL" = (/obj/effect/floor_decal/corner/green{dir = 6},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
+"rK" = (/obj/effect/floor_decal/corner/green{dir = 9},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rL" = (/obj/effect/floor_decal/corner/green{dir = 6},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
 "rM" = (/obj/structure/table/woodentable/mahogany,/obj/item/paper_bin,/obj/item/pen/fancy,/obj/item/clothing/accessory/wristwatches/leather{pixel_x = -6; pixel_y = 7},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/teacherroom2)
 "rN" = (/obj/structure/table/woodentable/mahogany,/obj/structure/flora/pottedplant/orientaltree{pixel_x = -3; pixel_y = 10},/obj/item/material/ashtray/plastic{pixel_x = 9; pixel_y = 3},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/teacherroom2)
 "rO" = (/obj/structure/coatrack,/obj/item/clothing/shoes/sandal{pixel_y = -12},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
@@ -929,12 +929,12 @@
 "rS" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/class1)
 "rT" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "rU" = (/obj/effect/floor_decal/spline/plain/black,/turf/unsimulated/beach/sand,/area/psionic_school/indoor/training)
-"rV" = (/obj/effect/floor_decal/corner/green{dir = 9},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"rW" = (/obj/effect/floor_decal/corner/green{dir = 10},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
+"rV" = (/obj/effect/floor_decal/corner/green{dir = 9},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"rW" = (/obj/effect/floor_decal/corner/green{dir = 10},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
 "rX" = (/obj/structure/hygiene/shower{pixel_y = 22},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/white/monotile,/area/psionic_school/indoor/teacherroom2)
 "rY" = (/obj/machinery/papershredder{density = 0; pixel_y = 15},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
 "rZ" = (/obj/structure/closet/cabinet,/obj/machinery/light{dir = 4},/obj/item/music_player/radio/custom_tape,/obj/item/music_tape/custom,/obj/item/music_tape/custom,/obj/item/clothing/under/color/blackjumpshorts,/obj/item/clothing/accessory/badge/curator_agent,/obj/item/clothing/suit/storage/toggle/leather_hoodie,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
-"sa" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"sa" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
 "sb" = (/obj/structure/closet/cabinet,/obj/machinery/light{dir = 8},/obj/item/towel/random,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/teacherroom4)
 "sc" = (/obj/structure/table/glass,/obj/item/device/flashlight/lamp{pixel_x = -4; pixel_y = 8},/turf/simulated/floor/carpet,/area/psionic_school/indoor/teacherroom4)
 "sd" = (/obj/structure/bed/sofa/black/right{dir = 8},/turf/simulated/floor/carpet,/area/psionic_school/indoor/teacherroom4)
@@ -959,11 +959,11 @@
 "sw" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/corner_techfloor_grid{dir = 10},/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "sx" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 10},/obj/effect/floor_decal/spline/plain/orange{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
 "sy" = (/obj/effect/floor_decal/corner_techfloor_grid/full{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/training)
-"sz" = (/obj/effect/floor_decal/corner/green/three_quarters,/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"sA" = (/obj/structure/holohoop{dir = 1},/obj/effect/floor_decal/corner/green{dir = 10},/obj/machinery/light,/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"sB" = (/obj/effect/floor_decal/corner/green/three_quarters{dir = 4},/turf/simulated/floor/tiled,/area/psionic_school/indoor/kitchen)
-"sC" = (/obj/structure/window/reinforced{dir = 8},/obj/effect/floor_decal/corner_steel_grid/full,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
-"sD" = (/obj/effect/floor_decal/corner_steel_grid{dir = 10},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/kitchen)
+"sz" = (/obj/effect/floor_decal/corner/green/three_quarters,/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"sA" = (/obj/structure/holohoop{dir = 1},/obj/effect/floor_decal/corner/green{dir = 10},/obj/machinery/light,/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"sB" = (/obj/effect/floor_decal/corner/green/three_quarters{dir = 4},/turf/simulated/floor/tiled,/area/psionic_school/indoor/gym)
+"sC" = (/obj/structure/window/reinforced{dir = 8},/obj/effect/floor_decal/corner_steel_grid/full,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
+"sD" = (/obj/effect/floor_decal/corner_steel_grid{dir = 10},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/gym)
 "sE" = (/obj/structure/hygiene/sink{dir = 8; pixel_x = -12; pixel_y = 2},/obj/item/storage/mirror{pixel_x = -26; pixel_y = 6},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/teacherroom2)
 "sF" = (/obj/machinery/door/unpowered/simple/maple{dir = 4},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/teacherroom2)
 "sG" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/teacherroom2)
@@ -1174,61 +1174,177 @@
 "wD" = (/obj/machinery/light/invisible,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "wE" = (/obj/machinery/telecomms/hub/map_preset/psy_school,/turf/simulated/floor/greengrid,/area/psionic_school/indoor/tcomms)
 "wF" = (/obj/machinery/telecomms/processor/map_preset/psy_school,/turf/simulated/floor/greengrid,/area/psionic_school/indoor/tcomms)
-"wG" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"wG" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "wH" = (/obj/machinery/ntnet_relay,/turf/simulated/floor/bluegrid,/area/psionic_school/indoor/tcomms)
 "wJ" = (/obj/machinery/telecomms/broadcaster/map_preset/psy_school,/turf/simulated/floor/blackgrid,/area/psionic_school/indoor/tcomms)
 "wK" = (/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
-"wM" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"wM" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "wP" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/bluegrid,/area/psionic_school/indoor/tcomms)
-"wS" = (/obj/structure/table/woodentable/maple,/obj/item/storage/wallet/leather,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"wT" = (/obj/structure/bed/sofa/black/right{dir = 1},/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"wU" = (/obj/structure/bed/sofa/black/right,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
+"wS" = (/obj/structure/table/woodentable/maple,/obj/item/storage/wallet/leather,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"wT" = (/obj/structure/bed/sofa/black/right{dir = 1},/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"wU" = (/obj/structure/bed/sofa/black/right,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
 "wX" = (/turf/simulated/wall/r_wall/prepainted,/area/psionic_school/indoor/tcomms)
-"wZ" = (/obj/structure/bed/sofa/black/left{dir = 1},/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"xa" = (/obj/machinery/disposal,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"xb" = (/obj/structure/table/woodentable/maple,/obj/item/storage/box/cups{pixel_x = 2; pixel_y = 2},/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"xd" = (/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"wZ" = (/obj/structure/bed/sofa/black/left{dir = 1},/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"xa" = (/obj/machinery/disposal,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"xb" = (/obj/structure/table/woodentable/maple,/obj/item/storage/box/cups{pixel_x = 2; pixel_y = 2},/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"xd" = (/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "xf" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/medbay)
 "xg" = (/obj/machinery/telecomms/server/map_preset/psy_school,/turf/simulated/floor/blackgrid,/area/psionic_school/indoor/tcomms)
 "xh" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/medbay/storage)
 "xi" = (/obj/machinery/light/small,/turf/simulated/floor/lino,/area/psionic_school/indoor/tcomms)
 "xj" = (/turf/simulated/floor/lino,/area/psionic_school/indoor/tcomms)
-"xl" = (/obj/machinery/light{dir = 4},/obj/structure/table/woodentable/maple,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"xn" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/obj/machinery/light,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"xo" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
-"xq" = (/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"xl" = (/obj/structure/table/woodentable/maple,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"xn" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/obj/machinery/light,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"xo" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"xq" = (/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "xs" = (/obj/machinery/telecomms/bus/map_preset/psy_school,/turf/simulated/floor/greengrid,/area/psionic_school/indoor/tcomms)
 "xy" = (/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/medbay/office)
 "xz" = (/turf/simulated/floor/blackgrid,/area/psionic_school/indoor/tcomms)
-"xD" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"xD" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
+"xI" = (/obj/structure/grille,/obj/structure/cable,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "xL" = (/obj/machinery/telecomms/receiver/map_preset/psy_school,/turf/simulated/floor/bluegrid,/area/psionic_school/indoor/tcomms)
-"xM" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"xM" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/stud_hall)
 "xN" = (/obj/structure/flora/tree/dead,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 "xQ" = (/obj/machinery/bluespacerelay,/turf/simulated/floor/bluegrid,/area/psionic_school/indoor/tcomms)
-"xR" = (/obj/structure/table/woodentable/maple,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"xU" = (/obj/structure/bed/sofa/black/left,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"xZ" = (/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor)
-"yf" = (/obj/structure/table/glass,/obj/machinery/light{dir = 8},/obj/item/paper_bin,/obj/item/pen,/obj/machinery/media/music_writer{anchored = 1; pixel_y = 26},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
+"xR" = (/obj/structure/bed/chair/padded/red{dir = 1},/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"xU" = (/obj/structure/bed/sofa/black/left,/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"xZ" = (/turf/simulated/floor/carpet/orange,/area/psionic_school/indoor/stud_hall)
+"yf" = (/obj/structure/table/glass,/obj/machinery/light{dir = 8},/obj/item/paper_bin,/obj/item/pen,/obj/machinery/media/music_writer{anchored = 1; pixel_y = 26},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
 "yg" = (/obj/structure/table/woodentable/mahogany,/obj/item/storage/slide_projector,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/class1)
-"Gi" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/button/alternate/door/bolts{id_tag = "eleventh_room"; pixel_y = -1; pixel_x = -30; req_access = list("ACCESS_CAMP_TEACHER2"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"yn" = (/obj/effect/floor_decal/corner/pink/half{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"yz" = (/obj/machinery/door/airlock/security{id_tag = "grilledarena_bolts2"; name = "Grilled Arena"},/obj/structure/cable{icon_state = "1-2"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"yD" = (/obj/structure/noticeboard{pixel_y = 28},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/teacherroom3)
+"yO" = (/obj/structure/noticeboard{pixel_y = 28},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
+"yQ" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/floor_decal/corner/red/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"yU" = (/obj/effect/floor_decal/corner/red/border{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"za" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/floor_decal/corner/pink/half{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"zb" = (/obj/structure/bed/chair/padded/red{dir = 8},/obj/effect/floor_decal/corner/red/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"zg" = (/obj/structure/cable{icon_state = "2-8"},/obj/structure/grille,/obj/structure/cable{icon_state = "0-2"},/obj/effect/floor_decal/corner/pink/mono,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"zj" = (/obj/structure/window/reinforced{dir = 4},/obj/machinery/button/alternate/door/bolts{id_tag = "grilledarena_bolts2"; pixel_x = -28; name = "Grilled Arena Door Control"},/obj/effect/floor_decal/corner/red/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"zy" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/kitchen/canteen)
+"zP" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/grille,/obj/structure/cable,/obj/effect/floor_decal/corner/pink/half{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Ah" = (/obj/structure/cable,/obj/structure/grille,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"AR" = (/obj/structure/cable{icon_state = "2-4"},/obj/structure/cable{icon_state = "2-8"},/obj/effect/floor_decal/corner/pink/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"AS" = (/obj/effect/floor_decal/corner/green/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"Bl" = (/obj/structure/cable{icon_state = "1-2"},/turf/simulated/wall/r_wall,/area/psionic_school/indoor/training)
+"Br" = (/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"BI" = (/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"BO" = (/obj/structure/cable{icon_state = "1-8"},/obj/effect/floor_decal/corner/pink/mono,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"BU" = (/obj/effect/paint_stripe/red,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/gym)
+"CM" = (/obj/effect/floor_decal/corner/red/bordercorner,/obj/structure/flora/pottedplant/decorative,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"CP" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/ausbushes/genericbush,/obj/machinery/light,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/teacher_hall)
+"CW" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/grille,/obj/structure/cable{icon_state = "0-4"},/obj/effect/floor_decal/corner/pink/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Da" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/floor_decal/corner/pink/half{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Dv" = (/obj/effect/floor_decal/corner/red/border{dir = 4},/obj/structure/holoplant{pixel_x = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"DC" = (/obj/structure/cable{icon_state = "1-2"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"DE" = (/obj/structure/cable{icon_state = "1-4"},/obj/effect/floor_decal/corner/pink/mono,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"DS" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/ausbushes/sparsegrass,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/teacher_hall)
+"Eh" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/red/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"ED" = (/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Fh" = (/obj/effect/floor_decal/corner/pink/mono,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"FH" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"FN" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/floor_decal/corner/pink/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Gi" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/button/alternate/door/bolts{id_tag = "eleventh_room"; pixel_y = -1; pixel_x = -30; req_access = list("ACCESS_CAMP_TEACHER2"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"Gl" = (/obj/machinery/light{dir = 1},/obj/effect/floor_decal/corner/red/border{dir = 1},/obj/item/toy/ringbell,/obj/structure/table/reinforced,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"GA" = (/obj/structure/window/reinforced{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"GB" = (/obj/structure/window/reinforced{dir = 4},/obj/effect/floor_decal/corner/red/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"GR" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/window/reinforced{dir = 1},/obj/effect/floor_decal/corner/pink/half{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"GT" = (/obj/structure/bed/chair/padded/red{dir = 1},/obj/effect/floor_decal/corner/red/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Ha" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-4"},/obj/effect/floor_decal/corner/pink/half{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Hg" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/red/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Hr" = (/obj/machinery/light{dir = 4},/obj/structure/flora/ausbushes/brflowers,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/stud_hall)
+"HJ" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Ia" = (/obj/structure/closet,/obj/structure/window/reinforced,/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/red/half{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Ib" = (/obj/effect/floor_decal/corner/green/border{dir = 6},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"IO" = (/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/kitchen)
 "Ja" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/medbay/office)
+"Jy" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/fernybush,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/teacher_hall)
+"JB" = (/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"JP" = (/obj/structure/flora/ausbushes/leafybush,/obj/structure/flora/ausbushes/lavendergrass,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/teacher_hall)
+"JX" = (/obj/machinery/disposal,/obj/effect/floor_decal/spline/plain/green{dir = 8},/turf/simulated/floor/lino,/area/psionic_school/indoor/kitchen)
+"Kn" = (/obj/effect/floor_decal/corner/paleblue/half{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
 "Ks" = (/obj/machinery/door/airlock/medical{req_access = list("ACCESS_CAMP_MED"); name = "Medical Storage"; autoset_access = 0},/obj/effect/floor_decal/corner_techfloor_gray/diagonal,/turf/simulated/floor/tiled/steel_grid,/area/psionic_school/indoor/medbay/storage)
+"KE" = (/obj/structure/curtain/open/bed,/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/stud_hall)
+"KO" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/effect/submap_landmark/spawnpoint/camp/teacher,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"KQ" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/sparsegrass,/obj/structure/flora/ausbushes/fernybush,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/stud_hall)
+"Lg" = (/obj/structure/bed/chair/padded/red{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Lo" = (/obj/effect/floor_decal/industrial/outline/red,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"LJ" = (/obj/effect/floor_decal/corner/paleblue/half{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"LO" = (/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"LW" = (/obj/structure/flora/ausbushes/ywflowers,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/stud_hall)
+"Ml" = (/turf/simulated/floor/plating,/area/psionic_school/outdoor)
+"MT" = (/obj/effect/floor_decal/corner/red{dir = 10},/obj/machinery/light,/obj/structure/holoplant,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"MU" = (/obj/effect/floor_decal/corner/red/border{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Ny" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/floor_decal/corner/pink/half{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
 "NK" = (/obj/effect/paint/silver,/obj/effect/paint_stripe/white,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/medbay/storage)
+"NQ" = (/obj/structure/flora/ausbushes/ppflowers,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/stud_hall)
+"NR" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-4"},/obj/effect/floor_decal/corner/pink/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"NZ" = (/obj/structure/window/reinforced{dir = 4},/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/red/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Ob" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/grille,/obj/structure/cable{icon_state = "0-2"},/obj/effect/floor_decal/corner/pink/half{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Oh" = (/obj/effect/floor_decal/corner/red/border{dir = 5},/obj/structure/table/reinforced,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"On" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/gym)
+"Or" = (/obj/structure/cable{icon_state = "1-2"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Oz" = (/obj/structure/window/reinforced,/obj/structure/closet,/obj/effect/floor_decal/corner/red/half{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"OE" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"OM" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/closet,/obj/machinery/light{dir = 8},/obj/effect/floor_decal/corner/red/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"OU" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/ausbushes/palebush,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/teacher_hall)
+"OW" = (/obj/effect/floor_decal/corner/red/border{dir = 10},/obj/structure/flora/pottedplant/flower{pixel_x = -8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"OY" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/cable{icon_state = "1-2"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Ph" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/genericbush,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/stud_hall)
+"Pp" = (/obj/machinery/power/debug_items/infinite_generator{power_generation_rate = 1000},/obj/structure/cable,/turf/simulated/floor/plating,/area/psionic_school/indoor/training)
+"Qi" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
 "Qk" = (/obj/effect/paint/silver,/obj/effect/paint_stripe/white,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/medbay/office)
-"Sb" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/button/alternate/door/bolts{id_tag = "tenth_room"; pixel_y = -1; pixel_x = -31; req_access = list("ACCESS_CAMP_TEACHER1"); name = "Room lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"Wl" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/light{dir = 8},/obj/machinery/button/alternate/door/bolts{id_tag = "twelfth_room"; pixel_x = -30; req_access = list("ACCESS_CAMP_TEACHER3"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"XQ" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/button/alternate/door/bolts{id_tag = "thirteenth_room"; pixel_x = 30; req_access = list("ACCESS_CAMP_TEACHER5"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
-"Ye" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/button/alternate/door/bolts{id_tag = "fourteenth_room"; pixel_x = 31; req_access = list("ACCESS_CAMP_TEACHER4"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
+"Qn" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/kitchen/canteen)
+"Rf" = (/obj/effect/floor_decal/corner/red{dir = 6},/obj/structure/table/reinforced,/obj/structure/flora/pottedplant/deskleaf{pixel_y = 14},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Rt" = (/obj/effect/floor_decal/corner/red{dir = 10},/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Rz" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/grille,/obj/structure/cable{icon_state = "0-4"},/obj/effect/floor_decal/corner/pink/half{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Sb" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/button/alternate/door/bolts{id_tag = "tenth_room"; pixel_y = -1; pixel_x = -31; req_access = list("ACCESS_CAMP_TEACHER1"); name = "Room lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"Sc" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/gym)
+"Sn" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"Sq" = (/obj/structure/window/reinforced{dir = 4},/obj/effect/floor_decal/corner/red/border{dir = 8},/obj/structure/sign/warning/high_voltage{dir = 4; pixel_x = -34},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Su" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/stud_hall)
+"SJ" = (/obj/effect/paint_stripe/green,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacher_hall)
+"Tq" = (/obj/effect/paint_stripe/green,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/stud_hall)
+"TA" = (/obj/effect/floor_decal/corner/red/border{dir = 1},/obj/structure/table/reinforced,/obj/structure/flora/pottedplant/deskfern{pixel_y = 6},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Ud" = (/obj/machinery/floor_light/prebuilt,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Ul" = (/obj/structure/cable{icon_state = "2-4"},/obj/structure/grille,/obj/structure/cable{icon_state = "0-4"},/obj/effect/floor_decal/corner/pink/mono,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Uv" = (/obj/machinery/door/airlock/security{name = "Training Wing"},/obj/effect/floor_decal/corner/red/full,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"UD" = (/obj/structure/closet,/obj/structure/window/reinforced,/obj/effect/floor_decal/corner/red/half{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"UU" = (/obj/machinery/door/airlock/glass/security{name = "Grilled Arena"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"UW" = (/obj/effect/floor_decal/corner/red/border{dir = 9},/obj/structure/flora/pottedplant/large{pixel_y = 16},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Vz" = (/obj/structure/grille,/obj/structure/cable{icon_state = "0-2"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"VW" = (/obj/machinery/door/airlock/security,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"VY" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Wl" = (/obj/effect/floor_decal/corner/green/border{dir = 8},/obj/machinery/light{dir = 8},/obj/machinery/button/alternate/door/bolts{id_tag = "twelfth_room"; pixel_x = -30; req_access = list("ACCESS_CAMP_TEACHER3"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"Wo" = (/obj/structure/bed/chair/padded/red,/obj/effect/floor_decal/corner/red/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Wt" = (/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/psionic_school/indoor/training)
+"WJ" = (/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/teacher_hall)
+"Xj" = (/turf/simulated/wall/r_wall,/area/psionic_school/indoor/teacher_hall)
+"Xp" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/red/border{dir = 8},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Xt" = (/obj/structure/flora/ausbushes/brflowers,/obj/structure/flora/ausbushes/sunnybush,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/teacher_hall)
+"XQ" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/button/alternate/door/bolts{id_tag = "thirteenth_room"; pixel_x = 30; req_access = list("ACCESS_CAMP_TEACHER5"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"Yb" = (/obj/effect/floor_decal/corner/red/border{dir = 8},/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Ye" = (/obj/effect/floor_decal/corner/green/border{dir = 4},/obj/machinery/button/alternate/door/bolts{id_tag = "fourteenth_room"; pixel_x = 31; req_access = list("ACCESS_CAMP_TEACHER4"); name = "Room Lock"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"Yp" = (/obj/effect/floor_decal/corner/green/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"Yq" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/ausbushes/fullgrass,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/indoor/stud_hall)
+"Yv" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/psionic_school/indoor/training)
+"YS" = (/obj/effect/floor_decal/corner/green/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/teacher_hall)
+"Zb" = (/obj/machinery/light{dir = 1},/obj/effect/floor_decal/corner/red/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"Zg" = (/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/stud_hall)
+"Zn" = (/obj/effect/floor_decal/corner/pink/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
+"Zx" = (/obj/effect/floor_decal/corner/red/bordercorner{dir = 1},/obj/structure/table/reinforced,/obj/item/toy/ringbell,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/training)
+"ZA" = (/obj/structure/sign/goldenplaque/medical{pixel_y = 31; desc = "A picture next to a long winded description of medical certifications and degrees. This one belongs to Samuel Melton"},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/medbay/office)
+"ZY" = (/obj/effect/floor_decal/corner/paleblue/mono,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/training)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacacadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababakabacacacacacacacacacajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacajajajajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaababababababababababababababababababababababababababababababababababababababababababababababababababababababakababababababababababababacalacacacacacacacajajajajajadaeamafagahamaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacajajajajadanaoapagaqaoaraiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababakabababababacacacacacacacacacacacacajajajadaeasafagahasaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacacadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaMlMlMlMlMlaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababakabacacacacacacacacacajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaMlMlMlMlMlaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaMlMlMlMlMlaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacajajajajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaMlMlMlMlMlaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababakababababababababababababacalacacacacacacacajajajajajadaeamafagahamaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaMlMlMlMlMlaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacajajajajadanaoapagaqaoaraiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaMlMlMlMlMlaa
+aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababakabababababacacacacacacacacacacacacajajajadaeasafagahasaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaaaaaaaaaaaaaa
 aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacacajajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacacacacajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacacacacacacacacacacacacacacajajadaeaeafagahaeaeaiajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
@@ -1254,76 +1370,76 @@ aaababababababababababababababababababababababababababababababababababababababab
 aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababacalacacacaEaeaeaGxfxfxfxfxfaMcKbdbcaScjcLcPdcaMbQbRbwaeaeafagahaevZaHblaWcuaWblaWcvcwcxcyczbabababababaaJaJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababacacacacacaEaewaaGxfxfxfxfxfaMaMaMaMaMaMaMaMaMaMcAbRbwaeaeafagahaeaeaHcBcCaWaWcbaWbScDcDcDcEbacFcGcHcIcJaJaJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababacacacacacaEaeaeaGxfxfxfxfxfdmdndwdxdEdFvCvDvEdmbQbRbwaeaeafagahaeaeaHcMcNbabababababababababacOcGcJcJcJaJaJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababwbababacacacacacaEaeaeaGxfxfxfxfxfdmvFvFvFdEdFvGvHvIdmbQbRbwaeaeafagahaeaeaIcQcRcScTcUcVcWcXcXcXcXcScYcGcHcIcJaJaJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabwbabababababababababababakacacaEaeaeaGxfxfxfxfxfdmvFvFvFdEdFvDvHvDdmbQbRaGtcaeafagahaeaeaIcQcRcScZcZcZdacXcXcXcXcSdbdbcJcJcJcJcJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaeaGxfxfxfxfxfdmvFvFvFvJdmvKvDvDdmddbRaGaeaeafagahaeaeaIcQcRcSdecZcZdacXcXcXdfcScGcGdgdhdidjcJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababakacaEaeaeaGxfxfxfxfxfdmvLvLvLvLvMvNvNvNvObQbRaGaeamafagahamaeaIcQcRcSdkcZcZdacXcXcXcXcScGcGcGcGcGdlcJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaeaGxfxfxfxfxfdmvPvDvKdmvQvFvFvRdmbQbRaGanaoapagaqaoaraIcQcRcSdkcZdocWcXdpcXcXcSdqdrdqdscGdtcJaJaJaJaJaJaJaJaJaIaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababwbabababababababababacbbaeaeaGxfxfxfxfxfdmvDvHvDdFvSvFvFepdmbQbRbwaeasafagahasaeaIcQcRcScSducScScScScScScScJcJcJcJdvcJcJaKaKaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacbsaobtaeaGxfxfxfxfxfdmvUvHvVdFvSvFvFvFdmbQbRbwaeaeafagahaeaeaIcQdydzdzdzdzdzdzdzdzdAdzdzdzdzdzdzdBdCdDaKaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacbEaeaeaGxfxfxfxfxfdmvEvDvCdFvSvWvXvYdmbQdGaGtcaeafagahaeaeaIdHdIdIdIdJdIdIdIdIdIdIdIdIdIdIdJdKcRdCdDaKaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababwbababacacacaEaeaeaGxfxfxfxfxfdmdmdmdmdmdmdmdmdmdmdLkGaGaeaeafagahaeaedMdNdNdNdNdNdNdOdNdNdPdPdPdPdPdPdPcQcRdQdQdQdQdQdQdQdQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeaGkGkGkGkGkGkGdRdSdTdUdVbHdWdXdYbvbHaGaeaeafagahaeaedMdZdZeadZebecedeedNefegeheiejekdPcQcRdQelemeneoeofydQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeaGkGeqeresetkGeuevewewexbRdWbQeyezeAbwaeaeafagahaeaedMdZdZdZdZeBededeedNeCeCeCeCeDejdPcQcReEeneneneFeFendQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababwbababacacacacacaEaeaeaGxfxfxfxfxfdmvFvFvFdEdFvGvHvIdmbQbRbwaeaeafagahaeaeTqcQFHcScTcUcVcWcXcXcXcXcScYcGcHcIcJaJaJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabwbabababababababababababakacacaEaeaeaGxfxfxfxfxfdmvFvFvFdEdFvDvHvDdmbQbRaGtcaeafagahaeaeTqcQFHcScZcZcZdacXcXcXcXcSdbdbcJcJcJcJcJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaeaGxfxfxfxfxfdmvFvFvFvJdmvKvDvDdmddbRaGaeaeafagahaeaeTqcQFHcSdecZcZdacXcXcXdfcScGcGdgdhdidjcJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababakacaEaeaeaGxfxfxfxfxfdmvLvLvLvLvMvNvNvNvObQbRaGaeamafagahamaeTqcQFHcSdkcZcZdacXcXcXcXcScGcGcGcGcGdlcJaJaJaJaJaJaJaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaeaGxfxfxfxfxfdmvPvDvKdmvQvFvFvRdmbQbRaGanaoapagaqaoarTqcQFHcSdkcZdocWcXdpcXcXcSdqdrdqdscGdtcJaJaJaJaJaJaJaJaJaIaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababwbabababababababababacbbaeaeaGxfxfxfxfxfdmvDvHvDdFvSvFvFepdmbQbRbwaeasafagahasaeTqcQFHcScSducScScScScScScScJcJcJcJdvcJcJljljaKaKaKaKaKaKaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacbsaobtaeaGkGkGkGkGkGdmvUvHvVdFvSvFvFvFdmbQbRbwaeaeafagahaeaeTqcQdyYpYpYpYpYpYpYpYpdAYpYpYpYpYpYpdBZgdDljaJaJaJaKaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacbEaeaeaGxfxfxfkGxfdmvEvDvCdFvSvWvXvYdmbQdGaGtcaeafagahaeaeTqASdIdIdIdJdIdIdIdIdIdIdIdIdIdIdJdKFHZgdDljaJaJaJaKaJaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababwbababacacacaEaeaeaGxfxfxfkGxfdmdmdmdmdmdmdmdmdmdmdLkGaGaeaeafagahaeaedMdNdNdNdNdNdNdOdNdNdPdPdPdPdPdPdPcQFHdQdQdQdQdQdQdQdQaKaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeaGkGkGkGkGkGkGdRdSdTdUdVbHdWdXdYbvbHaGaeaeafagahaeaedMdZdZeadZebecedeedNefegeheiejekdPcQFHdQelemeneoeofydQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeaGkGeqeresetkGeuevewewexbRdWbQeyezeAbwaeaeafagahaeaedMdZdZdZdZeBededeedNeCeCeCeCeDejdPcQFHeEeneneneFeFendQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababatabwbababababababababababacacacacaEaeaeaGkGeGeHeHeIeJeKbReLeMeNeOkGePeQeReAbwaeaeafagahaevZdMeSdZdZdZeBededeTdNeCeUeUeVeCeWdPcQeXdQeYeneneoeoeZdQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababwbabababacvoacacacaEaeaeaGkGfaeHeHfbfcbQfdfefefffgfhbQfifjeAbwaeaeafagahaeaedMdZdZdZdZeBedededdNeCfkfkeCeCeCflcQcRdQfmfnenenenendQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababbsaotMacacaEaeaeaGkGfofpfqfreJfsftfufufvftdWfwfxfdfCaGaeamafagahamaedMdZdZdZdZebfzfAfBdNgheUeUeCfDfEdPcQcRdQfFfGfHfIfJfKdQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababacqWacacacaEaewaQkJaJaJaJaJaJafLkGaGaGbwbwbwaGfMftaGaGanaoapagaqaoardMdMdMdMdMdMdMdMdMdMdPdPdPdPdPdPdPcQcRdQdQdQdQdQdQdQdQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeQkwKwKfOfPfQJabGfRaGaeaeaeaefSfTfTfSaeaeasafagahasaeaeaewfaeaeaeaeaeaefUfVfWfXfYfZgagbcQcRgcgdgegfgggggEgcaJaIaeaeaCawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawaDajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababacacacacaEaeaeQkwKgigjwKwKgkbQbRbwaeaeamaeaeaeaeaeaeaeaeafagahaeaeaeaeaeaeaeaeamaeaefUglglglglgmgngbcQcRgogfgfgpgqgqgfgcaJaIaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababwbabababababacacacacacaEaeaeQkwKgrgsgtguJaddbRbwaeanaogvgwgwgwgwgwgwgwagagaggwgwgwgwgwgwgwgxaoaraefUglgygygzglgAgbgBcRgcgCgfgfgggggfgcaJaIaraeaeaeaogDaoaeaeamaeaeaeaeaeaeaeaeaeaeaeaeaeamaeaeaeaeaeaeaeaeaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababakabababacacacacacaEaeaeQkgSxygGwKgHJabQbRaGaeaegIagagagagagagagagagagagagagagagagagagaggJaeaefUglgKgKglglglgLcQcRgcgMgNgfgfgfgfgcaJaIaeaegOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababacacacacacacaEaeaeQkJaJaJaJaJaJagPbRaGaeaeafagagaggQgQgQgQgQgQgRgQgQgQgQgQgQagagagahaeaefUhdgygyglgTgUgbcQcRgcgVgWgXgYgZhagcaJaIaeaegOhbhbhbhbhchbgOhbgOhOhehfhfhggOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacvoacacacacacaEaeaeNKhihjhkhlhixhbQbRbwaeaeafagaghmaeaeaeaeaeanaoaraeaeaeaeaehnagagahaeaefUgbgbgbgbgbgbgbcQcRgcgcgcgcgcgcgcgcaJaIaeaegOhbhohogOgOgOgOhbgOhphqhrhshtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababbsaotMacacacacaEaeaeNKhuhvhwhxhyKsbQbRbwaeaeafagahaewcaehAhAhAaeasaehAhAhAaewcaeafagahaeaehBhChDhEhFhGhHhIcQcRhJhKhLhMhNhNiNhJaJaIaeaegOhbgOhohohohogOhbhPhQhqhrhshRgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacqWacacacacacbbaeaeNKhShThThThixhbQbRbwaeaeafagahaeaehUajhVajhWaehXhYajhZiaaeaeafagahaeaehBibibibibichGhIcQcRidhMhMhMieifhMhJaJaIaeaegOiggOihgOhohohoiigOijhqhrhshtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacacacacacacbsaobtaeNKhuikilikhyxhbQckaGtcaeafagahaehXajimajinhWaehXajajxNinhWaeafagahaevZhBibioioibipiqhIcQeXhJirhMhMhNhNishJaJaIaeaegOhbgOhogOgOgOhohbitiuivhrhrhtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababwbababababababacacacacacacacbEaeaeNKhuiwiwixhyxhbQbRaGaeaeafagahaehUajajiyizhAwdhAiziAiBajiaaeafagahaeaehBibiCiDibibibiEcQcRhJiFiGhMhMhMhMhJaJaIaeaegOhbgOhoiHhogOhohbithqhshrhshtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacacacacacacacaEaeaeNKhiiIiJhTiKxhbQbRbwaeaeafagahhXajxNiyhUajhVhYajajiLiAajiMhWafagahaeaehBjbioioibiOiPhIcQcRhJiQiFiRiSiTiUhJaJaIaeaegOhbgOhogOgOgOgOhbithqhshrhshtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababacacacacabwbaEaeaeNKhuiViWiXhyhzbQbRbwaeaeafagahhXajiyhUajajaeaoarajajiLiAajhWafagahaeaehBhIhIhIhIhIhIhIcQcRhJhJhJhJhJhJhJhJaJaIaeaegOhbgOhohohogOhohbithqhshrhshtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababaEaeaeNKhiiYiZiYjaxhjsjcaGaeaeafagahaejdhXinajaejejejeaeajajhWjdaeafagahaeaejfjgjhjijjjkjljmcQcRjnjojpjqjrjrjGjnaJaIaejtgOhbjuhbhbhbhchbhbgOjvhshrhshRgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaewaNKNKNKNKNKNKNKaGaGaGaeamafagahamaehXxNamjejejejejeaeajhWaeamafagahamaejfjwjwjxjwjyjkjmcQcRjzjqjqjqjAjBjqjnaJaIaeaegOgOgOhPgOitititgOgOjChrhrhrhtgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababwbabababababababacacaEaeaeaeaeaeaeasaeaeaeaeaeanaoapagaqaoarhXhZaojeaejDaejeaoimhWanaoapagaqaoarjfjwjEjEjwjwjFjmgBcRjnjXjqjqjrjrjqjnaJaIaeaegOjHijjIijjJjJjJjJjJjKjLjMjMjNgOhhhhhhhhhhhhhhhhhhhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeaeaeaeaeaeaeaeaeaeaeaeasafagahasaehXajaejejejejejeasinhWaeasafagahasaejfjwjOjPjwjwjwjQcQcRjnjRjSjqjqjTjqjnaJaIaeaegOgOgOgOgOgOgOgOgOgOgOgOjUjVgOgOgOgOgOgOgOgOgOgOgOhhhhhhhhhhgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaewajWjWjWjWjWjWjWjWjWjWtcaeafagahaehAhXajimaejejejeaeajajhWhAaeafagahaeaejflJjEjEjwjYjZjmcQcRjnkajRkbkckdkejnaJaIaeaegOhhhhhhhhhhhhhhhhhhhhgOiuhggOkfkfkfkfkgkfkfkfkfgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaeaejWkhkikikjkjkikikkjWaeaeafagahhXhViaiAajhZjtaoaehVajiyhUajhWafagahaekljfjmjmjmjmjmjmjmkmknjnjnjnjnjnjnjnjnaJaIaeaegOhhhhhhhhhhhhhhhhhhhhgOhqhtkokpkqkrkskrkskrkqktgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababwbabababababacacaEaeaejWkukukukvkwkukukxkyaeaeafagahhXajhViaiAajajinajajiyhUajhYhWafagahaevZaIkzfNkAkBkCkDkEkFkFxaaKaJaJaJaJaJaJaJaIaeaegOhhhhhhhhhhhhhhhhhhhhgOhqhtgOkHkskrkskrkskrkskIgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabakabababababababababababababacaEaeaejWkJkJkJkjkjkJkJkJkyaeaeafagahaeiAhVajiaizjdwejdizhUajimiyaeafagahaekKfNgFfNfNfNfNfNfNfNfNkLaKaKaKaJaJaJaJaJaIaeaegOhhhhhhhhhhhhhhhhhhhhgOhqhRgOkpkskrkqkrkqkrksktgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababakabababababababababababacaEaeaejWkikikikjkjkikikikyaeaeafagahaehXinajhYajhWaehXajhZxNajhWaeafagahaekKkMgFfNxdxqxqxqxqxqwGxqxqxqaKaJaJaJaJaJaIaeaegOhhhhhhhhhhhhgOgOgOgOgOhqhtgOkpkskrkskrkskrksktgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWkNkukukvkwkukukukyaeaeafagahaeaeiAajxNajhWaehXajajiniyaeaeafagahaevZaIkOfNxogFkPkQkQkRxDxZxUwUaKaJaJaJaJaJaIaeaegOhhhhhhhhhhhhgOkShfhfhfivhtgOkHkqkrkskrkskrkqkIgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababakabacaEaeaejWkJkJkJkjkjkTkTkUjWklaeafagahaewcaejdjdjdaeamaejdjdjdaewcaeafagahaeklaIkVfNkWgFkXkYkZlaxDxZwSxlaKaJaJaJaJaJaIaeaegOhhhhhhhhhhhhgOjKjMjMjMlbhtgOkpkskrkskrkskrksktgOhhhhhhhhhhgOaeaeaCawawawaDajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababwbabababababababababacacacaEaeaejWkikikikjkjkjkjkjkjlcaeafagagldaeaeaeaeaeanaoaraeaeaeaeaeleagagahaeaeaIfNfNxogFlflglhlaxDxZxbxRaKaJaJaJaJaJaIaraelilililililililigOljgOgOhqhtgOkflklklklllklklkkfgOhhhhhhhhhhgOaeaeaeaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababwbabababacacacbbaeaejWkulmkukvkjkjkjlnlolcaeafagagaggwgwgwgwgwgwlpgwgwgwgwgwgwagagagahaeaeaIlqbfxogFlrlslsltxDxZwZwTaKaJaJaJaJaJaIaeaelilulvlvlvlwlxlilylzlAgOhqhtgOgOlBlClBgOlBlBlCgOgOhhhhhhhhhhgOaeaeamaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacalbsaobtaejWkJkJkJlnlDlDlElFjWklaelGagagagagagagagagagagagagagagagagagagagahamaeaIlHbfwMxMlIxMxMxMlVxnxMxMaKaJaJaJaJaJaIaeaelilKlLlMlvlvlNlOlPhrlQgOhqhtgOlRlSlTlTlTlTlTlUlWgOhhhhhhhhhhgOgOgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacbEaeaejWmikjlXlFlFlFlFlYjWaeanaolZgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQagagaqaoaraIaImamaaIaIaImamaaIaIaIaIaIaIaIaIaIaIaIaeaelinBmbmblvlvmclilPhrmdgOhqhtgOmemfmgmgmgmgmgmhhogOhhhhhhhhhhgOmHgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaejWjWjWjWmjmjmkmjjWjWmlaeasaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeafagahasaeaeaeaeaeaeasaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaelilvlvlvlvmmmmlilPgOmdgOhqhtmnhomompmpmpmpmpmqmrgOhhhhhhhhhhgOmsmtmtgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababwbabababacvoacacacaEaeaeaGkGfaeHeHfbfcbQfdfefefffgfhbQfifjeAbwaeaeafagahaeaedMdZdZdZdZeBedededdNeCfkfkeCeCeCflcQFHdQfmfnenenenendQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababbsaotMacacaEaeaeaGkGfofpfqfreJfsftfufufvftdWfwfxfdfCaGaeamafagahamaedMdZdZdZdZebfzfAfBdNgheUeUeCfDfEdPcQFHdQfFfGfHfIfJfKdQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababacqWacacacaEaewaQkJaJaJaJaJaJafLkGaGaGbwbwbwaGfMftaGaGanaoapagaqaoardMdMdMdMdMdMdMdMdMdMdPdPdPdPdPdPdPcQFHdQdQdQdQdQdQdQdQaJaIaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeQkZAyOfOfPfQJabGfRaGaeaeaeaefSfTfTfSaeaeasafagahasaeaeaewfaeaeaeaeaeaefUfVfWfXfYfZgagbcQFHgcgdgegfgggggEgcaJaIaeaeaCawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawaDajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababacacacacaEaeaeQkwKgigjwKwKgkbQbRbwaeaeamaeaeaeaeaeaeaeaeafagahaeaeaeaeaeaeaeaeamaeaefUglglglglgmgngbcQFHgogfgfgpgqgqgfgcaJaIaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababwbabababababacacacacacaEaeaeQkwKgrgsgtguJaddbRbwaeanaogvgwgwgwgwgwgwgwagagaggwgwgwgwgwgwgwgxaoaraefUglgygygzglgAgbgBFHgcgCgfgfgggggfgcaJaIaraeaeaeaogDaoaeaeamaeaeaeaeaeaeaeaeaeaeaeaeaeamaeaeaeaeaeaeaeaeaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababakabababacacacacacaEaeaeQkgSxygGwKgHJabQbRaGaeaegIagagagagagagagagagagagagagagagagagagaggJaeaefUglgKgKglglglgLcQFHgcgMgNgfgfgfgfgcaJaIaeaegOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababacacacacacacaEaeaeQkJaJaJaJaJaJagPbRaGaeaeafagagaggQgQgQgQgQgQgRgQgQgQgQgQgQagagagahaeaefUhdgygyglgTgUgbcQFHgcgVgWgXgYgZhagcaJaIaeaegOhbhbhbhbhchbgOhbgOhOhehfhfhggOUWZbWoWoWohfGlhfWoWoWoZbTAOhgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacvoacacacacacaEaeaeNKhihjhkhlhixhbQbRbwaeaeafagaghmaeaeaeaeaeanaoaraeaeaeaeaehnagagahaeaefUgbgbgbgbgbgbgbcQFHgcgcgcgcgcgcgcgcaJaIaeaegOhbhohogOgOgOgOhbgOhphqWthshtUUhqQiQiQiQiQiQiQiQiQiQiQihrhtgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababbsaotMacacacacaEaeaeNKhuhvhwhxhyKsbQbRbwaeaeafagahaewcaehAhAhAaeasaehAhAhAaewcaeafagahaeaehBhChDhEhFhGhHhIcQFHhJhKhLhMhNhNiNhJaJaIaeaegOhbgOhohohohogOhbhPhQhqWthshRgOSqUlNyHaNyNyRzHaNyHaNyzgBrhRgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacqWacacacacacbbaeaeNKhShThThThixhbQbRbwaeaeafagahaeaehUajhVajhWaehXhYajhZiaaeaeafagahaeaehBibibibibichGhIcQFHidhMhMhMieifhMhJaJaIaeaegOiggOihgOhohohoiigOijhqWthshtgONZzPhsOrhrhrhrOrhrAhLozaBrhtgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacacacacacacbsaobtaeNKhuikilikhyxhbQckaGtcaeafagahaehXajimajinhWaehXajajxNinhWaeafagahaevZhBibioioibipiqhIcQeXhJirhMhMhNhNishJaJaIaeaegOhbgOhogOgOgOhohbitiuivhrhrhtitGBBlHJxIhrhrhrxIhrhrhrzaBrzbgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababwbababababababacacacacacacacbEaeaeNKhuiwiwixhyxhbQbRaGaeaeafagahaehUajajiyizhAwdhAiziAiBajiaaeafagahaeaehBibiCiDibibibiEcQFHhJiFiGhMhMhMhMhJaJaIaeaegOhbgOhoiHhogOhohbithqhsWthshtithqyzhrUdhrUdhrUdhrUdhrzaBrzbgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababacacacacacacacaEaeaeNKhiiIiJhTiKxhbQbRbwaeaeafagahhXajxNiyhUajhVhYajajiLiAajiMhWafagahaeaehBjbioioibiOiPhIcQFHhJiQiFiRiSiTiUhJaJaIaeaegOhbgOhogOgOgOgOhbithqhsWthshtitGBGRhrhrhrVzhrhrhrhrhrObBrzbgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababacacacacabwbaEaeaeNKhuiViWiXhyhzbQbRbwaeaeafagahhXajiyhUajajaeaoarajajiLiAajhWafagahaeaehBhIhIhIhIhIhIhIcQFHhJhJhJhJhJhJhJhJaJaIaeaegOhbgOhohohogOhohbithqhsWthshtgOzjDahshrhrOrhrhrVzhrLozaBrDvgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababaEaeaeNKhiiYiZiYjaxhjsjcaGaeaeafagahaejdhXinajaejejejeaeajajhWjdaeafagahaeaejfjgjhjijjjkjljmcQFHjnjojpjqjrjrjGjnaJaIaejtgOhbjuhbhbhbhchbhbgOjvhshrhshRgOSqDEFNCWFNNRFNFNNRARFNBOBrhRgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaewaNKNKNKNKNKNKNKaGaGaGaeamafagahamaehXxNamjejejejejeaeajhWaeamafagahamaejfjwjwjxjwjyjkjmcQFHjzjqjqjqjAjBjqjnaJaIaeaegOgOgOhPgOitititgOgOjChrhrhrhtUUhqGAGAGAGAGAGAGAGAOYGAGAhrhtgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababwbabababababababacacaEaeaeaeaeaeaeasaeaeaeaeaeanaoapagaqaoarhXhZaojeaejDaejeaoimhWanaoapagaqaoarjfjwjEjEjwjwjFjmgBFHjnjXjqjqjrjrjqjnaJaIaeaegOjHijjIijjJjJjJjJjJjKjLjMjMjNgOOWjLGTGTGTjLGTGTGTyQjMjMjMjNgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaeaeaeaeaeaeaeaeaeaeaeaeasafagahasaehXajaejejejejejeasinhWaeasafagahasaejfjwjOjPjwjwjwjQcQFHjnjRjSjqjqjTjqjnaJaIaeaegOgOgOgOgOgOgOgOgOgOgOgOjUjVgOgOgOgOgOgOgOgOgOgOgODCEDEDEDEDgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaewaQnQnQnQnQnQnQnQnQnQntcaeafagahaehAhXajimaejejejeaeajajhWhAaeafagahaeaejflJjEjEjwjYjZjmcQFHjnkajRkbkckdkejnaJaIaeaegOBIKnKnKnZYXphrRfgOhhgOiuhggOkfkfkfkfkgkfkfkfkfgOOMoooooooogOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaeaeQnkhkikikjkjkikikkQnaeaeafagahhXhViaiAajhZjtaoaehVajiyhUajhWafagahaekljfjmjmjmjmjmjmjmkmIbjnjnjnjnjnjnjnjnaJaIaeaegOynBIBIBILJEhLgkSgOgOgOhqhtkokpkqkrkskrkskrkqktgOBlgOgOgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababwbabababababacacaEaeaeQnkukukukvkwkukukxzyaeaeafagahhXajhViaiAajajinajajiyhUajhYhWafagahaevZTqkzfNkAkBkCkDkEkFkFxaljaJaJaJaJaJaJaJaIaeaegOynBIBIBILJEhLgkSOEUDgOhqhtgOkHkskrkskrkskrkskIgOPpgOhhgOhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabakabababababababababababababacaEaeaeQnkJkJkJkjkjkJkJkJzyaeaeafagahaeiAhVajiaizjdwejdizhUajimiyaeafagahaekKfNgFfNfNfNfNfNfNfNfNkLljljljljljaJaJaJaIaeaegOynBIBIBILJEhLgkSOEIagOhqhRgOkpkskrkqkrkqkrksktgOgOgOgOgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababakabababababababababababacaEaeaeQnkikikikjkjkikikizyaeaeafagahaehXinajhYajhWaehXajhZxNajhWaeafagahaekKkMgFfNxdxqxqxqxqxqwGxqxqxqljPhljaJaJaJaIaeaegOFhZnZnZnBIEhhrkSOEOzgOhqhtgOkpkskrkskrkskrksktgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaeQnkNkukukvkwkukukuzyaeaeafagahaeaeiAajxNajhWaehXajajiniyaeaeafagahaevZTqkOfNxogFkPkQkQkRxDxZxUwUSuYqljaJaJaJaIaeaegOHgHgHgHgHgZxWtkSyUCMgOhqhtgOkHkqkrkskrkskrkqkIgOhhhhhhhhhhgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababakabacaEaeaeQnkJkJkJkjkjkTkTkUQnklaeafagahaewcaejdjdjdaeamaejdjdjdaewcaeafagahaeklTqkVfNkWgFkXkYkZlaxDxZwSxlSuHrljaJaJaJaIaeaegOMTxRxRxRRtJBJBlbYbMUVWhqhtgOkpkskrkskrkskrksktgOhhhhhhhhhhgOaeaeaCawawawaDajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababwbabababababababababacacacaEaeaeQnkikikikjkjkjkjkjkjlcaeafagagldaeaeaeaeaeanaoaraeaeaeaeaeleagagahaeaeTqfNfNxogFlflglhlaxDxZxbxlSuKQljaJaJaJaIaraelilililililililigOgOgOgOhqhtgOkflklklklllklklkkfgOhhhhhhhhhhgOaeaeaeaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababwbabababacacacbbaeaeQnkulmkukvkjkjkjlnlolcaeafagagaggwgwgwgwgwgwlpgwgwgwgwgwgwagagagahaeaeTqlqbfxogFlrlslsltxDxZwZwTSuNQljaJaJaJaIaeaelilulvlvlvlwlxlilylzlAgOhqhtgOgOlBlClBgOlBlBlCgOgOhhhhhhhhhhgOaeaeamaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacalbsaobtaeQnkJkJkJlnlDlDlElFQnklaelGagagagagagagagagagagagagagagagagagagagahamaeTqlHbfwMxMlIxMxMxMlVxnxMxMljLWljaJaJaJaIaeaelilKlLlMlvlvlNlOlPWtmdUvhqhtgOlRlSlTlTlTlTlTlUlWgOhhhhhhhhhhgOgOgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacbEaeaeQnmikjlXlFlFlFlFlYQnaeanaolZgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQagagaqaoarTqTqKEKETqTqTqKEKETqTqTqTqTqTqTqaIaIaIaIaeaelinBmbmblvlvmclilPhrVYgOhqhtgOmemfmgmgmgmgmgmhhogOhhhhhhhhhhgOmHgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacaEaeaejWjWjWjWmjmjmkmjjWjWmlaeasaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeafagahasaeaeaeaeaeaeasaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaelilvlvlvlvmmmmlilPgOmdYvhqhtmnhomompmpmpmpmpmqmrgOhhhhhhhhhhgOmsmtmtgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababatababababababwbababababwbababacacaEaeaejWmumvmwmxmxmymymzjWmAaeaeaeaeaemBmBmBwgaeaeaeklaeaeaewhaeaeafagahaeaeaeaeaeaeaeaeaeaeaeaeaeamaeaeaeaeaeaeaeaeaeaelilvlvlvlvmCmDlimEmFmGgOnljNgOhomImJmKmKmKmLmMmJgOhhhhhhhhgOgOmsmNmNgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaeaejWmOmymPmQmQmRmymSjWjWjWjWjWkykyjWmTjWjWmUkykymUmUmVmUmUaeaeafagahaeaeaIaImWmWaIaIaImWmWaIaIaIaImamaaIaIaIaIaIaeaelimmmmlvlvmmmmmXmsmYmZgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOnanblzlAgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabakababababababababababababacacaEaewajWncndnenfngnhninjnkntnmnnnonpnqnrnpnsjWocnununvnwnxnymUaeaeafagahaeaenzdzdzdzdzdzdzdzdzdznAaKyfnCnDaRaKaJaJaIaeaelinEnFlvlvnGnFmXmsmYnHlzlzlzlznInJnJnJnJnJnJnJnJnJnJnKlzlzlznLhrhrmdgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWnMmynNmQmQnOmynPnQnRnRnSnonpnpnpnpnpjWnTnUnVnUnWnxnXkyaeaeafagahaeaenYdIdIdInZdIdIdIdIoacRobaRaRaRpxaKaJaJaIaeaelimmmmlvlvmmmmmXnHlznLhrhrhrgOmdmYmYmYmYmYmYmYmYmYmYlPgOhrhrhrhrhrmdgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWodmymyoeoemymymyofnRnRognonpnpohoiojjWnxokokoknxnxnukyaeamafagahamaeolomomomomomomomomoncRooaRaRopoqaKaJaJaIaeanlimCmClvlvnEmCmXlPgOhrorosmFmFotouovououououououovouowmFmFosoxhrgOmdgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWoymyozozoAoBoCmyoDnRnRnSnonpnpohoEojjWoFnUnVnUnWoGoHmUanaoapagaqaoaroloIomoJoKoKoLoMomSboNaRoOaRoPoQaKaJaJaIaeaelimmmmlvlvmmoRlimEmFoSoTgOgOgOgOgOgOgOgOoUhbgOgOgOgOgOgOgOgOoVoWmFmGgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababwbabababababakababababababacaEaeaejWjWjWjWjWjWjWjWjWjWoXjWjWnpnpnpnpnpnpjWnxoYoYoYnxoGoZmUaeasafagahasaeoloIompaoKoKoKpbpccQcRaRaRaRpdoQaKaJaJaIaeaelipenFlvlvmCmClimsmYpfgOgOpgphphpipiwipipjpjpiwipipiphphpkgOgOplmYmZgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababwbabacaEaeaejWpmpmpmpmpmpmpmpmjWpnnpnpnpponpohppojjWpqprprprpsoGptmUaeaeafagahaeaeolomompupvpwpBpbomcQcRaKpyaRpzpAaKaJaJaIaeaelipYlvlvlvlvlvlimsmYmZgOpCpDkfpEpFhbhohopGpGhohohbpFpHkfpIpJgOmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWpqprprprpsoGoHkyaeaeafagahaeaeolpKompLpMpNpOpPomcQcRaKaKaKaKaKaKaJaJaIaeaelilililililililinHlzpQgOwjkfpSgOwkpTpTpTpTpTpTpTpTwlgOpSkfwmgOnHlzpQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababwbabababababacacaEaeaeaeaeaewnaeaeaeaeaeaeaemUpVpVpWpXpXrppZmUpqprprprpsoGqakyaeaeafagahaeaeolqbomqcoKqdoKoKomqecRaKaJaJaJaJaJaJaJaIaeaeqfqfqfqfqfqfqfqfqggOmdgOpRpEpFwoqiqiqiqiqiqiqiqiqiqiwppFpHpUgOlPgOlQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacbbaeaeaeaeaeaeaeaeaeaeqkaeaemUqlqlqmqnqnqoqpqqnxqrqrqsnxoGoHmUaeaeafagahaeaeolqtquqvoKoKoKqwomcQcRaKaJaJaJaJaJaJaJaIaeaeqfqxqyqyqyqzqAqfmEmFmGgOqBpEhoqhqiqiqiqiqiqiqiqiqiqiqjhopHqCgOmEmFmGgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacbsaoqDqEqEqEqEqEqEqEqEqFaobtaemUqGqHqHqHqnqoqImUmUmUmUmUmUmUmUmUtcaeafagahaeaeolqJomqKqLqMqNqOomcQcRaKaJaJaJaJaJaJaJaIaeaeqfqPqQygqyqyqSqTmsmYmZhbqBqUpGqhqiqiqiwzqiqiqiqiqiqiqjpGqVqChbmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacqWacacacacacacacacacacbEaeaemUqlqmqmqmqnqoqXmUpmpmpmpmpmpmpmmUaeaeafagahaeaeolomomomomomomomomcQcRqYqYqYqYqYqYqYqZraaeaeqfrbqRqRqyqyqSqfmsmYmZoUqBqUpGqhqiqiqiqiqiqiwAqiqiqiqjpGqVqCoUmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacacacacacacacacacacacacaEaeaemUrcrdrerdrfrgqXmUpmpmpmpmpmpmpmmUaeaeafagahaeaerhrirjrkrlrmrnrorjGiYeqYsNrqrrrsrtqYqZraaeaeqfqyqyqyqyruruqfnHlzpQgOqBpEhoqhqiqiqiqiqiqiqiqiqiqiqjhopHqCgOnHlzpQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababwbababababababababababababacacacacacacacabababacacaEaeaemUrvrwrwrwrxryqpmUpmpmpmpmpmpmpmmUaeamafagahamaerhrirjrzrArBrCrCrDcQcRrErrrrrFrGrHqYqZraaeaeqfqyqyqyqyrIrJqfqggOmdgOpRpEpFwqqiqiqiqiqiqiqiqiqiqiwrpFpHpUgOlPgOlQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababwbababababababababacacacabababababacaEaewamUrKqmqmqmrLqoqXmUpmpmpmpmpmpmpmmUanaoapagaqaoarrhrjrjrCrMrNrCrOrjcQcRqYrPrrrrrQrRqYqYraaraeqfruruqyqyrururSmEmFmGgOwjkfrTgOwsrUrUrUrUrUrUrUrUwtgOrTkfwmgOmEmFmGgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababacacacaEaeaemUrVrWrWrWrLqoqImUpmpmpmpmpmpmpmmUaeasafagahasaerhrXrjrCrCrYrCrZrjcQsaqYsbrrrrscsdqYseraaeaeqfsfsgqyqyrIshrSmsmYmZgOsisjkfpEpFhbhohopGpGhohohbpFpHkfskslgOmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababwbababababacvoacacaEaeaemUrKrKqmrLrLqoqXmUpmpmpmpmpmpmpmmUaeaeafagahaeaerhsmrjsnsosososprjcQcRqYsqrrrrsrssqYstraaeaeqfruruqyqyrururSmsmYpfgOgOsusvsvswswwuswsxsxswwuswswsvsvsygOgOplmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababababababababababbsaotMacaEaeaemUszszsAsBsBsCsDmUpmpmpmpmpmpmpmmUaeaeafagahaeaerhsEsFsGrCsHrCrCrjcQcRqYrrrrrrrrsIsJsKraaeaeqfsgrIqyqyshrIrSnHlznblAgOgOgOgOgOgOgOgOoUhbgOgOgOgOgOgOgOgOlysLlzpQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababwbababababababakabababacqWacacaEaeaemUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUaeaeafagahaeaerhsMrjtbsOsPsQsRrjcQcRqYsSsTsUsUsVqYsWraaeaeqfruruqyqyrusXqfqggOorotsYnKlznInJsYnJnKlzlznInJsYnJnKlznIsYowoxgOlQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababakabababababababababababababababacacaEaeaeaewvtaaesZtaaesZwwtvaeaeaeaeaewxtdaeaeafwBahaeaerhrjrjrjrjrjrjrjrjcQcRqYqYqYqYqYqYqYqYraaeaeqfterIqyqysfshqfoVoxmdmYmYlPgOmdmYmYmYlPhrhrmdmYmYmYlPgOmdmYmYlPoroTgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababababababababababababababaEaeaeaeaeaeaeaeaeaeaeaeaetftftftftftftfaeaeafagahaeaetgthtitjtktktltmtiWlXQtntotptqtrtstntttuaeaeqfqyqyqyqyqytwqfgOtTotououowmFotouououowoxorotouououowmFotououowtxgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababababababababababwbabababacqEqEqEqEtyqEqEqEqEtzaetAtBacacacacactBtCaeafagahaeaetgthtitDtEtFtktGtHcQcRtItrtrtrtrtJtntttuaeaeqfqftKqfqftKqfqfgOgOititgOgOgOititgOgOgOtLtxgOgOgOititgOgOgOititgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababwbababababababababababababababababababababababacacacacbsaotMacacacaEaetAacacacacacacactCamafagahamaetgtititNtOtPtktQticQcRtntRtStRtruetntntuaeaeaewfaesZtaaeaeaehAaeaeaetUtVtWtXtYtZdCuadCdCuadCubtXtYtWtVtUaeaeaewyaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababababacacacacacacqWacacacacaEaetAacacacacacacacucaoapagaqaoartgudtiuWtktktkufticQcRtnuguhuitrujtnuktuaeaeaeaeaeaeaeaeaehUhViaaehXulumubtWtWtZdCdCdCdCdCdCubtWtWtZulumhWaehUajiaaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababababacacacunacacacacacacacaEaetAacacacacacacactCasafagahasaetguotiuptktktktkticQcRtnuqurusutuutnuvtuaraeaeaeaeaeaeaehXajimajhWhXuwulubtWtWuxaKdCdCdCdCaKuytWtWtZumuzhWhXajajhZhWaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
-aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababwbababababababacacacacacuAacacacacacacaEaetAacacacacacacactCaeafagahaeaetguBuCuDtkuEtkuFticQsatnuGususutuHuIuJtuaeaeaeaeaeaeaeaeaeiAajiyaeaeuKuKtWtWtWtWuLuMuMuMuMuLtWtWtWtWuKuKaeaeiAiniyaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababacacaEaeaejWmOmymPmQmQmRmymSjWjWjWjWjWkykyjWmTjWOnBUScScBUBUmVBUBUaeaeafagahaeaeSJSJmWmWSJSJSJmWmWSJSJSJSJmamaSJSJSJSJSJaeaelimmmmlvlvmmmmmXmsmYmZgOgOYvgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOgOnanblzlAgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabakababababababababababababacacaEaewajWncndnenfngnhninjnkntnmnnnonpnqnrnpnsOnocnununvnwnxnyBUaeaeafagahaeaenzdzdzdzdzdzdzdzdzdznAXjyfnCnDSnXjoNoNSJaeaelinEnFlvlvnGnFmXmsmYnHlzlzlzlznInJnJnJnJnJnJnJnJnJnJnKlzlzlznLhrhrmdgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWnMmynNmQmQnOmynPnQnRnRnSnonpnpnpnpnpOnnTnUnVnUnWnxnXScaeaeafagahaeaenYYSYSYSnZYSYSYSYSoacRobSnLOWJpxXjoNoNSJaeaelimmmmlvlvmmmmmXnHlznLhrhrhrgOmdmYmYmYmYmYmYmYmYmYmYlPgOhrhrhrhrhrmdgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWodmymyoeoemymymyofnRnRognonpnpohoiojOnnxokokoknxnxnuScaeamafagahamaeolomomomomomomomomoncRobSnaRopoqXjoNoNSJaeanlimCmClvlvnEmCmXlPgOhrorosmFmFotouovououououououovouowmFmFosoxhrgOmdgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWoymyozozoAoBoCmyoDnRnRnSnonpnpohoEojOnoFnUnVnUnWoGoHBUanaoapagaqaoaroloIomoJoKoKoLoMomSbcRoboOKOoPoQXjoNoNSJaeaelimmmmlvlvmmoRlimEmFoSoTgOgOgOgOgOgOgOgOoUhbgOgOgOgOgOgOgOgOoVoWmFmGgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababwbabababababakababababababacaEaeaejWjWjWjWjWjWjWjWjWJXnRjWjWnpnpnpnpnpnpOnnxoYoYoYnxoGoZBUaeasafagahasaeoloIompaoKoKoKpbpconcRobSnaRpdoQXjoNoNSJaeaelipenFlvlvmCmClimsmYpfgOgOpgphphpipiwipipjpjpiwipipiphphpkgOgOplmYmZgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababwbabacaEaeaejWpmpmpmjWpmpmpmjWjWpnoXIOnpponpohppojOnpqprprprpsoGptBUaeaeafagahaeaeolomompupvpwpBpbomoncRXjpyaRpzpAXjoNoNSJaeaelipYlvlvlvlvlvlimsmYmZgOpCpDkfpEpFhbhohopGpGhohohbpFpHkfpIpJgOmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababacaEaeaejWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWjWOnpqprprprpsoGoHScaeaeafagahaeaeolpKompLpMpNpOpPomoncRXjXjmWmWmWXjoNoNSJaeaelilililililililinHlzpQgOwjkfpSgOwkpTpTpTpTpTpTpTpTwlgOpSkfwmgOnHlzpQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababwbabababababacacaEaeaeaeaeaewnaeaeaeaeaeaeaeBUpVpVpWpXpXrppZBUpqprprprpsoGqaScaeaeafagahaeaeolqbomqcoKqdoKoKomqecRmWJPCPOUJyXjXjXjSJaeaeqfqfqfqfqfqfqfqfqggOmdgOpRpEpFwoqiqiqiqiqiqiqiqiqiqiwppFpHpUgOlPgOlQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacbbaeaeaeaeaeaeaeaeaeaeqkaeaeBUqlqlqmqnqnqoqpqqnxqrqrqsnxoGoHBUaeaeafagahaeaeolqtquqvoKoKoKqwomoncRmWXtXjXjXjXjoNoNSJaeaeqfqxqyqyqyqzqAqfmEmFmGgOqBpEhoqhqiqiqiqiqiqiqiqiqiqiqjhopHqCgOmEmFmGgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacbsaoqDqEqEqEqEqEqEqEqEqFaobtaeBUqGqHqHqHqnqoqImUmUmUmUmUmUmUmUmUtcaeafagahaeaeolqJomqKqLqMqNqOomoncRmWDSXjoNoNXjoNoNSJaeaeqfqPqQygqyqyqSqTmsmYmZhbqBqUpGqhqiqiqiwzqiqiqiqiqiqiqjpGqVqChbmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacqWacacacacacacacacacacbEaeaeBUqlqmqmqmqnqoqXmUpmpmpmpmpmpmpmmUaeaeafagahaeaeolomomomomomomomomoncRqYqYqYqYqYqYqYqYraaeaeqfrbqRqRqyqyqSqfmsmYmZoUqBqUpGqhqiqiqiqiqiqiwAqiqiqiqjpGqVqCoUmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababacacacacacacacacacacacacacacaEaeaeBUrcrdrerdrfrgqXmUpmpmpmpmpmpmpmmUaeaeafagahaeaerhrirjrkrlrmrnrorjGiYeqYsNrqrrrsrtqYqZraaeaeqfqyqyqyqyruruqfnHlzpQgOqBpEhoqhqiqiqiqiqiqiqiqiqiqiqjhopHqCgOnHlzpQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababwbababababababababababababacacacacacacacabababacacaEaeaeBUrvrwrwrwrxryqpmUpmpmpmpmpmpmpmmUaeamafagahamaerhrirjrzrArBrCrCrDoncRrErrrrrFrGrHqYqZraaeaeqfqyqyqyqyrIrJqfqggOmdgOpRpEpFwqqiqiqiqiqiqiqiqiqiqiwrpFpHpUgOlPgOlQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababwbababababababababacacacabababababacaEaewaBUrKqmqmqmrLqoqXmUpmpmpmpmpmpmpmmUanaoapagaqaoarrhrjrjrCrMrNrCrOrjoncRqYrPrrrrrQrRqYqYraaraeqfruruqyqyrururSmEmFmGgOwjkfrTgOwsrUrUrUrUrUrUrUrUwtgOrTkfwmgOmEmFmGgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababacacacaEaeaeBUrVrWrWrWrLqoqImUpmpmpmpmpmpmpmmUaeasafagahasaerhrXrjrCrCrYrCrZrjonsaqYsbrrrrscsdqYseraaeaeqfsfsgqyqyrIshrSmsmYmZgOsisjkfpEpFhbhohopGpGhohohbpFpHkfskslgOmsmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababwbababababacvoacacaEaeaeBUrKrKqmrLrLqoqXmUpmpmpmpmpmpmpmmUaeaeafagahaeaerhsmrjsnsosososprjoncRqYsqrrrrsrssqYstraaeaeqfruruqyqyrururSmsmYpfgOgOsusvsvswswwuswsxsxswwuswswsvsvsygOgOplmYmZgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababababababababababbsaotMacaEaeaeBUszszsAsBsBsCsDmUpmpmpmpmpmpmpmmUaeaeafagahaeaerhsEsFsGrCsHrCrCrjoncRqYrrrrrrrrsIsJsKraaeaeqfsgrIqyqyshrIrSnHlznblAgOgOgOgOgOgOgOgOoUhbgOgOgOgOgOgOgOgOlysLlzpQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababwbababababababakabababacqWacacaEaeaeBUBUBUBUBUBUBUBUmUmUmUmUmUmUmUmUmUaeaeafagahaeaerhsMrjtbsOsPsQsRrjoncRqYsSsTsUsUsVqYsWraaeaeqfruruqyqyrusXqfqggOorotsYnKlznInJsYnJnKlzlznInJsYnJnKlznIsYowoxgOlQgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababakabababababababababababababababacacaEaeaeaewvtaaesZtaaesZwwtvaeaeaeaeaewxtdaeaeafwBahaeaerhrjrjrjrjrjrjrjrjoncRqYqYqYqYqYqYqYqYraaeaeqfterIqyqysfshqfoVoxmdmYmYlPgOmdmYmYmYlPhrhrmdmYmYmYlPgOmdmYmYlPoroTgOaraeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababababababababababababababaEaeaeaeaeaeaeaeaeaeaeaeaetftftftftftftfaeaeafagahaeaetgthtitjyDtktltmtiWlXQtntotptqtrtstntttuaeaeqfqyqyqyqyqytwqfgOtTotououowmFotouououowoxorotouououowmFotououowtxgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababababababababababababababwbabababacqEqEqEqEtyqEqEqEqEtzaetAtBacacacacactBtCaeafagahaeaetgthtitDtEtFtktGtHoncRtItrtrtrtrtJtntttuaeaeqfqftKqfqftKqfqfgOgOititgOgOgOititgOgOgOtLtxgOgOgOititgOgOgOititgOgOgOaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababwbababababababababababababababababababababababacacacacbsaotMacacacaEaetAacacacacacacactCamafagahamaetgtititNtOtPtktQtioncRtntRtStRtruetntntuaeaeaewfaesZtaaeaeaehAaeaeaetUtVtWtXtYtZdCuadCdCuadCubtXtYtWtVtUaeaeaewyaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababababacacacacacacqWacacacacaEaetAacacacacacacacucaoapagaqaoartgudtiuWtktktkuftioncRtnuguhuitrujtnuktuaeaeaeaeaeaeaeaeaehUhViaaehXulumubtWtWtZdCdCdCdCdCdCubtWtWtZulumhWaehUajiaaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababababacacacunacacacacacacacaEaetAacacacacacacactCasafagahasaetguotiuptktktktktioncRtnuqurusutuutnuvtuaraeaeaeaeaeaeaehXajimajhWhXuwulubtWtWuxaKdCdCdCdCaKuytWtWtZumuzhWhXajajhZhWaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
+aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababwbababababababacacacacacuAacacacacacacaEaetAacacacacacacactCaeafagahaeaetguBuCuDtkuEtkuFtionsatnuGususutuHuIuJtuaeaeaeaeaeaeaeaeaeiAajiyaeaeuKuKtWtWtWtWuLuMuMuMuMuLtWtWtWtWuKuKaeaeiAiniyaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababatabababababababababababwbababababababababababababacacacacacacacacacacacacacaEaetAuNuNuNuNuNuNuNtCaeafagahaevZtguOtiuPuQuRuSuTtidHkntnuUuVvTuXuYtnuZtuaeaeaeaewcaeaeaeaeaejdaeaeaeaKaKvatUtUtUtUtWtWtWtWtUtUtUtUvbaKaKaeaeaejdaeaeaeaFajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaa
 aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababacvoacacacacacacacacacacacaEaetAvcvdvdvdvdvdvetCaeafagahaeaetgtgtgtgtgtgtgtgtgmWmWtututututututututuaeaeaeaeaeaeaeaeaeaeaeaeaeaeaKaKtZulululvfubtWtWtZvguzulvhubaKaKaeaeaeaeaeaeaeaCawawawawawawviviviviviviviviviviviviviviviviviviviviviviviviviviviviviviviviviviaa
 aaabababababababababababababababababababababababababababababababababababababababababababatababababababababababababababababababababababababbsaotMacacacacacwCacacacacaEaetAvjvjvjvkvjvjvjtCaeafagahaeaeaewfaeaeaeaeamaeaeaeaeaewfaeaeaeaeaeamaeaeaeaeaeaeaeaeaeaeaeamaeaeaeaeaeaeiAhYhVajhWaeaehXajhVajvlaeaeaeaeaeaeamaeaeaeamaeaeaeaeaeayaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaa
