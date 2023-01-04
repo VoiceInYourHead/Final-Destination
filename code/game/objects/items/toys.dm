@@ -772,6 +772,17 @@
 		SPAN_ITALIC("You [action_word] \the [src].")
 	)
 
+/obj/item/toy/plushie/soundable
+	var/sounds
+
+/obj/item/toy/plushie/soundable/attack_self()
+	var/sound_to_play
+	if(islist(sounds))
+		sound_to_play = pick(sounds)
+	else
+		sound_to_play = sounds
+
+	playsound(src, sound_to_play, 25)
 
 /obj/item/toy/plushie/nymph
 	name = "diona nymph plush"
@@ -791,11 +802,11 @@
 	icon_state = "kittenplushie"
 
 
-/obj/item/toy/plushie/pig
+/obj/item/toy/plushie/soundable/pig
 	name = "piggy plush"
 	desc = "A plushie of a funny little piggy! Watch as it oink's it's way right into your heart."
 	icon_state = "pigplushie"
-
+	sounds = list('sound/misc/Hru1.ogg', 'sound/misc/Hru2.ogg', 'sound/misc/Hru3.ogg')
 
 /obj/item/toy/plushie/lizard
 	name = "lizard plush"

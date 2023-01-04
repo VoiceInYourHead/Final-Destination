@@ -385,7 +385,7 @@
 /obj/random/plushie/spawn_choices()
 	return list(/obj/item/toy/plushie/nymph,
 				/obj/item/toy/plushie/mouse,
-				/obj/item/toy/plushie/pig,
+				/obj/item/toy/plushie/soundable/pig,
 				/obj/item/toy/plushie/kitten,
 				/obj/item/toy/plushie/lizard)
 
