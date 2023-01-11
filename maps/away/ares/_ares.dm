@@ -59,7 +59,7 @@
 	id = "awaysite_ares"
 	description = "Active Grayson Manufactories Ltd. mining vessel."
 	suffixes = list("ares/ares.dmm")
-	spawn_cost = 1000 // NO BITCHES???
+	spawn_cost = 3
 	area_usage_test_exempted_root_areas = /area/ship/ares
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/ares)
 

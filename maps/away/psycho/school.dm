@@ -102,7 +102,7 @@
 /datum/map_template/ruin/away_site/camp
 	name = "Jungle Planet"
 	id = "awaysite_camp"
-	spawn_cost = 2
+	spawn_cost = 1000 //NO BITCHES??
 	player_cost = 4
 	description = "PSY School with students and teachers. For events only."
 	suffixes = list("psycho/school-1.dmm", "psycho/school-2.dmm")

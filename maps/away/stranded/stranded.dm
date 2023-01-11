@@ -126,7 +126,7 @@
 /datum/map_template/ruin/away_site/stranded
 	name = "Snowy Planet"
 	id = "awaysite_splanet"
-	spawn_cost = 5
+	spawn_cost = 10
 	player_cost = 4
 	description = "Arctic planet with three z-lvls"
 	suffixes = list("stranded/stranded-1.dmm", "stranded/stranded-2.dmm", "stranded/stranded-3.dmm")
