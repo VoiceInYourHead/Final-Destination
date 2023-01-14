@@ -8,7 +8,7 @@
 	id = "awaysite_smuggler"
 	description = "."
 	suffixes = list("smugglers_ship/smuggler.dmm")
-	spawn_cost = 1000 // NO BITCHES???
+	spawn_cost = 2 // NO BITCHES???
 	area_usage_test_exempted_root_areas = /area/ship/smuggler
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/smuggler)
 

@@ -1,13 +1,13 @@
-/*
+
 /datum/map_template/ruin/exoplanet/scg_ruined_city
 	name = "scg ruined city"
 	id = "scg_ruined_city"
 	description = "SCG Ruined City... Thats all, yeah."
 	suffixes = list("scg_ruined_city/scg_ruined_city.dmm")
-	spawn_cost = 10
+	spawn_cost = 3
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS|TEMPLATE_FLAG_NO_RUINS
 	ruin_tags = RUIN_HUMAN
-
+/*
 /area/map_template/scgcity
 	name = "\improper SCG City"
 	icon_state = "dk_yellow"

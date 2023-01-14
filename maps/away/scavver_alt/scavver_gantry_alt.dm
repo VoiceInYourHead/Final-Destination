@@ -7,7 +7,7 @@
 	id = "awaysite_gantry"
 	description = "Salvage Gantry Mother-Ship"
 	suffixes = list("scavver_alt/scavver_gantry-1.dmm","scavver_alt/scavver_gantry-2.dmm")
-	spawn_cost = 1
+	spawn_cost = 2
 	accessibility_weight = 10
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/scavver_gantry,

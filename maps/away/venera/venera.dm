@@ -25,7 +25,7 @@
 	id = "awaysite_venera"
 	description = "SolGov movable medium ship with turned humans."
 	suffixes = list("venera/venera.dmm")
-	spawn_cost = 50
+	spawn_cost = 1
 	area_usage_test_exempted_root_areas = list(/area/venera)
 
 /obj/effect/shuttle_landmark/nav_venera/nav1

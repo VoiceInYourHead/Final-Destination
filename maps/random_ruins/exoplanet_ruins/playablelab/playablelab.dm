@@ -4,8 +4,8 @@
 	id = "exoplanet_playablelab"
 	description = "Laboratory"
 	suffixes = list("playablelab/playablelab.dmm")
-	spawn_cost = 0.5
-//	player_cost = 4
+	spawn_cost = 1000 //NO BITCHES???
+	player_cost = 4
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 	ruin_tags = RUIN_HUMAN|RUIN_HABITAT
 
