@@ -160,12 +160,12 @@
 /obj/item/card/id/torch/crew/expeng
 	job_access_type = /datum/job/expeng
 	detail_color = COLOR_PURPLE
-
+/*
 //EC Marine
 /obj/item/card/id/torch/crew/expmar
 	job_access_type = /datum/job/expmar
 	detail_color = COLOR_PURPLE
-
+*/
 // EC Science
 /obj/item/card/id/torch/silver/research
 	job_access_type = /datum/job/rd
@@ -183,10 +183,10 @@
 
 /obj/item/card/id/torch/crew/research/scientist
 	job_access_type = /datum/job/scientist
-
+/*
 /obj/item/card/id/torch/crew/research/research_guard
 	job_access_type = /datum/job/research_guard
-
+*/
 //NanoTrasen and Passengers
 
 /obj/item/card/id/torch/passenger

@@ -45,8 +45,8 @@
 
 /datum/job/scientist
 	title = "Scientist"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the Chief Science Officer"
 	economic_power = 10
 	minimum_character_age = list(SPECIES_HUMAN = 25)
@@ -132,7 +132,7 @@
 		access_radio_sci, access_radio_exp
 	)
 	possible_goals = list(/datum/goal/achievement/notslimefodder)
-
+/*
 /datum/job/research_guard
 	title = "Research Guard"
 	department = "Science"
@@ -175,3 +175,4 @@
 
 /datum/job/research_guard/get_description_blurb()
 	return "You are a security guard from the Organization of the Expeditionary Corps, which must protect the scientific department and its employees from various threats. Eat donuts, call scientists \"eggheads\"."
+*/
