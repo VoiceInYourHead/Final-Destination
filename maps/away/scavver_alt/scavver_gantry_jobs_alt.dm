@@ -43,7 +43,8 @@
 
 /datum/job/submap/scavver
 	title = "Salvager"
-	total_positions = 4
+//	total_positions = 4
+	total_positions = 5
 	outfit_type = /decl/hierarchy/outfit/job/scavver/standart
 	supervisors = "The trust of your fellow crew."
 	info = "You are a part of your meagre Scavenger Crew. Keep yourself safe, and seek supplies for your mother-ship. \
@@ -168,7 +169,7 @@
 		SKILL_CHEMISTRY = SKILL_ADEPT
 	)
 	skill_points = 20
-
+/*
 /datum/job/submap/scavver_cook
 	title = "Salvage Cook"
 	total_positions = 1
@@ -210,7 +211,7 @@
 		SKILL_CHEMISTRY = SKILL_EXPERT
 	)
 	skill_points = 15
-
+*/
 /datum/job/submap/scavver_bar
 	title = "Salvage Bartender"
 	total_positions = 1
@@ -334,7 +335,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	gloves = /obj/item/clothing/gloves/thick/duty
 	glasses = /obj/item/clothing/glasses/meson
-	belt = null
+//	belt = null
 
 /decl/hierarchy/outfit/job/scavver/pilot
 	name = "Salvage Pilot"
@@ -371,4 +372,4 @@
 	l_pocket = /obj/item/crowbar/prybar
 	shoes = /obj/item/clothing/shoes/workboots
 	gloves = /obj/item/clothing/gloves/thick/duty
-	belt = null
+//	belt = null

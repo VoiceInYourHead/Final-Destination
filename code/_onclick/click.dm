@@ -240,7 +240,6 @@
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Cryokinesis"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Electronics"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Energistics"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Electromagnetics"]), A)
 		if(a_intent == I_GRAB)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Manifestation"]), A)
@@ -277,6 +276,7 @@
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
 		if(a_intent == I_DISARM)
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Coercion"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Consciousness"]), A)
 	..()
 
 /mob/living/proc/check_psi_grab(var/obj/item/grab/grab)

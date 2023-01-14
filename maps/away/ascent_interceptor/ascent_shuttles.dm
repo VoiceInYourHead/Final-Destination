@@ -9,6 +9,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_TINY
 	fore_dir = NORTH
+	known = 0
 	color = COLOR_PURPLE
 	hide_from_reports = TRUE
 	initial_restricted_waypoints = list(

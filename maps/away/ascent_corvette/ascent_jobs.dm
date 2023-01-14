@@ -126,7 +126,7 @@
 
 /datum/job/submap/ascent_corvette/alate
 	title = "Ascent Alate Worker"
-	total_positions = 10
+	total_positions = 9
 	supervisors = "the Gyne"
 	info = "You are an Alate of a powerful Gyne. She has led you to this remote sector to guard it's territories. Follow given instructions and bring prosperity to your nest-lineage."
 	set_species_on_join = SPECIES_MANTID_ALATE

@@ -92,3 +92,7 @@
 	playsound(get_turf(G.assailant), 'sound/weapons/bite.ogg', 25, 1, -1)
 
 	admin_attack_log(G.assailant, G.affecting, "Chews their victim.", "Was chewed.", "chewed")
+
+
+	var/obj/item/organ/internal/stomach/stomach = G.assailant.internal_organs_by_name[BP_STOMACH]
+	stomach.ingested.add_reagent(/datum/reagent/nutriment/protein, 1.5)

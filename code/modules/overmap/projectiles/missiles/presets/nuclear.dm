@@ -5,7 +5,7 @@
 	desc = "A weapon designed to squash insurrections and, in proper configurations, crack planets. If you're the target? Start praying."
 
 	equipment = list(
-		/obj/item/missile_equipment/thruster/point,
+		/obj/item/missile_equipment/thruster,
 		/obj/item/missile_equipment/autoarm,
 		/obj/item/missile_equipment/payload/nuclear
 	)
@@ -20,7 +20,7 @@
 	desc = "Start praying."
 
 	equipment = list(
-		/obj/item/missile_equipment/thruster/point,
+		/obj/item/missile_equipment/thruster,
 		/obj/item/missile_equipment/autoarm,
 		/obj/item/missile_equipment/payload/nuclear/doomsday
 	)

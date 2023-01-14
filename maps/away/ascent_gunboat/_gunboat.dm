@@ -6,7 +6,7 @@
 /datum/map_template/ruin/away_site/ascent_gunboat_docking_ring
 	name = "Ascent Gunboat"
 	id = "awaysite_ascent_gunboat"
-	description = "An Ascent Gunboat with average crew."
+	description = "An Ascent Gunboat with average crew size."
 	suffixes = list("ascent_gunboat/gunboat.dmm")
 	area_usage_test_exempted_areas = list(
 		/area/ship/ascent_gunboat
@@ -20,6 +20,7 @@
 	desc = "A ruined jumpdrive ring of Ascent design, used to transport individual ships at FTL speeds."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	known = 0
 
 /obj/effect/submap_landmark/joinable_submap/ascent_gunboat
 	name = "Ascent Gunboat"
