@@ -312,22 +312,22 @@
 	temperature = TCMB
 
 /turf/simulated/floor/airless
-	name = "airless plating"
+	name = "plating"
 	initial_gas = null
 	temperature = TCMB
 
 /turf/simulated/floor/tiled/airless
-	name = "airless floor"
+	name = "floor"
 	initial_gas = null
 	temperature = TCMB
 
 /turf/simulated/floor/bluegrid/airless
-	name = "airless floor"
+	name = "floor"
 	initial_gas = null
 	temperature = TCMB
 
 /turf/simulated/floor/greengrid/airless
-	name = "airless floor"
+	name = "floor"
 	initial_gas = null
 	temperature = TCMB
 

@@ -7,6 +7,7 @@
 /area/ship/ascent_corvette/armor
 	name = "\improper Ascent Corvette - Armor Segments"
 	icon_state = "bridge"
+	has_gravity = 0
 
 /area/ship/ascent_corvette/bridge
 	name = "\improper Ascent Corvette - Command Chamber"

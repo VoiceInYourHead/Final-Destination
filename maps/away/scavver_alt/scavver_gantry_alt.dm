@@ -39,7 +39,7 @@
 		/datum/job/submap/scavver_pilot,
 		/datum/job/submap/scavver_doctor,
 		/datum/job/submap/scavver_engineer,
-		/datum/job/submap/scavver_cook,
+//		/datum/job/submap/scavver_cook,
 		/datum/job/submap/scavver_cyborg,
 		/datum/job/submap/scavver_bar,
 		/datum/job/submap/scavver
@@ -53,6 +53,7 @@
 	burn_delay = 2 SECONDS
 	hide_from_reports = TRUE
 	known = 0
+	color = "#7b990f"
 	initial_generic_waypoints = list(
 		"nav_gantry_one",
 		"nav_gantry_two",

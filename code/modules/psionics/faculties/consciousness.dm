@@ -20,10 +20,10 @@
 	name =            "Read Mind"
 	cost =            6
 	cooldown =        80
-	use_melee =       TRUE
+	use_ranged =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Target the head on disarm intent at melee range to attempt to read a victim's surface thoughts."
+	use_description = "Target the head on disarm intent at any range to attempt to read a victim's surface thoughts."
 
 /decl/psionic_power/consciousness/mindread/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD)
@@ -36,9 +36,8 @@
 		to_chat(user, SPAN_WARNING("\The [target] is in no state for a mind-ream."))
 		return FALSE
 
-	user.visible_message(SPAN_WARNING("\The [user] touches \the [target]'s temple..."))
 	var/question =  input(user, "Say something?", "Read Mind", "Penny for your thoughts?") as null|text
-	if(!question || user.incapacitated() || !do_after(user, 20))
+	if(!question || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
 		return FALSE
 
 	var/started_mindread = world.time
