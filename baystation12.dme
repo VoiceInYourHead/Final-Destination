@@ -1767,6 +1767,7 @@
 #include "code\modules\events\meteors.dm"
 #include "code\modules\events\money_hacker.dm"
 #include "code\modules\events\money_lotto.dm"
+#include "code\modules\events\nebula.dm"
 #include "code\modules\events\power_surge.dm"
 #include "code\modules\events\prison_break.dm"
 #include "code\modules\events\radiation_storm.dm"

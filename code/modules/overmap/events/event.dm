@@ -206,6 +206,22 @@
 	weaknesses = OVERMAP_WEAKNESS_MINING | OVERMAP_WEAKNESS_EXPLOSIVE
 	color = "#a08444"
 
+/obj/effect/overmap/event/nebula
+	name = "bluespace nebula"
+	events = list(/datum/event/nebula)
+	event_icon_states = list("nebula")
+	color = "#578ddd"
+
+/obj/effect/overmap/event/star
+	name = "system star"
+	events = list(/datum/event/solar_storm)
+	icon = 'icons/fd/overmap_larger.dmi'
+	event_icon_states = list("star3")
+	pixel_x = -32
+	pixel_y = -32
+	opacity = 0
+	color = "#da6439"
+
 /obj/effect/overmap/event/electric
 	name = "electrical storm"
 	events = list(/datum/event/electrical_storm)
@@ -282,6 +298,20 @@
 	count = 16
 	radius = 4
 	hazards = /obj/effect/overmap/event/dust
+
+/datum/overmap_event/nebula
+	name = "bluespace nebula"
+	count = 12
+	radius = 3
+	hazards = /obj/effect/overmap/event/nebula
+
+/*/datum/overmap_event/star
+	name = "system star"
+	count = 1
+	radius = 3
+	opacity = 0
+	continuous = FALSE
+	hazards = /obj/effect/overmap/event/star*/
 
 /datum/overmap_event/ion
 	name = "ion cloud"

@@ -146,6 +146,8 @@
 		ChangeArea(T, A)
 
 	GLOB.using_map.sealed_levels |= GLOB.using_map.overmap_z
+	var/obj/effect/overmap/event/star/S = new(locate(27, 27, GLOB.using_map.overmap_z))
+	testing("Spawning [S] at [S.x],[S.y]")
 
 	testing("Overmap build complete.")
 	return 1
