@@ -11,6 +11,7 @@
 	fore_dir = NORTH
 	color = "#6e0000"
 	hide_from_reports = TRUE
+	known = 0
 	initial_restricted_waypoints = list(
 		"Bluespace Residue" = list("nav_shade")
 	)

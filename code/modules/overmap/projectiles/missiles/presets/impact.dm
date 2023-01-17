@@ -27,6 +27,12 @@
 			inertia--
 
 		if(!inertia)
+			..()
 			walk(src, 0)
 			qdel(src)
 			log_and_message_admins("An impact missile reached it's destignation (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[obstacle.x];Y=[obstacle.y];Z=[obstacle.z]'>JMP</a>)")
+
+/obj/structure/missile/impact/fall()
+	if(!active)
+		..()
+	return

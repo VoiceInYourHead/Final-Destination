@@ -10,6 +10,7 @@
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
 	hide_from_reports = TRUE
+	known = 0
 	initial_restricted_waypoints = list(
 		"Bluespace Residue" = list("nav_smuggler")
 	)
