@@ -29,3 +29,7 @@
 	if(isturf(target))
 		explosion(target, round_devastation, round_heavy_impact, round_light_impact)
 	..()
+
+/obj/effect/projectile/bullet/muzzle/autocannon
+	icon = 'icons/obj/disperser.dmi'
+	icon_state = "muzzle_bullet"

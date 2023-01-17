@@ -39,7 +39,7 @@
 	var/fire_sound = 'sound/machines/autocannon_fire.ogg'
 	var/pew_color = null
 
-	var/muzzle_flash = /obj/effect/projectile/bullet/muzzle
+	var/muzzle_flash = /obj/effect/projectile/bullet/muzzle/autocannon
 	var/muzzle_color = null
 
 	var/overmap_icon = "bullet" // icons\effects\beam.dmi

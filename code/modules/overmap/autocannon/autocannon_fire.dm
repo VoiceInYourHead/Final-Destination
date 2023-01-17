@@ -36,7 +36,7 @@
 	if(front) //Meanwhile front might have exploded
 		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
 	playsound(start, fire_sound, 250, 1)
-	handle_beam(start, direction)
+	handle_muzzle(start, direction)
 	handle_overbeam()
 
 	//Success, but we missed.
@@ -53,9 +53,8 @@
 				continue //Why are you shooting yourself?
 			candidates += S
 
-	//No events, no ships, the last thing to check is a sector.
 	if(!length(candidates))
-		for(var/obj/effect/overmap/O in overmaptarget)
+		for(var/obj/effect/overmap/visitable/O in overmaptarget)
 			if(O == linked)
 				continue //Why are you shooting yourself?
 			candidates += O
@@ -171,12 +170,12 @@
 	pew.color = pew_color
 	pew.launch(get_step(locate(start_x, start_y, z_level),heading), pick(BP_ALL_LIMBS), start_x, start_y)
 
-/obj/machinery/computer/ship/autocannon/proc/handle_beam(turf/start, direction)
+/obj/machinery/computer/ship/autocannon/proc/handle_muzzle(turf/start, direction)
 	set waitfor = FALSE
-	var/obj/effect/projectile/M = new muzzle_flash(get_step(get_turf(start), front.dir))
-	M.dir = front.dir
-	M.color = muzzle_color
-	QDEL_IN(M,2)
+	var/obj/effect/projectile/P = new muzzle_flash(get_step(get_turf(start), direction))
+	P.dir = direction
+	P.color = muzzle_color
+	QDEL_IN(P,2)
 
 /obj/machinery/computer/ship/autocannon/proc/handle_overbeam()
 	set waitfor = FALSE
