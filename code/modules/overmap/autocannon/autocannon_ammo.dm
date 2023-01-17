@@ -1,7 +1,8 @@
 /obj/structure/ship_munition/autocannon_ammobox
 	name = "RP-AW 57mm ammo box"
 	desc = "Ammo box that contains 57mm rocket-propelled anti-wall rounds."
-	icon_state = "slug"
+	icon = 'icons/obj/disperser.dmi'
+	icon_state = "ammocrate_autocannon1"
 	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/ammo = 30
 	var/ammo_type = /obj/item/projectile/bullet/autocannon

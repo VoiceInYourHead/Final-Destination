@@ -1,5 +1,5 @@
 /obj/machinery/disperser/autocannon
-	icon = 'icons/fd/autogun_separate.dmi'
+	icon = 'icons/obj/disperser.dmi'
 
 /obj/machinery/disperser/autocannon/front
 	name = "autocannon turret"
