@@ -214,13 +214,122 @@
 
 /obj/effect/overmap/event/star
 	name = "system star"
-	events = list(/datum/event/solar_storm)
-	icon = 'icons/fd/overmap_larger.dmi'
-	event_icon_states = list("star3")
-	pixel_x = -32
-	pixel_y = -32
+	color = COLOR_WHITE
+
+/obj/effect/overmap/event/star/center
+	name = "star destruction-zone"
+	icon = 'icons/fd/sun.dmi'
+	events = list(/datum/event/star)
+	event_icon_states = list("sun5")
+	opacity = 0
+
+/obj/effect/overmap/event/star/pre_center
+	name = "star deadly zone"
+	events = list(/datum/event/radiation_storm)
+	icon = 'icons/fd/sun.dmi'
+	event_icon_states = list("sun1")
 	opacity = 0
 	color = "#da6439"
+
+/obj/effect/overmap/event/star/pre_center/two
+	event_icon_states = list("sun2")
+
+/obj/effect/overmap/event/star/pre_center/three
+	event_icon_states = list("sun3")
+
+/obj/effect/overmap/event/star/pre_center/four
+	event_icon_states = list("sun4")
+
+/obj/effect/overmap/event/star/pre_center/five
+	event_icon_states = list("sun6")
+
+/obj/effect/overmap/event/star/pre_center/six
+	event_icon_states = list("sun7")
+
+/obj/effect/overmap/event/star/pre_center/seven
+	event_icon_states = list("sun8")
+
+/obj/effect/overmap/event/star/pre_center/eight
+	event_icon_states = list("sun9")
+
+/obj/effect/overmap/event/star/border
+	name = "star danger zone"
+	events = list(/datum/event/solar_storm)
+	icon = 'icons/fd/sun.dmi'
+	event_icon_states = list("border1")
+	opacity = 0
+
+/obj/effect/overmap/event/star/border/two
+	event_icon_states = list("border2")
+
+/obj/effect/overmap/event/star/border/three
+	event_icon_states = list("border3")
+
+/obj/effect/overmap/event/star/border/four
+	event_icon_states = list("border4")
+
+/obj/effect/overmap/event/star/border/five
+	event_icon_states = list("border5")
+
+/obj/effect/overmap/event/star/border/six
+	event_icon_states = list("border6")
+
+/obj/effect/overmap/event/star/border/seven
+	event_icon_states = list("border7")
+
+/obj/effect/overmap/event/star/border/eight
+	event_icon_states = list("border8")
+
+/obj/effect/overmap/event/star/border/nine
+	event_icon_states = list("border9")
+
+/obj/effect/overmap/event/star/border/ten
+	event_icon_states = list("border10")
+
+/obj/effect/overmap/event/star/border/eleven
+	event_icon_states = list("border11")
+
+/obj/effect/overmap/event/star/border/twelve
+	event_icon_states = list("border12")
+
+/obj/effect/overmap/event/star/border/thirteen
+	event_icon_states = list("border13")
+
+/obj/effect/overmap/event/star/border/fourteen
+	event_icon_states = list("border14")
+
+/obj/effect/overmap/event/star/border/fifthteen
+	event_icon_states = list("border15")
+
+/obj/effect/overmap/event/star/border/sixteen
+	event_icon_states = list("border16")
+
+/obj/effect/overmap/event/star/border/seventeen
+	event_icon_states = list("border17")
+
+/obj/effect/overmap/event/star/border/eighteen
+	event_icon_states = list("border18")
+
+/obj/effect/overmap/event/star/border/nineteen
+	event_icon_states = list("border19")
+
+/obj/effect/overmap/event/star/border/twenty
+	event_icon_states = list("border20")
+
+/obj/effect/overmap/event/star/border/twentyone
+	event_icon_states = list("border21")
+
+/obj/effect/overmap/event/star/border/twentytwo
+	event_icon_states = list("border22")
+
+/obj/effect/overmap/event/star/border/twentythree
+	event_icon_states = list("border23")
+
+/obj/effect/overmap/event/star/border/twentyfour
+	event_icon_states = list("border24")
+
+/obj/effect/overmap/event/star/border/twentyfive
+	event_icon_states = list("border25")
 
 /obj/effect/overmap/event/electric
 	name = "electrical storm"
@@ -304,14 +413,6 @@
 	count = 12
 	radius = 3
 	hazards = /obj/effect/overmap/event/nebula
-
-/*/datum/overmap_event/star
-	name = "system star"
-	count = 1
-	radius = 3
-	opacity = 0
-	continuous = FALSE
-	hazards = /obj/effect/overmap/event/star*/
 
 /datum/overmap_event/ion
 	name = "ion cloud"

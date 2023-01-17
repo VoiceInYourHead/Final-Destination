@@ -36,6 +36,10 @@
 
 	light_color = COLOR_ORANGE
 
+/obj/effect/turf_fire/sun
+	passive_loss = FALSE
+	fire_power = 30
+
 ///All the subtypes are for adminbussery and or mapping
 /obj/effect/turf_fire/magical
 	interact_with_atmos = FALSE

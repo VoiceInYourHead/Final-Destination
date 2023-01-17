@@ -146,8 +146,52 @@
 		ChangeArea(T, A)
 
 	GLOB.using_map.sealed_levels |= GLOB.using_map.overmap_z
-	var/obj/effect/overmap/event/star/S = new(locate(27, 27, GLOB.using_map.overmap_z))
-	testing("Spawning [S] at [S.x],[S.y]")
+
+//this is the worst way to do it, we probably need to change it in future
+
+//lower border 1
+	var/obj/effect/overmap/event/star/border/eight/BCL = new(locate(27, 26, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/seven/BWL = new(locate(26, 26, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/nine/BEL = new(locate(28, 26, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/ten/BEEL = new(locate(29, 26, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/six/BWWL = new(locate(25, 26, GLOB.using_map.overmap_z))
+//lower border 2
+	var/obj/effect/overmap/event/star/border/three/BCLL = new(locate(27, 25, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/two/BWLL = new(locate(26, 25, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/four/BELL = new(locate(28, 25, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/five/BEELL = new(locate(29, 25, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/BWWLL = new(locate(25, 25, GLOB.using_map.overmap_z))
+//middle
+	var/obj/effect/overmap/event/star/border/thirteen/BC = new(locate(27, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/twelve/BW = new(locate(26, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/fourteen/BE = new(locate(28, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/fifthteen/BEE = new(locate(29, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/eleven/BWW = new(locate(25, 27, GLOB.using_map.overmap_z))
+//upper border 1
+	var/obj/effect/overmap/event/star/border/eighteen/BCU = new(locate(27, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/seventeen/BWU = new(locate(26, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/nineteen/BEU = new(locate(28, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/twenty/BEEU = new(locate(29, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/sixteen/BWWU = new(locate(25, 28, GLOB.using_map.overmap_z))
+//upper border 2
+	var/obj/effect/overmap/event/star/border/twentythree/BCUU = new(locate(27, 29, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/twentytwo/BWUU = new(locate(26, 29, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/twentyfour/BEUU = new(locate(28, 29, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/twentyfive/BEEUU = new(locate(29, 29, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/border/twentyone/BWWUU = new(locate(25, 29, GLOB.using_map.overmap_z))
+//star itself
+	var/obj/effect/overmap/event/star/pre_center/four/SW = new(locate(26, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/five/SE = new(locate(28, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/center/S = new(locate(27, 27, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/six/SWU = new(locate(26, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/eight/SEU = new(locate(28, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/seven/SU = new(locate(27, 28, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/SWL = new(locate(26, 26, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/three/SEL = new(locate(28, 26, GLOB.using_map.overmap_z))
+	var/obj/effect/overmap/event/star/pre_center/two/SL = new(locate(27, 26, GLOB.using_map.overmap_z))
+
+//i will burn in hell because of this
+	testing("Spawning [S],[SW],[SE],[SWU],[SEU],[SU],[SWL],[SEL],[SL],[BCL],[BWL],[BEL],[BEEL],[BWWL],[BCLL],[BWLL],[BELL],[BEELL],[BWWLL],[BC],[BW],[BE],[BEE],[BWW],[BCU],[BWU],[BEU],[BEEU],[BWWU],[BCUU],[BWUU],[BEUU],[BEEUU],[BWWUU] at [S.x],[S.y]")
 
 	testing("Overmap build complete.")
 	return 1

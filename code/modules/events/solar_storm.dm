@@ -5,7 +5,13 @@
 	var/const/temp_incr     = 100
 	var/const/fire_loss     = 40
 	var/base_solar_gen_rate
+	has_skybox_image = TRUE
 
+/datum/event/solar_storm/get_skybox_image()
+	if(prob(75)) // Sometimes, give no skybox image, to avoid metagaming it
+		var/image/res = overlay_image('icons/skybox/radbox.dmi', "beam", null, RESET_COLOR)
+		res.alpha = rand(40,80)
+		return res
 
 /datum/event/solar_storm/setup()
 	endWhen = startWhen + rand(30,90) + rand(30,90) //2-6 minute duration
@@ -20,7 +26,7 @@
 
 
 /datum/event/solar_storm/start()
-	command_announcement.Announce("The solar storm has reached the [location_name()]. Please refrain from EVA and remain inside until it has passed.", "[location_name()] Sensor Array", zlevels = affecting_z)
+//	command_announcement.Announce("The solar storm has reached the [location_name()]. Please refrain from EVA and remain inside until it has passed.", "[location_name()] Sensor Array", zlevels = affecting_z)
 	adjust_solar_output(5)
 
 
