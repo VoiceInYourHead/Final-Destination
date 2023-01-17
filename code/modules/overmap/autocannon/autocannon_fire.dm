@@ -29,7 +29,7 @@
 		var/turf/T = get_turf(M)
 		if(!T || !(T.z in relevant_z))
 			continue
-		shake_camera(M, 6)
+		shake_camera(M, 4)
 		if(!isdeaf(M))
 			sound_to(M, sound('sound/effects/explosionfar.ogg', volume=10))
 
@@ -159,8 +159,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	var/ammo_name = get_ammo_type().name
-	log_and_message_admins("[ammo_name] got it to the Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>)")
+	log_and_message_admins("[gun_name] round got it to the Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>)")
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)

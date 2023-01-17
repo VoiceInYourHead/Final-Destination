@@ -28,12 +28,12 @@
 	var/ammo_per_shot = 1
 	var/danger_zone = 3
 	var/burst_size = 5
-	var/burst_interval = 8
+	var/burst_interval = 6
 
 	var/gun_name = "autocannon"
 
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
-	// ѕример: при pew_spread = 20, пул€ будет спавнитьс€ с разбросом от -10 до 10 тайлов по X или Y
+	// ѕример: при pew_spread = 20 снар€д будет спавнитьс€ с разбросом от -10 до 10 тайлов на нужном краю карты.
 	var/pew_spread = 20
 
 	var/fire_sound = 'sound/machines/autocannon_fire.ogg'

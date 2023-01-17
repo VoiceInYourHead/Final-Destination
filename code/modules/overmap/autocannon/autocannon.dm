@@ -19,4 +19,4 @@
 	desc = "An old-fashion ammo reciever. Munition then goes to autocannon breech end."
 	icon_state = "ammo_loader"
 	density = FALSE
-	layer = BELOW_DOOR_LAYER //So the charges go above us.
+//	layer = BELOW_DOOR_LAYER //So the charges go above us.
