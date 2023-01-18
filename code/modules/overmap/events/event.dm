@@ -219,13 +219,13 @@
 /obj/effect/overmap/event/star/center
 	name = "star destruction-zone"
 	icon = 'icons/fd/sun.dmi'
-	events = list(/datum/event/star)
+	events = list(/datum/event/star/strong)
 	event_icon_states = list("sun5")
 	opacity = 0
 
 /obj/effect/overmap/event/star/pre_center
 	name = "star deadly zone"
-	events = list(/datum/event/radiation_storm)
+	events = list(/datum/event/star)
 	icon = 'icons/fd/sun.dmi'
 	event_icon_states = list("sun1")
 	opacity = 0
