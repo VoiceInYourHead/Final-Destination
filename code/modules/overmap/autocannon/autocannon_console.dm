@@ -18,7 +18,7 @@
 	var/list/calexpected //what is should be
 
 	var/next_shot = 0 //round time where the next shot can start from
-	var/const/coolinterval = 10 SECONDS //time to wait between safe shots in deciseconds
+	var/coolinterval = 10 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
 
