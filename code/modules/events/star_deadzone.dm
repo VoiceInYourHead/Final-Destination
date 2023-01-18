@@ -50,7 +50,7 @@
 
 
 /datum/event/star/strong/announce()
-	command_announcement.Announce("The [location_name()] is floating right in front of a burning star. Recommendations: Move out from the deadzone, and make it fast.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("The [location_name()] is floating in front of a burning star. Recommendations: Leave burning deadzone immediately.", "[location_name()] Sensor Array", zlevels = affecting_z)
 	sleep(20)
 	for(var/mob/living/S in world)
 		if (S.z in affecting_z)
