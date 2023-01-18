@@ -3,13 +3,13 @@
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 
-	core_skill = SKILL_PILOT
+	core_skill = SKILL_DEVICES
 	var/skill_offset = SKILL_ADEPT - 1 //After which skill level it starts to matter. -1, because we have to index from zero
 
 	icon_keyboard = "rd_key"
 	icon_screen = "teleport"
 
-	var/const/link_range = 10 //How far can the above stuff be maximum before we start complaining
+	var/link_range = 10 //How far can the above stuff be maximum before we start complaining
 
 	var/overmapdir = 0
 
@@ -20,10 +20,12 @@
 	var/next_shot = 0 //round time where the next shot can start from
 	var/const/coolinterval = 10 SECONDS //time to wait between safe shots in deciseconds
 
-	var/obj/machinery/disperser/autocannon/front/front
-	var/obj/machinery/disperser/autocannon/middle/middle
-	var/obj/machinery/disperser/autocannon/back/back
-	var/obj/structure/ship_munition/autocannon_ammobox/ammobox
+	var/console_html_name = "autocannon.tmpl"
+
+	var/obj/machinery/autocannon/front/front
+	var/obj/machinery/autocannon/middle/middle
+	var/obj/machinery/autocannon/back/back
+	var/obj/structure/ship_munition/ammobox/ammobox
 
 	var/ammo_per_shot = 1
 	var/danger_zone = 3
@@ -178,7 +180,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "autocannon.tmpl", "[linked.name] autocannon control", 400, 550)
+		ui = new(user, src, ui_key, console_html_name, "[linked.name] [gun_name] control", 400, 550)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)
@@ -218,10 +220,10 @@
 		for(var/i = 1 to burst_size)
 			if(get_charge() == 0)
 				break
-			if(atomcharge_ammo == 0)
-				playsound(get_turf(get_charge()), 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
 			fire(user)
 			remove_ammo()
 			sleep(burst_interval)
 		reset_calibration()
+		if(atomcharge_ammo == 0)
+			playsound(get_turf(get_charge()), 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
 	return TOPIC_REFRESH

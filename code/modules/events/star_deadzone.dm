@@ -17,7 +17,7 @@
 
 /datum/event/star/tick()
 	start()
-	sleep(5)
+	sleep(3)
 
 /datum/event/star/start()
 	spawn()
@@ -40,11 +40,12 @@
 	command_announcement.Announce("[location_name()] managed to move far enough from the star deadzone.", "[location_name()] Sensor Array", zlevels = affecting_z)
 
 /atom/proc/sun_flare()
-	if(locate(/obj/effect/turf_fire/inferno/star_fire) in src)
+	if(locate(/obj/effect/turf_fire/star_fire) in src)
 		return
-	new/obj/effect/turf_fire/inferno/star_fire(src)
+	new/obj/effect/turf_fire/star_fire(src)
 
-/obj/effect/turf_fire/inferno/star_fire
+/obj/effect/turf_fire/star_fire
+	fire_power = 50
 	interact_with_atmos = FALSE
 	passive_loss = TRUE
 
@@ -58,7 +59,7 @@
 
 /datum/event/star/strong/tick()
 	start()
-	sleep(1)
+	sleep(2)
 
 /datum/event/star/strong/start()
 	spawn()
@@ -81,11 +82,12 @@
 	return
 
 /atom/proc/sun_fire()
-	if(locate(/obj/effect/turf_fire/inferno/star_fire) in src)
+	if(locate(/obj/effect/turf_fire/star_fire) in src)
 		return
-	new/obj/effect/turf_fire/inferno/star_fire/strong(src)
+	new/obj/effect/turf_fire/star_fire/strong(src)
 
-/obj/effect/turf_fire/inferno/star_fire/strong
-	passive_loss = FALSE
+/obj/effect/turf_fire/star_fire/strong
+	fire_power = 90
 	color = "#fc3f05"
+	passive_loss = FALSE
 	light_color = COLOR_RED

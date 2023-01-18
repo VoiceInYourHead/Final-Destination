@@ -1,4 +1,4 @@
-/obj/structure/ship_munition/autocannon_ammobox
+/obj/structure/ship_munition/ammobox
 	name = "RP-AW 57mm ammo box"
 	desc = "Ammo box that contains 57mm rocket-propelled anti-wall rounds."
 	icon = 'icons/obj/disperser.dmi'
@@ -8,7 +8,7 @@
 	var/ammo = 30
 	var/ammo_type = /obj/item/projectile/bullet/autocannon
 
-/obj/structure/ship_munition/autocannon_ammobox/attackby(obj/item/W as obj, mob/user as mob)
+/obj/structure/ship_munition/ammobox/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		if(ammo > 0)
 			to_chat(user, "You need [ammo] less rounds left in the box to do that!")
@@ -17,7 +17,7 @@
 		new /obj/item/stack/material/plasteel(get_turf(src))
 		qdel(src)
 
-/obj/structure/ship_munition/autocannon_ammobox/ex_act(severity)
+/obj/structure/ship_munition/ammobox/ex_act(severity)
 	if(severity < 3 && ammo > ammo/3)
 		explosion(src, -1, 2, 3)
 		QDEL_IN(src, 2)
@@ -26,7 +26,7 @@
 		QDEL_IN(src, 2)
 	..()
 
-/obj/structure/ship_munition/autocannon_ammobox/examine(mob/user)
+/obj/structure/ship_munition/ammobox/examine(mob/user)
 	. = ..()
 	to_chat(user, "There [(ammo == 1)? "is" : "are"] [ammo] round\s left!")
 
