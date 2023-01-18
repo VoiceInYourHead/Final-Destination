@@ -28,7 +28,7 @@
 	var/ammo_per_shot = 1
 	var/danger_zone = 3
 	var/burst_size = 5
-	var/burst_interval = 6
+	var/burst_interval = 8
 
 	var/gun_name = "autocannon"
 
@@ -213,12 +213,13 @@
 			explosion(middle,1,rand(1,2),rand(2,3))
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
-		next_shot = coolinterval + world.time
+		next_shot = coolinterval + world.time + burst_interval * burst_size
 		log_and_message_admins("attempted to fire the [gun_name].")
 		for(var/i = 1 to burst_size)
-			if(atomcharge_ammo <= 0)
-				playsound(get_charge(), 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
-				return TOPIC_REFRESH
+			if(get_charge() == 0)
+				break
+			if(atomcharge_ammo == 0)
+				playsound(get_turf(get_charge()), 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
 			fire(user)
 			remove_ammo()
 			sleep(burst_interval)

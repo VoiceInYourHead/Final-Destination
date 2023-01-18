@@ -3,6 +3,9 @@
 		return FALSE //no disperser, no service
 	if(!front.powered() || !middle.powered() || !back.powered())
 		return FALSE //no power, no boom boom
+	var/atomcharge_ammo = get_ammo()
+	if(atomcharge_ammo <= 0)
+		return FALSE
 
 	var/turf/start = front
 	var/direction = front.dir
@@ -29,7 +32,7 @@
 		var/turf/T = get_turf(M)
 		if(!T || !(T.z in relevant_z))
 			continue
-		shake_camera(M, 4)
+		shake_camera(M, 8)
 		if(!isdeaf(M))
 			sound_to(M, sound('sound/effects/explosionfar.ogg', volume=10))
 
