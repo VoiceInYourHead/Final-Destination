@@ -4,10 +4,10 @@
 	coolinterval = 60 SECONDS //time to wait between safe shots in deciseconds
 	console_html_name = "autocannon.tmpl"
 
-	obj/machinery/autocannon/harpoon/front
-	obj/machinery/autocannon/harpoon/middle
-	obj/machinery/autocannon/harpoon/back
-	obj/structure/ship_munition/ammobox/harpoon/ammobox
+	front = /obj/machinery/autocannon/harpoon/front
+	middle = /obj/machinery/autocannon/harpoon/middle
+	back = /obj/machinery/autocannon/harpoon/back
+	ammobox = /obj/structure/ship_munition/ammobox/harpoon
 
 	danger_zone = 0
 	burst_size = 1
