@@ -1,6 +1,6 @@
 /obj/item/stock_parts/circuitboard/harpoon
 	name = T_BOARD("harpoon gun control")
-	build_path = /obj/machinery/computer/ship/autocannon
+	build_path = /obj/machinery/computer/ship/autocannon/harpoon
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
 /obj/item/stock_parts/circuitboard/harpoonfront

@@ -10,23 +10,6 @@
 	var/turf/start = front
 	var/direction = front.dir
 
-	var/distance = 0
-	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
-		distance++
-		if(T.density)
-			if(distance < danger_zone)
-				explosion(T,1,2,2)
-				continue
-			else
-				T.ex_act(1)
-		for(var/atom/A in T)
-			if(A.density)
-				if(distance < danger_zone)
-					explosion(A,1,2,2)
-					break
-				else
-					A.ex_act(1)
-
 	var/list/relevant_z = GetConnectedZlevels(start.z)
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
@@ -36,10 +19,36 @@
 		if(!isdeaf(M))
 			sound_to(M, sound('sound/effects/explosionfar.ogg', volume=10))
 
+	var/ammo_type = get_ammo_type()
+	var/obj/item/projectile/pew = new ammo_type(front.loc)
+	pew.starting = front.loc
+	pew.color = pew_color
+	pew.launch(get_step(front.loc, front.dir), pick(BP_ALL_LIMBS))
+
 	if(front) //Meanwhile front might have exploded
 		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
 	playsound(start, fire_sound, 250, 1)
 	handle_muzzle(start, direction)
+
+	var/distance = 0
+	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
+		distance++
+		if(T.density)
+			if(distance < danger_zone)
+				explosion(T,1,2,2)
+				continue
+			else
+				return TRUE
+		for(var/atom/A in T)
+//			if(A == istype(var/obj/effect/projectile))
+//				continue
+			if(A.density)
+				if(distance < danger_zone)
+					explosion(A,1,2,2)
+					break
+				else
+					return TRUE
+
 	handle_overbeam()
 
 	//Success, but we missed.

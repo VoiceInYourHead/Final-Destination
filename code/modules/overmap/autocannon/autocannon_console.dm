@@ -21,18 +21,19 @@
 	var/coolinterval = 10 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
+	var/gun_name = "autocannon"
 
-	var/obj/machinery/autocannon/front/front
-	var/obj/machinery/autocannon/middle/middle
-	var/obj/machinery/autocannon/back/back
-	var/obj/structure/ship_munition/ammobox/autocannon/ammobox
+	var/obj/machinery/front = /obj/machinery/autocannon/front
+	var/obj/machinery/middle = /obj/machinery/autocannon/middle
+	var/obj/machinery/back = /obj/machinery/autocannon/back
+	var/obj/structure/ship_munition/ammobox/munition = /obj/structure/ship_munition/ammobox/autocannon
 
 	var/ammo_per_shot = 1
 	var/danger_zone = 2
 	var/burst_size = 5
 	var/burst_interval = 8
 
-	var/gun_name = "autocannon"
+	var/play_emptymag_sound = 1
 
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// ѕример: при pew_spread = 20 снар€д будет спавнитьс€ с разбросом от -10 до 10 тайлов на нужном краю карты.
@@ -124,25 +125,25 @@
 	return get_next_shot_seconds() * 1000 / coolinterval
 
 /obj/machinery/computer/ship/autocannon/proc/get_charge()
-	ammobox = locate() in get_turf(back)
-	if(ammobox)
-		return ammobox
+	munition = locate() in get_turf(back)
+	if(munition)
+		return munition
 	return 0
 
 /obj/machinery/computer/ship/autocannon/proc/get_ammo()
-	ammobox = locate() in get_turf(back)
-	if(ammobox)
-		return ammobox.ammo
+	munition = locate() in get_turf(back)
+	if(munition)
+		return munition.ammo_count
 
 /obj/machinery/computer/ship/autocannon/proc/get_ammo_type()
-	ammobox = locate() in get_turf(back)
-	if(ammobox)
-		return ammobox.ammo_type
+	munition = locate() in get_turf(back)
+	if(munition)
+		return munition.ammo_type
 
 /obj/machinery/computer/ship/autocannon/proc/remove_ammo()
-	ammobox = locate() in get_turf(back)
-	if(ammobox.ammo > 0)
-		ammobox.ammo -= ammo_per_shot
+	munition = locate() in get_turf(back)
+	if(munition.ammo_count > 0)
+		munition.ammo_count -= ammo_per_shot
 	return
 
 /obj/machinery/computer/ship/autocannon/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
@@ -162,13 +163,13 @@
 		data["nopower"] = !data["faillink"] && (!front.powered() || !middle.powered() || !back.powered())
 		data["skill"] = user.get_skill_value(core_skill) > skill_offset
 
-		var/ammo_count = SPAN_BOLD("UNKNOWN ERROR")
+		var/ammo_count_console = SPAN_BOLD("UNKNOWN ERROR")
 		switch(get_charge())
 			if(0)
-				ammo_count = "[SPAN_BOLD("ERROR")]: No valid ammo detected."
+				ammo_count_console = "[SPAN_BOLD("ERROR")]: No valid ammo detected."
 			else
-				ammo_count = get_ammo()
-		data["chargeload"] = ammo_count
+				ammo_count_console = get_ammo()
+		data["chargeload"] = ammo_count_console
 
 		var/charge = SPAN_BOLD("UNKNOWN ERROR")
 		switch(get_charge())
@@ -220,10 +221,11 @@
 		for(var/i = 1 to burst_size)
 			if(get_charge() == 0)
 				break
+			if(atomcharge_ammo == 0 && play_emptymag_sound == 1)
+				playsound(get_charge().loc, 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
+				break
 			fire(user)
 			remove_ammo()
 			sleep(burst_interval)
 		reset_calibration()
-		if(atomcharge_ammo == 0)
-			playsound(get_turf(get_charge()), 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
 	return TOPIC_REFRESH

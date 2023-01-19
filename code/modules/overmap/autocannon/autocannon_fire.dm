@@ -25,6 +25,11 @@
 	pew.color = pew_color
 	pew.launch(get_step(front.loc, front.dir), pick(BP_ALL_LIMBS))
 
+	if(front) //Meanwhile front might have exploded
+		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
+	playsound(start, fire_sound, 250, 1)
+	handle_muzzle(start, direction)
+
 	var/distance = 0
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
@@ -35,6 +40,8 @@
 			else
 				return TRUE
 		for(var/atom/A in T)
+//			if(A == istype(var/obj/effect/projectile))
+//				continue
 			if(A.density)
 				if(distance < danger_zone)
 					explosion(A,1,2,2)
@@ -42,10 +49,6 @@
 				else
 					return TRUE
 
-	if(front) //Meanwhile front might have exploded
-		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
-	playsound(start, fire_sound, 250, 1)
-	handle_muzzle(start, direction)
 	handle_overbeam()
 
 	//Success, but we missed.
