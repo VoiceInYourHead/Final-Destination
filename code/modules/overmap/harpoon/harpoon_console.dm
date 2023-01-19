@@ -7,13 +7,13 @@
 	obj/machinery/autocannon/harpoon/front
 	obj/machinery/autocannon/harpoon/middle
 	obj/machinery/autocannon/harpoon/back
-	obj/structure/ship_munition/ammobox/harpoon
+	obj/structure/ship_munition/ammobox/harpoon/ammobox
 
 	danger_zone = 0
 	burst_size = 1
 	gun_name = "harpoon cannon"
 	fire_sound = 'sound/machines/autocannon_fire.ogg'
-	overmap_icon = "bullet" // icons\effects\beam.dmi
+	overmap_icon = "n_beam" // icons\effects\beam.dmi
 
 /obj/machinery/computer/ship/autocannon/harpoon/OnTopic(mob/user, list/href_list, state)
 	. = ..()

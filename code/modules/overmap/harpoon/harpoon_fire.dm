@@ -56,20 +56,37 @@
 				continue //Why are you shooting yourself?
 			candidates += S
 
-	if(!length(candidates))
+	else if(!length(candidates))
 		for(var/obj/effect/overmap/visitable/O in overmaptarget)
 			if(O == linked)
 				continue //Why are you shooting yourself?
-			candidates += O
+			return TRUE
 
 	//Way to waste a charge
 	if(!length(candidates))
 		return TRUE
 
-/obj/machinery/computer/ship/autocannon/harpoon/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir)
-	log_and_message_admins("[z_level] just got harpooned (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[world.maxx/2];Y=[world.maxy/2];Z=[z_level]'>JMP</a>)")
+	var/obj/effect/overmap/visitable/ship/finaltarget = pick(candidates)
+	var/z_level = pick(finaltarget.map_z)
 
+	fire_at_sector(z_level, finaltarget)
 
+/obj/machinery/computer/ship/autocannon/harpoon/fire_at_sector(var/z_level, var/obj/effect/overmap/visitable/ship/finaltarget)
+	log_and_message_admins("[finaltarget] just got harpooned by [linked] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[world.maxx/2];Y=[world.maxy/2];Z=[z_level]'>JMP</a>)")
+
+	var/backwards = turn(overmapdir, 180)
+
+	if(linked.vessel_size > finaltarget.vessel_size)
+		finaltarget.forceMove(get_step(finaltarget.loc, backwards))
+	else if(linked.vessel_size < finaltarget.vessel_size)
+		linked.forceMove(get_step(linked.loc, overmapdir))
+	else if(linked.vessel_size == finaltarget.vessel_size)
+		if(linked.vessel_mass > finaltarget.vessel_mass)
+			finaltarget.forceMove(get_step(finaltarget.loc, backwards))
+		else if(linked.vessel_mass < finaltarget.vessel_mass)
+			linked.forceMove(get_step(linked.loc, overmapdir))
+		else
+			finaltarget.forceMove(get_step(finaltarget.loc, backwards))
 
 /obj/machinery/computer/ship/autocannon/harpoon/handle_overbeam()
 	set waitfor = FALSE

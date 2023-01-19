@@ -25,10 +25,10 @@
 	var/obj/machinery/autocannon/front/front
 	var/obj/machinery/autocannon/middle/middle
 	var/obj/machinery/autocannon/back/back
-	var/obj/structure/ship_munition/ammobox/ammobox
+	var/obj/structure/ship_munition/ammobox/autocannon/ammobox
 
 	var/ammo_per_shot = 1
-	var/danger_zone = 3
+	var/danger_zone = 2
 	var/burst_size = 5
 	var/burst_interval = 8
 
