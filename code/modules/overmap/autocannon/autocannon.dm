@@ -20,22 +20,56 @@
 	else
 		return ..()
 
-/obj/machinery/autocannon/front
+/obj/machinery/autocannon/front_part
 	name = "autocannon turret"
 	desc = "An old-fashion ship autocannon tower.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
 
-/obj/machinery/autocannon/middle
+/obj/machinery/autocannon/middle_part
 	name = "autocannon breech end"
 	desc = "An old-fashion ammo reciever that sends it to the autocannon tower. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
 	icon_state = "magazine"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
-/obj/machinery/autocannon/back
+/obj/machinery/autocannon/back_part
 	name = "autocannon munition rack"
 	desc = "An old-fashion ammo reciever. Munition then goes to autocannon breech end."
 	icon_state = "ammo_loader"
 	density = FALSE
 //	layer = BELOW_DOOR_LAYER //So the charges go above us.
+
+////////////////////////////////CIRCUIT////////////////////////////////
+
+/obj/item/stock_parts/circuitboard/autocannon
+	name = T_BOARD("autocannon control")
+	build_path = /obj/machinery/computer/ship/autocannon
+	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+
+/obj/item/stock_parts/circuitboard/autocannonfront
+	name = T_BOARD("autocannon turret")
+	build_path = /obj/machinery/autocannon/front_part
+	board_type = "machine"
+	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	req_components = list (
+		/obj/item/stock_parts/manipulator/pico = 5
+	)
+
+/obj/item/stock_parts/circuitboard/autocannonmiddle
+	name = T_BOARD("autocannon breech end")
+	build_path = /obj/machinery/autocannon/middle_part
+	board_type = "machine"
+	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	req_components = list (
+		/obj/item/stock_parts/subspace/crystal = 10
+	)
+
+/obj/item/stock_parts/circuitboard/autocannonback
+	name = T_BOARD("autocannon munition rack")
+	build_path = /obj/machinery/autocannon/back_part
+	board_type = "machine"
+	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	req_components = list (
+		/obj/item/stock_parts/capacitor/super = 5
+	)

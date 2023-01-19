@@ -1,4 +1,4 @@
-/obj/structure/ship_munition/ammobox/harpoon
+/obj/structure/ship_munition/ammobox/harpoon_cannon
 	name = "giant harpoon storage box"
 	desc = "Box that contains 500mm rocket-propelled anti-ship harpoons."
 	icon = 'icons/obj/disperser.dmi'
@@ -8,5 +8,5 @@
 	ammo_count = 3
 	ammo_type = null
 
-/obj/structure/ship_munition/ammobox/harpoon/ex_act(severity)
+/obj/structure/ship_munition/ammobox/harpoon_cannon/ex_act(severity)
 	return
