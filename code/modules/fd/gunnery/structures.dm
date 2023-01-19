@@ -44,6 +44,10 @@
 	name = "munition belt"
 	id = "ammobelt1"
 
+/obj/machinery/conveyor/ammobelt/comet
+	name = "comet belt"
+	id = "ammobeltcomet"
+
 /obj/machinery/conveyor_switch/ammobelt
 	name = "munition belt switch"
 	id = "ammobelt1"
