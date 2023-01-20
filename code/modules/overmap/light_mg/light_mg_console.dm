@@ -1,5 +1,5 @@
-/obj/machinery/computer/ship/light_mg
-	name = "light machine gun control"
+/obj/machinery/computer/ship/hmg
+	name = "heavy machine gun control"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 
@@ -20,10 +20,10 @@
 	var/next_shot = 0 //round time where the next shot can start from
 	var/coolinterval = 5 SECONDS //time to wait between safe shots in deciseconds
 
-	var/obj/machinery/light_mg/front/front
-	var/obj/machinery/light_mg/middle/middle
-	var/obj/machinery/light_mg/back/back
-	var/obj/structure/ship_munition/ammobox/light_mg/munition
+	var/obj/machinery/hmg/front_part/front
+	var/obj/machinery/hmg/middle_part/middle
+	var/obj/machinery/hmg/back_part/back
+	var/obj/structure/ship_munition/ammobox/hmg/munition
 
 	var/ammo_per_shot = 1
 	var/danger_zone = 2
@@ -33,7 +33,7 @@
 	var/play_emptymag_sound = 1
 
 	var/console_html_name = "autocannon.tmpl"
-	var/gun_name = "light machine gun"
+	var/gun_name = "heavy machine gun"
 
 	// Насколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// Пример: при pew_spread = 20 снаряд будет спавниться с разбросом от -10 до 10 тайлов на нужном краю карты.
@@ -48,16 +48,17 @@
 	var/overmap_icon = "bullet" // icons\effects\beam.dmi
 	var/overmap_color = null
 
-/obj/machinery/computer/ship/light_mg/Initialize()
+
+/obj/machinery/computer/ship/hmg/Initialize()
 	. = ..()
 	link_parts()
 	reset_calibration()
 
-/obj/machinery/computer/ship/light_mg/Destroy()
+/obj/machinery/computer/ship/hmg/Destroy()
 	release_links()
 	. = ..()
 
-/obj/machinery/computer/ship/light_mg/proc/link_parts()
+/obj/machinery/computer/ship/hmg/proc/link_parts()
 	if(is_valid_setup())
 		return TRUE
 
@@ -78,14 +79,14 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/computer/ship/light_mg/proc/is_valid_setup()
+/obj/machinery/computer/ship/hmg/proc/is_valid_setup()
 	if(front && middle && back)
 		var/everything_in_range = (get_dist(src, front) < link_range) && (get_dist(src, middle) < link_range) && (get_dist(src, back) < link_range)
 		var/everything_in_order = (middle.Adjacent(front) && middle.Adjacent(back)) && (front.dir == middle.dir && middle.dir == back.dir)
 		return everything_in_order && everything_in_range
 	return FALSE
 
-/obj/machinery/computer/ship/light_mg/proc/release_links()
+/obj/machinery/computer/ship/hmg/proc/release_links()
 	GLOB.destroyed_event.unregister(front, src, .proc/release_links)
 	GLOB.destroyed_event.unregister(middle, src, .proc/release_links)
 	GLOB.destroyed_event.unregister(back, src, .proc/release_links)
@@ -93,7 +94,7 @@
 	middle = null
 	back = null
 
-/obj/machinery/computer/ship/light_mg/proc/get_calibration()
+/obj/machinery/computer/ship/hmg/proc/get_calibration()
 	var/list/calresult[caldigit]
 	for(var/i = 1 to caldigit)
 		if(calibration[i] == calexpected[i])
@@ -104,49 +105,49 @@
 			calresult[i] = 0
 	return calresult
 
-/obj/machinery/computer/ship/light_mg/proc/reset_calibration()
+/obj/machinery/computer/ship/hmg/proc/reset_calibration()
 	calexpected = new /list(caldigit)
 	calibration = new /list(caldigit)
 	for(var/i = 1 to caldigit)
 		calexpected[i] = rand(0,9)
 		calibration[i] = 0
 
-/obj/machinery/computer/ship/light_mg/proc/cal_accuracy()
+/obj/machinery/computer/ship/hmg/proc/cal_accuracy()
 	var/top = 0
 	var/divisor = caldigit * 2 //maximum possible value, aka 100% accuracy
 	for(var/i in get_calibration())
 		top += i
 	return round(top * 100 / divisor)
 
-/obj/machinery/computer/ship/light_mg/proc/get_next_shot_seconds()
+/obj/machinery/computer/ship/hmg/proc/get_next_shot_seconds()
 	return max(0, (next_shot - world.time) / 10)
 
-/obj/machinery/computer/ship/light_mg/proc/cool_failchance()
+/obj/machinery/computer/ship/hmg/proc/cool_failchance()
 	return get_next_shot_seconds() * 1000 / coolinterval
 
-/obj/machinery/computer/ship/light_mg/proc/get_charge()
+/obj/machinery/computer/ship/hmg/proc/get_charge()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition
 	return 0
 
-/obj/machinery/computer/ship/light_mg/proc/get_ammo()
+/obj/machinery/computer/ship/hmg/proc/get_ammo()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition.ammo_count
 
-/obj/machinery/computer/ship/light_mg/proc/get_ammo_type()
+/obj/machinery/computer/ship/hmg/proc/get_ammo_type()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition.ammo_type
 
-/obj/machinery/computer/ship/light_mg/proc/remove_ammo()
+/obj/machinery/computer/ship/hmg/proc/remove_ammo()
 	munition = locate() in get_turf(back)
 	if(munition.ammo_count > 0)
 		munition.ammo_count -= ammo_per_shot
 	return
 
-/obj/machinery/computer/ship/light_mg/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
+/obj/machinery/computer/ship/hmg/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
 	if(!linked)
 		display_reconnect_dialog(user, "[gun_name] synchronization")
 		return
@@ -186,7 +187,7 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/computer/ship/light_mg/OnTopic(mob/user, list/href_list, state)
+/obj/machinery/computer/ship/hmg/OnTopic(mob/user, list/href_list, state)
 	. = ..()
 	if(.)
 		return
@@ -232,7 +233,7 @@
 
 ////////////////////////////////FIRE////////////////////////////////
 
-/obj/machinery/computer/ship/light_mg/proc/fire(mob/user)
+/obj/machinery/computer/ship/hmg/proc/fire(mob/user)
 	if(!link_parts())
 		return FALSE //no disperser, no service
 	if(!front.powered() || !middle.powered() || !back.powered())
@@ -268,19 +269,13 @@
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
 		if(T.density)
-			if(distance < danger_zone)
+			if(distance <= danger_zone)
 				explosion(T,1,2,2)
-				continue
-			else
 				return TRUE
 		for(var/atom/A in T)
-			if(istype(A, /obj/effect/projectile))
-				continue
-			if(A.density)
-				if(distance < danger_zone)
+			if(A.density && !istype(A, /obj/effect/projectile))
+				if(distance <= danger_zone)
 					explosion(A,1,2,2)
-					break
-				else
 					return TRUE
 
 	handle_overbeam()
@@ -316,7 +311,7 @@
 
 	return TRUE
 
-/obj/machinery/computer/ship/light_mg/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir)
+/obj/machinery/computer/ship/hmg/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -415,18 +410,18 @@
 	pew.color = pew_color
 	pew.launch(get_step(locate(start_x, start_y, z_level),heading), pick(BP_ALL_LIMBS), start_x, start_y)
 
-/obj/machinery/computer/ship/light_mg/proc/handle_muzzle(turf/start, direction)
+/obj/machinery/computer/ship/hmg/proc/handle_muzzle(turf/start, direction)
 	set waitfor = FALSE
 	var/obj/effect/projectile/P = new muzzle_flash(get_step(get_turf(start), direction))
 	P.dir = direction
 	P.color = muzzle_color
 	QDEL_IN(P,2)
 
-/obj/machinery/computer/ship/light_mg/proc/handle_overbeam()
+/obj/machinery/computer/ship/hmg/proc/handle_overbeam()
 	set waitfor = FALSE
 	linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
 
-/obj/machinery/computer/ship/light_mg/proc/get_target_turf(turf/start, direction)
+/obj/machinery/computer/ship/hmg/proc/get_target_turf(turf/start, direction)
 	switch(direction)
 		if(NORTH)
 			return locate(start.x,world.maxy,start.z)

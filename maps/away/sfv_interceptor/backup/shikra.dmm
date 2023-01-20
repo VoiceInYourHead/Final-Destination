@@ -6,15 +6,15 @@
 "f" = (/obj/effect/catwalk_plated/dark,/obj/machinery/computer/shuttle_control/explore/shikra{icon_state = "computer"; dir = 4},/turf/simulated/floor/plating,/area/ship/shikra)
 "g" = (/obj/effect/catwalk_plated/dark,/obj/structure/bed/chair/shuttle/blue{dir = 1; icon_state = "shuttle_chair_preview"},/turf/simulated/floor/plating,/area/ship/shikra)
 "h" = (/obj/machinery/computer/ship/sensors{dir = 8},/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/ship/shikra)
-"i" = (/obj/machinery/hmg/front_part{icon_state = "gun"; dir = 1},/turf/simulated/floor/plating,/area/ship/shikra)
+"i" = (/obj/machinery/light_mg/front{icon_state = "gun"; dir = 1},/turf/simulated/floor/plating,/area/ship/shikra)
 "j" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/ocean,/turf/simulated/floor/plating,/area/ship/shikra)
 "k" = (/obj/effect/catwalk_plated/dark,/obj/effect/submap_landmark/joinable_submap/shikra,/obj/effect/shuttle_landmark/shikra,/obj/effect/overmap/visitable/ship/landable/shikra,/obj/effect/submap_landmark/spawnpoint/shikra/pilot,/turf/simulated/floor/plating,/area/ship/shikra)
-"l" = (/obj/machinery/power/apc/high/shuttle{dir = 8; icon_state = "apc0"; pixel_x = -23},/obj/effect/floor_decal/corner_steel_grid{icon_state = "steel_grid"; dir = 9},/obj/structure/cable/cyan{d2 = 2; dir = 2; icon_state = "0-2"},/obj/machinery/computer/ship/hmg{icon_state = "computer"; dir = 4},/turf/simulated/floor/tiled/dark,/area/ship/shikra)
-"m" = (/obj/effect/floor_decal/corner_steel_grid{icon_state = "steel_grid"; dir = 6},/obj/machinery/button/blast_door{id_tag = "outdoor"; pixel_x = 25; pixel_y = -10},/obj/machinery/button/blast_door{id_tag = "cannons"; pixel_x = 25; pixel_y = 10},/obj/machinery/computer/ship/hmg{icon_state = "computer"; dir = 8},/turf/simulated/floor/tiled/dark,/area/ship/shikra)
+"l" = (/obj/machinery/power/apc/high/shuttle{dir = 8; icon_state = "apc0"; pixel_x = -23},/obj/effect/floor_decal/corner_steel_grid{icon_state = "steel_grid"; dir = 9},/obj/structure/cable/cyan{d2 = 2; dir = 2; icon_state = "0-2"},/obj/machinery/computer/ship/light_mg{icon_state = "computer"; dir = 4},/turf/simulated/floor/tiled/dark,/area/ship/shikra)
+"m" = (/obj/effect/floor_decal/corner_steel_grid{icon_state = "steel_grid"; dir = 6},/obj/machinery/button/blast_door{id_tag = "outdoor"; pixel_x = 25; pixel_y = -10},/obj/machinery/button/blast_door{id_tag = "cannons"; pixel_x = 25; pixel_y = 10},/obj/machinery/computer/ship/light_mg{icon_state = "computer"; dir = 8},/turf/simulated/floor/tiled/dark,/area/ship/shikra)
 "n" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner_steel_grid/full,/turf/simulated/floor/tiled/dark,/area/ship/shikra)
 "o" = (/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/ship/shikra)
 "p" = (/obj/effect/floor_decal/corner_steel_grid/full{icon_state = "steel_grid_full"; dir = 4},/obj/machinery/hologram/holopad/longrange,/obj/machinery/alarm{alarm_id = "petrov2"; dir = 8; icon_state = "alarm0"; pixel_x = 24},/turf/simulated/floor/tiled/dark,/area/ship/shikra)
-"q" = (/obj/machinery/hmg/middle_part{icon_state = "magazine"; dir = 1},/turf/simulated/floor/plating,/area/ship/shikra)
+"q" = (/obj/machinery/light_mg/middle{icon_state = "magazine"; dir = 1},/turf/simulated/floor/plating,/area/ship/shikra)
 "r" = (/obj/machinery/door/window/brigdoor/westright,/obj/effect/floor_decal/industrial/warning{dir = 8; icon_state = "warning"},/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled/dark/monotile,/area/ship/shikra)
 "s" = (/obj/structure/cable/cyan{icon_state = "0-1"; dir = 8},/obj/machinery/power/terminal,/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/dark/monotile,/area/ship/shikra)
 "t" = (/obj/machinery/computer/ship/engines{dir = 1},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light,/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/dark/monotile,/area/ship/shikra)
@@ -30,7 +30,7 @@
 "D" = (/obj/effect/overmap/visitable/sector/shikra_ring,/turf/space,/area/space)
 "E" = (/obj/effect/paint/red,/turf/simulated/wall/r_wall,/area/ship/shikra)
 "F" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/ship/shikra)
-"G" = (/obj/machinery/hmg/back_part{icon_state = "ammo_loader"; dir = 1},/obj/structure/ship_munition/ammobox/hmg,/turf/simulated/floor/plating,/area/ship/shikra)
+"G" = (/obj/machinery/light_mg/back{icon_state = "ammo_loader"; dir = 1},/obj/structure/ship_munition/ammobox/light_mg,/turf/simulated/floor/plating,/area/ship/shikra)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

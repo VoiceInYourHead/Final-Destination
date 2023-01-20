@@ -264,19 +264,13 @@
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
 		if(T.density)
-			if(distance < danger_zone)
+			if(distance <= danger_zone)
 				explosion(T,1,2,2)
-				continue
-			else
 				return TRUE
 		for(var/atom/A in T)
-			if(istype(A, /obj/effect/projectile))
-				continue
-			if(A.density)
-				if(distance < danger_zone)
+			if(A.density && !istype(A, /obj/effect/projectile))
+				if(distance <= danger_zone)
 					explosion(A,1,2,2)
-					break
-				else
 					return TRUE
 
 	handle_overbeam()

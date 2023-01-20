@@ -17,12 +17,17 @@
 		qdel(src)
 
 /obj/structure/ship_munition/ammobox/ex_act(severity)
+	var/explosion_in_progress = 0
+	if(explosion_in_progress)
+		return
 	if(severity < 3 && ammo_count > ammo_count/3)
+		explosion_in_progress++
 		explosion(src, -1, 2, 3)
-		QDEL_IN(src, 2)
+		QDEL_IN(src, 1)
 	else if(severity < 3 && ammo_count > 0)
+		explosion_in_progress++
 		explosion(src, -1, 1, 2)
-		QDEL_IN(src, 2)
+		QDEL_IN(src, 1)
 	..()
 
 /obj/structure/ship_munition/ammobox/examine(mob/user)
@@ -32,24 +37,36 @@
 ///////////////////////////AMMOBOX///////////////////////////
 
 /obj/structure/ship_munition/ammobox/autocannon
+	name = "RP 67mm ammo box"
+	desc = "Ammo box that contains 67mm rocket-propelled rounds."
+	layer = 2.22
+	ammo_count = 60
+	ammo_type = /obj/item/projectile/bullet/autocannon
+
+/obj/structure/ship_munition/ammobox/autocannon/high_explosive
 	name = "RP-HE 67mm ammo box"
 	desc = "Ammo box that contains 67mm rocket-propelled high explosive rounds."
-	layer = 2.22
-	ammo_count = 50
-	ammo_type = /obj/item/projectile/bullet/autocannon
+	ammo_count = 60
+	ammo_type = /obj/item/projectile/bullet/autocannon/high_explosive
+
+/obj/structure/ship_munition/ammobox/autocannon/armour_piercing
+	name = "RP-APFSDS 67mm ammo box"
+	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing fin-stabilized discarding sabot."
+	ammo_count = 60
+	ammo_type = /obj/item/projectile/bullet/autocannon/armour_piercing
 
 /obj/structure/ship_munition/ammobox/autocannon/anti_wall
 	name = "RP-AW 67mm ammo box"
 	desc = "Ammo box that contains 67mm rocket-propelled anti-wall rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/anti_wall
-/*
-/obj/structure/ship_munition/ammobox/autocannon/ap_he
+
+/obj/structure/ship_munition/ammobox/autocannon/aphe
 	name = "RP-APHE 67mm ammo box"
 	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing high explosive rounds."
 	ammo_count = 30
-	ammo_type = /obj/item/projectile/bullet/autocannon/ap_he
-*/
+	ammo_type = /obj/item/projectile/bullet/autocannon/aphe
+
 ///////////////////////////BULLETS///////////////////////////
 
 /obj/item/projectile/bullet/autocannon
@@ -64,12 +81,19 @@
 	life_span = 200
 	var/bolt_devastation = -1
 	var/bolt_heavy_impact = 2
-	var/bolt_light_impact = 2
+	var/bolt_light_impact = 3
 
-/obj/item/projectile/bullet/autocannon/on_hit(var/atom/target, var/blocked = 0)
-	if(isturf(target))
-		explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+
+/obj/item/projectile/bullet/autocannon/high_explosive/on_hit(var/atom/target, var/blocked = 0)
+	var/backwards = turn(dir, 180)
+	explosion(get_step(target, backwards), bolt_devastation, bolt_heavy_impact, bolt_light_impact)
 	..()
+
+/obj/item/projectile/bullet/autocannon/armour_piercing
+	damage = 200
+	armor_penetration = 100
+	penetrating = 30
+	penetration_modifier = 1.1
 
 /obj/item/projectile/bullet/autocannon/anti_wall
 	armor_penetration = 80
@@ -78,22 +102,30 @@
 	bolt_light_impact = 2
 
 /obj/item/projectile/bullet/autocannon/anti_wall/on_hit(var/atom/target, var/blocked = 0)
-	if(isturf(target))
-		explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+	explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
 	..()
 
-/*
-/obj/item/projectile/bullet/autocannon/ap_he
-	armor_penetration = 80
+
+/obj/item/projectile/bullet/autocannon/aphe
+	damage = 200
+	armor_penetration = 100
+	penetrating = 18
+	penetration_modifier = 1.1
 	bolt_devastation = -1
 	bolt_heavy_impact = 2
 	bolt_light_impact = 2
+	var/delay = 3
+	var/primed = 0
 
-/obj/item/projectile/bullet/autocannon/ap_he/on_hit(var/atom/target, var/blocked = 0)
-	if(isturf(target))
-		explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+/obj/item/projectile/bullet/autocannon/aphe/on_hit(var/atom/target, var/blocked = 0)
+	if(primed)
+		return
 	..()
-*/
+	primed++
+	sleep(delay)
+	explosion(get_turf(src), bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+	qdel(src)
+
 ///////////////////////////MUZZLE///////////////////////////
 
 /obj/effect/projectile/bullet/muzzle/autocannon
