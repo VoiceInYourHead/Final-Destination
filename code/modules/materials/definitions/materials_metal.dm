@@ -170,7 +170,7 @@
 	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plasteel
-	integrity = 400
+	integrity = 300
 	melting_point = 6000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"

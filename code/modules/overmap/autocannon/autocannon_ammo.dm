@@ -17,17 +17,14 @@
 		qdel(src)
 
 /obj/structure/ship_munition/ammobox/ex_act(severity)
-	var/explosion_in_progress = 0
-	if(explosion_in_progress)
-		return
 	if(severity < 3 && ammo_count > ammo_count/3)
-		explosion_in_progress++
 		explosion(src, -1, 2, 3)
-		QDEL_IN(src, 1)
+		if(severity < 3)
+			qdel(src)
 	else if(severity < 3 && ammo_count > 0)
-		explosion_in_progress++
 		explosion(src, -1, 1, 2)
-		QDEL_IN(src, 1)
+		if(severity < 3)
+			qdel(src)
 	..()
 
 /obj/structure/ship_munition/ammobox/examine(mob/user)
