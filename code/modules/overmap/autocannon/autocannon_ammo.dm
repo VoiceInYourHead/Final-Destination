@@ -52,9 +52,9 @@
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/armour_piercing
 
-/obj/structure/ship_munition/ammobox/autocannon/anti_wall
-	name = "RP-AW 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled anti-wall rounds."
+/obj/structure/ship_munition/ammobox/autocannon/anti_hull
+	name = "RP-AH 67mm ammo box"
+	desc = "Ammo box that contains 67mm rocket-propelled anti-hull rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/anti_wall
 
@@ -92,7 +92,7 @@
 	penetrating = 30
 	penetration_modifier = 1.1
 
-/obj/item/projectile/bullet/autocannon/anti_wall
+/obj/item/projectile/bullet/autocannon/anti_hull
 	armor_penetration = 80
 	bolt_devastation = 1
 	bolt_heavy_impact = 1
