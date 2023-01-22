@@ -18,7 +18,7 @@
 			M.flash_eyes()
 			M.updatehealth()
 
-	to_world("<font size='4' color='red'><b>Suddenly a blinding bright flash appears in nearby outer space, followed by a distant shockwave.</b></font>")
+	to_world("<font size='4' color='red'><b>Suddenly a blinding bright flash appears in nearby outer space, followed by a distant shockwave!</b></font>")
 	sound_to(world, sound('sound/effects/explosionfar.ogg'))
 
 
@@ -29,7 +29,7 @@
 	desc = "An incredibly dangerous warhead. Detonates when the missile is triggered."
 	icon_state = "ion"
 
-/obj/item/missile_equipment/payload/doomsday/on_trigger(var/atom/triggerer)
+/obj/item/missile_equipment/payload/nuclear/doomsday/on_trigger(var/atom/triggerer)
 	if(istype(triggerer, /obj/effect/shield))
 		explosion(get_turf(src), 15, 30, 30, 30)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
@@ -44,7 +44,7 @@
 			M.flash_eyes()
 			M.updatehealth()
 
-	to_world("<font size='4' color='red'><b>The doomsday is calling...</b></font>")
+	to_world("<font size='4' color='red'><b>Your doomsday is calling...</b></font>")
 	sound_to(world, sound('sound/effects/explosionfar.ogg'))
 
 

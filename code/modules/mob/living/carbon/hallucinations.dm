@@ -154,10 +154,9 @@
 			if(firstname) names += firstname
 			if(!names.len)
 				names += holder.real_name
-			var/add = prob(20) ? ", [pick(names)]" : ""
-			var/list/phrases = list("[prob(50) ? "Hey, " : ""][pick(names)]!","[prob(50) ? "Hey, " : ""][pick(names)]?","Get out[add]!","Go away[add].","What are you doing[add]?","Where's your ID[add]?")
+			var/list/phrases = list("Эй.","Эй?","Съеби!","Съебись.","Ты чё делаешь?","Где твоя карта?","Ты чё наделал.")
 			if(holder.hallucination_power > 50)
-				phrases += list("What did you come here for[add]?","Don't touch me[add].","You're not getting out of here[add].", "You are a failure, [pick(names)].","Just kill yourself already, [pick(names)]")
+				phrases += list("Зачем заходил сюда?","Не трогай меня.","Ты уже отсюда не выйдешь.", "Неудачник.","Сдохни.","АЛЁ.","Ну что за уёбок.","Тебя на [pick("мостик","кухню","свидание","казнь",)] зовут.","ПОЖАР!","ЗОМБИ!","ПРЕДАТЕЛЬ!"," УРА-А-А-А!!!")
 			message = pick(phrases)
 			to_chat(holder,"<span class='game say'><span class='name'>[display_name]</span> [holder.say_quote(message)], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
 		else

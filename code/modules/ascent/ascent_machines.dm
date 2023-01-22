@@ -4,7 +4,7 @@ MANTIDIFY(/obj/machinery/atmospherics/unary/vent_scrubber/on, "mantid atmosphere
 MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad")
 MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
 MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
-MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic lifeform-defense system", "turret")
+MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
 
 /obj/machinery/optable/ascent
 	construct_state = /decl/machine_construction/default/no_deconstruct
@@ -186,13 +186,13 @@ MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic lifeform-defense system
 	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
 	base_type = /obj/machinery/computer/ship/missiles
 
-/obj/machinery/computer/ship/missiles/ascent2
+/obj/machinery/computer/ship/disperser/ascent
 	icon_state = "ascent"
 	icon_keyboard = "ascent_key"
 	icon_screen = "ascent_screen"
 	req_access = list(access_ascent)
 	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
-	base_type = /obj/machinery/computer/ship/missiles
+	base_type = /obj/machinery/computer/ship/disperser
 
 // This is an absolutely stupid machine. Basically the same as the debug one with some alterations.
 // It is a placeholder for a proper reactor setup (probably a RUST descendant)

@@ -70,6 +70,6 @@
 	name = OUTFIT_JOB_NAME("Expedition Guard - Marine")
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban/security
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/torch/crew/expmar)
+	id_types = list(/obj/item/card/id/torch/crew/explorer)
 	pda_type = /obj/item/modular_computer/pda/explorer
 	l_ear = /obj/item/device/radio/headset/exploration

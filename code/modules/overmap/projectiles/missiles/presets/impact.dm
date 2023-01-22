@@ -10,7 +10,7 @@
 	)
 
 	// how many pieces of dense objects can this missile still punch through
-	var/inertia = 15
+	var/inertia = 8
 
 // This doesn't have a detonation mechanism, it simply punches through hulls.
 // Note if changing the equipment list: this overrides Bump, so detonate() and thus on_trigger() isn't called on the equipment
@@ -27,6 +27,12 @@
 			inertia--
 
 		if(!inertia)
+			..()
 			walk(src, 0)
 			qdel(src)
 			log_and_message_admins("An impact missile reached it's destignation (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[obstacle.x];Y=[obstacle.y];Z=[obstacle.z]'>JMP</a>)")
+
+/obj/structure/missile/impact/fall()
+	if(!active)
+		..()
+	return

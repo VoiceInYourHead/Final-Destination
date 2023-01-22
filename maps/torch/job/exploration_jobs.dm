@@ -211,7 +211,7 @@
 
 /datum/job/expeng/get_description_blurb()
 	return "You are an Exploration Engineer. Your duty is to go on expeditions to away sites. The Pathfinder is your team leader. You are to keep shuttle operational and make holes wherever your boss says."
-
+/*
 /datum/job/expmar
 	title = "Expedition Marine Guard"
 	department = "Exploration"
@@ -254,3 +254,4 @@
 
 /datum/job/expmar/get_description_blurb()
 	return "You are an Exploration Guard. Your duty is to go on expeditions to away sites and keep members of the team safe. The Pathfinder is your team leader. Listen him and obey at all costs. Try not to recharge all your cells on a trip."
+*/

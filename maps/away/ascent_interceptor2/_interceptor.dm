@@ -20,6 +20,7 @@
 	desc = "A ruined jumpdrive ring of Ascent design, used to transport individual ships at FTL speeds."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	known = 0
 
 /obj/effect/submap_landmark/joinable_submap/ascent_interceptor2
 	name = "Ascent Interceptor(2)"

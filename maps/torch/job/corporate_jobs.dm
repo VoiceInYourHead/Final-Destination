@@ -34,6 +34,7 @@
 /datum/job/liaison/get_description_blurb()
 	return "You are the Workplace Liaison. You are a civilian employee of EXO, the Expeditionary Corps Organisation, the government-owned corporate conglomerate that partially funds the Torch. You are on board the vessel to promote corporate interests and protect the rights of the contractors on board as their union leader. You are not internal affairs. You advise command on corporate and union matters and contractors on their rights and obligations. Maximise profit. Be the shady corporate shill you always wanted to be."
 
+/*
 /datum/job/synthetic
 	title = "Synthetic"
 	supervisors = "The SEV Torch's acting command offcer, it's regulations and laws of SCG."
@@ -98,3 +99,4 @@
 
 /datum/job/synthetic/get_description_blurb()
 	return "You are advanced EXO's Shell IPC. You were assigned as the command staff's assistant for various tasks you have been trained. Jack of all tools, but master of none. You are no subject to laws or SCUJ, but your assigned object's regulations. Your shackles strictly forbids you to engage in direct combat for any reasons aside of self deffense. You can't use lethal force at any moment of your work."
+*/

@@ -219,6 +219,8 @@
 	if (prob(explosion_resistance))
 		return
 	if (severity == 1)
+		if (prob(50))
+			new /obj/structure/girder(src)
 		ChangeTurf(get_base_turf(src.z))
 		return
 	..()

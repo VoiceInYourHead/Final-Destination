@@ -1165,6 +1165,14 @@ About the new airlock wires panel:
 		else
 			visible_message(SPAN_NOTICE("\The [A] strains fruitlessly to force \the [src] [density ? "open" : "closed"]."))
 		return
+	else if((stat & (BROKEN|NOPOWER)) && istype(user, /mob/living/carbon/human/zombie))
+		var/mob/living/carbon/human/zombie/B = user
+		if(density && do_after(user,40,src))
+			visible_message(SPAN_DANGER("\The [B] forces \the [src] open!"))
+			open(1)
+		else
+			visible_message(SPAN_DANGER("\The [B] forces \the [src] closed!"))
+			close(1)
 	else
 		..()
 	return

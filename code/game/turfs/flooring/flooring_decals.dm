@@ -454,6 +454,40 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/purple/bordercee
 	icon_state = "bordercolorcee"
 
+/obj/effect/floor_decal/corner/purple_dark
+	name = "purple corner"
+	color = COLOR_PURPLE
+
+/obj/effect/floor_decal/corner/purple_dark/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/purple_dark/three_quarters
+	icon_state = "corner_white_three_quarters"
+
+/obj/effect/floor_decal/corner/purple_dark/full
+	icon_state = "corner_white_full"
+
+/obj/effect/floor_decal/corner/purple_dark/border
+	icon_state = "bordercolor"
+
+/obj/effect/floor_decal/corner/purple_dark/half
+	icon_state = "bordercolorhalf"
+
+/obj/effect/floor_decal/corner/purple_dark/mono
+	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/purple_dark/bordercorner
+	icon_state = "bordercolorcorner"
+
+/obj/effect/floor_decal/corner/purple_dark/bordercorner2
+	icon_state = "bordercolorcorner2"
+
+/obj/effect/floor_decal/corner/purple_dark/borderfull
+	icon_state = "bordercolorfull"
+
+/obj/effect/floor_decal/corner/purple_dark/bordercee
+	icon_state = "bordercolorcee"
+
 /obj/effect/floor_decal/corner/mauve
 	name = "mauve corner"
 	color = COLOR_PALE_PURPLE_GRAY

@@ -82,7 +82,7 @@
 	var/turf/planetary_target
 
 /obj/item/missile_equipment/thruster/planet/is_target_valid(var/obj/effect/overmap/O)
-	return istype(O, /obj/effect/overmap/visitable/sector/exoplanet)
+	return istype(O, /obj/effect/overmap/visitable/sector/exoplanet || /obj/effect/overmap/visitable/sector/arcticplanet || /obj/effect/overmap/visitable/sector/camp || /obj/effect/overmap/visitable/sector/stranded)
 
 // Immediately move the missile to the target on arrival
 /obj/item/missile_equipment/thruster/planet/on_enter_level(var/z_level)

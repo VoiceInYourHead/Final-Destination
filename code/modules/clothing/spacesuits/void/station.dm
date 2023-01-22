@@ -364,8 +364,10 @@
 /obj/item/clothing/head/helmet/space/void/engineering/salvage
 	name = "salvage voidsuit helmet"
 	desc = "A heavily modified salvage voidsuit helmet. It has been fitted with radiation-resistant plating."
-	icon_state = "rig0-salvage"
-	item_state = "salvage_helm"
+//	icon_state = "rig0-salvage"
+//	item_state = "salvage_helm"
+	icon_state = "rig0-miningalt"
+	item_state = "miningalt_helm"
 	item_state_slots = list(
 		slot_l_hand_str = "eng_helm",
 		slot_r_hand_str = "eng_helm",
@@ -383,28 +385,33 @@
 /obj/item/clothing/head/helmet/space/void/engineering/salvage/engi
 	name = "engineering salvage voidsuit helmet"
 	desc = "A heavily modified salvage voidsuit helmet. It has been fitted with radiation-resistant plating, and an engineer paintjob."
-	icon_state = "rig0-salvage-engi"
-	item_state = "salvage_helm-engi"
+//	icon_state = "rig0-salvage-engi"
+//	item_state = "salvage_helm-engi"
 
 /obj/item/clothing/head/helmet/space/void/engineering/salvage/med
 	name = "medical salvage voidsuit helmet"
 	desc = "A heavily modified salvage voidsuit helmet. It has been fitted with radiation-resistant plating, and a medical paintjob."
-	icon_state = "rig0-salvage-med"
-	item_state = "salvage_helm-med"
+//	icon_state = "rig0-salvage-med"
+//	item_state = "salvage_helm-med"
 
 /obj/item/clothing/head/helmet/space/void/engineering/salvage/pilot
 	name = "pilot salvage voidsuit helmet"
 	desc = "A heavily modified salvage voidsuit helmet. It has been fitted with radiation-resistant plating, and a pilot paintjob."
-	icon_state = "rig0-salvage-pilot"
-	item_state = "salvage_helm-pilot"
+//	icon_state = "rig0-salvage-pilot"
+//	item_state = "salvage_helm-pilot"
 
 /obj/item/clothing/suit/space/void/engineering/salvage
 	name = "salvage voidsuit"
 	desc = "A hand-me-down salvage voidsuit. It has obviously had a lot of repair work done to its radiation shielding."
-	icon_state = "rig-salvage"
+//	icon_state = "rig-salvage"
+	icon_state = "rig-mining"
+//	item_state_slots = list(
+//		slot_l_hand_str = "eng_voidsuit",
+//		slot_r_hand_str = "eng_voidsuit",
+//	)
 	item_state_slots = list(
-		slot_l_hand_str = "eng_voidsuit",
-		slot_r_hand_str = "eng_voidsuit",
+		slot_l_hand_str = "mining_voidsuit",
+		slot_r_hand_str = "mining_voidsuit",
 	)
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,

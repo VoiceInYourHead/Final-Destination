@@ -31,7 +31,7 @@
 	name = OUTFIT_JOB_NAME("Testing Assistant")
 	uniform = /obj/item/clothing/under/rank/ntwork
 
-
+/*
 /decl/hierarchy/outfit/job/torch/crew/command/synth
 	name = OUTFIT_JOB_NAME("EXO Synthetic")
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/command
@@ -41,3 +41,4 @@
 	id_types = list(/obj/item/card/id/torch/gold/synth)
 	pda_type = /obj/item/modular_computer/pda/heads
 	r_pocket = /obj/item/modular_computer/tablet/lease/preset/command
+*/

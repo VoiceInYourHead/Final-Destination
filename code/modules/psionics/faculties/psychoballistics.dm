@@ -10,18 +10,39 @@
 
 /decl/psionic_power/psychoballistics/spit
 	name =             "Bullet Spit"
-	cost =             15
-	cooldown =         30
+	cost =             20
+	cooldown =         45
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_APPRENTICE
 	use_description = "Use this ranged attack while targeting mouth on harm intent. Your mastery of Psychoballistics will determine how powerful the bullet is. Be wary of overuse, and try not to shot down yourself."
+
+/obj/item/projectile/psi
+	name = "psionic projectile"
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "dark_pellet"
+	damage = 20
+	damage_type = BRUTE
+	damage_flags = DAM_BULLET | DAM_SHARP
+	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
+	ricochet_sounds = list('sound/weapons/guns/ricochet1.ogg', 'sound/weapons/guns/ricochet2.ogg',
+							'sound/weapons/guns/ricochet3.ogg', 'sound/weapons/guns/ricochet4.ogg')
+	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_BULLET_MEAT, BULLET_IMPACT_METAL = SOUNDS_BULLET_METAL)
+
+/obj/item/projectile/psi/strong
+	damage = 10
+	icon_state = "plasma_bolt"
+	color = "#c40eed"
+
+/obj/item/projectile/psi/strong/Bump(atom/A as mob|obj|turf|area, forced=0)
+	..()
+	explosion(get_turf(A), -1, -1, 2, 1)
 
 /decl/psionic_power/psychoballistics/spit/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user] sneezed, spitting a bullet right from the mouth!</span>")
+		user.visible_message("<span class='danger'>\The [user] sneezing, spitting a bullet right from a mouth!</span>")
 		user.emote("sneeze")
 
 		var/user_rank = user.psi.get_rank(faculty)
@@ -29,87 +50,26 @@
 		var/pew_sound
 
 		user.psi.set_cooldown(cooldown)
-		user.psi.spend_power(cost)
 		sleep(4)
+		user.psi.spend_power(cost)
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
-//				pew = new /obj/item/projectile/bullet/rifle/shell(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "round"
+				pew = new /obj/item/projectile/psi/strong(get_turf(user))
+				pew.name = "big psionic round"
+				pew.damage = 20
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_MASTER)
-//				pew = new /obj/item/projectile/bullet/shotgun(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "slug"
+				pew = new /obj/item/projectile/psi/strong(get_turf(user))
+				pew.name = "psionic round"
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_OPERANT)
-//				pew = new /obj/item/projectile/bullet/pistol/strong(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "bullet"
+				pew = new /obj/item/projectile/psi(get_turf(user))
+				pew.name = "psionic bullet"
+				pew.damage = 40
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_APPRENTICE)
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "small bullet"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-
-		if(istype(pew))
-			playsound(pew.loc, pew_sound, 25, 1)
-			pew.original = target
-			pew.current = target
-			pew.starting = get_turf(user)
-			pew.shot_from = user
-			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
-		sleep(1)
-		switch(user_rank)
-			if(PSI_RANK_GRANDMASTER)
-//				pew = new /obj/item/projectile/bullet/rifle/shell(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "round"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_MASTER)
-//				pew = new /obj/item/projectile/bullet/shotgun(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "slug"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_OPERANT)
-//				pew = new /obj/item/projectile/bullet/pistol/strong(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "bullet"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-
-		if(istype(pew))
-			playsound(pew.loc, pew_sound, 25, 1)
-			pew.original = target
-			pew.current = target
-			pew.starting = get_turf(user)
-			pew.shot_from = user
-			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
-		sleep(1)
-		switch(user_rank)
-			if(PSI_RANK_GRANDMASTER)
-//				pew = new /obj/item/projectile/bullet/rifle/shell(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "round"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_MASTER)
-//				pew = new /obj/item/projectile/bullet/shotgun(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "slug"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-
-		if(istype(pew))
-			playsound(pew.loc, pew_sound, 25, 1)
-			pew.original = target
-			pew.current = target
-			pew.starting = get_turf(user)
-			pew.shot_from = user
-			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
-		sleep(1)
-		switch(user_rank)
-			if(PSI_RANK_GRANDMASTER)
-//				pew = new /obj/item/projectile/bullet/rifle/shell(get_turf(user))
-				pew = new /obj/item/projectile/bullet/pistol/holdout(get_turf(user))
-				pew.name = "round"
+				pew = new /obj/item/projectile/psi(get_turf(user))
+				pew.name = "small psionic bullet"
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 
 		if(istype(pew))
@@ -120,3 +80,49 @@
 			pew.shot_from = user
 			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
 		return TRUE
+
+/decl/psionic_power/psychoballistics/storm
+	name =             "Bullet Storm"
+	cost =             30
+	cooldown =         120
+	min_rank =         PSI_RANK_APPRENTICE
+	use_description = "Use this ranged attack while targeting mouth on harm intent. Your mastery of Psychoballistics will determine how powerful the bullet is. Be wary of overuse, and try not to shot down yourself."
+
+/decl/psionic_power/psychoballistics/storm/invoke(var/mob/living/user, var/mob/living/target)
+	if((target && user != target) || user.zone_sel.selecting != BP_MOUTH)
+		return FALSE
+	. = ..()
+	if(.)
+		user.visible_message("<span class='danger'>\The [user] sneezing, summoning bullets in all directions!</span>")
+		user.emote("sneeze")
+
+		var/user_rank = user.psi.get_rank(faculty)
+
+		user.psi.set_cooldown(cooldown)
+		sleep(4)
+		user.psi.spend_power(cost)
+		var/turf/O = get_turf(src)
+		switch(user_rank)
+			if(PSI_RANK_GRANDMASTER)
+				user.fragmentate(O, 40, 7, list(/obj/item/projectile/psi = 1))
+			if(PSI_RANK_MASTER)
+				user.fragmentate(O, 30, 6, list(/obj/item/projectile/psi = 1))
+			if(PSI_RANK_OPERANT)
+				user.fragmentate(O, 20, 5, list(/obj/item/projectile/psi = 1))
+			if(PSI_RANK_APPRENTICE)
+				user.fragmentate(O, 10, 4, list(/obj/item/projectile/psi = 1))
+		return TRUE
+
+/mob/proc/fragmentate(var/turf/T=get_turf(src), var/fragment_number = 30, var/spreading_range = 5, var/list/fragtypes=list(/obj/item/projectile/bullet/pellet/fragment/))
+	set waitfor = 0
+	var/list/target_turfs = getcircle(T, spreading_range)
+	var/fragments_per_projectile = round(fragment_number/target_turfs.len)
+
+	for(var/turf/O in target_turfs)
+		sleep(0)
+		var/fragment_type = pickweight(fragtypes)
+		var/obj/item/projectile/bullet/pellet/fragment/P = new fragment_type(T)
+		P.pellets = fragments_per_projectile
+		P.shot_from = src.name
+
+		P.launch(O)

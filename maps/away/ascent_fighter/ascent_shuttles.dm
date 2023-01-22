@@ -11,6 +11,7 @@
 	fore_dir = NORTH
 	color = COLOR_PURPLE
 	hide_from_reports = TRUE
+	known = 0
 	initial_restricted_waypoints = list(
 		"Fighter Landing Zone" = list("nav_ascent_fighter_start")
 	)

@@ -5,7 +5,7 @@
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 
-	core_skill = SKILL_PILOT
+	core_skill = SKILL_DEVICES
 	var/skill_offset = SKILL_ADEPT - 1 //After which skill level it starts to matter. -1, because we have to index from zero
 
 	icon_keyboard = "rd_key"
@@ -25,7 +25,7 @@
 	var/range = 1 //range of the explosion
 	var/strength = 1 //strength of the explosion
 	var/next_shot = 0 //round time where the next shot can start from
-	var/const/coolinterval = 2 MINUTES //time to wait between safe shots in deciseconds
+	var/const/coolinterval = 1 MINUTES //time to wait between safe shots in deciseconds
 
 /obj/machinery/computer/ship/disperser/Initialize()
 	. = ..()
