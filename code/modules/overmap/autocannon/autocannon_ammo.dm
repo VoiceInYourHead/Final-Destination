@@ -42,24 +42,28 @@
 
 /obj/structure/ship_munition/ammobox/autocannon/high_explosive
 	name = "RP-HE 67mm ammo box"
+	icon_state = "ammocrate_autocannon_he"
 	desc = "Ammo box that contains 67mm rocket-propelled high explosive rounds."
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/high_explosive
 
 /obj/structure/ship_munition/ammobox/autocannon/armour_piercing
 	name = "RP-APFSDS 67mm ammo box"
+	icon_state = "ammocrate_autocannon_ap"
 	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing fin-stabilized discarding sabot."
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/armour_piercing
 
 /obj/structure/ship_munition/ammobox/autocannon/anti_hull
 	name = "RP-AH 67mm ammo box"
+	icon_state = "ammocrate_autocannon_aw"
 	desc = "Ammo box that contains 67mm rocket-propelled anti-hull rounds."
 	ammo_count = 30
-	ammo_type = /obj/item/projectile/bullet/autocannon/anti_wall
+	ammo_type = /obj/item/projectile/bullet/autocannon/anti_hull
 
 /obj/structure/ship_munition/ammobox/autocannon/aphe
 	name = "RP-APHE 67mm ammo box"
+	icon_state = "ammocrate_autocannon_aphe"
 	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing high explosive rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/aphe
