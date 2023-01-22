@@ -82,6 +82,7 @@
 	contains = list(/obj/item/seeds/replicapod = 2,
 					/obj/item/seeds/libertymycelium = 2,
 					/obj/item/seeds/reishimycelium = 2,
+					/obj/item/seeds/random = 2,
 					/obj/item/seeds/kudzuseed = 2)
 
 /decl/hierarchy/supply_pack/science/shotgun
