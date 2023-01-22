@@ -97,6 +97,33 @@ proc/get_fusion_reaction(var/p_react, var/s_react, var/m_energy)
 	radiation = 5
 	products = list("silicon"= 1)
 
+/decl/fusion_reaction/phoron_gold
+	p_react = GAS_PHORON
+	s_react = "gold"
+	energy_consumption = 8
+	energy_production = 0
+	products = list("uranium" = 10)
+	instability = 3
+	minimum_reaction_temperature = 40000
+
+/decl/fusion_reaction/uranium_tungsten
+	p_react = "tungsten"
+	s_react = "uranium"
+	energy_consumption = 12
+	energy_production = 0
+	products = list("plutonium" = 10)
+	instability = 3
+	minimum_reaction_temperature = 70000
+
+/decl/fusion_reaction/copper_silver
+	p_react = "copper"
+	s_react = "silver"
+	energy_consumption = 14
+	energy_production = 0
+	products = list("osmium" = 10)
+	instability = 3
+	minimum_reaction_temperature = 120000
+
 /decl/fusion_reaction/iron_iron
 	p_react = "iron"
 	s_react = "iron"

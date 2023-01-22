@@ -1,3 +1,25 @@
+/material/plutonium
+	name = MATERIAL_PLUTONIUM
+	lore_text = "A ver highly radioactive metal. Commonly used as fuel in high tech fission reactors."
+	mechanics_text = "Plutonium ingots are used as fuel in some forms of reactors"
+	wall_name = "bulkhead"
+	stack_type = /obj/item/stack/material/plutonium
+	radioactivity = 22
+	icon_base = "stone"
+	door_icon_base = "stone"
+	table_icon_base = "stone"
+	icon_reinf = "reinf_stone"
+	is_fusion_fuel = 1
+	icon_colour = "#003000"
+	weight = 24
+	stack_origin_tech = list(TECH_MATERIAL = 10)
+	chem_products = list(
+				/datum/reagent/plutonium = 20
+				)
+	construction_difficulty = MATERIAL_HARD_DIY
+	sale_price = 2
+	value = 100
+
 /material/uranium
 	name = MATERIAL_URANIUM
 	lore_text = "A highly radioactive metal. Commonly used as fuel in fission reactors."
@@ -9,6 +31,7 @@
 	door_icon_base = "stone"
 	table_icon_base = "stone"
 	icon_reinf = "reinf_stone"
+	is_fusion_fuel = 1
 	icon_colour = "#007a00"
 	weight = 22
 	stack_origin_tech = list(TECH_MATERIAL = 5)
@@ -37,6 +60,7 @@
 	construction_difficulty = MATERIAL_HARD_DIY
 	ore_smelts_to = MATERIAL_GOLD
 	ore_result_amount = 5
+	is_fusion_fuel = 1
 	ore_name = "native gold"
 	ore_spread_chance = 10
 	ore_scan_icon = "mineral_uncommon"
@@ -104,6 +128,7 @@
 	ore_icon_overlay = "shiny"
 	sale_price = 2
 	value = 35
+	is_fusion_fuel = 1
 
 /material/steel
 	name = MATERIAL_STEEL
@@ -237,6 +262,7 @@
 	sale_price = 3
 	ore_smelts_to = MATERIAL_OSMIUM
 	value = 30
+	is_fusion_fuel = 1
 
 /material/tritium
 	name = MATERIAL_TRITIUM

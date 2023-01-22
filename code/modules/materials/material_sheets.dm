@@ -197,6 +197,17 @@
 	default_type = MATERIAL_URANIUM
 	material_flags = USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
 
+/obj/item/stack/material/plutonium
+	name = "plutonium"
+	icon_state = "sheet-faery-uranium"
+	plural_icon_state = "sheet-faery-uranium-mult"
+	max_icon_state = "sheet-faery-uranium-max"
+	default_type = MATERIAL_PLUTONIUM
+	material_flags = USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
+
+/obj/item/stack/material/plutonium/ten
+	amount = 10
+
 /obj/item/stack/material/uranium/ten
 	amount = 10
 
