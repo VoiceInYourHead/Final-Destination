@@ -1,7 +1,7 @@
 /material/plutonium
 	name = MATERIAL_PLUTONIUM
-	lore_text = "A ver highly radioactive metal. Commonly used as fuel in high tech fission reactors."
-	mechanics_text = "Plutonium ingots are used as fuel in some forms of reactors"
+	lore_text = "A very highly radioactive metal. Commonly used as fuel in high tech fission reactors."
+	mechanics_text = "Plutonium ingots are used as fuel in some forms of reactors."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plutonium
 	radioactivity = 22
