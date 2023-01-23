@@ -18,7 +18,7 @@
 	var/list/calexpected //what is should be
 
 	var/next_shot = 0 //round time where the next shot can start from
-	var/coolinterval = 60 SECONDS //time to wait between safe shots in deciseconds
+	var/coolinterval = 30 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "harpoon gun"
@@ -309,6 +309,9 @@
 
 	var/backwards = turn(overmapdir, 180)
 
+	sleep(6)
+	if(!finaltarget) // рыбка-то могла за пол секунды и съебаться, так что на всякий случай...
+		return
 	if(linked.vessel_size > finaltarget.vessel_size)
 		finaltarget.forceMove(get_step(finaltarget.loc, backwards))
 	else if(linked.vessel_size < finaltarget.vessel_size)
@@ -330,7 +333,7 @@
 
 /obj/machinery/computer/ship/harpoon_gun/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	linked.Beam(get_step(get_step(linked, overmapdir), overmapdir), overmap_icon, time = 5, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/harpoon_gun/proc/get_target_turf(turf/start, direction)
 	switch(direction)
