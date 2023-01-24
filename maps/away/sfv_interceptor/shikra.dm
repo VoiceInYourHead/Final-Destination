@@ -51,7 +51,7 @@
 	color = "#0751f3"
 	alpha = 30
 	skill_needed = SKILL_BASIC
-	vessel_mass = 750
+	vessel_mass = 3000
 	vessel_size = SHIP_SIZE_SMALL
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.5 SECONDS
@@ -60,17 +60,6 @@
 	initial_restricted_waypoints = list(
 		"Shikra Landing Zone" = list("nav_shikra_fighter_start")
 	)
-
-/obj/effect/overmap/visitable/ship/landable/shikra
-	name = "PM-55 Shikra Interceptor"
-	shuttle = "PM-55 Shikra Interceptor"
-	desc = "Wake signature indicates a small armed vessel."
-	fore_dir = NORTH
-	color = "#0751f3"
-	alpha = 30
-	skill_needed = SKILL_BASIC
-	vessel_mass = 750
-	vessel_size = SHIP_SIZE_SMALL
 
 /datum/shuttle/autodock/overmap/shikra
 	name = "PM-55 Shikra Interceptor"

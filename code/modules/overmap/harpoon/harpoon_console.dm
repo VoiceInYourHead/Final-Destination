@@ -1,5 +1,5 @@
 /obj/machinery/computer/ship/harpoon_gun
-	name = "autocannon control"
+	name = "harpoon gun control"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 
