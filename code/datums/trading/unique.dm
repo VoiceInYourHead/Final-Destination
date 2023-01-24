@@ -2,10 +2,20 @@
 	trade_flags = TRADER_WANTED_ONLY|TRADER_GOODS
 	want_multiplier = 5
 	typical_duration = 40
-
+/*
 /datum/trader/ship/unique/New()
 	..()
-	wanted_items = list()
+
+	if(possible_wanted_items)
+		possible_wanted_items = generate_pool(possible_wanted_items)
+	if(possible_trading_items)
+		possible_trading_items = generate_pool(possible_trading_items)
+
+	for(var/i in 3 to 6)
+		add_to_pool(trading_items, possible_trading_items, force = 1)
+		add_to_pool(wanted_items, possible_wanted_items, force = 1)
+
+//	wanted_items = list()
 	for(var/type in possible_wanted_items)
 		var/status = possible_wanted_items[type]
 		if(status & TRADER_THIS_TYPE)
@@ -16,7 +26,7 @@
 			wanted_items -= type
 		if(status & TRADER_BLACKLIST_SUB)
 			wanted_items -= subtypesof(type)
-
+*/
 /datum/trader/ship/unique/tick()
 	if(prob(-disposition) || refuse_comms)
 		duration_of_stay--
