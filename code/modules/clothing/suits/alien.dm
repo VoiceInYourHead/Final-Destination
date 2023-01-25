@@ -93,7 +93,7 @@
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.2
 
-/obj/item/clothing/suit/armor/vox/quill_armor
+/obj/item/clothing/suit/armor/vox/quill_armor/mantle
 	name = "quill mantle"
 	desc = "A blue mantle, complemented by fragments of armor made of heavy-duty chitin. Such armor is worn only by high-ranking Quills that bring death to the opponents of their empire."
 	icon_state = "vox-mantle"
@@ -109,8 +109,8 @@
 /obj/item/clothing/suit/armor/vox/quill_armor
 	name = "quill armour"
 	desc = "Chitinous durable armor, able to protect against many types of damage. Such armor is worn only by high-ranking Quills that bring death to the opponents of their empire."
-	icon_state = "vox-mantle"
-	item_state = "vox-mantle"
+	icon_state = "vox-inq"
+	item_state = "vox-inq"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -140,6 +140,7 @@
 /obj/item/clothing/suit/storage/vox
 	name = "vox cloak"
 	desc = "A whitish raincoat used in everyday life just like human labcoats. They are worn and appreciated by many vox for their comfort, however, most often such robes are ranked among the bio-techniques of vox fleets."
+	icon = 'icons/obj/clothing/species/vox/obj_suit_vox.dmi'
 	icon_state = "vox-labcoat"
 	item_state = "vox_labcoat"
 	body_parts_covered = UPPER_TORSO|ARMS
