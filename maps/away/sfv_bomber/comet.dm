@@ -51,7 +51,7 @@
 	color = "#0751f3"
 	alpha = 30
 	skill_needed = SKILL_BASIC
-	vessel_mass = 4000
+	vessel_mass = 3000
 	vessel_size = SHIP_SIZE_SMALL
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.5 SECONDS
