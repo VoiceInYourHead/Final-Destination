@@ -31,7 +31,7 @@
 
 /datum/shuttle/autodock/overmap/ascent_gunboat
 	name = "Ascent Gunboat"
-	warmup_time = 4
+	warmup_time = 6
 	range = 1
 	shuttle_area = list(/area/ship/ascent_gunboat/bridge, /area/ship/ascent_gunboat/wing_starboard, /area/ship/ascent_gunboat/wing_port, /area/ship/ascent_gunboat/fore_port, /area/ship/ascent_gunboat/fore_starboard, /area/ship/ascent_gunboat/engineering, /area/ship/ascent_gunboat/ofd, /area/ship/ascent_gunboat/aft_port, /area/ship/ascent_gunboat/aft_starboard, /area/ship/ascent_gunboat/stern_port, /area/ship/ascent_gunboat/stern_starboard, /area/ship/ascent_gunboat/port_jut, /area/ship/ascent_gunboat/starboard_jut, /area/ship/ascent_gunboat/atmos)
 	defer_initialisation = TRUE
