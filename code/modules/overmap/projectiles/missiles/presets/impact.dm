@@ -36,3 +36,14 @@
 	if(!active)
 		..()
 	return
+
+/obj/structure/missile/impact/he
+	name = "HBM-HE-67 missile"
+	overmap_name = "breacher missile"
+	desc = "A breacher missile developed by Haephestus Industries. It is widely known and feared for eating through hulls like butter, often making it through multiple wall sections before coming to a halt."
+
+	equipment = list(
+		/obj/item/missile_equipment/thruster,
+		/obj/item/missile_equipment/autoarm/impact,
+		/obj/item/missile_equipment/payload/explosive
+	)
