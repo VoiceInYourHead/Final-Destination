@@ -7,8 +7,23 @@
 	icon_state = "scavship"
 	req_access = list(access_voxship)
 
+/area/voxship/cockpit
+	name = "Vox Scavenger Cockpit"
+	icon_state = "fore"
+	req_access = list(access_voxship)
+
 /area/voxship/fore
-	name = "Unknown Vessel Cockpit"
+	name = "Vox Scavenger Ship"
+	icon_state = "fore"
+	req_access = list(access_voxship)
+
+/area/voxship/aft
+	name = "Vox Scavenger Ship"
+	icon_state = "fore"
+	req_access = list(access_voxship)
+
+/area/voxship/medbay
+	name = "Vox Meatlab"
 	icon_state = "fore"
 	req_access = list(access_voxship)
 
@@ -17,8 +32,23 @@
 	icon_state = "eng"
 	req_access = list(access_voxship)
 
+/area/voxship/starboard
+	name = "Vox Ship Starboard"
+	icon_state = "fore"
+	req_access = list(access_voxship)
+
+/area/voxship/starboard_thrusters
+	name = "Vox Starboard Thrusters"
+	icon_state = "thrust"
+	req_access = list(access_voxship)
+
+/area/voxship/port_thrusters
+	name = "Vox Port Thrusters"
+	icon_state = "thrust"
+	req_access = list(access_voxship)
+
 /area/voxship/thrusters
-	name = "Vox Thrusters"
+	name = "Vox Scavenger Thrusters"
 	icon_state = "thrust"
 	req_access = list(access_voxship)
 

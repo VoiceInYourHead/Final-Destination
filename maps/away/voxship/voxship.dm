@@ -10,7 +10,7 @@
 	name = "Vox Scavenger Ship"
 	id = "awaysite_voxship2"
 	description = "Vox Scavenger Ship."
-	suffixes = list("voxship/voxship-2.dmm")
+	suffixes = list("voxship/voxship-new.dmm")
 	spawn_cost = 3
 	player_cost = 4
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_ship, /datum/shuttle/autodock/overmap/vox_lander)
@@ -34,10 +34,16 @@
 	name = "Vox Scavenger Ship"
 	move_time = 10
 	shuttle_area = list(
-		/area/voxship/engineering,
-		/area/voxship/thrusters,
+		/area/voxship/scavship,
+		/area/voxship/cockpit,
 		/area/voxship/fore,
-		/area/voxship/scavship
+		/area/voxship/aft,
+		/area/voxship/starboard,
+		/area/voxship/medbay,
+		/area/voxship/thrusters,
+		/area/voxship/starboard_thrusters,
+		/area/voxship/port_thrusters,
+		/area/voxship/engineering
 	)
 	dock_target = "vox_ship"
 	current_location = "nav_hangar_voxship"
@@ -63,7 +69,7 @@
 	color = "#233012"
 	icon_state = "ship"
 	moving_state = "ship_moving"
-	fore_dir = WEST
+	fore_dir = NORTHWEST
 	vessel_size = SHIP_SIZE_SMALL
 
 //Ship's little lander defined here
@@ -95,7 +101,7 @@
 	name = "Unmarked shuttle"
 	shuttle = "Vox Scavenger Shuttle"
 	desc = "Sensor array detects a small, unmarked vessel."
-	fore_dir = WEST
+	fore_dir = SOUTHEAST
 	vessel_size = SHIP_SIZE_TINY
 
 /obj/effect/submap_landmark/joinable_submap/voxship/scavship
