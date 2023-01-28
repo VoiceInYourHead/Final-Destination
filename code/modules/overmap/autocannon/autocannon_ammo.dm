@@ -101,7 +101,7 @@
 	bolt_heavy_impact = 1
 	bolt_light_impact = 2
 
-/obj/item/projectile/bullet/autocannon/anti_wall/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/bullet/autocannon/anti_hull/on_hit(var/atom/target, var/blocked = 0)
 	explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
 	..()
 

@@ -4,6 +4,22 @@
 	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
 
+/obj/machinery/hmg/examine(mob/user)
+	. = ..()
+	if(panel_open)
+		to_chat(user, "The maintenance panel is open.")
+
+/obj/machinery/hmg/attackby(obj/item/I, mob/user)
+	if(isWrench(I))
+		if(panel_open)
+			user.visible_message("<span class='notice'>\The [user] rotates \the [src] with \the [I].</span>", "<span class='notice'>You rotate \the [src] with \the [I].</span>")
+			set_dir(turn(dir, 90))
+			playsound(src, 'sound/items/jaws_pry.ogg', 50, 1)
+		else
+			to_chat(user,"<span class='notice'>The maintenance panel must be screwed open for this!</span>")
+	else
+		return ..()
+
 /obj/machinery/hmg/front_part
 	name = "HMG turret"
 	desc = "An old-fashion ship autocannon tower.\
@@ -22,6 +38,7 @@
 	desc = "An old-fashion ammo reciever. Munition then goes to autocannon breech end."
 	icon_state = "ammo_loader"
 	density = FALSE
+//	layer = BELOW_DOOR_LAYER //So the charges go above us.
 
 ////////////////////////////////CIRCUIT////////////////////////////////
 

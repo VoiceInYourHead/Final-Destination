@@ -9,7 +9,7 @@
 	icon_keyboard = "rd_key"
 	icon_screen = "teleport"
 
-	var/link_range = 3 //How far can the above stuff be maximum before we start complaining
+	var/link_range = 10 //How far can the above stuff be maximum before we start complaining
 
 	var/overmapdir = 0
 
