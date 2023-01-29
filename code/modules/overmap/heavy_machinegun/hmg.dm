@@ -21,21 +21,21 @@
 		return ..()
 
 /obj/machinery/hmg/front_part
-	name = "HMG turret"
-	desc = "An old-fashion ship autocannon tower.\
+	name = "HMG muzzle"
+	desc = "An old-fashion heavy machinegun muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
 
 /obj/machinery/hmg/middle_part
-	name = "HMG breech end"
-	desc = "An old-fashion ammo reciever that sends it to the autocannon tower. \
+	name = "HMG barrel"
+	desc = "An old-fashion gas tube that propels munitions to HMG muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
 	icon_state = "magazine"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
 /obj/machinery/hmg/back_part
-	name = "HMG munition rack"
-	desc = "An old-fashion ammo reciever. Munition then goes to autocannon breech end."
+	name = "HMG breech end"
+	desc = "An old-fashion ammo reciever. Munition then goes to HMG barrel."
 	icon_state = "ammo_loader"
 	density = FALSE
 //	layer = BELOW_DOOR_LAYER //So the charges go above us.

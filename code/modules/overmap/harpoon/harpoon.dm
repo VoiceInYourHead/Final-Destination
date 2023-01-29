@@ -21,21 +21,21 @@
 		return ..()
 
 /obj/machinery/harpoon_cannon/front_part
-	name = "harpoon gun barrel"
-	desc = "An old-fashion ship autocannon tower.\
+	name = "harpoon cannon muzzle"
+	desc = "An old-fashion harpoon cannon muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "front"
 
 /obj/machinery/harpoon_cannon/middle_part
-	name = "harpoon gun rail"
-	desc = "An old-fashion ammo reciever that sends it to the autocannon tower. \
+	name = "harpoon cannon rail"
+	desc = "An old-fashion gas tube that propels munitions to the cannon muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
 	icon_state = "middle"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
 /obj/machinery/harpoon_cannon/back_part
-	name = "harpoon gun munition rack"
-	desc = "An old-fashion ammo reciever. Munition then goes to autocannon breech end."
+	name = "harpoon cannon munition rack"
+	desc = "An old-fashion ammo reciever. Munition then goes to cannon rail."
 	icon_state = "back"
 	density = FALSE
 //	layer = BELOW_DOOR_LAYER //So the charges go above us.
@@ -43,12 +43,12 @@
 ////////////////////////////////CIRCUIT////////////////////////////////
 
 /obj/item/stock_parts/circuitboard/harpoon
-	name = T_BOARD("harpoon gun control")
+	name = T_BOARD("harpoon cannon control")
 	build_path = /obj/machinery/computer/ship/harpoon_gun
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
 /obj/item/stock_parts/circuitboard/harpoonfront
-	name = T_BOARD("harpoon gun barrel")
+	name = T_BOARD("harpoon cannon muzzle")
 	build_path = /obj/machinery/harpoon_cannon/front_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -57,7 +57,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/harpoonmiddle
-	name = T_BOARD("harpoon gun rail")
+	name = T_BOARD("harpoon cannon rail")
 	build_path = /obj/machinery/harpoon_cannon/middle_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -66,7 +66,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/harpoonback
-	name = T_BOARD("harpoon gun munition rack")
+	name = T_BOARD("harpoon cannon munition rack")
 	build_path = /obj/machinery/harpoon_cannon/back_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
