@@ -49,7 +49,7 @@
 	force = 2 //it's the size of a car key, what did you expect?
 	modifystate = "smallgunstun"
 
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun/smalllaser, modifystate="smallgunstun"),
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock/smalllaser, modifystate="smallgunshock"),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/smalllaser, modifystate="smallgunkill"),

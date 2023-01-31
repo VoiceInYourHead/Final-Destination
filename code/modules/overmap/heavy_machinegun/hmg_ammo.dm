@@ -9,8 +9,8 @@
 	ammo_type = /obj/item/projectile/bullet/hmg_ship
 
 /obj/item/projectile/bullet/hmg_ship
-	name ="heavy machine gun bullet"
-	icon_state= "bolter"
+	name = "heavy machine gun bullet"
+	icon_state = "bullet"
 	damage = 150
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 	armor_penetration = 30

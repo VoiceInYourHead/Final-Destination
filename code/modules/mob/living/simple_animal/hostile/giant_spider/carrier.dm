@@ -6,15 +6,15 @@
 	icon_living = "carrier"
 	icon_dead = "carrier_dead"
 
-	maxHealth = 100
-	health = 100
+	maxHealth = 75
+	health = 75
 
 	natural_weapon = /obj/item/natural_weapon/bite/spider/carrier
 
-	poison_per_bite = 3
+	poison_per_bite = 2
 	poison_type = /datum/reagent/chloralhydrate
 
-	movement_cooldown = 8
+	movement_cooldown = 10
 
 	var/spiderling_count = 0
 	var/spiderling_type = /obj/effect/spider/spiderling

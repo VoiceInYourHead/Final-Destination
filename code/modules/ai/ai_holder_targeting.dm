@@ -116,8 +116,8 @@
 	if (isliving(the_target))
 		var/mob/living/L = the_target
 		if (ishuman(L) || issilicon(L))
-			if (L.key && !L.client)	// SSD players get a pass
-				return FALSE
+//			if (L.key && !L.client)	// SSD players get a pass
+//				return FALSE
 
 			if (L.status_flags & NOTARGET)
 				return FALSE

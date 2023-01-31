@@ -4,6 +4,7 @@
 	icon = 'icons/obj/disperser.dmi'
 	icon_state = "ammocrate_autocannon1"
 	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
+	var/exploded = FALSE
 	var/ammo_count = 60
 	var/ammo_type = /obj/item/projectile/bullet
 
@@ -17,14 +18,17 @@
 		qdel(src)
 
 /obj/structure/ship_munition/ammobox/ex_act(severity)
-	if(severity < 3 && ammo_count > ammo_count/3)
-		explosion(src, -1, 2, 3)
-		QDEL_IN(src, 1)
-		..()
-	else if(severity < 3 && ammo_count > 0)
-		explosion(src, -1, 1, 2)
-		QDEL_IN(src, 1)
-		..()
+	if (src && !exploded)
+		if(severity < 3 && ammo_count > ammo_count/3)
+			exploded = TRUE
+			explosion(src, -1, 2, 3)
+			qdel(src)
+			return
+		else if(severity < 3 && ammo_count > 0)
+			exploded = TRUE
+			explosion(src, -1, 1, 2)
+			qdel(src)
+			return
 
 /obj/structure/ship_munition/ammobox/examine(mob/user)
 	. = ..()
