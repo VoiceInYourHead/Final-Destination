@@ -1,8 +1,8 @@
 /datum/species/vox
 	name = SPECIES_VOX
 	name_plural = SPECIES_VOX
-	icobase =         'icons/mob/human_races/species/vox/body.dmi'
-	deform =          'icons/mob/human_races/species/vox/body.dmi'
+	icobase =         'icons/mob/human_races/species/vox/bodytest.dmi'
+	deform =          'icons/mob/human_races/species/vox/bodytest.dmi'
 	husk_icon =       'icons/mob/human_races/species/vox/husk.dmi'
 	damage_overlays = 'icons/mob/human_races/species/vox/damage_overlay.dmi'
 	damage_mask =     'icons/mob/human_races/species/vox/damage_mask.dmi'
