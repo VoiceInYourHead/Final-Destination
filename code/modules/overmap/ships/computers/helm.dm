@@ -366,3 +366,17 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	else
 		icon_state = "tele_nav"
 		set_light(light_max_bright_on, light_inner_range_on, light_outer_range_on, 2, light_color)
+
+/obj/machinery/computer/ship/helm/controller	//little hacky but it's only used on one ship so it should be okay
+	icon_state = "tiny_helm"
+	density = FALSE
+	machine_name = "helm control pad"
+	machine_desc = "A compact, controller-like helm panel."
+
+/obj/machinery/computer/ship/helm/controller/on_update_icon()
+	if(reason_broken & MACHINE_BROKEN_NO_PARTS || stat & NOPOWER || stat & BROKEN)
+		icon_state = "tiny"
+		set_light(0)
+	else
+		icon_state = "tiny_helm"
+		set_light(light_max_bright_on, light_inner_range_on, light_outer_range_on, 2, light_color)
