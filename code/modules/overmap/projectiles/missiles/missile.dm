@@ -17,8 +17,11 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	dir = WEST
 	does_spin = FALSE
+	var/health = 150
 
 	var/overmap_name = "missile"
+
+	var/activation_sound = 'sound/machines/defib_SafetyOn.ogg'
 
 	var/maintenance_hatch_open = FALSE
 	var/active = FALSE
@@ -66,6 +69,34 @@
 	..()
 	detonate(obstacle)
 
+/obj/structure/missile/ex_act(severity)
+	..()
+	if(active && prob(90))
+		playsound(loc, activation_sound, 100)
+		active = TRUE
+		detonate(loc)
+
+	if(severity == 1)
+		playsound(loc, activation_sound, 100)
+		active = TRUE
+		detonate(loc)
+
+	if(severity == 2)
+		if(prob(60))
+			playsound(loc, activation_sound, 100)
+			active = TRUE
+			detonate(loc)
+		else if(prob(80))
+			Destroy()
+
+	if(severity == 3 && prob(20))
+		playsound(loc, activation_sound, 100)
+		active = TRUE
+		if(prob(75))
+			detonate(loc)
+
+	return
+
 /obj/structure/missile/proc/expire()
 	Destroy()
 
@@ -102,6 +133,24 @@
 	overmap_missile.set_moving(TRUE)
 
 /obj/structure/missile/attackby(var/obj/item/I, var/mob/user)
+
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
+	if(isWrench(I))
+		switch(active)
+			if (0)
+				active = 1
+				to_chat(user, "<span class='notice'>You manually armed the [name]. Its warhead priming mechanism is now active!</span>")
+				playsound(loc, activation_sound, 100)
+				playsound(loc, 'sound/items/scrape_clunk.ogg', 100)
+			if (1)
+				active = 0
+				playsound(loc, 'sound/machines/defib_safetyOff.ogg', 100)
+				playsound(loc, 'sound/items/scrape_clunk.ogg', 100)
+				to_chat(user, "<span class='notice'>You manually unarmed the [name]. Now its warhead priming mechanism is off.</span>")
+
+		add_fingerprint(user)
+		return
 
 	if(isScrewdriver(I))
 		maintenance_hatch_open = !maintenance_hatch_open
@@ -140,7 +189,42 @@
 				update_icon()
 			return
 
+	if(I.attack_verb.len)
+		visible_message("<span class='warning'>\The [src] have been [pick(I.attack_verb)] with \the [I][(user ? " by [user]." : ".")]</span>")
+	else
+		visible_message("<span class='warning'>\The [src] have been attacked with \the [I][(user ? " by [user]." : ".")]</span>")
+
+	var/damage = round(I.force / 2.0)
+
+	if(isWelder(I))
+		var/obj/item/weldingtool/WT = I
+
+		if(WT.remove_fuel(0, user))
+			damage = 20
+			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
+
+	if(damage <= 2)
+		return
+
+	health -= damage
+	healthcheck(damage)
+
 	..()
+
+/obj/structure/missile/bullet_act(var/obj/item/projectile/Proj)
+	..()
+
+	health -= round(Proj.get_structure_damage() * 0.5)
+	healthcheck(Proj.get_structure_damage() * 2)
+
+/obj/structure/missile/proc/healthcheck(var/damage)
+	if(active && prob(80))
+		detonate(loc)
+	if(prob(damage))
+		playsound(loc, activation_sound, 100)
+		active = 1
+	if(health <= 0)
+		detonate(loc)
 
 /obj/structure/missile/on_update_icon()
 	overlays.Cut()
@@ -169,7 +253,7 @@
 	return 1
 
 /obj/structure/missile/proc/detonate(var/atom/obstacle)
-	if(!active)
+	if(!active && health > 0)
 		return
 
 	// missile equipment triggers before the missile itself
@@ -277,7 +361,7 @@
 
 
 	if(overmap_missile.dangerous)
-		log_and_message_admins("A dangerous missile has entered z level [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>)")
+		log_and_message_admins("A dangerous [overmap_name] has entered z level [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>)")
 
 
 	// if we enter into a dense place, just detonate immediately

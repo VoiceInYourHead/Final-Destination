@@ -1,9 +1,9 @@
 /obj/item/projectile/bullet/pellet/fragment
-	damage = 7
+	damage = 30
 	range_step = 2 //controls damage falloff with distance. projectiles lose a "pellet" each time they travel this distance. Can be a non-integer.
 
 	base_spread = 0 //causes it to be treated as a shrapnel explosion instead of cone
-	spread_step = 20
+	spread_step = 40
 
 	silenced = TRUE
 	fire_sound = null
@@ -11,7 +11,7 @@
 	muzzle_type = null
 
 /obj/item/projectile/bullet/pellet/fragment/strong
-	damage = 15
+	damage = 60
 
 /obj/item/grenade/frag
 	name = "fragmentation grenade"
@@ -19,7 +19,7 @@
 	icon_state = "frggrenade"
 
 	var/list/fragment_types = list(/obj/item/projectile/bullet/pellet/fragment = 1)
-	var/num_fragments = 72  //total number of fragments produced by the grenade
+	var/num_fragments = 90  //total number of fragments produced by the grenade
 	var/explosion_size = 2   //size of the center explosion
 
 	//The radius of the circle used to launch projectiles. Lower values mean less projectiles are used but if set too low gaps may appear in the spread pattern
@@ -103,3 +103,15 @@
 /obj/item/grenade/frag/high_yield/on_explosion(var/turf/O)
 	if(explosion_size)
 		explosion(O, -1, round(explosion_size/2), explosion_size, round(explosion_size/2), 0) //has a chance to blow a hole in the floor
+
+/obj/item/grenade/frag/high_explosive
+	name = "HE grenade"
+	desc = "A military high-explosive grenade, designed to cause massive structural damage in enemy lines."
+	icon_state = "frggrenade"
+
+	num_fragments = 12
+	explosion_size = 4
+
+/obj/item/grenade/frag/high_explosive/on_explosion(var/turf/O)
+	if(explosion_size)
+		explosion(O, -1, round(explosion_size/2), round(explosion_size/1.5), explosion_size, 0)

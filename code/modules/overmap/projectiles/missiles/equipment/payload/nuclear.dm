@@ -5,12 +5,12 @@
 
 /obj/item/missile_equipment/payload/nuclear/on_trigger(var/atom/triggerer)
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 5, 10, 10, 10)
+		explosion(get_turf(src), 5, 10, 10, 15)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(50000)
 	else
-		explosion(get_turf(src), 20, 30, 30, 30)
+		explosion(get_turf(src), 20, 30, 30, 35)
 		empulse(get_turf(src), rand(25,50), rand(50,100))
 
 	for(var/mob/living/carbon/human/M in GLOB.player_list)
@@ -31,7 +31,7 @@
 
 /obj/item/missile_equipment/payload/nuclear/doomsday/on_trigger(var/atom/triggerer)
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 15, 30, 30, 30)
+		explosion(get_turf(src), 15, 30, 30, 40)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(150000)
