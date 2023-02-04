@@ -142,7 +142,7 @@
 
 /obj/machinery/computer/ship/harpoon_gun/proc/remove_ammo()
 	munition = locate() in get_turf(back)
-	if(munition.ammo_count > 0)
+	if(munition.ammo_count >= 0 + ammo_per_shot)
 		munition.ammo_count -= ammo_per_shot
 	return
 

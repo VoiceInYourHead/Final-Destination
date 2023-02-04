@@ -143,7 +143,7 @@
 
 /obj/machinery/computer/ship/hmg/proc/remove_ammo()
 	munition = locate() in get_turf(back)
-	if(munition.ammo_count > 0)
+	if(munition.ammo_count >= 0 + ammo_per_shot)
 		munition.ammo_count -= ammo_per_shot
 	return
 
@@ -404,11 +404,11 @@
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)
-	pew.original = get_step(locate(start_x, start_y, z_level),heading)
-	pew.current = get_step(locate(start_x, start_y, z_level),heading)
+	pew.original = get_step(start,heading)
+	pew.current = get_step(start,heading)
 	pew.starting = start
 	pew.color = pew_color
-	pew.launch(get_step(locate(start_x, start_y, z_level),heading), pick(BP_ALL_LIMBS), start_x, start_y)
+	pew.launch(get_step(start,heading), pick(BP_ALL_LIMBS), start_x, start_y)
 
 /obj/machinery/computer/ship/hmg/proc/handle_muzzle(turf/start, direction)
 	set waitfor = FALSE
