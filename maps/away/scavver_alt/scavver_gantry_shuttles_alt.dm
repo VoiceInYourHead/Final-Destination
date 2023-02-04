@@ -51,7 +51,7 @@
 	shuttle_area = list(/area/scavver/lifepod)
 	current_location = "nav_hangar_gantry_one"
 	landmark_transition = "nav_transit_gantry_one"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 5
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS
@@ -64,7 +64,7 @@
 	shuttle_area = list(/area/scavver/escapepod)
 	current_location = "nav_hangar_gantry_two"
 	landmark_transition = "nav_transit_gantry_two"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 3
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS
@@ -77,7 +77,7 @@
 	shuttle_area = list(/area/scavver/harvestpod)
 	current_location = "nav_hangar_gantry_three"
 	landmark_transition = "nav_transit_gantry_three"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 5
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS

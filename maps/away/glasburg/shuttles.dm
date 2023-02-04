@@ -26,7 +26,7 @@
 /datum/shuttle/autodock/overmap/glasburg
 	name = "Glasburg"
 	fuel_consumption = 2
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = /area/ship/glasburg
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

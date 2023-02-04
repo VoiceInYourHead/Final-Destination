@@ -310,8 +310,21 @@
 	var/backwards = turn(overmapdir, 180)
 
 	sleep(6)
-	if(!finaltarget) // рыбка-то могла за пол секунды и съебаться, так что на всякий случай...
+	if(!finaltarget) // наша цель могла за пол секунды и съебаться, так что на всякий случай проверим
 		return
+	if(linked.z != 11) //куда ты залез ебланище?
+		finaltarget.forceMove(get_step(finaltarget.loc, backwards)) //ладно уговорил, если куда-то и залез - то значит что место тяжёлое
+		return
+	if(length(linked.locs))
+		var/our_pos = pick(linked.locs)
+		if(istype(our_pos, /obj/effect/overmap/visitable/sector))
+			finaltarget.forceMove(get_step(finaltarget.loc, backwards))
+			return
+		if(istype(our_pos, /obj/effect/overmap/visitable/ship))
+			var/obj/effect/overmap/visitable/ship/mothership = our_pos
+			if(mothership.vessel_size > finaltarget.vessel_size)
+				finaltarget.forceMove(get_step(finaltarget.loc, backwards))
+				return
 	if(linked.vessel_size > finaltarget.vessel_size)
 		finaltarget.forceMove(get_step(finaltarget.loc, backwards))
 	else if(linked.vessel_size < finaltarget.vessel_size)

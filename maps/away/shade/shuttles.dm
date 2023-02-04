@@ -26,7 +26,7 @@
 
 /datum/shuttle/autodock/overmap/shade
 	name = "Shade"
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = /area/ship/shade
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

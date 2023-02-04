@@ -29,7 +29,7 @@
 	defer_initialisation = TRUE
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/vox
 	warmup_time = 5
-	range = 2
+	range = 1 //range = 2
 	fuel_consumption = 0
 	skill_needed = SKILL_NONE
 	knockdown = FALSE
