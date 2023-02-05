@@ -48,7 +48,7 @@
 	dock_target = "vox_ship"
 	current_location = "nav_hangar_voxship"
 	landmark_transition = "nav_transit_voxship"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 4
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	defer_initialisation = TRUE
@@ -80,7 +80,7 @@
 	dock_target = "vox_scavshuttle"
 	current_location = "nav_hangar_scavshuttle"
 	landmark_transition = "nav_transit_scavshuttle"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 4
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	defer_initialisation = TRUE

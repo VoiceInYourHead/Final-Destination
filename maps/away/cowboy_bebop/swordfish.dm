@@ -63,7 +63,7 @@
 /datum/shuttle/autodock/overmap/swordfish
 	name = "Swordfish II"
 	warmup_time = 3
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = /area/ship/swordfish
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

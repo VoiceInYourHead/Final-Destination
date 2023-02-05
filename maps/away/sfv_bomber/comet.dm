@@ -64,7 +64,7 @@
 /datum/shuttle/autodock/overmap/comet
 	name = "PM-07-L Comet Bomber"
 	warmup_time = 3
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = /area/ship/comet
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

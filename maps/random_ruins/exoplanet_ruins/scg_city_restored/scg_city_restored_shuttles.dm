@@ -25,7 +25,7 @@
 	shuttle_area = /area/lovely
 	current_location = "nav_hangar_lovely"
 	landmark_transition = "nav_transit_lovely"
-	range = 2
+	range = 0 //range = 2
 	fuel_consumption = 1
 	logging_home_tag = "nav_hangar_lovely"
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling

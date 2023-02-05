@@ -35,7 +35,7 @@
 /datum/shuttle/autodock/overmap/ascent
 	name = "Ascent Caulship"
 	warmup_time = 5
-	range = 2
+	range = 1 //range = 2
 	shuttle_area = /area/ship/ascent_caulship
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

@@ -28,7 +28,7 @@
 
 /datum/shuttle/autodock/overmap/ares
 	name = "Ares"
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = list(/area/ship/ares/bridge, /area/ship/ares/interior, /area/ship/ares/kitchen, /area/ship/ares/bar, /area/ship/ares/mess_hall, /area/ship/ares/eng, /area/ship/ares/cargo, /area/ship/ares/mining, /area/ship/ares/janitor)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
