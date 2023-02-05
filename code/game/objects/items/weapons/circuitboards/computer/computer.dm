@@ -77,6 +77,10 @@
 	name = T_BOARD("helm control console")
 	build_path = /obj/machinery/computer/ship/helm
 
+/obj/item/stock_parts/circuitboard/helm/controller
+	name = T_BOARD("helm control pad")
+	build_path = /obj/machinery/computer/ship/helm/controller
+
 /obj/item/stock_parts/circuitboard/missiles
 	name = T_BOARD("target control console")
 	build_path = /obj/machinery/computer/ship/missiles
@@ -96,6 +100,10 @@
 /obj/item/stock_parts/circuitboard/sensors
 	name = T_BOARD("sensors console")
 	build_path = /obj/machinery/computer/ship/sensors
+
+/obj/item/stock_parts/circuitboard/sensors/tele
+	name = T_BOARD("sensors telescreen")
+	build_path = /obj/machinery/computer/ship/sensors/telescreen
 
 /obj/item/stock_parts/circuitboard/area_atmos
 	name = T_BOARD("area air control console")

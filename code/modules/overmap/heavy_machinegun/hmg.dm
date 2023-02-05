@@ -47,6 +47,10 @@
 	build_path = /obj/machinery/computer/ship/hmg
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
+/obj/item/stock_parts/circuitboard/heavymg/tele
+	name = T_BOARD("HMG control telescreen")
+	build_path = /obj/machinery/computer/ship/hmg/telescreen
+
 /obj/item/stock_parts/circuitboard/heavymgfront
 	name = T_BOARD("machine gun turret")
 	build_path = /obj/machinery/hmg/front_part

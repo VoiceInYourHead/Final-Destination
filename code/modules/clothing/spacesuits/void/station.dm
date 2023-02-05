@@ -478,7 +478,6 @@
 	name = "retro voidsuit helmet"
 	desc = "A voidsuit helmet designed to replicate older designs with newer technology."
 	icon_state = "rig0-retro"
-	item_state = "helm-retro"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		energy = ARMOR_ENERGY_RESISTANT,

@@ -15,7 +15,7 @@
 	base_type = /obj/machinery/computer/ship/sensors
 	print_language = LANGUAGE_SPACER
 
-/obj/machinery/computer/ship/sensors/attempt_hook_up(obj/effect/overmap/visitable/ship/sector)
+/obj/machinery/computer/ship/sensors/attempt_hook_up(obj/effect/overmap/visitable/sector)
 	if(!(. = ..()))
 		return
 	find_sensors()

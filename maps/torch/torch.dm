@@ -186,6 +186,7 @@
 	#include "../away/sfv_interceptor/shikra.dm"
 	#include "../away/sfv_bomber/comet.dm"
 	#include "../away/cowboy_bebop/swordfish.dm"
+	#include "../away/lighthouse/beacon_working.dm"
 
 	#define using_map_DATUM /datum/map/torch
 
