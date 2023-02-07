@@ -8,7 +8,7 @@
 		explosion(get_turf(src), 5, 10, 10, 15)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
-		S.take_damage(50000)
+		S.take_damage(50000, SHIELD_DAMTYPE_PHYSICAL)
 	else
 		explosion(get_turf(src), 20, 30, 30, 35)
 		empulse(get_turf(src), rand(25,50), rand(50,100))
@@ -34,7 +34,7 @@
 		explosion(get_turf(src), 15, 30, 30, 40)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
-		S.take_damage(150000)
+		S.take_damage(150000, SHIELD_DAMTYPE_PHYSICAL)
 	else
 		explosion(get_turf(src), 60, 90, 90, 90)
 		empulse(get_turf(src), rand(50,75), rand(75,100))

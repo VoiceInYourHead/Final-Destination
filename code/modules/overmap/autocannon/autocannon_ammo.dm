@@ -89,14 +89,16 @@
 
 /obj/item/projectile/bullet/autocannon/high_explosive/on_hit(var/atom/target, var/blocked = 0)
 	var/backwards = turn(dir, 180)
-	explosion(get_step(target, backwards), bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+	explosion(get_step(target, backwards), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
 	..()
+
 
 /obj/item/projectile/bullet/autocannon/armour_piercing
 	damage = 200
 	armor_penetration = 100
 	penetrating = 30
 	penetration_modifier = 1.1
+
 
 /obj/item/projectile/bullet/autocannon/anti_hull
 	armor_penetration = 80
@@ -105,7 +107,7 @@
 	bolt_light_impact = 2
 
 /obj/item/projectile/bullet/autocannon/anti_hull/on_hit(var/atom/target, var/blocked = 0)
-	explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+	explosion(get_turf(target), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
 	..()
 
 
@@ -119,15 +121,22 @@
 	bolt_light_impact = 2
 	var/delay = 3
 	var/primed = 0
+	var/loc_while_living = null
 
 /obj/item/projectile/bullet/autocannon/aphe/on_hit(var/atom/target, var/blocked = 0)
 	if(primed)
 		return
 	..()
-	primed++
+	primed = 1
 	sleep(delay)
-	explosion(get_turf(src), bolt_devastation, bolt_heavy_impact, bolt_light_impact)
-	qdel(src)
+	explosion(get_turf(src), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
+	if(src)
+		qdel(src)
+
+/obj/item/projectile/bullet/autocannon/aphe/Process()
+	if(src)
+		loc_while_living = get_turf(src)
+	..()
 
 ///////////////////////////MUZZLE///////////////////////////
 

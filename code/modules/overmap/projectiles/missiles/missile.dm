@@ -66,6 +66,11 @@
 		touch_map_edge()
 
 /obj/structure/missile/Bump(var/atom/obstacle)
+/*	if(istype(obstacle, /obj/effect/shield))
+		var/obj/effect/shield/S = obstacle
+		S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
+		if((!S.gen.mitigation_physical > 0  || !S.gen.check_flag(MODEFLAG_HYPERKINETIC)) && !S.disabled_for)
+			return*/	//ёбана как сделать так что бы ракета не останавливалась об щит... надо будет доделать
 	..()
 	detonate(obstacle)
 

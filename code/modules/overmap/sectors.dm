@@ -4,6 +4,7 @@
 /obj/effect/overmap/visitable
 	name = "map object"
 	scannable = TRUE
+	dir = 1
 
 	var/list/map_z = list()
 

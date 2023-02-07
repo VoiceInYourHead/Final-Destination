@@ -2634,6 +2634,7 @@
 #include "code\modules\overmap\ships\ship.dm"
 #include "code\modules\overmap\ships\computers\engine_control.dm"
 #include "code\modules\overmap\ships\computers\helm.dm"
+#include "code\modules\overmap\ships\computers\jammer.dm"
 #include "code\modules\overmap\ships\computers\sensors.dm"
 #include "code\modules\overmap\ships\computers\ship.dm"
 #include "code\modules\overmap\ships\computers\shuttle.dm"

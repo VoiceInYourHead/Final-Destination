@@ -18,10 +18,10 @@
 	var/list/calexpected //what is should be
 
 	var/next_shot = 0 //round time where the next shot can start from
-	var/coolinterval = 90 SECONDS //time to wait between safe shots in deciseconds
+	var/coolinterval = 120 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
-	var/gun_name = "ion beam emitter"
+	var/gun_name = "Ion beam emitter"
 
 	var/obj/machinery/beam_cannon/front_part/front
 	var/obj/machinery/beam_cannon/middle_part/middle
@@ -31,7 +31,6 @@
 	var/fire_type = /obj/effect/turf_fire/star_fire/strong
 
 	var/ammo_per_shot = 1000
-	var/danger_zone = 0
 	var/burst_size = 1
 	var/beam_speed = 1
 
@@ -46,6 +45,8 @@
 
 	var/fire_sound = 'sound/machines/superlaser_firing.ogg'
 	var/prefire_sound = 'sound/machines/superlaser_prefire.ogg'
+
+	var/beam_sound = 'sound/machines/ion_beam_hit.ogg'
 	var/beam_light_color = COLOR_RED_LIGHT
 	var/beam_icon = "ion_beam" // icons\effects\beam.dmi
 
@@ -143,7 +144,7 @@
 
 /obj/machinery/computer/ship/beam_cannon/proc/remove_ammo()
 	munition = locate() in get_turf(back)
-	if(munition.ammo_count >= 0 + ammo_per_shot)
+	if(get_ammo() >= ammo_per_shot)
 		munition.ammo_count -= ammo_per_shot
 	return
 
@@ -211,7 +212,7 @@
 
 	if(href_list["fire"])
 		var/atomcharge_ammo = get_ammo()
-		if(atomcharge_ammo <= 0)
+		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
 			explosion(middle,1,rand(1,2),rand(2,3))
@@ -238,7 +239,7 @@
 	if(!front.powered() || !middle.powered() || !back.powered())
 		return FALSE //no power, no boom boom
 	var/atomcharge_ammo = get_ammo()
-	if(atomcharge_ammo <= 0)
+	if(atomcharge_ammo < ammo_per_shot)
 		return FALSE
 
 	var/turf/start = front
@@ -250,15 +251,26 @@
 		if(!T || !(T.z in relevant_z))
 			continue
 		if(!isdeaf(M) && front) //Meanwhile front might have exploded
-			sound_to(M, sound(prefire_sound, volume=10))
+			sound_to(M, sound(prefire_sound, volume=5))
 
-	playsound(start, prefire_sound, 250, 0)
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z == start.z))
+			continue
+		if(!isdeaf(M) && front) //Meanwhile front might have exploded
+			sound_to(M, sound(prefire_sound, volume=50))
+
+	if(front && munition) //Meanwhile front might have exploded
+		playsound(start, prefire_sound, 250, 0)
+
 	sleep(fire_delay)
+
+	if(!front || !munition) //Meanwhile front might have exploded
+		return
 
 	if(front) //Meanwhile front might have exploded
 		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
 
-	handle_overbeam()
 	handle_beam(start, direction)
 	handle_beam_damage(get_step(front,direction), direction)
 
@@ -270,12 +282,23 @@
 		if(!isdeaf(M) && front) //Meanwhile front might have exploded
 			sound_to(M, sound(fire_sound, volume=10))
 
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z == start.z))
+			continue
+		shake_camera(M, 60)
+		if(!isdeaf(M) && front) //Meanwhile front might have exploded
+			sound_to(M, sound(fire_sound, volume=50))
+
 	if(front) //Meanwhile front might have exploded
 		playsound(start, fire_sound, 250, 0)
 
-	//Success, but we missed.
-	if(prob(100 - cal_accuracy()))
-		return TRUE
+	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
+		for(var/obj/effect/shield/S in T)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
+				return TRUE
+
+	handle_overbeam()
 
 	var/turf/overmaptarget = get_step(linked, overmapdir)
 	var/list/candidates = list()
@@ -288,7 +311,7 @@
 			candidates += S
 
 	if(!length(candidates))
-		for(var/obj/effect/overmap/visitable/O in overmaptarget)
+		for(var/obj/effect/overmap/O in overmaptarget)
 			if(O == linked)
 				continue //Why are you shooting yourself?
 			candidates += O
@@ -297,22 +320,43 @@
 	if(!length(candidates))
 		return TRUE
 
-	var/obj/effect/overmap/visitable/finaltarget = pick(candidates)
+	var/obj/effect/overmap/target = pick(candidates)
 
+	if(istype(target, /obj/effect/overmap/event))
+		if(istype(target, /obj/effect/overmap/event/meteor))
+			QDEL_IN(target, rand(beam_time / 2, beam_time))
+		return TRUE
+	if(istype(target, /obj/effect/overmap/projectile))
+		if(prob(100 - cal_accuracy() / 2))
+			target.Destroy()
+		return TRUE
+
+	var/obj/effect/overmap/visitable/finaltarget = target
 	var/z_level = pick(finaltarget.map_z)
-	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir)
+
+	//Success, but we missed.
+	if(prob(100 - cal_accuracy() && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet)))
+		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снаряд даже нашёл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+		return TRUE
+	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
+		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name, firing_on_planet = TRUE)
+		return TRUE
+	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name)
 
 	return TRUE
 
-/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir)
+/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name, var/firing_on_planet = FALSE)
 	var/heading = overmapdir
 
 	if(!heading)
-		heading = random_dir() // To prevent the missile from popping into the middle of the map and sitting there
+		heading = random_dir()
 
 	var/start_x = Floor(world.maxx / 2) + rand(-pew_spread/2, pew_spread/2)
 	var/start_y = Floor(world.maxy / 2) + rand(-pew_spread/2, pew_spread/2)
 
+	if(firing_on_planet)
+		start_x = Floor(rand(8,world.maxx-8))
+		start_y = Floor(rand(8,world.maxy-8))
 
 	//Normalize killing people :D
 	if(heading in GLOB.cornerdirs)
@@ -393,7 +437,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("[gun_name] beam got it to the Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>)")
+	log_and_message_admins("Луч от [linked.name], выпущенный из [gun_name] - успешно попал в [target_name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/list/relevant_z = GetConnectedZlevels(z_level)
 	for(var/mob/M in GLOB.player_list)
@@ -416,6 +460,18 @@
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam_damage(var/turf/s, var/d, var/killing_floor = FALSE)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		var/deflected = FALSE
+		for(var/obj/effect/shield/S in T)
+			S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
+				S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
+				deflected = TRUE
+		if(deflected)
+			var/def_angle = pick(90,-90,0)
+			handle_beam_damage(get_step(T, turn(d, 180)), turn(d,180 + def_angle), TRUE)
+			handle_beam_on_enemy(get_step(T, turn(d, 180)), turn(d,180 + def_angle))
+			log_and_message_admins("attempted to fire the [gun_name].")
+			break
 		if(T.density && !killing_floor)
 			sleep(beam_speed)
 			explosion(T,1,1,2,3,adminlog = 0)
@@ -451,6 +507,12 @@
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam_on_enemy(var/turf/s, var/d)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		var/deflected = FALSE
+		for(var/obj/effect/shield/S in T)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
+				deflected = TRUE
+		if(deflected)
+			break
 		var/obj/effect/ion_beam = new /obj/effect/projectile(T)
 		ion_beam.dir = d
 		ion_beam.icon = 'icons/effects/beam.dmi'
@@ -458,6 +520,7 @@
 		ion_beam.light_outer_range = 2
 		ion_beam.light_max_bright = 1
 		ion_beam.light_color = beam_light_color
+		playsound(T, beam_sound, 250, 1)
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)
 

@@ -25,7 +25,7 @@
 	var/range = 1 //range of the explosion
 	var/strength = 1 //strength of the explosion
 	var/next_shot = 0 //round time where the next shot can start from
-	var/const/coolinterval = 1 MINUTES //time to wait between safe shots in deciseconds
+	var/const/coolinterval = 90 SECONDS //time to wait between safe shots in deciseconds
 
 /obj/machinery/computer/ship/disperser/Initialize()
 	. = ..()

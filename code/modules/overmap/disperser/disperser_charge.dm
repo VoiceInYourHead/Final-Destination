@@ -3,6 +3,7 @@
 	desc = "A charge to power the obstruction field disperser with. It looks impossibly round and shiny. This charge does not have a defined purpose."
 	icon_state = "slug"
 	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
+	layer = 2.22
 	var/chargetype
 	var/chargedesc
 
@@ -62,3 +63,20 @@
 
 /obj/structure/ship_munition/disperser_charge/explosive/fire(turf/target, strength, range)
 	explosion(target,max(1,strength * range / 10),strength * range / 7.5,strength * range / 5)
+
+/obj/structure/ship_munition/disperser_charge/bluespace
+	name = "BS5-RAZLOM charge"
+	color = "#7576e0"
+	desc = "A charge to power the obstruction field disperser with. It looks impossibly round and shiny. This charge is designed to open/remove unstable bluespace rifts on impact."
+	chargetype = OVERMAP_WEAKNESS_BLUESPACE
+	chargedesc = "RAZLOM"
+
+/obj/structure/ship_munition/disperser_charge/bluespace/fire(turf/target, strength, range)
+	var/list/victims = range(range * 3, target)
+	for(var/mob/living/L in victims)
+		var/turf/T = get_random_turf_in_range(L, strength * range, strength * range / 3)
+		if(T)
+			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+			s.set_up(3, 1, get_turf(L))
+			s.start()
+			L.forceMove(T)

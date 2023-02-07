@@ -39,6 +39,8 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/list/small_flora_types = list()	// seeds of 'small' flora
 	var/list/big_flora_types = list()	// seeds of tree-tier flora
 
+	var/vessel_mass = 20000
+
 	var/repopulating = FALSE
 	var/repopulate_types = list() // animals which have died that may come back
 

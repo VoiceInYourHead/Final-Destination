@@ -76,12 +76,6 @@
 		explosion(middle,rand(1,2),rand(2,3),rand(3,4))
 	next_shot = coolinterval + world.time
 
-	//Success, but we missed.
-	if(prob(100 - cal_accuracy()))
-		if(chargetype == OVERMAP_WEAKNESS_DROPPOD)
-			atomcharge.forceMove(locate(rand(1,world.maxx),rand(1,world.maxy), GLOB.using_map.get_empty_zlevel())) //Remove it in case it's a droppod.
-		return TRUE
-
 	reset_calibration()
 
 	var/turf/overmaptarget = get_step(linked, overmapdir)
@@ -106,9 +100,21 @@
 
 	//Way to waste a charge
 	if(!length(candidates))
+		if(chargetype == OVERMAP_WEAKNESS_BLUESPACE)
+			var/obj/effect/overmap/event/nebula/N = new /obj/effect/overmap/event/nebula(get_step(linked, overmapdir))
+			N.name = "temporary bluespace nebula"
+			QDEL_IN(N, rand(1 MINUTES, 3 MINUTES))
 		return TRUE
 
 	var/obj/effect/overmap/finaltarget = pick(candidates)
+
+	//Success, but we missed.
+	if(prob(100 - cal_accuracy() && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet)))
+		log_and_message_admins("заебись выстрелил из obstruction field disperser, и снаряд даже нашёл подходящую цель, но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+		if(chargetype == OVERMAP_WEAKNESS_DROPPOD)
+			atomcharge.forceMove(locate(rand(1,world.maxx),rand(1,world.maxy), GLOB.using_map.get_empty_zlevel())) //Remove it in case it's a droppod.
+		return TRUE
+
 	log_and_message_admins("A type [chargetype] disperser beam was launched at [finaltarget].", location=finaltarget)
 
 	//Deletion of the overmap effect and the actual event trigger. Bye bye pesky meteors.

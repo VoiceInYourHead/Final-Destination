@@ -8,7 +8,7 @@
 		explosion(get_turf(src), 2, 4, 5, 8)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
-		S.take_damage(100000)
+		S.take_damage(40000)
 	else
 		explosion(get_turf(src), 4, 8, 10, 15)
 		empulse(get_turf(src), rand(25,50), rand(50,100))
