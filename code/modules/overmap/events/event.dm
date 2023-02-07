@@ -214,6 +214,7 @@
 	name = "bluespace nebula"
 	events = list(/datum/event/nebula)
 	event_icon_states = list("nebula")
+	weaknesses = OVERMAP_WEAKNESS_BLUESPACE
 	color = "#578ddd"
 
 /obj/effect/overmap/event/star

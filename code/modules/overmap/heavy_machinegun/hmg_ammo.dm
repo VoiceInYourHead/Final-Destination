@@ -23,5 +23,5 @@
 	var/bolt_light_impact = 2
 
 /obj/item/projectile/bullet/hmg_ship/on_hit(var/atom/target, var/blocked = 0)
-	explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+	explosion(get_turf(target), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
 	..()

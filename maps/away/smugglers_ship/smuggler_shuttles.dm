@@ -1,7 +1,7 @@
 /obj/effect/overmap/visitable/ship/landable/smuggler
 	name = "FTV Miss Fortune"
 	shuttle = "Smuggler"
-	desc = "Sensor array is detecting a small cargo vessel, property of Free Trade Union"
+	desc = "Sensor array is detecting a small cargo vessel, broadcasting FTU codes and the designation \"FTV Prosperity, 13-1-OL\"."
 	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
