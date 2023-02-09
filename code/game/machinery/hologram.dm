@@ -58,6 +58,9 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 	var/allow_ai = TRUE
 
+	var/project_holo = TRUE
+	var/translator_language = /datum/language/human/euro
+
 /obj/machinery/hologram/holopad/New()
 	..()
 	desc = "It's a floor-mounted device for projecting holographic images. Its ID is '[loc.loc]'"
@@ -219,7 +222,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	return
 
 /obj/machinery/hologram/holopad/proc/activate_holocall(mob/living/carbon/caller_id)
-	if(caller_id)
+	if(caller_id && sourcepad.project_holo)
 		src.visible_message("A holographic image of [caller_id] flicks to life right before your eyes!")
 		create_holo(0,caller_id)//Create one.
 	else
@@ -229,7 +232,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 /*This is the proc for special two-way communication between AI and holopad/people talking near holopad.
 For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 // Note that speaking may be null here, presumably due to echo effects/non-mob transmission.
-/obj/machinery/hologram/holopad/hear_talk(mob/living/M, text, verb, datum/language/speaking)
+/obj/machinery/hologram/holopad/hear_talk(mob/living/M, text, verb, datum/language/human/euro/speaking)
 	if(M)
 		for(var/mob/living/silicon/ai/master in masters)
 			var/ai_text = text
@@ -264,7 +267,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			return
 		sourcepad.audible_message(message)
 
-/obj/machinery/hologram/holopad/proc/get_hear_message(name_used, text, verb, datum/language/speaking, prefix = "")
+/obj/machinery/hologram/holopad/proc/get_hear_message(name_used, text, verb, datum/language/human/euro/speaking, prefix = "")
 	if(speaking)
 		return "<i><span class='game say'>Holopad received, <span class='name'>[name_used]</span>[prefix] [speaking.format_message(text, verb)]</span></i>"
 	return "<i><span class='game say'>Holopad received, <span class='name'>[name_used]</span>[prefix] [verb], <span class='message'>\"[text]\"</span></span></i>"

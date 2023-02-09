@@ -43,6 +43,7 @@
 /obj/machinery/conveyor/ammobelt
 	name = "munition belt"
 	id = "ammobelt1"
+	layer = 2.21
 
 /obj/machinery/conveyor/ammobelt/comet
 	name = "comet belt"

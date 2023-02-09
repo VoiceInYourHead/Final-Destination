@@ -2,7 +2,7 @@
 // MANTIDIFY(/obj/item/gun/magnetic/railgun/flechette, "mantid flechette rifle", "A viciously pronged rifle-like weapon.")
 
 /obj/item/gun/energy/particle
-	name = "particle lance"
+	name = "particle emitter"
 	desc = "A long, thick-bodied energy rifle of some kind, clad in a curious indigo polymer and lit from within by Cherenkov radiation. The grip is clearly not designed for human hands."
 	icon = 'icons/obj/guns/particle_rifle.dmi'
 	icon_state = "particle_rifle"

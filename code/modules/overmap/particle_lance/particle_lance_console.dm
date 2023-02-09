@@ -1,7 +1,9 @@
-/obj/machinery/computer/ship/beam_cannon
-	name = "ion beam emitter control"
+/obj/machinery/computer/ship/particle_lance
+	name = "particle lance control"
 	icon = 'icons/obj/computer.dmi'
-	icon_state = "computer"
+	icon_state = "ascent"
+	icon_keyboard = "ascent_key"
+	icon_screen = "ascent_screen"
 
 	core_skill = SKILL_DEVICES
 	var/skill_offset = SKILL_ADEPT - 1 //After which skill level it starts to matter. -1, because we have to index from zero
@@ -13,7 +15,7 @@
 
 	var/overmapdir = 0
 
-	var/caldigit = 6 //number of digits that needs calibration
+	var/caldigit = 5 //number of digits that needs calibration
 	var/list/calibration //what it is
 	var/list/calexpected //what is should be
 
@@ -21,14 +23,15 @@
 	var/coolinterval = 120 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
-	var/gun_name = "Ion beam emitter"
+	var/gun_name = "particle lance"
 
-	var/obj/machinery/beam_cannon/front_part/front
-	var/obj/machinery/beam_cannon/middle_part/middle
-	var/obj/machinery/beam_cannon/back_part/back
-	var/obj/structure/ship_munition/ammobox/beam_cannon/munition
+	var/obj/machinery/particle_lance/front_part/front
+	var/obj/machinery/particle_lance/middle_part/middle
+	var/obj/machinery/particle_lance/back_part/back
+	var/obj/structure/ship_munition/ammobox/particle_lance/munition
 
-	var/fire_type = /obj/effect/turf_fire/star_fire/strong
+	var/heavy_ion_effect_range = 2
+	var/light_ion_effect_range = 3
 
 	var/ammo_per_shot = 1000
 	var/burst_size = 1
@@ -41,25 +44,25 @@
 
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// ѕример: при pew_spread = 20 снар€д будет спавнитьс€ с разбросом от -10 до 10 тайлов на нужном краю карты.
-	var/pew_spread = 20
+	var/pew_spread = 30
 
 	var/fire_sound = 'sound/machines/superlaser_firing.ogg'
 	var/prefire_sound = 'sound/machines/superlaser_prefire.ogg'
 
 	var/beam_sound = 'sound/machines/ion_beam_hit.ogg'
-	var/beam_light_color = COLOR_RED_LIGHT
-	var/beam_icon = "ion_beam" // icons\effects\beam.dmi
+	var/beam_light_color = COLOR_LIGHT_CYAN
+	var/beam_icon = "particle_beam" // icons\effects\beam.dmi
 
-/obj/machinery/computer/ship/beam_cannon/Initialize()
+/obj/machinery/computer/ship/particle_lance/Initialize()
 	. = ..()
 	link_parts()
 	reset_calibration()
 
-/obj/machinery/computer/ship/beam_cannon/Destroy()
+/obj/machinery/computer/ship/particle_lance/Destroy()
 	release_links()
 	. = ..()
 
-/obj/machinery/computer/ship/beam_cannon/proc/link_parts()
+/obj/machinery/computer/ship/particle_lance/proc/link_parts()
 	if(is_valid_setup())
 		return TRUE
 
@@ -80,14 +83,14 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/computer/ship/beam_cannon/proc/is_valid_setup()
+/obj/machinery/computer/ship/particle_lance/proc/is_valid_setup()
 	if(front && middle && back)
 		var/everything_in_range = (get_dist(src, front) < link_range) && (get_dist(src, middle) < link_range) && (get_dist(src, back) < link_range)
 		var/everything_in_order = (middle.Adjacent(front) && middle.Adjacent(back)) && (front.dir == middle.dir && middle.dir == back.dir)
 		return everything_in_order && everything_in_range
 	return FALSE
 
-/obj/machinery/computer/ship/beam_cannon/proc/release_links()
+/obj/machinery/computer/ship/particle_lance/proc/release_links()
 	GLOB.destroyed_event.unregister(front, src, .proc/release_links)
 	GLOB.destroyed_event.unregister(middle, src, .proc/release_links)
 	GLOB.destroyed_event.unregister(back, src, .proc/release_links)
@@ -95,7 +98,7 @@
 	middle = null
 	back = null
 
-/obj/machinery/computer/ship/beam_cannon/proc/get_calibration()
+/obj/machinery/computer/ship/particle_lance/proc/get_calibration()
 	var/list/calresult[caldigit]
 	for(var/i = 1 to caldigit)
 		if(calibration[i] == calexpected[i])
@@ -106,49 +109,49 @@
 			calresult[i] = 0
 	return calresult
 
-/obj/machinery/computer/ship/beam_cannon/proc/reset_calibration()
+/obj/machinery/computer/ship/particle_lance/proc/reset_calibration()
 	calexpected = new /list(caldigit)
 	calibration = new /list(caldigit)
 	for(var/i = 1 to caldigit)
 		calexpected[i] = rand(0,9)
 		calibration[i] = 0
 
-/obj/machinery/computer/ship/beam_cannon/proc/cal_accuracy()
+/obj/machinery/computer/ship/particle_lance/proc/cal_accuracy()
 	var/top = 0
 	var/divisor = caldigit * 2 //maximum possible value, aka 100% accuracy
 	for(var/i in get_calibration())
 		top += i
 	return round(top * 100 / divisor)
 
-/obj/machinery/computer/ship/beam_cannon/proc/get_next_shot_seconds()
+/obj/machinery/computer/ship/particle_lance/proc/get_next_shot_seconds()
 	return max(0, (next_shot - world.time) / 10)
 
-/obj/machinery/computer/ship/beam_cannon/proc/cool_failchance()
+/obj/machinery/computer/ship/particle_lance/proc/cool_failchance()
 	return get_next_shot_seconds() * 1000 / coolinterval
 
-/obj/machinery/computer/ship/beam_cannon/proc/get_charge()
+/obj/machinery/computer/ship/particle_lance/proc/get_charge()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition
 	return 0
 
-/obj/machinery/computer/ship/beam_cannon/proc/get_ammo()
+/obj/machinery/computer/ship/particle_lance/proc/get_ammo()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition.ammo_count
 
-/obj/machinery/computer/ship/beam_cannon/proc/get_ammo_type()
+/obj/machinery/computer/ship/particle_lance/proc/get_ammo_type()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition.ammo_type
 
-/obj/machinery/computer/ship/beam_cannon/proc/remove_ammo()
+/obj/machinery/computer/ship/particle_lance/proc/remove_ammo()
 	munition = locate() in get_turf(back)
 	if(get_ammo() >= ammo_per_shot)
 		munition.ammo_count -= ammo_per_shot
 	return
 
-/obj/machinery/computer/ship/beam_cannon/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
+/obj/machinery/computer/ship/particle_lance/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
 	if(!linked)
 		display_reconnect_dialog(user, "[gun_name] synchronization")
 		return
@@ -188,7 +191,7 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/computer/ship/beam_cannon/OnTopic(mob/user, list/href_list, state)
+/obj/machinery/computer/ship/particle_lance/OnTopic(mob/user, list/href_list, state)
 	. = ..()
 	if(.)
 		return
@@ -233,7 +236,7 @@
 
 ////////////////////////////////FIRE////////////////////////////////
 
-/obj/machinery/computer/ship/beam_cannon/proc/fire(mob/user)
+/obj/machinery/computer/ship/particle_lance/proc/fire(mob/user)
 	if(!link_parts())
 		return FALSE //no disperser, no service
 	if(!front.powered() || !middle.powered() || !back.powered())
@@ -323,11 +326,11 @@
 	var/obj/effect/overmap/target = pick(candidates)
 
 	if(istype(target, /obj/effect/overmap/event))
-		if(istype(target, /obj/effect/overmap/event/meteor))
+		if(istype(target, /obj/effect/overmap/event/ion) || istype(target, /obj/effect/overmap/event/electric))
 			QDEL_IN(target, rand(beam_time / 2, beam_time))
 		return TRUE
 	if(istype(target, /obj/effect/overmap/projectile))
-		if(prob(100 - cal_accuracy() / 2))
+		if(!prob(100 - cal_accuracy() / 2))
 			target.Destroy()
 		return TRUE
 
@@ -345,7 +348,7 @@
 
 	return TRUE
 
-/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name, var/firing_on_planet = FALSE)
+/obj/machinery/computer/ship/particle_lance/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name, var/firing_on_planet = FALSE)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -451,20 +454,20 @@
 	handle_beam_on_enemy(start, heading)//	хоть и костыль но выгл€дит очень модно :P
 	handle_beam_damage(start, heading, TRUE)
 
-/obj/machinery/computer/ship/beam_cannon/proc/handle_beam(var/turf/s, var/d)
+/obj/machinery/computer/ship/particle_lance/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE
 	s.Beam(get_target_turf(s, d), beam_icon, time = beam_time, maxdistance = world.maxx)
 	if(front)
 		front.layer = initial(front.layer)
 
-/obj/machinery/computer/ship/beam_cannon/proc/handle_beam_damage(var/turf/s, var/d, var/killing_floor = FALSE)
+/obj/machinery/computer/ship/particle_lance/proc/handle_beam_damage(var/turf/s, var/d, var/killing_floor = FALSE)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
-			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
-				S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
+			S.take_damage(3000,SHIELD_DAMTYPE_EM)
+			if((S.gen.mitigation_em > 0 || S.gen.check_flag(MODEFLAG_EM)) && !S.disabled_for)
+				S.take_damage(3000,SHIELD_DAMTYPE_EM)
 				deflected = TRUE
 		if(deflected)
 			var/def_angle = pick(90,-90,0)
@@ -480,22 +483,18 @@
 		else if(killing_floor && !istype(T, /turf/space))
 			sleep(beam_speed)
 			explosion(T,1,1,2,3,adminlog = 0)
-			if(T)
-				T.Destroy()
+			if(istype(T, /turf/simulated/wall))
+				var/turf/simulated/wall/W = T
+				if(W)
+					W.dismantle_wall()
 			var/list/relevant_z = GetConnectedZlevels(s.z)
 			for(var/mob/M in GLOB.player_list)
 				var/turf/J = get_turf(M)
 				if(!J || !(J.z in relevant_z))
 					continue
 				shake_camera(M, 4)
-			var/turf/right = get_step(T,turn(d,90))
-			var/turf/left = get_step(T,turn(d,-90))
-			if(!right.density && !istype(right, /turf/space))
-				new fire_type(right)
-			if(!left.density && !istype(left, /turf/space))
-				new fire_type(left)
-			if(!T.density && !istype(right, /turf/space))
-				new fire_type(T)
+			if(!T.density && !istype(T, /turf/space))
+				empulse(T, heavy_ion_effect_range, light_ion_effect_range)
 		else
 			sleep(beam_speed)
 		for(var/mob/living/U in T)
@@ -504,7 +503,7 @@
 			if(A.density)
 				explosion(A,1,1,2,3,adminlog = 0)
 
-/obj/machinery/computer/ship/beam_cannon/proc/handle_beam_on_enemy(var/turf/s, var/d)
+/obj/machinery/computer/ship/particle_lance/proc/handle_beam_on_enemy(var/turf/s, var/d)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
@@ -524,11 +523,11 @@
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)
 
-/obj/machinery/computer/ship/beam_cannon/proc/handle_overbeam()
+/obj/machinery/computer/ship/particle_lance/proc/handle_overbeam()
 	set waitfor = FALSE
 	linked.Beam(get_step(linked, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
 
-/obj/machinery/computer/ship/beam_cannon/proc/get_target_turf(var/turf/s, var/d)
+/obj/machinery/computer/ship/particle_lance/proc/get_target_turf(var/turf/s, var/d)
 	switch(d)
 		if(NORTH)
 			return locate(s.x,world.maxy,s.z)

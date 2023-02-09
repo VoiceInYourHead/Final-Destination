@@ -34,11 +34,11 @@
 	icon_state = "engine_smes"
 
 /area/ship/ascent_corvette/port_ofd
-	name = "\improper Ascent Corvette - Port Obstruction Field Disperser Chamber"
+	name = "\improper Ascent Corvette - Port Particle Lance Chamber"
 	icon_state = "dk_yellow"
 
 /area/ship/ascent_corvette/starboard_ofd
-	name = "\improper Ascent Corvette - Starboard Obstruction Field Disperser Chamber"
+	name = "\improper Ascent Corvette - Starboard Particle Lance Chamber"
 	icon_state = "dk_yellow"
 
 /area/ship/ascent_corvette/armory_port

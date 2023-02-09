@@ -13,7 +13,7 @@
 
 	var/overmapdir = 0
 
-	var/caldigit = 6 //number of digits that needs calibration
+	var/caldigit = 5 //number of digits that needs calibration
 	var/list/calibration //what it is
 	var/list/calexpected //what is should be
 

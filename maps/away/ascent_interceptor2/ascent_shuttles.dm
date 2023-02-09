@@ -1,5 +1,5 @@
 /obj/effect/overmap/visitable/ship/landable/ascent_interceptor2
-	name = "Ascent Interceptor(2)"
+	name = "Ascent Interceptor"
 	shuttle = "Ascent Interceptor(2)"
 	desc = "Wake signature indicates a small armed vessel of unknown design."
 	moving_state = "ship_moving"
