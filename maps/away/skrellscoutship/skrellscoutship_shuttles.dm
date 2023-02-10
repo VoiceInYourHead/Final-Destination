@@ -15,6 +15,7 @@
 	icon_state = "ship"
 	moving_state = "ship_moving"
 	fore_dir = WEST
+	dir = WEST
 	color = "#ff00ff"
 	vessel_mass = 1000
 	vessel_size = SHIP_SIZE_SMALL
@@ -31,6 +32,7 @@
 	name = "SSV-S"
 	shuttle = "Skrellian Shuttle"
 	fore_dir = WEST
+	dir = WEST
 	color = "#880088"
 	vessel_mass = 750
 	vessel_size = SHIP_SIZE_TINY

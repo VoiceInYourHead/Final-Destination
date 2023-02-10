@@ -20,6 +20,7 @@
 	color = COLOR_PURPLE
 	vessel_mass = 9000
 	fore_dir = EAST
+	dir = EAST
 	max_speed = 0.6/(1 SECOND)
 	hide_from_reports = TRUE
 	known = 0

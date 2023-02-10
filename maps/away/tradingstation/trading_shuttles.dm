@@ -9,6 +9,7 @@
 	skill_needed = SKILL_ADEPT
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
+	dir = EAST
 	hide_from_reports = TRUE
 	initial_restricted_waypoints = list(
 		"Bluespace Residue" = list("nav_smuggler")
