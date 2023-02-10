@@ -5,7 +5,3 @@
 	ammo_count = 4000
 	ammo_type = null
 	color = COLOR_PURPLE
-
-/obj/structure/ship_munition/ammobox/particle_lance/examine(mob/user)
-	. = ..()
-	to_chat(user, "There [(ammo_count == 1)? "is" : "are"] [ammo_count] MW charge left!")
