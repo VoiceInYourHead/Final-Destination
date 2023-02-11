@@ -22,7 +22,7 @@
 	icon_state = "purple"
 
 /area/ship/ascent_corvette/feeding
-	name = "\improper Ascent Corvette - Feeding Chamber"
+	name = "\improper Ascent Corvette - Mess Chamber"
 	icon_state = "cafeteria"
 
 /area/ship/ascent_corvette/briefing
