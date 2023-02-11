@@ -41,14 +41,14 @@
 		return TRUE
 
 	for(var/obj/machinery/disperser/front/F in SSmachines.machinery)
-		if(get_dist(src, F) >= link_range)
+		if(get_dist(src, F) >= link_range || F.z != src.z)
 			continue
 		var/backwards = turn(F.dir, 180)
 		var/obj/machinery/disperser/middle/M = locate() in get_step(F, backwards)
-		if(!M || get_dist(src, M) >= link_range)
+		if(!M || get_dist(src, M) >= link_range || M.z != src.z)
 			continue
 		var/obj/machinery/disperser/back/B = locate() in get_step(M, backwards)
-		if(!B || get_dist(src, B) >= link_range)
+		if(!B || get_dist(src, B) >= link_range || B.z != src.z)
 			continue
 		front = F
 		middle = M
