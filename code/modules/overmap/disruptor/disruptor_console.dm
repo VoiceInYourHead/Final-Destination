@@ -31,7 +31,7 @@
 	var/ammo_per_shot = 150
 	var/danger_zone = 0
 	var/burst_size = 4
-	var/burst_interval = 6
+	var/burst_interval = 4
 
 	var/prefire_sound = 'sound/machines/charge.ogg'
 	var/fire_delay = 4
@@ -265,10 +265,10 @@
 		return
 
 	var/ammo_type = get_ammo_type()
-	var/obj/item/projectile/pew = new ammo_type(front.loc)
-	pew.starting = front.loc
+	var/obj/item/projectile/pew = new ammo_type(get_step(front.loc, front.dir))
+	pew.starting = get_step(front.loc, front.dir)
 	pew.color = pew_color
-	pew.launch(get_step(front.loc, front.dir), pick(BP_ALL_LIMBS))
+	pew.launch(get_step(get_step(front.loc, front.dir), front.dir), pick(BP_ALL_LIMBS))
 
 	if(front) //Meanwhile front might have exploded
 		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
