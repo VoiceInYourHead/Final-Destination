@@ -476,7 +476,7 @@
 			var/def_angle = pick(90,-90,0)
 			handle_beam_damage(get_step(T, turn(d, 180)), turn(d,180 + def_angle), TRUE)
 			handle_beam_on_enemy(get_step(T, turn(d, 180)), turn(d,180 + def_angle))
-			log_and_message_admins("attempted to fire the [gun_name].")
+			log_and_message_admins("Луч [gun_name] смешно отрикошетил от щита.")
 			break
 		if(T.density && !killing_floor)
 			sleep(beam_speed)

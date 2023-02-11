@@ -20,11 +20,13 @@
 	wielded_item_state = "particle_rifle-wielded"
 	charge_meter = 0
 	has_safety = FALSE
-	firemodes = list(
-		list(mode_name="stun",   projectile_type = /obj/item/projectile/beam/stun),
-		list(mode_name="shock",  projectile_type = /obj/item/projectile/beam/stun/shock),
-		list(mode_name="lethal", projectile_type = /obj/item/projectile/beam/particle)
+
+	init_firemodes = list(
+		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun),
+		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
+		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/particle),
 		)
+
 	var/global/list/species_can_use = list(
 		SPECIES_MANTID_ALATE,
 		SPECIES_MANTID_GYNE,
@@ -59,10 +61,11 @@
 	charge_state = "prsmall"
 	slot_flags = SLOT_DENYPOCKET | SLOT_HOLSTER
 	projectile_type = /obj/item/projectile/beam/particle/small
-	firemodes = list(
-		list(mode_name="stun",   projectile_type = /obj/item/projectile/beam/stun),
-		list(mode_name="shock",  projectile_type = /obj/item/projectile/beam/stun/shock),
-		list(mode_name="lethal", projectile_type = /obj/item/projectile/beam/particle/small)
+
+	init_firemodes = list(
+		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun/smalllaser),
+		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock/smalllaser),
+		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/particle/small),
 		)
 
 /obj/item/gun/energy/particle/railgun
@@ -78,8 +81,9 @@
 	fire_delay = 10
 	move_delay = 5
 	projectile_type = /obj/item/projectile/bullet/magnetic/flechette
-	firemodes = list(
-		list(mode_name="lethal", projectile_type = /obj/item/projectile/bullet/magnetic/flechette)
+
+	init_firemodes = list(
+		list(mode_name="kill", /obj/item/projectile/bullet/magnetic/flechette),
 		)
 
 	bulk = GUN_BULK_RIFLE + 3
