@@ -1,15 +1,15 @@
-/obj/machinery/hmg
+/obj/machinery/beam_cannon
 	icon = 'icons/obj/disperser.dmi'
 	density = TRUE
 	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
 
-/obj/machinery/hmg/examine(mob/user)
+/obj/machinery/beam_cannon/examine(mob/user)
 	. = ..()
 	if(panel_open)
 		to_chat(user, "The maintenance panel is open.")
 
-/obj/machinery/hmg/attackby(obj/item/I, mob/user)
+/obj/machinery/beam_cannon/attackby(obj/item/I, mob/user)
 	if(isWrench(I))
 		if(panel_open)
 			user.visible_message("<span class='notice'>\The [user] rotates \the [src] with \the [I].</span>", "<span class='notice'>You rotate \the [src] with \the [I].</span>")
@@ -20,58 +20,54 @@
 	else
 		return ..()
 
-/obj/machinery/hmg/front_part
-	name = "HMG muzzle"
-	desc = "An old-fashion heavy machinegun muzzle.\
+/obj/machinery/beam_cannon/front_part
+	name = "ion beam emitter muzzle"
+	desc = "An ion beam muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
-	icon_state = "gun"
+	icon_state = "front"
 
-/obj/machinery/hmg/middle_part
-	name = "HMG barrel"
-	desc = "An old-fashion gas tube that propels munitions to HMG muzzle. \
+/obj/machinery/beam_cannon/middle_part
+	name = "ion beam emitter barrel"
+	desc = "A gas tube that propels munitions to the ion beam muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
-	icon_state = "magazine"
+	icon_state = "middle"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
-/obj/machinery/hmg/back_part
-	name = "HMG breech end"
-	desc = "An old-fashion ammo reciever. Munition then goes to HMG barrel."
-	icon_state = "ammo_loader"
+/obj/machinery/beam_cannon/back_part
+	name = "ion beam emitter charger"
+	desc = "An ammo reciever. Munition then goes to ion beam barrel."
+	icon_state = "back"
 	density = FALSE
 //	layer = BELOW_DOOR_LAYER //So the charges go above us.
 
 ////////////////////////////////CIRCUIT////////////////////////////////
 
-/obj/item/stock_parts/circuitboard/heavymg
-	name = T_BOARD("heavy machine gun control")
-	build_path = /obj/machinery/computer/ship/hmg
+/obj/item/stock_parts/circuitboard/beam_cannon
+	name = T_BOARD("ion beam emitter control")
+	build_path = /obj/machinery/computer/ship/beam_cannon
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
-/obj/item/stock_parts/circuitboard/heavymg/tele
-	name = T_BOARD("heavy machine gun control telescreen")
-	build_path = /obj/machinery/computer/ship/hmg/telescreen
-
-/obj/item/stock_parts/circuitboard/heavymgfront
-	name = T_BOARD("heavy machine gun muzzle")
-	build_path = /obj/machinery/hmg/front_part
+/obj/item/stock_parts/circuitboard/beam_cannonfront
+	name = T_BOARD("ion beam emitter muzzle")
+	build_path = /obj/machinery/beam_cannon/front_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
 		/obj/item/stock_parts/manipulator/pico = 5
 	)
 
-/obj/item/stock_parts/circuitboard/heavymgmiddle
-	name = T_BOARD("heavy machine gun barrel")
-	build_path = /obj/machinery/hmg/middle_part
+/obj/item/stock_parts/circuitboard/beam_cannonmiddle
+	name = T_BOARD("ion beam emitter barrel")
+	build_path = /obj/machinery/beam_cannon/middle_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
 		/obj/item/stock_parts/subspace/crystal = 10
 	)
 
-/obj/item/stock_parts/circuitboard/heavymgback
-	name = T_BOARD("heavy machine gun breech end")
-	build_path = /obj/machinery/hmg/back_part
+/obj/item/stock_parts/circuitboard/beam_cannonback
+	name = T_BOARD("ion beam emitter charger")
+	build_path = /obj/machinery/beam_cannon/back_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (

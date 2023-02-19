@@ -9,6 +9,7 @@
 	skill_needed = SKILL_ADEPT
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
+	dir = EAST
 	hide_from_reports = TRUE
 	known = 0
 	initial_restricted_waypoints = list(

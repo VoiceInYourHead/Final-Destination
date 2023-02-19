@@ -85,7 +85,6 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	fore_dir = NORTH
-	dir = NORTH
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 
@@ -97,7 +96,6 @@
 	max_speed = 1/(1 SECONDS)
 	burn_delay = 0.5 SECONDS //spammable, but expensive
 	fore_dir = NORTH
-	dir = NORTH
 	vessel_size = SHIP_SIZE_SMALL
 
 /obj/effect/overmap/visitable/ship/landable/guppy

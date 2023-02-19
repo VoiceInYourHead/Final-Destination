@@ -9,6 +9,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
+	dir = EAST
 	color = "#6e0000"
 	hide_from_reports = TRUE
 	known = 0

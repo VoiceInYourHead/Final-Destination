@@ -9,6 +9,7 @@
 	shuttle = "lovely"
 	desc = "Sensor array detects a small cargo SCG Vessel."
 	fore_dir = NORTH
+	dir = NORTH
 	color = "#0751f3"
 	alpha = 100
 	skill_needed = SKILL_NONE

@@ -1,7 +1,9 @@
-/obj/machinery/computer/ship/autocannon
-	name = "autocannon control"
+/obj/machinery/computer/ship/particle_lance
+	name = "particle lance control"
 	icon = 'icons/obj/computer.dmi'
-	icon_state = "computer"
+	icon_state = "ascent"
+	icon_keyboard = "ascent_key"
+	icon_screen = "ascent_screen"
 
 	core_skill = SKILL_DEVICES
 	var/skill_offset = SKILL_ADEPT - 1 //After which skill level it starts to matter. -1, because we have to index from zero
@@ -13,51 +15,54 @@
 
 	var/overmapdir = 0
 
-	var/caldigit = 4 //number of digits that needs calibration
+	var/caldigit = 5 //number of digits that needs calibration
 	var/list/calibration //what it is
 	var/list/calexpected //what is should be
 
 	var/next_shot = 0 //round time where the next shot can start from
-	var/coolinterval = 16 SECONDS //time to wait between safe shots in deciseconds
+	var/coolinterval = 120 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
-	var/gun_name = "Autocannon"
+	var/gun_name = "particle lance"
 
-	var/obj/machinery/autocannon/front_part/front
-	var/obj/machinery/autocannon/middle_part/middle
-	var/obj/machinery/autocannon/back_part/back
-	var/obj/structure/ship_munition/ammobox/autocannon/munition
+	var/obj/machinery/particle_lance/front_part/front
+	var/obj/machinery/particle_lance/middle_part/middle
+	var/obj/machinery/particle_lance/back_part/back
+	var/obj/structure/ship_munition/ammobox/particle_lance/munition
 
-	var/ammo_per_shot = 1
-	var/danger_zone = 2
-	var/burst_size = 5
-	var/burst_interval = 8
+	var/heavy_ion_effect_range = 2
+	var/light_ion_effect_range = 3
+
+	var/ammo_per_shot = 1000
+	var/burst_size = 1
+	var/beam_speed = 1
+
+	var/fire_delay = 200
+	var/beam_time = 70
 
 	var/play_emptymag_sound = 1
 
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// ѕример: при pew_spread = 20 снар€д будет спавнитьс€ с разбросом от -10 до 10 тайлов на нужном краю карты.
-	var/pew_spread = 20
+	var/pew_spread = 30
 
-	var/fire_sound = 'sound/machines/autocannon_fire.ogg'
-	var/pew_color = null
+	var/fire_sound = 'sound/machines/superlaser_firing.ogg'
+	var/prefire_sound = 'sound/machines/superlaser_prefire.ogg'
 
-	var/muzzle_flash = /obj/effect/projectile/bullet/muzzle/autocannon
-	var/muzzle_color = null
+	var/beam_sound = 'sound/machines/ion_beam_hit.ogg'
+	var/beam_light_color = COLOR_LIGHT_CYAN
+	var/beam_icon = "particle_beam" // icons\effects\beam.dmi
 
-	var/overmap_icon = "bullet" // icons\effects\beam.dmi
-	var/overmap_color = null
-
-/obj/machinery/computer/ship/autocannon/Initialize()
+/obj/machinery/computer/ship/particle_lance/Initialize()
 	. = ..()
 	link_parts()
 	reset_calibration()
 
-/obj/machinery/computer/ship/autocannon/Destroy()
+/obj/machinery/computer/ship/particle_lance/Destroy()
 	release_links()
 	. = ..()
 
-/obj/machinery/computer/ship/autocannon/proc/link_parts()
+/obj/machinery/computer/ship/particle_lance/proc/link_parts()
 	if(is_valid_setup())
 		return TRUE
 
@@ -78,14 +83,14 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/computer/ship/autocannon/proc/is_valid_setup()
+/obj/machinery/computer/ship/particle_lance/proc/is_valid_setup()
 	if(front && middle && back)
 		var/everything_in_range = (get_dist(src, front) < link_range) && (get_dist(src, middle) < link_range) && (get_dist(src, back) < link_range)
 		var/everything_in_order = (middle.Adjacent(front) && middle.Adjacent(back)) && (front.dir == middle.dir && middle.dir == back.dir)
 		return everything_in_order && everything_in_range
 	return FALSE
 
-/obj/machinery/computer/ship/autocannon/proc/release_links()
+/obj/machinery/computer/ship/particle_lance/proc/release_links()
 	GLOB.destroyed_event.unregister(front, src, .proc/release_links)
 	GLOB.destroyed_event.unregister(middle, src, .proc/release_links)
 	GLOB.destroyed_event.unregister(back, src, .proc/release_links)
@@ -93,7 +98,7 @@
 	middle = null
 	back = null
 
-/obj/machinery/computer/ship/autocannon/proc/get_calibration()
+/obj/machinery/computer/ship/particle_lance/proc/get_calibration()
 	var/list/calresult[caldigit]
 	for(var/i = 1 to caldigit)
 		if(calibration[i] == calexpected[i])
@@ -104,49 +109,49 @@
 			calresult[i] = 0
 	return calresult
 
-/obj/machinery/computer/ship/autocannon/proc/reset_calibration()
+/obj/machinery/computer/ship/particle_lance/proc/reset_calibration()
 	calexpected = new /list(caldigit)
 	calibration = new /list(caldigit)
 	for(var/i = 1 to caldigit)
 		calexpected[i] = rand(0,9)
 		calibration[i] = 0
 
-/obj/machinery/computer/ship/autocannon/proc/cal_accuracy()
+/obj/machinery/computer/ship/particle_lance/proc/cal_accuracy()
 	var/top = 0
 	var/divisor = caldigit * 2 //maximum possible value, aka 100% accuracy
 	for(var/i in get_calibration())
 		top += i
 	return round(top * 100 / divisor)
 
-/obj/machinery/computer/ship/autocannon/proc/get_next_shot_seconds()
+/obj/machinery/computer/ship/particle_lance/proc/get_next_shot_seconds()
 	return max(0, (next_shot - world.time) / 10)
 
-/obj/machinery/computer/ship/autocannon/proc/cool_failchance()
+/obj/machinery/computer/ship/particle_lance/proc/cool_failchance()
 	return get_next_shot_seconds() * 1000 / coolinterval
 
-/obj/machinery/computer/ship/autocannon/proc/get_charge()
+/obj/machinery/computer/ship/particle_lance/proc/get_charge()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition
 	return 0
 
-/obj/machinery/computer/ship/autocannon/proc/get_ammo()
+/obj/machinery/computer/ship/particle_lance/proc/get_ammo()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition.ammo_count
 
-/obj/machinery/computer/ship/autocannon/proc/get_ammo_type()
+/obj/machinery/computer/ship/particle_lance/proc/get_ammo_type()
 	munition = locate() in get_turf(back)
 	if(munition)
 		return munition.ammo_type
 
-/obj/machinery/computer/ship/autocannon/proc/remove_ammo()
+/obj/machinery/computer/ship/particle_lance/proc/remove_ammo()
 	munition = locate() in get_turf(back)
 	if(get_ammo() >= ammo_per_shot)
 		munition.ammo_count -= ammo_per_shot
 	return
 
-/obj/machinery/computer/ship/autocannon/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
+/obj/machinery/computer/ship/particle_lance/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
 	if(!linked)
 		display_reconnect_dialog(user, "[gun_name] synchronization")
 		return
@@ -186,7 +191,7 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/computer/ship/autocannon/OnTopic(mob/user, list/href_list, state)
+/obj/machinery/computer/ship/particle_lance/OnTopic(mob/user, list/href_list, state)
 	. = ..()
 	if(.)
 		return
@@ -214,9 +219,9 @@
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
 			explosion(middle,1,rand(1,2),rand(2,3))
-			next_shot = coolinterval + world.time
+			next_shot = coolinterval + world.time + fire_delay + beam_time
 			return TOPIC_REFRESH
-		next_shot = coolinterval + world.time + burst_interval * burst_size
+		next_shot = coolinterval + world.time
 		log_and_message_admins("attempted to fire the [gun_name].")
 		for(var/i = 1 to burst_size)
 			if(get_charge() == 0)
@@ -226,13 +231,12 @@
 				break
 			fire(user)
 			remove_ammo()
-			sleep(burst_interval)
 		reset_calibration()
 	return TOPIC_REFRESH
 
 ////////////////////////////////FIRE////////////////////////////////
 
-/obj/machinery/computer/ship/autocannon/proc/fire(mob/user)
+/obj/machinery/computer/ship/particle_lance/proc/fire(mob/user)
 	if(!link_parts())
 		return FALSE //no disperser, no service
 	if(!front.powered() || !middle.powered() || !back.powered())
@@ -244,37 +248,60 @@
 	var/turf/start = front
 	var/direction = front.dir
 
+	if(!front || !munition) //Meanwhile front might have exploded
+		return
+
 	var/list/relevant_z = GetConnectedZlevels(start.z)
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
 		if(!T || !(T.z in relevant_z))
 			continue
-		shake_camera(M, 8)
-		if(!isdeaf(M))
-			sound_to(M, sound('sound/effects/explosionfar.ogg', volume=10))
+		if(!isdeaf(M) && front) //Meanwhile front might have exploded
+			sound_to(M, sound(prefire_sound, volume=5))
 
-	var/ammo_type = get_ammo_type()
-	var/obj/item/projectile/pew = new ammo_type(front.loc)
-	pew.starting = front.loc
-	pew.color = pew_color
-	pew.launch(get_step(front.loc, front.dir), pick(BP_ALL_LIMBS))
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z == start.z))
+			continue
+		if(!isdeaf(M) && front) //Meanwhile front might have exploded
+			sound_to(M, sound(prefire_sound, volume=50))
+
+	if(front && munition) //Meanwhile front might have exploded
+		playsound(start, prefire_sound, 250, 0)
+
+	sleep(fire_delay)
+
+	if(!front || !munition) //Meanwhile front might have exploded
+		return
 
 	if(front) //Meanwhile front might have exploded
 		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
-	playsound(start, fire_sound, 250, 1)
-	handle_muzzle(start, direction)
 
-	var/distance = 0
+	handle_beam(start, direction)
+	handle_beam_damage(get_step(front,direction), direction)
+
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z in relevant_z))
+			continue
+		shake_camera(M, 50)
+		if(!isdeaf(M) && front) //Meanwhile front might have exploded
+			sound_to(M, sound(fire_sound, volume=10))
+
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z == start.z))
+			continue
+		shake_camera(M, 60)
+		if(!isdeaf(M) && front) //Meanwhile front might have exploded
+			sound_to(M, sound(fire_sound, volume=50))
+
+	if(front) //Meanwhile front might have exploded
+		playsound(start, fire_sound, 250, 0)
+
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
-		distance++
-		if(T.density)
-			if(distance <= danger_zone)
-				explosion(T,1,2,2)
-			return TRUE
-		for(var/atom/A in T)
-			if(A.density && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield)))
-				if(distance <= danger_zone)
-					explosion(A,1,2,2)
+		for(var/obj/effect/shield/S in T)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
 				return TRUE
 
 	handle_overbeam()
@@ -302,9 +329,11 @@
 	var/obj/effect/overmap/target = pick(candidates)
 
 	if(istype(target, /obj/effect/overmap/event))
+		if(istype(target, /obj/effect/overmap/event/ion) || istype(target, /obj/effect/overmap/event/electric))
+			QDEL_IN(target, rand(beam_time / 2, beam_time))
 		return TRUE
 	if(istype(target, /obj/effect/overmap/projectile))
-		if(prob(100 - cal_accuracy() / 2))
+		if(!prob(100 - cal_accuracy() / 2))
 			target.Destroy()
 		return TRUE
 
@@ -316,21 +345,13 @@
 		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снар€д даже нашЄл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 		return TRUE
 	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
-		fire_at_exoplanet(z_level, finaltarget.name)
-		for(var/mob/M in GLOB.player_list)
-			var/turf/T = get_turf(M)
-			if(!T || !(T.z == z_level))
-				continue
-			if(!isdeaf(M))
-				sound_to(M, sound('sound/effects/explosionfar.ogg', volume=5))
-				if(prob(33))
-					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit! This isn't good..."))
+		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name, firing_on_planet = TRUE)
 		return TRUE
 	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name)
 
 	return TRUE
 
-/obj/machinery/computer/ship/autocannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name)
+/obj/machinery/computer/ship/particle_lance/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name, var/firing_on_planet = FALSE)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -339,6 +360,9 @@
 	var/start_x = Floor(world.maxx / 2) + rand(-pew_spread/2, pew_spread/2)
 	var/start_y = Floor(world.maxy / 2) + rand(-pew_spread/2, pew_spread/2)
 
+	if(firing_on_planet)
+		start_x = Floor(rand(8,world.maxx-8))
+		start_y = Floor(rand(8,world.maxy-8))
 
 	//Normalize killing people :D
 	if(heading in GLOB.cornerdirs)
@@ -419,48 +443,100 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("—нар€д от [linked.name], выпущенный из [gun_name] - успешно попал в [target_name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Ћуч от [linked.name], выпущенный из [gun_name] - успешно попал в [target_name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
-	var/ammo_type = get_ammo_type()
-	var/obj/item/projectile/pew = new ammo_type(start)
-	pew.original = get_step(start,heading)
-	pew.current = get_step(start,heading)
-	pew.starting = start
-	pew.color = pew_color
-	pew.launch(get_step(start,heading), pick(BP_ALL_LIMBS), start_x, start_y)
+	var/list/relevant_z = GetConnectedZlevels(z_level)
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z in relevant_z))
+			continue
+		if(!isdeaf(M))
+			sound_to(M, sound(fire_sound, volume=5))
 
-/obj/machinery/computer/ship/autocannon/proc/fire_at_exoplanet(var/z_level, var/target_name)
-	var/turf/start = locate(rand(8,world.maxx-8),rand(8,world.maxy-8), z_level)
+//	handle_beam(start, heading)				ебана€ параша на beam() без каких либо причин не хочет проводить лучик через судно врага, ни рантаймов ни ошибок - по этому замен€ю костылЄм
+	handle_beam_on_enemy(start, heading)//	хоть и костыль но выгл€дит очень модно :P
+	handle_beam_damage(start, heading, TRUE)
 
-	log_and_message_admins("—нар€д от [linked.name], выпущенный из [gun_name] - успешно попал в X [start.x] Y [start.y] на [target_name] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
-
-	var/ammo_type = get_ammo_type()
-	var/obj/item/projectile/pew = new ammo_type(start)
-	pew.original = start
-	pew.current = start
-	pew.starting = start
-	pew.color = pew_color
-	pew.launch(get_step(start,random_dir()), pick(BP_ALL_LIMBS), start.x, start.y)
-	pew.Bump(start)
-
-/obj/machinery/computer/ship/autocannon/proc/handle_muzzle(turf/start, direction)
+/obj/machinery/computer/ship/particle_lance/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE
-	var/obj/effect/projectile/P = new muzzle_flash(get_step(get_turf(start), direction))
-	P.dir = direction
-	P.color = muzzle_color
-	QDEL_IN(P,2)
+	s.Beam(get_target_turf(s, d), beam_icon, time = beam_time, maxdistance = world.maxx)
+	if(front)
+		front.layer = initial(front.layer)
 
-/obj/machinery/computer/ship/autocannon/proc/handle_overbeam()
+/obj/machinery/computer/ship/particle_lance/proc/handle_beam_damage(var/turf/s, var/d, var/killing_floor = FALSE)
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		var/deflected = FALSE
+		for(var/obj/effect/shield/S in T)
+			S.take_damage(3000,SHIELD_DAMTYPE_EM)
+			if((S.gen.mitigation_em > 0 || S.gen.check_flag(MODEFLAG_EM)) && !S.disabled_for)
+				S.take_damage(3000,SHIELD_DAMTYPE_EM)
+				deflected = TRUE
+		if(deflected)
+			var/def_angle = pick(90,-90,0)
+			handle_beam_damage(get_step(T, turn(d, 180)), turn(d,180 + def_angle), TRUE)
+			handle_beam_on_enemy(get_step(T, turn(d, 180)), turn(d,180 + def_angle))
+			log_and_message_admins("Ћуч [gun_name] смешно отрикошетил от щита.")
+			break
+		if(T.density && !killing_floor)
+			sleep(beam_speed)
+			explosion(T,1,1,2,3,adminlog = 0)
+			if(T)
+				T.Destroy()
+		else if(killing_floor && !istype(T, /turf/space))
+			sleep(beam_speed)
+			explosion(T,1,1,2,3,adminlog = 0)
+			if(istype(T, /turf/simulated/wall))
+				var/turf/simulated/wall/W = T
+				if(W)
+					W.dismantle_wall()
+			var/list/relevant_z = GetConnectedZlevels(s.z)
+			for(var/mob/M in GLOB.player_list)
+				var/turf/J = get_turf(M)
+				if(!J || !(J.z in relevant_z))
+					continue
+				shake_camera(M, 4)
+			if(!T.density && !istype(T, /turf/space))
+				empulse(T, heavy_ion_effect_range, light_ion_effect_range)
+		else
+			sleep(beam_speed)
+		for(var/mob/living/U in T)
+			U.gib()
+		for(var/atom/A in T)
+			if(A.density)
+				explosion(A,1,1,2,3,adminlog = 0)
 
-/obj/machinery/computer/ship/autocannon/proc/get_target_turf(turf/start, direction)
-	switch(direction)
+/obj/machinery/computer/ship/particle_lance/proc/handle_beam_on_enemy(var/turf/s, var/d)
+	set waitfor = FALSE
+	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		var/deflected = FALSE
+		for(var/obj/effect/shield/S in T)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
+				deflected = TRUE
+		if(deflected)
+			break
+		var/obj/effect/ion_beam = new /obj/effect/projectile(T)
+		ion_beam.dir = d
+		ion_beam.icon = 'icons/effects/beam.dmi'
+		ion_beam.icon_state = beam_icon
+		ion_beam.light_outer_range = 2
+		ion_beam.light_max_bright = 1
+		ion_beam.light_color = beam_light_color
+		playsound(T, beam_sound, 250, 1)
+		QDEL_IN(ion_beam,beam_time)
+		sleep(beam_speed)
+
+/obj/machinery/computer/ship/particle_lance/proc/handle_overbeam()
+	set waitfor = FALSE
+	linked.Beam(get_step(linked, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
+
+/obj/machinery/computer/ship/particle_lance/proc/get_target_turf(var/turf/s, var/d)
+	switch(d)
 		if(NORTH)
-			return locate(start.x,world.maxy,start.z)
+			return locate(s.x,world.maxy,s.z)
 		if(SOUTH)
-			return locate(start.x,1,start.z)
+			return locate(s.x,1,s.z)
 		if(WEST)
-			return locate(1,start.y,start.z)
+			return locate(1,s.y,s.z)
 		if(EAST)
-			return locate(world.maxx,start.y,start.z)
+			return locate(world.maxx,s.y,s.z)

@@ -17,11 +17,11 @@
 	icon_state = "purple"
 
 /area/ship/ascent_gunboat/fore_port
-	name = "\improper Ascent Gunboat - Feeding Chamber"
+	name = "\improper Ascent Gunboat - Mess Chamber"
 	icon_state = "cafeteria"
 
 /area/ship/ascent_gunboat/fore_starboard
-	name = "\improper Ascent Gunboat - Highness Habitation Chamber"
+	name = "\improper Ascent Gunboat - Highness Living Chamber"
 	icon_state = "purple"
 
 /area/ship/ascent_gunboat/engineering
@@ -29,7 +29,7 @@
 	icon_state = "engine_smes"
 
 /area/ship/ascent_gunboat/ofd
-	name = "\improper Ascent Gunboat - Obstruction Field Disperser Chamber"
+	name = "\improper Ascent Gunboat - Particle Lance Chamber"
 	icon_state = "dk_yellow"
 
 /area/ship/ascent_gunboat/aft_port

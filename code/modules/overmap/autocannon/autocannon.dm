@@ -48,7 +48,7 @@
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
 /obj/item/stock_parts/circuitboard/autocannonfront
-	name = T_BOARD("autocannon turret")
+	name = T_BOARD("autocannon muzzle")
 	build_path = /obj/machinery/autocannon/front_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -57,7 +57,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/autocannonmiddle
-	name = T_BOARD("autocannon breech end")
+	name = T_BOARD("autocannon barrel")
 	build_path = /obj/machinery/autocannon/middle_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -66,7 +66,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/autocannonback
-	name = T_BOARD("autocannon munition rack")
+	name = T_BOARD("autocannon breech end")
 	build_path = /obj/machinery/autocannon/back_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)

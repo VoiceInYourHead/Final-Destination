@@ -76,7 +76,7 @@
 	fire_sound = 'sound/effects/gore/severed.ogg'
 	projectile_type = /obj/item/projectile/acid
 	one_hand_penalty = 2 //a little bulky
-	recharge_time = 30
+	recharge_time = 25
 	self_recharge = 1
 	charge_meter = 0
 	init_firemodes = list(
@@ -90,9 +90,9 @@
 
 /datum/reagent/acid/stomach/alien
 	name = "alien stomach acid"
-	power = 5
+	power = 4
 	meltdose = 30
-	max_damage = 30
+	max_damage = 40
 
 /obj/item/projectile/acid
 	name = "acid splash"

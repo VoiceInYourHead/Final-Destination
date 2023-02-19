@@ -20,6 +20,7 @@
 
 	var/base = 0		//starting sector, counts as station_levels
 	var/fore_dir = NORTH                //what dir is considered north for the actual map
+	dir = NORTH
 
 	var/hide_from_reports = FALSE
 
