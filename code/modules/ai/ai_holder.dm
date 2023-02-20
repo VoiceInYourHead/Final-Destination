@@ -319,7 +319,7 @@ if (!(datum.process_flags & AI_FASTPROCESSING)) { \
 			if (speak_chance) // In the long loop since otherwise it wont shut up.
 				handle_idle_speaking()
 
-			if (hostile)
+			if (hostile || retaliate)
 				ai_log("handle_stance_strategical() : STANCE_IDLE, going to find_target().", AI_LOG_TRACE)
 				find_target()
 

@@ -12,7 +12,7 @@
 	habitability_distribution = HABITABILITY_BAD
 	has_trees = FALSE
 	flora_diversity = 5
-	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/hostile/retaliate/beast/samak/alt, /mob/living/simple_animal/yithian, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/samak/alt, /mob/living/simple_animal/hostile/smart_beast/yithian, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/jelly/mega)
 
 /obj/effect/overmap/visitable/sector/exoplanet/chlorine/get_atmosphere_color()

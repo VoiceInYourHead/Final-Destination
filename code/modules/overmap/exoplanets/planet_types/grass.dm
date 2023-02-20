@@ -9,7 +9,7 @@
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = TRUE
 	flora_diversity = 7
-	fauna_types = list(/mob/living/simple_animal/yithian, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/yithian, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/parrot/space/megafauna, /mob/living/simple_animal/hostile/retaliate/goose/dire)
 
 /obj/effect/overmap/visitable/sector/exoplanet/grass/generate_map()
