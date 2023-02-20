@@ -47,10 +47,13 @@
 /turf/unsimulated/floor/exoplanet/ex_act(severity)
 	switch(severity)
 		if(1)
-			ChangeTurf(get_base_turf_by_area(src))
+			melt()
 		if(2)
 			if(prob(40))
-				ChangeTurf(get_base_turf_by_area(src))
+				melt()
+		if(3)
+			if(prob(10))
+				melt()
 
 /turf/unsimulated/floor/exoplanet/Initialize()
 	. = ..()
@@ -78,7 +81,7 @@
 		else if(update_neighbors)
 			turf_to_check.update_icon()
 
-//WAter
+//Water
 /turf/unsimulated/floor/exoplanet/water/on_update_icon()
 	return
 

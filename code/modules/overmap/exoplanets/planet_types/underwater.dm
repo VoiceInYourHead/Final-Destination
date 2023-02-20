@@ -1,4 +1,4 @@
-/obj/effect/overmap/visitable/sector/exoplanet/underwater
+/obj/effect/overmap/visitable/sector/exoplanet/water
 	name = "water exoplanet"
 	desc = "Planet covered with water."
 	color = "#708eda"
@@ -49,13 +49,13 @@
 
 /area/exoplanet/water
 	base_turf = /turf/simulated/ocean
-	ambience = list('sound/effects/wind/wind_2_1.ogg','sound/effects/wind/wind_2_2.ogg','sound/effects/wind/wind_3_1.ogg','sound/effects/wind/wind_4_1.ogg','sound/ambience/eeriejungle2.ogg','sound/ambience/eeriejungle1.ogg')
+	ambience = list('sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg','sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous1.ogg','sound/ambience/ominous3.ogg')
 
 /area/exoplanet/water/play_ambience(var/mob/living/L)
 	..()
 	if(!L.ear_deaf && L.client && !L.client.ambience_playing)
 		L.client.ambience_playing = TRUE
-		L.playsound_local(get_turf(L),sound('sound/ambience/jungle.ogg', repeat = 1, wait = 0, volume = 25, channel = GLOB.ambience_sound_channel))
+		L.playsound_local(get_turf(L),sound('sound/ambience/magma.ogg', repeat = 1, wait = 0, volume = 25, channel = GLOB.ambience_sound_channel))
 
 /datum/random_map/noise/exoplanet/water
 	descriptor = "water exoplanet"
