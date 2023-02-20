@@ -21,6 +21,8 @@
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "dark_pellet"
 	damage = 20
+	distance_falloff = 1
+	penetration_modifier = 1.0
 	damage_type = BRUTE
 	damage_flags = DAM_BULLET | DAM_SHARP
 	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
@@ -29,13 +31,16 @@
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_BULLET_MEAT, BULLET_IMPACT_METAL = SOUNDS_BULLET_METAL)
 
 /obj/item/projectile/psi/strong
-	damage = 10
+	damage = 15
 	icon_state = "plasma_bolt"
 	color = "#c40eed"
+	var/bolt_devastation = 0
+	var/bolt_heavy_impact = 1
+	var/bolt_light_impact = 2
 
-/obj/item/projectile/psi/strong/Bump(atom/A as mob|obj|turf|area, forced=0)
+/obj/item/projectile/psi/strong/on_hit(var/atom/target, var/blocked = 0)
+	explosion(get_turf(target), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
 	..()
-	explosion(get_turf(A), -1, -1, 2, 1)
 
 /decl/psionic_power/psychoballistics/spit/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_MOUTH)
@@ -56,7 +61,7 @@
 			if(PSI_RANK_GRANDMASTER)
 				pew = new /obj/item/projectile/psi/strong(get_turf(user))
 				pew.name = "big psionic round"
-				pew.damage = 20
+				pew.damage = 25
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_MASTER)
 				pew = new /obj/item/projectile/psi/strong(get_turf(user))
@@ -86,10 +91,11 @@
 	cost =             30
 	cooldown =         120
 	min_rank =         PSI_RANK_APPRENTICE
+	use_melee =        TRUE
 	use_description = "Use this ranged attack while targeting mouth on harm intent. Your mastery of Psychoballistics will determine how powerful the bullet is. Be wary of overuse, and try not to shot down yourself."
 
 /decl/psionic_power/psychoballistics/storm/invoke(var/mob/living/user, var/mob/living/target)
-	if((target && user != target) || user.zone_sel.selecting != BP_MOUTH)
+	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
@@ -113,16 +119,14 @@
 				user.fragmentate(O, 10, 4, list(/obj/item/projectile/psi = 1))
 		return TRUE
 
-/mob/proc/fragmentate(var/turf/T=get_turf(src), var/fragment_number = 30, var/spreading_range = 5, var/list/fragtypes=list(/obj/item/projectile/bullet/pellet/fragment/))
+/mob/proc/fragmentate(var/turf/T=get_turf(src), var/fragment_number = 30, var/spreading_range = 5, var/list/fragtypes=list(/obj/item/projectile/))
 	set waitfor = 0
 	var/list/target_turfs = getcircle(T, spreading_range)
-	var/fragments_per_projectile = round(fragment_number/target_turfs.len)
 
 	for(var/turf/O in target_turfs)
 		sleep(0)
 		var/fragment_type = pickweight(fragtypes)
-		var/obj/item/projectile/bullet/pellet/fragment/P = new fragment_type(T)
-		P.pellets = fragments_per_projectile
+		var/obj/item/projectile/P = new fragment_type(T)
 		P.shot_from = src.name
 
 		P.launch(O)
