@@ -23,6 +23,8 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Ion beam emitter"
 
+	var/structural_damage = 50
+
 	var/obj/machinery/beam_cannon/front_part/front
 	var/obj/machinery/beam_cannon/middle_part/middle
 	var/obj/machinery/beam_cannon/back_part/back
@@ -342,13 +344,13 @@
 		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снаряд даже нашёл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 		return TRUE
 	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
-		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name, firing_on_planet = TRUE)
+		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget, firing_on_planet = TRUE)
 		return TRUE
-	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name)
+	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget)
 
 	return TRUE
 
-/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name, var/firing_on_planet = FALSE)
+/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/obj/effect/overmap/target, var/firing_on_planet = FALSE)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -440,7 +442,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("Луч от [linked.name], выпущенный из [gun_name] - успешно попал в [target_name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Луч от [linked.name], выпущенный из [gun_name] - успешно попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/list/relevant_z = GetConnectedZlevels(z_level)
 	for(var/mob/M in GLOB.player_list)
@@ -453,6 +455,17 @@
 //	handle_beam(start, heading)				ебаная параша на beam() без каких либо причин не хочет проводить лучик через судно врага, ни рантаймов ни ошибок - по этому заменяю костылём
 	handle_beam_on_enemy(start, heading)//	хоть и костыль но выглядит очень модно :P
 	handle_beam_damage(start, heading, TRUE)
+
+	if(istype(target, /obj/effect/overmap/visitable/ship))
+		var/must_damage = FALSE
+		var/obj/effect/overmap/visitable/ship/target_vessel = target
+		for(var/turf/T in getline(start,get_target_turf(start, heading)))
+			if(T.density)
+				must_damage = TRUE
+			for(var/atom/A in T)
+				if(A.density && istype(A, /obj/effect/shield))
+					must_damage = FALSE
+		if(must_damage) target_vessel.structure_integrity_failure += structural_damage
 
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE

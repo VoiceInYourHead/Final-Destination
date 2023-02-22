@@ -20,6 +20,11 @@
 	var/next_shot = 0 //round time where the next shot can start from
 	var/coolinterval = 8 SECONDS //time to wait between safe shots in deciseconds
 
+	var/console_html_name = "autocannon.tmpl"
+	var/gun_name = "Heavy machine gun"
+
+	var/structural_damage = 1
+
 	var/obj/machinery/hmg/front_part/front
 	var/obj/machinery/hmg/middle_part/middle
 	var/obj/machinery/hmg/back_part/back
@@ -31,9 +36,6 @@
 	var/burst_interval = 3
 
 	var/play_emptymag_sound = 1
-
-	var/console_html_name = "autocannon.tmpl"
-	var/gun_name = "Heavy machine gun"
 
 	// Насколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// Пример: при pew_spread = 20 снаряд будет спавниться с разбросом от -10 до 10 тайлов на нужном краю карты.
@@ -331,11 +333,11 @@
 				if(prob(33))
 					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit! This isn't good..."))
 		return TRUE
-	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name)
+	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget)
 
 	return TRUE
 
-/obj/machinery/computer/ship/hmg/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name)
+/obj/machinery/computer/ship/hmg/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/obj/effect/overmap/target)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -424,7 +426,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("Снаряд от [linked.name], выпущенный из [gun_name] - успешно попал в [target_name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Снаряд от [linked.name], выпущенный из [gun_name] - успешно попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)
@@ -434,10 +436,21 @@
 	pew.color = pew_color
 	pew.launch(get_step(start,heading), pick(BP_ALL_LIMBS), start_x, start_y)
 
-/obj/machinery/computer/ship/hmg/proc/fire_at_exoplanet(var/z_level, var/target_name)
+	if(istype(target, /obj/effect/overmap/visitable/ship))
+		var/must_damage = FALSE
+		var/obj/effect/overmap/visitable/ship/target_vessel = target
+		for(var/turf/T in getline(start,get_target_turf(start, heading)))
+			if(T.density)
+				must_damage = TRUE
+			for(var/atom/A in T)
+				if(A.density && istype(A, /obj/effect/shield))
+					must_damage = FALSE
+		if(must_damage) target_vessel.structure_integrity_failure += structural_damage
+
+/obj/machinery/computer/ship/hmg/proc/fire_at_exoplanet(var/z_level, var/target)
 	var/turf/start = locate(rand(8,world.maxx-8),rand(8,world.maxy-8), z_level)
 
-	log_and_message_admins("Снаряд от [linked.name], выпущенный из [gun_name] - успешно попал в X [start.x] Y [start.y] на [target_name] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Снаряд от [linked.name], выпущенный из [gun_name] - успешно попал в X [start.x] Y [start.y] на [target] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)
