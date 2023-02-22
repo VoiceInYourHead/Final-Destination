@@ -263,7 +263,7 @@
 	var/distance = 0
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
-		if(T.density)
+		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 			if(distance <= danger_zone)
 				explosion(T,1,2,2)
 			return TRUE
@@ -349,7 +349,10 @@
 
 /obj/machinery/computer/ship/harpoon_gun/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(get_step(linked, overmapdir), overmapdir), overmap_icon, time = 5, maxdistance = world.maxx)
+	if(linked.z == 11)
+		linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	else
+		linked.loc.Beam(get_step(linked.loc, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/harpoon_gun/proc/get_target_turf(turf/start, direction)
 	switch(direction)

@@ -1,15 +1,15 @@
-/obj/machinery/autocannon
+/obj/machinery/minigun
 	icon = 'icons/obj/disperser.dmi'
 	density = TRUE
 	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
 
-/obj/machinery/autocannon/examine(mob/user)
+/obj/machinery/minigun/examine(mob/user)
 	. = ..()
 	if(panel_open)
 		to_chat(user, "The maintenance panel is open.")
 
-/obj/machinery/autocannon/attackby(obj/item/I, mob/user)
+/obj/machinery/minigun/attackby(obj/item/I, mob/user)
 	if(isWrench(I))
 		if(panel_open)
 			user.visible_message("<span class='notice'>\The [user] rotates \the [src] with \the [I].</span>", "<span class='notice'>You rotate \the [src] with \the [I].</span>")
@@ -20,54 +20,54 @@
 	else
 		return ..()
 
-/obj/machinery/autocannon/front_part
-	name = "M2410 autocannon muzzle"
-	desc = "An old-fashion autocannon muzzle.\
+/obj/machinery/minigun/front_part
+	name = "АК2057-Р rotary railgun cannon muzzle"
+	desc = "An old-fashion minigun muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
-	icon_state = "gun"
+	icon_state = "meme2"
 
-/obj/machinery/autocannon/middle_part
-	name = "M2410 autocannon barrel"
-	desc = "An old-fashion gas tube that propels munitions to the autocannon muzzle. \
+/obj/machinery/minigun/middle_part
+	name = "АК2057-Р rotary railgun cannon barrel"
+	desc = "An old-fashion gas tube that propels munitions to rotary cannon muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
 	icon_state = "magazine"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
-/obj/machinery/autocannon/back_part
-	name = "M2410 autocannon breech end"
-	desc = "An old-fashion ammo reciever. Munition then goes to autocannon barrel."
+/obj/machinery/minigun/back_part
+	name = "АК2057-Р rotary railgun cannon breech end"
+	desc = "An old-fashion ammo reciever. Munition then goes to rotary cannon barrel."
 	icon_state = "ammo_loader"
 	density = FALSE
 //	layer = BELOW_DOOR_LAYER //So the charges go above us.
 
 ////////////////////////////////CIRCUIT////////////////////////////////
 
-/obj/item/stock_parts/circuitboard/autocannon
-	name = T_BOARD("autocannon control")
-	build_path = /obj/machinery/computer/ship/autocannon
+/obj/item/stock_parts/circuitboard/minigun
+	name = T_BOARD("rotary railgun cannon control")
+	build_path = /obj/machinery/computer/ship/minigun
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
-/obj/item/stock_parts/circuitboard/autocannonfront
-	name = T_BOARD("autocannon muzzle")
-	build_path = /obj/machinery/autocannon/front_part
+/obj/item/stock_parts/circuitboard/minigunfront
+	name = T_BOARD("rotary railgun cannon muzzle")
+	build_path = /obj/machinery/minigun/front_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
 		/obj/item/stock_parts/manipulator/pico = 5
 	)
 
-/obj/item/stock_parts/circuitboard/autocannonmiddle
-	name = T_BOARD("autocannon barrel")
-	build_path = /obj/machinery/autocannon/middle_part
+/obj/item/stock_parts/circuitboard/minigunmiddle
+	name = T_BOARD("rotary cannon barrel")
+	build_path = /obj/machinery/minigun/middle_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
 		/obj/item/stock_parts/subspace/crystal = 10
 	)
 
-/obj/item/stock_parts/circuitboard/autocannonback
-	name = T_BOARD("autocannon breech end")
-	build_path = /obj/machinery/autocannon/back_part
+/obj/item/stock_parts/circuitboard/minigunback
+	name = T_BOARD("rotary cannon breech end")
+	build_path = /obj/machinery/minigun/back_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (

@@ -457,7 +457,10 @@
 
 /obj/machinery/computer/ship/hmg/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	if(linked.z == 11)
+		linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	else
+		linked.loc.Beam(get_step(linked.loc, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/hmg/proc/get_target_turf(turf/start, direction)
 	switch(direction)

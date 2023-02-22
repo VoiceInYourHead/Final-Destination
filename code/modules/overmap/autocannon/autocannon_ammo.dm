@@ -11,7 +11,7 @@
 /obj/structure/ship_munition/ammobox/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		if(ammo_count > 0)
-			to_chat(user, "You need [ammo_count] less rounds left in the box to do that!")
+			to_chat(user, "You need [ammo_count] less [(ammo_count == 1)? "round" : "rounds"] left in the box to do that!")
 			return
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
 		new /obj/item/stack/material/plasteel(get_turf(src))
@@ -36,37 +36,37 @@
 ///////////////////////////AMMOBOX///////////////////////////
 
 /obj/structure/ship_munition/ammobox/autocannon
-	name = "RP 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled rounds."
+	name = "RP 76mm ammo box"
+	desc = "Ammo box that contains solid 76mm rocket-propelled rounds."
 	layer = 2.22
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon
 
 /obj/structure/ship_munition/ammobox/autocannon/high_explosive
-	name = "RP-HE 67mm ammo box"
+	name = "RP-HE 76mm ammo box"
 	icon_state = "ammocrate_autocannon_he"
-	desc = "Ammo box that contains 67mm rocket-propelled high explosive rounds."
+	desc = "Ammo box that contains 76mm rocket-propelled high explosive rounds."
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/high_explosive
 
 /obj/structure/ship_munition/ammobox/autocannon/armour_piercing
-	name = "RP-APFSDS 67mm ammo box"
+	name = "RP-APFSDS 76mm ammo box"
 	icon_state = "ammocrate_autocannon_ap"
-	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing fin-stabilized discarding sabot."
+	desc = "Ammo box that contains 76mm rocket-propelled armour-piercing fin-stabilized discarding sabot."
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/armour_piercing
 
 /obj/structure/ship_munition/ammobox/autocannon/anti_hull
-	name = "RP-AH 67mm ammo box"
+	name = "RP-AH 76mm ammo box"
 	icon_state = "ammocrate_autocannon_aw"
-	desc = "Ammo box that contains 67mm rocket-propelled anti-hull rounds."
+	desc = "Ammo box that contains 76mm rocket-propelled anti-hull rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/anti_hull
 
 /obj/structure/ship_munition/ammobox/autocannon/aphe
-	name = "RP-APHE 67mm ammo box"
+	name = "RP-APHE 76mm ammo box"
 	icon_state = "ammocrate_autocannon_aphe"
-	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing high explosive rounds."
+	desc = "Ammo box that contains 76mm rocket-propelled armour-piercing high explosive rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/aphe
 

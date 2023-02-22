@@ -528,7 +528,10 @@
 
 /obj/machinery/computer/ship/particle_lance/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
+	if(linked.z == 11)
+		linked.Beam(get_step(linked, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
+	else
+		linked.loc.Beam(get_step(linked.loc, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/particle_lance/proc/get_target_turf(var/turf/s, var/d)
 	switch(d)

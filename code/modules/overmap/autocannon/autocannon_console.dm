@@ -1,5 +1,5 @@
 /obj/machinery/computer/ship/autocannon
-	name = "autocannon control"
+	name = "M2410 'Helda' control"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 
@@ -37,7 +37,7 @@
 
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// ѕример: при pew_spread = 20 снар€д будет спавнитьс€ с разбросом от -10 до 10 тайлов на нужном краю карты.
-	var/pew_spread = 20
+	var/pew_spread = 30
 
 	var/fire_sound = 'sound/machines/autocannon_fire.ogg'
 	var/pew_color = null
@@ -267,7 +267,7 @@
 	var/distance = 0
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
-		if(T.density)
+		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 			if(distance <= danger_zone)
 				explosion(T,1,2,2)
 			return TRUE
@@ -452,7 +452,10 @@
 
 /obj/machinery/computer/ship/autocannon/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	if(linked.z == 11)
+		linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	else
+		linked.loc.Beam(get_step(linked.loc, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/autocannon/proc/get_target_turf(turf/start, direction)
 	switch(direction)
