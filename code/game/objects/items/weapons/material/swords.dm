@@ -17,6 +17,9 @@
 	melee_accuracy_bonus = 10
 	worth_multiplier = 30
 
+/obj/item/material/sword/can_embed()
+	return FALSE
+
 /obj/item/material/sword/replica
 	max_force = 10
 	edge = FALSE
@@ -50,3 +53,24 @@
 /obj/item/material/sword/katana/vibro/equipped(mob/user, slot)
 	if(slot == slot_l_hand || slot == slot_r_hand)
 		playsound(src, 'sound/weapons/katana_out.wav', 50, 1, -5)
+
+/obj/item/material/sword/katana/raiden
+	name = "High frequency sword"
+	desc = "a high-frequency sword, its blade is specially sharpened using a blue-space machine. The sword is barely felt in the hand, which means that it is incredibly light. and on the handle is written: 'an instrument of justice'"
+	icon = 'proxima/icons/obj/weapons/melee.dmi'
+	icon_state = "hfrequency0"
+	force = 45
+	health_max = 1000
+	melee_accuracy_bonus = 20
+	default_material = MATERIAL_TITANIUM
+	unbreakable = TRUE
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 6)
+	item_icons = list(
+		slot_l_hand_str = 'proxima/icons/mob/weapons/swords_lefthand.dmi',
+		slot_r_hand_str = 'proxima/icons/mob/weapons/swords_righthand.dmi'
+		)
+	item_state_slots = list(
+		slot_r_hand_str = "hfrequency0",
+		slot_l_hand_str = "hfrequency0"
+		)
+	slot_flags = SLOT_BELT
