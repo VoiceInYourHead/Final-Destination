@@ -23,7 +23,7 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Autocannon"
 
-	var/structural_damage = 3
+	var/structural_damage = 2
 
 	var/obj/machinery/autocannon/front_part/front
 	var/obj/machinery/autocannon/middle_part/middle
@@ -440,7 +440,7 @@
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
-		if(must_damage) target_vessel.structure_integrity_failure += structural_damage
+		if(must_damage) target_vessel.damage_hull(structural_damage)
 
 /obj/machinery/computer/ship/autocannon/proc/fire_at_exoplanet(var/z_level, var/target)
 	var/turf/start = locate(rand(8,world.maxx-8),rand(8,world.maxy-8), z_level)

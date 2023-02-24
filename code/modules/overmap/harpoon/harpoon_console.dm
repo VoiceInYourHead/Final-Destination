@@ -29,7 +29,7 @@
 	var/obj/structure/ship_munition/ammobox/harpoon_cannon/munition
 
 	var/ammo_per_shot = 1
-	var/danger_zone = 0
+	var/danger_zone = 3
 	var/burst_size = 1
 	var/burst_interval = 1
 

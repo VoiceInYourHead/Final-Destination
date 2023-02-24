@@ -20,17 +20,17 @@
 	var/list/calexpected //what is should be
 
 	var/next_shot = 0 //round time where the next shot can start from
-	var/coolinterval = 120 SECONDS //time to wait between safe shots in deciseconds
+	var/coolinterval = 75 SECONDS //time to wait between safe shots in deciseconds
 
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "particle lance"
 
-	var/structural_damage = 40
+	var/structural_damage = 50
 
 	var/obj/machinery/particle_lance/front_part/front
 	var/obj/machinery/particle_lance/middle_part/middle
 	var/obj/machinery/particle_lance/back_part/back
-	var/obj/structure/ship_munition/ammobox/particle_lance/munition
+	var/obj/structure/ship_munition/ammobox/cell/munition
 
 	var/heavy_ion_effect_range = 2
 	var/light_ion_effect_range = 3
@@ -468,7 +468,7 @@
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
-		if(must_damage) target_vessel.structure_integrity_failure += structural_damage
+		if(must_damage) target_vessel.damage_hull(structural_damage)
 
 /obj/machinery/computer/ship/particle_lance/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE

@@ -48,7 +48,7 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/coord_target_y = 10
 
 	var/integrity_failure_cap = 250		// max health
-	var/structure_integrity_failure = 0	// current health level
+	var/integrity_failure = 0	// current health level
 
 	var/announce_text = "PLACEHOLDER."
 	var/announcer_name = "CONSOLEAUTOANNOUNCERPLACEHOLDERNAME"
@@ -98,6 +98,14 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	. = ..()
 	if(!is_still())
 		. += "<br>Heading: [get_heading_angle()], speed [get_speed() * 1000]"
+	if(integrity_failure >= integrity_failure_cap)
+		. += "<br><br>The [src] is wrecked beyond repair."
+	else if(integrity_failure > integrity_failure_cap * 0.75)
+		. += "<br><br>Gaps in hull of the [src] is bursting with flames, as it's structure integrity is critical!"
+	else if(integrity_failure > integrity_failure_cap * 0.5)
+		. += "<br><br>The [src] hull looks seriously damaged!"
+	else if(integrity_failure > integrity_failure_cap * 0.25)
+		. += "<br><br>The [src] shows signs of structural damage!"
 
 //Projected acceleration based on information from engines
 /obj/effect/overmap/visitable/ship/proc/get_acceleration()
@@ -184,11 +192,13 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 /obj/effect/overmap/visitable/ship/Process()
 	if(destroyed)
 		return
-	if(structure_integrity_failure >= integrity_failure_cap)
+	if(integrity_failure >= integrity_failure_cap)
 		go_boom()
 		spawn(get_areas().len) go_boom_overmap()
 		STOP_PROCESSING(SSobj, src)
 		return
+	if(integrity_failure > 0)
+		repair_hull(0.005)
 	if(!halted && !is_still())
 		var/list/deltas = list(0,0)
 		for(var/i = 1 to 2)
@@ -261,6 +271,12 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 			shake_camera(M, 10)
 			if(!isdeaf(M))
 				sound_to(M, sound('sound/effects/explosionfar.ogg', volume=50))
+
+/obj/effect/overmap/visitable/ship/proc/damage_hull(var/amount)
+	integrity_failure += amount
+
+/obj/effect/overmap/visitable/ship/proc/repair_hull(var/amount)
+	integrity_failure = max(0, integrity_failure - amount)
 
 /obj/effect/overmap/visitable/ship/proc/burn()
 	for(var/datum/ship_engine/E in engines)
