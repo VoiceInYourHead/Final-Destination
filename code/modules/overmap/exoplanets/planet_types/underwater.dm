@@ -11,6 +11,7 @@
 	flora_diversity = 3
 	fauna_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly)
 	megafauna_types = list(/mob/living/simple_animal/hostile/aquatic/deathsquid)
+	repopulate_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly)
 
 /obj/effect/overmap/visitable/sector/exoplanet/underwater/generate_map()
 	if(prob(40))

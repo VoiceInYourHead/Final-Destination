@@ -13,6 +13,7 @@
 	flora_diversity = 4
 	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/voxslug, /mob/living/simple_animal/hostile/retaliate/beast/antlion)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/beast/antlion/mega)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/voxslug, /mob/living/simple_animal/hostile/retaliate/beast/antlion)
 
 /obj/effect/overmap/visitable/sector/exoplanet/desert/generate_map()
 	if(prob(70))

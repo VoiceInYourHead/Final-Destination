@@ -16,6 +16,10 @@
 					   /mob/living/simple_animal/hostile/retaliate/jelly/alt,
 					   /mob/living/simple_animal/hostile/smart_beast/shantak/alt,
 					   /mob/living/simple_animal/hostile/leech)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/royalcrab,
+					   /mob/living/simple_animal/hostile/retaliate/jelly/alt,
+					   /mob/living/simple_animal/hostile/smart_beast/shantak/alt,
+					   /mob/living/simple_animal/hostile/leech)
 
 
 /obj/effect/overmap/visitable/sector/exoplanet/shrouded/generate_atmosphere()

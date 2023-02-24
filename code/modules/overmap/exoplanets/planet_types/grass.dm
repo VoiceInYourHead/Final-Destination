@@ -11,6 +11,7 @@
 	flora_diversity = 7
 	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/yithian, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/parrot/space/megafauna, /mob/living/simple_animal/hostile/retaliate/goose/dire)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/yithian, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
 
 /obj/effect/overmap/visitable/sector/exoplanet/grass/generate_map()
 	if(prob(40))

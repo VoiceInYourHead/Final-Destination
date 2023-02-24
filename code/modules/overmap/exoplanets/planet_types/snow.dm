@@ -13,6 +13,7 @@
 	flora_diversity = 4
 	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/samak, /mob/living/simple_animal/hostile/smart_beast/diyaab, /mob/living/simple_animal/hostile/smart_beast/shantak)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/giant_crab)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/samak, /mob/living/simple_animal/hostile/smart_beast/diyaab, /mob/living/simple_animal/hostile/smart_beast/shantak)
 
 /obj/effect/overmap/visitable/sector/exoplanet/snow/generate_atmosphere()
 	..()
