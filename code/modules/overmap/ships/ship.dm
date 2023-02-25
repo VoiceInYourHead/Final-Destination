@@ -50,8 +50,8 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/integrity_failure_cap = 250		// max health
 	var/integrity_failure = 0	// current health level
 
-	var/announce_text = "PLACEHOLDER."
-	var/announcer_name = "CONSOLEAUTOANNOUNCERPLACEHOLDERNAME"
+	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ МАССЫ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ КОРАБЛЬ!"
+	var/announcer_name = "'Автоматический отчёт о техническом состоянии"
 
 	var/destroyed = FALSE
 

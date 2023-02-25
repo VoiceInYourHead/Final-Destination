@@ -86,7 +86,7 @@
 	suffixes = list("lighthouse/beaconV1-1.dmm", "lighthouse/beaconV1-2.dmm")
 	spawn_cost = 1
 	player_cost = 2
-	area_usage_test_exempted_root_areas = list(/area/lost_supply_base)
+	area_usage_test_exempted_root_areas = list(/area/ship/working_beacon)
 
 /obj/effect/shuttle_landmark/nav_working_beacon/nav1
 	name = "Lighthouse Navpoint #1"

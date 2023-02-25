@@ -51,6 +51,7 @@
 	color = "#b11717"
 	skill_needed = SKILL_BASIC
 	vessel_mass = 1500
+	integrity_failure_cap = 20
 	vessel_size = SHIP_SIZE_SMALL
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.5 SECONDS

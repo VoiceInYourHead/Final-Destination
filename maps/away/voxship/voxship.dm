@@ -70,6 +70,7 @@
 	icon_state = "ship"
 	moving_state = "ship_moving"
 	vessel_mass = 6000
+	integrity_failure_cap = 110
 	fore_dir = NORTHWEST
 	dir = NORTHWEST
 	vessel_size = SHIP_SIZE_SMALL
@@ -104,6 +105,7 @@
 	shuttle = "Vox Scavenger Shuttle"
 	desc = "Sensor array detects a small, unmarked vessel."
 	vessel_mass = 3000
+	integrity_failure_cap = 35
 	fore_dir = SOUTHEAST
 	dir = SOUTHEAST
 	vessel_size = SHIP_SIZE_TINY

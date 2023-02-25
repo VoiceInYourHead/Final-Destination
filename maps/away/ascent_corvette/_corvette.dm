@@ -19,6 +19,7 @@
 	desc = "Wake signature indicates a small to medium sized vessel of unknown design."
 	color = COLOR_PURPLE
 	vessel_mass = 9000
+	integrity_failure_cap = 250
 	fore_dir = EAST
 	dir = EAST
 	max_speed = 0.6/(1 SECOND)

@@ -4,6 +4,8 @@
 	name = "XCV Ahab's Harpoon"
 	desc = "Sensors detect civilian vessel with unusual signs of life aboard."
 	color = "#bd6100"
+	integrity_failure_cap = 150
+	integrity_failure = 30
 	max_speed = 1/(3 SECONDS)
 	burn_delay = 15 SECONDS
 	fore_dir = SOUTH

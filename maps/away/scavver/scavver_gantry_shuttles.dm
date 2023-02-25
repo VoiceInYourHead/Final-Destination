@@ -4,6 +4,7 @@
 	desc = "Sensor array detects a small vessel, claiming to be 'ITV The Reclaimer', an 'Armalev Industries Skyfin-E, Exoplanetary Suvival Pod'. Your sensors array describes the vessel exterior as 'irreconcilable' with the exterior of a 'Skyfin-E'"
 	fore_dir = SOUTH
 	dir = SOUTH
+	integrity_failure_cap = 40
 	vessel_size = SHIP_SIZE_SMALL
 	moving_state = "ship_moving"
 	max_speed = 1/(3 SECONDS)
@@ -22,6 +23,7 @@
 	moving_state = "ship_moving"
 	max_speed = 1/(4 SECONDS)
 	burn_delay = 2.5 SECONDS
+	integrity_failure_cap = 35
 	vessel_mass = 3500 //more inefficient than GUP
 
 /obj/effect/overmap/visitable/ship/landable/scavver_gantry/three
@@ -29,6 +31,7 @@
 	shuttle = "ITV Spiritus"
 	desc = "Sensor array detects a tiny, unmarked vessel."
 	fore_dir = NORTH
+	integrity_failure_cap = 10
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_TINY
 

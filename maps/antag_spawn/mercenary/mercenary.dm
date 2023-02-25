@@ -22,6 +22,7 @@
 	desc = "An older model cargo shuttle with a number of visible modifications. The hull plating is deflecting attempts at more through scans."
 	shuttle = "Cyclopes"
 	fore_dir = NORTH
+	integrity_failure_cap = 50
 	vessel_size = SHIP_SIZE_SMALL
 	vessel_mass = 10000
 
