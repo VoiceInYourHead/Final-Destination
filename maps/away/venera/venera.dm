@@ -8,6 +8,7 @@
 
 	integrity_failure_cap = 150
 	integrity_failure = 40
+	do_repair_hull = FALSE
 	vessel_mass = 3000 /// Venera is small and fast ship
 	max_speed = 1/(2 SECONDS)
 	initial_generic_waypoints = list(

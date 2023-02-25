@@ -22,6 +22,9 @@
 		flora_diversity = 1
 	..()
 
+/obj/effect/overmap/visitable/sector/exoplanet/barren/handle_repopulation()
+	return
+
 /datum/random_map/noise/exoplanet/barren
 	descriptor = "barren exoplanet"
 	smoothing_iterations = 4

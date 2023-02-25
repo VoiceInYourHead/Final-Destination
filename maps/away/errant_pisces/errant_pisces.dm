@@ -6,6 +6,7 @@
 	color = "#bd6100"
 	integrity_failure_cap = 150
 	integrity_failure = 30
+	do_repair_hull = FALSE
 	max_speed = 1/(3 SECONDS)
 	burn_delay = 15 SECONDS
 	fore_dir = SOUTH
