@@ -38,7 +38,7 @@
 	return
 
 /obj/structure/missile/breacher/he
-	name = "HBM42 missile"
+	name = "HBM92 missile"
 	equipment = list(
 		/obj/item/missile_equipment/thruster,
 		/obj/item/missile_equipment/autoarm/breacher,
