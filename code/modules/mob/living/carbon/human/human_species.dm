@@ -58,3 +58,22 @@
 
 /mob/living/carbon/human/adherent/New(var/new_loc)
 	..(new_loc, SPECIES_ADHERENT)
+
+/mob/living/carbon/human/giant_armoured_serpentid/New(var/new_loc)
+	..(new_loc, SPECIES_NABBER)
+
+/mob/living/carbon/human/ascent_alate/New(var/new_loc)
+	gender = MALE
+	..(new_loc, SPECIES_MANTID_ALATE)
+
+/mob/living/carbon/human/ascent_gyne/New(var/new_loc)
+	gender = FEMALE
+	..(new_loc, SPECIES_MANTID_GYNE)
+
+/mob/living/carbon/human/ascent_monarch/New(var/new_loc)
+	gender = MALE
+	..(new_loc, SPECIES_MONARCH_WORKER)
+
+/mob/living/carbon/human/ascent_monarch_queen/New(var/new_loc)
+	gender = FEMALE
+	..(new_loc, SPECIES_MONARCH_QUEEN)

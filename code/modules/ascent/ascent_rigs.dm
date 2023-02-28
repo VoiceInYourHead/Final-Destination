@@ -67,7 +67,7 @@
 	interface_desc = "A flechette nanofabricator and launch system of Ascent design."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "rifle"
-	gun = /obj/item/gun/energy/particle/railgun
+	gun = /obj/item/gun/energy/particle/flechette
 
 /obj/item/rig_module/mounted/particle_rifle
 	name = "particle rifle"

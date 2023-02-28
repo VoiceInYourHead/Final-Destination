@@ -99,8 +99,8 @@
 	has_written_form = FALSE
 
 /datum/language/mantid/worldnet/check_special_condition(var/mob/living/carbon/other)
-	if(istype(other, /mob/living/silicon/robot/flying/ascent))
-		return TRUE
+//	if(istype(other, /mob/living/silicon/robot/flying/ascent))
+//		return TRUE
 	if(istype(other) && (locate(/obj/item/organ/internal/controller) in other.internal_organs))
 		return TRUE
 	return FALSE

@@ -27,4 +27,4 @@ MANTIDIFY(/obj/machinery/alarm, "mantid thermostat", "atmospherics")
 
 /obj/item/inflatable_dispenser/ascents
 	name = "soft atmosphere barriers dispenser"
-	color = COLOR_PURPLE
+	color = COLOR_ASCENT_PURPLE

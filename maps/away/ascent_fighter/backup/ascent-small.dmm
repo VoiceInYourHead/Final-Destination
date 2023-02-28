@@ -5,9 +5,9 @@
 "e" = (/obj/machinery/particle_lance/front_part{icon_state = "front"; dir = 1},/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
 "f" = (/obj/structure/window/phoronreinforced{dir = 8; icon_state = "rwindow"},/obj/machinery/conveyor/ammobelt{dir = 1; id = "ammobelt8"},/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
 "g" = (/obj/machinery/particle_lance/middle_part{icon_state = "middle"; dir = 1},/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
-"h" = (/obj/structure/window/phoronreinforced{dir = 4},/obj/machinery/conveyor/ammobelt{id = "ammobelt8"},/obj/structure/ship_munition/ammobox/cell/particle_lance,/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
+"h" = (/obj/structure/window/phoronreinforced{dir = 4},/obj/machinery/conveyor/ammobelt{id = "ammobelt8"},/obj/structure/ship_munition/ammobox/particle_lance,/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
 "i" = (/obj/structure/window/phoronreinforced,/obj/structure/window/phoronreinforced{dir = 8; icon_state = "rwindow"},/obj/machinery/conveyor/ammobelt{dir = 6; id = "ammobelt8"},/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
-"j" = (/obj/machinery/door/window/brigdoor{color = "PURPLE"; dir = 2; icon_state = "leftsecure"; req_access = list("ACCESS_ASCENT")},/obj/machinery/particle_lance/back_part{icon_state = "back"; dir = 1},/obj/machinery/conveyor/ammobelt{dir = 8; id = "ammobelt8"},/obj/structure/ship_munition/ammobox/cell/particle_lance,/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
+"j" = (/obj/machinery/door/window/brigdoor{color = "PURPLE"; dir = 2; icon_state = "leftsecure"; req_access = list("ACCESS_ASCENT")},/obj/machinery/particle_lance/back_part{icon_state = "back"; dir = 1},/obj/machinery/conveyor/ammobelt{dir = 8; id = "ammobelt8"},/obj/structure/ship_munition/ammobox/particle_lance,/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
 "k" = (/obj/machinery/light/ascent{icon_state = "tube_map"; dir = 8},/obj/structure/wall_frame/titanium/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_fighter)
 "l" = (/obj/machinery/computer/ship/helm/ascent{accellimit = 0.005},/turf/simulated/floor/ascent,/area/ship/ascent_fighter)
 "m" = (/obj/machinery/power/apc/hyper/ascent/west,/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/obj/machinery/computer/shuttle_control/explore/ascent_fighter{icon_state = "ascent"; dir = 4},/turf/simulated/floor/ascent,/area/ship/ascent_fighter)
@@ -26,7 +26,7 @@
 "z" = (/obj/effect/overmap/visitable/sector/ascent_fighter_ring,/turf/space,/area/space)
 "A" = (/obj/effect/wallframe_spawn/reinforced_phoron/titanium/ascent,/obj/machinery/door/blast/regular{dir = 8; id_tag = "fighterdoor"},/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
 "B" = (/obj/machinery/ion_engine{dir = 1},/obj/structure/window/phoronreinforced{dir = 4},/obj/structure/window/phoronreinforced{dir = 8; icon_state = "rwindow"},/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
-"C" = (/obj/structure/window/phoronreinforced,/obj/structure/window/phoronreinforced{dir = 4},/obj/machinery/conveyor/ammobelt{dir = 5; id = "ammobelt8"},/obj/structure/ship_munition/ammobox/cell/particle_lance,/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
+"C" = (/obj/structure/window/phoronreinforced,/obj/structure/window/phoronreinforced{dir = 4},/obj/machinery/conveyor/ammobelt{dir = 5; id = "ammobelt8"},/obj/structure/ship_munition/ammobox/particle_lance,/turf/simulated/floor/ascent/airless,/area/ship/ascent_fighter)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

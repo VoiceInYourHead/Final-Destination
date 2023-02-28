@@ -23,7 +23,7 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Heavy rotary gun"
 
-	var/hull_damage = 0.25
+	var/hull_damage = 1
 
 	var/obj/machinery/minigun/front_part/front
 	var/obj/machinery/minigun/middle_part/middle

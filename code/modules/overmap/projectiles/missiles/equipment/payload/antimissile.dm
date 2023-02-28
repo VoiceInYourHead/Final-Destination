@@ -3,6 +3,7 @@
 	name = "PREDATOR missile disabler system"
 	desc = "An advanced concotion of technology intended to detect and detonate in close proximity of another projectile in order to disable it."
 	icon_state = "antimissile"
+	hull_damage = 10
 
 	cooldown = 3
 

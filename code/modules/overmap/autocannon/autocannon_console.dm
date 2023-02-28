@@ -23,7 +23,7 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Autocannon"
 
-	var/hull_damage = 2
+	var/hull_damage = 5
 
 	var/obj/machinery/autocannon/front_part/front
 	var/obj/machinery/autocannon/middle_part/middle

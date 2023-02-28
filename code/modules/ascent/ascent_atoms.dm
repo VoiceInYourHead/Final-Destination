@@ -1,9 +1,9 @@
 // Submap specific atom definitions.
 
-MANTIDIFY(/obj/item/storage/bag/trash/purple,   "sample collection carrier", "material storage")
-MANTIDIFY(/obj/structure/bed/chair/padded/purple,      "mantid nest",               "resting place")
-MANTIDIFY(/obj/item/pickaxe/diamonddrill,       "lithobliterator",           "drilling")
-MANTIDIFY(/obj/item/tank/jetpack/carbondioxide, "maneuvering pack",          "propulsion")
+MANTIDIFY(/obj/item/storage/bag/trash/purple,    "sample collection carrier", "material storage")
+MANTIDIFY(/obj/structure/bed/chair/padded/purple,"mantid nest",               "resting place")
+MANTIDIFY(/obj/item/pickaxe/diamonddrill,        "lithobliterator",           "drilling")
+MANTIDIFY(/obj/item/tank/jetpack/carbondioxide,  "maneuvering pack",          "propulsion")
 
 /obj/structure/bed/chair/padded/purple/ascent
 	icon_state = "nest_chair"
@@ -14,6 +14,13 @@ MANTIDIFY(/obj/item/tank/jetpack/carbondioxide, "maneuvering pack",          "pr
 	name = "mantid throne"
 	icon_state = "nest_chair_large"
 	base_icon = "nest_chair_large"
+
+/obj/structure/bed/chair/padded/purple/ascent/serpentid
+	name = "serpentid resting pole"
+	icon_state = "bar_stool_preview" //set for the map
+	item_state = "bar_stool"
+	base_icon = "bar_stool"
+	color = "#a33fbf"
 
 /obj/item/light/tube/ascent
 	name = "mantid light filament"
