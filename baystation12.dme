@@ -2608,6 +2608,7 @@
 #include "code\modules\overmap\exoplanets\planet_types\shrouded.dm"
 #include "code\modules\overmap\exoplanets\planet_types\snow.dm"
 #include "code\modules\overmap\exoplanets\planet_types\underwater.dm"
+#include "code\modules\overmap\exoplanets\planet_types\urban.dm"
 #include "code\modules\overmap\exoplanets\planet_types\volcanic.dm"
 #include "code\modules\overmap\harpoon\harpoon.dm"
 #include "code\modules\overmap\harpoon\harpoon_ammo.dm"

@@ -103,7 +103,7 @@
 		atmosphere.temperature = T0C + rand(0, 50)
 		atmosphere.update_values()
 
-/obj/effect/overmap/visitable/sector/exoplanet/grass/generate_map()
+/obj/effect/overmap/visitable/sector/exoplanet/grass/terraformed/generate_map()
 	lightlevel = rand(0.7,0.9)/10
 	..()
 

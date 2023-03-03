@@ -1,6 +1,6 @@
 /obj/effect/overmap/visitable/sector/exoplanet/water
-	name = "water exoplanet"
-	desc = "Planet covered with water."
+	name = "ocean exoplanet"
+	desc = "A planet, which surface is fully covered by liquid water."
 	color = "#708eda"
 	planetary_area = /area/exoplanet/water
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
@@ -13,18 +13,18 @@
 	megafauna_types = list(/mob/living/simple_animal/hostile/aquatic/deathsquid)
 	repopulate_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly)
 
-/obj/effect/overmap/visitable/sector/exoplanet/underwater/generate_map()
+/obj/effect/overmap/visitable/sector/exoplanet/water/generate_map()
 	if(prob(40))
 		lightlevel = rand(7,10)/10	//give a chance of twilight jungle
 	..()
 
-/obj/effect/overmap/visitable/sector/exoplanet/underwater/generate_atmosphere()
+/obj/effect/overmap/visitable/sector/exoplanet/water/generate_atmosphere()
 	..()
 	if(atmosphere)
 		atmosphere.temperature = T20C + rand(10, 30)
 		atmosphere.update_values()
 
-/obj/effect/overmap/visitable/sector/exoplanet/underwater/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/visitable/sector/exoplanet/water/adapt_seed(var/datum/seed/S)
 	..()
 	var/carnivore_prob = rand(100)
 	if(carnivore_prob < 30)
@@ -59,7 +59,7 @@
 		L.playsound_local(get_turf(L),sound('sound/ambience/magma.ogg', repeat = 1, wait = 0, volume = 25, channel = GLOB.ambience_sound_channel))
 
 /datum/random_map/noise/exoplanet/water
-	descriptor = "water exoplanet"
+	descriptor = "ocean exoplanet"
 	smoothing_iterations = 2
 	land_type = /turf/simulated/ocean
 
