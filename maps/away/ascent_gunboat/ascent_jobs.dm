@@ -13,7 +13,7 @@
 		/datum/job/submap/ascent_gunboat,
 		/datum/job/submap/ascent_gunboat/alate,
 		/datum/job/submap/ascent_gunboat/alate/pilot,
-//		/datum/job/submap/ascent/drone
+		/datum/job/submap/ascent_gunboat/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT_GUNBOAT
 
@@ -148,7 +148,7 @@
 					SKILL_PILOT = SKILL_EXPERT)
 	skill_points = 18
 
-/datum/job/submap/ascent/drone
+/datum/job/submap/ascent_gunboat/drone
 	title = "Ascent Drone"
 	supervisors = "the Gyne"
 	total_positions = 2

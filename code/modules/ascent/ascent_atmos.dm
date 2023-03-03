@@ -28,3 +28,11 @@ MANTIDIFY(/obj/machinery/alarm, "mantid thermostat", "atmospherics")
 /obj/item/inflatable_dispenser/ascents
 	name = "soft atmosphere barriers dispenser"
 	color = COLOR_ASCENT_PURPLE
+
+/obj/structure/adherent_bath/ascent
+	color = "#a33fbf"
+
+/obj/structure/adherent_bath/ascent/return_air()
+	var/datum/gas_mixture/ascentus = new(CELL_VOLUME, 310.15)
+	ascentus.adjust_multi(GAS_METHYL_BROMIDE, MOLES_CELLSTANDARD * 0.5, GAS_OXYGEN, MOLES_CELLSTANDARD * 0.5)
+	return ascentus

@@ -2,7 +2,7 @@
 	name = "void warhead"
 	desc = "An incredibly dangerous warhead. Detonates when the missile is triggered."
 	icon_state = "diffuse"
-	hull_damage = 40
+	hull_damage = 30
 
 /obj/item/missile_equipment/payload/void/on_trigger(var/atom/triggerer)
 	if(istype(triggerer, /obj/effect/shield))

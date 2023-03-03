@@ -15,7 +15,7 @@
 		/datum/job/submap/ascent_corvette/alate/pilot,
 		/datum/job/submap/ascent_corvette/serpentid,
 		/datum/job/submap/ascent_corvette/serpentid/queen,
-//		/datum/job/submap/ascent/drone
+		/datum/job/submap/ascent_corvette/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT_CORVETTE
 
@@ -184,7 +184,7 @@
 	)
 	skill_points = 18
 
-/datum/job/submap/ascent/drone
+/datum/job/submap/ascent_corvette/drone
 	title = "Ascent Drone"
 	supervisors = "the Gyne"
 	total_positions = 2

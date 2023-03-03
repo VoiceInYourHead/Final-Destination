@@ -72,8 +72,9 @@
 	name = "crystal flechette rifle"
 	desc = "A viscious looking rifle decorated with a growth of sharp purple crystals."
 	one_hand_penalty = 6
+	burst = 1
 	projectile_type = /obj/item/projectile/bullet/magnetic/flechette
-	firemodes = list(list(projectile_type = /obj/item/projectile/bullet/magnetic/flechette))
+	init_firemodes = list(list(projectile_type = /obj/item/projectile/bullet/magnetic/flechette))
 	color = COLOR_ASCENT_PURPLE
 
 /obj/item/projectile/beam/particle

@@ -1,4 +1,4 @@
-#define COLOR_ASCENT_PURPLE           "#a33fbf"
+#define COLOR_ASCENT_PURPLE           "#8f2bab"
 #define MANTIDIFY(_thing, _name, _desc) \
 ##_thing/ascent/name = _name; \
 ##_thing/ascent/desc = "Some kind of strange alien " + _desc + " technology."; \

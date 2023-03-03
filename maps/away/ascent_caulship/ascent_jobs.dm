@@ -12,7 +12,7 @@
 	crew_jobs = list(
 		/datum/job/submap/ascent,
 		/datum/job/submap/ascent/alate,
-//		/datum/job/submap/ascent/drone
+		/datum/job/submap/ascent/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT
 

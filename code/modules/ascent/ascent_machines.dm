@@ -10,6 +10,7 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 /obj/machinery/optable/ascent
 	construct_state = /decl/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/optable
+	color = "#952abf"
 
 /obj/machinery/portable_atmospherics/hydroponics/ascent
 	name = "mantid algae vat"
@@ -92,7 +93,7 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 	base_type = /obj/machinery/power/apc
 
 /obj/machinery/hologram/holopad/longrange/ascent
-	translator_language_prefix = "j"
+	translator_language_prefix = "|"
 	req_access = list(access_ascent)
 	allow_ai = FALSE
 
@@ -325,6 +326,3 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 	req_access = list(access_ascent)
 	installation = /obj/item/gun/energy/particle
 	shot_sound = 'sound/weapons/Laser3.ogg'
-
-/obj/structure/adherent_bath/ascent
-	color = COLOR_ASCENT_PURPLE
