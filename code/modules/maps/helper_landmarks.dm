@@ -56,7 +56,7 @@
 
 /obj/effect/landmark/damager/Initialize()
 	var/turf/simulated/T = get_turf(src)
-	sleep(2)
+	sleep(rand(1,4))
 	if(istype(T))
 		T.damage_health(rand(random_dam_min,random_dam_max))
 	. = ..()
