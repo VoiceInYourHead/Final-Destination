@@ -8,14 +8,25 @@
 	ruin_tags = RUIN_WRECK
 
 /datum/map_template/ruin/exoplanet/build/build2
-	name = "Ruined Bulding 2"
+	name = "Ruined Garage 2"
 	id = "build2"
 	suffixes = list("small_ruins/build_ruin2.dmm")
 
 /datum/map_template/ruin/exoplanet/build/build3
-	name = "Ruined Bulding 3"
+	name = "Ruined Temple 3"
 	id = "build3"
 	suffixes = list("small_ruins/build_ruin3.dmm")
+
+/datum/map_template/ruin/exoplanet/build/build4
+	name = "Ruined Voxship 4"
+	id = "build4"
+	suffixes = list("small_ruins/build_ruin4.dmm")
+	spawn_cost = 0.3
+
+/datum/map_template/ruin/exoplanet/build/build5
+	name = "Ruined Rad Wastes 5"
+	id = "build5"
+	suffixes = list("small_ruins/build_ruin5.dmm")
 
 
 
@@ -28,7 +39,16 @@
 	icon_state = "hallC1"
 	icon = 'icons/turf/areas.dmi'
 /area/map_template/build/build2
+	name = "\improper Garage"
 /area/map_template/build/build3
+	name = "\improper Sandstone Temple"
+/area/map_template/build/build4
+	name = "\improper VX-421-M"
+/area/map_template/build/build5
+	name = "\improper Radioactive Wastes"
+/area/map_template/build/build6
+/area/map_template/build/build7
+/area/map_template/build/build8
 
 
 
@@ -59,3 +79,23 @@
 	visible_message(SPAN_MFAUNA("A swarm of animals burst out from \the [src]!"))
 	spent = TRUE
 	STOP_PROCESSING(SSobj, src)
+
+/obj/effect/landmark/corpse/betrayed_engineer
+	name = "Peter Napp"
+	corpse_outfits = list(/decl/hierarchy/outfit/betrayed_engineer)
+	spawn_flags = ~CORPSE_SPAWNER_RANDOM_NAME
+
+/decl/hierarchy/outfit/betrayed_engineer
+	name = "Betrayed Engineer"
+	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/engineering
+	suit = /obj/item/clothing/suit/storage/solgov/service/expeditionary/engineering
+	shoes = /obj/item/clothing/shoes/dutyboots
+	head = /obj/item/clothing/head/solgov/service/expedition
+	pda_type = /obj/item/modular_computer/pda/engineering
+// PAPERS??? //
+
+/obj/item/paper/rad_wastes
+	name = "Last Note"
+	language = LANGUAGE_HUMAN_EURO
+	age = 1
+	info = "I am so sorry for what I have done, but how can they punish people with such methods?<br>How could an officer even allow this?<br>I hope that justice will prevail and Alex Peterson will be punished for his actions.<br>Former Engineer, Expl. Peter Napp."

@@ -4,7 +4,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+	frequency = 1379;
 	id_tag = "build1_interior_door"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -62,6 +62,7 @@
 "bl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash,
+/obj/machinery/atmospherics/binary/pump/on,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/build)
 "bA" = (
@@ -228,6 +229,11 @@
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/map_template/build)
+"gf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junk,
+/turf/simulated/floor/tiled,
+/area/map_template/build)
 "hf" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/hos,
@@ -311,6 +317,10 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
 	},
+/obj/machinery/airlock_sensor{
+	id_tag = "build1_sensor_chamber";
+	pixel_x = 22
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/map_template/build)
 "lZ" = (
@@ -336,6 +346,9 @@
 /turf/simulated/floor/wood,
 /area/map_template/build)
 "mn" = (
+/obj/machinery/air_sensor{
+	id_tag = "build1_out"
+	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/map_template/build)
 "mp" = (
@@ -345,7 +358,6 @@
 "mI" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	cycle_to_external_air = 1;
-	frequency = 1380;
 	id_tag = "build1";
 	pixel_y = 28;
 	tag_airpump = "buld1_pump";
@@ -358,11 +370,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "build1_pump";
 	power_rating = 25000
-	},
-/obj/machinery/airlock_sensor{
-	frequency = 1380;
-	id_tag = "build1_sensor_chamber";
-	pixel_x = 22
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/corner/yellow{
@@ -614,6 +621,9 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/build)
 "vo" = (
@@ -646,19 +656,15 @@
 /turf/simulated/floor/wood,
 /area/map_template/build)
 "xH" = (
-/obj/machinery/atmospherics/portables_connector,
 /obj/machinery/access_button/airlock_interior{
-	frequency = 1380;
 	master_tag = "build1";
 	pixel_x = -22;
 	pixel_y = 5
 	},
 /obj/machinery/airlock_sensor/airlock_interior{
-	frequency = 1380;
 	id_tag = "build1_sensor_interior";
 	pixel_x = -22
 	},
-/obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/alarm/noaccess{
 	pixel_y = 20
 	},
@@ -772,9 +778,6 @@
 /turf/simulated/floor/tiled,
 /area/map_template/build)
 "AC" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
@@ -783,6 +786,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/build)
 "AV" = (
@@ -795,6 +801,14 @@
 	dir = 4
 	},
 /turf/simulated/wall,
+/area/map_template/build)
+"Ce" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/steel_ridged,
 /area/map_template/build)
 "Cs" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -830,6 +844,7 @@
 /turf/simulated/floor/tiled,
 /area/map_template/build)
 "CG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/build)
 "CI" = (
@@ -876,6 +891,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
+/obj/random/junk,
 /turf/simulated/floor/wood,
 /area/map_template/build)
 "Fl" = (
@@ -1101,7 +1117,7 @@
 /area/map_template/build)
 "LI" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+	frequency = 1379;
 	id_tag = "build1_exterior_door";
 	locked = 1
 	},
@@ -1223,12 +1239,10 @@
 	dir = 6
 	},
 /obj/machinery/airlock_sensor/airlock_exterior{
-	frequency = 1380;
 	id_tag = "build1_sensor_external";
 	pixel_x = 22
 	},
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1380;
 	master_tag = "build1";
 	pixel_x = 19;
 	pixel_y = 5
@@ -1489,6 +1503,23 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/wood/walnut,
 /area/map_template/build)
+"ZP" = (
+/obj/machinery/computer/air_control{
+	dir = 4;
+	name = "Atmospheric Sensors";
+	sensor_tag = "build1_out"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/map_template/build)
+"ZT" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/civilian,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/map_template/build)
 
 (1,1,1) = {"
 qH
@@ -1540,7 +1571,7 @@ zR
 rE
 qH
 oy
-Xx
+ZP
 Ss
 Sf
 vF
@@ -1663,7 +1694,7 @@ dQ
 CI
 tk
 zj
-AV
+Ce
 CG
 bl
 vd
@@ -1683,7 +1714,7 @@ nG
 nE
 Su
 Su
-qD
+ZT
 GB
 nM
 Xr
@@ -1758,7 +1789,7 @@ mp
 eF
 Pi
 mp
-mp
+gf
 qH
 et
 JS
