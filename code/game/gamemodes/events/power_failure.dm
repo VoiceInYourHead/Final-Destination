@@ -15,12 +15,12 @@
 	if(announce)
 		GLOB.using_map.grid_restored_announcement()
 	for(var/obj/machinery/power/apc/C in SSmachines.machinery)
-		C.failure_timer = 0
+		C.failure_timer = 2
 		var/obj/item/cell/cell = C.get_cell()
 		if(cell)
 			cell.charge = cell.maxcharge
 	for(var/obj/machinery/power/smes/S in SSmachines.machinery)
-		S.failure_timer = 0
+		S.failure_timer = 2
 		S.charge = S.capacity
 		S.update_icon()
 		S.power_change()
@@ -30,7 +30,7 @@
 	if(announce)
 		command_announcement.Announce("All SMESs on the [station_name()] have been recharged. We apologize for the inconvenience.", "Power Systems Nominal", new_sound = GLOB.using_map.grid_restored_sound)
 	for(var/obj/machinery/power/smes/S in SSmachines.machinery)
-		S.failure_timer = 0
+		S.failure_timer = 2
 		S.charge = S.capacity
 		S.output_level = S.output_level_max
 		S.output_attempt = 1

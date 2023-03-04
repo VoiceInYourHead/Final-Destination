@@ -112,7 +112,7 @@
 		var/repaired_organ
 
 		// Replace limbs for crystalline species.
-		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(10))
+		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM || H.species.name == SPECIES_MANTID_ALATE || H.species.name == SPECIES_MANTID_GYNE) && prob(10))
 			for(var/limb_type in H.species.has_limbs)
 				var/obj/item/organ/external/E = H.organs_by_name[limb_type]
 				if(E && !E.is_usable() && !(E.limb_flags & ORGAN_FLAG_HEALS_OVERKILL))
@@ -131,11 +131,20 @@
 					break
 
 		// Repair crystalline internal organs.
-		if(prob(10))
+		if(prob(5))
 			for(var/thing in H.internal_organs)
 				var/obj/item/organ/internal/I = thing
 				if(BP_IS_CRYSTAL(I) && I.damage)
-					I.heal_damage(rand(3,5))
+					I.heal_damage(rand(1,3))
+					if(prob(25))
+						to_chat(H, "<span class='notice'>The mineral-rich bath mends your [I.name].</span>")
+
+		// Repair crystalline external organs.
+		if(prob(5))
+			for(var/thing in H.organs)
+				var/obj/item/organ/external/I = thing
+				if(BP_IS_CRYSTAL(I) && I.damage)
+					I.heal_damage(rand(1,3))
 					if(prob(25))
 						to_chat(H, "<span class='notice'>The mineral-rich bath mends your [I.name].</span>")
 

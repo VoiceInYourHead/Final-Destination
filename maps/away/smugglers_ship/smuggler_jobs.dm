@@ -29,15 +29,12 @@
 
 /decl/hierarchy/outfit/job/smuggler
 	name = "Smuggler Crewman"
-	r_ear = null
 	uniform = /obj/item/clothing/under/color/black
-	r_pocket = /obj/item/material/knife/folding
+	l_ear = null
 	l_pocket = /obj/item/device/flashlight/maglight
-	shoes = /obj/item/clothing/shoes/workboots
-	gloves = null
+	shoes = /obj/item/clothing/shoes/black
+	pda_type = /obj/item/modular_computer/pda
 	belt = /obj/item/gun/energy/gun/small
-	id_types = null
-	pda_type = null
 
 /obj/effect/submap_landmark/spawnpoint/smuggler
 	name = "Smuggler"

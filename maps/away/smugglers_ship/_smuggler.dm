@@ -4,7 +4,7 @@
 
 // Map template data.
 /datum/map_template/ruin/away_site/smuggler
-	name = "FTU Miss Fortune"
+	name = "FTV Miss Fortune"
 	id = "awaysite_smuggler"
 	description = "."
 	suffixes = list("smugglers_ship/smuggler.dmm")
@@ -19,5 +19,5 @@
 	hide_from_reports = TRUE
 
 /obj/effect/submap_landmark/joinable_submap/smuggler
-	name = "FTU Miss Fortune"
+	name = "FTV Miss Fortune"
 	archetype = /decl/submap_archetype/smuggler

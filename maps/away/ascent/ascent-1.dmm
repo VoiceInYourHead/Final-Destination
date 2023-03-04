@@ -275,7 +275,7 @@
 "fo" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/bed/chair/padded/purple/ascent{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "fp" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "fq" = (/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/ascent/tiled/airless,/area/ship/ascent_inf/shuttle_port)
-"fr" = (/obj/machinery/computer/ship/missiles/ascent2{icon_state = "ascent"; dir = 1},/turf/simulated/floor/ascent/tiled/airless,/area/ship/ascent_inf/shuttle_port)
+"fr" = (/obj/machinery/computer/ship/missiles/ascent{icon_state = "ascent"; dir = 1},/turf/simulated/floor/ascent/tiled/airless,/area/ship/ascent_inf/shuttle_port)
 "fs" = (/obj/machinery/atmospherics/unary/vent_pump/on/ascent,/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/ascent/tiled/airless,/area/ship/ascent_inf/shuttle_port)
 "ft" = (/obj/machinery/door/airlock/ascent{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "fu" = (/obj/machinery/power/terminal,/obj/structure/cable/cyan{d2 = 8; icon_state = "0-8"},/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)

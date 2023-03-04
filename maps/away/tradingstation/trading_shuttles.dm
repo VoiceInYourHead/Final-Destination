@@ -9,6 +9,7 @@
 	skill_needed = SKILL_ADEPT
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
+	dir = EAST
 	hide_from_reports = TRUE
 	initial_restricted_waypoints = list(
 		"Bluespace Residue" = list("nav_smuggler")
@@ -27,7 +28,7 @@
 /datum/shuttle/autodock/overmap/smuggler
 	name = "Smuggler"
 	warmup_time = 3
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = list(/area/ship/smuggler/generator, /area/ship/smuggler/kitchen, /area/ship/smuggler/eng, /area/ship/smuggler/engine, /area/ship/smuggler/rw, /area/ship/smuggler/lw, /area/ship/smuggler/bar, /area/ship/smuggler/bridge, /area/ship/smuggler/container, /area/ship/smuggler/living, /area/ship/smuggler/med)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

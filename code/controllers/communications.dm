@@ -136,7 +136,7 @@ var/const/SEC_I_FREQ = 1475
 
 // Away Site Channels
 var/list/AWAY_FREQS_UNASSIGNED = list(1491, 1493, 1495, 1497, 1499, 1501, 1503, 1505, 1507, 1509)
-var/list/AWAY_FREQS_ASSIGNED = list("Hailing" = HAIL_FREQ, "School" = SCHOOL_FREQ)
+var/list/AWAY_FREQS_ASSIGNED = list("Hailing" = HAIL_FREQ)
 
 // Device signal frequencies
 var/const/ATMOS_ENGINE_FREQ = 1438 // Used by atmos monitoring in the engine.

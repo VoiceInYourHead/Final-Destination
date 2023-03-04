@@ -10,7 +10,7 @@
 	name = "Vox Scavenger Ship"
 	id = "awaysite_voxship2"
 	description = "Vox Scavenger Ship."
-	suffixes = list("voxship/voxship-2.dmm")
+	suffixes = list("voxship/voxship-new.dmm")
 	spawn_cost = 3
 	player_cost = 4
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/vox_ship, /datum/shuttle/autodock/overmap/vox_lander)
@@ -34,15 +34,21 @@
 	name = "Vox Scavenger Ship"
 	move_time = 10
 	shuttle_area = list(
-		/area/voxship/engineering,
-		/area/voxship/thrusters,
+		/area/voxship/scavship,
+		/area/voxship/cockpit,
 		/area/voxship/fore,
-		/area/voxship/scavship
+		/area/voxship/aft,
+		/area/voxship/starboard,
+		/area/voxship/medbay,
+		/area/voxship/thrusters,
+		/area/voxship/starboard_thrusters,
+		/area/voxship/port_thrusters,
+		/area/voxship/engineering
 	)
 	dock_target = "vox_ship"
 	current_location = "nav_hangar_voxship"
 	landmark_transition = "nav_transit_voxship"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 4
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	defer_initialisation = TRUE
@@ -63,7 +69,10 @@
 	color = "#233012"
 	icon_state = "ship"
 	moving_state = "ship_moving"
-	fore_dir = WEST
+	vessel_mass = 6000
+	integrity_failure_cap = 110
+	fore_dir = NORTHWEST
+	dir = NORTHWEST
 	vessel_size = SHIP_SIZE_SMALL
 
 //Ship's little lander defined here
@@ -74,7 +83,7 @@
 	dock_target = "vox_scavshuttle"
 	current_location = "nav_hangar_scavshuttle"
 	landmark_transition = "nav_transit_scavshuttle"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 4
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	defer_initialisation = TRUE
@@ -95,7 +104,10 @@
 	name = "Unmarked shuttle"
 	shuttle = "Vox Scavenger Shuttle"
 	desc = "Sensor array detects a small, unmarked vessel."
-	fore_dir = WEST
+	vessel_mass = 3000
+	integrity_failure_cap = 35
+	fore_dir = SOUTHEAST
+	dir = SOUTHEAST
 	vessel_size = SHIP_SIZE_TINY
 
 /obj/effect/submap_landmark/joinable_submap/voxship/scavship
@@ -150,7 +162,7 @@
 /obj/machinery/power/smes/buildable/preset/voxship/ship
 	uncreated_component_parts = list(
 		/obj/item/stock_parts/smes_coil/super_capacity = 1,
-		/obj/item/stock_parts/smes_coil/super_io = 1
+		/obj/item/stock_parts/smes_coil/super_io = 2
 	)
 	_input_maxed = TRUE
 	_output_maxed = TRUE

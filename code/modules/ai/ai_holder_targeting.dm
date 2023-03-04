@@ -37,7 +37,7 @@
 /// Step 2, filter down possible targets to things we actually care about.
 /datum/ai_holder/proc/find_target(list/possible_targets, has_targets_list = FALSE)
 	ai_log("find_target() : Entered.", AI_LOG_TRACE)
-	if (!hostile) // So retaliating mobs only attack the thing that hit it.
+	if (!hostile && !retaliate)
 		return null
 	. = list()
 	if (!has_targets_list)
@@ -64,6 +64,13 @@
 		chosen_target = preferred_target
 	else
 		chosen_target = pick(targets)
+
+	if (!hostile && retaliate)
+		if (check_attacker(chosen_target))	//Если ты меня бил...
+			on_attacked(chosen_target)		//То я мстю, и мстя моя будет страшна!
+			return chosen_target
+		return
+
 	return chosen_target
 
 /// Step 4, give us our selected target.
@@ -116,8 +123,8 @@
 	if (isliving(the_target))
 		var/mob/living/L = the_target
 		if (ishuman(L) || issilicon(L))
-			if (L.key && !L.client)	// SSD players get a pass
-				return FALSE
+//			if (L.key && !L.client)	// SSD players get a pass
+//				return FALSE
 
 			if (L.status_flags & NOTARGET)
 				return FALSE
@@ -237,6 +244,12 @@
 		ai_log("react_to_attack() : Was attacked by [attacker], but we are not allowed to attack back.", AI_LOG_TRACE)
 		return FALSE
 	if (holder.IIsAlly(attacker)) // I'll overlook it THIS time...
+		if(prob(50))
+			on_attacked(attacker) // Предательство должно быть наказано
+		if(istype(attacker,/mob/living/carbon/human) && prob(30))
+			lose_ally(attacker)
+		else if(istype(attacker,/mob/living/carbon) && prob(50))
+			lose_ally(attacker)
 		ai_log("react_to_attack() : Was attacked by [attacker], but they were an ally.", AI_LOG_TRACE)
 		return FALSE
 	if (target) // Already fighting someone. Switching every time we get hit would impact our combat performance.
@@ -257,6 +270,10 @@
 	on_attacked(attacker) // So we attack immediately and not threaten.
 	return give_target(attacker, urgent = TRUE) // Also handles setting the appropiate stance.
 
+/datum/ai_holder/proc/lose_ally(atom/movable/AM)
+	if(AM in holder.friends)
+		holder.friends -= AM
+
 /// Sets a few vars so mobs that threaten will react faster to an attacker or someone who attacked them before.
 /datum/ai_holder/proc/on_attacked(atom/movable/AM)
 	last_conflict_time = world.time
@@ -264,7 +281,7 @@
 
 /// Checks to see if an atom attacked us lately
 /datum/ai_holder/proc/check_attacker(atom/movable/A)
-	return (A in attackers)
+	return (A.name in attackers)
 
 /// We were attacked by this thing recently
 /datum/ai_holder/proc/add_attacker(atom/movable/A)

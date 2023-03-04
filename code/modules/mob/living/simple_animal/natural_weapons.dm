@@ -37,6 +37,7 @@
 	name = "claws"
 	attack_verb = list("mauled", "clawed", "slashed")
 	force = 15
+	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharp = TRUE
 	edge = TRUE
 
@@ -54,11 +55,13 @@
 
 /obj/item/natural_weapon/punch
 	name = "fists"
+	hitsound = 'sound/weapons/punch4.ogg'
 	attack_verb = list("punched")
 	force = 10
 
 /obj/item/natural_weapon/pincers
 	name = "pincers"
+	hitsound = 'sound/weapons/slice.ogg'
 	force = 10
 	attack_verb = list("snipped", "pinched")
 
@@ -66,6 +69,7 @@
 	name = "sharpened leg"
 	gender = NEUTER
 	attack_verb = list("sliced")
+	hitsound = 'sound/weapons/slice.ogg'
 	force = 5
 	damtype = BRUTE
 	edge = TRUE

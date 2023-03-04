@@ -4,28 +4,30 @@
 	icon = 'icons/obj/disperser.dmi'
 	icon_state = "ammocrate_autocannon1"
 	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
+	var/can_explode = TRUE
 	var/ammo_count = 60
 	var/ammo_type = /obj/item/projectile/bullet
 
 /obj/structure/ship_munition/ammobox/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W))
 		if(ammo_count > 0)
-			to_chat(user, "You need [ammo_count] less rounds left in the box to do that!")
+			to_chat(user, "You need [ammo_count] less [(ammo_count == 1)? "round" : "rounds"] left in the box to do that!")
 			return
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, 1)
 		new /obj/item/stack/material/plasteel(get_turf(src))
 		qdel(src)
 
 /obj/structure/ship_munition/ammobox/ex_act(severity)
-	if(severity < 3 && ammo_count > ammo_count/3)
-		explosion(src, -1, 2, 3)
-		if(severity < 3)
+	if(src && can_explode)
+		if(severity < 3 && ammo_count > ammo_count/3)
+			can_explode = FALSE
+			explosion(loc, -1, 2, 3)
 			qdel(src)
-	else if(severity < 3 && ammo_count > 0)
-		explosion(src, -1, 1, 2)
-		if(severity < 3)
+		else if(severity < 3 && ammo_count > 0)
+			can_explode = FALSE
+			explosion(loc, -1, 1, 2)
 			qdel(src)
-	..()
+	return
 
 /obj/structure/ship_munition/ammobox/examine(mob/user)
 	. = ..()
@@ -34,33 +36,37 @@
 ///////////////////////////AMMOBOX///////////////////////////
 
 /obj/structure/ship_munition/ammobox/autocannon
-	name = "RP 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled rounds."
+	name = "RP 76mm ammo box"
+	desc = "Ammo box that contains solid 76mm rocket-propelled rounds."
 	layer = 2.22
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon
 
 /obj/structure/ship_munition/ammobox/autocannon/high_explosive
-	name = "RP-HE 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled high explosive rounds."
+	name = "RP-HE 76mm ammo box"
+	icon_state = "ammocrate_autocannon_he"
+	desc = "Ammo box that contains 76mm rocket-propelled high explosive rounds."
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/high_explosive
 
 /obj/structure/ship_munition/ammobox/autocannon/armour_piercing
-	name = "RP-APFSDS 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing fin-stabilized discarding sabot."
+	name = "RP-APFSDS 76mm ammo box"
+	icon_state = "ammocrate_autocannon_ap"
+	desc = "Ammo box that contains 76mm rocket-propelled armour-piercing fin-stabilized discarding sabot."
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/armour_piercing
 
 /obj/structure/ship_munition/ammobox/autocannon/anti_hull
-	name = "RP-AH 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled anti-hull rounds."
+	name = "RP-AH 76mm ammo box"
+	icon_state = "ammocrate_autocannon_aw"
+	desc = "Ammo box that contains 76mm rocket-propelled anti-hull rounds."
 	ammo_count = 30
-	ammo_type = /obj/item/projectile/bullet/autocannon/anti_wall
+	ammo_type = /obj/item/projectile/bullet/autocannon/anti_hull
 
 /obj/structure/ship_munition/ammobox/autocannon/aphe
-	name = "RP-APHE 67mm ammo box"
-	desc = "Ammo box that contains 67mm rocket-propelled armour-piercing high explosive rounds."
+	name = "RP-APHE 76mm ammo box"
+	icon_state = "ammocrate_autocannon_aphe"
+	desc = "Ammo box that contains 76mm rocket-propelled armour-piercing high explosive rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/aphe
 
@@ -83,8 +89,9 @@
 
 /obj/item/projectile/bullet/autocannon/high_explosive/on_hit(var/atom/target, var/blocked = 0)
 	var/backwards = turn(dir, 180)
-	explosion(get_step(target, backwards), bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+	explosion(get_step(target, backwards), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
 	..()
+
 
 /obj/item/projectile/bullet/autocannon/armour_piercing
 	damage = 200
@@ -92,14 +99,15 @@
 	penetrating = 30
 	penetration_modifier = 1.1
 
+
 /obj/item/projectile/bullet/autocannon/anti_hull
 	armor_penetration = 80
 	bolt_devastation = 1
 	bolt_heavy_impact = 1
 	bolt_light_impact = 2
 
-/obj/item/projectile/bullet/autocannon/anti_wall/on_hit(var/atom/target, var/blocked = 0)
-	explosion(target, bolt_devastation, bolt_heavy_impact, bolt_light_impact)
+/obj/item/projectile/bullet/autocannon/anti_hull/on_hit(var/atom/target, var/blocked = 0)
+	explosion(get_turf(target), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
 	..()
 
 
@@ -113,15 +121,22 @@
 	bolt_light_impact = 2
 	var/delay = 3
 	var/primed = 0
+	var/loc_while_living = null
 
 /obj/item/projectile/bullet/autocannon/aphe/on_hit(var/atom/target, var/blocked = 0)
 	if(primed)
 		return
 	..()
-	primed++
+	primed = 1
 	sleep(delay)
-	explosion(get_turf(src), bolt_devastation, bolt_heavy_impact, bolt_light_impact)
-	qdel(src)
+	explosion(get_turf(src), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
+	if(src)
+		qdel(src)
+
+/obj/item/projectile/bullet/autocannon/aphe/Process()
+	if(src)
+		loc_while_living = get_turf(src)
+	..()
 
 ///////////////////////////MUZZLE///////////////////////////
 

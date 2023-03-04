@@ -240,6 +240,7 @@
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Cryokinesis"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Electronics"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Energistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psychoballistics"]), A)
 		if(a_intent == I_GRAB)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Manifestation"]), A)

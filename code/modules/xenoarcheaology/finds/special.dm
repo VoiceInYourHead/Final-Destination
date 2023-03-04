@@ -60,6 +60,8 @@
 	var/eat_interval = 100
 	var/wight_check_index = 1
 	var/list/shadow_wights = list()
+	var/range = 2
+	var/hear_range = 7
 
 /obj/item/vampiric/Initialize()
 	. = ..()
@@ -75,14 +77,14 @@
 	//see if we've identified anyone nearby
 	if(world.time - last_bloodcall > bloodcall_interval && nearby_mobs.len)
 		var/mob/living/carbon/human/M = pop(nearby_mobs)
-		if(M in view(7,src) && M.health > 20)
+		if(M in range(hear_range,src) && M.health > 20)
 			if(prob(50))
 				bloodcall(M)
 				nearby_mobs.Add(M)
 
 	//suck up some blood to gain power
 	if(world.time - last_eat > eat_interval)
-		var/obj/effect/decal/cleanable/blood/B = locate() in range(2,src)
+		var/obj/effect/decal/cleanable/blood/B = locate() in range(range,src)
 		if(B)
 			last_eat = world.time
 			if(istype(B, /obj/effect/decal/cleanable/blood/drip))
@@ -131,7 +133,7 @@
 
 /obj/item/vampiric/hear_talk(mob/M as mob, text)
 	..()
-	if(world.time - last_bloodcall >= bloodcall_interval && (M in view(7, src)))
+	if(world.time - last_bloodcall >= bloodcall_interval && (M in view(hear_range, src)))
 		bloodcall(M)
 
 /obj/item/vampiric/proc/bloodcall(var/mob/living/carbon/human/M)
@@ -148,6 +150,21 @@
 		B.blood_DNA = list()
 		B.blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 		M.vessel.remove_reagent(/datum/reagent/blood,rand(25,50))
+		charges += 1
+
+// Comedy, or "we are doomed".
+
+/obj/item/vampiric/monolith
+	name = "Bloody Monolith"
+	eat_interval = 10
+	range = 30
+	bloodcall_interval = 5
+	hear_range = 35
+
+/obj/item/vampiric/monolith/hear_talk(mob/M as mob, text)
+	..()
+	if(world.time - last_bloodcall >= bloodcall_interval && (M in orange(hear_range, src)))
+		bloodcall(M)
 
 //animated blood 2 SPOOKY
 /obj/effect/decal/cleanable/blood/splatter/animated

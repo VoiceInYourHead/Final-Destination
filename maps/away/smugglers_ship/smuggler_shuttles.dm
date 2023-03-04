@@ -1,14 +1,16 @@
 /obj/effect/overmap/visitable/ship/landable/smuggler
 	name = "FTV Miss Fortune"
 	shuttle = "Smuggler"
-	desc = "Sensor array is detecting a small cargo vessel, property of Free Trade Union"
+	desc = "Sensor array is detecting a small cargo vessel, broadcasting FTU codes and the designation \"FTV Prosperity, 13-1-OL\"."
 	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 9000
+	integrity_failure_cap = 80
 	skill_needed = SKILL_ADEPT
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
+	dir = EAST
 	hide_from_reports = TRUE
 	known = 0
 	initial_restricted_waypoints = list(
@@ -28,7 +30,7 @@
 /datum/shuttle/autodock/overmap/smuggler
 	name = "Smuggler"
 	warmup_time = 3
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = list(/area/ship/smuggler/generator, /area/ship/smuggler/kitchen, /area/ship/smuggler/eng, /area/ship/smuggler/engine, /area/ship/smuggler/rw, /area/ship/smuggler/lw, /area/ship/smuggler/bar, /area/ship/smuggler/bridge, /area/ship/smuggler/container, /area/ship/smuggler/living, /area/ship/smuggler/med)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

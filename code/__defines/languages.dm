@@ -22,6 +22,11 @@
 #define LANGUAGE_VOX               "Vox-pidgin"
 #define LANGUAGE_NABBER            "Serpentid"
 
+//Ascent
+#define LANGUAGE_MANTID_NONVOCAL   "Ascent-Glow"
+#define LANGUAGE_MANTID_VOCAL      "Ascent-Voc"
+#define LANGUAGE_MANTID_BROADCAST  "Worldnet"
+
 //Antag
 #define LANGUAGE_CULT              "Cult"
 #define LANGUAGE_CULT_GLOBAL       "Occult"

@@ -13,8 +13,9 @@
 	habitability_distribution = HABITABILITY_BAD
 	has_trees = FALSE
 	flora_diversity = 3
-	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/hostile/retaliate/beast/shantak/lava, /mob/living/simple_animal/hostile/retaliate/beast/charbaby)
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/shantak/lava, /mob/living/simple_animal/hostile/smart_beast/charbaby)
 	megafauna_types = list(/mob/living/simple_animal/hostile/drake)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/shantak/lava, /mob/living/simple_animal/hostile/smart_beast/charbaby)
 
 /obj/effect/overmap/visitable/sector/exoplanet/volcanic/get_atmosphere_color()
 	return COLOR_GRAY20

@@ -207,14 +207,14 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		dy = 0
 
 	if (href_list["speedlimit"])
-		var/newlimit = input("Autopilot Speed Limit (0 ~ [round(linked.max_autopilot * 1000, 0.1)])", "Autopilot speed limit", speedlimit * 1000) as num|null
+		var/newlimit = input("Autopilot Speed Limit (1 ~ [round(linked.max_autopilot * 1000, 0.1)])", "Autopilot speed limit", speedlimit * 1000) as num|null
 		if (!isnull(newlimit))
-			speedlimit = round(clamp(newlimit, 0, linked.max_autopilot * 1000), 0.1) * 0.001
+			speedlimit = round(clamp(newlimit, 1, linked.max_autopilot * 1000), 0.1) * 0.001
 
 	if (href_list["accellimit"])
-		var/newlimit = input("Input new acceleration limit (0 ~ 10)", "Acceleration limit", accellimit * 1000) as num|null
+		var/newlimit = input("Input new acceleration limit (1 ~ 10)", "Acceleration limit", accellimit * 1000) as num|null
 		if (!isnull(newlimit))
-			accellimit = round(clamp(newlimit, 0, 10)) * 0.001
+			accellimit = round(clamp(newlimit, 1, 10)) * 0.001
 
 	if (href_list["move"])
 		var/ndir = text2num(href_list["move"])
@@ -365,4 +365,18 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		set_light(0)
 	else
 		icon_state = "tele_nav"
+		set_light(light_max_bright_on, light_inner_range_on, light_outer_range_on, 2, light_color)
+
+/obj/machinery/computer/ship/helm/controller	//little hacky but it's only used on one ship so it should be okay
+	icon_state = "tiny_helm"
+	density = FALSE
+	machine_name = "helm control pad"
+	machine_desc = "A compact, controller-like helm panel."
+
+/obj/machinery/computer/ship/helm/controller/on_update_icon()
+	if(reason_broken & MACHINE_BROKEN_NO_PARTS || stat & NOPOWER || stat & BROKEN)
+		icon_state = "tiny"
+		set_light(0)
+	else
+		icon_state = "tiny_helm"
 		set_light(light_max_bright_on, light_inner_range_on, light_outer_range_on, 2, light_color)

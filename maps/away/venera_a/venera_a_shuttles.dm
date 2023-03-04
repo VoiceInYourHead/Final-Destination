@@ -20,6 +20,7 @@
 	fore_dir = NORTH
 	color = "#0751f3"
 	alpha = 30
+	integrity_failure_cap = 50
 	skill_needed = SKILL_BASIC
 	vessel_mass = 750
 	vessel_size = SHIP_SIZE_SMALL
@@ -34,7 +35,7 @@
 	shuttle_area = list(/area/jinx/main, /area/jinx/cockpit, /area/jinx/engine)
 	current_location = "nav_hangar_jinx"
 	landmark_transition = "nav_transit_jinx"
-	range = 2
+	range = 0 //range = 2
 	fuel_consumption = 1
 	logging_home_tag = "nav_hangar_jinx"
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling

@@ -129,6 +129,8 @@
 	if(into == auto.landmark_transition)
 		status = SHIP_STATUS_TRANSIT
 		on_takeoff(from, into)
+		adjust_speed(-speed[1], -speed[2])
+		update_icon()
 		return
 	if(into == landmark)
 		status = SHIP_STATUS_OVERMAP

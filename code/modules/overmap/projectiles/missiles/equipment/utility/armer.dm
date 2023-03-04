@@ -11,6 +11,6 @@
 	if(!M.active)
 		M.activate()
 
-/obj/item/missile_equipment/autoarm/impact/on_missile_activated(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/autoarm/breacher/on_missile_activated(var/obj/effect/overmap/projectile/P)
 	P.set_dangerous(TRUE)
 	P.set_enter_zs(TRUE)

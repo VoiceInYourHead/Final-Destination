@@ -9,8 +9,9 @@
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = TRUE
 	flora_diversity = 7
-	fauna_types = list(/mob/living/simple_animal/yithian, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/yithian, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/parrot/space/megafauna, /mob/living/simple_animal/hostile/retaliate/goose/dire)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/yithian, /mob/living/simple_animal/hostile/smart_beast/tindalos, /mob/living/simple_animal/hostile/retaliate/jelly)
 
 /obj/effect/overmap/visitable/sector/exoplanet/grass/generate_map()
 	if(prob(40))
@@ -102,7 +103,7 @@
 		atmosphere.temperature = T0C + rand(0, 50)
 		atmosphere.update_values()
 
-/obj/effect/overmap/visitable/sector/exoplanet/grass/generate_map()
+/obj/effect/overmap/visitable/sector/exoplanet/grass/terraformed/generate_map()
 	lightlevel = rand(0.7,0.9)/10
 	..()
 

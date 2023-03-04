@@ -300,12 +300,12 @@ Sells devices, odds and ends, and medical stuff
 				TRADER_INSULT_BAD        = "I have traded dogs with more bark than that.",
 				)
 
-	possible_wanted_items = list(/mob/living/simple_animal/tindalos    = TRADER_THIS_TYPE,
+	possible_wanted_items = list(/mob/living/simple_animal/hostile/smart_beast/tindalos    = TRADER_THIS_TYPE,
 								/mob/living/simple_animal/passive/tomato      = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/yithian     = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/retaliate/beast/diyaab = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/retaliate/beast/shantak= TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/retaliate/beast/samak= TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/yithian     = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/diyaab = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/shantak= TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/samak= TRADER_THIS_TYPE,
 								/mob/living/simple_animal/hostile/carp = TRADER_THIS_TYPE)
 
 	possible_trading_items = list(/mob/living/simple_animal/hostile/carp= TRADER_THIS_TYPE,

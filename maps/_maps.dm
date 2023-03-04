@@ -21,6 +21,7 @@
 #include "random_ruins\exoplanet_ruins\deserted_lab\deserted_lab.dm"
 #include "random_ruins\exoplanet_ruins\drill_site\drill_site.dm"
 #include "random_ruins\exoplanet_ruins\fountain\fountain_ruin.dm"
+#include "random_ruins\exoplanet_ruins\small_ruins\build_ruin.dm"
 #include "random_ruins\exoplanet_ruins\hut\hut.dm"
 #include "random_ruins\exoplanet_ruins\icarus\icarus.dm"
 #include "random_ruins\exoplanet_ruins\lodge\lodge.dm"

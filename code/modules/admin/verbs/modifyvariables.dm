@@ -1,6 +1,6 @@
 /client/proc/mod_list_add_ass()
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","color","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","num","type","custom_type","reference","mob reference", "icon","file","color","list","edit referenced object","restore to default")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -26,6 +26,9 @@
 
 		if("type")
 			var_value = input("Enter type:","Type") as null|anything in typesof(/obj,/mob,/area,/turf)
+
+		if("custom_type")
+			var_value = text2path(input("Enter custom_type:","Type") as text)
 
 		if("reference")
 			var_value = input("Select reference:","Reference") as null|mob|obj|turf|area in world
@@ -53,7 +56,7 @@
 /client/proc/mod_list_add(var/list/L, atom/O, original_name, objectvar)
 
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","color","edit referenced object","restore to default")
+	var/list/class_input = list("text","num","type","custom_type","reference","mob reference", "icon","file","list","color","edit referenced object","restore to default")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -79,6 +82,9 @@
 
 		if("type")
 			var_value = input("Enter type:","Type") in typesof(/obj,/mob,/area,/turf)
+
+		if("custom_type")
+			var_value = text2path(input("Enter custom_type:","Type") as text)
 
 		if("reference")
 			var_value = input("Select reference:","Reference") as mob|obj|turf|area in world
@@ -214,7 +220,7 @@
 		if(dir)
 			to_chat(usr, "If a direction, direction is: [dir]")
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","num","type","custom_type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
 
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
@@ -276,6 +282,13 @@
 
 		if("type")
 			new_var = input("Enter type:","Type") in typesof(/obj,/mob,/area,/turf)
+			if(assoc)
+				L[assoc_key] = new_var
+			else
+				L[list_find(L, variable)] = new_var
+
+		if("custom_type")
+			new_var = text2path(input("Enter custom_type:","Type") as text)
 			if(assoc)
 				L[assoc_key] = new_var
 			else
@@ -463,7 +476,7 @@
 					dir = null
 			if(dir)
 				to_chat(usr, "If a direction, direction is: [dir]")
-		var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","json","color","edit referenced object","restore to default")
+		var/list/class_input = list("text","num","type","custom_type","reference","mob reference", "icon","file","list","json","color","edit referenced object","restore to default")
 		if(src.holder)
 			var/datum/marked_datum = holder.marked_datum()
 			if(marked_datum)
@@ -519,6 +532,11 @@
 
 		if("type")
 			var/var_new = input("Enter type:","Type",O.get_variable_value(variable)) as null|anything in typesof(/obj,/mob,/area,/turf)
+			if(var_new==null) return
+			var_value = var_new
+
+		if("custom_type")
+			var/var_new = text2path(input("Enter custom_type:","Type",O.get_variable_value(variable)) as text)
 			if(var_new==null) return
 			var_value = var_new
 

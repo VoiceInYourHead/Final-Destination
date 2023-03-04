@@ -10,7 +10,7 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "hydroponics tray"
 	machine_desc = "These are waist-high trays that can grow a vast variety of plants in a nutrient bath. Also comes with a sealable lid for plants that don't grow in a surrounding atmosphere. A cornerstone of self-sufficient spaceships across the galaxy."
 
@@ -411,6 +411,12 @@
 	visible_message("<span class='danger'>The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!</span>")
 
 	return
+
+/obj/machinery/portable_atmospherics/hydroponics/attack_animal(var/mob/living/user)
+	if(!isanimal(user) && !isalien(user))
+		return
+	user.visible_message("<b>[user]</b> harvests \the [src].","You harvest \the [src].")
+	do_simple_ranged_interaction(user)
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(var/obj/item/O, var/mob/user)
 

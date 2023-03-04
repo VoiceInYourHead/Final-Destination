@@ -6,6 +6,7 @@
 	desc = "Sensors detect an undamaged vessel without any signs of activity."
 	color = "#bd6100"
 	vessel_mass = 5000
+	integrity_failure_cap = 80
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECOND
 	initial_generic_waypoints = list(
@@ -67,7 +68,7 @@
 	current_location = "nav_casino_hangar"
 	landmark_transition = "nav_casino_transit"
 	fuel_consumption = 0.5//it's small
-	range = 1
+	range = 0 //range = 1
 	defer_initialisation = TRUE
 
 /obj/effect/shuttle_landmark/nav_casino/cutter_hangar

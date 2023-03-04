@@ -3,12 +3,12 @@
 	shuttle = "ITV The Reclaimer"
 	desc = "Sensor array detects a small vessel, claiming to be 'ITV The Reclaimer', an 'Armalev Industries Skyfin-E, Exoplanetary Suvival Pod'. Your sensors array describes the vessel exterior as 'irreconcilable' with the exterior of a 'Skyfin-E'"
 	fore_dir = SOUTH
+	dir = SOUTH
 	vessel_size = SHIP_SIZE_SMALL
 	moving_state = "ship_moving"
 	max_speed = 1/(3 SECONDS)
 	burn_delay = 2 SECONDS
 	vessel_mass = 6000
-	fore_dir = SOUTH
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 
@@ -51,7 +51,7 @@
 	shuttle_area = list(/area/scavver/lifepod)
 	current_location = "nav_hangar_gantry_one"
 	landmark_transition = "nav_transit_gantry_one"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 5
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS
@@ -64,7 +64,7 @@
 	shuttle_area = list(/area/scavver/escapepod)
 	current_location = "nav_hangar_gantry_two"
 	landmark_transition = "nav_transit_gantry_two"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 3
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS
@@ -77,7 +77,7 @@
 	shuttle_area = list(/area/scavver/harvestpod)
 	current_location = "nav_hangar_gantry_three"
 	landmark_transition = "nav_transit_gantry_three"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 5
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS

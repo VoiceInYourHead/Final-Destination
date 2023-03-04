@@ -49,6 +49,7 @@
 	name = "Unknown Vessel"
 	desc = "Sensor array detects a medium-sized vessel of irregular shape. Vessel origin is unidentifiable."
 	vessel_mass = 1200
+	integrity_failure_cap = 120
 	fore_dir = NORTH
 	burn_delay = 2 SECONDS
 	hide_from_reports = TRUE

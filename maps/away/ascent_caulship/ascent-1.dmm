@@ -3,7 +3,7 @@
 "ac" = (/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "ad" = (/obj/machinery/shipsensors,/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "ae" = (/turf/simulated/wall,/area/ship/ascent_caulship)
-"af" = (/obj/effect/wallframe_spawn/reinforced_phoron,/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
+"af" = (/obj/effect/wallframe_spawn/reinforced_phoron/titanium/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
 "ag" = (/obj/machinery/atmospherics/pipe/simple/visible/red{dir = 6; icon_state = "intact"},/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_caulship)
 "ah" = (/obj/machinery/atmospherics/pipe/simple/visible/red{dir = 10; icon_state = "intact"},/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_caulship)
 "ai" = (/obj/machinery/shield_diffuser,/turf/simulated/floor/ascent/airless,/area/space)

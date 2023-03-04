@@ -3,6 +3,9 @@
 	shuttle = "Ascent Caulship"
 	desc = "Wake signature indicates a small unarmed vessel of unknown design."
 	moving_state = "ship_moving"
+	integrity_failure_cap = 80
+	integrity_failure = 30
+	do_repair_hull = FALSE
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
@@ -35,7 +38,7 @@
 /datum/shuttle/autodock/overmap/ascent
 	name = "Ascent Caulship"
 	warmup_time = 5
-	range = 2
+	range = 1 //range = 2
 	shuttle_area = /area/ship/ascent_caulship
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

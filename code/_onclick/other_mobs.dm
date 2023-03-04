@@ -153,9 +153,9 @@
 			return
 		if(ckey)
 			admin_attack_log(src, A, "Has attacked its victim.", "Has been attacked by its attacker.")
-	if(a_intent == I_HELP)
+	if(a_intent != I_DISARM && a_intent != I_GRAB)
 		A.attack_animal(src)
-	else if (get_natural_weapon())
+	if(a_intent != I_HELP)
 		A.attackby(get_natural_weapon(), src)
 
 // Attack hand but for simple animals

@@ -5,10 +5,12 @@ MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad"
 MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
 MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
+MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 
 /obj/machinery/optable/ascent
 	construct_state = /decl/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/optable
+	color = "#952abf"
 
 /obj/machinery/portable_atmospherics/hydroponics/ascent
 	name = "mantid algae vat"
@@ -91,7 +93,9 @@ MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense 
 	base_type = /obj/machinery/power/apc
 
 /obj/machinery/hologram/holopad/longrange/ascent
+	translator_language_prefix = "|"
 	req_access = list(access_ascent)
+	allow_ai = FALSE
 
 /obj/effect/catwalk_plated/ascent
 //ORIG	color = COLOR_GRAY40
@@ -185,14 +189,6 @@ MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense 
 	req_access = list(access_ascent)
 	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
 	base_type = /obj/machinery/computer/ship/missiles
-
-/obj/machinery/computer/ship/disperser/ascent
-	icon_state = "ascent"
-	icon_keyboard = "ascent_key"
-	icon_screen = "ascent_screen"
-	req_access = list(access_ascent)
-	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
-	base_type = /obj/machinery/computer/ship/disperser
 
 // This is an absolutely stupid machine. Basically the same as the debug one with some alterations.
 // It is a placeholder for a proper reactor setup (probably a RUST descendant)

@@ -9,7 +9,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/list/fauna_types = list()		// possible types of mobs to spawn
 	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
 	var/list/animals = list()
-	var/max_animal_count
+	var/max_animal_count = 40
 	var/datum/gas_mixture/atmosphere
 	var/list/breathgas = list()	//list of gases animals/plants require to survive
 	var/badgas					//id of gas that is toxic to life here
@@ -38,6 +38,8 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/has_trees = TRUE				// if large flora should be generated
 	var/list/small_flora_types = list()	// seeds of 'small' flora
 	var/list/big_flora_types = list()	// seeds of tree-tier flora
+
+	var/vessel_mass = 20000
 
 	var/repopulating = FALSE
 	var/repopulate_types = list() // animals which have died that may come back

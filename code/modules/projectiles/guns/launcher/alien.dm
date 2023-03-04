@@ -38,7 +38,6 @@
 
 //Vox pinning weapon.
 /obj/item/gun/launcher/alien/spikethrower
-
 	name = "spike thrower"
 	desc = "A vicious alien projectile weapon. Parts of it quiver gelatinously, as though the thing is insectile and alive."
 	w_class = ITEM_SIZE_LARGE

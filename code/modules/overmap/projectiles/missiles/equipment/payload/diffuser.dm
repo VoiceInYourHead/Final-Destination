@@ -3,6 +3,7 @@
 	name = "dynamic antiphase emitter"
 	desc = "A one time use device designed to emit a strong, lasting strobe of antiphase EM waves. It can diffuse large shield sections for a long period of time, possibly causing massive damage to them as well."
 	icon_state = "diffuse"
+	hull_damage = 0
 
 	var/diffuse_range = 100
 	var/diffuse_duration = 120

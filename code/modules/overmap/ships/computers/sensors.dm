@@ -15,7 +15,7 @@
 	base_type = /obj/machinery/computer/ship/sensors
 	print_language = LANGUAGE_SPACER
 
-/obj/machinery/computer/ship/sensors/attempt_hook_up(obj/effect/overmap/visitable/ship/sector)
+/obj/machinery/computer/ship/sensors/attempt_hook_up(obj/effect/overmap/visitable/sector)
 	if(!(. = ..()))
 		return
 	find_sensors()
@@ -117,7 +117,7 @@
 	if(!linked)
 		return
 	if(sensors && sensors.use_power && sensors.powered())
-		var/sensor_range = round(sensors.range*1.5) + 1
+		var/sensor_range = round(sensors.range*1.5)
 		linked.set_light(1, sensor_range, sensor_range+1)
 	else
 		linked.set_light(0)
@@ -128,6 +128,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "sensors"
 	anchored = TRUE
+	density = TRUE
 	var/max_health = 200
 	var/health = 200
 	var/critical_heat = 50 // sparks and takes damage when active & above this heat
@@ -234,3 +235,17 @@
 /obj/machinery/shipsensors/weak
 	heat_reduction = 0.2
 	desc = "Miniturized gravity scanner with various other sensors, used to detect irregularities in surrounding space. Can only run in vacuum to protect delicate quantum BS elements."
+
+/obj/machinery/computer/ship/sensors/telescreen	//little hacky but it's only used on one ship so it should be okay
+	icon_state = "tele_sensors"
+	density = FALSE
+	machine_name = "sensors telescreen"
+	machine_desc = "A compact, slimmed-down version of the sensors console."
+
+/obj/machinery/computer/ship/sensors/telescreen/on_update_icon()
+	if(reason_broken & MACHINE_BROKEN_NO_PARTS || stat & NOPOWER || stat & BROKEN)
+		icon_state = "tele_off"
+		set_light(0)
+	else
+		icon_state = "tele_sensors"
+		set_light(light_max_bright_on, light_inner_range_on, light_outer_range_on, 2, light_color)

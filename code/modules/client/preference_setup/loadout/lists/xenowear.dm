@@ -167,3 +167,19 @@
 	path = /obj/item/clothing/mask/gas/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
+
+// Thermal Clothes
+
+/datum/gear/uniform/thermal
+	display_name = "thermal suit selection"
+	path = /obj/item/clothing/under
+	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL)
+
+/datum/gear/uniform/thermal/New()
+	..()
+	var/thermal = list()
+	thermal["Skrell, black thermal suit"]= /obj/item/clothing/under/thermal/heat
+	thermal["Skrell, white thermal suit"]= /obj/item/clothing/under/thermal/heat/white
+	thermal["Unati, black thermal suit"]= /obj/item/clothing/under/thermal/heat/unati
+	thermal["Unati, white thermal suit"]= /obj/item/clothing/under/thermal/heat/unati/white
+	gear_tweaks += new/datum/gear_tweak/path(thermal)

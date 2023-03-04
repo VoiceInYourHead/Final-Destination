@@ -6,9 +6,11 @@
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
+	integrity_failure_cap = 80
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
+	dir = EAST
 	color = "#6e0000"
 	hide_from_reports = TRUE
 	known = 0
@@ -28,7 +30,7 @@
 
 /datum/shuttle/autodock/overmap/ares
 	name = "Ares"
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = list(/area/ship/ares/bridge, /area/ship/ares/interior, /area/ship/ares/kitchen, /area/ship/ares/bar, /area/ship/ares/mess_hall, /area/ship/ares/eng, /area/ship/ares/cargo, /area/ship/ares/mining, /area/ship/ares/janitor)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

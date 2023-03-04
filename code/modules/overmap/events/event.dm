@@ -167,6 +167,10 @@
 	icon = 'icons/obj/overmap.dmi'
 	icon_state = "event"
 	opacity = 1
+
+/*	// Events must be detected by sensors, but are otherwise instantly visible.
+	instant_contact = TRUE*/
+
 	color = "#880000"
 	var/list/events
 	var/list/event_icon_states
@@ -210,6 +214,7 @@
 	name = "bluespace nebula"
 	events = list(/datum/event/nebula)
 	event_icon_states = list("nebula")
+	weaknesses = OVERMAP_WEAKNESS_BLUESPACE
 	color = "#578ddd"
 
 /obj/effect/overmap/event/star

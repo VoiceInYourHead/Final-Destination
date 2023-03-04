@@ -15,7 +15,7 @@
 		/datum/job/submap/ascent_corvette/alate/pilot,
 		/datum/job/submap/ascent_corvette/serpentid,
 		/datum/job/submap/ascent_corvette/serpentid/queen,
-//		/datum/job/submap/ascent/drone
+		/datum/job/submap/ascent_corvette/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT_CORVETTE
 
@@ -184,14 +184,14 @@
 	)
 	skill_points = 18
 
-/*/datum/job/submap/ascent/drone
+/datum/job/submap/ascent_corvette/drone
 	title = "Ascent Drone"
 	supervisors = "the Gyne"
-	total_positions = 1
+	total_positions = 2
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist has fled her sisters, ending up in this sector full of primitive bioforms. Try to keep her alive, and assist where you can."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent
 	requires_supervisor = "Ascent Gyne"
-	use_species_whitelist = null*/
+	use_species_whitelist = null
 
 // Spawn points.
 
@@ -213,6 +213,10 @@
 
 /obj/effect/submap_landmark/spawnpoint/ascent_corvette/queen
 	name = "Ascent Monarch Queen"
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+
+/obj/effect/submap_landmark/spawnpoint/ascent_corvette/drone
+	name = "Ascent Drone"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 #undef WEBHOOK_SUBMAP_LOADED_ASCENT_CORVETTE

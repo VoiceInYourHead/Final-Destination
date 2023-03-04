@@ -43,10 +43,19 @@
 /obj/machinery/conveyor/ammobelt
 	name = "munition belt"
 	id = "ammobelt1"
+	layer = 2.21
 
 /obj/machinery/conveyor/ammobelt/comet
 	name = "comet belt"
 	id = "ammobeltcomet"
+
+/obj/machinery/conveyor/ammobelt/swordfish_right
+	name = "swordfish belt"
+	id = "ammobeltfishr"
+
+/obj/machinery/conveyor/ammobelt/swordfish_left
+	name = "swordfish belt"
+	id = "ammobeltfishl"
 
 /obj/machinery/conveyor_switch/ammobelt
 	name = "munition belt switch"

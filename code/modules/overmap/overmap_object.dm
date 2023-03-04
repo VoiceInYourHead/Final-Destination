@@ -1,8 +1,15 @@
+//var/global/list/overmap_unknown_ids = list()
+
 /obj/effect/overmap
 	name = "map object"
 	icon = 'icons/obj/overmap.dmi'
 	icon_state = "object"
 	color = "#fffffe"
+
+//	var/unknown_id                      // A unique identifier used when this entity is scanned. Assigned in Initialize().
+//	var/requires_contact = FALSE        // whether or not the effect must be identified by ship sensors before being seen.
+//	var/instant_contact  = FALSE        // do we instantly identify ourselves to any ship in sensors range?
+//	var/sensor_visibility = 10          // how likely it is to increase identification process each scan.
 
 	var/sector_flags = OVERMAP_SECTOR_KNOWN|OVERMAP_SECTOR_IN_SPACE
 	var/known = 1		//shows up on nav computers automatically
@@ -20,6 +27,12 @@
 	. = ..()
 	if(!GLOB.using_map.use_overmap)
 		return INITIALIZE_HINT_QDEL
+
+/*	if(requires_contact)
+		invisibility = INVISIBILITY_OVERMAP // Effects that require identification have their images cast to the client via sensors.
+
+	if(scannable)
+		unknown_id = "[pick(global.phonetic_alphabet)]-[random_id(/obj/effect/overmap, 100, 999)]"*/
 
 	if(known)
 		layer = ABOVE_LIGHTING_LAYER

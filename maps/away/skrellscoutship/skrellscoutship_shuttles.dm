@@ -15,7 +15,9 @@
 	icon_state = "ship"
 	moving_state = "ship_moving"
 	fore_dir = WEST
+	dir = WEST
 	color = "#ff00ff"
+	integrity_failure_cap = 110
 	vessel_mass = 1000
 	vessel_size = SHIP_SIZE_SMALL
 	initial_restricted_waypoints = list(
@@ -31,6 +33,8 @@
 	name = "SSV-S"
 	shuttle = "Skrellian Shuttle"
 	fore_dir = WEST
+	dir = WEST
+	integrity_failure_cap = 20
 	color = "#880088"
 	vessel_mass = 750
 	vessel_size = SHIP_SIZE_TINY
@@ -38,7 +42,7 @@
 /datum/shuttle/autodock/overmap/skrellscoutship
 	name = "Skrellian Scout"
 	warmup_time = 5
-	range = 1
+	range = 0 //range = 1
 	current_location = "nav_skrellscout_start"
 	shuttle_area = list(
 		/area/ship/skrellscoutship/command/bridge, /area/ship/skrellscoutship/wings/port, /area/ship/skrellscoutship/wings/starboard,
@@ -46,8 +50,8 @@
 		/area/ship/skrellscoutship/externalwing/port, /area/ship/skrellscoutship/externalwing/starboard, /area/ship/skrellscoutship/corridor,
 		/area/ship/skrellscoutship/crew/quarters, /area/ship/skrellscoutship/crew/medbay, /area/ship/skrellscoutship/crew/kitchen,
 		/area/ship/skrellscoutship/maintenance/power, /area/ship/skrellscoutship/hangar, /area/ship/skrellscoutship/command/armory,
-		/area/ship/skrellscoutship/dock, /area/ship/skrellscoutship/maintenance/atmos, /area/ship/skrellscoutship/robotics, 
-		/area/ship/skrellscoutship/crew/rec 
+		/area/ship/skrellscoutship/dock, /area/ship/skrellscoutship/maintenance/atmos, /area/ship/skrellscoutship/robotics,
+		/area/ship/skrellscoutship/crew/rec
 	)
 	defer_initialisation = TRUE
 	knockdown = FALSE
@@ -63,7 +67,7 @@
 	name = "Skrellian Shuttle"
 	warmup_time = 5
 	current_location = "nav_skrellscoutsh_dock"
-	range = 2
+	range = 1 //range = 2
 	shuttle_area = /area/ship/skrellscoutshuttle
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS

@@ -12,9 +12,13 @@
 	water_color = "#2b2840"
 	has_trees = TRUE
 	flora_diversity = 4
-	fauna_types = list(/mob/living/simple_animal/hostile/retaliate/royalcrab,
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/royalcrab,
 					   /mob/living/simple_animal/hostile/retaliate/jelly/alt,
-					   /mob/living/simple_animal/hostile/retaliate/beast/shantak/alt,
+					   /mob/living/simple_animal/hostile/smart_beast/shantak/alt,
+					   /mob/living/simple_animal/hostile/leech)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/royalcrab,
+					   /mob/living/simple_animal/hostile/retaliate/jelly/alt,
+					   /mob/living/simple_animal/hostile/smart_beast/shantak/alt,
 					   /mob/living/simple_animal/hostile/leech)
 
 

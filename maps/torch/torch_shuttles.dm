@@ -354,7 +354,7 @@ TORCH_ESCAPE_POD(17)
 	dock_target = "charon_shuttle"
 	current_location = "nav_hangar_charon"
 	landmark_transition = "nav_transit_charon"
-	range = 1
+	range = 0 //range = 1
 	fuel_consumption = 4
 	logging_home_tag = "nav_hangar_charon"
 	logging_access = access_expedition_shuttle_helm
@@ -443,7 +443,7 @@ TORCH_ESCAPE_POD(17)
 	current_location = "nav_hangar_aquila"
 	landmark_transition = "nav_transit_aquila"
 	dock_target = "aquila_shuttle"
-	range = 2
+	range = 1 //range = 2
 	logging_home_tag = "nav_hangar_aquila"
 	logging_access = access_aquila_helm
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch

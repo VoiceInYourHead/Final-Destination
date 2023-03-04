@@ -163,6 +163,8 @@
 	..()
 
 /obj/item/reagent_containers/food/snacks/grown/attackby(var/obj/item/W, var/mob/user)
+	if(isanimal(user))
+		return
 
 	if(seed)
 		if(seed.get_trait(TRAIT_PRODUCES_POWER) && isCoil(W))

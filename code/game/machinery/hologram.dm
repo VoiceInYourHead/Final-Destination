@@ -58,6 +58,11 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 	var/allow_ai = TRUE
 
+	var/project_holo = TRUE
+
+	var/translator_language_prefix = "1"
+	var/datum/language/translator_language
+
 /obj/machinery/hologram/holopad/New()
 	..()
 	desc = "It's a floor-mounted device for projecting holographic images. Its ID is '[loc.loc]'"
@@ -219,7 +224,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	return
 
 /obj/machinery/hologram/holopad/proc/activate_holocall(mob/living/carbon/caller_id)
-	if(caller_id)
+	if(caller_id && sourcepad.project_holo)
 		src.visible_message("A holographic image of [caller_id] flicks to life right before your eyes!")
 		create_holo(0,caller_id)//Create one.
 	else
@@ -249,6 +254,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			var/prefix = "<a href='byond://?src=\ref[master];trackname=[html_encode(name_used)];track=\ref[M]'>[follow]</a>"
 			master.show_message(get_hear_message(name_used, ai_text, verb, speaking, prefix), 2)
 	var/name_used = M.GetVoice()
+	var/list/handle_v = M.handle_speech_sound()
+	var/sound/speech_sound = handle_v[1]
+	var/sound_vol = handle_v[2]
 	var/message
 	if(isanimal(M) && !M.universal_speak)
 		var/datum/say_list/SA = M.say_list
@@ -257,14 +265,31 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	else
 		message = get_hear_message(name_used, text, verb, speaking)
 	if(targetpad && !targetpad.incoming_connection) //If this is the pad you're making the call from and the call is accepted
-		targetpad.audible_message(message)
+		var/turf/TT = get_turf(targetpad)
+		var/list/mobs = list()
+		var/list/objs = list()
+		get_mobs_and_objs_in_view_fast(TT, 7, mobs, objs, 1)
+
+		for(var/m in mobs)
+			var/mob/MM = m
+			MM.hear_holopad(text, verb, targetpad.translator_language, src, M, speech_sound, sound_vol)
+
 		targetpad.last_message = message
+
 	if(sourcepad && sourcepad.targetpad && !sourcepad.targetpad.incoming_connection) //If this is a pad receiving a call and the call is accepted
 		if(name_used==caller_id||text==last_message||findtext(text, "Holopad received")) //prevent echoes
 			return
-		sourcepad.audible_message(message)
 
-/obj/machinery/hologram/holopad/proc/get_hear_message(name_used, text, verb, datum/language/speaking, prefix = "")
+		var/turf/TT = get_turf(sourcepad)
+		var/list/mobs = list()
+		var/list/objs = list()
+		get_mobs_and_objs_in_view_fast(TT, 7, mobs, objs, 1)
+
+		for(var/m in mobs)
+			var/mob/MM = m
+			MM.hear_holopad(text, verb, sourcepad.translator_language, src, M, speech_sound, sound_vol)
+
+/obj/machinery/hologram/holopad/proc/get_hear_message(name_used, text, verb, datum/language/human/euro/speaking, prefix = "")
 	if(speaking)
 		return "<i><span class='game say'>Holopad received, <span class='name'>[name_used]</span>[prefix] [speaking.format_message(text, verb)]</span></i>"
 	return "<i><span class='game say'>Holopad received, <span class='name'>[name_used]</span>[prefix] [verb], <span class='message'>\"[text]\"</span></span></i>"
@@ -357,6 +382,10 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			continue
 
 		use_power_oneoff(power_per_hologram)
+
+	if(translator_language_prefix)
+		translator_language = language_keys[translator_language_prefix]
+
 	if(last_request + 200 < world.time&&incoming_connection==1)
 		if(sourcepad)
 			sourcepad.audible_message("<i><span class='game say'>The holopad connection timed out</span></i>")
@@ -396,7 +425,26 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/obj/effect/overlay/hologram = masters[user]
 		hologram.dir = new_dir
 
+/obj/machinery/hologram/holopad/proc/toggle(mob/user as mob)
+	if(project_holo)
+		project_holo = FALSE
+		to_chat(user, "<span class='notice'>Now your hologram will be hidden upon call.</span>")
+	else
+		project_holo = TRUE
+		to_chat(user, "<span class='notice'>Now your hologram will be shown upon call.</span>")
 
+/obj/machinery/hologram/holopad/verb/verb_toggleholo()
+	set src in oview(1)
+	set category = "Object"
+	set name = "Toggle Hologram"
+
+	if(!CanPhysicallyInteract(usr))
+		return
+
+	if(ishuman(usr))
+		src.toggle(usr)
+	else
+		to_chat(usr, "<span class='warning'>This mob type can't use this verb.</span>")
 
 /*
  * Hologram
@@ -466,9 +514,79 @@ Holographic project of everything else.
 
 // Used for overmap capable ships that should have communications, but not be AI accessible
 /obj/machinery/hologram/holopad/longrange/remoteship
+	translator_language_prefix = "j"
 	allow_ai = FALSE
 
 #undef RANGE_BASED
 #undef AREA_BASED
 #undef HOLOPAD_PASSIVE_POWER_USAGE
 #undef HOLOGRAM_POWER_USAGE
+
+/mob/proc/hear_holopad(var/message, var/verb = "says", var/datum/language/language = null, var/obj/machinery/hologram/source = null, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol)
+	if(!client)
+		return
+
+	if(speaker && !speaker.client && isghost(src) && get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && !(speaker in view(src)))
+			//Does the speaker have a client?  It's either random stuff that observers won't care about (Experiment 97B says, 'EHEHEHEHEHEHEHE')
+			//Or someone snoring.  So we make it where they won't hear it.
+		return
+
+	if(language && (language.flags & (NONVERBAL|SIGNLANG)))
+		return
+
+	var/speaker_name = "Unknown"
+	if(speaker)
+		speaker_name = speaker.name
+
+	//make sure the air can transmit speech - hearer's side
+	var/turf/T = get_turf(src)
+	if ((T) && (!(isghost(src)))) //Ghosts can hear even in vacuum.
+		var/datum/gas_mixture/environment = T.return_air()
+		var/pressure = (environment)? environment.return_pressure() : 0
+		if(pressure < SOUND_MINIMUM_PRESSURE && get_dist(speaker, src) > 1)
+			return
+
+		if (pressure < ONE_ATMOSPHERE*0.4) //sound distortion pressure, to help clue people in that the air is thin, even if it isn't a vacuum yet
+			sound_vol *= 0.5 //muffle the sound a bit, so it's like we're actually talking through contact
+
+	if(sleeping || stat == UNCONSCIOUS)
+		hear_sleep(message)
+		return
+
+	if(!(language && (language.flags & INNATE))) // skip understanding checks for INNATE languages
+		if(!say_understands(speaker,language))
+			if(!istype(speaker,/mob/living/simple_animal))
+				if(language)
+					message = language.scramble(message, languages)
+				else
+					message = stars(message)
+
+	if(isghost(src))
+		if(speaker_name != speaker.real_name && speaker.real_name)
+			speaker_name = "[speaker.real_name] ([speaker_name])"
+		if(get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && (speaker in view(src)))
+			message = "<b>[message]</b>"
+
+	if(is_deaf() || get_sound_volume_multiplier() < 0.2)
+		if(!language || !(language.flags & INNATE)) // INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
+			if(!is_blind())
+				to_chat(src, "<span class='name'>[speaker_name]</span>[speaker_name] talks but you cannot hear \him.")
+	else
+		if (language)
+			var/nverb = verb
+			if (say_understands(speaker, language))
+				var/skip = FALSE
+				if (isliving(src))
+					var/mob/living/L = src
+					skip = L.default_language == language
+				if (!skip)
+					switch(src.get_preference_value(/datum/client_preference/language_display))
+						if(GLOB.PREF_FULL) // Full language name
+							nverb = "[verb] in [language.name]"
+						if(GLOB.PREF_SHORTHAND) //Shorthand codes
+							nverb = "[verb] ([language.shorthand])"
+						if(GLOB.PREF_OFF)//Regular output
+							nverb = verb
+			on_hear_say("<i><span class='game say'>Holopad received, <span class='name'>[speaker_name]</span> [nverb], <span class='message'>\"[message]\"</span></span></i>")
+		if (speech_sound && (get_dist(speaker, src) <= world.view && src.z == speaker.z))
+			src.playsound_local(source.loc, speech_sound, sound_vol, 1)

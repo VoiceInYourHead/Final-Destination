@@ -8,8 +8,10 @@
 	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
+	integrity_failure_cap = 60
 	vessel_mass = 5000
 	fore_dir = SOUTH
+	dir = SOUTH
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 
@@ -17,6 +19,7 @@
 	name = "Lepidopterax"
 	shuttle = "Lepidopterax"
 	fore_dir = NORTH
+	integrity_failure_cap = 60
 
 /obj/machinery/computer/shuttle_control/explore/ascent_inf
 	name = "shuttle control console"
@@ -47,7 +50,7 @@
 	name = "Trichopterax"
 	warmup_time = 5
 	current_location = "nav_hangar_ascent_inf_one"
-	range = 2
+	range = 1 //range = 2
 	dock_target = "ascent_inf_port_shuttle_dock"
 	shuttle_area = /area/ship/ascent_inf/shuttle_port
 	defer_initialisation = TRUE
@@ -59,7 +62,7 @@
 	name = "Lepidopterax"
 	warmup_time = 5
 	current_location = "nav_hangar_ascent_inf_two"
-	range = 2
+	range = 1 //range = 2
 	dock_target = "ascent_inf_starboard"
 	shuttle_area = /area/ship/ascent_inf/shuttle_starboard
 	defer_initialisation = TRUE

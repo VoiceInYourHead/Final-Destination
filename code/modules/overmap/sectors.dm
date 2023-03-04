@@ -4,6 +4,7 @@
 /obj/effect/overmap/visitable
 	name = "map object"
 	scannable = TRUE
+	dir = 1
 
 	var/list/map_z = list()
 
@@ -19,8 +20,11 @@
 
 	var/base = 0		//starting sector, counts as station_levels
 	var/fore_dir = NORTH                //what dir is considered north for the actual map
+	dir = NORTH
 
 	var/hide_from_reports = FALSE
+
+//	var/list/associated_machinery
 
 /obj/effect/overmap/visitable/Initialize()
 	. = ..()
@@ -52,6 +56,30 @@
 
 	LAZYADD(SSshuttle.sectors_to_initialize, src) //Queued for further init. Will populate the waypoint lists; waypoints not spawned yet will be added in as they spawn.
 	SSshuttle.clear_init_queue()
+
+/*/obj/effect/overmap/visitable/proc/get_linked_machines_of_type(var/base_type)
+	ASSERT(ispath(base_type, /obj/machinery))
+	for(var/thing in LAZYACCESS(associated_machinery, base_type))
+		var/weakref/machine_ref = thing
+		var/obj/machinery/machine = machine_ref.resolve()
+		if(istype(machine, base_type) && !QDELETED(machine))
+			LAZYDISTINCTADD(., machine)
+		else
+			LAZYREMOVE(associated_machinery[base_type], thing)
+
+/obj/effect/overmap/visitable/proc/unregister_machine(var/obj/machinery/machine, var/base_type)
+	ASSERT(istype(machine))
+	base_type = base_type || machine.base_type || machine.type
+	if(islist(associated_machinery) && associated_machinery[base_type])
+		LAZYREMOVE(associated_machinery[base_type], weakref(machine))
+
+/obj/effect/overmap/visitable/proc/register_machine(var/obj/machinery/machine, var/base_type)
+	ASSERT(istype(machine))
+	if(!QDELETED(machine))
+		base_type = base_type || machine.base_type || machine.type
+		LAZYINITLIST(associated_machinery)
+		LAZYDISTINCTADD(associated_machinery[base_type], weakref(machine))*/
+
 
 //This is called later in the init order by SSshuttle to populate sector objects. Importantly for subtypes, shuttles will be created by then.
 /obj/effect/overmap/visitable/proc/populate_sector_objects()

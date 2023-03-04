@@ -49,9 +49,9 @@
 	desc = "Wake signature indicates a small armed vessel."
 	fore_dir = NORTH
 	color = "#0751f3"
-	alpha = 30
+	integrity_failure_cap = 60
 	skill_needed = SKILL_BASIC
-	vessel_mass = 750
+	vessel_mass = 3000
 	vessel_size = SHIP_SIZE_SMALL
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.5 SECONDS
@@ -61,21 +61,10 @@
 		"Comet Landing Zone" = list("nav_comet_bomber_start")
 	)
 
-/obj/effect/overmap/visitable/ship/landable/comet
-	name = "PM-07-L Comet Bomber"
-	shuttle = "PM-07-L Comet Bomber"
-	desc = "Wake signature indicates a small armed vessel."
-	fore_dir = NORTH
-	color = "#0751f3"
-	alpha = 30
-	skill_needed = SKILL_BASIC
-	vessel_mass = 750
-	vessel_size = SHIP_SIZE_SMALL
-
 /datum/shuttle/autodock/overmap/comet
 	name = "PM-07-L Comet Bomber"
 	warmup_time = 3
-	range = 1
+	range = 0 //range = 1
 	shuttle_area = /area/ship/comet
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
