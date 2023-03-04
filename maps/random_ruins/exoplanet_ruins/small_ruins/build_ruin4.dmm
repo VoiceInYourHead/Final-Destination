@@ -60,10 +60,11 @@
 "LB" = (/obj/random/coin,/obj/effect/decal/cleanable/filth,/obj/random/obstruction,/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
 "MH" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{dir = 4},/obj/machinery/power/port_gen/pacman/mrs,/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/effect/floor_decal/corner_techfloor_gray/diagonal,/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
 "MP" = (/turf/simulated/floor/plating/vox,/area/map_template/build/build4)
-"MS" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/sensors_jammer,/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
+"MS" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
 "MT" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/random/cash,/obj/effect/decal/cleanable/liquid_fuel,/obj/random/solgov,/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
 "NM" = (/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/liquid_fuel,/obj/random/solgov,/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
 "Or" = (/obj/item/material/shard{icon_state = "shrapnellarge"; default_material = "steel"},/turf/template_noop,/area/template_noop)
+"OF" = (/obj/machinery/sensors_jammer,/turf/simulated/floor/reinforced,/area/map_template/build/build4)
 "Pi" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/random/advdevice,/turf/simulated/floor/tiled/techmaint/vox,/area/map_template/build/build4)
 "PE" = (/obj/effect/landmark/damager{random_dam_max = 200; random_dam_min = 120},/turf/simulated/wall/r_wall/hull/vox,/area/map_template/build/build4)
 "PI" = (/obj/effect/wallframe_spawn/reinforced/hull/vox,/turf/simulated/floor/plating/vox,/area/map_template/build/build4)
@@ -93,7 +94,7 @@ ZvZvZvrvPErvEhrvHKhpLrTwnLCMhlrxZvZvZvZv
 ZvZvZvZvnQXxQfoceCRsfXTwApwahlrxZvZvZvZv
 ZvZvZvZvrvrvLBXEPiMTFuTwfzcCPErvPEZvZvZv
 ZvZvPErvrvpnCppkLmPVDgLuohBjMPIsZvZvZvZv
-ZvZvZvHsPIQONMMSsqEQzhTwCmMHwxOrZvZvZvZv
+ZvZvZvOFPIQONMMSsqEQzhTwCmMHwxOrZvZvZvZv
 ZvZvZvrvrvTwVVTwcQTwugTwonqWPEPEXaIsZvZv
 ZvrvrvPECckXVoABTwcDIQTwTwrvPEZvZvZvZvZv
 ZvZvZvrvFvAlkWYGpzznfhcJovrvZvZvOrZvZvZv

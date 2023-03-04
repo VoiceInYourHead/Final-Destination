@@ -4,7 +4,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
+	frequency = 1380;
 	id_tag = "build1_interior_door"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
@@ -183,6 +183,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/random/loot,
 /turf/simulated/floor/plating,
 /area/map_template/build)
 "ft" = (
@@ -319,7 +320,8 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "build1_sensor_chamber";
-	pixel_x = 22
+	pixel_x = 22;
+	frequency = 1380
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/map_template/build)
@@ -360,12 +362,13 @@
 	cycle_to_external_air = 1;
 	id_tag = "build1";
 	pixel_y = 28;
-	tag_airpump = "buld1_pump";
+	tag_airpump = "build1_pump";
 	tag_chamber_sensor = "build1_sensor_chamber";
 	tag_exterior_door = "build1_exterior_door";
 	tag_exterior_sensor = "build1_sensor_external";
 	tag_interior_door = "build1_interior_door";
-	tag_interior_sensor = "build1_sensor_interior"
+	tag_interior_sensor = "build1_sensor_interior";
+	frequency = 1380
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "build1_pump";
@@ -659,11 +662,13 @@
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "build1";
 	pixel_x = -22;
-	pixel_y = 5
+	pixel_y = 5;
+	frequency = 1380
 	},
 /obj/machinery/airlock_sensor/airlock_interior{
 	id_tag = "build1_sensor_interior";
-	pixel_x = -22
+	pixel_x = -22;
+	frequency = 1380
 	},
 /obj/machinery/alarm/noaccess{
 	pixel_y = 20
@@ -676,6 +681,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/air/airlock,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/build)
 "xK" = (
@@ -786,9 +793,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/build)
 "AV" = (
@@ -923,6 +928,9 @@
 "Gd" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/map_template/build)
@@ -1103,6 +1111,7 @@
 /obj/structure/bed/roller/ironingboard,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/decal/cleanable/dirt,
+/obj/random/loot,
 /turf/simulated/floor/tiled/white,
 /area/map_template/build)
 "Lv" = (
@@ -1117,7 +1126,7 @@
 /area/map_template/build)
 "LI" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
+	frequency = 1380;
 	id_tag = "build1_exterior_door";
 	locked = 1
 	},
@@ -1240,12 +1249,14 @@
 	},
 /obj/machinery/airlock_sensor/airlock_exterior{
 	id_tag = "build1_sensor_external";
-	pixel_x = 22
+	pixel_x = 22;
+	frequency = 1380
 	},
 /obj/machinery/access_button/airlock_exterior{
 	master_tag = "build1";
 	pixel_x = 19;
-	pixel_y = 5
+	pixel_y = 5;
+	frequency = 1380
 	},
 /obj/machinery/light/small{
 	dir = 1
