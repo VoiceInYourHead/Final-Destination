@@ -122,3 +122,7 @@
 /obj/item/stock_parts/circuitboard/guestpass
 	name = T_BOARD("guest pass terminal")
 	build_path = /obj/machinery/computer/guestpass
+
+/obj/item/stock_parts/circuitboard/jammer
+	name = T_BOARD("jammer console")
+	build_path = /obj/machinery/computer/ship/jammer

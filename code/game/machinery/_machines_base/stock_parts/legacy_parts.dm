@@ -186,3 +186,13 @@
 	desc = "A large piece of equipment used to open a window into the subspace dimension."
 	origin_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 3)
 	matter = list(MATERIAL_STEEL = 50)
+
+// Rating 4
+
+/obj/item/stock_parts/manipulator/femto
+	name = "femto-manipulator"
+	desc = "A tiny little manipulator used in the construction of certain devices."
+	icon_state = "femto_mani"
+	origin_tech = list(TECH_MATERIAL = 6, TECH_DATA = 4)
+	rating = 4
+	matter = list(MATERIAL_STEEL = 30,MATERIAL_SILVER = 10)

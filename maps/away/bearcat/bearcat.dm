@@ -19,6 +19,9 @@
 	name = "light freighter"
 	color = "#00ffff"
 	vessel_mass = 20000
+	integrity_failure_cap = 150
+	integrity_failure = 60
+	do_repair_hull = FALSE
 	max_speed = 1/(10 SECONDS)
 	burn_delay = 10 SECONDS
 

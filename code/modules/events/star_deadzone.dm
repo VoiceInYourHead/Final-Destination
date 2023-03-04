@@ -9,7 +9,7 @@
 		return res
 
 /datum/event/star/announce()
-	command_announcement.Announce("The [location_name()] is heading too close to the star deadzone.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("[location_name()] держит прямой курс в зону опасности звезды М-класса. Рекомендации: Незамедлительно сменить курс и покинуть зону поражения.", "[location_name()] Sensor Array", zlevels = affecting_z)
 	sleep(20)
 	for(var/mob/living/S in world)
 		if (S.z in affecting_z)
@@ -36,8 +36,11 @@
 			if(firecount >= actual_severity)
 				break
 
+		victim.damage_hull(0.25)
+
 /datum/event/star/end()
-	command_announcement.Announce("[location_name()] managed to move far enough from the star deadzone.", "[location_name()] Sensor Array", zlevels = affecting_z)
+//	command_announcement.Announce("[location_name()] managed to move far enough from the star deadzone.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	return
 
 /atom/proc/sun_flare()
 	if(locate(/obj/effect/turf_fire/star_fire) in src)
@@ -51,7 +54,7 @@
 
 
 /datum/event/star/strong/announce()
-	command_announcement.Announce("The [location_name()] is floating in front of a burning star. Recommendations: Leave burning deadzone immediately.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("[location_name()] находится в опасной близости к звезде М-класса. Рекомендации: Незамедлительно сменить курс и покинуть зону поражения.", "[location_name()] Sensor Array", zlevels = affecting_z)
 	sleep(20)
 	for(var/mob/living/S in world)
 		if (S.z in affecting_z)
@@ -77,6 +80,8 @@
 
 			if(firecount >= actual_severity)
 				break
+
+		victim.damage_hull(0.75)
 
 /datum/event/star/strong/end()
 	return

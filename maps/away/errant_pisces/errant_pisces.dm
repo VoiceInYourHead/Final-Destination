@@ -4,9 +4,13 @@
 	name = "XCV Ahab's Harpoon"
 	desc = "Sensors detect civilian vessel with unusual signs of life aboard."
 	color = "#bd6100"
+	integrity_failure_cap = 150
+	integrity_failure = 30
+	do_repair_hull = FALSE
 	max_speed = 1/(3 SECONDS)
 	burn_delay = 15 SECONDS
 	fore_dir = SOUTH
+	dir = SOUTH
 
 /datum/map_template/ruin/away_site/errant_pisces
 	name = "Errant Pisces"

@@ -128,7 +128,7 @@
 	if(!blinded)
 		flash_eyes()
 
-	playsound(usr.loc, 'sound/effects/ringing_ears.ogg', 100, 1)
+	sound_to(src, sound('sound/effects/ringing_ears.ogg', volume=100))
 
 	var/b_loss = null
 	var/f_loss = null

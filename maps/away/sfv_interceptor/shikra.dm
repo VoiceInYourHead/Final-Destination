@@ -50,6 +50,7 @@
 	fore_dir = NORTH
 	color = "#0751f3"
 	alpha = 30
+	integrity_failure_cap = 25
 	skill_needed = SKILL_BASIC
 	vessel_mass = 3000
 	vessel_size = SHIP_SIZE_SMALL

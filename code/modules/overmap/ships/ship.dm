@@ -47,6 +47,17 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/coord_target_x = 10
 	var/coord_target_y = 10
 
+	var/integrity_failure_cap = 250		// max health
+	var/integrity_failure = 0	// current health level
+
+	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ МАССЫ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ КОРАБЛЬ!"
+	var/announcer_name = "'Автоматический отчёт о техническом состоянии"
+
+	var/do_repair_hull = TRUE
+	var/repair_speed = 0.005 //per tick
+
+	var/destroyed = FALSE
+
 //	var/list/navigation_viewers // list of weakrefs to people viewing the overmap via this ship
 
 /obj/effect/overmap/visitable/ship/Initialize()
@@ -90,6 +101,14 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	. = ..()
 	if(!is_still())
 		. += "<br>Heading: [get_heading_angle()], speed [get_speed() * 1000]"
+	if(integrity_failure >= integrity_failure_cap)
+		. += "<br><br>The [src] is wrecked beyond repair."
+	else if(integrity_failure > integrity_failure_cap * 0.75)
+		. += "<br><br>Gaps in hull of the [src] is bursting with flames, as it's structure integrity is critical!"
+	else if(integrity_failure > integrity_failure_cap * 0.5)
+		. += "<br><br>The [src] hull looks seriously damaged!"
+	else if(integrity_failure > integrity_failure_cap * 0.25)
+		. += "<br><br>The [src] shows signs of structural damage!"
 
 //Projected acceleration based on information from engines
 /obj/effect/overmap/visitable/ship/proc/get_acceleration()
@@ -174,6 +193,15 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	adjust_speed(delta * dx, delta * dy)
 
 /obj/effect/overmap/visitable/ship/Process()
+	if(destroyed)
+		return
+	if(integrity_failure >= integrity_failure_cap)
+		go_boom()
+		spawn(get_areas().len) go_boom_overmap()
+		STOP_PROCESSING(SSobj, src)
+		return
+	if(integrity_failure > 0 && do_repair_hull)
+		repair_hull(repair_speed)
 	if(!halted && !is_still())
 		var/list/deltas = list(0,0)
 		for(var/i = 1 to 2)
@@ -210,6 +238,48 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 					M.client.pixel_x = pixel_x
 					M.client.pixel_y = pixel_y
 	..()
+
+/obj/effect/overmap/visitable/ship/proc/go_boom_overmap()
+	adjust_speed(-speed[1], -speed[2])
+	halted = 1
+	icon_state = "ship_exploding"
+	spawn(45) icon_state = "ship_exploded"
+
+/obj/effect/overmap/visitable/ship/proc/go_boom()
+	set waitfor = 0
+	if(destroyed)
+		return
+	destroyed = TRUE
+	GLOB.global_announcer.autosay(announce_text, "[announcer_name] " + "[name]")
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z in map_z))
+			continue
+		shake_camera(M, 20)
+		if(!isdeaf(M))
+			sound_to(M, 'sound/ambience/matteralarm.ogg')
+	sleep(40)
+	var/list/boomareas = get_areas()
+	boomareas -= locate(/area/space)
+	log_and_message_admins("[name] разъёбывается на ошмётки силой в [max(1,round(get_areas().len / 4))] бабаха.")
+	for(var/i = 1 to max(1, round(get_areas().len / 4) ))
+		sleep(rand(6,12))
+		var/area/finalarea = pick(boomareas)
+		var/turf/targetturf = pick_area_turf(finalarea.type, list(/proc/is_not_space_turf))
+		explosion(targetturf,rand(2,4),rand(5,8),rand(8,10),adminlog = 0)
+		for(var/mob/M in GLOB.player_list)
+			var/turf/T = get_turf(M)
+			if(!T || !(T.z in map_z))
+				continue
+			shake_camera(M, 10)
+			if(!isdeaf(M))
+				sound_to(M, sound('sound/effects/explosionfar.ogg', volume=50))
+
+/obj/effect/overmap/visitable/ship/proc/damage_hull(var/amount)
+	integrity_failure += amount
+
+/obj/effect/overmap/visitable/ship/proc/repair_hull(var/amount)
+	integrity_failure = max(0, integrity_failure - amount)
 
 /obj/effect/overmap/visitable/ship/proc/burn()
 	for(var/datum/ship_engine/E in engines)

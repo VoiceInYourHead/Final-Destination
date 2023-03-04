@@ -69,7 +69,10 @@
 	color = "#233012"
 	icon_state = "ship"
 	moving_state = "ship_moving"
+	vessel_mass = 6000
+	integrity_failure_cap = 110
 	fore_dir = NORTHWEST
+	dir = NORTHWEST
 	vessel_size = SHIP_SIZE_SMALL
 
 //Ship's little lander defined here
@@ -101,7 +104,10 @@
 	name = "Unmarked shuttle"
 	shuttle = "Vox Scavenger Shuttle"
 	desc = "Sensor array detects a small, unmarked vessel."
+	vessel_mass = 3000
+	integrity_failure_cap = 35
 	fore_dir = SOUTHEAST
+	dir = SOUTHEAST
 	vessel_size = SHIP_SIZE_TINY
 
 /obj/effect/submap_landmark/joinable_submap/voxship/scavship
@@ -156,7 +162,7 @@
 /obj/machinery/power/smes/buildable/preset/voxship/ship
 	uncreated_component_parts = list(
 		/obj/item/stock_parts/smes_coil/super_capacity = 1,
-		/obj/item/stock_parts/smes_coil/super_io = 1
+		/obj/item/stock_parts/smes_coil/super_io = 2
 	)
 	_input_maxed = TRUE
 	_output_maxed = TRUE

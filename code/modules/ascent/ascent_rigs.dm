@@ -54,11 +54,9 @@
 	desc = "A fusion-powered blade nanofabricator of Ascent design."
 	interface_name = "nanoblade projector"
 	interface_desc = "A fusion-powered blade nanofabricator of Ascent design."
-	icon = 'icons/obj/ascent.dmi'
-	icon_state = "blade"
 	interface_name = "nanoblade"
 	usable = FALSE
-	gun = /obj/item/gun/energy/crossbow/ninja/mounted //inf, was null
+	gun = null
 
 /obj/item/rig_module/mounted/flechette_rifle
 	name = "flechette rifle"
@@ -67,7 +65,7 @@
 	interface_desc = "A flechette nanofabricator and launch system of Ascent design."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "rifle"
-	gun = /obj/item/gun/energy/particle/railgun
+	gun = /obj/item/gun/energy/particle/flechette
 
 /obj/item/rig_module/mounted/particle_rifle
 	name = "particle rifle"
@@ -208,10 +206,10 @@
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "injector"
 	charges = list(
-		list("bromide",             "bromide",             /datum/reagent/toxin/bromide, 30),
-		list("crystallizing agent", "crystallizing agent", /datum/reagent/crystal,       30),
-		list("dylovene",        	"dylovene",      	   /datum/reagent/dylovene,      30),
-		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      30)
+		list("bromide",				"bromide",				/datum/reagent/toxin/bromide, 30),
+		list("crystallizing agent",	"crystallizing agent",	/datum/reagent/crystal,       30),
+		list("dylovene",			"dylovene",				/datum/reagent/dylovene,      30),
+		list("tramadol",			"tramadol",				/datum/reagent/tramadol,      30)
 	)
 
 /obj/item/rig_module/chem_dispenser/nabber

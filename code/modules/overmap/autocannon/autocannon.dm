@@ -21,20 +21,20 @@
 		return ..()
 
 /obj/machinery/autocannon/front_part
-	name = "autocannon muzzle"
+	name = "M2410 autocannon muzzle"
 	desc = "An old-fashion autocannon muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
 
 /obj/machinery/autocannon/middle_part
-	name = "autocannon barrel"
+	name = "M2410 autocannon barrel"
 	desc = "An old-fashion gas tube that propels munitions to the autocannon muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
 	icon_state = "magazine"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
 /obj/machinery/autocannon/back_part
-	name = "autocannon breech end"
+	name = "M2410 autocannon breech end"
 	desc = "An old-fashion ammo reciever. Munition then goes to autocannon barrel."
 	icon_state = "ammo_loader"
 	density = FALSE
@@ -48,7 +48,7 @@
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
 /obj/item/stock_parts/circuitboard/autocannonfront
-	name = T_BOARD("autocannon turret")
+	name = T_BOARD("autocannon muzzle")
 	build_path = /obj/machinery/autocannon/front_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -57,7 +57,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/autocannonmiddle
-	name = T_BOARD("autocannon breech end")
+	name = T_BOARD("autocannon barrel")
 	build_path = /obj/machinery/autocannon/middle_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -66,7 +66,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/autocannonback
-	name = T_BOARD("autocannon munition rack")
+	name = T_BOARD("autocannon breech end")
 	build_path = /obj/machinery/autocannon/back_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)

@@ -25,7 +25,7 @@
 	)
 
 /obj/effect/paint/red/dark
-	color = "#3b0404"
+	color = "#420d0d"
 
 /obj/machinery/suit_storage_unit/mining/shade
 	req_access = null

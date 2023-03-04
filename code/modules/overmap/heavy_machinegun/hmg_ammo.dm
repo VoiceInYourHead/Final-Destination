@@ -1,10 +1,9 @@
 /obj/structure/ship_munition/ammobox/hmg
-	name = "30mm ammo box"
-	desc = "Ammo box that contains 30mm rounds."
+	name = "44mm ammo box"
+	desc = "Ammo box that contains 44mm rounds."
 	icon = 'icons/obj/disperser.dmi'
 	icon_state = "ammocrate_autocannon1"
 	layer = 2.22
-	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	ammo_count = 120
 	ammo_type = /obj/item/projectile/bullet/hmg_ship
 

@@ -15,7 +15,9 @@
 	icon_state = "ship"
 	moving_state = "ship_moving"
 	fore_dir = WEST
+	dir = WEST
 	color = "#ff00ff"
+	integrity_failure_cap = 110
 	vessel_mass = 1000
 	vessel_size = SHIP_SIZE_SMALL
 	initial_restricted_waypoints = list(
@@ -31,6 +33,8 @@
 	name = "SSV-S"
 	shuttle = "Skrellian Shuttle"
 	fore_dir = WEST
+	dir = WEST
+	integrity_failure_cap = 20
 	color = "#880088"
 	vessel_mass = 750
 	vessel_size = SHIP_SIZE_TINY

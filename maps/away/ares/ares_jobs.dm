@@ -16,7 +16,7 @@
 	l_ear = null
 
 /datum/job/submap/ares
-	title = "Prospectoring Specialist"
+	title = "Prospecting Specialist"
 	total_positions = 6
 	supervisors = "nobody but yourself"
 	info = "FOR ROCK AND STONE BROTHA!"
@@ -54,7 +54,7 @@
 
 
 /obj/effect/submap_landmark/spawnpoint/ares
-	name = "Prospectoring Specialist"
+	name = "Prospecting Specialist"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/ares/cyborg

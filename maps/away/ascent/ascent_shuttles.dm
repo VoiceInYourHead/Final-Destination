@@ -8,8 +8,10 @@
 	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
+	integrity_failure_cap = 60
 	vessel_mass = 5000
 	fore_dir = SOUTH
+	dir = SOUTH
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 
@@ -17,6 +19,7 @@
 	name = "Lepidopterax"
 	shuttle = "Lepidopterax"
 	fore_dir = NORTH
+	integrity_failure_cap = 60
 
 /obj/machinery/computer/shuttle_control/explore/ascent_inf
 	name = "shuttle control console"

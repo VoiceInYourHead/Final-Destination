@@ -23,10 +23,12 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Ion beam emitter"
 
+	var/hull_damage = 75
+
 	var/obj/machinery/beam_cannon/front_part/front
 	var/obj/machinery/beam_cannon/middle_part/middle
 	var/obj/machinery/beam_cannon/back_part/back
-	var/obj/structure/ship_munition/ammobox/beam_cannon/munition
+	var/obj/structure/ship_munition/ammobox/cell/munition
 
 	var/fire_type = /obj/effect/turf_fire/star_fire/strong
 
@@ -64,14 +66,14 @@
 		return TRUE
 
 	for(front in SSmachines.machinery)
-		if(get_dist(src, front) >= link_range)
+		if(get_dist(src, front) >= link_range || front.z != src.z)
 			continue
 		var/backwards = turn(front.dir, 180)
 		middle = locate() in get_step(front, backwards)
-		if(!middle || get_dist(src, middle) >= link_range)
+		if(!middle || get_dist(src, middle) >= link_range || middle.z != src.z)
 			continue
 		back = locate() in get_step(middle, backwards)
-		if(!back || get_dist(src, back) >= link_range)
+		if(!back || get_dist(src, back) >= link_range || back.z != src.z)
 			continue
 		if(is_valid_setup())
 			GLOB.destroyed_event.register(front, src, .proc/release_links)
@@ -245,6 +247,9 @@
 	var/turf/start = front
 	var/direction = front.dir
 
+	if(!front || !munition) //Meanwhile front might have exploded
+		return
+
 	var/list/relevant_z = GetConnectedZlevels(start.z)
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
@@ -327,7 +332,7 @@
 			QDEL_IN(target, rand(beam_time / 2, beam_time))
 		return TRUE
 	if(istype(target, /obj/effect/overmap/projectile))
-		if(prob(100 - cal_accuracy() / 2))
+		if(!prob(100 - cal_accuracy() / 2))
 			target.Destroy()
 		return TRUE
 
@@ -335,17 +340,17 @@
 	var/z_level = pick(finaltarget.map_z)
 
 	//Success, but we missed.
-	if(prob(100 - cal_accuracy() && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet)))
+	if(prob(100 - cal_accuracy()) && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
 		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снар€д даже нашЄл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 		return TRUE
 	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
-		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name, firing_on_planet = TRUE)
+		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget, firing_on_planet = TRUE)
 		return TRUE
-	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget.name)
+	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget.dir, finaltarget)
 
 	return TRUE
 
-/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/target_name, var/firing_on_planet = FALSE)
+/obj/machinery/computer/ship/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/target_dir, var/obj/effect/overmap/target, var/firing_on_planet = FALSE)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -437,7 +442,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("Ћуч от [linked.name], выпущенный из [gun_name] - успешно попал в [target_name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Ћуч от [linked.name], выпущенный из [gun_name] - успешно попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/list/relevant_z = GetConnectedZlevels(z_level)
 	for(var/mob/M in GLOB.player_list)
@@ -450,6 +455,17 @@
 //	handle_beam(start, heading)				ебана€ параша на beam() без каких либо причин не хочет проводить лучик через судно врага, ни рантаймов ни ошибок - по этому замен€ю костылЄм
 	handle_beam_on_enemy(start, heading)//	хоть и костыль но выгл€дит очень модно :P
 	handle_beam_damage(start, heading, TRUE)
+
+	if(istype(target, /obj/effect/overmap/visitable/ship))
+		var/must_damage = FALSE
+		var/obj/effect/overmap/visitable/ship/target_vessel = target
+		for(var/turf/T in getline(start,get_target_turf(start, heading)))
+			if(T.density)
+				must_damage = TRUE
+			for(var/atom/A in T)
+				if(A.density && istype(A, /obj/effect/shield))
+					must_damage = FALSE
+		if(must_damage) target_vessel.damage_hull(hull_damage)
 
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE
@@ -470,7 +486,7 @@
 			var/def_angle = pick(90,-90,0)
 			handle_beam_damage(get_step(T, turn(d, 180)), turn(d,180 + def_angle), TRUE)
 			handle_beam_on_enemy(get_step(T, turn(d, 180)), turn(d,180 + def_angle))
-			log_and_message_admins("attempted to fire the [gun_name].")
+			log_and_message_admins("Ћуч [gun_name] смешно отрикошетил от щита.")
 			break
 		if(T.density && !killing_floor)
 			sleep(beam_speed)
@@ -480,8 +496,10 @@
 		else if(killing_floor && !istype(T, /turf/space))
 			sleep(beam_speed)
 			explosion(T,1,1,2,3,adminlog = 0)
-			if(T)
-				T.Destroy()
+			if(istype(T, /turf/simulated/wall))
+				var/turf/simulated/wall/W = T
+				if(W)
+					W.dismantle_wall()
 			var/list/relevant_z = GetConnectedZlevels(s.z)
 			for(var/mob/M in GLOB.player_list)
 				var/turf/J = get_turf(M)
@@ -494,7 +512,7 @@
 				new fire_type(right)
 			if(!left.density && !istype(left, /turf/space))
 				new fire_type(left)
-			if(!T.density && !istype(right, /turf/space))
+			if(!T.density && !istype(T, /turf/space))
 				new fire_type(T)
 		else
 			sleep(beam_speed)
@@ -526,7 +544,10 @@
 
 /obj/machinery/computer/ship/beam_cannon/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
+	if(linked.z == 11)
+		linked.Beam(get_step(linked, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
+	else
+		linked.loc.Beam(get_step(linked.loc, overmapdir), beam_icon, time = beam_time, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/beam_cannon/proc/get_target_turf(var/turf/s, var/d)
 	switch(d)

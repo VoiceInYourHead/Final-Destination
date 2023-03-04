@@ -89,6 +89,17 @@
 	evac_no_return -= time_diff
 
 /datum/evacuation_controller/starship/call_evacuation(var/mob/user, var/_emergency_evac, var/forced, var/skip_announce, var/autotransfer)
+	var/doomed = FALSE
+	if(!_emergency_evac)
+		doomed = TRUE
+		for(var/obj/machinery/bluespacedrive/BSD in SSmachines.machinery)
+			if(BSD.z in GetConnectedZlevels(1) || BSD.z == 1)
+				doomed = FALSE
+
+	if(doomed)
+		to_chat(user, "Unable to initiate jump preparation due to lack of BSD.")
+		return 0
+
 	if((user && isAI(user)) || forced)
 		if(state == 1)
 			make_prepared()

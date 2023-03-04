@@ -69,7 +69,7 @@
 	use_power = POWER_USE_OFF
 	power_channel = EQUIP
 	idle_power_usage = 21600 //6 Wh per tick for default 2 capacitor. Gives them a reason to turn it off, really to nerf backup battery
-	
+
 	machine_name = "gas thruster"
 	machine_desc = "A heavy-duty spaceship thruster that throws gas out of its nozzle to allow propulsion."
 
@@ -180,6 +180,8 @@
 	if(T)
 		T.assume_air(removed)
 		new/obj/effect/engine_exhaust(T, dir)
+		for(var/mob/living/victim in T)
+			victim.adjustFireLoss(rand(removed, removed * 3))
 
 /obj/machinery/atmospherics/unary/engine/proc/calculate_thrust(datum/gas_mixture/propellant, used_part = 1)
 	return round(sqrt(propellant.get_mass() * used_part * air_contents.return_pressure()/100),0.1)

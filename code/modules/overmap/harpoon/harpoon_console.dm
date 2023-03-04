@@ -13,7 +13,7 @@
 
 	var/overmapdir = 0
 
-	var/caldigit = 6 //number of digits that needs calibration
+	var/caldigit = 5 //number of digits that needs calibration
 	var/list/calibration //what it is
 	var/list/calexpected //what is should be
 
@@ -29,7 +29,7 @@
 	var/obj/structure/ship_munition/ammobox/harpoon_cannon/munition
 
 	var/ammo_per_shot = 1
-	var/danger_zone = 0
+	var/danger_zone = 3
 	var/burst_size = 1
 	var/burst_interval = 1
 
@@ -62,14 +62,14 @@
 		return TRUE
 
 	for(front in SSmachines.machinery)
-		if(get_dist(src, front) >= link_range)
+		if(get_dist(src, front) >= link_range || front.z != src.z)
 			continue
 		var/backwards = turn(front.dir, 180)
 		middle = locate() in get_step(front, backwards)
-		if(!middle || get_dist(src, middle) >= link_range)
+		if(!middle || get_dist(src, middle) >= link_range || middle.z != src.z)
 			continue
 		back = locate() in get_step(middle, backwards)
-		if(!back || get_dist(src, back) >= link_range)
+		if(!back || get_dist(src, back) >= link_range || back.z != src.z)
 			continue
 		if(is_valid_setup())
 			GLOB.destroyed_event.register(front, src, .proc/release_links)
@@ -263,7 +263,7 @@
 	var/distance = 0
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
-		if(T.density)
+		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 			if(distance <= danger_zone)
 				explosion(T,1,2,2)
 			return TRUE
@@ -299,7 +299,7 @@
 	var/z_level = pick(finaltarget.map_z)
 
 	//Success, but we missed.
-	if(prob(100 - cal_accuracy() && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet)))
+	if(prob(100 - cal_accuracy()) && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
 		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снаряд даже нашёл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 		return TRUE
 
@@ -349,7 +349,10 @@
 
 /obj/machinery/computer/ship/harpoon_gun/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(get_step(linked, overmapdir), overmapdir), overmap_icon, time = 5, maxdistance = world.maxx)
+	if(linked.z == 11)
+		linked.Beam(get_step(linked, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
+	else
+		linked.loc.Beam(get_step(linked.loc, overmapdir), overmap_icon, time = 2, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/harpoon_gun/proc/get_target_turf(turf/start, direction)
 	switch(direction)

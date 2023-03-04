@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 	var/list/exoplanet_areas //all possible exoplanet areas the event can take place on
 	var/area/chosen_area
 	var/obj/effect/overmap/visitable/sector/chosen_planet
-	var/required_players_count = 2 //how many players we need present on the planet for the event to start
+	var/required_players_count = 8 //how many players we need present on the planet for the event to start
 	var/list/players_on_site = list()
 	var/target_mob_count = 0 //overall target mob count, set to nonzero during setup
 	var/datum/mob_list/chosen_mob_list //the chosen list of mobs we will pick from when spawning, also based on severity
@@ -18,7 +18,7 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 /datum/event/exo_awakening/setup()
 	announceWhen = rand(15, 45)
 	affecting_z = list()
-	if (prob(25))
+	if (prob(20))
 		severity = EVENT_LEVEL_MAJOR
 
 		chosen_mob_list = pick(typesof(/datum/mob_list/major) - /datum/mob_list/major)

@@ -3,7 +3,7 @@
 #include "ares_shuttles.dm"
 
 /obj/effect/paint/red/dark
-	color = "#3b0404"
+	color = "#420d0d"
 
 /obj/machinery/door/airlock/multi_tile/ares
 	door_color = COLOR_DARK_GUNMETAL

@@ -9,7 +9,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/list/fauna_types = list()		// possible types of mobs to spawn
 	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
 	var/list/animals = list()
-	var/max_animal_count
+	var/max_animal_count = 40
 	var/datum/gas_mixture/atmosphere
 	var/list/breathgas = list()	//list of gases animals/plants require to survive
 	var/badgas					//id of gas that is toxic to life here

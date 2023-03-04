@@ -6,6 +6,7 @@
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.5 SECONDS
 	vessel_mass = 1500
+	integrity_failure_cap = 20
 	skill_needed = SKILL_ADEPT
 	vessel_size = SHIP_SIZE_TINY
 	fore_dir = NORTH

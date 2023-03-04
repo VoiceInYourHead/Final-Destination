@@ -18,6 +18,8 @@
 	desc = "An irregular, bulbous craft of unknown origin."
 	shuttle = "Alien Interceptor"
 	fore_dir = WEST
+	dir = WEST
+	integrity_failure_cap = 60
 	vessel_size = SHIP_SIZE_SMALL
 	vessel_mass = 2500 //Vox alloys are lightweight or smthn. Idk.
 

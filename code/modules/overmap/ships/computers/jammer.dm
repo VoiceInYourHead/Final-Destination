@@ -1,12 +1,13 @@
 /obj/machinery/computer/ship/jammer
-	name = "jammer console"
+	name = "jammers console"
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
-	light_color = "#ffffff"
+	light_color = "#77fff8"
 	silicon_restriction = STATUS_UPDATE
-	machine_name = "jammer console"
-	machine_desc = "Used to activate, monitor, and configure a spaceship's sensors jammer. Higher range means higher temperature; dangerously high temperatures may fry the delicate equipment."
+	machine_name = "jammers console"
+	machine_desc = "Used to activate, monitor, and configure a spaceship's sensor jammers. Higher range means higher temperature; dangerously high temperatures may fry the delicate equipment."
 	var/obj/machinery/sensors_jammer/jammer
+	var/obj/effect/overmap/jammer/J
 
 /obj/machinery/computer/ship/jammer/attempt_hook_up(obj/effect/overmap/visitable/sector)
 	if(!(. = ..()))
@@ -53,7 +54,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "shipsensors.tmpl", "[linked.name] Jammer Control", 420, 530, src)
+		ui = new(user, src, ui_key, "jammer.tmpl", "[linked.name] Jammer Control", 420, 530, src)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)
@@ -86,30 +87,43 @@
 			jammer.toggle()
 			return TOPIC_REFRESH
 
+/obj/effect/overmap/jammer
+	name = "heart of gravity disturbances"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "malf-scanline"
+	color = "#ffffff"
+	known = 0
+
 /obj/machinery/computer/ship/jammer/Process()
 	..()
 	if(!linked)
 		return
 	if(jammer && jammer.use_power && jammer.powered())
-		var/jammer_range = round(jammer.range*1.5) + 1
-		linked.set_light(-1, jammer_range, jammer_range+1)
+		if(!J)
+			J = new /obj/effect/overmap/jammer(linked.loc)
+		var/jammer_range = round(jammer.range*1.5)
+		J.set_light(-1, jammer_range, jammer_range+3, 2, "#ffffff")
+		if(J.loc != linked.loc)
+			J.forceMove(linked.loc)
 	else
-		linked.set_light(0)
+		J.set_light(0)
+		qdel(J)
+		J = 0
 
 /obj/machinery/sensors_jammer
 	name = "jammer suite"
 	desc = "Long range gravity disturber with various other systems, used to confuse any gravity scanners that will try to trace something in area. Can only run in vacuum to protect delicate quantum BS elements."
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "sensors"
+	icon = 'icons/fd/structures/computer.dmi'
+	icon_state = "cs_server"
 	anchored = TRUE
 	density = TRUE
-	var/max_health = 200
-	var/health = 200
-	var/critical_heat = 50 // sparks and takes damage when active & above this heat
-	var/heat_reduction = 1.5 // mitigates this much heat per tick
+	var/max_health = 150
+	var/health = 150
+	var/critical_heat = 80 // sparks and takes damage when active & above this heat
+	var/heat_reduction = 1 // mitigates this much heat per tick
 	var/heat = 0
 	var/range = 1
-	idle_power_usage = 5000
+	idle_power_usage = 7500
 
 /obj/machinery/sensors_jammer/attackby(obj/item/W, mob/user)
 	var/damage = max_health - health
@@ -142,9 +156,9 @@
 
 /obj/machinery/sensors_jammer/on_update_icon()
 	if(use_power)
-		icon_state = "sensors"
+		icon_state = "cs_server"
 	else
-		icon_state = "sensors_off"
+		icon_state = "cs_server_off"
 
 /obj/machinery/sensors_jammer/examine(mob/user)
 	. = ..()
@@ -181,7 +195,7 @@
 
 			take_damage(rand(10,50))
 			toggle()
-		heat += idle_power_usage/15000
+		heat += idle_power_usage/150000
 
 	if (heat > 0)
 		heat = max(0, heat - heat_reduction)

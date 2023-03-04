@@ -43,16 +43,16 @@
 ////////////////////////////////CIRCUIT////////////////////////////////
 
 /obj/item/stock_parts/circuitboard/heavymg
-	name = T_BOARD("machine gun control")
+	name = T_BOARD("heavy machine gun control")
 	build_path = /obj/machinery/computer/ship/hmg
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
 /obj/item/stock_parts/circuitboard/heavymg/tele
-	name = T_BOARD("HMG control telescreen")
+	name = T_BOARD("heavy machine gun control telescreen")
 	build_path = /obj/machinery/computer/ship/hmg/telescreen
 
 /obj/item/stock_parts/circuitboard/heavymgfront
-	name = T_BOARD("machine gun turret")
+	name = T_BOARD("heavy machine gun muzzle")
 	build_path = /obj/machinery/hmg/front_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -61,7 +61,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/heavymgmiddle
-	name = T_BOARD("machine gun breech end")
+	name = T_BOARD("heavy machine gun barrel")
 	build_path = /obj/machinery/hmg/middle_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
@@ -70,7 +70,7 @@
 	)
 
 /obj/item/stock_parts/circuitboard/heavymgback
-	name = T_BOARD("machine gun munition rack")
+	name = T_BOARD("heavy machine gun breech end")
 	build_path = /obj/machinery/hmg/back_part
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
