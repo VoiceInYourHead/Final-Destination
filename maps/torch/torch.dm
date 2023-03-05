@@ -189,6 +189,7 @@
 	#include "../away/cowboy_bebop/truck.dm"
 	#include "../away/cowboy_bebop/truck_broken.dm"
 	#include "../away/lighthouse/beacon_working.dm"
+	#include "../away/verne/verne.dm"
 
 	#define using_map_DATUM /datum/map/torch
 
