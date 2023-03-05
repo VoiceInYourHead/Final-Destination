@@ -5,6 +5,7 @@
 	var/atom/movable/leader = null		// The movable atom that the mob wants to follow.
 	var/follow_distance = 2				// How far leader must be to start moving towards them.
 	var/follow_until_time = 0			// world.time when the mob will stop following leader. 0 means it won't time out.
+	var/do_walk_straight_to = FALSE
 
 /datum/ai_holder/proc/walk_to_leader()
 	ai_log("walk_to_leader() : Entering.",AI_LOG_TRACE)
@@ -24,6 +25,8 @@
 		return
 
 	var/get_to = follow_distance
+	if (do_walk_straight_to)
+		get_to = 0
 	var/distance = get_dist(holder, leader)
 	ai_log("walk_to_leader() : get_to is [get_to].", AI_LOG_TRACE)
 
@@ -38,11 +41,14 @@
 	walk_path(leader, get_to)
 	ai_log("walk_to_leader() : Exiting.",AI_LOG_DEBUG)
 
-/datum/ai_holder/proc/set_follow(mob/living/L, follow_for = 0)
+/datum/ai_holder/proc/set_follow(mob/living/L, follow_for = 0, var/walk_straight_to = FALSE)
 	ai_log("set_follow() : Entered.", AI_LOG_DEBUG)
 	if (!L)
 		ai_log("set_follow() : Was told to follow a nonexistant mob.", AI_LOG_ERROR)
 		return FALSE
+
+	if(walk_straight_to)
+		do_walk_straight_to = TRUE
 
 	leader = L
 	follow_until_time = !follow_for ? 0 : world.time + follow_for
@@ -63,6 +69,9 @@
 		lose_follow()
 		set_stance(STANCE_IDLE)
 		return FALSE
-	if (get_dist(holder, leader) > follow_distance)
+	if (do_walk_straight_to)
+		if (get_dist(holder, leader) > 0)
+			return TRUE
+	else if (get_dist(holder, leader) > follow_distance)
 		return TRUE
 	return FALSE

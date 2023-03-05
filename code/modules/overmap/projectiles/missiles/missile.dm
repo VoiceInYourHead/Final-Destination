@@ -261,6 +261,11 @@
 	if(!active && health > 0)
 		return
 
+	for(var/obj/effect/overmap/visitable/ship/target in world)
+		if(src.z in target.map_z)
+			for(var/obj/item/missile_equipment/payload/P in equipment)
+				target.damage_hull(P.hull_damage)
+
 	// missile equipment triggers before the missile itself
 	for(var/obj/item/missile_equipment/E in equipment)
 		E.on_trigger(obstacle)

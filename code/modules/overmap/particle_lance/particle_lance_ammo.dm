@@ -4,4 +4,4 @@
 	layer = 2.22
 	ammo_count = 4000
 	ammo_type = null
-	color = COLOR_PURPLE
+	color = COLOR_ASCENT_PURPLE

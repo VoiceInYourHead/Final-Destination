@@ -53,6 +53,9 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ МАССЫ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ КОРАБЛЬ!"
 	var/announcer_name = "'Автоматический отчёт о техническом состоянии"
 
+	var/do_repair_hull = TRUE
+	var/repair_speed = 0.005 //per tick
+
 	var/destroyed = FALSE
 
 //	var/list/navigation_viewers // list of weakrefs to people viewing the overmap via this ship
@@ -197,8 +200,8 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 		spawn(get_areas().len) go_boom_overmap()
 		STOP_PROCESSING(SSobj, src)
 		return
-	if(integrity_failure > 0)
-		repair_hull(0.005)
+	if(integrity_failure > 0 && do_repair_hull)
+		repair_hull(repair_speed)
 	if(!halted && !is_still())
 		var/list/deltas = list(0,0)
 		for(var/i = 1 to 2)
@@ -247,7 +250,7 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	if(destroyed)
 		return
 	destroyed = TRUE
-	GLOB.global_announcer.autosay(announce_text, "[name] " + "[announcer_name]")
+	GLOB.global_announcer.autosay(announce_text, "[announcer_name] " + "[name]")
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
 		if(!T || !(T.z in map_z))

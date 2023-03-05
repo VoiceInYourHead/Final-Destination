@@ -30,13 +30,13 @@
 	name = "АК2057-Р rotary railgun cannon barrel"
 	desc = "An old-fashion gas tube that propels munitions to rotary cannon muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
-	icon_state = "magazine"
+	icon_state = "middle"
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
 /obj/machinery/minigun/back_part
 	name = "АК2057-Р rotary railgun cannon breech end"
 	desc = "An old-fashion ammo reciever. Munition then goes to rotary cannon barrel."
-	icon_state = "ammo_loader"
+	icon_state = "back"
 	density = FALSE
 //	layer = BELOW_DOOR_LAYER //So the charges go above us.
 

@@ -87,22 +87,28 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE =   list(
-			CULTURE_VOX_ARKSHIP,
-			CULTURE_VOX_SALVAGER,
-			CULTURE_VOX_RAIDER
+			CULTURE_VOX_ACOLYTE,
+			CULTURE_VOX_TRUTH,
+			CULTURE_VOX_TECHNICIAN,
+			CULTURE_VOX_LIGHT,
+			CULTURE_VOX_MERCHANT
 		),
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_VOX_ARK,
-			HOME_SYSTEM_VOX_SHROUD,
-			HOME_SYSTEM_VOX_SHIP
+			HOME_SYSTEM_VOX_CAPITAL,
+			HOME_SYSTEM_VOX_FORTRESS,
+			HOME_SYSTEM_VOX_RESEARCH,
+			HOME_SYSTEM_VOX_PROCESSING,
+			HOME_SYSTEM_VOX_PRODUCTION
 		),
 		TAG_FACTION = list(
-			FACTION_VOX_RAIDER,
-			FACTION_VOX_CREW,
-			FACTION_VOX_APEX
+			FACTION_VOX_FLEET,
+			FACTION_VOX_COVENANT,
+			FACTION_VOX_ARK
 		),
 		TAG_RELIGION =  list(
-			RELIGION_VOX
+			RELIGION_VOX_CODEX,
+			RELIGION_VOX_GUARDIAN,
+			RELIGION_VOX_FORCE
 		)
 	)
 
@@ -207,7 +213,7 @@
 	OnCreated(vox, user)
 	data = sanitizeSafe(input(vox, "Enter Name:", "Enter Name", "") as text, MAX_NAME_LEN)
 	if (!length(data))
-		var/decl/cultural_info/culture = SSculture.get_culture(CULTURE_VOX_RAIDER)
+		var/decl/cultural_info/culture = SSculture.get_culture(CULTURE_VOX_LIGHT)
 		data = culture.get_random_name()
 	vox.real_name = data
 	vox.SetName(data)

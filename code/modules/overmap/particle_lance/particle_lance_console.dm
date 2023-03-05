@@ -25,7 +25,7 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "particle lance"
 
-	var/structural_damage = 50
+	var/hull_damage = 50
 
 	var/obj/machinery/particle_lance/front_part/front
 	var/obj/machinery/particle_lance/middle_part/middle
@@ -468,7 +468,7 @@
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
-		if(must_damage) target_vessel.damage_hull(structural_damage)
+		if(must_damage) target_vessel.damage_hull(hull_damage)
 
 /obj/machinery/computer/ship/particle_lance/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE

@@ -12,7 +12,7 @@
 	crew_jobs = list(
 		/datum/job/submap/ascent,
 		/datum/job/submap/ascent/alate,
-//		/datum/job/submap/ascent/drone
+		/datum/job/submap/ascent/drone
 	)
 	call_webhook = WEBHOOK_SUBMAP_LOADED_ASCENT
 
@@ -187,14 +187,14 @@
 	)
 	use_species_whitelist = null
 
-/*/datum/job/submap/ascent/drone
+/datum/job/submap/ascent/drone
 	title = "Ascent Drone"
 	supervisors = "the Gyne"
 	total_positions = 1
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist has fled her sisters, ending up in this sector full of primitive bioforms. Try to keep her alive, and assist where you can."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent
 	requires_supervisor = "Ascent Gyne"
-	use_species_whitelist = null*/
+	use_species_whitelist = null
 
 // Spawn points.
 /obj/effect/submap_landmark/spawnpoint/ascent_caulship

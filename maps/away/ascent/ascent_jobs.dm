@@ -12,7 +12,7 @@
 	crew_jobs = list(
 		/datum/job/submap/ascent_inf,
 		/datum/job/submap/ascent_inf/alate,
-//		/datum/job/submap/ascent_inf/drone,
+		/datum/job/submap/ascent_inf/drone,
 		//datum/job/submap/ascent_inf/control_mind,
 		//datum/job/submap/ascent_inf/msq,
 		//datum/job/submap/ascent_inf/msw,
@@ -161,13 +161,13 @@
 					SKILL_WEAPONS = SKILL_ADEPT,
 					SKILL_MEDICAL = SKILL_BASIC)
 
-/*/datum/job/submap/ascent_inf/drone
+/datum/job/submap/ascent_inf/drone
 	title = "Ascent drone"
 	supervisors = "Гииной"
-	total_positions = 1
+	total_positions = 2
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist, and her children, have wandered into this sector full of primitive bioforms. Try to keep them alive, and assist where you can."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent
-	requires_supervisor = "Ascent gyne"*/
+	requires_supervisor = "Ascent gyne"
 
 /*
 /datum/job/submap/ascent_inf/msw

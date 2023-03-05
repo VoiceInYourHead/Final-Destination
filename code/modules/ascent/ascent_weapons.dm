@@ -68,26 +68,14 @@
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/particle/small),
 		)
 
-/obj/item/gun/energy/particle/railgun
-	name = "mantid flechette rifle"
-	desc = "A viciously pronged rifle-like weapon."
-	icon = 'icons/obj/guns/skrell_rifle.dmi'
-	icon_state = "skrell_rifle"
-	item_state = "skrell_rifle"
-	force = 30
-	max_shots = 6
-	charge_cost = 50
+/obj/item/gun/energy/particle/flechette
+	name = "crystal flechette rifle"
+	desc = "A viscious looking rifle decorated with a growth of sharp purple crystals."
+	one_hand_penalty = 6
 	burst = 1
-	fire_delay = 10
-	move_delay = 5
 	projectile_type = /obj/item/projectile/bullet/magnetic/flechette
-
-	init_firemodes = list(
-		list(mode_name="kill", /obj/item/projectile/bullet/magnetic/flechette),
-		)
-
-	bulk = GUN_BULK_RIFLE + 3
-	one_hand_penalty = 7
+	init_firemodes = list(list(projectile_type = /obj/item/projectile/bullet/magnetic/flechette))
+	color = COLOR_ASCENT_PURPLE
 
 /obj/item/projectile/beam/particle
 	name = "particle lance"

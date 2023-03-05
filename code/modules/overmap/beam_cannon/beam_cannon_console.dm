@@ -23,7 +23,7 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Ion beam emitter"
 
-	var/structural_damage = 75
+	var/hull_damage = 75
 
 	var/obj/machinery/beam_cannon/front_part/front
 	var/obj/machinery/beam_cannon/middle_part/middle
@@ -465,7 +465,7 @@
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
-		if(must_damage) target_vessel.damage_hull(structural_damage)
+		if(must_damage) target_vessel.damage_hull(hull_damage)
 
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam(var/turf/s, var/d)
 	set waitfor = FALSE
