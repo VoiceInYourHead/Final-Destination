@@ -9,7 +9,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/list/fauna_types = list()		// possible types of mobs to spawn
 	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
 	var/list/animals = list()
-	var/max_animal_count = 40
+	var/max_animal_count = 50
 	var/datum/gas_mixture/atmosphere
 	var/list/breathgas = list()	//list of gases animals/plants require to survive
 	var/badgas					//id of gas that is toxic to life here
@@ -69,6 +69,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 		HABITABILITY_BAD = 50
 	)
 	var/habitability_class
+	var/fucked_atmos = FALSE
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/generate_habitability()
 	if (isnum(habitability_distribution))
@@ -161,7 +162,17 @@ GLOBAL_VAR(planet_repopulation_disabled)
 			daycolumn = 1
 		if (daycolumn && tick % round(daycycle_column_delay / wait) == 0)
 			update_daynight()
-
+/*
+	for(var/obj/effect/overmap/event/star/starsector in src.loc.contents)
+		if(starsector)
+			if(atmosphere && !fucked_atmos)
+				fucked_atmos = TRUE
+				atmosphere.temperature = T20C + rand(500, 2000)
+				atmosphere.update_values()
+				daycycle = 0
+				lightlevel = 1
+				update_daynight()
+*/
 /obj/effect/overmap/visitable/sector/exoplanet/proc/update_daynight()
 	var/light = 0.1
 	if (!night)

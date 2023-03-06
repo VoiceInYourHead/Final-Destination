@@ -25,12 +25,12 @@
 			return
 
 /datum/ai_holder/smart_animal
-	var/starting_sympathy
-	var/starting_energy
-	var/starting_bravery
-	var/starting_aggression
-	var/starting_dominance
-	var/starting_nervousness
+	var/init_sympathy
+	var/init_energy
+	var/init_bravery
+	var/init_aggression
+	var/init_dominance
+	var/init_nervousness
 	var/sympathy
 	var/energy
 	var/bravery
@@ -92,7 +92,11 @@
 	var/hostility_threshold = 150
 	var/hunger_threshold = 100
 	var/turns_since_scan = 0
-	var/turns_since_attach = 0
+	var/turns_since_pack_attach = 0
+	var/hunger_affects_hostility = TRUE
+	var/aggression_affects_hostility = TRUE
+	var/enable_hunger = TRUE
+	var/enable_stats = TRUE
 	var/obj/movement_target
 	var/mob/living/owner
 	name = "Mr. Beast"
@@ -114,7 +118,7 @@
 		M.Scale(factor)
 		src.transform = M
 
-/datum/ai_holder/smart_animal/proc/roll_temper()
+/datum/ai_holder/smart_animal/proc/setup_temper()
 	. = ..()
 
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = holder
@@ -126,24 +130,24 @@
 	dominance = rand(1,100)
 	nervousness = rand(1,100)
 
-	starting_sympathy = sympathy
-	starting_energy = energy
-	starting_bravery = bravery
-	starting_aggression = aggression
-	starting_dominance = dominance
-	starting_nervousness = nervousness
+	init_sympathy = sympathy
+	init_energy = energy
+	init_bravery = bravery
+	init_aggression = aggression
+	init_dominance = dominance
+	init_nervousness = nervousness
 
 	smart_holder.hunger = clamp( rand(0,750) - dominance * 5 , 0, 500)
 
 	calculate_temper()
 
 /datum/ai_holder/smart_animal/proc/calculate_temper()
-	sympathy = starting_sympathy
-	energy = starting_energy
-	bravery = starting_bravery
-	aggression = round( clamp( starting_aggression * (energy/50) / (sympathy/20) + (bravery/2) , 1, 200) )
-	dominance = round( clamp( starting_dominance * (bravery/50) + (aggression/2) - (nervousness/2) , 1, 200) )
-	nervousness = round( clamp( starting_nervousness / (bravery/30) + (energy/2) , 1, 200) )
+	sympathy = init_sympathy
+	energy = init_energy
+	bravery = init_bravery
+	aggression = round( clamp( init_aggression * (energy/50) / (sympathy/20) + (bravery/2) , 1, 200) )
+	dominance = round( clamp( init_dominance * (bravery/50) + (aggression/2) - (nervousness/2) , 1, 200) )
+	nervousness = round( clamp( init_nervousness / (bravery/30) + (energy/2) , 1, 200) )
 
 /datum/ai_holder/smart_animal/proc/calculate_stats()
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = holder
@@ -206,8 +210,10 @@
 
 /datum/ai_holder/smart_animal/New(new_holder)
 	..()
-	roll_temper()
-	calculate_stats()
+	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = new_holder
+	if(smart_holder.enable_stats)
+		setup_temper()
+		calculate_stats()
 /*
 /mob/living/simple_animal/hostile/smart_beast/examine(mob/user)
 	. = ..()
@@ -330,11 +336,8 @@
 			L.ai_holder.help_requested(smart_holder)
 	..()
 
-/mob/living/simple_animal/hostile/smart_beast/Life()
-	. = ..()
+/mob/living/simple_animal/hostile/smart_beast/proc/death_checks()
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
-	if(!. || !smart_ai_holder)
-		return FALSE
 
 	if(stat == DEAD)
 		if(current_pack_members)
@@ -350,20 +353,53 @@
 			smart_ai_holder.set_follow(null)
 			pack_leader = null
 
-	smart_ai_holder.calculate_stats()
-
-	hunger += 0.5 + smart_ai_holder.energy/100
-
-	if(hunger > hunger_threshold*12)
-		health = max(0, health - (hunger_threshold*12 - hunger))
-
+/mob/living/simple_animal/hostile/smart_beast/proc/hostility_checks()
+	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	var/hostility = get_tension() + smart_ai_holder.aggression
-	if(hunger < hunger_threshold*2 && hostility < hostility_threshold) //stop hunting when satiated
-		smart_ai_holder.hostile = FALSE
+
+	if(smart_ai_holder.hostile)
+		if(aggression_affects_hostility && hunger_affects_hostility)
+			if(hunger < hunger_threshold*2 && hostility < hostility_threshold)	//stop hunting when satiated and not threated
+				smart_ai_holder.hostile = FALSE
+		else if(aggression_affects_hostility)
+			if(hostility < hostility_threshold)									//stop hunting when not threated
+				smart_ai_holder.hostile = FALSE
+		else if(hunger_affects_hostility)
+			if(hunger < hunger_threshold*2)										//stop hunting when satiated
+				smart_ai_holder.hostile = FALSE
+	else
+		if (((hunger > hunger_threshold*5 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet != DIET_HERBIVOROUS)
+			smart_ai_holder.hostile = TRUE
+		else if (((hunger > hunger_threshold*8 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet == DIET_HERBIVOROUS)
+			smart_ai_holder.hostile = TRUE
+
+/mob/living/simple_animal/hostile/smart_beast/Life()
+	. = ..()
+	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+	if(!. || !smart_ai_holder)
+		return FALSE
+
+	if(!enable_stats)
+		aggression_affects_hostility = FALSE
+
+	death_checks()
+
+	if(enable_stats)
+		smart_ai_holder.calculate_stats()
+
+	if(!enable_hunger)
+		hunger_affects_hostility = FALSE
+
+	else
+		hunger += 0.5 + smart_ai_holder.energy/100
+		if(hunger > hunger_threshold*10)
+			health = max(0, health - (hunger_threshold*10 - hunger))
+
+	hostility_checks()
 
 	if(ai_holder.cooperative)
-		turns_since_attach++
-		if(turns_since_attach > 100)
+		turns_since_pack_attach++
+		if(turns_since_pack_attach > 100)
 			attach_to_pack()
 
 		if(pack_leader)
@@ -488,45 +524,42 @@
 								playsound(src.loc, 'sound/items/eatfood.ogg', 50, 1)
 								UnarmedAttack(movement_target)
 								eating = 1
-								hunger = max(0, hunger - movement_target.reagents.total_volume)
+								if(movement_target.reagents)
+									hunger = max(0, hunger - movement_target.reagents.total_volume)
 
-								if(prob(30))
+								if(prob(30) || (!movement_target.reagents && get_dist(src, movement_target) <= 1)) //вроде как съели а там хз
 									hunger = max(0, hunger - movement_target.reagents.total_volume*5)
 									health = min(maxHealth, health + movement_target.reagents.total_volume + 5)
-									if(movement_target.fingerprintslast)
-										smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
-										smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
-										if(movement_target.fingerprintslast in beastmasters && tameable)
-											beastmasters[movement_target.fingerprintslast] ++
 
-											if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100))
-												for(var/client/C in GLOB.clients)
-													if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
-														friends += C.mob
-
-											if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/60 + smart_ai_holder.dominance/40))
-												for(var/client/C in GLOB.clients)
-													if(C.key == movement_target.fingerprintslast)
-														owner = C.mob
-														smart_ai_holder.set_follow(owner)
-
-											for(var/client/C in GLOB.clients)
-												if(C.key == movement_target.fingerprintslast && smart_ai_holder.check_attacker(C.mob) && prob(50))
-													smart_ai_holder.remove_attacker(C.mob)
-
-										else
-											beastmasters[movement_target.fingerprintslast] = 1
 									qdel(movement_target)
 									eating = 0
 
+									if(movement_target.fingerprintslast in beastmasters && tameable)
+										smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
+										smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
+
+										beastmasters[movement_target.fingerprintslast] ++
+
+										if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 ))
+											for(var/client/C in GLOB.clients)
+												if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
+													friends += C.mob
+
+										if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 + tame_difficulty/2 ))
+											for(var/client/C in GLOB.clients)
+												if(C.key == movement_target.fingerprintslast)
+													owner = C.mob
+													smart_ai_holder.set_follow(owner)
+
+										for(var/client/C in GLOB.clients)
+											if(C.key == movement_target.fingerprintslast && smart_ai_holder.check_attacker(C.mob) && prob(50))
+												smart_ai_holder.remove_attacker(C.mob)
+
+									else
+										beastmasters[movement_target.fingerprintslast] = 1
+
 	if(get_dist(src, movement_target) > smart_ai_holder.vision_range)
 		eating = 0
-
-	if ((hunger > hunger_threshold*5 || hostility >= hostility_threshold) && diet != DIET_HERBIVOROUS)
-		smart_ai_holder.hostile = TRUE
-
-	else if((hunger > hunger_threshold*8 || hostility >= hostility_threshold) && diet == DIET_HERBIVOROUS)
-		smart_ai_holder.hostile = TRUE
 
 ///////////////////////////////////////////////EXOPLANET ANIMALS///////////////////////////////////////////////
 
@@ -691,6 +724,15 @@
 
 	ai_holder = /datum/ai_holder/smart_animal/pack/diyaab
 	say_list_type = /datum/say_list/smart/diyaab
+
+/mob/living/simple_animal/hostile/smart_beast/diyaab/pack_spawn/New(new_holder)
+	..()
+	new /mob/living/simple_animal/hostile/smart_beast/diyaab(src.loc)
+	new /mob/living/simple_animal/hostile/smart_beast/diyaab(src.loc)
+	if(prob(30))
+		new /mob/living/simple_animal/hostile/smart_beast/diyaab(src.loc)
+		if(prob(30))
+			new /mob/living/simple_animal/hostile/smart_beast/diyaab(src.loc)
 
 /mob/living/simple_animal/hostile/smart_beast/shantak
 	name = "shantak"

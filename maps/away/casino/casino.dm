@@ -90,7 +90,7 @@
 	desc = "Spin the roulette to try your luck."
 	icon = 'maps/away/casino/casino_sprites.dmi'
 	icon_state = "roulette_r"
-	density = FALSE
+	density = TRUE
 	anchored = TRUE
 	var/busy=0
 
@@ -122,7 +122,7 @@
 	desc = "Roulette chart. Place your bets! "
 	icon = 'maps/away/casino/casino_sprites.dmi'
 	icon_state = "roulette_l"
-	density = FALSE
+	density = TRUE
 	anchored = TRUE
 
 /obj/structure/casino/bj_table

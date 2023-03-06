@@ -22,6 +22,7 @@
 	info = "FOR ROCK AND STONE BROTHA!"
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining/ares
 	loadout_allowed = FALSE
+	skill_points = 14
 	min_skill = list(
 		SKILL_EVA = SKILL_ADEPT,
 		SKILL_HAULING = SKILL_ADEPT,
@@ -42,7 +43,7 @@
 	skill_points = 0
 
 /datum/job/submap/ares_cyborg/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
-	return H && H.Robotize(SSrobots.get_mob_type_by_title(alt_title || title))
+	return H && H.Robotize(/mob/living/silicon/robot/flying)
 
 /datum/job/submap/ares_cyborg/equip(var/mob/living/carbon/human/H)
 	return !!H
