@@ -22,7 +22,7 @@
 	info = "FOR ROCK AND STONE BROTHA!"
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining/ares
 	loadout_allowed = FALSE
-	skill_points = 14
+	skill_points = 20
 	min_skill = list(
 		SKILL_EVA = SKILL_ADEPT,
 		SKILL_HAULING = SKILL_ADEPT,

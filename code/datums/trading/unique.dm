@@ -84,7 +84,7 @@
 	wanted_items  = list(/obj/item/ore                        = TRADER_ALL)
 	possible_trading_items = list(/obj/machinery/power/supermatter            = TRADER_ALL,
 								/obj/item/aiModule                     = TRADER_SUBTYPES_ONLY)
-	want_multiplier = 5000
+	want_multiplier = 4000 // was 5000, yeah
 
 	speech = list(TRADER_HAIL_GENERIC     = "Blub am MERCHANT. Blub hunger for things. Boo bring them to blub, yes?",
 				TRADER_HAIL_DENY          = "Blub does not want to speak to boo.",
