@@ -95,10 +95,13 @@
 	var/turns_since_pack_attach = 0
 	var/hunger_affects_hostility = TRUE
 	var/aggression_affects_hostility = TRUE
-	var/enable_hunger = TRUE
-	var/enable_stats = TRUE
+	var/respect_hunger = TRUE
+	var/respect_stats = TRUE
+	var/randomize_tone = FALSE
+	var/nomad = FALSE
 	var/obj/movement_target
 	var/mob/living/owner
+	taser_kill = 0
 	name = "Mr. Beast"
 
 	ai_holder = /datum/ai_holder/smart_animal
@@ -211,7 +214,7 @@
 /datum/ai_holder/smart_animal/New(new_holder)
 	..()
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = new_holder
-	if(smart_holder.enable_stats)
+	if(smart_holder.respect_stats)
 		setup_temper()
 		calculate_stats()
 /*
@@ -301,6 +304,9 @@
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	if(smart_ai_holder.cooperative)
 		spawn(10) attach_to_pack()
+	var/tone = rand(190,255)
+	if(randomize_tone)
+		color = rgb(tone,tone,tone)
 
 /mob/living/simple_animal/hostile/smart_beast/death(gibbed, deathmessage, show_dead_message)
 	..(gibbed, deathmessage, show_dead_message)
@@ -373,27 +379,196 @@
 		else if (((hunger > hunger_threshold*8 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet == DIET_HERBIVOROUS)
 			smart_ai_holder.hostile = TRUE
 
+/mob/living/simple_animal/hostile/smart_beast/proc/hunger_checks()
+	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+	if(!eating && (diet == DIET_CARNIVOROUS || diet == DIET_OMNIVOROUS))
+		for(var/mob/living/simple_animal/S in range(src,1))
+			if(S.stat == DEAD && S != src && (smart_ai_holder.stance == STANCE_MOVE || smart_ai_holder.stance == STANCE_IDLE))
+				consume(S)
+	if(!resting && !buckled && (smart_ai_holder.stance == STANCE_MOVE || smart_ai_holder.stance == STANCE_IDLE))
+		turns_since_scan++
+		if(turns_since_scan > 1)
+			turns_since_scan = 0
+			find_food()
+
+/mob/living/simple_animal/hostile/smart_beast/proc/consume(var/mob/living/S, var/consume_delay = 50)
+	var/d = get_dir(src.loc, S.loc)
+	if (d == WEST || d == SOUTHWEST)
+		set_dir(WEST)
+	else if (d == EAST || d == NORTHEAST)
+		set_dir(EAST)
+	else if (d == SOUTH || d == SOUTHEAST)
+		set_dir(SOUTH)
+	else if (d == NORTH || d == NORTHWEST)
+		set_dir(NORTH)
+	else
+		set_dir(SOUTH)
+	eating = 1
+	visible_message("[src] starts to consume \the body of [S]!")
+	sleep(consume_delay/2)
+	if(!S || !(S in range(src,1)) || stat == DEAD)
+		eating = 0
+		return FALSE
+	sleep(consume_delay/2)
+	if(!S || !(S in range(src,1)) || stat == DEAD)
+		eating = 0
+		return FALSE
+	visible_message("[src] consumes \the body of [S]!")
+	var/turf/T = get_turf(S)
+	if(istype(S,/mob/living/carbon/human))
+		var/obj/item/remains/human/H = new(T)
+		H.desc += " These look like they belong to \a [S.name]."
+	else
+		var/obj/item/remains/xeno/X = new(T)
+		X.desc += " These look like they belong to \a [S.name]."
+	hunger = max(0, hunger - S.maxHealth*5)
+	health = min(maxHealth, health + S.maxHealth/3)
+	if(prob(15))
+		qdel(S)
+	else
+		S.gib()
+	eating = 0
+
+	return TRUE
+
+/mob/living/simple_animal/hostile/smart_beast/proc/find_food()
+	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+
+	if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
+		movement_target = null
+
+	if( !movement_target || !(movement_target.loc in oview(src, smart_ai_holder.vision_range)) )
+		movement_target = null
+		var/range = smart_ai_holder.vision_range + 3
+
+		if(diet == DIET_CARNIVOROUS)
+			for(var/obj/item/reagent_containers/food/snacks/meat/S in oview(src, range))
+				if(isturf(S.loc) || ishuman(S.loc))
+					movement_target = S
+					break
+
+		if(diet == DIET_HERBIVOROUS)
+			for(var/obj/machinery/portable_atmospherics/hydroponics/H in oview(src, range))
+				if(H.harvest)
+					movement_target = H
+					break
+
+			for(var/obj/item/reagent_containers/food/snacks/grown/S in oview(src, range))
+				if(isturf(S.loc) || ishuman(S.loc))
+					movement_target = S
+					break
+
+		if(diet == DIET_OMNIVOROUS)
+			for(var/obj/machinery/portable_atmospherics/hydroponics/H in oview(src, range))
+				if(H.harvest)
+					movement_target = H
+					break
+
+			for(var/obj/item/reagent_containers/food/snacks/S in oview(src, smart_ai_holder.vision_range+3))
+				if(isturf(S.loc) || ishuman(S.loc))
+					movement_target = S
+					break
+
+	if(!movement_target)
+		return
+
+	if(ishuman(movement_target.loc) && hunger > hunger_threshold && !(movement_target.loc in friends))
+		visible_emote("stares at the [movement_target] that [movement_target.loc] has with eyes full of rage!")
+		smart_ai_holder.hostile = TRUE
+		smart_ai_holder.give_target(movement_target.loc, urgent = TRUE)
+		return
+
+	if(movement_target && hunger > hunger_threshold && stat != DEAD)
+		eating = 1
+		for(var/i = 1 to smart_ai_holder.vision_range)
+			sleep(max( movement_cooldown, round(smart_ai_holder.nervousness / 10) ))
+			step_to(src,movement_target,1)
+			if(get_dist(src, movement_target) <= 1)
+				break
+
+		if(movement_target)		//Not redundant due to sleeps, Item can be gone in 6 decisecomds
+			var/D = get_dir(src.loc, movement_target.loc)
+			if (D == WEST || D == SOUTHWEST)
+				set_dir(WEST)
+			else if (D == EAST || D == NORTHEAST)
+				set_dir(EAST)
+			else if (D == SOUTH || D == SOUTHEAST)
+				set_dir(SOUTH)
+			else if (D == NORTH || D == NORTHWEST)
+				set_dir(NORTH)
+			else
+				set_dir(SOUTH)
+
+			if(get_dist(src, movement_target) <= 1)
+				if(istype(movement_target,/obj/machinery/portable_atmospherics/hydroponics))
+					var/obj/machinery/portable_atmospherics/hydroponics/tray_target = movement_target
+					if(tray_target.harvest)
+						UnarmedAttack(movement_target)
+						tray_target = null
+						movement_target = null
+
+				if(istype(movement_target,/obj/item/reagent_containers/food))
+					playsound(src.loc, 'sound/items/eatfood.ogg', 50, 1)
+					UnarmedAttack(movement_target)
+					eating = 1
+					if(movement_target.reagents)
+						hunger = max(0, hunger - movement_target.reagents.total_volume)
+
+					if(prob(30) || (!movement_target.reagents && get_dist(src, movement_target) <= 1)) //вроде как съели а там хз
+						hunger = max(0, hunger - movement_target.reagents.total_volume*5)
+						health = min(maxHealth, health + movement_target.reagents.total_volume + 5)
+
+						qdel(movement_target)
+						eating = 0
+
+						if(movement_target.fingerprintslast in beastmasters && tameable)
+							smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
+							smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
+
+							beastmasters[movement_target.fingerprintslast] ++
+
+							if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 ))
+								for(var/client/C in GLOB.clients)
+									if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
+										friends += C.mob
+
+							if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 + tame_difficulty/2 ))
+								for(var/client/C in GLOB.clients)
+									if(C.key == movement_target.fingerprintslast)
+										owner = C.mob
+										smart_ai_holder.set_follow(owner)
+
+							for(var/client/C in GLOB.clients)
+								if(C.key == movement_target.fingerprintslast && smart_ai_holder.check_attacker(C.mob) && prob(50))
+									smart_ai_holder.remove_attacker(C.mob)
+
+						else
+							beastmasters[movement_target.fingerprintslast] = 1
+
+	if(get_dist(src, movement_target) > smart_ai_holder.vision_range)
+		eating = 0
+
 /mob/living/simple_animal/hostile/smart_beast/Life()
 	. = ..()
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	if(!. || !smart_ai_holder)
 		return FALSE
 
-	if(!enable_stats)
+	if(!respect_stats)
 		aggression_affects_hostility = FALSE
 
 	death_checks()
 
-	if(enable_stats)
+	if(respect_stats)
 		smart_ai_holder.calculate_stats()
 
-	if(!enable_hunger)
+	if(!respect_hunger)
 		hunger_affects_hostility = FALSE
 
 	else
 		hunger += 0.5 + smart_ai_holder.energy/100
 		if(hunger > hunger_threshold*10)
-			health = max(0, health - (hunger_threshold*10 - hunger))
+			health = max(0, health - (hunger - hunger_threshold*10))
 
 	hostility_checks()
 
@@ -405,161 +580,8 @@
 		if(pack_leader)
 			friends = pack_leader.friends
 
-	if(hunger > hunger_threshold)
-		if(!eating && (diet == DIET_CARNIVOROUS || diet == DIET_OMNIVOROUS))
-			for(var/mob/living/simple_animal/S in range(src,1))
-				if(S.stat == DEAD && S != src)
-					var/d = get_dir(src.loc, S.loc)
-					if (d == WEST || d == SOUTHWEST)
-						set_dir(WEST)
-					else if (d == EAST || d == NORTHEAST)
-						set_dir(EAST)
-					else if (d == SOUTH || d == SOUTHEAST)
-						set_dir(SOUTH)
-					else if (d == NORTH || d == NORTHWEST)
-						set_dir(NORTH)
-					else
-						set_dir(SOUTH)
-					eating = 1
-					visible_message("[src] starts to consume \the body of [S]!")
-					sleep(25)
-					if(!S || !(S in range(src,1)) || stat == DEAD)
-						eating = 0
-						return
-					sleep(25)
-					if(!S || !(S in range(src,1)) || stat == DEAD)
-						eating = 0
-						return
-					visible_message("[src] consumes \the body of [S]!")
-					var/turf/T = get_turf(S)
-					var/obj/item/remains/xeno/X = new(T)
-					X.desc += "These look like they belong to \a [S.name]."
-					hunger = max(0, hunger - S.maxHealth*5)
-					health = min(maxHealth, health + S.maxHealth/3)
-					if(prob(15))
-						qdel(S)
-					else
-						S.gib()
-					eating = 0
-
-		if(!resting && !buckled && (smart_ai_holder.stance == STANCE_MOVE || smart_ai_holder.stance == STANCE_IDLE || smart_ai_holder.stance == STANCE_FOLLOW))
-			turns_since_scan++
-			if(turns_since_scan > 1)
-				turns_since_scan = 0
-
-				if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
-					movement_target = null
-
-				if( !movement_target || !(movement_target.loc in oview(src, smart_ai_holder.vision_range)) )
-					movement_target = null
-					var/range = smart_ai_holder.vision_range + 3
-
-					if(diet == DIET_CARNIVOROUS)
-						for(var/obj/item/reagent_containers/food/snacks/meat/S in oview(src, range))
-							if(isturf(S.loc) || ishuman(S.loc))
-								movement_target = S
-								break
-
-					if(diet == DIET_HERBIVOROUS)
-						for(var/obj/machinery/portable_atmospherics/hydroponics/H in oview(src, range))
-							if(H.harvest)
-								movement_target = H
-								break
-
-						for(var/obj/item/reagent_containers/food/snacks/grown/S in oview(src, range))
-							if(isturf(S.loc) || ishuman(S.loc))
-								movement_target = S
-								break
-
-					if(diet == DIET_OMNIVOROUS)
-						for(var/obj/machinery/portable_atmospherics/hydroponics/H in oview(src, range))
-							if(H.harvest)
-								movement_target = H
-								break
-
-						for(var/obj/item/reagent_containers/food/snacks/S in oview(src, smart_ai_holder.vision_range+3))
-							if(isturf(S.loc) || ishuman(S.loc))
-								movement_target = S
-								break
-
-				if(!movement_target)
-					return
-
-				if(ishuman(movement_target.loc) && hunger > hunger_threshold && !(movement_target.loc in friends))
-					visible_emote("stares at the [movement_target] that [movement_target.loc] has with eyes full of rage!")
-					smart_ai_holder.hostile = TRUE
-					smart_ai_holder.give_target(movement_target.loc, urgent = TRUE)
-					return
-
-				if(movement_target && hunger > hunger_threshold && stat != DEAD)
-					eating = 1
-					for(var/i = 1 to smart_ai_holder.vision_range)
-						sleep(max( movement_cooldown, round(smart_ai_holder.nervousness / 10) ))
-						step_to(src,movement_target,1)
-						if(get_dist(src, movement_target) <= 1)
-							break
-
-					if(movement_target)		//Not redundant due to sleeps, Item can be gone in 6 decisecomds
-						var/D = get_dir(src.loc, movement_target.loc)
-						if (D == WEST || D == SOUTHWEST)
-							set_dir(WEST)
-						else if (D == EAST || D == NORTHEAST)
-							set_dir(EAST)
-						else if (D == SOUTH || D == SOUTHEAST)
-							set_dir(SOUTH)
-						else if (D == NORTH || D == NORTHWEST)
-							set_dir(NORTH)
-						else
-							set_dir(SOUTH)
-
-						if(get_dist(src, movement_target) <= 1)
-							if(istype(movement_target,/obj/machinery/portable_atmospherics/hydroponics))
-								var/obj/machinery/portable_atmospherics/hydroponics/tray_target = movement_target
-								if(tray_target.harvest)
-									UnarmedAttack(movement_target)
-									tray_target = null
-									movement_target = null
-
-							if(istype(movement_target,/obj/item/reagent_containers/food))
-								playsound(src.loc, 'sound/items/eatfood.ogg', 50, 1)
-								UnarmedAttack(movement_target)
-								eating = 1
-								if(movement_target.reagents)
-									hunger = max(0, hunger - movement_target.reagents.total_volume)
-
-								if(prob(30) || (!movement_target.reagents && get_dist(src, movement_target) <= 1)) //вроде как съели а там хз
-									hunger = max(0, hunger - movement_target.reagents.total_volume*5)
-									health = min(maxHealth, health + movement_target.reagents.total_volume + 5)
-
-									qdel(movement_target)
-									eating = 0
-
-									if(movement_target.fingerprintslast in beastmasters && tameable)
-										smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
-										smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
-
-										beastmasters[movement_target.fingerprintslast] ++
-
-										if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 ))
-											for(var/client/C in GLOB.clients)
-												if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
-													friends += C.mob
-
-										if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 + tame_difficulty/2 ))
-											for(var/client/C in GLOB.clients)
-												if(C.key == movement_target.fingerprintslast)
-													owner = C.mob
-													smart_ai_holder.set_follow(owner)
-
-										for(var/client/C in GLOB.clients)
-											if(C.key == movement_target.fingerprintslast && smart_ai_holder.check_attacker(C.mob) && prob(50))
-												smart_ai_holder.remove_attacker(C.mob)
-
-									else
-										beastmasters[movement_target.fingerprintslast] = 1
-
-	if(get_dist(src, movement_target) > smart_ai_holder.vision_range)
-		eating = 0
+	if(hunger > hunger_threshold && respect_hunger)
+		hunger_checks()
 
 ///////////////////////////////////////////////EXOPLANET ANIMALS///////////////////////////////////////////////
 

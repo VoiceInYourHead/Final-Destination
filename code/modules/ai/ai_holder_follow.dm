@@ -41,7 +41,7 @@
 	walk_path(leader, get_to)
 	ai_log("walk_to_leader() : Exiting.",AI_LOG_DEBUG)
 
-/datum/ai_holder/proc/set_follow(mob/living/L, follow_for = 0, var/walk_straight_to = FALSE)
+/datum/ai_holder/proc/set_follow(atom/L, follow_for = 0, var/walk_straight_to = FALSE)
 	ai_log("set_follow() : Entered.", AI_LOG_DEBUG)
 	if (!L)
 		ai_log("set_follow() : Was told to follow a nonexistant mob.", AI_LOG_ERROR)

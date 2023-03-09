@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(ai)
 			continue
 		if (!ai.holder)
 			continue
-		if (!run_empty_levels && !SSpresence.population(get_z(ai.holder)))
+		if (!run_empty_levels && !SSpresence.population(get_z(ai.holder)) && !ai.run_on_empty_levels)
 			continue
 		ai.handle_strategicals()
 		if (no_mc_tick)
@@ -82,7 +82,7 @@ SUBSYSTEM_DEF(aifast)
 			continue
 		if (!ai.holder)
 			continue
-		if (!run_empty_levels && !SSpresence.population(get_z(ai.holder)))
+		if (!run_empty_levels && !SSpresence.population(get_z(ai.holder)) && !ai.run_on_empty_levels)
 			continue
 		ai.handle_tactics()
 		if (no_mc_tick)

@@ -90,6 +90,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	planetary_area = new planetary_area()
 	GLOB.using_map.area_purity_test_exempt_areas += planetary_area.type
 	planetary_area.name = "Surface of [planet_name]"
+	planetary_area.assigned_planet = src
 
 	INCREMENT_WORLD_Z_SIZE
 	forceMove(locate(1,1,world.maxz))

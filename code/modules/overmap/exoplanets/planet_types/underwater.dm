@@ -6,6 +6,7 @@
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
 	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM")
 	map_generators = list(/datum/random_map/noise/exoplanet/water)
+	possible_themes = list(/datum/exoplanet_theme = 85, /datum/exoplanet_theme/radiation_bombing = 15)
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = FALSE
 	flora_diversity = 3
