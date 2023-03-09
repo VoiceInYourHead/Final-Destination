@@ -192,7 +192,7 @@
 	src.add_inherent_law("Perform: You must perform your assigned tasks to the best of your abilities according to the standards generated.")
 	..()
 
-/************ Ascent Lawset (BOH) ******************/
+/************ Ascent Lawset ******************/
 /datum/ai_laws/ascent
 	name = "Ascent Lawset"
 	law_header = "_=/--=-_"

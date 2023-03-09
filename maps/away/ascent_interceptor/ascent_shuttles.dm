@@ -2,7 +2,6 @@
 	name = "Ascent Interceptor"
 	shuttle = "Ascent Interceptor"
 	desc = "Wake signature indicates a small armed vessel of unknown design."
-	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 3000

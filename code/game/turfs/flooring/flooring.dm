@@ -253,6 +253,7 @@
 	descriptor = "planks"
 	build_type = /obj/item/stack/tile/wood
 	flags = TURF_CAN_BREAK | TURF_IS_FRAGILE | TURF_REMOVE_SCREWDRIVER
+	can_paint = 1
 	footstep_type = /decl/footsteps/wood
 	color = WOOD_COLOR_GENERIC
 
