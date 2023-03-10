@@ -389,7 +389,7 @@
 		turns_since_scan++
 		if(turns_since_scan > 1)
 			turns_since_scan = 0
-			find_food()
+			find_and_eat_food()
 
 /mob/living/simple_animal/hostile/smart_beast/proc/consume(var/mob/living/S, var/consume_delay = 50)
 	var/d = get_dir(src.loc, S.loc)
@@ -431,7 +431,7 @@
 
 	return TRUE
 
-/mob/living/simple_animal/hostile/smart_beast/proc/find_food()
+/mob/living/simple_animal/hostile/smart_beast/proc/find_and_eat_food()
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 
 	if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
@@ -464,7 +464,7 @@
 					movement_target = H
 					break
 
-			for(var/obj/item/reagent_containers/food/snacks/S in oview(src, smart_ai_holder.vision_range+3))
+			for(var/obj/item/reagent_containers/food/snacks/S in oview(src, range))
 				if(isturf(S.loc) || ishuman(S.loc))
 					movement_target = S
 					break
@@ -474,19 +474,23 @@
 
 	if(ishuman(movement_target.loc) && hunger > hunger_threshold && !(movement_target.loc in friends))
 		visible_emote("stares at the [movement_target] that [movement_target.loc] has with eyes full of rage!")
-		smart_ai_holder.hostile = TRUE
+		if(hunger_affects_hostility)
+			smart_ai_holder.hostile = TRUE
 		smart_ai_holder.give_target(movement_target.loc, urgent = TRUE)
 		return
 
-	if(movement_target && hunger > hunger_threshold && stat != DEAD)
+	if(movement_target && hunger > hunger_threshold && stat != DEAD && (ai_holder.stance == STANCE_MOVE || ai_holder.stance == STANCE_IDLE))
 		eating = 1
 		for(var/i = 1 to smart_ai_holder.vision_range)
-			sleep(max( movement_cooldown, round(smart_ai_holder.nervousness / 10) ))
+			if(movement_target.fingerprintslast && tameable && !owner)
+				sleep(max( movement_cooldown, round(smart_ai_holder.nervousness / 10) ))
+			else
+				sleep(movement_cooldown)
 			step_to(src,movement_target,1)
 			if(get_dist(src, movement_target) <= 1)
 				break
 
-		if(movement_target)		//Not redundant due to sleeps, Item can be gone in 6 decisecomds
+		if(movement_target && (ai_holder.stance == STANCE_MOVE || ai_holder.stance == STANCE_IDLE))		//Not redundant due to sleeps, Item can be gone in 6 decisecomds
 			var/D = get_dir(src.loc, movement_target.loc)
 			if (D == WEST || D == SOUTHWEST)
 				set_dir(WEST)
@@ -522,8 +526,9 @@
 						eating = 0
 
 						if(movement_target.fingerprintslast in beastmasters && tameable)
-							smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
-							smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
+							if(respect_stats)
+								smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
+								smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
 
 							beastmasters[movement_target.fingerprintslast] ++
 

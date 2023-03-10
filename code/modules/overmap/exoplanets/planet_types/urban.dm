@@ -241,7 +241,7 @@
 			fleeing_for_shelter = TRUE
 			ai_holder.set_follow(shelter,walk_straight_to = TRUE)
 	else
-		return log_and_message_admins("эмм, а где шелтеры на Z[z]...")
+		return log_and_message_admins("эмм, а где шелтеры на z[z]...")
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/shelter_filter_closest(list/targets)
 	var/lowest_distance = 1e6 //fakely far
@@ -286,12 +286,14 @@
 /mob/living/simple_animal/hostile/smart_beast/rain_world/hunger_checks()
 	if(fleeing_for_shelter)
 		return
-	var/datum/ai_holder/smart_animal/rain_world/rainworld_ai = ai_holder
-	if(!resting && !buckled && (rainworld_ai.stance == STANCE_MOVE || rainworld_ai.stance == STANCE_IDLE) && !fleeing_for_shelter)
+	if(!resting && !buckled && (ai_holder.stance == STANCE_MOVE || ai_holder.stance == STANCE_IDLE) && !fleeing_for_shelter && !jaws_grab)
 		turns_since_scan++
-		if(turns_since_scan > 1)
+		if(turns_since_scan > 4)
 			turns_since_scan = 0
-			find_food()
+			find_and_eat_food()
+			for(var/mob/living/S in orange(src,ai_holder.vision_range))
+				if(S.stat == DEAD && S != src)
+					ai_holder.give_target(S,TRUE)
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/bite_grab(atom/movable/target)
 	if(!target)
@@ -446,7 +448,7 @@
 
 	if(istype(A,/obj))
 		var/obj/obj_target = A
-		if(rainworld_ai.bite_grab && prob(grab_chance) && get_dist(src,A) <= 1 && !istype(A,/mob/living/exosuit) && !(obj_target.w_class > ITEM_SIZE_NORMAL))
+		if(rainworld_ai.bite_grab && prob(grab_chance) && get_dist(src,A) <= 1 && obj_target.w_class <= ITEM_SIZE_NORMAL)
 			bite_grab(A)
 			return TRUE
 		else
@@ -471,6 +473,7 @@
 	can_breakthrough = TRUE
 	violent_breakthrough = TRUE
 	run_on_empty_levels = TRUE
+	handle_corpse = TRUE
 	threaten = FALSE
 
 /datum/ai_holder/smart_animal/rain_world/give_target(new_target, urgent = FALSE)
@@ -566,7 +569,7 @@
 			if(rainworld_holder.possible_shelters.len)
 				leader = pick(rainworld_holder.shelter_filter_closest(rainworld_holder.possible_shelters))
 			else
-				return log_and_message_admins("эмм, а где шелтеры на Z[holder.z]...")
+				return log_and_message_admins("эмм, а где шелтеры на z[holder.z]...")
 		ai_log("get_path() : Failed to make new path. Exiting.", AI_LOG_DEBUG)
 		return 0
 
