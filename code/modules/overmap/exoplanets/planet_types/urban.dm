@@ -203,9 +203,9 @@
 	var/shift = 16
 	var/atom/movable/jaws_grab = null
 	var/captured_prey = FALSE
+	var/forget_about_escaped_prey_timer = 0
 	var/list/possible_shelters = list()
 	var/turf/shelter
-	hunger_affects_hostility = FALSE
 	randomize_tone = TRUE
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/seek_shelter(var/returning_with_catch = FALSE)
@@ -268,7 +268,8 @@
 
 	rainworld_ai.turns_since_shelter_path_scan = 30
 	rainworld_ai.unreachable_path_tiles = list()
-//	rainworld_ai.cashed_shelter_path = list()
+	rainworld_ai.cashed_shelter_path = list()
+	rainworld_ai.add_on_distance = 0
 
 	var/list/tiles_in_range = list()
 
@@ -286,14 +287,16 @@
 /mob/living/simple_animal/hostile/smart_beast/rain_world/hunger_checks()
 	if(fleeing_for_shelter)
 		return
+	var/datum/ai_holder/smart_animal/rain_world/rainworld_ai = ai_holder
 	if(!resting && !buckled && (ai_holder.stance == STANCE_MOVE || ai_holder.stance == STANCE_IDLE) && !fleeing_for_shelter && !jaws_grab)
 		turns_since_scan++
 		if(turns_since_scan > 4)
 			turns_since_scan = 0
+			if(rainworld_ai.bite_grab)
+				for(var/mob/living/S in orange(ai_holder.vision_range,src))
+					if(S.stat == DEAD && S != src)
+						ai_holder.give_target(S,TRUE)
 			find_and_eat_food()
-			for(var/mob/living/S in orange(src,ai_holder.vision_range))
-				if(S.stat == DEAD && S != src)
-					ai_holder.give_target(S,TRUE)
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/bite_grab(atom/movable/target)
 	if(!target)
@@ -307,7 +310,10 @@
 			mob_target.buckled.user_unbuckle_mob(src)
 		mob_target.stunned = 5
 		mob_target.anchored = 1
-		mob_target.resting = 1
+		if(istype(mob_target,/mob/living/carbon))
+			mob_target.resting = 1
+		else
+			mob_target.density = 0
 
 	playsound(src, 'sound/effects/magnetclamp.ogg', 100, 1)
 	jaws_grab = target
@@ -334,7 +340,10 @@
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/release_grab()
 	if(istype(jaws_grab,/mob/living))
 		var/mob/living/mob_jaws_grab = jaws_grab
-		mob_jaws_grab.anchored = 0
+		if(istype(mob_jaws_grab,/mob/living/carbon))
+			mob_jaws_grab.resting = 1
+		else
+			mob_jaws_grab.density = 0
 	reset_position(jaws_grab)
 	jaws_grab = null
 
@@ -354,7 +363,10 @@
 			var/mob/living/mob_jaws_grab = jaws_grab
 			mob_jaws_grab.stunned = 5
 			mob_jaws_grab.anchored = 1
-			mob_jaws_grab.resting = 1
+			if(istype(mob_jaws_grab,/mob/living/carbon))
+				mob_jaws_grab.resting = 1
+			else
+				mob_jaws_grab.density = 0
 		if((istype(jaws_grab,/obj/item) && prob(15)) || ai_holder.stance == STANCE_FIGHT || ai_holder.stance == STANCE_FLEE || get_dist(jaws_grab,src) > 1)
 			release_grab()
 			return
@@ -383,19 +395,28 @@
 					reset_position(jaws_grab)
 
 	if(jaws_grab && !istype(src.loc.loc,/area/exoplanet/urban/indoors) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
+		forget_about_escaped_prey_timer = 0
 		seek_shelter(returning_with_catch = TRUE)
 
-	if(jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors) && diet != DIET_HERBIVOROUS)
+	else if(jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors) && diet != DIET_HERBIVOROUS)
+		forget_about_escaped_prey_timer = 0
 		fleeing_for_shelter = FALSE
-		eat_and_leave(jaws_grab)
+		eat_and_leave()
+
+	else if(!jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
+		forget_about_escaped_prey_timer ++
+		if(forget_about_escaped_prey_timer > 10)
+			forget_about_escaped_prey_timer = 0
+			leave_shelter()
 
 	if(!jaws_grab && !istype(src.loc.loc,/area/exoplanet/urban/indoors) && fleeing_for_shelter && captured_prey)
 		fleeing_for_shelter = FALSE
 		captured_prey = FALSE
 		ai_holder.leader = null
 
-/mob/living/simple_animal/hostile/smart_beast/rain_world/proc/eat_and_leave(var/mob/living/victim)
+/mob/living/simple_animal/hostile/smart_beast/rain_world/proc/eat_and_leave()
 	set waitfor = 0
+	var/mob/living/victim = jaws_grab
 	if(!victim)
 		leave_shelter()
 		return
@@ -466,6 +487,7 @@
 	var/turns_since_shelter_path_scan = 30
 	var/list/unreachable_path_tiles = list()
 	var/list/cashed_shelter_path = list()
+	var/add_on_distance = 0
 	var/bite_grab = TRUE
 	hostile = TRUE
 	destructive = TRUE
@@ -512,7 +534,7 @@
 					return TRUE
 				else
 					return FALSE
-		if (holder.IIsAlly(L))
+		if (holder.IIsAlly(L) && L.stat != DEAD)
 			return FALSE
 		return TRUE
 
@@ -541,63 +563,120 @@
 		turns_since_shelter_path_scan ++
 		if(turns_since_shelter_path_scan < 30)
 			ai_log("get_path() : Too early for making new path to shelter. Exiting.", AI_LOG_DEBUG)
-			if(cashed_shelter_path)
-				if(cashed_shelter_path.len)
-					path = cashed_shelter_path
-					return path.len
+			if(cashed_shelter_path && cashed_shelter_path.len)
+				path = cashed_shelter_path
+				return path.len
 			return
 	turns_since_shelter_path_scan = 0
 	forget_path()
 
-//	if(rainworld_holder.fleeing_for_shelter)
-//		max_distance = 300
+	if(rainworld_holder.fleeing_for_shelter)
+		max_distance = 300
 
 	var/list/new_path = AStar(get_turf(holder.loc), target, astar_adjacent_proc, /turf/proc/Distance, min_target_dist = get_to, max_node_depth = max_distance, id = holder.IGetID(), exclude = obstacles)
 
 	if (new_path && new_path.len)
 		path = new_path
 		if(rainworld_holder.fleeing_for_shelter && new_path && new_path.len)
-			cashed_shelter_path = new_path
+			cashed_shelter_path = list()
+			cashed_shelter_path += new_path
 		ai_log("get_path() : Made new path.", AI_LOG_DEBUG)
 		if (path_display)
 			for(var/turf/T in path)
 				T.overlays |= path_overlay
 	else
-		if(rainworld_holder.fleeing_for_shelter)
+		if(rainworld_holder.fleeing_for_shelter && !(target in unreachable_path_tiles))
 			unreachable_path_tiles += target
-			rainworld_holder.possible_shelters -= target
-			if(rainworld_holder.possible_shelters.len)
-				leader = pick(rainworld_holder.shelter_filter_closest(rainworld_holder.possible_shelters))
+			if(rainworld_holder.possible_shelters.len == 1)
+				var/closest_shelter = unreachable_path_tiles[1]
+				var/sdir = get_dir(closest_shelter, rainworld_holder.loc)
+				if(sdir && closest_shelter)
+					var/turf/current_turf = rainworld_holder.loc
+					for(var/i = 1 to round(get_dist(closest_shelter, rainworld_holder.loc)/2+add_on_distance))
+						current_turf = get_step(current_turf,sdir)
+					if(current_turf.density)
+						add_on_distance ++
+						return 0
+					leader = current_turf
 			else
-				return log_and_message_admins("эмм, а где шелтеры на z[holder.z]...")
+				rainworld_holder.possible_shelters -= target
+				leader = pick(rainworld_holder.shelter_filter_closest(rainworld_holder.possible_shelters))
 		ai_log("get_path() : Failed to make new path. Exiting.", AI_LOG_DEBUG)
 		return 0
 
 	ai_log("get_path() : Exiting.", AI_LOG_DEBUG)
 	return path.len
 
+/datum/ai_holder/smart_animal/rain_world/walk_path(atom/A, get_to = 1)
+	var/mob/living/simple_animal/hostile/smart_beast/rain_world/rainworld_holder = holder
+	ai_log("walk_path() : Entered.", AI_LOG_TRACE)
+
+	if (use_astar)
+		if (!path.len) // If we're missing a path, make a new one.
+			ai_log("walk_path() : No path. Attempting to calculate path.", AI_LOG_DEBUG)
+			calculate_path(A, get_to)
+
+		if (!path.len) // If we still don't have one, then the target's probably somewhere inaccessible to us. Get as close as we can.
+			ai_log("walk_path() : Failed to obtain path to target. Using get_step_to() instead.", AI_LOG_INFO)
+			if (holder.IMove(get_step_to(holder, A)) == MOVEMENT_FAILED)
+				ai_log("walk_path() : Failed to move, attempting breakthrough.", AI_LOG_INFO)
+				if (!breakthrough(A) && failed_breakthroughs++ >= 5) // We failed to move, time to smash things.
+					give_up_movement()
+					failed_breakthroughs = 0
+			return
+
+		if (move_once() == FALSE) // Start walking the path.
+			ai_log("walk_path() : Failed to step.", AI_LOG_TRACE)
+			++failed_steps
+			if ((failed_steps > 3 && !rainworld_holder.fleeing_for_shelter) || failed_steps > 100) // We're probably stuck.
+				ai_log("walk_path() : Too many failed_steps.", AI_LOG_DEBUG)
+				forget_path() // So lets try again with a new path.
+				failed_steps = 0
+
+	else
+		ai_log("walk_path() : Going to IMove().", AI_LOG_TRACE)
+		if (holder.IMove(get_step_to(holder, A)) == MOVEMENT_FAILED )
+			ai_log("walk_path() : Failed to move, attempting breakthrough.", AI_LOG_INFO)
+			if (!breakthrough(A) && failed_breakthroughs++ >= 5) // We failed to move, time to smash things.
+				give_up_movement()
+				failed_breakthroughs = 0
+
+	ai_log("walk_path() : Exited.", AI_LOG_TRACE)
+
+
+/datum/ai_holder/smart_animal/rain_world/give_up_movement()
+	var/mob/living/simple_animal/hostile/smart_beast/rain_world/rainworld_holder = holder
+	ai_log("give_up_movement() : Entering.", AI_LOG_DEBUG)
+	if(rainworld_holder.fleeing_for_shelter && (stance == STANCE_MOVE || stance == STANCE_IDLE || stance == STANCE_FOLLOW))
+		ai_log("give_up_movement() : НЕ СДАВАЙСЯ ПОКА МЫ БЕЖИМ ОТ ДОЖДЯ ПОЖАЛУЙСТА.", AI_LOG_DEBUG)
+	else
+		forget_path()
+		destination = null
+	ai_log("give_up_movement() : Exiting.", AI_LOG_DEBUG)
+
 ///////////////////////ACTUAL FAUNA///////////////////////
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/placeholder
 	name = "samak"
 	desc = "A fast, armoured predator accustomed to hiding and ambushing in cold terrain."
-	faction = "samak"
+	faction = "lizard"
 	icon_state = "samak"
 	icon_living = "samak"
 	icon_dead = "samak_dead"
-	init_tame_difficulty = 8
+	tame_difficulty = 8
 	maxHealth = 125
 	health = 125
 	speed = 2
-	diet = DIET_OMNIVOROUS
-	aggression_affects_hostility = FALSE
+	diet = DIET_CARNIVOROUS
 	mob_bump_flag = HUMAN
 	mob_push_flags = ~HEAVY
 	mob_swap_flags = ~HEAVY
 	mob_size = MOB_MEDIUM
 	melee_attack_delay = 8
+	aggression_affects_hostility = FALSE
+	hunger_affects_hostility = FALSE
+	respect_stats = FALSE
 	natural_weapon = /obj/item/natural_weapon/bite/strong
-	cold_damage_per_tick = 0
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
 		)

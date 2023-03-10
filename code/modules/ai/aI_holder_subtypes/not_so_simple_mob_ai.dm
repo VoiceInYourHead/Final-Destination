@@ -140,7 +140,8 @@
 	init_dominance = dominance
 	init_nervousness = nervousness
 
-	smart_holder.hunger = clamp( rand(0,750) - dominance * 5 , 0, 500)
+	if(smart_holder.respect_hunger)
+		smart_holder.hunger = clamp( rand(0,750) - dominance * 5 , 0, 500)
 
 	calculate_temper()
 
@@ -214,8 +215,8 @@
 /datum/ai_holder/smart_animal/New(new_holder)
 	..()
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = new_holder
+	setup_temper()
 	if(smart_holder.respect_stats)
-		setup_temper()
 		calculate_stats()
 /*
 /mob/living/simple_animal/hostile/smart_beast/examine(mob/user)
