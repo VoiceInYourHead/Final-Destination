@@ -4,16 +4,14 @@
 /area/space)
 "ab" = (
 /obj/machinery/computer/ship/navigation{
-	dir = 4;
-	icon_state = "computer"
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/corner/blue/half{
-	dir = 4;
-	icon_state = "bordercolorhalf"
+	dir = 4
 	},
 /obj/item/device/radio/map_preset/venera,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -37,7 +35,6 @@
 "ae" = (
 /obj/machinery/door/airlock/sol{
 	name = "Commanding Officer";
-	req_access = list();
 	secured_wires = 1
 	},
 /obj/structure/cable/green{
@@ -217,8 +214,7 @@
 /area/venera/bridge/co_office)
 "aI" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -228,8 +224,7 @@
 /area/venera/bridge/co_office)
 "aJ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -243,7 +238,6 @@
 /obj/machinery/door/airlock/sol{
 	autoset_access = 0;
 	name = "CO's Quarters";
-	req_access = list();
 	secured_wires = 1
 	},
 /obj/machinery/door/firedoor,
@@ -257,9 +251,7 @@
 /area/venera/bridge/co_office)
 "aM" = (
 /obj/structure/bed/chair/comfy/captain{
-	color = "#666666";
-	dir = 1;
-	icon_state = "capchair_preview"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -284,13 +276,9 @@
 /turf/simulated/floor/wood/walnut,
 /area/venera/bridge/co_office)
 "aR" = (
-/obj/structure/closet/secure_closet{
-	health = 20000;
-	name = "Commanding Officer's locker";
-	req_access = list("ACCESS_CAPTAIN")
-	},
 /obj/item/storage/secure/briefcase/heavysniper,
 /obj/item/disk/secret_project/science,
+/obj/structure/closet/secure_closet,
 /turf/simulated/floor/wood/walnut,
 /area/venera/bridge/co_office)
 "aT" = (
@@ -634,7 +622,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -716,7 +703,6 @@
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/item/storage/pill_bottle/assorted,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -725,7 +711,6 @@
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/structure/noticeboard{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/item/book/manual/solgov_law{
@@ -787,8 +772,7 @@
 /area/venera/bridge)
 "cr" = (
 /obj/structure/bed/chair/comfy/blue{
-	dir = 1;
-	icon_state = "comfychair_preview"
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
@@ -837,8 +821,7 @@
 /area/jinx/main)
 "cC" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 9;
-	icon_state = "spline_fancy"
+	dir = 9
 	},
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
@@ -847,8 +830,7 @@
 /area/venera/bridge)
 "cD" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
@@ -857,8 +839,7 @@
 /area/venera/bridge)
 "cE" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 5;
-	icon_state = "spline_fancy"
+	dir = 5
 	},
 /obj/effect/decal/cleanable/cobweb2,
 /obj/structure/reagent_dispensers/water_cooler{
@@ -892,7 +873,6 @@
 	},
 /obj/structure/sign/warning/nosmoking_1{
 	desc = "A warning sign which reads 'NO SMOKING'. Someone has scratched a variety of crude words in gutter across the entire sign.";
-	pixel_x = 0;
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -958,8 +938,7 @@
 /area/venera/bridge)
 "cT" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 8;
-	icon_state = "spline_fancy"
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -991,12 +970,10 @@
 "cW" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 4;
-	icon_state = "spline_fancy"
+	dir = 4
 	},
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
-	icon_state = "wrecharger0";
 	pixel_x = 23;
 	pixel_y = -3
 	},
@@ -1083,7 +1060,6 @@
 	},
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
-	icon_state = "wrecharger0";
 	pixel_x = -23;
 	pixel_y = -3
 	},
@@ -1093,8 +1069,7 @@
 /area/venera/bridge)
 "dg" = (
 /obj/machinery/computer/ship/engines{
-	dir = 4;
-	icon_state = "computer"
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1131,8 +1106,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/half{
-	dir = 4;
-	icon_state = "bordercolorhalf"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/bridge)
@@ -1151,8 +1125,7 @@
 /area/venera/disperser)
 "dn" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 4;
-	icon_state = "spline_fancy"
+	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1166,7 +1139,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/sol{
-	id_tag = null;
 	name = "Bridge";
 	secured_wires = 1
 	},
@@ -1253,8 +1225,7 @@
 /area/venera/disperser)
 "dz" = (
 /obj/machinery/computer/ship/disperser{
-	dir = 4;
-	icon_state = "computer"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/disperser)
@@ -1347,8 +1318,7 @@
 /area/venera/bridge)
 "dF" = (
 /obj/machinery/computer/ship/helm{
-	dir = 4;
-	req_access = list()
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1396,8 +1366,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/sign/warning/hot_exhaust{
-	dir = 4;
-	icon_state = "fire"
+	dir = 4
 	},
 /turf/simulated/wall/r_wall/hull,
 /area/venera/engine/thrusterstarboard)
@@ -1435,8 +1404,7 @@
 /area/venera/maint/port)
 "eh" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 6;
-	icon_state = "intact"
+	dir = 6
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1505,8 +1473,7 @@
 /area/venera/security)
 "ez" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/venera/engine/atmos)
@@ -1548,8 +1515,7 @@
 /area/jinx/cockpit)
 "eP" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 8;
-	icon_state = "spline_fancy"
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1568,9 +1534,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/hygiene/sink{
 	dir = 4;
-	icon_state = "sink";
-	pixel_x = 11;
-	pixel_y = 0
+	pixel_x = 11
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -1592,8 +1556,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1;
-	icon_state = "map"
+	dir = 1
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -1615,8 +1578,7 @@
 /area/venera/bridge)
 "fc" = (
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
-	dir = 8;
-	icon_state = "corner_white_three_quarters"
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1650,7 +1612,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -1736,8 +1697,7 @@
 /area/venera/security)
 "fA" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1745,8 +1705,7 @@
 /area/venera/hallway)
 "fD" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -1772,8 +1731,7 @@
 /area/jinx/main)
 "fG" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1825,7 +1783,6 @@
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -1871,12 +1828,10 @@
 /area/venera/bridge)
 "fY" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 4;
-	icon_state = "corner_white"
+	dir = 4
 	},
 /obj/structure/disposalpipe/junction{
-	dir = 4;
-	icon_state = "pipe-j1"
+	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/dark,
@@ -1908,8 +1863,7 @@
 /area/venera/hallway/eva)
 "gi" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/structure/railing/mapped{
@@ -1995,7 +1949,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/machinery/firealarm{
@@ -2058,8 +2011,7 @@
 /area/jinx/engine)
 "gN" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
@@ -2085,7 +2037,6 @@
 	},
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -2096,8 +2047,7 @@
 /area/venera/medbay/chemistry)
 "gW" = (
 /obj/effect/floor_decal/corner/yellow/half{
-	dir = 1;
-	icon_state = "bordercolorhalf"
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
@@ -2125,8 +2075,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/half{
-	dir = 4;
-	icon_state = "bordercolorhalf"
+	dir = 4
 	},
 /obj/item/device/megaphone,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -2140,8 +2089,7 @@
 /area/venera/security)
 "hi" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 4;
-	icon_state = "map"
+	dir = 4
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -2197,7 +2145,6 @@
 "hG" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/structure/hygiene/sink/kitchen{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2211,15 +2158,13 @@
 	},
 /obj/structure/closet/emcloset,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
 "hM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /turf/simulated/wall/r_titanium,
 /area/jinx/cockpit)
@@ -2256,8 +2201,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23;
-	pixel_y = 0
+	pixel_x = -23
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "venera_co2storage342";
@@ -2310,12 +2254,10 @@
 /area/venera/security/questioning)
 "ib" = (
 /obj/structure/bed/chair/comfy/captain{
-	color = "#666666";
 	dir = 8
 	},
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 8;
-	icon_state = "spline_fancy"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/bridge)
@@ -2348,12 +2290,10 @@
 /area/space)
 "ip" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/effect/floor_decal/corner/black{
-	dir = 4;
-	icon_state = "corner_white"
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/cable/green{
@@ -2400,7 +2340,6 @@
 "iC" = (
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/structure/iv_drip,
@@ -2409,7 +2348,7 @@
 "iH" = (
 /obj/machinery/vending/medical{
 	dir = 4;
-	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin = 0, /obj/item/reagent_containers/glass/bottle/inaprovaline = 0, /obj/item/reagent_containers/glass/bottle/stoxin = 1, /obj/item/reagent_containers/syringe/antiviral = 2, /obj/item/reagent_containers/pill/antitox = 1, /obj/item/reagent_containers/syringe = 7, /obj/item/device/scanner/health = 1, /obj/item/reagent_containers/glass/beaker = 1, /obj/item/reagent_containers/dropper = 2, /obj/item/stack/medical/advanced/bruise_pack = 0, /obj/item/stack/medical/advanced/ointment = 0, /obj/item/stack/medical/splint = 0, /obj/item/reagent_containers/hypospray/autoinjector/pain = 0)
+	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin=0,/obj/item/reagent_containers/glass/bottle/inaprovaline=0,/obj/item/reagent_containers/glass/bottle/stoxin=1,/obj/item/reagent_containers/syringe/antiviral=2,/obj/item/reagent_containers/pill/antitox=1,/obj/item/reagent_containers/syringe=7,/obj/item/device/scanner/health=1,/obj/item/reagent_containers/glass/beaker=1,/obj/item/reagent_containers/dropper=2,/obj/item/stack/medical/advanced/bruise_pack=0,/obj/item/stack/medical/advanced/ointment=0,/obj/item/stack/medical/splint=0,/obj/item/reagent_containers/hypospray/autoinjector/pain=0)
 	},
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
@@ -2532,8 +2471,7 @@
 /area/venera/living/bunk)
 "jo" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4;
-	icon_state = "map"
+	dir = 4
 	},
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/techfloor,
@@ -2541,8 +2479,7 @@
 "jt" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 9;
-	icon_state = "intact"
+	dir = 9
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2604,8 +2541,7 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/item/shovel/spade,
 /turf/simulated/floor/tiled,
@@ -2695,8 +2631,7 @@
 /area/venera/engine)
 "kb" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 4;
-	icon_state = "spline_fancy"
+	dir = 4
 	},
 /obj/machinery/light_switch{
 	pixel_x = 22;
@@ -2776,7 +2711,6 @@
 "kx" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /obj/machinery/light{
@@ -2866,8 +2800,7 @@
 /area/venera/security)
 "kR" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
+	dir = 8
 	},
 /obj/machinery/oxygen_pump{
 	pixel_x = -32
@@ -3010,7 +2943,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3054,7 +2986,6 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/meter,
@@ -3218,7 +3149,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
-	icon_state = "wrecharger0";
 	pixel_x = -23;
 	pixel_y = -3
 	},
@@ -3256,7 +3186,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/missile/impact,
+/obj/structure/missile/breacher/he,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "mr" = (
@@ -3326,15 +3256,13 @@
 /area/venera/living/mess)
 "mC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5;
-	icon_state = "intact"
+	dir = 5
 	},
 /obj/item/device/radio/intercom/map_preset/venera{
 	dir = 4;
 	pixel_x = -24
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1379;
 	id_tag = "venera_eva_airlock_sensor";
 	pixel_y = -25
 	},
@@ -3366,7 +3294,6 @@
 /area/venera/bridge)
 "mI" = (
 /obj/machinery/access_button/airlock_exterior{
-	frequency = 1379;
 	master_tag = "venera_eva_airlock";
 	pixel_y = -23
 	},
@@ -3374,8 +3301,7 @@
 /area/venera/hallway/eva)
 "mJ" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -3500,7 +3426,6 @@
 "nr" = (
 /obj/machinery/door/airlock/engineering{
 	icon_state = "closed";
-	locked = 0;
 	name = "Port Solar Access"
 	},
 /obj/structure/cable/green{
@@ -3661,8 +3586,7 @@
 /area/venera/security/detective)
 "od" = (
 /obj/effect/floor_decal/corner/yellow/half{
-	dir = 1;
-	icon_state = "bordercolorhalf"
+	dir = 1
 	},
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -3750,8 +3674,7 @@
 /area/venera/hallway)
 "oq" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 4;
-	icon_state = "spline_fancy"
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3936,8 +3859,7 @@
 /area/venera/hallway)
 "pf" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 1;
-	icon_state = "corner_white"
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/green{
 	dir = 4
@@ -4030,8 +3952,7 @@
 /area/venera/security/lobby)
 "pB" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 4;
-	icon_state = "spline_fancy"
+	dir = 4
 	},
 /obj/structure/table/steel_reinforced,
 /obj/item/paper_bin{
@@ -4125,7 +4046,6 @@
 	},
 /obj/structure/hygiene/sink{
 	dir = 8;
-	icon_state = "sink";
 	pixel_x = -12;
 	pixel_y = 2
 	},
@@ -4145,8 +4065,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5;
-	icon_state = "intact"
+	dir = 5
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -4178,14 +4097,10 @@
 /obj/machinery/atmospherics/omni/mixer{
 	active_power_usage = 7500;
 	tag_east = 2;
-	tag_east_con = null;
 	tag_north = 1;
 	tag_north_con = 0.79;
 	tag_south = 1;
-	tag_south_con = 0.21;
-	tag_west = 0;
-	tag_west_con = null;
-	use_power = 1
+	tag_south_con = 0.21
 	},
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -4227,7 +4142,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/missile/he,
+/obj/structure/missile/breacher/he,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "qw" = (
@@ -4319,16 +4234,14 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/terminal{
-	dir = 1;
-	icon_state = "term"
+	dir = 1
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/venera/engine/atmos)
 "qM" = (
 /obj/structure/reagent_dispensers/water_cooler{
-	dir = 4;
-	icon_state = "water_cooler"
+	dir = 4
 	},
 /turf/simulated/floor/wood/ebony,
 /area/venera/living/bunk)
@@ -4403,8 +4316,7 @@
 /area/venera/living/hydro)
 "rb" = (
 /obj/machinery/computer/ship/navigation{
-	dir = 4;
-	icon_state = "computer"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/disperser)
@@ -4447,7 +4359,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/access_button/airlock_interior{
-	frequency = 1379;
 	master_tag = "venera_eva_airlock";
 	pixel_x = 3;
 	pixel_y = -23
@@ -4476,7 +4387,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -4599,8 +4509,7 @@
 /area/venera/medbay)
 "rT" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/item/roller,
 /turf/simulated/floor/tiled/dark,
@@ -4669,8 +4578,7 @@
 /area/venera/hallway/eva)
 "sk" = (
 /obj/structure/sign/warning/compressed_gas{
-	dir = 1;
-	icon_state = "hikpa"
+	dir = 1
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/venera/engine/thrusterstarboard)
@@ -4691,8 +4599,7 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/cobweb{
-	dir = 4;
-	icon_state = "cobweb1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/venera/living/mess)
@@ -4708,9 +4615,7 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
-/obj/item/device/taperecorder{
-	pixel_y = 0
-	},
+/obj/item/device/taperecorder,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
@@ -4841,8 +4746,7 @@
 /area/venera/medbay)
 "sT" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/medbay)
@@ -4859,8 +4763,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -4928,8 +4831,7 @@
 /area/venera/living/bunk)
 "tv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 5;
-	icon_state = "intact"
+	dir = 5
 	},
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -4983,8 +4885,7 @@
 /area/venera/hallway)
 "tP" = (
 /obj/effect/floor_decal/corner/yellow{
-	dir = 5;
-	icon_state = "corner_white"
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/cable/green{
@@ -5151,8 +5052,7 @@
 /area/jinx/main)
 "um" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1;
-	icon_state = "map"
+	dir = 1
 	},
 /turf/simulated/wall/r_titanium,
 /area/jinx/cockpit)
@@ -5170,8 +5070,7 @@
 /area/venera/security)
 "ur" = (
 /obj/structure/bed/chair/padded/blue{
-	dir = 1;
-	icon_state = "chair_preview"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -5376,7 +5275,6 @@
 	},
 /obj/structure/sign/warning/nosmoking_1{
 	desc = "A warning sign which reads 'NO SMOKING'. Someone has scratched a variety of crude words in gutter across the entire sign.";
-	pixel_x = 0;
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -5399,7 +5297,7 @@
 /area/jinx/cockpit)
 "vQ" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/missile/impact,
+/obj/structure/missile/breacher/he,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "vT" = (
@@ -5459,8 +5357,7 @@
 /area/jinx/engine)
 "wj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 6;
-	icon_state = "intact"
+	dir = 6
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -5483,8 +5380,7 @@
 "wl" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 6;
-	icon_state = "intact"
+	dir = 6
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -5534,7 +5430,6 @@
 /obj/effect/floor_decal/corner/paleblue,
 /obj/structure/closet/secure_closet/medical_wall{
 	name = "Pill Cabinet";
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/item/storage/pill_bottle,
@@ -5613,8 +5508,7 @@
 /obj/machinery/vending/wallmed1{
 	dir = 4;
 	name = "Emergency NanoMed";
-	pixel_x = -30;
-	pixel_y = 0
+	pixel_x = -30
 	},
 /obj/random/clipboard,
 /obj/structure/cable/green{
@@ -5663,7 +5557,6 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -5716,8 +5609,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/closet/hydrant{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
@@ -5746,7 +5638,6 @@
 "xf" = (
 /obj/machinery/door/airlock/engineering{
 	icon_state = "closed";
-	locked = 0;
 	name = "Port Solar Access"
 	},
 /obj/structure/cable/green{
@@ -5782,8 +5673,7 @@
 /area/venera/engine/solar/port)
 "xr" = (
 /obj/structure/sign/warning/radioactive{
-	dir = 4;
-	icon_state = "radiation"
+	dir = 4
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/venera/engine/atmos)
@@ -5871,7 +5761,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6076,7 +5965,6 @@
 /area/venera/disperser)
 "yF" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1379;
 	id_tag = "venera_eva_airlock";
 	pixel_y = 20;
 	tag_airpump = "venera_eva_airlock_pump";
@@ -6129,7 +6017,6 @@
 "yN" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
-	icon_state = "sink";
 	pixel_x = -12;
 	pixel_y = 2
 	},
@@ -6158,7 +6045,6 @@
 /obj/structure/bed/roller,
 /obj/structure/closet/secure_closet/medical_wall{
 	name = "IV Equipment Cabinet";
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/item/reagent_containers/ivbag/nanoblood,
@@ -6215,8 +6101,7 @@
 "zg" = (
 /obj/effect/floor_decal/corner/black,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6246,8 +6131,7 @@
 /area/venera/hallway)
 "zi" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 10;
-	icon_state = "spline_fancy"
+	dir = 10
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6259,8 +6143,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/super/critical{
-	dir = 2;
-	is_critical = 1;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -6317,13 +6199,11 @@
 /area/venera/engine)
 "zv" = (
 /obj/structure/bed/chair/padded/beige{
-	dir = 4;
-	icon_state = "chair_preview"
+	dir = 4
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23;
-	pixel_y = 0
+	pixel_x = -23
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/security/lobby)
@@ -6491,7 +6371,6 @@
 /area/venera/living/hydro)
 "AB" = (
 /obj/machinery/door/airlock/glass/medical{
-	id_tag = null;
 	name = "Infirmary Reception"
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -6633,8 +6512,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/terminal{
-	dir = 1;
-	icon_state = "term"
+	dir = 1
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -6790,8 +6668,7 @@
 /area/venera/security/questioning)
 "BJ" = (
 /obj/structure/hygiene/shower{
-	dir = 8;
-	icon_state = "shower"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/venera/living)
@@ -6842,8 +6719,7 @@
 /area/venera/living/bunk)
 "BW" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /turf/simulated/wall/r_wall/hull,
 /area/venera/engine/thrusterstarboard)
@@ -6879,7 +6755,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6898,16 +6773,14 @@
 /area/venera/hallway/eva)
 "Ci" = (
 /obj/structure/disposalpipe/junction{
-	dir = 4;
-	icon_state = "pipe-j1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/hallway)
 "Cl" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24;
-	pixel_y = 0
+	pixel_x = -24
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7010,8 +6883,7 @@
 /area/jinx/cockpit)
 "CW" = (
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 1;
-	icon_state = "corner_white"
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -7070,7 +6942,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/missile/he,
+/obj/structure/missile/breacher/he,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "Di" = (
@@ -7162,7 +7034,6 @@
 "Dw" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -7195,8 +7066,7 @@
 /area/venera/security/equipment)
 "DN" = (
 /obj/effect/floor_decal/corner/yellow{
-	dir = 5;
-	icon_state = "corner_white"
+	dir = 5
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -7524,8 +7394,7 @@
 /area/venera/disperser)
 "FH" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/green,
 /obj/structure/cable/green{
@@ -7572,7 +7441,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -7658,8 +7526,7 @@
 "FW" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24;
-	pixel_y = 0
+	pixel_x = -24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -7760,8 +7627,7 @@
 /area/venera/security/questioning)
 "GH" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 8;
-	icon_state = "spline_fancy"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/bridge)
@@ -7781,7 +7647,6 @@
 	dir = 1
 	},
 /obj/machinery/computer/cryopod{
-	density = 0;
 	pixel_y = -32
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -7809,13 +7674,11 @@
 /obj/structure/bed/roller,
 /obj/structure/closet/secure_closet/medical_wall{
 	name = "Medical Equipment Cabinet";
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/random/medical/lite,
 /obj/effect/floor_decal/spline/plain/blue{
-	dir = 6;
-	icon_state = "spline_plain"
+	dir = 6
 	},
 /obj/random/medical/lite,
 /obj/random/medical/lite,
@@ -7840,8 +7703,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/venera/engine/atmos)
@@ -7862,8 +7724,7 @@
 /area/jinx/main)
 "Hm" = (
 /obj/effect/floor_decal/corner/black{
-	dir = 4;
-	icon_state = "corner_white"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 1
@@ -7913,8 +7774,7 @@
 /area/venera/bridge)
 "Hy" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -7960,8 +7820,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 9;
-	icon_state = "intact"
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/venera/engine)
@@ -8078,8 +7937,7 @@
 /area/venera/engine/atmos)
 "IA" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 6;
-	icon_state = "spline_fancy"
+	dir = 6
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/folder/red,
@@ -8098,8 +7956,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9;
-	icon_state = "intact"
+	dir = 9
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8234,8 +8091,7 @@
 /area/venera/engine/solar/port)
 "Jc" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4;
-	icon_state = "map"
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8271,8 +8127,7 @@
 /area/venera/engine/solar/port)
 "Jl" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /obj/machinery/light{
 	dir = 1;
@@ -8364,8 +8219,6 @@
 /area/venera/security)
 "JB" = (
 /obj/machinery/power/apc/super/critical{
-	dir = 2;
-	is_critical = 1;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -8397,7 +8250,6 @@
 /obj/structure/catwalk,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /turf/simulated/floor/plating,
@@ -8445,8 +8297,7 @@
 /area/space)
 "Kb" = (
 /obj/structure/disposalpipe/junction{
-	dir = 4;
-	icon_state = "pipe-j1"
+	dir = 4
 	},
 /turf/simulated/floor/wood/ebony,
 /area/venera/living/mess)
@@ -8462,7 +8313,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8479,8 +8329,7 @@
 /area/venera/living)
 "Kl" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
@@ -8501,8 +8350,7 @@
 /area/venera/living/mess)
 "Kp" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8573,7 +8421,6 @@
 "KF" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
@@ -8717,8 +8564,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
+	dir = 8
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
@@ -8824,8 +8670,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/jinx/main)
@@ -8855,8 +8700,7 @@
 /area/venera/medbay/chemistry)
 "LH" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8870,9 +8714,7 @@
 "LJ" = (
 /obj/structure/hygiene/sink{
 	dir = 4;
-	icon_state = "sink";
-	pixel_x = 11;
-	pixel_y = 0
+	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/living)
@@ -8902,13 +8744,10 @@
 /area/venera/engine)
 "LP" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /obj/structure/cable/green,
 /obj/machinery/power/apc/super/critical{
-	dir = 2;
-	is_critical = 1;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -8921,7 +8760,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8929,8 +8767,7 @@
 /area/venera/living)
 "LS" = (
 /obj/structure/bed/chair/padded/red{
-	dir = 8;
-	icon_state = "chair_preview"
+	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -9002,7 +8839,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/sol{
-	id_tag = null;
 	name = "Bridge";
 	secured_wires = 1
 	},
@@ -9027,8 +8863,7 @@
 /area/venera/maint/port)
 "Mu" = (
 /obj/structure/bed/chair/padded/red{
-	dir = 1;
-	icon_state = "chair_preview"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/questioning)
@@ -9080,8 +8915,7 @@
 /area/venera/medbay)
 "MD" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 10;
-	icon_state = "corner_white"
+	dir = 10
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -9314,7 +9148,6 @@
 "NH" = (
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "south bump";
 	pixel_y = -24
 	},
@@ -9366,8 +9199,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9411,15 +9243,13 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/glass/security{
-	name = "Security Lobby";
-	welded = null
+	name = "Security Lobby"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/security/lobby)
 "Oc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5;
-	icon_state = "intact"
+	dir = 5
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9505,7 +9335,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -9694,7 +9523,6 @@
 "Pv" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	dir = 4;
-	id_tag = null;
 	name = "Treatment Center"
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -9707,7 +9535,6 @@
 	},
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
-	icon_state = "wrecharger0";
 	pixel_x = -23;
 	pixel_y = -3
 	},
@@ -9723,8 +9550,7 @@
 /area/venera/security/equipment)
 "PA" = (
 /obj/item/storage/secure/safe{
-	pixel_x = -22;
-	pixel_y = 0
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -9754,15 +9580,13 @@
 /area/venera/security)
 "PJ" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
 "PK" = (
 /obj/structure/table/rack,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /obj/item/clothing/glasses/welding/superior,
@@ -9791,6 +9615,12 @@
 /obj/structure/bed/chair/shuttle/black{
 	dir = 1
 	},
+/obj/machinery/airlock_sensor/airlock_interior{
+	id_tag = "jinxairlock_sensor_interior";
+	pixel_x = -26;
+	pixel_y = -8;
+	frequency = 1380
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/main)
 "PQ" = (
@@ -9810,8 +9640,7 @@
 /area/venera/disperser/storage)
 "PR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /obj/machinery/firealarm{
 	dir = 1;
@@ -9830,7 +9659,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/light_switch{
@@ -9841,7 +9669,6 @@
 /area/venera/medbay/chemistry)
 "PU" = (
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
@@ -9871,8 +9698,7 @@
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23;
-	pixel_y = 0
+	pixel_x = -23
 	},
 /turf/simulated/floor/plating,
 /area/venera/disperser)
@@ -9880,8 +9706,7 @@
 /obj/machinery/vending/wallmed1{
 	dir = 4;
 	name = "Emergency NanoMed";
-	pixel_x = -30;
-	pixel_y = 0
+	pixel_x = -30
 	},
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/cups,
@@ -9908,8 +9733,7 @@
 /area/venera/engine)
 "Qo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4;
-	icon_state = "intact"
+	dir = 4
 	},
 /turf/simulated/wall/r_wall/hull,
 /area/venera/engine/atmos)
@@ -10020,8 +9844,7 @@
 /area/space)
 "QU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 9;
-	icon_state = "intact"
+	dir = 9
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/venera/engine/thrusterstarboard)
@@ -10036,15 +9859,13 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
 /area/venera/living/hydro)
 "Ra" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 5;
-	icon_state = "intact"
+	dir = 5
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10073,8 +9894,7 @@
 /area/venera/maint/starboard/bridge)
 "Ri" = (
 /obj/effect/floor_decal/corner/yellow/half{
-	dir = 1;
-	icon_state = "bordercolorhalf"
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
@@ -10233,8 +10053,7 @@
 /area/venera/living/mess)
 "RZ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1;
-	icon_state = "spline_fancy"
+	dir = 1
 	},
 /obj/machinery/newscaster{
 	pixel_x = -32
@@ -10344,8 +10163,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/catwalk,
@@ -10382,7 +10200,6 @@
 	},
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
-	icon_state = "wrecharger0";
 	pixel_x = 23;
 	pixel_y = -3
 	},
@@ -10428,7 +10245,6 @@
 /area/venera/engine/atmos)
 "SN" = (
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -10576,8 +10392,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
-	dir = 5;
-	icon_state = "intact"
+	dir = 5
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10777,7 +10592,8 @@
 	tag_chamber_sensor = "jinxairlock_sensor_chamber";
 	tag_exterior_door = "jinxairlock_outer";
 	tag_exterior_sensor = "jinxairlock_sensor_external";
-	tag_interior_door = "jinxairlock_inner"
+	tag_interior_door = "jinxairlock_inner";
+	tag_interior_sensor = "jinxairlock_sensor_interior"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{
 	dir = 1;
@@ -10957,7 +10773,6 @@
 "Vk" = (
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -10981,26 +10796,22 @@
 /area/venera/disperser/storage)
 "Vn" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 1;
-	icon_state = "corner_white"
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/black{
-	dir = 4;
-	icon_state = "corner_white"
+	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
 "Vo" = (
 /obj/structure/bed/chair/padded/beige{
-	dir = 4;
-	icon_state = "chair_preview"
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -11009,7 +10820,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/item/device/radio/intercom/map_preset/venera{
@@ -11033,7 +10843,6 @@
 /area/venera/maint/starboard/bridge)
 "Vs" = (
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
@@ -11093,8 +10902,7 @@
 "VE" = (
 /obj/machinery/door/airlock/engineering{
 	icon_state = "closed";
-	name = "Starboard Solar Access";
-	welded = null
+	name = "Starboard Solar Access"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -11152,7 +10960,6 @@
 "VK" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
-	icon_state = "sink";
 	pixel_x = -12;
 	pixel_y = 2
 	},
@@ -11168,8 +10975,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red{
-	dir = 4;
-	icon_state = "corner_white"
+	dir = 4
 	},
 /obj/machinery/light{
 	dir = 1;
@@ -11186,9 +10992,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 6
 	},
@@ -11227,7 +11031,6 @@
 /obj/random/coin,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/simulated/floor/wood/ebony,
@@ -11255,9 +11058,7 @@
 /area/venera/disperser)
 "Wf" = (
 /obj/machinery/door/airlock/maintenance{
-	locked = 0;
-	name = "Infirmary Maintenance Access";
-	welded = null
+	name = "Infirmary Maintenance Access"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11500,7 +11301,6 @@
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	dir = 4;
-	id_tag = null;
 	name = "Treatment Center"
 	},
 /obj/machinery/door/firedoor,
@@ -11524,7 +11324,6 @@
 	},
 /obj/structure/sign/warning/nosmoking_1{
 	desc = "A warning sign which reads 'NO SMOKING'. Someone has scratched a variety of crude words in gutter across the entire sign.";
-	pixel_x = 0;
 	pixel_y = 26
 	},
 /obj/structure/disposalpipe/segment{
@@ -11556,12 +11355,10 @@
 /area/venera/living)
 "XH" = (
 /obj/structure/reagent_dispensers/water_cooler{
-	dir = 4;
-	icon_state = "water_cooler"
+	dir = 4
 	},
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
-	icon_state = "wrecharger0";
 	pixel_x = -23;
 	pixel_y = -3
 	},
@@ -11576,8 +11373,7 @@
 	icon_state = "tube1"
 	},
 /obj/effect/floor_decal/corner/yellow/half{
-	dir = 8;
-	icon_state = "bordercolorhalf"
+	dir = 8
 	},
 /obj/structure/table/rack,
 /obj/item/stack/material/glass{
@@ -11628,7 +11424,6 @@
 /obj/item/clothing/under/solgov/utility/fleet/security,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /obj/item/storage/belt/security,
@@ -11683,8 +11478,7 @@
 /area/venera/security/equipment)
 "Yk" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 10;
-	icon_state = "intact"
+	dir = 10
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11806,7 +11600,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/l3closet/janitor,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -11839,9 +11632,7 @@
 /area/venera/security/lobby)
 "YN" = (
 /obj/structure/bed/chair/comfy/captain{
-	color = "#666666";
-	dir = 4;
-	icon_state = "capchair_preview"
+	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
 /area/venera/bridge/co_office)
@@ -11851,9 +11642,7 @@
 /area/venera/engine/thrusterstarboard)
 "YP" = (
 /obj/structure/table/steel,
-/obj/item/device/taperecorder{
-	pixel_y = 0
-	},
+/obj/item/device/taperecorder,
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/questioning)
 "YS" = (
@@ -11925,8 +11714,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/sign/warning/hot_exhaust{
-	dir = 4;
-	icon_state = "fire"
+	dir = 4
 	},
 /turf/simulated/wall/r_wall/hull,
 /area/venera/engine/thrusterport)
@@ -11974,7 +11762,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/item/device/radio/map_preset/venera,
@@ -11990,7 +11777,6 @@
 /area/venera/security/equipment)
 "Zr" = (
 /obj/structure/closet/medical_wall/filled{
-	pixel_x = 0;
 	pixel_y = -32
 	},
 /obj/item/storage/med_pouch/radiation,
@@ -12108,7 +11894,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/cobweb2,
