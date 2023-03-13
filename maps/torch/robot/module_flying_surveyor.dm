@@ -21,8 +21,6 @@
 		SKILL_PILOT               = SKILL_EXPERT,
 		SKILL_BOTANY              = SKILL_PROF,
 		SKILL_EVA                 = SKILL_PROF,
-		SKILL_WEAPONS			  = SKILL_ADEPT,
-		SKILL_COMBAT			  = SKILL_ADEPT,
 		SKILL_MECH                = HAS_PERK,
 	)
 
