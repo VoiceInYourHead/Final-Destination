@@ -1539,8 +1539,8 @@
 /datum/chemical_reaction/cakebatter
 	name = "Cake Batter"
 	result = /datum/reagent/nutriment/batter/cakebatter
-	required_reagents = list(/datum/reagent/sugar = 1, /datum/reagent/nutriment/batter = 2)
-	result_amount = 3
+	required_reagents = list(/datum/reagent/sugar = 1, /datum/reagent/nutriment/batter = 1)
+	result_amount = 2
 	mix_message = "The sugar lightens the batter and gives it a sweet smell."
 
 /datum/chemical_reaction/soybatter
