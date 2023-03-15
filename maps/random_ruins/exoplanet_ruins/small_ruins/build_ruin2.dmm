@@ -116,7 +116,7 @@
 "Xf" = (/turf/simulated/wall/r_titanium,/area/map_template/build/build2)
 "Yx" = (/obj/machinery/alarm/noaccess{pixel_y = 20},/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/build/build2)
 "YA" = (/obj/machinery/atmospherics/pipe/simple/visible/universal,/obj/machinery/meter,/obj/machinery/power/apc{locked = 0; name = "south bump"; req_access = null; dir = 4; pixel_x = 27},/obj/structure/cable,/obj/random/powercell,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/map_template/build/build2)
-"YP" = (/obj/structure/table/steel_reinforced,/obj/structure/window/reinforced{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/item/vampiric,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/build/build2)
+"YP" = (/obj/structure/table/steel_reinforced,/obj/structure/window/reinforced{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/build/build2)
 "Zh" = (/obj/machinery/button/blast_door{id_tag = "build2_gar2"; name = "Garage Shutter 2"; pixel_y = 28},/obj/effect/floor_decal/techfloor{dir = 1},/obj/effect/floor_decal/corner/yellow{dir = 10},/obj/structure/table/rack,/obj/random/powercell,/obj/random/tool,/obj/random/tool,/obj/effect/floor_decal/techfloor/hole/right{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/map_template/build/build2)
 "Zy" = (/obj/effect/wallframe_spawn/reinforced/titanium,/turf/template_noop,/area/map_template/build/build2)
 

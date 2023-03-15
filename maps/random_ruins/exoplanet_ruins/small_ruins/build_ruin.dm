@@ -21,12 +21,24 @@
 	name = "Ruined Voxship 4"
 	id = "build4"
 	suffixes = list("small_ruins/build_ruin4.dmm")
-	spawn_cost = 0.3
+	spawn_cost = 0.2
 
 /datum/map_template/ruin/exoplanet/build/build5
 	name = "Ruined Rad Wastes 5"
 	id = "build5"
 	suffixes = list("small_ruins/build_ruin5.dmm")
+
+/datum/map_template/ruin/exoplanet/build/build6
+	name = "Ruined Ascent Shuttle 6"
+	id = "build6"
+	suffixes = list("small_ruins/build_ruin6.dmm")
+	ruin_tags = RUIN_ALIEN
+
+/datum/map_template/ruin/exoplanet/build/build7
+	name = "Ruined Monolothic Ring 7"
+	id = "build7"
+	suffixes = list("small_ruins/build_ruin7.dmm")
+	ruin_tags = RUIN_ALIEN
 
 
 
@@ -47,7 +59,9 @@
 /area/map_template/build/build5
 	name = "\improper Radioactive Wastes"
 /area/map_template/build/build6
+	name = "\improper ASC-792-F"
 /area/map_template/build/build7
+	name = "\improper Monolithic Ring"
 /area/map_template/build/build8
 
 
@@ -92,6 +106,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/solgov/service/expedition
 	pda_type = /obj/item/modular_computer/pda/engineering
+
 // PAPERS??? //
 
 /obj/item/paper/rad_wastes
