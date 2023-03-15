@@ -49,12 +49,12 @@
 
 /obj/structure/rubble/attack_hand(mob/user)
 	if(!is_rummaging)
-		if(!lootleft)
-			to_chat(user, "<span class='warning'>There's nothing left in this one but unusable garbage...</span>")
-			return
 		visible_message("[user] starts rummaging through \the [src].")
 		is_rummaging = 1
 		if(do_after(user, 30))
+			if(!lootleft)
+				to_chat(user, "<span class='warning'>There's nothing left in this one but unusable garbage...</span>")
+				return
 			var/obj/item/booty = pickweight(loot)
 			booty = new booty(loc)
 			lootleft--
@@ -72,7 +72,7 @@
 	if (istype(I, /obj/item/pickaxe))
 		var/obj/item/pickaxe/P = I
 		visible_message("[user] starts clearing away \the [src].")
-		if(do_after(user,P.digspeed, src))
+		if(do_after(user,P.digspeed/2, src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pickweight(loot)

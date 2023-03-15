@@ -12,7 +12,20 @@
 /turf/unsimulated/floor/exoplanet/New()
 	if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/visitable/sector/exoplanet/E = map_sectors["[z]"]
-		if(istype(E))
+		if(istype(E,/obj/effect/overmap/visitable/sector/exoplanet/urban))
+			var/obj/effect/overmap/visitable/sector/exoplanet/urban/U = E
+			if(U.atmosphere)
+				initial_gas = U.atmosphere.gas.Copy()
+				temperature = U.atmosphere.temperature
+			else
+				initial_gas = list()
+				temperature = T0C
+			//Must be done here, as light data is not fully carried over by ChangeTurf (but overlays are).
+			if(istype(src.loc,/area/exoplanet/urban/outdoors))
+				set_light(U.i_hate_lightlevel, 0.1, 2)
+			if(U.planetary_area && istype(loc, world.area))
+				ChangeArea(src, U.planetary_area)
+		else if(istype(E))
 			if(E.atmosphere)
 				initial_gas = E.atmosphere.gas.Copy()
 				temperature = E.atmosphere.temperature

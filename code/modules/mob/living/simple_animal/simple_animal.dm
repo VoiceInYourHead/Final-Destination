@@ -361,6 +361,10 @@
 	return -1
 
 /mob/living/simple_animal/proc/pry_door(var/mob/user, var/delay, var/obj/machinery/door/pesky_door)
+	if(istype(pesky_door,/obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/pesky_airlock = pesky_door
+		if(pesky_airlock.locked)
+			return FALSE
 	visible_message(SPAN_WARNING("\The [user] begins [pry_desc] at \the [pesky_door]!"))
 	set_AI_busy(TRUE)
 	if(do_after(user, delay, pesky_door))

@@ -541,6 +541,7 @@
 							if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 + tame_difficulty/2 ))
 								for(var/client/C in GLOB.clients)
 									if(C.key == movement_target.fingerprintslast)
+										faction = "[C.mob.name]"
 										owner = C.mob
 										smart_ai_holder.set_follow(owner)
 
@@ -648,11 +649,11 @@
 	speak = list("Shuhn","Shrunnph?","Shunpf")
 	emote_see = list("scratches the ground","shakes out its mane","tinkles gently")
 
-	say_maybe_target = list("Hrumph?")	// When they briefly see something.
+	say_maybe_target = list("Rrk?")	// When they briefly see something.
 	say_got_target = list()	// When a target is first assigned.
-	say_threaten = list("HRUGH!")		// When threatening someone.
-	say_stand_down = list("Hruph")	// When the threatened thing goes away.
-	say_escalate = list("HRRUNGH!!!")		// When the threatened thing doesn't go away.
+	say_threaten = list("RRUK!")		// When threatening someone.
+	say_stand_down = list("Ruk")	// When the threatened thing goes away.
+	say_escalate = list("RRUKK!!!")		// When the threatened thing doesn't go away.
 
 	threaten_sound = null
 	stand_down_sound = null
@@ -662,11 +663,11 @@
 	emote_see = list("paws the ground","shakes its mane","stomps")
 	emote_hear = list("snuffles")
 
-	say_maybe_target = list("Hrumph?")	// When they briefly see something.
+	say_maybe_target = list("Rrk?")	// When they briefly see something.
 	say_got_target = list()	// When a target is first assigned.
-	say_threaten = list("HRUGH!")		// When threatening someone.
-	say_stand_down = list("Hruph")	// When the threatened thing goes away.
-	say_escalate = list("HRRUNGH!!!")		// When the threatened thing doesn't go away.
+	say_threaten = list("RRUK!")		// When threatening someone.
+	say_stand_down = list("Ruk")	// When the threatened thing goes away.
+	say_escalate = list("RRUKK!!!")		// When the threatened thing doesn't go away.
 
 	threaten_sound = 'sound/voice/LizardBellow.ogg'	// Sound file played when the mob's AI calls threaten_target() for the first time.
 	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
@@ -674,11 +675,11 @@
 /datum/say_list/smart/thinbug
 	emote_hear = list("scratches the ground","chitters")
 
-	say_maybe_target = list("Hrumph?")	// When they briefly see something.
+	say_maybe_target = list("Rrk?")	// When they briefly see something.
 	say_got_target = list()	// When a target is first assigned.
-	say_threaten = list("HRUGH!")		// When threatening someone.
-	say_stand_down = list("Hruph")	// When the threatened thing goes away.
-	say_escalate = list("HRRUNGH!!!")		// When the threatened thing doesn't go away.
+	say_threaten = list("RRUK!")		// When threatening someone.
+	say_stand_down = list("Ruk")	// When the threatened thing goes away.
+	say_escalate = list("RRUKK!!!")		// When the threatened thing doesn't go away.
 
 	threaten_sound = 'sound/voice/BugBuzz.ogg'
 	stand_down_sound = 'sound/voice/Bug.ogg'
@@ -686,11 +687,11 @@
 /datum/say_list/smart/royalcrab
 	emote_see = list("skitters","oozes liquid from its mouth", "scratches at the ground", "clicks its claws")
 
-	say_maybe_target = list("Hrumph?")	// When they briefly see something.
+	say_maybe_target = list("Rrk?")	// When they briefly see something.
 	say_got_target = list()	// When a target is first assigned.
-	say_threaten = list("HRUGH!")		// When threatening someone.
-	say_stand_down = list("Hruph")	// When the threatened thing goes away.
-	say_escalate = list("HRRUNGH!!!")		// When the threatened thing doesn't go away.
+	say_threaten = list("RRUK!")		// When threatening someone.
+	say_stand_down = list("Ruk")	// When the threatened thing goes away.
+	say_escalate = list("RRUKK!!!")		// When the threatened thing doesn't go away.
 
 	threaten_sound = null
 	stand_down_sound = null

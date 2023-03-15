@@ -6,3 +6,5 @@
 #define RUIN_WRECK 		8		//crashed vessel
 #define RUIN_NATURAL	16		//naturally occuring structure
 #define RUIN_WATER 		32		//ruin depending on planet having water accessible
+
+#define RUIN_RAINWORLD 	64

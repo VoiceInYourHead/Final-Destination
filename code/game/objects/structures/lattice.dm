@@ -17,7 +17,7 @@
 /obj/structure/lattice/Initialize(mapload, var/new_material)
 	. = ..()
 	DELETE_IF_DUPLICATE_OF(/obj/structure/lattice)
-	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open)))
+	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open) || istype(src.loc, /turf/unsimulated/floor/plating/rainworld/fake_openspace)))
 		return INITIALIZE_HINT_QDEL
 	if(!new_material)
 		new_material = init_material

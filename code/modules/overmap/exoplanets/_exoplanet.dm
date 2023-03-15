@@ -26,6 +26,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 
 	var/list/rock_colors = list(COLOR_ASTEROID_ROCK)
 	var/list/plant_colors = list("RANDOM")
+	var/list/grasscolors = list()
 	var/grass_color
 	var/surface_color = COLOR_ASTEROID_ROCK
 	var/water_color = "#436499"
@@ -57,7 +58,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 
 	//Flags deciding what features to pick
 	var/ruin_tags_whitelist
-	var/ruin_tags_blacklist
+	var/ruin_tags_blacklist = RUIN_RAINWORLD
 	var/features_budget = 6
 	var/list/possible_features = list()
 	var/list/spawned_features
@@ -185,7 +186,8 @@ GLOBAL_VAR(planet_repopulation_disabled)
 		daycolumn = 0
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/generate_map()
-	var/list/grasscolors = plant_colors.Copy()
+	if (!length(grasscolors))
+		grasscolors = plant_colors.Copy()
 	grasscolors -= "RANDOM"
 	if (length(grasscolors))
 		grass_color = pick(grasscolors)

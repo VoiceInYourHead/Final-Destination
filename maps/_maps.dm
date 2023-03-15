@@ -40,6 +40,7 @@
 #include "random_ruins\exoplanet_ruins\scg_ruined_city\scg_ruined_city.dm"
 #include "random_ruins\exoplanet_ruins\trash_heap\trash_heap.dm"
 #include "random_ruins\exoplanet_ruins\pollux\station.dm"
+#include "random_ruins\exoplanet_ruins\shelters\shelters.dm"
 #include "random_ruins\space_ruins\space_ruins.dm"
 #include "~mapsystem\map_preferences.dm"
 #include "~mapsystem\map_ranks.dm"

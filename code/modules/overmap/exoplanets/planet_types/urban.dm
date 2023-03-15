@@ -5,32 +5,46 @@
 	max_animal_count = 30
 	planetary_area = /area/exoplanet/urban/outdoors
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
-	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM")
+	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM") //сделать позже кучу красного и жёлтого неона
+	grasscolors = list("#9c854b","#9c8d4b","#9c954b","#989c4b","#8f9c4b","#819c4b")
 	map_generators = list(/datum/random_map/noise/exoplanet/urban)
-	possible_themes = list(/datum/exoplanet_theme/ruined_city = 100)
-	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
-	has_trees = TRUE
+	possible_themes = list(/datum/exoplanet_theme/ruined_city/ecumenopolis = 100)
+	habitability_distribution = list(HABITABILITY_IDEAL = 25, HABITABILITY_OKAY = 75)
+	ruin_tags_whitelist = RUIN_RAINWORLD
+	ruin_tags_blacklist = null
+	has_trees = FALSE
 	daycycle = FALSE
 	flora_diversity = 7
 	lightlevel = 0.4
-	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/rain_world/placeholder)
-	megafauna_types = list(/mob/living/simple_animal/hostile/smart_beast/rain_world/placeholder)
-	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/rain_world/placeholder)
+	var/i_hate_lightlevel = 0.4
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/rain_world/carnivore_placeholder)
+	megafauna_types = list(/mob/living/simple_animal/hostile/smart_beast/rain_world/carnivore_placeholder)
+	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/rain_world/carnivore_placeholder)
+
+	var/rain_when_empty = TRUE
+	var/rainy_day = FALSE
+	var/current_time = 0
 	var/raining = 0
 	var/rain_time
-	var/current_time
+
+	var/rain_interval_min = 250
+	var/rain_interval_max = 600
 	var/cycle_daytime_min = 2000
 	var/cycle_daytime_max = 8000
-	var/rain_when_empty = TRUE
+
+	var/shelter_fail_prob = 15
+	var/rainy_day_prob = 10
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/generate_map()
 	..()
+	i_hate_lightlevel = 0.4
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/generate_atmosphere()
 	..()
 	if(atmosphere)
 		atmosphere.temperature = T20C + rand(10, 30)
 		atmosphere.update_values()
+	i_hate_lightlevel = 0.4
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/get_surface_color()
 	return grass_color
@@ -60,40 +74,112 @@
 			S.set_trait(TRAIT_SPREAD,1)
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/generate_daycycle()
+	i_hate_lightlevel = 0.4
 	return
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/New(nloc, max_x, max_y)
 	..()
+	i_hate_lightlevel = 0.4
 	rain_time = world.time + cycle_daytime_max
-	for (var/turf/unsimulated/floor/exoplanet/T in block(locate(1,1,min(map_z)),locate(maxx,maxy,max(map_z))))
-		T.set_light(lightlevel, 0.1, 2)
+	for (var/turf/unsimulated/T in block(locate(1,1,min(map_z)),locate(maxx,maxy,max(map_z))))
+		if(!T.density && !istype(T.loc, /area/exoplanet/urban/indoors))
+			T.set_light(i_hate_lightlevel, 0.1, 2)
 
 /area/exoplanet/urban
-	base_turf = /turf/unsimulated/floor/plating
-	ambience = list('sound/effects/wind/wind_2_1.ogg','sound/effects/wind/wind_2_2.ogg','sound/effects/wind/wind_3_1.ogg','sound/effects/wind/wind_4_1.ogg','sound/ambience/eeriejungle2.ogg','sound/ambience/eeriejungle1.ogg')
+	base_turf = /turf/unsimulated/floor/plating/rainworld
+	ambience = list('sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg','sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous1.ogg','sound/ambience/ominous3.ogg')
 	icon = 'code/modules/overmap/exoplanets/planet_types/rain.dmi'
-
-/area/exoplanet/urban/play_ambience(var/mob/living/L)
-	..()
-	if(!L.ear_deaf && L.client && !L.client.ambience_playing)
-		L.client.ambience_playing = TRUE
-		L.playsound_local(get_turf(L),sound('sound/ambience/jungle.ogg', repeat = 1, wait = 0, volume = 25, channel = GLOB.ambience_sound_channel))
+	req_access = list(access_cent_specops)
 
 /area/exoplanet/urban/outdoors
 
 /area/exoplanet/urban/indoors
+	name = "indoors of ruined city"
+
+/area/exoplanet/urban/indoors/shelter
+	name = "shelter"
+	requires_power = 0
 
 /datum/random_map/noise/exoplanet/urban
 	descriptor = "ecumenopolis"
 	smoothing_iterations = 2
-	land_type = /turf/unsimulated/floor/exoplanet/grass
-	water_type = /turf/unsimulated/floor/exoplanet/water/shallow
+	land_type = /turf/unsimulated/floor/plating/rainworld
+	water_type = /turf/unsimulated/floor/exoplanet/grass
 
 	flora_prob = 20
 	grass_prob = 50
 	large_flora_prob = 10
 
-///////////////////////WEATHER///////////////////////
+/********************** PROPS **********************/
+
+/obj/machinery/door/airlock/rainworld
+	name = "Vault"
+	desc = "It's made of some odd metal."
+	use_power = POWER_USE_OFF
+	airlock_type = "vault"
+	icon = 'icons/obj/doors/vault/door.dmi'
+	fill_file = 'icons/obj/doors/vault/fill_steel.dmi'
+	color = "#8f8f8f"
+	icon_state = "open"
+	paintable = AIRLOCK_PAINTABLE|AIRLOCK_STRIPABLE
+	req_access = list(access_cent_specops)
+	explosion_resistance = 40
+	secured_wires = 1
+	autoclose = 0
+	glass = 0
+
+	var/delay = 1
+
+/obj/machinery/door/airlock/rainworld/New()
+	..()
+	open(1)
+	sleep(2)
+	lock(1)
+
+/obj/machinery/door/airlock/rainworld/arePowerSystemsOn()
+	return (src.main_power_lost_until==0 || src.backup_power_lost_until==0)
+
+/obj/machinery/door/airlock/rainworld/isAllPowerLoss()
+	return 0
+
+/obj/machinery/door/airlock/rainworld/close(var/forced=0)
+	for(var/turf/turf in locs)
+		for(var/mob/living/LM in turf)
+			if(LM)
+				var/moved = 0
+				for(dir in shuffle(GLOB.cardinal.Copy()))
+					var/dest = get_step(LM,dir)
+					if(!(locate(/obj/machinery/door/airlock/rainworld) in dest))
+						if(LM.Move(dest))
+							moved = 1
+							LM.visible_message("\The [LM] scurries away from the closing doors.")
+							break
+				if(!moved) // nowhere to go....
+					LM.gib()
+	return ..()
+
+/turf/unsimulated/floor/plating/rainworld/Initialize()
+	..()
+	if(prob(20)) icon_state = pick("dmg3","dmg4")
+
+/turf/unsimulated/floor/plating/rainworld/New()
+	if(GLOB.using_map.use_overmap)
+		var/obj/effect/overmap/visitable/sector/exoplanet/urban/E = map_sectors["[z]"]
+		if(istype(E))
+			if(E.atmosphere)
+				initial_gas = E.atmosphere.gas.Copy()
+				temperature = E.atmosphere.temperature
+			else
+				initial_gas = list()
+				temperature = T0C
+			//Must be done here, as light data is not fully carried over by ChangeTurf (but overlays are).
+			if(istype(src.loc,/area/exoplanet/urban/outdoors))
+				set_light(E.i_hate_lightlevel, 0.1, 2)
+			if(E.planetary_area && istype(loc, world.area))
+				ChangeArea(src, E.planetary_area)
+	..()
+
+/********************** WEATHER **********************/
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/handle_repopulation()
 	if(raining > 1)
@@ -112,28 +198,28 @@
 			if (M && (M.z in map_z) && istype(M.loc.loc,/area/exoplanet/urban/outdoors))
 				if(prob(30) && raining < 3)
 					to_chat(M, SPAN_WARNING("You are hit by the waterdrop!"))
-				if(raining == 1)
-					shake_camera(M, 200, 0.1, 0.05)
+				if(raining == 1 && !rainy_day)
+					shake_camera(M, 100, 0.1, 0.05)
 				if(raining == 2)
-					shake_camera(M, 200, 0.5, 0.05)
+					shake_camera(M, 100, 0.5, 0.05)
 					if(prob(15))
 						M.apply_damage(rand(2,10), BRUTE, pick(BP_ALL_LIMBS))
 						if(prob(25))
 							to_chat(M, SPAN_DANGER("You are hit by the heavy waterdrop!"))
 				else if(raining == 3)
-					shake_camera(M, 200, 1, 0.05)
+					shake_camera(M, 100, 1, 0.05)
 					if(prob(30))
 						M.apply_damage(rand(4,15), BRUTE, pick(BP_ALL_LIMBS))
 						if(prob(25))
 							to_chat(M, SPAN_DANGER("You are crushed by heavy waterdrop!"))
 				else if(raining == 4)
-					shake_camera(M, 200, 2, 0.05)
+					shake_camera(M, 100, 2, 0.05)
 					if(prob(60))
 						M.apply_damage(rand(6,20), BRUTE, pick(BP_ALL_LIMBS))
 						if(prob(25))
 							to_chat(M, SPAN_DANGER("You are crushed by heavy waterdrop!"))
 			else if(M && (M.z in map_z) && raining > 2)
-				shake_camera(M, 200, 0.1, 0.05)
+				shake_camera(M, 100, 0.1, 0.05)
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/proc/rain_world()
 	set waitfor = 0
@@ -152,49 +238,74 @@
 
 	var/rain_zone = block(locate(1,1,min(map_z)),locate(maxx,maxy,max(map_z)))
 
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
-		T.set_light(0.3, 0.1, 2)
+	for(var/turf/T in rain_zone)
+		if(T.density || istype(T.loc, /area/exoplanet/urban/indoors))
+			rain_zone -= T
 
-	sleep(rand(250,450))
+	for (var/turf/unsimulated/T in rain_zone)
+		T.set_light(i_hate_lightlevel/4, 0.1, 2)
+
+	rainy_day = 0
+
+	sleep(rand(rain_interval_min,rain_interval_max))
 	raining = 1
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
-		T.set_light(0.2, 0.1, 2)
+	for (var/turf/unsimulated/T in rain_zone)
+		T.set_light(i_hate_lightlevel/3, 0.1, 2)
+	for (var/mob/living/simple_animal/hostile/smart_beast/rain_world/M in GLOB.living_mob_list_)
+		if (M && (M.z in map_z) && istype(M.loc.loc,/area/exoplanet/urban/outdoors))
+			M.seek_shelter()
 
-	sleep(rand(150,350))
+	sleep(rand(rain_interval_min/2,rain_interval_max/2))
 	raining = 2
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
-		T.set_light(0.1, 0.1, 2)
+	for (var/turf/unsimulated/T in rain_zone)
+		T.set_light(i_hate_lightlevel/2, 0.1, 2)
 
-	sleep(rand(150,350))
+	sleep(rand(rain_interval_min,rain_interval_max))
 	raining = 3
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
-		T.set_light(0.05, 0.1, 2)
+	for (var/turf/unsimulated/T in rain_zone)
+		T.set_light(i_hate_lightlevel/1.25, 0.1, 2)
+	spawn(rand(10,100)) toggle_shelters(1)
 
-	sleep(rand(150,350))
+	sleep(rand(rain_interval_min/2,rain_interval_max/2))
 	raining = 4
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
+	for (var/turf/unsimulated/T in rain_zone)
 		T.set_light(0)
 
-	sleep(rand(800,1500))
-	raining = 0
-	if(prob(10))
+	sleep(rand(rain_interval_min*3,rain_interval_max*3))
+	if(prob(rainy_day_prob))
 		raining = 1
+		rainy_day = 1
+	else
+		raining = 0
 	rain_time = world.time + rand(cycle_daytime_min, cycle_daytime_max)
-
-	sleep(rand(150,250))
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
-		T.set_light(0.2, 0.1, 2)
+	spawn(rand(10,100)) toggle_shelters(0)
 	for (var/mob/living/simple_animal/hostile/smart_beast/rain_world/M in GLOB.living_mob_list_)
-		if (M && (M.z in map_z) && istype(M.loc.loc,/area/exoplanet/urban/indoors))
+		if (M && (M.z in map_z) && istype(M.loc.loc,/area/exoplanet/urban/indoors/shelter))
 			M.leave_shelter()
 
-	sleep(rand(150,250))
-	for (var/turf/unsimulated/floor/exoplanet/T in rain_zone)
-		T.set_light(lightlevel, 0.1, 2)
+	sleep(rand(rain_interval_min/3,rain_interval_max/3))
+	for (var/turf/unsimulated/T in rain_zone)
+		T.set_light(i_hate_lightlevel/2, 0.1, 2)
+
+	sleep(rand(rain_interval_min/5,rain_interval_max/5))
+	for (var/turf/unsimulated/T in rain_zone)
+		T.set_light(i_hate_lightlevel, 0.1, 2)
 
 	return TRUE
 
-///////////////////////FAUNA///////////////////////
+/obj/effect/overmap/visitable/sector/exoplanet/urban/proc/toggle_shelters(var/rain)
+	for(var/obj/machinery/door/airlock/rainworld/A in world)
+		if(A && A.z == max(map_z))
+			if(!rain)
+				spawn(A.delay)A.unlock(1)
+				spawn(A.delay+2) A.open(1)
+				spawn(A.delay+2) A.lock(1)
+			else if(!prob(shelter_fail_prob))
+				spawn(A.delay)A.unlock(1)
+				spawn(A.delay+2) A.close(1)
+				spawn(A.delay+2) A.lock(1)
+
+/********************** FAUNA **********************/
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world
 	var/fleeing_for_shelter = FALSE
@@ -217,7 +328,7 @@
 	possible_shelters = list()
 
 	for(var/turf/T in block( locate(1,1,src.z), locate(world.maxx,world.maxy,src.z) ) )
-		if(!T.density && !TurfBlockedNonWindow(T) && istype(T.loc,/area/exoplanet/urban/indoors) && !(T in rainworld_ai.unreachable_path_tiles))
+		if(!T.density && !TurfBlockedNonWindow(T) && istype(T.loc,/area/exoplanet/urban/indoors/shelter) && !(T in rainworld_ai.unreachable_path_tiles))
 			possible_shelters += T
 
 	if(possible_shelters.len)
@@ -273,14 +384,14 @@
 
 	var/list/tiles_in_range = list()
 
-	for(var/turf/T in block( locate(max(0,src.x-10),max(0,src.y-10),src.z), locate(min(200,src.x+10),min(200,src.y+10),src.z) ) )
+	for(var/turf/T in block( locate(max(0,src.x-20),max(0,src.y-20),src.z), locate(min(200,src.x+20),min(200,src.y+20),src.z) ) )
 		if(!T.density && !istype(T.loc,/area/exoplanet/urban/indoors))
 			tiles_in_range += T
 
 	var/turf/leave_destignation = pick(tiles_in_range)
 
 	if(leave_destignation)
-		ai_holder.set_follow(leave_destignation, 100, TRUE)
+		ai_holder.set_follow(leave_destignation, 200, TRUE)
 	else
 		spawn(20) leave_shelter()
 
@@ -294,7 +405,7 @@
 			turns_since_scan = 0
 			if(rainworld_ai.bite_grab)
 				for(var/mob/living/S in orange(ai_holder.vision_range,src))
-					if(S.stat == DEAD && S != src)
+					if(S.stat == DEAD && S != src && !fleeing_for_shelter && (jaws_grab || prob(10)))
 						ai_holder.give_target(S,TRUE)
 			find_and_eat_food()
 
@@ -339,11 +450,12 @@
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/release_grab()
 	if(istype(jaws_grab,/mob/living))
-		var/mob/living/mob_jaws_grab = jaws_grab
+		var/mob/living/carbon/mob_jaws_grab = jaws_grab
 		if(istype(mob_jaws_grab,/mob/living/carbon))
-			mob_jaws_grab.resting = 1
+			mob_jaws_grab.resting = 0
 		else
-			mob_jaws_grab.density = 0
+			jaws_grab.density = 1
+			jaws_grab.anchored = 0
 	reset_position(jaws_grab)
 	jaws_grab = null
 
@@ -371,7 +483,7 @@
 			release_grab()
 			return
 		var/turf/new_victim_pos = get_step(src, src.dir)
-		if(jaws_grab.loc != new_victim_pos)
+		if(jaws_grab.loc != new_victim_pos && get_dist(src,jaws_grab.loc) <= 1)
 			if(!new_victim_pos.density && !TurfBlockedNonWindow(new_victim_pos))
 				jaws_grab.forceMove(new_victim_pos)
 			else
@@ -394,22 +506,22 @@
 				else
 					reset_position(jaws_grab)
 
-	if(jaws_grab && !istype(src.loc.loc,/area/exoplanet/urban/indoors) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
+	if(jaws_grab && !istype(src.loc.loc,/area/exoplanet/urban/indoors/shelter) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
 		forget_about_escaped_prey_timer = 0
 		seek_shelter(returning_with_catch = TRUE)
 
-	else if(jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors) && diet != DIET_HERBIVOROUS)
+	else if(jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors/shelter) && diet != DIET_HERBIVOROUS)
 		forget_about_escaped_prey_timer = 0
 		fleeing_for_shelter = FALSE
 		eat_and_leave()
 
-	else if(!jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
+	else if(!jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors/shelter) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
 		forget_about_escaped_prey_timer ++
 		if(forget_about_escaped_prey_timer > 10)
 			forget_about_escaped_prey_timer = 0
 			leave_shelter()
 
-	if(!jaws_grab && !istype(src.loc.loc,/area/exoplanet/urban/indoors) && fleeing_for_shelter && captured_prey)
+	if(!jaws_grab && !istype(src.loc.loc,/area/exoplanet/urban/indoors/shelter) && fleeing_for_shelter && captured_prey)
 		fleeing_for_shelter = FALSE
 		captured_prey = FALSE
 		ai_holder.leader = null
@@ -481,7 +593,14 @@
 
 	return FALSE
 
-///////////////////////FAUNA AI///////////////////////
+/mob/living/simple_animal/hostile/smart_beast/rain_world/examine(mob/user, distance)
+	. = ..()
+	if(jaws_grab)
+		to_chat(user, "<span class='warning'>There is [jaws_grab] dangling in [src]'s mouth!</span>")
+	if(distance <= 5 && fleeing_for_shelter)
+		to_chat(user, "<span class='notice'>It appears to be too concerned to notice you.</span>")
+
+/********************** FAUNA AI **********************/
 
 /datum/ai_holder/smart_animal/rain_world
 	var/turns_since_shelter_path_scan = 30
@@ -500,7 +619,7 @@
 
 /datum/ai_holder/smart_animal/rain_world/give_target(new_target, urgent = FALSE)
 	var/mob/living/simple_animal/hostile/smart_beast/rain_world/rainworld_holder = holder
-	if(rainworld_holder.fleeing_for_shelter && prob(90))
+	if(rainworld_holder.fleeing_for_shelter && prob(95))
 		return FALSE //хуёвое время что бы бить ебальники, ведь всех нас сейчас РАЗЪЕБЁТ ДОЖДЁМ
 	..()
 
@@ -561,7 +680,7 @@
 	ai_log("get_path() : Entering.",AI_LOG_DEBUG)
 	if(rainworld_holder.fleeing_for_shelter)
 		turns_since_shelter_path_scan ++
-		if(turns_since_shelter_path_scan < 30)
+		if(turns_since_shelter_path_scan < 60)
 			ai_log("get_path() : Too early for making new path to shelter. Exiting.", AI_LOG_DEBUG)
 			if(cashed_shelter_path && cashed_shelter_path.len)
 				path = cashed_shelter_path
@@ -654,9 +773,15 @@
 		destination = null
 	ai_log("give_up_movement() : Exiting.", AI_LOG_DEBUG)
 
-///////////////////////ACTUAL FAUNA///////////////////////
+/********************** ACTUAL FAUNA **********************/
 
-/mob/living/simple_animal/hostile/smart_beast/rain_world/placeholder
+/datum/ai_holder/smart_animal/rain_world/carnivore_placeholder
+	lose_target_timeout = 5 SECONDS
+	base_wander_delay = 1
+	follow_distance = 4
+	vision_range = 9
+
+/mob/living/simple_animal/hostile/smart_beast/rain_world/carnivore_placeholder
 	name = "samak"
 	desc = "A fast, armoured predator accustomed to hiding and ambushing in cold terrain."
 	faction = "lizard"
@@ -672,14 +797,20 @@
 	mob_push_flags = ~HEAVY
 	mob_swap_flags = ~HEAVY
 	mob_size = MOB_MEDIUM
-	melee_attack_delay = 8
-	aggression_affects_hostility = FALSE
-	hunger_affects_hostility = FALSE
-	respect_stats = FALSE
+	melee_attack_delay = 6
+	movement_cooldown = 1
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
 		)
-
-	ai_holder = /datum/ai_holder/smart_animal/rain_world
+	ai_holder = /datum/ai_holder/smart_animal/rain_world/carnivore_placeholder
 	say_list_type = /datum/say_list/smart/samak
+	flash_vulnerability = 0
+
+	aggression_affects_hostility = FALSE
+	hunger_affects_hostility = FALSE
+	respect_stats = FALSE
+
+	attack_sound = null
+	movement_sound = null			// If set, will play this sound when it moves on its own will.
+	turn_sound = null				// If set, plays the sound when the mob's dir changes in most cases.
