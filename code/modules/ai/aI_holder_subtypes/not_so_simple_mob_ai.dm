@@ -111,7 +111,8 @@
 	response_harm   = "kicks"
 	can_escape = TRUE
 
-	var/init_movement_cooldown = 8 //6 is min
+//	var/init_movement_cooldown = 8 //6 is min
+	movement_cooldown = 6
 	movement_sound = null			// If set, will play this sound when it moves on its own will.
 	turn_sound = null				// If set, plays the sound when the mob's dir changes in most cases.
 
@@ -159,12 +160,12 @@
 /////////////////////////////SYMPATHY/////////////////////////////
 	threaten_timeout = round( init_threaten_timeout / sympathy )
 	speak_chance = round( init_speak_chance + sympathy / 20 ) 			// If the mob's saylist is empty, nothing will happen.
-	follow_distance = round( init_follow_distance - sympathy / 20 )
+	follow_distance = round( init_follow_distance - sympathy / 25 )
 	if(sympathy>80) wander_when_pulled = FALSE
 
 /////////////////////////////ENERGY///////////////////////////////
 	lose_target_timeout = round( init_lose_target_timeout - energy / 2 )
-	smart_holder.movement_cooldown = round( smart_holder.init_movement_cooldown - energy / 20 )	// Lower is faster.
+//	smart_holder.movement_cooldown = round( smart_holder.init_movement_cooldown - energy / 20 )	// Lower is faster.
 
 /////////////////////////////BRAVERY//////////////////////////////
 	max_home_distance = round( init_max_home_distance + bravery / 20 )			// How far the mob can go away from its home before being told to go_home().
@@ -175,19 +176,19 @@
 ////////////////////////////AGGRESSION////////////////////////////
 	smart_holder.hostility_threshold = smart_holder.hostility_threshold
 	smart_holder.pry_time = smart_holder.pry_time
-	if(aggression>40)  can_breakthrough = TRUE
-	if(aggression>80)  mauling = TRUE
+	if(aggression>80)  can_breakthrough = TRUE
+	if(aggression>120) mauling = TRUE
 	if(aggression>160) violent_breakthrough = TRUE
-	if(aggression>199) destructive = TRUE
+	if(aggression>190) destructive = TRUE
 
 /////////////////////////////DOMINANCE////////////////////////////
 	call_distance = round( init_call_distance + dominance / 10 )
-	smart_holder.scale(0.90 + dominance/400)
+	smart_holder.scale(0.90 + dominance/750)
 
 ////////////////////////////NERVOUSNESS///////////////////////////
 	vision_range = round( 5 + nervousness / 40 )
 	alpha_vision_threshold = round( 220 - nervousness )
-	base_wander_delay = round( init_base_wander_delay - nervousness / 50 )	// What the above var gets set to when it wanders. Note that a tick happens every half a second.
+	base_wander_delay = round(max( 1,init_base_wander_delay - nervousness / 25 ))	// Note that a tick happens every half a second.
 	threaten_delay = round( init_threaten_delay - nervousness / 1.05 )
 
 /datum/ai_holder/smart_animal/should_wander()
@@ -295,6 +296,8 @@
 		return
 
 /mob/living/simple_animal/hostile/smart_beast/IIsAlly(mob/living/L)
+	if(hunger > hunger_threshold*8 && diet != DIET_HERBIVOROUS && !ai_holder.cooperative && prob(10))
+		return 0 // Принуждён к каннибализму
 	. = ..()
 	if (!.) // Outside the faction and friends, try to see if they're share one pack.
 		return L in current_pack_members
@@ -590,13 +593,16 @@
 	if(hunger > hunger_threshold && respect_hunger)
 		hunger_checks()
 
+	if(pulledby && ai_holder.retaliate && smart_ai_holder.aggression > 15 && !(pulledby in friends) && prob(75))
+		smart_ai_holder.give_target(pulledby, urgent = TRUE)
+
 ///////////////////////////////////////////////EXOPLANET ANIMALS///////////////////////////////////////////////
 
 /* AI */
 
 /datum/ai_holder/smart_animal/samak
 	init_outmatched_threshold = 150
-	speak_chance = 5
+	init_speak_chance = 5
 
 /datum/ai_holder/smart_animal/shantak
 	init_speak_chance = 2
@@ -770,7 +776,7 @@
 	icon_state = "shantak"
 	icon_living = "shantak"
 	icon_dead = "shantak_dead"
-	init_movement_cooldown = 6
+	movement_cooldown = 4
 	init_tame_difficulty = 5
 	move_to_delay = 1
 	maxHealth = 75
@@ -814,7 +820,7 @@
 	icon_state = "tindalos"
 	icon_living = "tindalos"
 	icon_dead = "tindalos_dead"
-	init_movement_cooldown = 6
+	movement_cooldown = 4
 	mob_size = MOB_TINY
 	density = FALSE
 	diet = DIET_OMNIVOROUS
@@ -830,7 +836,7 @@
 	icon_state = "thinbug"
 	icon_living = "thinbug"
 	icon_dead = "thinbug_dead"
-	init_movement_cooldown = 6
+	movement_cooldown = 4
 	mob_size = MOB_MINISCULE
 	density = FALSE
 	diet = DIET_CARNIVOROUS

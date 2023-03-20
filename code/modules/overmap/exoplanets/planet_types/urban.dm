@@ -32,7 +32,7 @@
 	var/cycle_daytime_min = 2000
 	var/cycle_daytime_max = 8000
 
-	var/shelter_fail_prob = 15
+	var/shelter_fail_prob = 5
 	var/rainy_day_prob = 10
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/generate_map()
@@ -196,7 +196,7 @@
 	if(raining > 0)
 		for (var/mob/living/M in GLOB.living_mob_list_)
 			if (M && (M.z in map_z) && istype(M.loc.loc,/area/exoplanet/urban/outdoors))
-				if(prob(30) && raining < 3)
+				if(prob(10) && raining < 3)
 					to_chat(M, SPAN_WARNING("You are hit by the waterdrop!"))
 				if(raining == 1 && !rainy_day)
 					shake_camera(M, 100, 0.1, 0.05)
@@ -220,6 +220,10 @@
 							to_chat(M, SPAN_DANGER("You are crushed by heavy waterdrop!"))
 			else if(M && (M.z in map_z) && raining > 2)
 				shake_camera(M, 100, 0.1, 0.05)
+		for(var/area/exoplanet/urban/indoors/A in world)
+			for (var/turf/unsimulated/floor/T in get_area_turfs(A,/proc/is_not_space_turf))
+				if(raining > 2 && !istype(T.loc,/area/exoplanet/urban/indoors/shelter) && !(/obj/machinery/door/airlock in A.contents) && !TurfBlockedNonWindow(T) && prob(1*raining))
+					T.add_fluid(600, /datum/reagent/water)
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/proc/rain_world()
 	set waitfor = 0
@@ -243,14 +247,14 @@
 			rain_zone -= T
 
 	for (var/turf/unsimulated/T in rain_zone)
-		T.set_light(i_hate_lightlevel/4, 0.1, 2)
+		T.set_light(i_hate_lightlevel/1, 0.1, 2)
 
 	rainy_day = 0
 
 	sleep(rand(rain_interval_min,rain_interval_max))
 	raining = 1
 	for (var/turf/unsimulated/T in rain_zone)
-		T.set_light(i_hate_lightlevel/3, 0.1, 2)
+		T.set_light(i_hate_lightlevel/2, 0.1, 2)
 	for (var/mob/living/simple_animal/hostile/smart_beast/rain_world/M in GLOB.living_mob_list_)
 		if (M && (M.z in map_z) && istype(M.loc.loc,/area/exoplanet/urban/outdoors))
 			M.seek_shelter()
@@ -258,12 +262,12 @@
 	sleep(rand(rain_interval_min/2,rain_interval_max/2))
 	raining = 2
 	for (var/turf/unsimulated/T in rain_zone)
-		T.set_light(i_hate_lightlevel/2, 0.1, 2)
+		T.set_light(i_hate_lightlevel/3, 0.1, 2)
 
 	sleep(rand(rain_interval_min,rain_interval_max))
 	raining = 3
 	for (var/turf/unsimulated/T in rain_zone)
-		T.set_light(i_hate_lightlevel/1.25, 0.1, 2)
+		T.set_light(i_hate_lightlevel/4, 0.1, 2)
 	spawn(rand(10,100)) toggle_shelters(1)
 
 	sleep(rand(rain_interval_min/2,rain_interval_max/2))
@@ -384,14 +388,14 @@
 
 	var/list/tiles_in_range = list()
 
-	for(var/turf/T in block( locate(max(0,src.x-20),max(0,src.y-20),src.z), locate(min(200,src.x+20),min(200,src.y+20),src.z) ) )
+	for(var/turf/T in block( locate(max(0,src.x-30),max(0,src.y-30),src.z), locate(min(200,src.x+20),min(200,src.y+20),src.z) ) )
 		if(!T.density && !istype(T.loc,/area/exoplanet/urban/indoors))
 			tiles_in_range += T
 
 	var/turf/leave_destignation = pick(tiles_in_range)
 
 	if(leave_destignation)
-		ai_holder.set_follow(leave_destignation, 200, TRUE)
+		ai_holder.set_follow(leave_destignation, 300, TRUE)
 	else
 		spawn(20) leave_shelter()
 
@@ -430,6 +434,8 @@
 	jaws_grab = target
 	captured_prey = TRUE
 
+	visible_message(SPAN_DANGER("\The [src] slams it's jaws shut, chening [jaws_grab] in teeth!"))
+
 	ai_holder.set_stance(STANCE_IDLE)
 
 	var/adir = get_dir(src, target)
@@ -456,6 +462,10 @@
 		else
 			jaws_grab.density = 1
 			jaws_grab.anchored = 0
+
+	if(jaws_grab)
+		visible_message(SPAN_WARNING("\The [src] reduces it's grasp pressure, releasing [jaws_grab] from jaws."))
+
 	reset_position(jaws_grab)
 	jaws_grab = null
 
@@ -463,14 +473,24 @@
 	if(jaws_grab)
 		release_grab()
 
-	. = ..()
+	..()
 
-/mob/living/simple_animal/hostile/smart_beast/rain_world/Life()
-	if(stat == DEAD)
+/mob/living/simple_animal/hostile/smart_beast/rain_world/attack_target(atom/A)
+	if(jaws_grab)
 		release_grab()
 	..()
 
+/mob/living/simple_animal/hostile/smart_beast/rain_world/Life()
+	..()
+	if(stat == DEAD)
+		release_grab()
+
 	if(jaws_grab)
+		if(ai_holder.cooperative && pack_leader != src)
+			if(pack_leader in view(ai_holder.vision_range,src))
+				release_grab()
+				if(prob(25))
+					ISay(pick(say_list.say_stand_down))
 		if(istype(jaws_grab,/mob/living))
 			var/mob/living/mob_jaws_grab = jaws_grab
 			mob_jaws_grab.stunned = 5
@@ -479,7 +499,7 @@
 				mob_jaws_grab.resting = 1
 			else
 				mob_jaws_grab.density = 0
-		if((istype(jaws_grab,/obj/item) && prob(15)) || ai_holder.stance == STANCE_FIGHT || ai_holder.stance == STANCE_FLEE || get_dist(jaws_grab,src) > 1)
+		if((istype(jaws_grab,/obj/item) && prob(15)) && get_dist(jaws_grab,src) > 1)
 			release_grab()
 			return
 		var/turf/new_victim_pos = get_step(src, src.dir)
@@ -496,7 +516,7 @@
 					jaws_grab.pixel_y = -shift
 				if(SOUTH)
 					jaws_grab.pixel_x = 0
-					jaws_grab.pixel_y = shift+4
+					jaws_grab.pixel_y = shift+shift/4
 				if(WEST)
 					jaws_grab.pixel_x = shift
 					jaws_grab.pixel_y = 0
@@ -515,7 +535,7 @@
 		fleeing_for_shelter = FALSE
 		eat_and_leave()
 
-	else if(!jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors/shelter) && !fleeing_for_shelter && diet != DIET_HERBIVOROUS)
+	else if(!jaws_grab && istype(src.loc.loc,/area/exoplanet/urban/indoors/shelter) && !fleeing_for_shelter)
 		forget_about_escaped_prey_timer ++
 		if(forget_about_escaped_prey_timer > 10)
 			forget_about_escaped_prey_timer = 0
@@ -544,7 +564,7 @@
 
 	if(jaws_grab)
 		var/turf/new_victim_pos = get_step(src, src.dir)
-		if(jaws_grab.loc != new_victim_pos)
+		if(jaws_grab.loc != new_victim_pos && get_dist(src,jaws_grab.loc) <= 2)
 			if(!new_victim_pos.density && !TurfBlockedNonWindow(new_victim_pos))
 				jaws_grab.forceMove(new_victim_pos)
 			else
@@ -557,7 +577,7 @@
 					jaws_grab.pixel_y = -shift
 				if(SOUTH)
 					jaws_grab.pixel_x = 0
-					jaws_grab.pixel_y = shift+4
+					jaws_grab.pixel_y = shift+shift/4
 				if(WEST)
 					jaws_grab.pixel_x = shift
 					jaws_grab.pixel_y = 0
@@ -579,17 +599,17 @@
 
 	var/datum/ai_holder/smart_animal/rain_world/rainworld_ai = ai_holder
 
-	if(istype(A,/obj))
-		var/obj/obj_target = A
-		if(rainworld_ai.bite_grab && prob(grab_chance) && get_dist(src,A) <= 1 && obj_target.w_class <= ITEM_SIZE_NORMAL)
-			bite_grab(A)
-			return TRUE
-		else
-			return FALSE
-
 	if(rainworld_ai.bite_grab && prob(grab_chance) && get_dist(src,A) <= 1 && !istype(A,/mob/living/exosuit))
-		bite_grab(A)
-		return TRUE
+		if(istype(A,/obj))
+			var/obj/obj_target = A
+			if(obj_target.w_class <= ITEM_SIZE_NORMAL)
+				bite_grab(A)
+				return TRUE
+		if(istype(A,/mob/living))
+			var/mob/living/living_target = A
+			if(living_target.mob_size <= src.mob_size || living_target.stat == DEAD)
+				bite_grab(A)
+				return TRUE
 
 	return FALSE
 
@@ -616,6 +636,8 @@
 	run_on_empty_levels = TRUE
 	handle_corpse = TRUE
 	threaten = FALSE
+
+	init_speak_chance = 3
 
 /datum/ai_holder/smart_animal/rain_world/give_target(new_target, urgent = FALSE)
 	var/mob/living/simple_animal/hostile/smart_beast/rain_world/rainworld_holder = holder
@@ -782,34 +804,34 @@
 	vision_range = 9
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/carnivore_placeholder
-	name = "samak"
-	desc = "A fast, armoured predator accustomed to hiding and ambushing in cold terrain."
+	name = "shantak"
+	desc = "A fast, armoured predator accustomed to hiding and ambushing in urban jungles."
 	faction = "lizard"
-	icon_state = "samak"
-	icon_living = "samak"
-	icon_dead = "samak_dead"
+	icon_state = "shantak-alt"
+	icon_living = "shantak-alt"
+	icon_dead = "shantak-alt_dead"
 	tame_difficulty = 8
 	maxHealth = 125
 	health = 125
-	speed = 2
 	diet = DIET_CARNIVOROUS
 	mob_bump_flag = HUMAN
 	mob_push_flags = ~HEAVY
 	mob_swap_flags = ~HEAVY
 	mob_size = MOB_MEDIUM
 	melee_attack_delay = 6
-	movement_cooldown = 1
+	speed = 2
+	movement_cooldown = 5
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
 		)
 	ai_holder = /datum/ai_holder/smart_animal/rain_world/carnivore_placeholder
-	say_list_type = /datum/say_list/smart/samak
+	say_list_type = /datum/say_list/smart/shantak
 	flash_vulnerability = 0
 
 	aggression_affects_hostility = FALSE
 	hunger_affects_hostility = FALSE
-	respect_stats = FALSE
+	respect_stats = TRUE
 
 	attack_sound = null
 	movement_sound = null			// If set, will play this sound when it moves on its own will.

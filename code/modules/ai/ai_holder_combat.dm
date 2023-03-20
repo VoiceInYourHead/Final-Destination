@@ -303,6 +303,13 @@
 				ai_log("destroy_surroundings() : Attacking hull shield.", AI_LOG_INFO)
 				return melee_attack(shield)
 
+		// Jump over the rubble piles.
+		for(var/obj/structure/rubble/rubble_pile in problem_turf)
+			if (rubble_pile.density)
+				ai_log("destroy_surroundings() : Jumping over the rubble pile.", AI_LOG_INFO)
+				holder.forceMove(rubble_pile.loc)
+				return holder.visible_emote("prepares, and jumps over the [rubble_pile]")
+
 		// Kill common obstacle in the way like tables.
 		for(var/obstacle in valid_obstacles_by_priority)
 			obstacle = locate(obstacle) in problem_turf

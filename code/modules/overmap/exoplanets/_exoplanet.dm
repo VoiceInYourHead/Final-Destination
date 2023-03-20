@@ -9,7 +9,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/list/fauna_types = list()		// possible types of mobs to spawn
 	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
 	var/list/animals = list()
-	var/max_animal_count = 50
+	var/max_animal_count = 40
 	var/datum/gas_mixture/atmosphere
 	var/list/breathgas = list()	//list of gases animals/plants require to survive
 	var/badgas					//id of gas that is toxic to life here
@@ -149,7 +149,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 /obj/effect/overmap/visitable/sector/exoplanet/Process(wait, tick)
 	if (animals.len < 0.5*max_animal_count && !repopulating)
 		repopulating = TRUE
-		max_animal_count = round(max_animal_count * 0.5)
+		max_animal_count = max_animal_count
 
 	for (var/zlevel in map_z)
 		if (repopulating && !GLOB.planet_repopulation_disabled)

@@ -3,7 +3,7 @@
 	id = "shelter0"
 	description = "A shelter for those who live on local ruined ecumenopolis."
 	suffixes = list("shelters/shelter0.dmm")
-	spawn_cost = 1
+	spawn_cost = 0.7
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_ALLOW_DUPLICATES
 	ruin_tags = RUIN_RAINWORLD
 
@@ -26,6 +26,9 @@
 /obj/structure/grille/shelter/ex_act()
 	health_current = health_max
 	return
+
+/obj/structure/grille/shelter/no_fluid_pass/CanFluidPass(var/coming_from)
+	return FALSE
 
 /turf/simulated/wall/containment/rainworld/shelter
 	paint_color = COLOR_GRAY20
