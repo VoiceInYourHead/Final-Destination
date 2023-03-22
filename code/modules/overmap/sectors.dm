@@ -24,6 +24,8 @@
 
 	var/hide_from_reports = FALSE
 
+	var/missile_notarget = FALSE
+
 //	var/list/associated_machinery
 
 /obj/effect/overmap/visitable/Initialize()

@@ -113,6 +113,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		data["manual_control"] = viewing_overmap(user)
 		data["canburn"] = linked.can_burn()
 		data["accellimit"] = accellimit*1000
+		data["integrity"] = max(0, 100 - linked.integrity_failure/linked.integrity_failure_cap * 100)
 
 		var/speed = round(linked.get_speed()*1000, 0.01)
 		if(linked.get_speed() < SHIP_SPEED_SLOW)

@@ -10,7 +10,7 @@
 	area_usage_test_exempted_areas = list(
 		/area/ship/ascent_corvette
 	)
-	spawn_cost = 1000 // Сегодня без спавна :d ~danilcus
+	spawn_cost = 1000 // Сегодня без спавна :p ~danilcus
 	player_cost = 4 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
 
 // Overmap objects.
