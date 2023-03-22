@@ -51,25 +51,26 @@
 	name = T_BOARD("rotary railgun cannon muzzle")
 	build_path = /obj/machinery/minigun/front_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stock_parts/manipulator/pico = 5
+		/obj/item/stack/material/plasteel = 10
 	)
 
 /obj/item/stock_parts/circuitboard/minigunmiddle
 	name = T_BOARD("rotary cannon barrel")
 	build_path = /obj/machinery/minigun/middle_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stock_parts/subspace/crystal = 10
+		/obj/item/stack/material/plasteel = 15
 	)
 
 /obj/item/stock_parts/circuitboard/minigunback
 	name = T_BOARD("rotary cannon breech end")
 	build_path = /obj/machinery/minigun/back_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stock_parts/capacitor/super = 5
+		/obj/item/stock_parts/capacitor/super = 3,
+		/obj/item/stock_parts/manipulator/pico = 3
 	)
