@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(mobs)
 		mob = queue[i]
 		if (QDELETED(mob))
 			continue
-		if (!run_empty_levels && !SSpresence.population(get_z(mob)))
+		if (!run_empty_levels && !SSpresence.population(get_z(mob)) && !istype(mob,/mob/living/simple_animal/hostile/smart_beast/rain_world))
 			continue
 		mob.Life()
 		if (no_mc_tick)

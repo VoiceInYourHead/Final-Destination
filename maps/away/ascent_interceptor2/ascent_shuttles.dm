@@ -2,11 +2,10 @@
 	name = "Ascent Interceptor"
 	shuttle = "Ascent Interceptor(2)"
 	desc = "Wake signature indicates a small armed vessel of unknown design."
-	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 3000
-	integrity_failure_cap = 80
+	integrity_failure_cap = 60
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_TINY
 	fore_dir = NORTH

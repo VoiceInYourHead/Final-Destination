@@ -37,7 +37,7 @@
 	landmark_transition = "nav_transit_jinx"
 	range = 0 //range = 2
 	fuel_consumption = 1
-	logging_home_tag = "nav_hangar_jinx"
+//	logging_home_tag = "nav_hangar_jinx"
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	flags = SHUTTLE_FLAGS_PROCESS
 	defer_initialisation = TRUE
@@ -45,7 +45,8 @@
 /obj/effect/shuttle_landmark/jinx
 	name = "jinx Hangar"
 	landmark_tag = "nav_hangar_jinx"
-	docking_controller = "jinx_shuttle_dock_airlock"
+//	docking_controller = "jinx_shuttle_dock_airlock"
+	base_area = /area/space
 	base_turf = /turf/space
 
 /obj/effect/shuttle_landmark/transit/jinx

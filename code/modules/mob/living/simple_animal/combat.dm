@@ -29,7 +29,8 @@
 /mob/living/simple_animal/proc/do_attack(atom/A, turf/T)
 	face_atom(A)
 	var/missed = FALSE
-	if (get_dir(src, A) == facing_dir && get_dist(src, A) <= 1) // Turfs don't contain themselves so checking contents is pointless if we're targeting a turf.
+//	if (get_dir(src, A) == facing_dir && get_dist(src, A) <= 1) // Turfs don't contain themselves so checking contents is pointless if we're targeting a turf.
+	if (get_dist(src, A) > 2 || !(get_dir(src,A) == src.dir || get_dir(src,A) == turn(src.dir,45) || get_dir(src,A) == turn(src.dir,-45) || get_dist(src,A) == 0))
 		missed = TRUE
 	else if (!T.AdjacentQuick(src))
 		missed = TRUE
@@ -42,6 +43,8 @@
 	var/obj/item/natural_weapon/weapon = get_natural_weapon()
 
 	if (weapon.resolve_attackby(A, src))
+		apply_melee_effects(A)
+	else if(istype(A,/mob/living/simple_animal)) //костыль куз я так и не смог разобраться почему оно не хочет резолвить атаку на симплмобов :P
 		apply_melee_effects(A)
 
 	return TRUE

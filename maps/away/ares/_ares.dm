@@ -17,8 +17,37 @@
 	door_color = COLOR_DARK_GUNMETAL
 	stripe_color = COLOR_SILVER
 
-/obj/machinery/suit_storage_unit/mining/shade
-	islocked = 0
+/obj/machinery/suit_storage_unit/mining/ares
+	req_access = list(access_ares)
+
+/obj/structure/closet/secure_closet/miner/ares
+	name = "miner's equipment"
+	closet_appearance = /decl/closet_appearance/secure_closet/mining
+	req_access = list(access_ares)
+
+/obj/structure/closet/secure_closet/miner/ares/WillContain()
+	return list(
+		/obj/item/clothing/accessory/storage/brown_vest,
+		/obj/item/clothing/mask/gas/half,
+		/obj/item/clothing/gloves/thick,
+		/obj/item/clothing/shoes/workboots,
+		/obj/item/device/flashlight/lantern,
+		/obj/item/shovel,
+		/obj/item/clothing/under/grayson,
+		/obj/item/device/scanner/gas,
+		/obj/item/pickaxe/jackhammer,
+		/obj/item/pickaxe/drill,
+		/obj/item/crowbar,
+		/obj/item/wrench,
+		/obj/item/storage/ore,
+		/obj/item/device/scanner/mining,
+		/obj/item/device/gps,
+		/obj/item/device/radio,
+		/obj/item/clothing/glasses/material,
+		/obj/item/clothing/glasses/meson,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/messenger/engi)),
+		/obj/item/storage/backpack/dufflebag/eng
+	)
 
 /obj/structure/sign/gml
 	name = "\improper GMLtd. sign"

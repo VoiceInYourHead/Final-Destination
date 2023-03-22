@@ -1,0 +1,61 @@
+"a" = (/turf/simulated/wall/containment/rainworld,/area/template_noop)
+"b" = (/obj/structure/disposalpipe/segment,/obj/structure/rubble/house,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"c" = (/turf/template_noop,/area/template_noop)
+"d" = (/obj/structure/disposalpipe/segment,/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"e" = (/obj/machinery/door/airlock/rainworld{delay = 1},/obj/structure/hygiene/drain,/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"f" = (/turf/unsimulated/floor/exoplanet/concrete/reinforced,/area/template_noop)
+"g" = (/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors/shelter)
+"h" = (/turf/simulated/wall/containment/rainworld/shelter,/area/exoplanet/urban/indoors)
+"i" = (/obj/structure/disposalpipe/broken,/obj/structure/disposalpipe/broken{icon_state = "pipe-b"; dir = 1},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"j" = (/obj/structure/disposalpipe/tagger{icon_state = "pipe-tagger"; dir = 1},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"k" = (/obj/structure/grille/shelter,/obj/structure/hygiene/drain,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"l" = (/obj/structure/hygiene/drain,/obj/machinery/door/airlock/rainworld{delay = 7},/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"m" = (/obj/structure/railing/mapped,/obj/structure/lattice,/turf/unsimulated/floor/plating/rainworld/fake_openspace,/area/exoplanet/urban/indoors/shelter)
+"n" = (/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors/shelter)
+"o" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/wall/containment/rainworld/shelter,/area/exoplanet/urban/indoors)
+"p" = (/obj/structure/disposalpipe/segment/bent{icon_state = "pipe-c"; dir = 1},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"q" = (/obj/structure/hygiene/drain,/obj/machinery/door/airlock/rainworld{delay = 13},/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"r" = (/obj/structure/disposalpipe/segment/bent,/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"s" = (/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"t" = (/obj/structure/disposalpipe/segment{dir = 8; icon_state = "pipe-c"},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"u" = (/obj/structure/disposalpipe/up{dir = 4},/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"v" = (/obj/structure/grille/broken,/obj/structure/disposalpipe/segment{dir = 4},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"w" = (/obj/machinery/light/small/emergency{icon_state = "bulb_map"; dir = 1},/obj/structure/railing/mapped,/obj/structure/lattice,/turf/unsimulated/floor/plating/rainworld/fake_openspace,/area/exoplanet/urban/indoors/shelter)
+"x" = (/obj/structure/disposalpipe/sortjunction,/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"y" = (/obj/structure/grille/shelter,/obj/structure/disposalpipe/segment{dir = 4},/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"z" = (/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"A" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/structure/rubble/house,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"B" = (/obj/structure/disposalpipe/down{dir = 8},/obj/structure/lattice,/turf/unsimulated/floor/plating/rainworld/fake_openspace,/area/exoplanet/urban/indoors)
+"C" = (/obj/machinery/light/small/emergency{icon_state = "bulb_map"; dir = 1},/turf/template_noop,/area/template_noop)
+"D" = (/obj/structure/disposalpipe/segment/bent{icon_state = "pipe-c"; dir = 8},/obj/random/rain_world,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"E" = (/obj/effect/floor_decal/industrial{color = "#4f4f4f"; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"F" = (/obj/effect/floor_decal/industrial{color = "#616161"; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"G" = (/obj/random/rain_world,/turf/unsimulated/floor/exoplanet/concrete/reinforced,/area/template_noop)
+"H" = (/obj/effect/floor_decal/industrial{color = "#8a8a8a"; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"I" = (/obj/effect/floor_decal/industrial{color = "#cccccc"; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/concrete{color = "gray"},/area/exoplanet/urban/indoors)
+"J" = (/obj/structure/rubble/house,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"K" = (/obj/structure/hygiene/drain,/obj/structure/grille/shelter/no_fluid_pass,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+"L" = (/obj/random/rain_world,/obj/structure/hygiene/drain,/turf/unsimulated/floor/plating/rainworld,/area/exoplanet/urban/indoors)
+
+(1,1,1) = {"
+aaaaaaaaaaa
+ahhhhhhhhha
+ahbhmwmhdha
+ahdhggghiha
+ahjKgggKdha
+ahdhgnghdha
+ahdhhehhdha
+ahprhlhstha
+ahhdhqhdhha
+auvxkEkpyBa
+ahhdhFhzhha
+aoADhHhzJha
+ahhhhIhhhha
+aaLaafaaLaa
+caaaGfGaaac
+ccCccffcCcc
+cccfcfccccc
+ccccfcccccc
+cccccfcfccc
+ccccffccccc
+"}

@@ -1152,7 +1152,7 @@ About the new airlock wires panel:
 
 	else if(istype(C, /obj/item/device/paint_sprayer))
 		return
-	else if((stat & (BROKEN|NOPOWER)) && istype(user, /mob/living/simple_animal))
+	else if((stat & (BROKEN|NOPOWER)) && istype(user, /mob/living/simple_animal) && !locked)
 		var/mob/living/simple_animal/A = user
 		var/obj/item/I = A.get_natural_weapon()
 		if(I.force >= 10)

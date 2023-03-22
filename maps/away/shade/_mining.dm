@@ -8,20 +8,26 @@
 
 /obj/structure/closet/secure_closet/miner/shade/WillContain()
 	return list(
-		new /datum/atom_creator/weighted(list(
-				/obj/item/storage/backpack/industrial,
-				/obj/item/storage/backpack/satchel/eng
-			)),
+		/obj/item/clothing/accessory/storage/brown_vest,
+		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/clothing/shoes/black,
-		/obj/item/device/scanner/gas,
-		/obj/item/storage/ore,
-		/obj/item/storage/ore,
+		/obj/item/clothing/shoes/workboots,
 		/obj/item/device/flashlight/lantern,
 		/obj/item/shovel,
+		/obj/item/clothing/under/grayson,
+		/obj/item/device/scanner/gas,
 		/obj/item/pickaxe/jackhammer,
 		/obj/item/pickaxe/drill,
-		/obj/item/clothing/glasses/meson
+		/obj/item/crowbar,
+		/obj/item/wrench,
+		/obj/item/storage/ore,
+		/obj/item/device/scanner/mining,
+		/obj/item/device/gps,
+		/obj/item/device/radio,
+		/obj/item/clothing/glasses/material,
+		/obj/item/clothing/glasses/meson,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/messenger/engi)),
+		/obj/item/storage/backpack/dufflebag/eng
 	)
 
 /obj/effect/paint/red/dark
@@ -29,7 +35,6 @@
 
 /obj/machinery/suit_storage_unit/mining/shade
 	req_access = null
-	islocked = 0
 
 /obj/structure/sign/gml
 	name = "\improper GMLtd. sign"

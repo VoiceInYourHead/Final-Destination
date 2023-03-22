@@ -1,12 +1,37 @@
-area/casino
+/area/casino
 	icon = 'maps/away/casino/casino_sprites.dmi'
+	icon_state = "main_area"
 
-area/casino/casino_mainfloor
+/area/casino/casino_mainfloor
 	name = "\improper Casino Hall"
+	icon_state = "main_area"
+
+/area/casino/casino_bridge_hall
+	name = "\improper Bridge Hall"
+	icon_state = "main_area"
+
+/area/casino/casino_crew_hall
+	name = "\improper Crew Hall"
+	icon_state = "main_area"
+
+/area/casino/casino_main_hall
+	name = "\improper Main Hallway"
 	icon_state = "main_area"
 
 /area/casino/casino_maintenance
 	name = "\improper Casino Maintenance"
+	icon_state = "maintenance"
+
+/area/casino/casino_maintenance/bow
+	name = "\improper Bow Casino Maintenance"
+	icon_state = "maintenance"
+
+/area/casino/casino_maintenance/fore
+	name = "\improper Fore Casino Maintenance"
+	icon_state = "maintenance"
+
+/area/casino/casino_maintenance/alt
+	name = "\improper Alt Casino Maintenance"
 	icon_state = "maintenance"
 
 /area/casino/casino_bow
@@ -37,6 +62,14 @@ area/casino/casino_mainfloor
 	name = "\improper Casino Hangar"
 	icon_state = "hangar"
 
+/area/casino/casino_hangar/back
+	name = "\improper Crew Hangar"
+	icon_state = "hangar"
+
+/area/casino/casino_private_hall
+	name = "\improper Casino Private Rooms Hallway"
+	icon_state = "pr1"
+
 /area/casino/casino_private1
 	name = "\improper Casino Private Room 1"
 	icon_state = "pr1"
@@ -63,6 +96,10 @@ area/casino/casino_mainfloor
 
 /area/casino/casino_storage
 	name = "\improper Casino Storage Room"
+	icon_state = "storage"
+
+/area/casino/casino_engineering
+	name = "\improper Casino Engineering"
 	icon_state = "storage"
 
 /area/casino/casino_solar_control

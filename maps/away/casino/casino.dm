@@ -29,7 +29,7 @@
 	name = "Casino"
 	id = "awaysite_casino"
 	description = "A casino ship!"
-	suffixes = list("casino/casino.dmm")
+	suffixes = list("casino/casino2.dmm")
 	spawn_cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/casino_cutter)
 	area_usage_test_exempted_root_areas = list(/area/casino)
@@ -90,7 +90,7 @@
 	desc = "Spin the roulette to try your luck."
 	icon = 'maps/away/casino/casino_sprites.dmi'
 	icon_state = "roulette_r"
-	density = FALSE
+	density = TRUE
 	anchored = TRUE
 	var/busy=0
 
@@ -122,7 +122,7 @@
 	desc = "Roulette chart. Place your bets! "
 	icon = 'maps/away/casino/casino_sprites.dmi'
 	icon_state = "roulette_l"
-	density = FALSE
+	density = TRUE
 	anchored = TRUE
 
 /obj/structure/casino/bj_table

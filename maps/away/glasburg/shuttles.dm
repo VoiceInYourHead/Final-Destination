@@ -2,7 +2,6 @@
 	name = "GCDV Glasburg"
 	shuttle = "Glasburg"
 	desc = "Sensor array detects a small unarmed vessel, claiming to be 'GCDV Glasburg' - a diplomatic shuttle that belongs to ICCG state. Seem's like it wasn't designed for deep space travel."
-	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 2500

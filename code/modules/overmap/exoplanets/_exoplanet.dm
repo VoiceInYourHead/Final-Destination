@@ -26,6 +26,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 
 	var/list/rock_colors = list(COLOR_ASTEROID_ROCK)
 	var/list/plant_colors = list("RANDOM")
+	var/list/grasscolors = list()
 	var/grass_color
 	var/surface_color = COLOR_ASTEROID_ROCK
 	var/water_color = "#436499"
@@ -57,7 +58,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 
 	//Flags deciding what features to pick
 	var/ruin_tags_whitelist
-	var/ruin_tags_blacklist
+	var/ruin_tags_blacklist = RUIN_RAINWORLD
 	var/features_budget = 6
 	var/list/possible_features = list()
 	var/list/spawned_features
@@ -69,6 +70,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 		HABITABILITY_BAD = 50
 	)
 	var/habitability_class
+	var/fucked_atmos = FALSE
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/generate_habitability()
 	if (isnum(habitability_distribution))
@@ -89,6 +91,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	planetary_area = new planetary_area()
 	GLOB.using_map.area_purity_test_exempt_areas += planetary_area.type
 	planetary_area.name = "Surface of [planet_name]"
+	planetary_area.assigned_planet = src
 
 	INCREMENT_WORLD_Z_SIZE
 	forceMove(locate(1,1,world.maxz))
@@ -146,7 +149,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 /obj/effect/overmap/visitable/sector/exoplanet/Process(wait, tick)
 	if (animals.len < 0.5*max_animal_count && !repopulating)
 		repopulating = TRUE
-		max_animal_count = round(max_animal_count * 0.5)
+		max_animal_count = max_animal_count
 
 	for (var/zlevel in map_z)
 		if (repopulating && !GLOB.planet_repopulation_disabled)
@@ -161,7 +164,17 @@ GLOBAL_VAR(planet_repopulation_disabled)
 			daycolumn = 1
 		if (daycolumn && tick % round(daycycle_column_delay / wait) == 0)
 			update_daynight()
-
+/*
+	for(var/obj/effect/overmap/event/star/starsector in src.loc.contents)
+		if(starsector)
+			if(atmosphere && !fucked_atmos)
+				fucked_atmos = TRUE
+				atmosphere.temperature = T20C + rand(500, 2000)
+				atmosphere.update_values()
+				daycycle = 0
+				lightlevel = 1
+				update_daynight()
+*/
 /obj/effect/overmap/visitable/sector/exoplanet/proc/update_daynight()
 	var/light = 0.1
 	if (!night)
@@ -173,7 +186,8 @@ GLOBAL_VAR(planet_repopulation_disabled)
 		daycolumn = 0
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/generate_map()
-	var/list/grasscolors = plant_colors.Copy()
+	if (!length(grasscolors))
+		grasscolors = plant_colors.Copy()
 	grasscolors -= "RANDOM"
 	if (length(grasscolors))
 		grass_color = pick(grasscolors)

@@ -63,16 +63,19 @@
 	// for some reason, touch_map_edge doesn't always trigger like it should
 	// this ensures that it does
 	if(x < TRANSITIONEDGE || x > world.maxx - TRANSITIONEDGE || y < TRANSITIONEDGE || y > world.maxy - TRANSITIONEDGE)
-		touch_map_edge()
+		if(z != 0) //в нуллспейсе торпеда сразу решает что она на краю мапы
+			touch_map_edge()
 
 /obj/structure/missile/Bump(var/atom/obstacle)
-/*	if(istype(obstacle, /obj/effect/shield))
+	if(istype(obstacle, /obj/effect/shield))
 		var/obj/effect/shield/S = obstacle
-		S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
-		if((!S.gen.mitigation_physical > 0  || !S.gen.check_flag(MODEFLAG_HYPERKINETIC)) && !S.disabled_for)
-			return*/	//ёбана как сделать так что бы ракета не останавливалась об щит... надо будет доделать
-	..()
-	detonate(obstacle)
+		if(S.gen.mitigation_physical > 0  || S.gen.check_flag(MODEFLAG_HYPERKINETIC))
+			..()
+			S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
+			detonate(obstacle)
+		else
+			forceMove(S.loc)
+			walk(src,dir,1)
 
 /obj/structure/missile/ex_act(severity)
 	..()

@@ -106,6 +106,13 @@
 			new spawn_type(pick(view(1,src)))
 			playsound(src.loc, pick('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg'), 50, 1, -3)
 
+	if(charges >= 5)
+		if(prob(5))
+			charges -= 1
+			var/spawn_type = pick(/mob/living/simple_animal/hostile/faithless/strong)
+			new spawn_type(pick(view(1,src)))
+			playsound(src.loc, pick('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg'), 50, 1, -3)
+
 	if(charges >= 1)
 		if(shadow_wights.len < 5 && prob(5))
 			shadow_wights.Add(new /obj/effect/shadow_wight(src.loc))
@@ -156,15 +163,90 @@
 
 /obj/item/vampiric/monolith
 	name = "Bloody Monolith"
+	icon_state = "ano50"
 	eat_interval = 10
 	range = 30
 	bloodcall_interval = 5
 	hear_range = 35
+	var/max_damage = 35
+	var/min_damage = 15
+
+/obj/item/vampiric/monolith/Process()
+	//see if we've identified anyone nearby
+	if(world.time - last_bloodcall > bloodcall_interval && nearby_mobs.len)
+		var/mob/living/carbon/human/M = pop(nearby_mobs)
+		if(M in range(hear_range,src) && M.health > 20)
+			if(prob(50))
+				bloodcall2(M)
+				nearby_mobs.Add(M)
+
+	//suck up some blood to gain power
+	if(world.time - last_eat > eat_interval)
+		var/obj/effect/decal/cleanable/blood/B = locate() in range(range,src)
+		if(B)
+			last_eat = world.time
+			if(istype(B, /obj/effect/decal/cleanable/blood/drip))
+				charges += 0.25
+			else
+				charges += 1
+				playsound(src.loc, 'sound/effects/splat.ogg', 50, 1, -3)
+			qdel(B)
+
+	//use up stored charges
+	if(charges >= 10)
+		if(prob(5))
+			charges -= 1
+			var/spawn_type = pick(/mob/living/simple_animal/hostile/meat/abomination/strong)
+			new spawn_type(pick(view(1,src)))
+			playsound(src.loc, pick('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg'), 50, 1, -3)
+
+
+	if(charges >= 5)
+		if(prob(5))
+			charges -= 1
+			var/spawn_type = pick(/mob/living/simple_animal/hostile/meat/abomination/strong)
+			new spawn_type(pick(view(1,src)))
+			playsound(src.loc, pick('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg'), 50, 1, -3)
+
+	if(charges >= 3)
+		if(prob(5))
+			charges -= 1
+			var/spawn_type = pick(/mob/living/simple_animal/hostile/faithless/strong)
+			new spawn_type(pick(view(1,src)))
+			playsound(src.loc, pick('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg'), 50, 1, -3)
+
+	if(charges >= 0.1)
+		if(prob(5))
+			src.visible_message("<span class='warning'>[icon2html(src, viewers(get_turf(src)))] [src]'s eyes glow ruby red for a moment!</span>")
+			charges -= 0.1
 
 /obj/item/vampiric/monolith/hear_talk(mob/M as mob, text)
 	..()
 	if(world.time - last_bloodcall >= bloodcall_interval && (M in orange(hear_range, src)))
-		bloodcall(M)
+		bloodcall2(M)
+		range++
+		icon_state = "ano51"
+		update_icon()
+		if(eat_interval >= 1)
+			eat_interval--
+
+/obj/item/vampiric/monolith/proc/bloodcall2(var/mob/living/carbon/human/M)
+	last_bloodcall = world.time
+	if(istype(M))
+		playsound(src.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3)
+		nearby_mobs.Add(M)
+
+		var/target = pick(M.organs_by_name)
+		M.apply_damage(rand(min_damage, max_damage), BRUTE, target)
+		M.apply_damage(rand(min_damage, max_damage), BURN, target)
+		to_chat(M, "<span class='warning'>The skin on your [parse_zone(target)] feels like it's ripping apart, and a stream of blood flies out.</span>")
+		var/obj/effect/decal/cleanable/blood/splatter/animated/B = new(M.loc)
+		B.target_turf = pick(range(1, src))
+		B.blood_DNA = list()
+		B.blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
+		M.vessel.remove_reagent(/datum/reagent/blood,rand(25,50))
+		charges += 1
+		max_damage += 5
 
 //animated blood 2 SPOOKY
 /obj/effect/decal/cleanable/blood/splatter/animated

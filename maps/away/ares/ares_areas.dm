@@ -2,11 +2,11 @@
 	name = "\improper Ares"
 	icon_state = "bridge"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	req_access = list(access_ares)
 
 /area/ship/ares/bridge
 	name = "\improper Ares - Cockpit"
 	icon_state = "bridge"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/ship/ares/interior
 	name = "\improper Ares - Interior"

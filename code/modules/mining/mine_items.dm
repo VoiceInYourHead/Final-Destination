@@ -7,20 +7,26 @@
 
 /obj/structure/closet/secure_closet/miner/WillContain()
 	return list(
-		new /datum/atom_creator/weighted(list(
-				/obj/item/storage/backpack/industrial,
-				/obj/item/storage/backpack/satchel/eng
-			)),
-		/obj/item/device/radio/headset/headset_cargo,
-		/obj/item/clothing/under/rank/miner,
+		/obj/item/clothing/accessory/storage/brown_vest,
+		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/clothing/shoes/black,
-		/obj/item/device/scanner/gas,
-		/obj/item/storage/ore,
+		/obj/item/clothing/shoes/workboots,
+		/obj/item/device/radio/headset/headset_mining,
+		/obj/item/device/radio/headset/headset_mining/alt,
 		/obj/item/device/flashlight/lantern,
 		/obj/item/shovel,
 		/obj/item/pickaxe,
-		/obj/item/clothing/glasses/meson
+		/obj/item/crowbar,
+		/obj/item/wrench,
+		/obj/item/storage/ore,
+		/obj/item/storage/ore,
+		/obj/item/device/scanner/mining,
+		/obj/item/device/gps,
+		/obj/item/device/radio,
+		/obj/item/clothing/glasses/material,
+		/obj/item/clothing/glasses/meson,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/messenger/engi)),
+		/obj/item/storage/backpack/dufflebag/eng
 	)
 
 /**********'pickaxes' but theyre drills actually***************/
@@ -239,7 +245,7 @@
 		addon.layer = ABOVE_LIGHTING_LAYER
 		addon.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 		overlays += addon
-		set_light(0.5, 0.5, 3) 
+		set_light(0.5, 0.5, 3)
 	else
 		pixel_x = rand(-randpixel, randpixel)
 		pixel_y = rand(-randpixel, randpixel)

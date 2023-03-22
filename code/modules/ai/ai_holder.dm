@@ -94,6 +94,7 @@ if (!(datum.process_flags & AI_FASTPROCESSING)) { \
 		STANCE_SLEEP
 	)
 
+	var/run_on_empty_levels = FALSE
 
 /datum/ai_holder/hostile
 	hostile = TRUE

@@ -2,6 +2,7 @@
 	name = "Ascent Caulship"
 	shuttle = "Ascent Caulship"
 	desc = "Wake signature indicates a small unarmed vessel of unknown design."
+	icon_state = "ship"
 	moving_state = "ship_moving"
 	integrity_failure_cap = 80
 	integrity_failure = 30

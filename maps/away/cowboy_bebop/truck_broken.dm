@@ -17,6 +17,7 @@
 	description = "Space truck crashsite."
 	suffixes = list("cowboy_bebop/space_truck_broken.dmm")
 	spawn_cost = 2
+	generate_mining_by_z = 1
 	area_usage_test_exempted_root_areas = list(/area/ship/truck)
 
 /obj/effect/shuttle_landmark/nav_truck_crashsite/nav1

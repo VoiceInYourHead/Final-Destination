@@ -88,6 +88,9 @@
 		if(O == actual_missile.origin)
 			continue
 
+		if(O.missile_notarget)
+			continue
+
 
 		if(!LAZYLEN(O.map_z))
 			continue

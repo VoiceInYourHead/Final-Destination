@@ -82,6 +82,9 @@
 	if(!atmos_suitable)
 		adjustBruteLoss(unsuitable_atmos_damage)
 
+	if(submerged() && !aquatic_movement)
+		adjustBruteLoss(unsuitable_atmos_damage)
+
 /mob/living/simple_animal/proc/escape(mob/living/M, obj/O)
 	O.unbuckle_mob(M)
 	visible_message("<span class='danger'>\The [M] escapes from \the [O]!</span>")

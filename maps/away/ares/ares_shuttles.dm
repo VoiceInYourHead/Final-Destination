@@ -2,7 +2,6 @@
 	name = "GMMV Ares"
 	shuttle = "Ares"
 	desc = "Sensor array is detecting a small mining vessel, property of Grayson Manufactories Ltd."
-	moving_state = "ship_moving"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
@@ -20,6 +19,7 @@
 
 /obj/machinery/computer/shuttle_control/explore/ares
 	name = "vessel control console"
+	req_access = list(access_ares)
 	shuttle_tag = "Ares"
 
 /obj/effect/shuttle_landmark/ares

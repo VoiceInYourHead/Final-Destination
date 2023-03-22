@@ -2601,6 +2601,7 @@
 #include "code\modules\overmap\exoplanets\planet_themes\radiation_bombing.dm"
 #include "code\modules\overmap\exoplanets\planet_themes\robotic_guardians.dm"
 #include "code\modules\overmap\exoplanets\planet_themes\ruined_city.dm"
+#include "code\modules\overmap\exoplanets\planet_themes\ruined_ecumenopolis.dm"
 #include "code\modules\overmap\exoplanets\planet_types\barren.dm"
 #include "code\modules\overmap\exoplanets\planet_types\chlorine.dm"
 #include "code\modules\overmap\exoplanets\planet_types\desert.dm"

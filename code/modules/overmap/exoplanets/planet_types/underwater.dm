@@ -6,6 +6,7 @@
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
 	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM")
 	map_generators = list(/datum/random_map/noise/exoplanet/water)
+	possible_themes = list(/datum/exoplanet_theme = 85, /datum/exoplanet_theme/radiation_bombing = 15)
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = FALSE
 	flora_diversity = 3
@@ -51,12 +52,6 @@
 /area/exoplanet/water
 	base_turf = /turf/simulated/ocean
 	ambience = list('sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg','sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous1.ogg','sound/ambience/ominous3.ogg')
-
-/area/exoplanet/water/play_ambience(var/mob/living/L)
-	..()
-	if(!L.ear_deaf && L.client && !L.client.ambience_playing)
-		L.client.ambience_playing = TRUE
-		L.playsound_local(get_turf(L),sound('sound/ambience/magma.ogg', repeat = 1, wait = 0, volume = 25, channel = GLOB.ambience_sound_channel))
 
 /datum/random_map/noise/exoplanet/water
 	descriptor = "ocean exoplanet"
