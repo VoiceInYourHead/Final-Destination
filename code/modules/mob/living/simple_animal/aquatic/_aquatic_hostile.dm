@@ -13,6 +13,8 @@
 
 	ai_holder = /datum/ai_holder/simple_animal/melee/aquatic
 
+	aquatic_movement = TRUE
+
 /mob/living/simple_animal/hostile/aquatic/Life()
 	if(!submerged())
 		if(icon_state == icon_living)

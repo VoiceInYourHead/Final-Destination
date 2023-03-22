@@ -18,6 +18,8 @@
 
 	say_list_type = /datum/say_list/aquatic
 
+	aquatic_movement = TRUE
+
 /mob/living/simple_animal/aquatic/New()
 	..()
 	default_pixel_x = rand(-12,12)

@@ -13,6 +13,8 @@
 
 	ai_holder = /datum/ai_holder/simple_animal/retaliate/aquatic
 
+	aquatic_movement = TRUE
+
 
 /mob/living/simple_animal/hostile/retaliate/aquatic/Life()
 	if(!submerged())

@@ -799,7 +799,7 @@
 
 /datum/ai_holder/smart_animal/rain_world/carnivore_placeholder
 	lose_target_timeout = 5 SECONDS
-	base_wander_delay = 1
+	init_base_wander_delay = 4
 	follow_distance = 4
 	vision_range = 9
 
@@ -820,7 +820,7 @@
 	mob_size = MOB_MEDIUM
 	melee_attack_delay = 6
 	speed = 2
-	movement_cooldown = 5
+	movement_cooldown = 3
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES

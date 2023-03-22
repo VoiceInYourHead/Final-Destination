@@ -67,7 +67,7 @@
 	var/init_max_home_distance = 3			// How far the mob can go away from its home before being told to go_home().
 
 	wander = TRUE					// If true, the mob will randomly move in the four cardinal directions when idle.
-	var/init_base_wander_delay = 5			// 5 is min
+	var/init_base_wander_delay = 5
 	wander_when_pulled = TRUE
 
 	var/init_vision_range = 7
