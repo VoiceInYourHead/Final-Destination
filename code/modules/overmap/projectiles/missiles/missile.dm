@@ -72,10 +72,13 @@
 		if(S.gen.mitigation_physical > 0  || S.gen.check_flag(MODEFLAG_HYPERKINETIC))
 			..()
 			S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
-			detonate(obstacle)
+			detonate(S)
 		else
 			forceMove(S.loc)
 			walk(src,dir,1)
+	else
+		..()
+		detonate(obstacle)
 
 /obj/structure/missile/ex_act(severity)
 	..()
