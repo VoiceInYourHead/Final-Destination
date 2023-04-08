@@ -52,25 +52,25 @@
 	name = T_BOARD("particle lance muzzle")
 	build_path = /obj/machinery/particle_lance/front_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 6)
 	req_components = list (
-		/obj/item/stock_parts/manipulator/pico = 5
+		/obj/item/stack/material/diamond = 10
 	)
 
 /obj/item/stock_parts/circuitboard/particle_lancemiddle
 	name = T_BOARD("particle lance barrel")
 	build_path = /obj/machinery/particle_lance/middle_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 6)
 	req_components = list (
-		/obj/item/stock_parts/subspace/crystal = 10
+		/obj/item/stock_parts/micro_laser/ultra = 10
 	)
 
 /obj/item/stock_parts/circuitboard/particle_lanceback
 	name = T_BOARD("particle lance charger")
 	build_path = /obj/machinery/particle_lance/back_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 6)
 	req_components = list (
-		/obj/item/stock_parts/capacitor/super = 5
+		/obj/item/stock_parts/smes_coil/super_io = 5
 	)

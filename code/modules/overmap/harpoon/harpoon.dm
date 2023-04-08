@@ -53,7 +53,7 @@
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
-		/obj/item/stock_parts/manipulator/pico = 5
+		/obj/item/stack/material/steel = 10
 	)
 
 /obj/item/stock_parts/circuitboard/harpoonmiddle
@@ -62,7 +62,7 @@
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
-		/obj/item/stock_parts/subspace/crystal = 10
+		/obj/item/stack/material/steel = 20
 	)
 
 /obj/item/stock_parts/circuitboard/harpoonback
@@ -71,5 +71,6 @@
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
-		/obj/item/stock_parts/capacitor/super = 5
+		/obj/item/stock_parts/capacitor/super = 3,
+		/obj/item/stock_parts/manipulator/pico = 3
 	)
