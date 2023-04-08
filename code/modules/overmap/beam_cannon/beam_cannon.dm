@@ -45,24 +45,24 @@
 /obj/item/stock_parts/circuitboard/beam_cannon
 	name = T_BOARD("ion beam emitter control")
 	build_path = /obj/machinery/computer/ship/beam_cannon
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 6)
 
 /obj/item/stock_parts/circuitboard/beam_cannonfront
 	name = T_BOARD("ion beam emitter muzzle")
 	build_path = /obj/machinery/beam_cannon/front_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 6)
 	req_components = list (
-		/obj/item/stock_parts/manipulator/pico = 5
+		/obj/item/stack/material/diamond = 10
 	)
 
 /obj/item/stock_parts/circuitboard/beam_cannonmiddle
 	name = T_BOARD("ion beam emitter barrel")
 	build_path = /obj/machinery/beam_cannon/middle_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 6)
 	req_components = list (
-		/obj/item/stock_parts/subspace/crystal = 10
+		/obj/item/stock_parts/micro_laser/ultra = 10
 	)
 
 /obj/item/stock_parts/circuitboard/beam_cannonback
@@ -71,5 +71,5 @@
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 	req_components = list (
-		/obj/item/stock_parts/capacitor/super = 5
+		/obj/item/stock_parts/smes_coil/super_io = 5
 	)

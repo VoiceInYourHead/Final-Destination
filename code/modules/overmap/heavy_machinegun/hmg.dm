@@ -55,25 +55,26 @@
 	name = T_BOARD("heavy machine gun muzzle")
 	build_path = /obj/machinery/hmg/front_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stock_parts/manipulator/pico = 5
+		/obj/item/stack/material/plasteel = 10
 	)
 
 /obj/item/stock_parts/circuitboard/heavymgmiddle
 	name = T_BOARD("heavy machine gun barrel")
 	build_path = /obj/machinery/hmg/middle_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stock_parts/subspace/crystal = 10
+		/obj/item/stack/material/plasteel = 15
 	)
 
 /obj/item/stock_parts/circuitboard/heavymgback
 	name = T_BOARD("heavy machine gun breech end")
 	build_path = /obj/machinery/hmg/back_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stock_parts/capacitor/super = 5
+		/obj/item/stock_parts/capacitor/super = 3,
+		/obj/item/stock_parts/manipulator/pico = 3
 	)
