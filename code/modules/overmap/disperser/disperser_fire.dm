@@ -76,8 +76,6 @@
 		explosion(middle,rand(1,2),rand(2,3),rand(3,4))
 	next_shot = coolinterval + world.time
 
-	reset_calibration()
-
 	var/turf/overmaptarget = get_step(linked, overmapdir)
 	var/list/candidates = list()
 
@@ -114,6 +112,8 @@
 		if(chargetype == OVERMAP_WEAKNESS_DROPPOD)
 			atomcharge.forceMove(locate(rand(1,world.maxx),rand(1,world.maxy), GLOB.using_map.get_empty_zlevel())) //Remove it in case it's a droppod.
 		return TRUE
+
+	reset_calibration()
 
 	log_and_message_admins("A type [chargetype] disperser beam was launched at [finaltarget].", location=finaltarget)
 
