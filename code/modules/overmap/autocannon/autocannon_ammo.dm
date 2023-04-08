@@ -58,7 +58,7 @@
 
 /obj/structure/ship_munition/ammobox/autocannon/anti_hull
 	name = "RP-AH 76mm ammo box"
-	icon_state = "ammocrate_autocannon_aw"
+	icon_state = "ammocrate_autocannon_ah"
 	desc = "Ammo box that contains 76mm rocket-propelled anti-hull rounds."
 	ammo_count = 30
 	ammo_type = /obj/item/projectile/bullet/autocannon/anti_hull

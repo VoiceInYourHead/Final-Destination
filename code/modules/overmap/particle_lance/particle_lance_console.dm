@@ -5,7 +5,7 @@
 	icon_keyboard = "ascent_key"
 	icon_screen = "ascent_screen"
 
-	core_skill = SKILL_DEVICES
+	core_skill = SKILL_PILOT
 	var/skill_offset = SKILL_ADEPT - 1 //After which skill level it starts to matter. -1, because we have to index from zero
 
 	icon_keyboard = "rd_key"
