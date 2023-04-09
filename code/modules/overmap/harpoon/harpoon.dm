@@ -51,25 +51,25 @@
 	name = T_BOARD("harpoon cannon muzzle")
 	build_path = /obj/machinery/harpoon_cannon/front_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_COMBAT = 2)
 	req_components = list (
-		/obj/item/stack/material/steel = 10
+		/obj/item/stack/material/steel = 40
 	)
 
 /obj/item/stock_parts/circuitboard/harpoonmiddle
 	name = T_BOARD("harpoon cannon rail")
 	build_path = /obj/machinery/harpoon_cannon/middle_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_COMBAT = 2)
 	req_components = list (
-		/obj/item/stack/material/steel = 20
+		/obj/item/stack/material/steel = 50
 	)
 
 /obj/item/stock_parts/circuitboard/harpoonback
 	name = T_BOARD("harpoon cannon munition rack")
 	build_path = /obj/machinery/harpoon_cannon/back_part
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_COMBAT = 2)
 	req_components = list (
 		/obj/item/stock_parts/capacitor/super = 3,
 		/obj/item/stock_parts/manipulator/pico = 3

@@ -53,7 +53,7 @@
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stack/material/steel = 20
+		/obj/item/stack/material/plasteel = 20
 	)
 
 /obj/item/stock_parts/circuitboard/autocannonmiddle
@@ -62,7 +62,7 @@
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_COMBAT = 4)
 	req_components = list (
-		/obj/item/stack/material/steel = 30
+		/obj/item/stack/material/plasteel = 30
 	)
 
 /obj/item/stock_parts/circuitboard/autocannonback

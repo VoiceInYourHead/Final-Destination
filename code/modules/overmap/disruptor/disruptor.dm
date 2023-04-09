@@ -31,7 +31,6 @@
 	desc = "A gas tube that propels munitions to the disruptor muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
 	icon_state = "magazine"
-	maximum_component_parts = list(/obj/item/stock_parts = 15)
 
 /obj/machinery/disruptor/back_part
 	name = "disruptor breech end"
