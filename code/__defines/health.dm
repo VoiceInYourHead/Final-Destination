@@ -60,3 +60,6 @@
 	DAMAGE_OXY = 0,\
 	DAMAGE_BRAIN = 0\
 )
+
+/// The damage source should deal extra damage to turfs - Walls, floors,
+#define DAMAGE_FLAG_TURF_BREAKER            FLAG(1)

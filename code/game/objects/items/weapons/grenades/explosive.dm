@@ -39,10 +39,10 @@
 	qdel(src)
 
 
-/obj/proc/fragmentate(var/turf/T=get_turf(src), var/fragment_number = 30, var/spreading_range = 5, var/list/fragtypes=list(/obj/item/projectile/bullet/pellet/fragment/))
+/obj/proc/fragmentate(turf/T=get_turf(src), fragment_number = 30, spreading_range = 5, list/fragtypes=list(/obj/item/projectile/bullet/pellet/fragment))
 	set waitfor = 0
 	var/list/target_turfs = getcircle(T, spreading_range)
-	var/fragments_per_projectile = round(fragment_number/target_turfs.len)
+	var/fragments_per_projectile = round(fragment_number/length(target_turfs))
 
 	for(var/turf/O in target_turfs)
 		sleep(0)
@@ -50,6 +50,7 @@
 		var/obj/item/projectile/bullet/pellet/fragment/P = new fragment_type(T)
 		P.pellets = fragments_per_projectile
 		P.shot_from = src.name
+		P.hitchance_mod = 50
 
 		P.launch(O)
 
@@ -78,7 +79,7 @@
 
 /obj/item/grenade/frag/proc/on_explosion(var/turf/O)
 	if(explosion_size)
-		explosion(O, -1, -1, explosion_size, round(explosion_size/2), 0)
+		explosion(O, explosion_size, EX_ACT_LIGHT, 0)
 
 /obj/item/grenade/frag/shell
 	name = "fragmentation grenade"
@@ -102,16 +103,16 @@
 
 /obj/item/grenade/frag/high_yield/on_explosion(var/turf/O)
 	if(explosion_size)
-		explosion(O, -1, round(explosion_size/2), explosion_size, round(explosion_size/2), 0) //has a chance to blow a hole in the floor
+		explosion(O, round(explosion_size * 1.5), EX_ACT_HEAVY, 0) //has a chance to blow a hole in the floor
 
 /obj/item/grenade/frag/high_explosive
 	name = "HE grenade"
 	desc = "A military high-explosive grenade, designed to cause massive structural damage in enemy lines."
 	icon_state = "frggrenade"
 
-	num_fragments = 12
+	num_fragments = 4
 	explosion_size = 4
 
 /obj/item/grenade/frag/high_explosive/on_explosion(var/turf/O)
 	if(explosion_size)
-		explosion(O, -1, round(explosion_size/2), round(explosion_size/1.5), explosion_size, 0)
+		explosion(O, round(explosion_size * 1.5), EX_ACT_LIGHT, 0) //has a chance to blow a hole in the floor

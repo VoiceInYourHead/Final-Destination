@@ -23,7 +23,7 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Heavy rotary gun"
 
-	var/hull_damage = 1
+	var/hull_damage = 0.75
 
 	var/obj/machinery/minigun/front_part/front
 	var/obj/machinery/minigun/middle_part/middle
@@ -216,7 +216,7 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			explosion(middle,1,rand(1,2),rand(2,3))
+			explosion(middle, rand(6, 9))
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time + burst_interval * burst_size
@@ -270,14 +270,14 @@
 	var/distance = 0
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		distance++
-		if(T.density)
+		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 			if(distance <= danger_zone)
-				explosion(T,1,2,2)
+				explosion(T, rand(6, 9), turf_breaker = TRUE)
 			return TRUE
 		for(var/atom/A in T)
 			if(A.density && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield)))
 				if(distance <= danger_zone)
-					explosion(A,1,2,2)
+					explosion(T, rand(6, 9), turf_breaker = TRUE)
 				return TRUE
 
 	handle_overbeam()
@@ -317,9 +317,6 @@
 	//Success, but we missed.
 	if(prob(100 - cal_accuracy()) && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
 		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снаряд даже нашёл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
-		return TRUE
-
-	if(istype(front.loc.loc, /area/exoplanet)) //Ты чё ебанутый, как твои пули без мини-двигателя собрались атмосферу покидать??
 		return TRUE
 
 	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
@@ -438,13 +435,18 @@
 
 	if(istype(target, /obj/effect/overmap/visitable/ship))
 		var/must_damage = FALSE
+		var/met_shield = FALSE
 		var/obj/effect/overmap/visitable/ship/target_vessel = target
 		for(var/turf/T in getline(start,get_target_turf(start, heading)))
 			if(T.density)
 				must_damage = TRUE
+				break
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
+					met_shield = TRUE
+			if(met_shield)
+				break
 		if(must_damage) target_vessel.damage_hull(hull_damage)
 
 /obj/machinery/computer/ship/minigun/proc/fire_at_exoplanet(var/z_level, var/target)

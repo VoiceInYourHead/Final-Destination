@@ -216,7 +216,7 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			explosion(middle,1,rand(1,2),rand(2,3))
+			explosion(middle, rand(3, 6))
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time + burst_interval * burst_size
@@ -272,12 +272,12 @@
 		distance++
 		if(T.density)
 			if(distance <= danger_zone)
-				explosion(T,1,2,2)
+				explosion(T, rand(3, 6))
 			return TRUE
 		for(var/atom/A in T)
 			if(A.density && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield)))
 				if(distance <= danger_zone)
-					explosion(A,1,2,2)
+					explosion(T, rand(3, 6))
 				return TRUE
 
 	handle_overbeam()
@@ -438,13 +438,18 @@
 
 	if(istype(target, /obj/effect/overmap/visitable/ship))
 		var/must_damage = FALSE
+		var/met_shield = FALSE
 		var/obj/effect/overmap/visitable/ship/target_vessel = target
 		for(var/turf/T in getline(start,get_target_turf(start, heading)))
 			if(T.density)
 				must_damage = TRUE
+				break
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
+					met_shield = TRUE
+			if(met_shield)
+				break
 		if(must_damage) target_vessel.damage_hull(hull_damage)
 
 /obj/machinery/computer/ship/hmg/proc/fire_at_exoplanet(var/z_level, var/target)

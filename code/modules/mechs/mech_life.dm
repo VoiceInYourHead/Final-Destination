@@ -30,7 +30,7 @@
 			var/obj/item/mech_equipment/M = hardpoints[hardpoint]
 			if(istype(M) && M.active && M.passive_power_use)
 				M.deactivate()
-		
+
 
 	updatehealth()
 	if(health <= 0 && stat != DEAD)
@@ -133,7 +133,7 @@
 	for(var/obj/item/thing in stuff_to_throw)
 		thing.forceMove(T)
 		thing.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(3,6),40)
-	explosion(T, -1, 0, 2)
+	explosion(T, 2, EX_ACT_LIGHT)
 	qdel(src)
 	return
 

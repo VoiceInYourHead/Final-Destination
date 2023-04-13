@@ -116,7 +116,7 @@
  * `skip_death_state_change` will skip calling `handle_death_change()` when applicable. Used for when the originally calling proc needs handle it in a unique way.
  * Returns `TRUE` if the death state changes, `null` if the atom is not using health, `FALSE` otherwise.
  */
-/atom/proc/mod_health(health_mod, damage_type, skip_death_state_change = FALSE)
+/atom/proc/mod_health(health_mod, damage_type)
 	SHOULD_CALL_PARENT(TRUE)
 	if (!health_max)
 		return
@@ -127,10 +127,9 @@
 	var/new_death_state = !is_alive()
 	if (death_state == new_death_state)
 		return FALSE
-	if (!skip_death_state_change)
-		if (!is_alive())
-			on_death()
-		handle_death_change(new_death_state)
+	if (!is_alive())
+		on_death()
+	handle_death_change(new_death_state)
 	return TRUE
 
 /**
@@ -138,23 +137,23 @@
  * Has no pre-modification checks.
  * Returns `TRUE` if the death state changes, `null` if the atom is not using health, `FALSE` otherwise.
  */
-/atom/proc/set_health(new_health, skip_death_state_change = FALSE)
+/atom/proc/set_health(new_health)
 	SHOULD_CALL_PARENT(TRUE)
 	if (!health_max)
 		return
 	var/health_mod = new_health - health_current
-	return mod_health(health_mod, skip_death_state_change = skip_death_state_change)
+	return mod_health(health_mod)
 
 /**
  * Restore's the atom's health by the given value. Returns `TRUE` if the restoration resulted in a death state change.
  */
-/atom/proc/restore_health(damage, damage_type = null, skip_death_state_change = FALSE)
+/atom/proc/restore_health(damage, damage_type = null)
 	SHOULD_CALL_PARENT(TRUE)
 	if (!health_max)
 		return
 	if (!can_restore_health(damage, damage_type))
 		return FALSE
-	return mod_health(damage, damage_type, skip_death_state_change)
+	return mod_health(damage, damage_type)
 
 /**
  * Damage's the atom's health by the given value. Returns `TRUE` if the damage resulted in a death state change.
@@ -162,7 +161,7 @@
  * - `skip_death_state_change` will skip calling `handle_death_change()` when applicable. Used for when the originally calling proc needs handle it in a unique way.
  * - `severity` should be a passthrough of `severity` from `ex_act()` and `emp_act()` for `DAMAGE_EXPLODE` and `DAMAGE_EMP` types respectively.
  */
-/atom/proc/damage_health(damage, damage_type = null, skip_death_state_change = FALSE, severity)
+/atom/proc/damage_health(damage, damage_type = null, damage_flags, severity)
 	SHOULD_CALL_PARENT(TRUE)
 	if (!health_max)
 		return
@@ -172,7 +171,7 @@
 	// Apply resistance/weakness modifiers
 	damage *= get_damage_resistance(damage_type)
 
-	return mod_health(-damage, damage_type, skip_death_state_change)
+	return mod_health(-damage, damage_type)
 
 /**
  * Proc called after any health changes made by the system
@@ -299,12 +298,21 @@
 	damage_health(rand(75, 125) / severity, DAMAGE_EMP, severity = severity)
 
 
-/atom/ex_act(severity)
+/atom/ex_act(severity, turf_breaker)
 	..()
 	// No hitsound here to avoid noise spam.
-	// Generalized - 75-125 damage at max, 38-63 at medium, 25-42 at minimum severities.
-	damage_health(rand(75, 125) / severity, DAMAGE_EXPLODE, severity = severity)
-
+	// Damage is based on severity and maximum health, with DEVASTATING being guaranteed death without any resistances.
+	var/damage_flags = turf_breaker ? DAMAGE_FLAG_TURF_BREAKER : EMPTY_BITFIELD
+	var/damage = 0
+	switch (severity)
+		if (EX_ACT_DEVASTATING)
+			damage = health_max
+		if (EX_ACT_HEAVY)
+			damage = round(health_max / rand(2, 3))
+		if (EX_ACT_LIGHT)
+			damage = round(health_max / rand(10, 15))
+	if (damage && can_damage_health(damage, DAMAGE_EXPLODE))
+		damage_health(damage, DAMAGE_EXPLODE, damage_flags, severity)
 
 /atom/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()

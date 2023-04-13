@@ -26,7 +26,7 @@
 	var/obj/machinery/disruptor/front_part/front
 	var/obj/machinery/disruptor/middle_part/middle
 	var/obj/machinery/disruptor/back_part/back
-	var/obj/structure/ship_munition/ammobox/disruptor/munition
+	var/obj/structure/ship_munition/ammobox/cell/disruptor/munition
 
 	var/ammo_per_shot = 150
 	var/danger_zone = 0
@@ -216,7 +216,7 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			explosion(middle,1,rand(1,2),rand(2,3))
+			explosion(middle, rand(3, 6))
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time + burst_interval * burst_size
@@ -291,12 +291,12 @@
 		distance++
 		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 			if(distance <= danger_zone)
-				explosion(T,1,2,2)
+				explosion(T, rand(3, 6), turf_breaker = TRUE)
 			return TRUE
 		for(var/atom/A in T)
 			if(A.density && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield)))
 				if(distance <= danger_zone)
-					explosion(A,1,2,2)
+					explosion(T, rand(3, 6), turf_breaker = TRUE)
 				return TRUE
 
 	handle_overbeam()

@@ -217,7 +217,7 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			explosion(middle,1,rand(1,2),rand(2,3))
+			explosion(middle, rand(6, 9))
 			next_shot = coolinterval + world.time + fire_delay + beam_time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time
@@ -458,13 +458,18 @@
 
 	if(istype(target, /obj/effect/overmap/visitable/ship))
 		var/must_damage = FALSE
+		var/met_shield = FALSE
 		var/obj/effect/overmap/visitable/ship/target_vessel = target
 		for(var/turf/T in getline(start,get_target_turf(start, heading)))
 			if(T.density)
 				must_damage = TRUE
+				break
 			for(var/atom/A in T)
 				if(A.density && istype(A, /obj/effect/shield))
 					must_damage = FALSE
+					met_shield = TRUE
+			if(met_shield)
+				break
 		if(must_damage) target_vessel.damage_hull(hull_damage)
 
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam(var/turf/s, var/d)
@@ -490,16 +495,14 @@
 			break
 		if(T.density && !killing_floor)
 			sleep(beam_speed)
-			explosion(T,1,1,2,3,adminlog = 0)
+			explosion(T, 4, EX_ACT_DEVASTATING,adminlog = 0, turf_breaker = TRUE)
 			if(T)
-				T.Destroy()
+				T.ex_act(1,TRUE)
 		else if(killing_floor && !istype(T, /turf/space))
 			sleep(beam_speed)
-			explosion(T,1,1,2,3,adminlog = 0)
-			if(istype(T, /turf/simulated/wall))
-				var/turf/simulated/wall/W = T
-				if(W)
-					W.dismantle_wall()
+			explosion(T, 4, EX_ACT_DEVASTATING,adminlog = 0, turf_breaker = TRUE)
+			if(T && T.density)
+				T.ex_act(1,TRUE)
 			var/list/relevant_z = GetConnectedZlevels(s.z)
 			for(var/mob/M in GLOB.player_list)
 				var/turf/J = get_turf(M)
@@ -520,7 +523,9 @@
 			U.gib()
 		for(var/atom/A in T)
 			if(A.density)
-				explosion(A,1,1,2,3,adminlog = 0)
+				explosion(T, 4, EX_ACT_DEVASTATING,adminlog = 0, turf_breaker = TRUE)
+				if(A && A.density)
+					A.ex_act(1,TRUE)
 
 /obj/machinery/computer/ship/beam_cannon/proc/handle_beam_on_enemy(var/turf/s, var/d)
 	set waitfor = FALSE
@@ -538,6 +543,7 @@
 		ion_beam.light_outer_range = 2
 		ion_beam.light_max_bright = 1
 		ion_beam.light_color = beam_light_color
+		ion_beam.anchored = TRUE //иначе лазеры смешно улетают от взрывов
 		playsound(T, beam_sound, 250, 1)
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)

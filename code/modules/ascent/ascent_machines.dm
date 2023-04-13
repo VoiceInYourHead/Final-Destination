@@ -269,6 +269,7 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 	desc = "A liquid-filled, cloudy tank with strange forms twitching inside."
 	icon = 'icons/obj/cryogenics.dmi'
 	icon_state = "cellold2"
+	layer = 4.1
 
 	base_icon_state = "cellold2"
 	occupied_icon_state = "cellold2" //The cell looks the same whether something is in it or not

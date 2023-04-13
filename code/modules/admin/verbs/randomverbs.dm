@@ -606,30 +606,31 @@ Ccomp's first proc.
 
 	if(!check_rights(R_DEBUG|R_FUN))	return
 
-	var/devastation = input("Range of total devastation. -1 to none", text("Input"))  as num|null
-	if(devastation == null) return
-	var/heavy = input("Range of heavy impact. -1 to none", text("Input"))  as num|null
-	if(heavy == null) return
-	var/light = input("Range of light impact. -1 to none", text("Input"))  as num|null
-	if(light == null) return
-	var/flash = input("Range of flash. -1 to none", text("Input"))  as num|null
-	if(flash == null) return
+	var/range = input("Explosion radius (in tiles):") as num|null
+	if (isnull(range) || range <= 0)
+		return
+	var/max_power_input = input("Maximum explosion power:") as null|anything in list("Devastating", "Heavy", "Light")
+	if (isnull(max_power_input))
+		return
+	var/max_power
+	switch (max_power_input)
+		if ("Devastating")
+			max_power = EX_ACT_DEVASTATING
+		if ("Heavy")
+			max_power = EX_ACT_HEAVY
+		if ("Light")
+			max_power = EX_ACT_LIGHT
 	var/shaped = 0
-	if(config.use_recursive_explosions)
-		if(alert(src, "Shaped explosion?", "Shape", "Yes", "No") == "Yes")
-			shaped = input("Shaped where to?", "Input")  as anything in list("NORTH","SOUTH","EAST","WEST")
-			shaped = text2dir(shaped)
-	if ((devastation != -1) || (heavy != -1) || (light != -1) || (flash != -1))
-		if ((devastation > 20) || (heavy > 20) || (light > 20))
-			if (alert(src, "Are you sure you want to do this? It will laaag.", "Confirmation", "Yes", "No") == "No")
-				return
+	if(alert(src, "Shaped explosion?", "Shape", "Yes", "No") == "Yes")
+		shaped = input("Shaped where to?", "Input")  as anything in list("NORTH","SOUTH","EAST","WEST")
+		shaped = text2dir(shaped)
+	if (range > 20)
+		if (alert(src, "Are you sure you want to do this? It may lag.", "Confirmation", "Yes", "No") == "No")
+			return
 
-		explosion(O, devastation, heavy, light, flash, shaped=shaped)
-		log_admin("[key_name(usr)] created an explosion ([devastation],[heavy],[light],[flash]) at ([O.x],[O.y],[O.z])")
-		message_admins("[key_name_admin(usr)] created an explosion ([devastation],[heavy],[light],[flash]) at ([O.x],[O.y],[O.z])", 1)
-		return
-	else
-		return
+	explosion(O, range, max_power, shaped=shaped)
+	log_admin("[key_name(usr)] created an explosion ([range], [max_power_input]) at ([O.x],[O.y],[O.z])")
+	message_admins("[key_name_admin(usr)] created an explosion ([range], [max_power_input]) at ([O.x],[O.y],[O.z])", 1)
 
 /client/proc/cmd_admin_emp(atom/O as obj|mob|turf in range(world.view))
 	set category = "Special Verbs"

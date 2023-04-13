@@ -18,15 +18,17 @@
 		qdel(src)
 
 /obj/structure/ship_munition/ammobox/ex_act(severity)
-	if(src && can_explode)
+	if(can_explode)
 		if(severity < 3 && ammo_count > ammo_count/3)
 			can_explode = FALSE
-			explosion(loc, -1, 2, 3)
-			qdel(src)
+			explosion(get_turf(src), 7, EX_ACT_DEVASTATING)
+			if(src)
+				qdel(src)
 		else if(severity < 3 && ammo_count > 0)
 			can_explode = FALSE
-			explosion(loc, -1, 1, 2)
-			qdel(src)
+			explosion(get_turf(src), 4, EX_ACT_DEVASTATING)
+			if(src)
+				qdel(src)
 	return
 
 /obj/structure/ship_munition/ammobox/examine(mob/user)
@@ -60,14 +62,14 @@
 	name = "RP-AH 76mm ammo box"
 	icon_state = "ammocrate_autocannon_ah"
 	desc = "Ammo box that contains 76mm rocket-propelled anti-hull rounds."
-	ammo_count = 30
+	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/anti_hull
 
 /obj/structure/ship_munition/ammobox/autocannon/aphe
 	name = "RP-APHE 76mm ammo box"
 	icon_state = "ammocrate_autocannon_aphe"
 	desc = "Ammo box that contains 76mm rocket-propelled armour-piercing high explosive rounds."
-	ammo_count = 30
+	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon/aphe
 
 ///////////////////////////BULLETS///////////////////////////
@@ -75,21 +77,20 @@
 /obj/item/projectile/bullet/autocannon
 	name ="autocannon bolt"
 	icon_state= "bolter"
-	damage = 400
+	damage = 450
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 	armor_penetration = 10
 	muzzle_type = null
 	fire_sound = null
 	distance_falloff = 0.1
-	life_span = 200
-	var/bolt_devastation = -1
-	var/bolt_heavy_impact = 2
-	var/bolt_light_impact = 3
+	life_span = 250
+	var/explosion_radius = 12
+	var/explosion_max_power = EX_ACT_DEVASTATING
 
 
 /obj/item/projectile/bullet/autocannon/high_explosive/on_hit(var/atom/target, var/blocked = 0)
 	var/backwards = turn(dir, 180)
-	explosion(get_step(target, backwards), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
+	explosion(get_step(target, backwards), explosion_radius, explosion_max_power)
 	..()
 
 
@@ -102,12 +103,11 @@
 
 /obj/item/projectile/bullet/autocannon/anti_hull
 	armor_penetration = 80
-	bolt_devastation = 1
-	bolt_heavy_impact = 1
-	bolt_light_impact = 2
+	explosion_radius = 9
+	explosion_max_power = EX_ACT_DEVASTATING
 
 /obj/item/projectile/bullet/autocannon/anti_hull/on_hit(var/atom/target, var/blocked = 0)
-	explosion(get_turf(target), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
+	explosion(target, explosion_radius, explosion_max_power, turf_breaker = TRUE)
 	..()
 
 
@@ -116,9 +116,8 @@
 	armor_penetration = 100
 	penetrating = 18
 	penetration_modifier = 1.1
-	bolt_devastation = -1
-	bolt_heavy_impact = 2
-	bolt_light_impact = 2
+	explosion_radius = 7
+	explosion_max_power = EX_ACT_HEAVY
 	var/delay = 3
 	var/primed = 0
 	var/loc_while_living = null
@@ -129,7 +128,7 @@
 	..()
 	primed = 1
 	sleep(delay)
-	explosion(get_turf(src), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
+	explosion(loc_while_living, explosion_radius, explosion_max_power)
 	if(src)
 		qdel(src)
 

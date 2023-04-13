@@ -25,6 +25,7 @@
 
 	var/maintenance_hatch_open = FALSE
 	var/active = FALSE
+	var/detonating = FALSE
 	var/entered_away = FALSE
 	var/list/equipment = list()
 	var/obj/effect/overmap/projectile/overmap_missile = null
@@ -63,7 +64,7 @@
 	// for some reason, touch_map_edge doesn't always trigger like it should
 	// this ensures that it does
 	if(x < TRANSITIONEDGE || x > world.maxx - TRANSITIONEDGE || y < TRANSITIONEDGE || y > world.maxy - TRANSITIONEDGE)
-		if(z != 0) //в нуллспейсе торпеда сразу решает что она на краю мапы
+		if(z != 0) //в нуллспейсе торпеда сразу решала что она на краю мапы
 			touch_map_edge()
 
 /obj/structure/missile/Bump(var/atom/obstacle)
@@ -82,6 +83,9 @@
 
 /obj/structure/missile/ex_act(severity)
 	..()
+	if(detonating || !src)
+		return
+
 	if(active && prob(90))
 		playsound(loc, activation_sound, 100)
 		active = TRUE
@@ -264,8 +268,10 @@
 	return 1
 
 /obj/structure/missile/proc/detonate(var/atom/obstacle)
-	if(!active && health > 0)
+	if((!active && health > 0) || detonating)
 		return
+
+	detonating = TRUE
 
 	for(var/obj/effect/overmap/visitable/ship/target in world)
 		if(src.z in target.map_z)
@@ -276,9 +282,10 @@
 	for(var/obj/item/missile_equipment/E in equipment)
 		E.on_trigger(obstacle)
 
+	active = FALSE
+
 	// stop moving
 	walk(src, 0)
-	active = FALSE
 	Destroy()
 
 // Figure out where to pop in and set the missile flying

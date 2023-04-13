@@ -213,7 +213,7 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			explosion(middle,1,rand(1,2),rand(2,3))
+			explosion(middle, rand(6, 9))
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time + burst_interval * burst_size
@@ -265,12 +265,12 @@
 		distance++
 		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 			if(distance <= danger_zone)
-				explosion(T,1,2,2)
+				explosion(T, rand(6, 9), turf_breaker = TRUE)
 			return TRUE
 		for(var/atom/A in T)
 			if(A.density && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield)))
 				if(distance <= danger_zone)
-					explosion(A,1,2,2)
+					explosion(T, rand(6, 9), turf_breaker = TRUE)
 				return TRUE
 
 	handle_overbeam()

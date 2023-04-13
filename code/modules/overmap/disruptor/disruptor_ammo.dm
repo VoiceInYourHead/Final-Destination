@@ -1,6 +1,6 @@
-/obj/structure/ship_munition/ammobox/disruptor
+/obj/structure/ship_munition/ammobox/cell/disruptor
 	name = "3000 MW fusion gun cell"
-	desc = "3000 megawatts military grade powercell, often used in giant ship-mounted particle beams."
+	desc = "3000 megawatts military grade powercell, often used in ship disruptors."
 	layer = 2.22
 	ammo_count = 3000
 	ammo_type = /obj/item/projectile/bullet/disruptor

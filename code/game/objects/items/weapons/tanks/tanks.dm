@@ -460,12 +460,23 @@ var/list/global/tank_gauge_cache = list()
 				return
 
 			T.assume_air(air_contents)
+
+			// Determine max power and range for the explosion
+			var/range = mult * strength
+			var/devst = round(range * 0.15)
+			var/heavy = round(range * 0.35)
+			var/max_power
+			if (devst)
+				max_power = EX_ACT_DEVASTATING
+			else if (heavy)
+				max_power = EX_ACT_HEAVY
+			else
+				max_power = EX_ACT_LIGHT
+
 			explosion(
 				get_turf(loc),
-				round(min(BOMBCAP_DVSTN_RADIUS, ((mult)*strength)*0.15)),
-				round(min(BOMBCAP_HEAVY_RADIUS, ((mult)*strength)*0.35)),
-				round(min(BOMBCAP_LIGHT_RADIUS, ((mult)*strength)*0.80)),
-				round(min(BOMBCAP_FLASH_RADIUS, ((mult)*strength)*1.20)),
+				round(min(BOMBCAP_RADIUS, range * 1.3)),
+				max_power
 				)
 
 			var/num_fragments = round(rand(8,10) * sqrt(strength * mult))

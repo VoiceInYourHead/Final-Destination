@@ -87,7 +87,7 @@
 /// Final death act handler for the drive where it explodes. You really shouldn't call this directly or you'll make weird broken things regarding health tracking. Use `kill_health()` instead, the death handler calls this.
 /obj/machinery/bluespacedrive/proc/explode()
 	visible_message(SPAN_DANGER(FONT_LARGE("\The [src]'s containment field is wracked by a series of horrendous distortions, buckling and twisting like a living thing before bursting in a flash of light!")))
-	explosion(get_turf(src), 3, 10, 20)
+	explosion(get_turf(src), 15, EX_ACT_HEAVY)
 	empulse(get_turf(src), 7, 14)
 	state |= STATE_BROKEN
 	for (var/verb in verbs)
@@ -130,7 +130,6 @@
 			to_chat(user, SPAN_WARNING("Its damaged field is twitching and crackling dangerously!"))
 		else
 			to_chat(user, SPAN_DANGER("Its unstable field is cracking and shifting dangerously, revealing the core inside briefly!"))
-
 
 /particles/bluespace_torus
 	width = 700

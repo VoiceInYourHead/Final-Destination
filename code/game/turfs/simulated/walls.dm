@@ -216,13 +216,10 @@
 	ChangeTurf(floor_type)
 
 /turf/simulated/wall/ex_act(severity)
-	if (prob(explosion_resistance))
-		return
-	if (severity == 1)
-		if (prob(50))
-			new /obj/structure/girder(src)
-		ChangeTurf(get_base_turf(src.z))
-		return
+//	damage_health(rand(95, 155) / severity, DAMAGE_EXPLODE, severity = severity)
+//	if (severity == 1 && src)
+//		dismantle_wall(devastated = 1, no_product = 0)
+//		return
 	..()
 
 // Wall-rot effect, a nasty fungus that destroys walls.

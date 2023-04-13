@@ -34,12 +34,11 @@
 	damage = 15
 	icon_state = "plasma_bolt"
 	color = "#c40eed"
-	var/bolt_devastation = 0
-	var/bolt_heavy_impact = 1
-	var/bolt_light_impact = 2
+	var/explosion_radius = 2
+	var/explosion_max_power = EX_ACT_LIGHT
 
 /obj/item/projectile/psi/strong/on_hit(var/atom/target, var/blocked = 0)
-	explosion(get_turf(target), bolt_devastation, bolt_heavy_impact, bolt_light_impact, adminlog = 0)
+	explosion(get_turf(target), explosion_radius, explosion_max_power)
 	..()
 
 /decl/psionic_power/psychoballistics/spit/invoke(var/mob/living/user, var/mob/living/target)

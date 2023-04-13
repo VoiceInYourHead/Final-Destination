@@ -164,7 +164,7 @@
 		walk(src,0)
 		spawn(rand(50,150))
 			if(!disabled && exploding)
-				explosion(get_turf(src), 0, 1, 4, 7)
+				explosion(get_turf(src), 5, EX_ACT_HEAVY)
 				death()
 	..()
 
