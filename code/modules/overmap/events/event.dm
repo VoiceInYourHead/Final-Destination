@@ -221,20 +221,26 @@
 	name = "system star"
 	color = COLOR_WHITE
 
-/obj/effect/overmap/event/star/center
-	name = "star destruction-zone"
-	icon = 'icons/fd/sun.dmi'
-	events = list(/datum/event/star/strong)
-	event_icon_states = list("sun5")
-	opacity = 0
+/obj/effect/overmap/event/star/on_update_icon()
+	return
 
 /obj/effect/overmap/event/star/pre_center
-	name = "star deadly zone"
+	name = "star corona"
 	events = list(/datum/event/star)
 	icon = 'icons/fd/sun.dmi'
 	event_icon_states = list("sun1")
 	opacity = 0
 	color = "#da6439"
+
+/obj/effect/overmap/event/star/pre_center/on_update_icon()
+	filters = filter(type="drop_shadow", color = color + "F0", size = 2, offset = 1,x = 0, y = 0)
+
+/obj/effect/overmap/event/star/center
+	name = "star dead zone"
+	icon = 'icons/fd/sun.dmi'
+	events = list(/datum/event/star/strong)
+	event_icon_states = list("sun5")
+	opacity = 0
 
 /obj/effect/overmap/event/star/pre_center/two
 	event_icon_states = list("sun2")
