@@ -6,6 +6,6 @@
 	hull_damage = 0
 
 /obj/item/missile_equipment/payload/emp/on_trigger()
-	empulse(get_turf(triggerer), rand(6,8), rand(8,10))
+	empulse(get_turf(src), rand(6,8), rand(8,10))
 
 	..()

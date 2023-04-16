@@ -5,16 +5,6 @@
 	hull_damage = 50
 
 /obj/item/missile_equipment/payload/nuclear/on_trigger(var/atom/triggerer)
-	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(triggerer), 16, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(triggerer), rand(10,20), rand(25,50))
-		var/obj/effect/shield/S = triggerer
-		S.take_damage(50000, SHIELD_DAMTYPE_PHYSICAL)
-	else
-		SSradiation.radiate(get_turf(triggerer), 80)
-		explosion(get_turf(triggerer), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(triggerer), rand(25,50), rand(50,100))
-
 	var/list/relevant_z = GetConnectedZlevels(src.z)
 
 	for(var/mob/living/M in GLOB.player_list)
@@ -28,6 +18,16 @@
 		if(!isdeaf(M)) //Meanwhile front might have exploded
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
+	if(istype(triggerer, /obj/effect/shield))
+		SSradiation.radiate(get_turf(src), 40)
+		explosion(get_turf(src), 16, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(src), rand(10,20), rand(25,50))
+		var/obj/effect/shield/S = triggerer
+		S.take_damage(50000, SHIELD_DAMTYPE_PHYSICAL)
+	else
+		SSradiation.radiate(get_turf(src), 80)
+		explosion(get_turf(src), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(src), rand(25,50), rand(50,100))
 
 	..()
 
@@ -37,23 +37,33 @@
 	icon_state = "ion"
 
 /obj/item/missile_equipment/payload/nuclear/doomsday/on_trigger(var/atom/triggerer)
+	var/list/relevant_z = GetConnectedZlevels(src.z)
+
+	for(var/mob/living/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z in relevant_z))
+			continue
+		to_chat("<font size='5' color='red'><b>Your doomsday is calling...</b></font>")
+		if(M.eyecheck() < FLASH_PROTECTION_MAJOR)
+			M.flash_eyes()
+			M.updatehealth()
+		if(!isdeaf(M)) //Meanwhile front might have exploded
+			sound_to(M, sound('sound/effects/explosionfar.ogg'))
+
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(triggerer), 64, EX_ACT_HEAVY, turf_breaker = TRUE)
-		empulse(get_turf(triggerer), rand(10,20), rand(25,50))
+		SSradiation.radiate(get_turf(src), 400)
+		explosion(get_turf(src), 64, EX_ACT_HEAVY, turf_breaker = TRUE)
+		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(150000, SHIELD_DAMTYPE_PHYSICAL)
 	else
-		SSradiation.radiate(get_turf(triggerer), 800)
-		explosion(get_turf(triggerer), 128, EX_ACT_HEAVY, turf_breaker = TRUE)
-		empulse(get_turf(triggerer), rand(50,75), rand(75,100))
+		SSradiation.radiate(get_turf(src), 800)
+		explosion(get_turf(src), 128, EX_ACT_HEAVY, turf_breaker = TRUE)
+		empulse(get_turf(src), rand(50,75), rand(75,100))
 
 	for(var/mob/living/carbon/human/M in GLOB.player_list)
 		if(M.eyecheck() < FLASH_PROTECTION_MAJOR)
 			M.flash_eyes()
 			M.updatehealth()
-
-	to_world("<font size='4' color='red'><b>Your doomsday is calling...</b></font>")
-	sound_to(world, sound('sound/effects/explosionfar.ogg'))
-
 
 	..()
