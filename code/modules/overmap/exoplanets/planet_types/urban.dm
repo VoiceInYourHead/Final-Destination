@@ -804,7 +804,7 @@
 	vision_range = 9
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/carnivore_placeholder
-	name = "shantak"
+	name = "lizor"
 	desc = "A fast, armoured predator accustomed to hiding and ambushing in urban jungles."
 	faction = "lizard"
 	icon_state = "shantak-alt"
