@@ -5,7 +5,7 @@
 	hull_damage = 12
 
 /obj/item/missile_equipment/payload/void/on_trigger(var/atom/triggerer)
-	var/list/relevant_z = GetConnectedZlevels(src.z)
+	var/list/relevant_z = GetConnectedZlevels(loc.z)
 
 	for(var/mob/living/M in GLOB.player_list)
 		var/turf/T = get_turf(M)

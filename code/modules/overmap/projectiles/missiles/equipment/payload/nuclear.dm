@@ -5,7 +5,7 @@
 	hull_damage = 50
 
 /obj/item/missile_equipment/payload/nuclear/on_trigger(var/atom/triggerer)
-	var/list/relevant_z = GetConnectedZlevels(src.z)
+	var/list/relevant_z = GetConnectedZlevels(loc.z)
 
 	for(var/mob/living/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
@@ -37,7 +37,7 @@
 	icon_state = "ion"
 
 /obj/item/missile_equipment/payload/nuclear/doomsday/on_trigger(var/atom/triggerer)
-	var/list/relevant_z = GetConnectedZlevels(src.z)
+	var/list/relevant_z = GetConnectedZlevels(loc.z)
 
 	for(var/mob/living/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
