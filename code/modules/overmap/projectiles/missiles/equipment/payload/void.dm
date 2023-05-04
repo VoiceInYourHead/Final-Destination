@@ -24,7 +24,7 @@
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(40000)
 	else
-		explosion(get_turf(src), 20, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(src), rand(25,50), rand(50,100))
+		explosion(get_turf(triggerer), 20, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(triggerer), rand(25,50), rand(50,100))
 
 	..()

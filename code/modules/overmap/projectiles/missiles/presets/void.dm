@@ -1,5 +1,5 @@
 // Torp, for Ascent ship.
-/obj/structure/missile/void
+/obj/structure/missile/locked/void
 	name = "Void Torpedo"
 	overmap_name = "unknown missile"
 	desc = "This weapon finds a vessel, punches into it and quite literally nullvoids whatever is in range. \
@@ -10,6 +10,3 @@
 		/obj/item/missile_equipment/autoarm,
 		/obj/item/missile_equipment/payload/void
 	)
-
-/obj/structure/missile/void/attackby(var/obj/item/I, var/mob/user)// :)
-	return

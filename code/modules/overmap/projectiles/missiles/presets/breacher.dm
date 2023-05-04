@@ -13,7 +13,6 @@
 	var/inertia = 8
 
 // This doesn't have a detonation mechanism, it simply punches through hulls.
-// Note if changing the equipment list: this overrides Bump, so detonate() and thus on_trigger() isn't called on the equipment
 /obj/structure/missile/breacher/Bump(var/atom/obstacle)
 	if(!active)
 		return
@@ -23,7 +22,7 @@
 		if(istype(obstacle, /obj/effect/shield))
 			inertia = 0
 		else
-			obstacle.ex_act(1)
+			obstacle.ex_act(1, turf_breaker = TRUE)
 			inertia--
 
 		if(!inertia)
@@ -33,9 +32,9 @@
 //			log_and_message_admins("A breacher missile reached it's destignation (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[obstacle.x];Y=[obstacle.y];Z=[obstacle.z]'>JMP</a>)")
 
 /obj/structure/missile/breacher/fall()
-	if(!active)
-		..()
-	return
+	if(active)
+		return
+	..()
 
 /obj/structure/missile/breacher/he
 	name = "HBM92 missile"

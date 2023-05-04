@@ -24,6 +24,7 @@
 	var/activation_sound = 'sound/machines/defib_SafetyOn.ogg'
 
 	var/maintenance_hatch_open = FALSE
+	var/primed = FALSE
 	var/active = FALSE
 	var/detonating = FALSE
 	var/entered_away = FALSE
@@ -70,18 +71,15 @@
 /obj/structure/missile/Bump(var/atom/obstacle)
 	if(istype(obstacle, /obj/effect/shield))
 		var/obj/effect/shield/S = obstacle
-		if(S.gen.mitigation_physical > 0  || S.gen.check_flag(MODEFLAG_HYPERKINETIC))
-			..()
-			S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
-			detonate(S)
-		else
+		if(S.gen.mitigation_physical == 0  && !S.gen.check_flag(MODEFLAG_HYPERKINETIC))
 			forceMove(S.loc)
 			walk(src,dir,1)
-	else
-		..()
-		detonate(obstacle)
+		else
+			S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
+	detonate(obstacle)
+	..()
 
-/obj/structure/missile/ex_act(severity)
+/obj/structure/missile/ex_act(severity, turf_breaker)
 	..()
 	if(detonating || !src)
 		return
@@ -91,7 +89,7 @@
 		active = TRUE
 		detonate(loc)
 
-	if(severity == 1)
+	if(severity == 1 || turf_breaker)
 		playsound(loc, activation_sound, 100)
 		active = TRUE
 		detonate(loc)
@@ -137,7 +135,7 @@
 		return
 
 	if(overmap_missile.dangerous)
-		log_and_message_admins("A dangerous missile has entered the overmap (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[overmap_missile.x];Y=[overmap_missile.y];Z=[overmap_missile.z]'>JMP</a>)")
+		log_and_message_admins("A dangerous [overmap_name] has entered the overmap (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[overmap_missile.x];Y=[overmap_missile.y];Z=[overmap_missile.z]'>JMP</a>)")
 
 
 	origin = map_sectors["[z]"]
@@ -152,17 +150,15 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	if(isWrench(I))
-		switch(active)
-			if (0)
-				active = 1
-				to_chat(user, "<span class='notice'>You manually armed the [name]. Its warhead priming mechanism is now active!</span>")
-				playsound(loc, activation_sound, 100)
-				playsound(loc, 'sound/items/scrape_clunk.ogg', 100)
-			if (1)
-				active = 0
-				playsound(loc, 'sound/machines/defib_safetyOff.ogg', 100)
-				playsound(loc, 'sound/items/scrape_clunk.ogg', 100)
-				to_chat(user, "<span class='notice'>You manually unarmed the [name]. Now its warhead priming mechanism is off.</span>")
+		playsound(loc, 'sound/items/scrape_clunk.ogg', 100)
+		if (!active)
+			active = 1
+			to_chat(user, "<span class='notice'>You manually armed the [name], it's warhead priming mechanism is now active!</span>")
+			playsound(loc, activation_sound, 100)
+		if (active)
+			active = 0
+			playsound(loc, 'sound/machines/defib_safetyOff.ogg', 100)
+			to_chat(user, "<span class='notice'>You manually unarmed the [name], it's warhead priming mechanism is now off.</span>")
 
 		add_fingerprint(user)
 		return
@@ -184,6 +180,11 @@
 			if(istype(I, /obj/item/missile_equipment/thruster))
 				for(var/obj/item/missile_equipment/thruster/T in equipment)
 					to_chat(user, "\The [src] can only have one thruster.")
+					return
+
+			if(istype(I, /obj/item/missile_equipment/autoarm))
+				for(var/obj/item/missile_equipment/autoarm/T in equipment)
+					to_chat(user, "\The [src] can only have one activator.")
 					return
 
 			if(!user.unEquip(I, src))
@@ -250,8 +251,10 @@
 
 // primes the missile and puts it on the overmap
 /obj/structure/missile/proc/activate()
-	if(active)
+	if(primed)
 		return 0
+
+	primed = TRUE
 
 	var/obj/effect/overmap/start_object = waypoint_sector(src)
 	if(!start_object)
@@ -410,3 +413,6 @@
 			walk_towards(src, goal, 1)
 			return
 	walk(src, heading, 1)
+
+/obj/structure/missile/proc/wawawa()
+	walk(src, NORTH, 1)

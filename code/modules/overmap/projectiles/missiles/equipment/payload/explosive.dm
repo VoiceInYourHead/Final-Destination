@@ -6,10 +6,10 @@
 
 /obj/item/missile_equipment/payload/explosive/on_trigger(var/atom/triggerer)
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 8, EX_ACT_DEVASTATING)
+		explosion(get_turf(src), 8, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(10000, SHIELD_DAMTYPE_PHYSICAL)
 	else
-		explosion(get_turf(src), 16, EX_ACT_DEVASTATING)
+		explosion(get_turf(triggerer), 16, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 
 	..()

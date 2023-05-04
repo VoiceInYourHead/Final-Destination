@@ -34,7 +34,7 @@
 /obj/item/missile_equipment/payload/nuclear/doomsday //adminbus
 	name = "doomsday warhead"
 	desc = "An incredibly dangerous warhead. Detonates when the missile is triggered."
-	icon_state = "ion"
+	icon_state = "nuclear"
 
 /obj/item/missile_equipment/payload/nuclear/doomsday/on_trigger(var/atom/triggerer)
 	var/list/relevant_z = GetConnectedZlevels(loc.z)
