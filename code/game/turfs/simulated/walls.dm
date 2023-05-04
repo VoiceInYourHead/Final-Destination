@@ -215,13 +215,6 @@
 
 	ChangeTurf(floor_type)
 
-/turf/simulated/wall/ex_act(severity)
-//	damage_health(rand(95, 155) / severity, DAMAGE_EXPLODE, severity = severity)
-//	if (severity == 1 && src)
-//		dismantle_wall(devastated = 1, no_product = 0)
-//		return
-	..()
-
 // Wall-rot effect, a nasty fungus that destroys walls.
 /turf/simulated/wall/proc/rot()
 	if(locate(/obj/effect/overlay/wallrot) in src)

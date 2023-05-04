@@ -50,8 +50,8 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/integrity_failure_cap = 250		// max health
 	var/integrity_failure = 0	// current health level
 
-	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ МАССЫ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ КОРАБЛЬ!"
-	var/announcer_name = "'Автоматический отчёт о техническом состоянии"
+	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ ОТМЕТКИ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ-"
+	var/announcer_name = "Автоматический отчёт о техническом состоянии"
 
 	var/do_repair_hull = TRUE
 	var/repair_speed = 0.005 //per tick
@@ -250,7 +250,7 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	if(destroyed)
 		return
 	destroyed = TRUE
-	GLOB.global_announcer.autosay(announce_text, "[announcer_name] " + "[name]")
+	GLOB.global_announcer.autosay(announce_text, "[announcer_name] " + "[name]'а")
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
 		if(!T || !(T.z in map_z))

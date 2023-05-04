@@ -11,6 +11,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	icon = 'icons/effects/effects.dmi'
 	mouse_opacity = 0
 	unacidable = TRUE
+	anchored = TRUE
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
 /datum/effect/effect/system

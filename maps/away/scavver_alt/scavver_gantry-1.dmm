@@ -310,7 +310,7 @@
 "fX" = (/obj/structure/bed/chair/office/dark{dir = 4},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
 "fY" = (/obj/structure/bed/chair/office/dark{dir = 8},/turf/simulated/floor/lino,/area/scavver/gantry/down3)
 "fZ" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/machinery/vending/robotics,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
-"ga" = (/obj/structure/missile/impact{icon_state = "base"; dir = 1},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
+"ga" = (/obj/structure/missile/breacher{icon_state = "base"; dir = 1},/turf/simulated/floor/airless,/area/scavver/gantry/down2)
 "gb" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/table/rack,/obj/random/toolbox,/obj/item/missile_equipment/payload/explosive,/obj/item/missile_equipment/passenger,/turf/simulated/floor/airless,/area/scavver/gantry/down2)
 "gf" = (/obj/machinery/power/breakerbox,/turf/simulated/floor/airless,/area/scavver/yachtdown)
 "gk" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/visible/fuel{dir = 1},/turf/simulated/floor/airless,/area/scavver/yachtdown)

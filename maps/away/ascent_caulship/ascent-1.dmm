@@ -157,7 +157,7 @@
 "da" = (/turf/simulated/floor/ascent/tiled,/area/space)
 "db" = (/obj/machinery/door/airlock/ascent,/turf/simulated/floor/ascent/tiled,/area/space)
 "dc" = (/turf/simulated/floor/ascent,/area/space)
-"dd" = (/obj/machinery/conveyor/ammobelt{id = "ammobelt8"},/obj/structure/missile/void{icon_state = "base"; dir = 1},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_caulship)
+"dd" = (/obj/machinery/conveyor/ammobelt{id = "ammobelt8"},/obj/structure/missile/locked/void{icon_state = "base"; dir = 1},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_caulship)
 "de" = (/obj/machinery/computer/ship/missiles/ascent{icon_state = "ascent"; dir = 1},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_caulship)
 "df" = (/obj/machinery/button/mass_driver{id_tag = "ascent_mass"; pixel_x = 26},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_caulship)
 "dg" = (/obj/structure/missile/he{icon_state = "base"; dir = 1},/turf/simulated/floor/ascent,/area/ship/ascent_caulship)
