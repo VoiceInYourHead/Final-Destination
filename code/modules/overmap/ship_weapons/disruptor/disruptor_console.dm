@@ -13,12 +13,14 @@
 	ammo_per_shot = 150
 	burst_size = 4
 	fire_interval = 4
-	pew_spread = 40
+	pew_spread = 20
 
 	prefire_sound = 'sound/machines/charge.ogg'
 	fire_delay = 4
 
 	shake_camera_force = 0
+
+	ground_to_space = FALSE
 
 	shield_modflag_counter = MODEFLAG_EM
 

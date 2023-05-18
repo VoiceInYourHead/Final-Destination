@@ -66,7 +66,7 @@
 
 /obj/effect/overmap/projectile/Process()
 	// Whether overmap movement occurs is controlled by the missile itself
-	if(!moving)
+	if(!moving || !actual_missile)
 		return
 
 	check_enter()

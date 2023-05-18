@@ -83,12 +83,13 @@
 /obj/item/projectile/bullet/autocannon/aphe/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(primed)
 		return
-	..()
 	primed = 1
 	sleep(delay)
 	if(src)
 		explosion(get_turf(src), explosion_radius, explosion_max_power)
-		qdel(src)
+		..()
+		if(src)
+			qdel(src)
 
 /obj/item/projectile/bullet/autocannon/aphe/Destroy()
 	if(src)

@@ -22,7 +22,7 @@
 
 	shield_modflag_counter = MODEFLAG_PHOTONIC
 
-	pew_spread = 40
+	pew_spread = 50
 
 	fire_sound = 'sound/machines/superlaser_firing.ogg'
 	prefire_sound = 'sound/machines/superlaser_prefire.ogg'

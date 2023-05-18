@@ -15,6 +15,6 @@
 	burst_size = 60
 	fire_interval = 1.5
 
-	pew_spread = 40
+	pew_spread = 60
 
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'

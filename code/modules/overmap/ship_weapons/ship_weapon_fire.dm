@@ -306,7 +306,6 @@
 		for(var/i = 1 to shoot_range)
 			target_turf = get_step(target_turf, beam_dir)
 		linked.Beam(target_turf, overmap_icon, time = 2, maxdistance = world.maxx)
-
 	else
 		target_turf = get_turf(linked.loc)
 		for(var/i = 1 to shoot_range)

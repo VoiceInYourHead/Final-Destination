@@ -14,7 +14,7 @@
 			active = 1
 			to_chat(user, "<span class='notice'>You manually armed the [name], it's warhead priming mechanism is now active!</span>")
 			playsound(loc, activation_sound, 100)
-		if (active)
+		else
 			active = 0
 			playsound(loc, 'sound/machines/defib_safetyOff.ogg', 100)
 			to_chat(user, "<span class='notice'>You manually unarmed the [name], it's warhead priming mechanism is now off.</span>")

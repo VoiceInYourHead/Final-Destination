@@ -16,10 +16,10 @@
 /obj/structure/grille/shelter/attackby(obj/item/W as obj, mob/user as mob)
 	set_max_health(9999)
 
-/obj/structure/grille/attack_hand(mob/user as mob)
+/obj/structure/grille/shelter/attack_hand(mob/user as mob)
 	set_max_health(9999)
 
-/obj/structure/grille/Initialize(mapload, var/new_material)
+/obj/structure/grille/shelter/Initialize(mapload, var/new_material)
 	..()
 	set_max_health(9999)
 

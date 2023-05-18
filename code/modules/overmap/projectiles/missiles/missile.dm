@@ -155,7 +155,7 @@
 			active = 1
 			to_chat(user, "<span class='notice'>You manually armed the [name], it's warhead priming mechanism is now active!</span>")
 			playsound(loc, activation_sound, 100)
-		if (active)
+		else
 			active = 0
 			playsound(loc, 'sound/machines/defib_safetyOff.ogg', 100)
 			to_chat(user, "<span class='notice'>You manually unarmed the [name], it's warhead priming mechanism is now off.</span>")
@@ -302,8 +302,8 @@
 	if(!heading)
 		heading = random_dir() // To prevent the missile from popping into the middle of the map and sitting there
 
-	var/start_x = Floor(world.maxx / 2) + rand(-10, 10)
-	var/start_y = Floor(world.maxy / 2) + rand(-10, 10)
+	var/start_x = Floor(world.maxx / 2) + rand(-20, 20)
+	var/start_y = Floor(world.maxy / 2) + rand(-20, 20)
 
 
 	//Normalizes this to just be NWES. If you want to do the fuckery required to make this better, be my guest.
