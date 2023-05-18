@@ -92,13 +92,21 @@
 /turf/simulated/floor/plating,
 /area/venera/bridge/co_office)
 "an" = (
-/obj/machinery/light/small{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet/crate/freezer/rations,
-/turf/simulated/floor/tiled/techfloor,
-/area/venera/maint/starboard/bridge)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "aq" = (
 /obj/structure/flora/pottedplant/dead,
 /turf/simulated/floor/carpet/blue,
@@ -163,6 +171,11 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/venera/bridge/co_office)
+"ay" = (
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/ship_munition/disperser_charge/bluespace,
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "az" = (
 /turf/simulated/wall/prepainted,
 /area/venera/bridge/co_office)
@@ -281,6 +294,11 @@
 /obj/structure/closet/secure_closet,
 /turf/simulated/floor/wood/walnut,
 /area/venera/bridge/co_office)
+"aS" = (
+/obj/structure/closet/crate/freezer/rations,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/maint/starboard/bridge)
 "aT" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -409,13 +427,13 @@
 /turf/space,
 /area/space)
 "bv" = (
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	id_tag = "venera_sensors_58";
-	name = "Sensor Shroud"
+/obj/machinery/ship_weapon/middle_part/autocannon{
+	dir = 8
 	},
-/turf/simulated/floor/reinforced/airless,
-/area/venera/bridge)
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "bw" = (
 /obj/machinery/power/smes/buildable/preset/on_full,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -583,50 +601,76 @@
 /turf/space,
 /area/space)
 "bS" = (
-/obj/structure/ship_munition/disperser_charge/explosive,
-/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/table/rack,
+/obj/item/gun/energy/k342{
+	req_access = null
+	},
+/obj/item/cell/guncell/medium,
+/obj/item/cell/guncell/medium,
+/obj/item/cell/guncell/medium,
+/obj/item/cell/guncell/large,
 /turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/area/venera/security)
 "bT" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
-"bU" = (
-/obj/effect/floor_decal/industrial/hatch/blue,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/disposaloutlet{
 	dir = 8
 	},
-/obj/structure/ship_munition/disperser_charge/emp,
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
+"bU" = (
+/obj/machinery/firealarm{
+	pixel_y = 21
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "venera_pg_56_con";
+	name = "unload switch"
+	},
+/obj/machinery/computer/ship/navigation/telescreen{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "bV" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/maint/starboard/bridge)
 "bX" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/ship_munition/disperser_charge/explosive,
+/obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "bY" = (
-/obj/structure/ship_munition/disperser_charge/emp,
-/obj/effect/floor_decal/industrial/hatch/blue,
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "bZ" = (
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/closet/crate{
-	name = "hermes crate"
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
 	},
 /obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
+/obj/machinery/light/small,
+/obj/effect/floor_decal/corner/red{
+	dir = 9
 	},
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "ca" = (
 /obj/machinery/door/airlock/highsecurity{
 	autoset_access = 0;
@@ -650,20 +694,9 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/venera/security/lobby)
 "cc" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 1
-	},
-/obj/structure/disposalpipe/trunk,
-/obj/machinery/door/window/westright{
-	dir = 1;
-	name = "Ammunition Chute"
-	},
-/turf/simulated/floor/plating,
-/area/venera/disperser)
-"cd" = (
 /obj/machinery/door/airlock/command{
 	autoset_access = 0;
-	name = "Obstruction Field Disperser Magazine";
+	name = "M2410 Autocannon access";
 	secured_wires = 1
 	},
 /obj/structure/cable/green{
@@ -677,11 +710,28 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/disperser)
+"cd" = (
+/obj/machinery/conveyor{
+	id = "venera_md_58_con"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "ce" = (
 /obj/machinery/computer/ship/sensors,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/bridge)
+"cf" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "venera_md_58_con"
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "cg" = (
 /obj/machinery/atmospherics/unary/tank/carbon_dioxide{
 	dir = 1;
@@ -733,6 +783,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/security/lobby)
 "cm" = (
+/obj/structure/girder,
 /turf/simulated/floor/airless,
 /area/venera/disperser)
 "cn" = (
@@ -741,10 +792,17 @@
 /turf/simulated/floor/airless,
 /area/venera/disperser)
 "co" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/ship_weapon/back_part/autocannon{
+	dir = 8
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "venera_pg_56_con"
+	},
 /turf/simulated/floor/plating,
-/area/venera/disperser)
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "cp" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -32
@@ -896,12 +954,14 @@
 /turf/simulated/floor/airless,
 /area/venera/disperser)
 "cL" = (
-/obj/structure/railing/mapped,
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/cobweb,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
-/area/venera/disperser)
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "cN" = (
 /obj/structure/railing/mapped,
 /obj/structure/catwalk,
@@ -1293,6 +1353,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/bridge)
 "dE" = (
@@ -1508,9 +1571,11 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark,
 /area/jinx/cockpit)
 "eP" = (
@@ -1529,7 +1594,6 @@
 /obj/item/modular_computer/telescreen/preset/medical{
 	pixel_x = 32
 	},
-/obj/item/hand_labeler,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/hygiene/sink{
@@ -1743,11 +1807,16 @@
 /obj/effect/floor_decal/industrial/shutoff,
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
+"fJ" = (
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/venera/disperser)
 "fK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
 	},
+/obj/structure/ship_munition/ammobox/autocannon/aphe,
 /turf/simulated/floor/plating,
 /area/venera/maint/port)
 "fP" = (
@@ -1779,17 +1848,23 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/venera/engine/atmos)
 "fR" = (
-/obj/structure/ship_munition/disperser_charge/emp,
-/obj/effect/floor_decal/industrial/hatch/blue,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -22
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/obj/structure/table/steel_reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "venera_acannon_56_bd";
+	name = "Autocannon door-control"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "fS" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/machinery/light_switch{
@@ -1812,15 +1887,21 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/security/lobby)
 "fW" = (
-/obj/item/gun/projectile/automatic/assault_rifle,
-/obj/item/ammo_magazine/rifle,
-/obj/item/ammo_magazine/rifle,
-/obj/item/ammo_magazine/rifle,
-/obj/item/ammo_magazine/rifle,
-/obj/item/ammo_magazine/rifle,
 /obj/structure/closet/secure_closet/guncabinet{
 	req_access = list()
 	},
+/obj/item/gun/projectile/automatic/bullpup_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/gun/projectile/automatic/bullpup_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
+/obj/item/ammo_magazine/mil_rifle,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/venera/bridge)
 "fX" = (
@@ -1873,7 +1954,9 @@
 /turf/simulated/floor/plating,
 /area/venera/engine/atmos)
 "gl" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	req_access = null
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -1973,6 +2056,16 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
 /area/jinx/engine)
+"gG" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "gH" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 1
@@ -2133,7 +2226,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/wall/r_wall/hull,
-/area/venera/maint/starboard/bridge)
+/area/venera/bridge)
 "hF" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2168,6 +2261,11 @@
 	},
 /turf/simulated/wall/r_titanium,
 /area/jinx/cockpit)
+"hN" = (
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "hO" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2262,7 +2360,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/bridge)
 "im" = (
-/obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -2274,9 +2371,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/door/airlock/command{
-	name = "Missile Launcher"
-	},
+/obj/machinery/door/window/brigdoor/eastleft,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "in" = (
@@ -2398,6 +2493,7 @@
 /area/venera/medbay/chemistry)
 "jb" = (
 /obj/effect/overmap/visitable/ship/venera_a,
+/obj/effect/submap_landmark/joinable_submap/venera,
 /turf/simulated/floor/tiled/dark,
 /area/venera/bridge)
 "jd" = (
@@ -2551,9 +2647,6 @@
 	initial_id_tag = "venera_jinx_pd";
 	name = "Point Defense Controller"
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
@@ -2596,8 +2689,17 @@
 "jL" = (
 /obj/item/missile_equipment/thruster/point,
 /obj/item/missile_equipment/thruster/point,
-/obj/structure/closet/crate/munitions/thruster/point,
 /obj/item/missile_equipment/thruster/point,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/missile_equipment/thruster/planet,
+/obj/item/missile_equipment/thruster/planet,
+/obj/item/missile_equipment/thruster/planet,
+/obj/item/missile_equipment/thruster/planet,
+/obj/item/missile_equipment/thruster/hunter,
+/obj/item/missile_equipment/thruster/hunter,
+/obj/item/missile_equipment/thruster/hunter,
+/obj/item/missile_equipment/thruster/hunter,
+/obj/structure/closet/crate/munitions/thruster,
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/maint/starboard/bridge)
 "jQ" = (
@@ -2680,8 +2782,11 @@
 /turf/simulated/wall/r_titanium,
 /area/jinx/cockpit)
 "kr" = (
-/obj/machinery/light/small/red,
-/turf/simulated/floor/airless,
+/obj/structure/railing/mapped{
+	dir = 1;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/plating,
 /area/venera/disperser)
 "ks" = (
 /obj/machinery/door/airlock/command{
@@ -2728,6 +2833,7 @@
 /obj/item/missile_equipment/autoarm,
 /obj/structure/closet/crate/munitions/equipment/autoarm,
 /obj/item/missile_equipment/autoarm,
+/obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/maint/starboard/bridge)
 "kC" = (
@@ -2743,12 +2849,10 @@
 /turf/simulated/floor/plating,
 /area/venera/engine/thrusterport)
 "kD" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/standard_unit{
-	req_access = list()
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/venera/hallway/eva)
+/obj/effect/floor_decal/spline/fancy/wood,
+/obj/effect/submap_landmark/spawnpoint/venera/captain,
+/turf/simulated/floor/tiled/dark,
+/area/venera/living/mess)
 "kE" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2774,6 +2878,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/hallway/eva)
+"kK" = (
+/obj/structure/closet/crate{
+	name = "hermes crate"
+	},
+/obj/effect/floor_decal/industrial/hatch,
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "kM" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/portable_atmospherics/canister/air,
@@ -3141,6 +3252,13 @@
 /obj/random/powercell,
 /turf/simulated/floor/tiled/techfloor,
 /area/jinx/engine)
+"mf" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/closet/crate{
+	name = "hermes crate"
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "mh" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/table/rack,
@@ -3179,14 +3297,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/main)
 "mq" = (
-/obj/machinery/button/blast_door{
-	id_tag = "jinx_md_bd932";
-	name = "Missile Door Control";
-	pixel_x = 26
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/missile/breacher/he,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "mr" = (
@@ -3335,6 +3446,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/engine)
+"mQ" = (
+/obj/structure/ship_munition/ammobox/autocannon/high_explosive,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/maint/port)
 "mR" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -3344,10 +3459,11 @@
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
 "mS" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "jinx_missile23";
-	name = "missile belt"
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
@@ -3915,6 +4031,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/venera/maint/port)
+"pr" = (
+/obj/effect/floor_decal/industrial/outline/blue,
+/obj/structure/ship_munition/ammobox/autocannon/aphe,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "ps" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/venera/engine/atmos)
@@ -4142,7 +4265,10 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/missile/breacher/he,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/structure/disposaloutlet,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "qw" = (
@@ -4168,17 +4294,17 @@
 /turf/simulated/floor/tiled,
 /area/venera/engine)
 "qB" = (
-/obj/machinery/door/airlock/vault/bolted{
-	autoset_access = 0;
-	id_tag = "venera_bridge_back";
-	name = "Emergency Exit"
+/obj/structure/window/reinforced{
+	dir = 1
 	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel_ridged,
-/area/venera/disperser/storage)
+/obj/machinery/computer/ship/ship_weapon/autocannon,
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "qC" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4338,6 +4464,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/venera/living)
+"ri" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/ship_munition/ammobox/hmg/high_explosive,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/jinx/cockpit)
 "rj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -4480,11 +4613,6 @@
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay/chemistry)
 "rO" = (
-/obj/machinery/button/mass_driver{
-	cooldown = 30;
-	id_tag = "jinx_md_57";
-	pixel_x = -25
-	},
 /turf/simulated/floor/tiled/dark,
 /area/jinx/cockpit)
 "rP" = (
@@ -4508,12 +4636,10 @@
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
 "rT" = (
-/obj/effect/floor_decal/spline/fancy/black{
-	dir = 1
-	},
-/obj/item/roller,
-/turf/simulated/floor/tiled/dark,
-/area/venera/hallway)
+/turf/simulated/wall/r_wall/hull,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "rU" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -4590,6 +4716,10 @@
 /area/venera/medbay)
 "sm" = (
 /obj/structure/table/rack,
+/obj/item/gun/energy/k342/sniper{
+	req_access = null
+	},
+/obj/item/cell/guncell/megalarge,
 /turf/simulated/floor/plating,
 /area/venera/security)
 "so" = (
@@ -4658,15 +4788,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/maint/port)
 "sD" = (
-/obj/machinery/mass_driver{
-	dir = 1;
-	drive_range = 70;
-	id_tag = "jinx_md_57"
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/ship_weapon/front_part/hmg{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
@@ -4709,6 +4841,15 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
 /area/venera/disperser)
+"sL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "sN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -4813,6 +4954,8 @@
 /obj/machinery/firealarm{
 	pixel_y = 21
 	},
+/obj/item/roller,
+/obj/item/hand_labeler,
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
 "tn" = (
@@ -4952,20 +5095,22 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/maint/port)
 "tZ" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
+/obj/structure/disposaloutlet{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/structure/window/reinforced{
+	dir = 4
 	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/tiled/dark,
 /area/jinx/cockpit)
 "ub" = (
@@ -4988,6 +5133,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/venera/bridge)
+"ud" = (
+/obj/machinery/door/window/northleft,
+/obj/structure/missile/breacher/he,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/maint/port)
 "ue" = (
 /obj/machinery/telecomms/receiver/map_preset/venera,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -5125,14 +5275,22 @@
 /turf/simulated/floor/tiled,
 /area/venera/engine)
 "uH" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/door/airlock/vault/bolted{
+	autoset_access = 0;
+	id_tag = "venera_bridge_back";
+	name = "Emergency Exit"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/steel_ridged,
 /area/venera/maint/starboard/bridge)
 "uM" = (
 /obj/structure/catwalk,
@@ -5164,9 +5322,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/living/mess)
 "uV" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/conveyor{
+	id = "venera_md_58_con"
+	},
 /turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/area/venera/disperser)
 "uY" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -5297,7 +5457,15 @@
 /area/jinx/cockpit)
 "vQ" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/missile/breacher/he,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/computer/ship/ship_weapon/hmg,
+/obj/machinery/button/blast_door{
+	id_tag = "jinx_md_bd932";
+	name = "Missile Door Control";
+	pixel_x = 26
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "vT" = (
@@ -5470,7 +5638,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/engine/atmos)
 "wz" = (
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "venera_md_58_con"
+	},
+/turf/simulated/floor/plating,
 /area/venera/disperser)
 "wC" = (
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
@@ -5562,6 +5734,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
+"wU" = (
+/obj/structure/disposaloutlet,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "wV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4
@@ -6241,6 +6422,11 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/venera/security)
+"zF" = (
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "zG" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/venera/security/detective)
@@ -6261,6 +6447,13 @@
 "zP" = (
 /turf/simulated/floor/tiled/dark,
 /area/venera/security/lobby)
+"zR" = (
+/obj/structure/ship_munition/ammobox/autocannon/anti_hull,
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "zS" = (
 /obj/machinery/atmospherics/unary/vent_pump/tank{
 	dir = 4;
@@ -6315,6 +6508,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/venera/living)
+"Af" = (
+/obj/machinery/light/small/red,
+/obj/structure/railing/mapped{
+	dir = 1;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/airless,
+/area/venera/disperser)
 "Ak" = (
 /obj/machinery/telecomms/server/map_preset/venera,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -6504,6 +6705,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/ship_munition/ammobox/autocannon/aphe,
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/maint/port)
 "Bk" = (
@@ -6686,19 +6888,18 @@
 /turf/simulated/floor/plating,
 /area/venera/engine/thrusterport)
 "BP" = (
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
 	},
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/ship_munition/disperser_charge/explosive,
 /turf/simulated/floor/plating,
 /area/venera/disperser)
 "BR" = (
@@ -6935,14 +7136,11 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/missile/breacher/he,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/cockpit)
 "Di" = (
@@ -6980,6 +7178,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/submap_landmark/spawnpoint/venera/pilot,
 /turf/simulated/floor/wood/ebony,
 /area/venera/living/mess)
 "Dp" = (
@@ -7134,11 +7333,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/venera/engine/atmos)
-"Ei" = (
-/obj/machinery/suit_storage_unit/standard_unit{
-	req_access = list()
-	},
+"Eg" = (
+/obj/structure/ship_munition/ammobox/autocannon/high_explosive,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
+"Ei" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/retro,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/hallway/eva)
 "Ek" = (
@@ -7233,6 +7437,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/maint/starboard/bridge)
 "EK" = (
@@ -7243,8 +7451,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/engine/thrusterport)
 "EM" = (
-/obj/machinery/door/window/brigdoor/westleft,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/light/small,
+/obj/machinery/disposal/deliveryChute{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -7300,12 +7514,20 @@
 /turf/simulated/floor/plating,
 /area/venera/medbay/chemistry)
 "Fb" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/venera/maint/starboard/bridge)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Fc" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -7372,6 +7594,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/venera/engine/thrusterstarboard)
+"Fx" = (
+/obj/structure/railing/mapped,
+/obj/machinery/disposal/deliveryChute{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/maint/starboard/bridge)
 "Fy" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -7392,6 +7623,10 @@
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/plating,
 /area/venera/disperser)
+"FG" = (
+/obj/effect/submap_landmark/spawnpoint/venera/rifleman,
+/turf/simulated/floor/carpet,
+/area/venera/living/bunk)
 "FH" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -7588,7 +7823,28 @@
 "Gk" = (
 /obj/item/missile_equipment/payload/explosive,
 /obj/item/missile_equipment/payload/explosive,
-/obj/structure/closet/crate/munitions/payload/explosive,
+/obj/structure/closet/crate/munitions/payload/explosive{
+	storage_capacity = 70
+	},
+/obj/item/missile_equipment/payload/explosive,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/missile_equipment/payload/emp,
+/obj/item/missile_equipment/payload/emp,
+/obj/item/missile_equipment/payload/emp,
+/obj/item/missile_equipment/payload/emp,
+/obj/item/missile_equipment/payload/emp,
+/obj/item/missile_equipment/payload/diffuser,
+/obj/item/missile_equipment/payload/diffuser,
+/obj/item/missile_equipment/payload/diffuser,
+/obj/item/missile_equipment/payload/diffuser,
+/obj/item/missile_equipment/payload/diffuser,
+/obj/item/missile_equipment/payload/antimissile,
+/obj/item/missile_equipment/payload/antimissile,
+/obj/item/missile_equipment/payload/antimissile,
+/obj/item/missile_equipment/payload/explosive,
+/obj/item/missile_equipment/payload/explosive,
+/obj/item/missile_equipment/payload/explosive,
+/obj/item/missile_equipment/payload/explosive,
 /obj/item/missile_equipment/payload/explosive,
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/maint/starboard/bridge)
@@ -7600,6 +7856,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
+"Gx" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/computer/modular/preset/cardslot/command,
+/obj/effect/floor_decal/corner/red/three_quarters{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "GB" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -7639,9 +7907,33 @@
 "GM" = (
 /turf/simulated/wall/prepainted,
 /area/venera/living/mess)
-"GP" = (
+"GO" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/ship_munition/disperser_charge/explosive,
 /turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/area/venera/disperser)
+"GP" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "GR" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -7688,13 +7980,14 @@
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
 "He" = (
-/obj/machinery/conveyor_switch/oneway{
-	id = "jinx_missile23"
-	},
 /obj/machinery/alarm/noaccess{
 	dir = 1;
 	pixel_y = -23
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/structure/ship_munition/ammobox/hmg/high_explosive,
 /turf/simulated/floor/tiled/dark,
 /area/jinx/cockpit)
 "Hf" = (
@@ -7879,6 +8172,17 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/venera/medbay)
+"Ic" = (
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "venera_acannon_56_bd";
+	name = "Autocannon Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Id" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7924,11 +8228,15 @@
 	},
 /obj/item/storage/belt/security,
 /obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/under/solgov/utility/fleet/security,
 /obj/item/device/radio/headset/map_preset/venera,
 /obj/item/clothing/suit/storage/vest/solgov/security,
+/obj/item/clothing/under/syndicate/combat,
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/equipment)
+"Is" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "Ix" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide{
 	start_pressure = 7559.63
@@ -8239,6 +8547,10 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
 /area/venera/engine)
+"JL" = (
+/obj/structure/ship_munition/ammobox/autocannon/anti_hull,
+/turf/simulated/floor/tiled/techmaint,
+/area/venera/engine/atmos)
 "JN" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/corner/green/mono,
@@ -8267,8 +8579,8 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/ship_munition/disperser_charge/explosive,
 /turf/simulated/floor/plating,
 /area/venera/disperser)
 "JX" = (
@@ -8511,6 +8823,23 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/venera/living)
+"KS" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/venera/disperser)
 "KT" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -8586,12 +8915,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/venera/engine/atmos)
 "Li" = (
-/obj/structure/catwalk,
-/obj/machinery/firealarm{
-	pixel_y = 21
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/obj/effect/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Lk" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -8738,7 +9071,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/venera/security)
 "LN" = (
-/obj/machinery/suit_storage_unit/engineering,
+/obj/machinery/suit_storage_unit/engineering{
+	req_access = null
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/venera/engine)
@@ -8815,6 +9150,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/detective)
+"Md" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Mh" = (
 /obj/machinery/computer/ship/sensors,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -8938,6 +9282,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/medbay)
+"MK" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "venera_md_58_con"
+	},
+/turf/simulated/floor/airless,
+/area/venera/disperser)
 "ML" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8994,23 +9345,23 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/venera/living/mess)
 "MV" = (
+/obj/machinery/ship_weapon/back_part/hmg{
+	dir = 1
+	},
 /obj/machinery/conveyor{
-	dir = 1;
 	id = "jinx_missile23";
 	name = "missile belt"
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
 "MW" = (
+/obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
+/obj/structure/ship_munition/disperser_charge/emp,
 /turf/simulated/floor/plating,
 /area/venera/disperser)
 "MZ" = (
@@ -9162,11 +9513,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/venera/engine/thrusterport)
 "NI" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "jinx_missile23";
-	name = "missile belt"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9177,6 +9523,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/ship_weapon/middle_part/hmg{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/cockpit)
 "NL" = (
@@ -9274,6 +9624,13 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/venera/security)
+"Om" = (
+/obj/machinery/conveyor{
+	id = "venera_md_58_con";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "On" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin{
@@ -9292,6 +9649,13 @@
 	},
 /turf/simulated/floor/airless,
 /area/venera/disperser)
+"Ou" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/engineering{
+	req_access = null
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/venera/engine)
 "Ov" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -9320,8 +9684,8 @@
 	dir = 4;
 	pixel_x = 21
 	},
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/ship_munition/disperser_charge/bluespace,
 /turf/simulated/floor/plating,
 /area/venera/disperser)
 "OB" = (
@@ -9413,8 +9777,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/jinx/engine)
 "OR" = (
-/turf/simulated/wall/r_wall/hull,
-/area/venera/disperser/storage)
+/obj/effect/wallframe_spawn/reinforced/hull,
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "OS" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -9427,13 +9794,15 @@
 /turf/simulated/floor/plating,
 /area/venera/security)
 "OY" = (
-/obj/structure/railing/mapped,
-/obj/machinery/disposal/deliveryChute{
-	dir = 4
+/obj/structure/ship_munition/ammobox/autocannon/armour_piercing,
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/machinery/light/small{
+	dir = 1
 	},
-/obj/structure/disposalpipe/trunk,
-/turf/simulated/floor/plating,
-/area/venera/maint/starboard/bridge)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "OZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -9624,20 +9993,16 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/jinx/main)
 "PQ" = (
-/obj/structure/catwalk,
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "venera_bridge_back";
-	name = "Emergency Exit door-control";
-	pixel_x = 25;
-	pixel_y = 25
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
+/obj/structure/bed/chair/comfy/red{
+	dir = 1
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "PR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -9761,6 +10126,12 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/venera/maint/starboard/bridge)
+"QD" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/r_wall/prepainted,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "QE" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/venera/security/lobby)
@@ -9831,6 +10202,9 @@
 	pixel_x = -24
 	},
 /obj/structure/table/rack,
+/obj/item/stack/material/rods{
+	amount = 50
+	},
 /turf/simulated/floor/tiled,
 /area/venera/engine)
 "QT" = (
@@ -9947,6 +10321,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
+"Ru" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/disposalpipe/trunk,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Rx" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/machinery/disposal,
@@ -9956,13 +10343,24 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/venera/living/mess)
+"Ry" = (
+/obj/structure/closet/toolcloset,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/random/tech_supply,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/machinery/light/small,
+/obj/item/stack/material/plasteel/fifty,
+/obj/item/stack/material/plasteel/fifty,
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/maint/starboard/bridge)
 "RA" = (
 /obj/machinery/light_switch{
 	pixel_x = 22;
 	pixel_y = 6
 	},
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/plating,
 /area/venera/disperser)
 "RB" = (
@@ -10521,19 +10919,26 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/hallway/eva)
 "Ud" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "venera_bridge_back";
+	name = "Emergency Exit door-control";
+	pixel_x = 25;
+	pixel_y = 25
 	},
 /obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+	dir = 4
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/venera/maint/starboard/bridge)
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Ue" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -10605,6 +11010,28 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/jinx/main)
+"Uu" = (
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 8;
+	target_pressure = 200
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark,
+/area/venera/disperser)
 "Uy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -10622,6 +11049,14 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/venera/hallway/eva)
+"UC" = (
+/obj/machinery/ship_weapon/front_part/autocannon{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "UE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -10781,19 +11216,22 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/venera/engine/atmos)
 "Vm" = (
-/obj/structure/catwalk,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /obj/structure/cable/green{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/turf/simulated/floor/tiled/techfloor,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Vn" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 1
@@ -10948,7 +11386,9 @@
 /area/venera/disperser)
 "VI" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/venera/disperser/storage)
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "VJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -11022,7 +11462,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/venera/engine)
 "VY" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engineering{
+	req_access = null
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/venera/engine)
@@ -11068,6 +11510,23 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/venera/medbay)
+"Wg" = (
+/obj/structure/railing/mapped,
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/machinery/disposal/deliveryChute{
+	dir = 4
+	},
+/obj/machinery/door/window/westright{
+	dir = 4;
+	name = "Ammunition Chute"
+	},
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "Wj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11079,12 +11538,16 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/venera/living/mess)
 "Wq" = (
-/obj/structure/catwalk,
-/obj/machinery/light/small{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/venera/disperser/storage)
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "Wt" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -11134,6 +11597,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/venera/hallway/eva)
+"WC" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "jinx_missile23"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/jinx/cockpit)
 "WD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -11212,6 +11684,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/venera/living/hydro)
+"Xb" = (
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/ship_munition/disperser_charge/emp,
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "Xd" = (
 /obj/structure/sign/warning/radioactive{
 	dir = 1;
@@ -11339,14 +11816,10 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/venera/engine)
 "XE" = (
-/obj/structure/closet/toolcloset,
-/obj/effect/floor_decal/industrial/outline/grey,
-/obj/random/tech_supply,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/tool,
-/turf/simulated/floor/tiled/techfloor,
-/area/venera/maint/starboard/bridge)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/venera/disperser/storage{
+	name = "\improper SGV Venera Weapon Control"
+	})
 "XF" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -11421,13 +11894,13 @@
 /obj/structure/closet{
 	name = "security wardrobe"
 	},
-/obj/item/clothing/under/solgov/utility/fleet/security,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
 /obj/item/storage/belt/security,
 /obj/item/clothing/suit/storage/vest/solgov/security,
+/obj/item/clothing/under/syndicate/combat,
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/equipment)
 "Yd" = (
@@ -11553,25 +12026,16 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/venera/medbay)
 "Yu" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 8;
-	target_pressure = 200
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/venera/disperser)
 "Yv" = (
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -11645,6 +12109,11 @@
 /obj/item/device/taperecorder,
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/questioning)
+"YQ" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/plating,
+/area/venera/disperser)
 "YS" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -11681,13 +12150,11 @@
 /area/venera/living/mess)
 "YW" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/standard_unit{
-	req_access = list()
-	},
 /obj/machinery/light{
 	dir = 1;
 	icon_state = "tube1"
 	},
+/obj/machinery/suit_storage_unit/retro,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/venera/hallway/eva)
 "YZ" = (
@@ -11730,6 +12197,10 @@
 /obj/effect/floor_decal/industrial/shutoff,
 /turf/simulated/floor/tiled/dark,
 /area/venera/hallway)
+"Zk" = (
+/obj/effect/submap_landmark/spawnpoint/venera/gunner,
+/turf/simulated/floor/carpet,
+/area/venera/living/bunk)
 "Zl" = (
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/venera/engine/thrusterstarboard)
@@ -11770,9 +12241,9 @@
 	name = "security wardrobe"
 	},
 /obj/item/clothing/suit/storage/vest/solgov/security,
-/obj/item/clothing/under/solgov/utility/fleet/security,
 /obj/item/storage/belt/security,
 /obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/under/syndicate/combat,
 /turf/simulated/floor/tiled/monotile,
 /area/venera/security/equipment)
 "Zr" = (
@@ -11869,6 +12340,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/venera/security/equipment)
+"ZQ" = (
+/obj/machinery/door/blast/regular{
+	dir = 2;
+	id_tag = "venera_sensors_58";
+	name = "Sensor Shroud"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/venera/bridge)
 "ZR" = (
 /obj/structure/filingcabinet/chestdrawer{
 	dir = 1
@@ -16380,9 +16859,9 @@ aa
 aa
 aa
 aa
+br
 aa
-aa
-aa
+br
 aa
 aa
 aa
@@ -16530,13 +17009,13 @@ aa
 aa
 aa
 aa
+ag
 aa
+bP
 aa
+bP
 aa
-aa
-aa
-aa
-aa
+ag
 aa
 aa
 aa
@@ -16613,310 +17092,6 @@ aa
 aa
 "}
 (32,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-br
-aa
-br
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(33,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ag
-aa
-bP
-aa
-bP
-aa
-ag
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(34,1,1) = {"
 aa
 aa
 aa
@@ -17068,7 +17243,7 @@ aa
 aa
 aa
 "}
-(35,1,1) = {"
+(33,1,1) = {"
 aa
 aa
 aa
@@ -17220,6 +17395,310 @@ aa
 aa
 aa
 "}
+(34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+bM
+aa
+aa
+aa
+aa
+aa
+rT
+rT
+rT
+Bf
+cm
+hw
+rw
+dw
+lf
+Bf
+Bf
+Bf
+Bf
+RU
+Bf
+Zt
+aa
+aa
+aa
+aa
+bM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+bM
+bM
+bu
+bu
+bu
+rT
+Ic
+rT
+cL
+bX
+Bf
+hw
+hw
+jf
+dx
+qb
+ui
+oL
+Pc
+TP
+eu
+Bf
+gB
+Bf
+bu
+bu
+bu
+bM
+bM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
 (36,1,1) = {"
 aa
 aa
@@ -17279,35 +17758,35 @@ aa
 aa
 aa
 aa
-aa
 bM
-aa
-aa
-aa
-aa
-aa
+bP
+bP
+bP
+rT
+rT
+UC
 OR
-OR
-OR
+bX
+bX
 Bf
-cm
-hw
-rw
-dw
-lf
+cn
+cK
+da
+dy
+vn
+Bf
+gr
+Pc
+VH
+yD
+bE
+iQ
 Bf
 Bf
-Bf
-Bf
-RU
-Bf
-Zt
-aa
-aa
-aa
-aa
+bP
+bP
+bP
 bM
-aa
 aa
 aa
 aa
@@ -17432,33 +17911,33 @@ aa
 aa
 aa
 bM
-bM
-bu
-bu
-bu
-GY
+aa
+aa
+aa
+rT
+rT
 bv
 OR
-bS
+bX
 bX
 Bf
-hw
-hw
-jf
-dx
-qb
-ui
-oL
-Pc
-TP
-eu
 Bf
-gB
 Bf
-bu
-bu
-bu
-bM
+dl
+db
+db
+Bf
+ot
+hw
+Ew
+Wc
+hw
+WR
+MK
+Bf
+aa
+aa
+aa
 bM
 aa
 aa
@@ -17584,33 +18063,33 @@ aa
 aa
 aa
 bM
-bP
-bP
-bP
-nl
-GY
-bx
-uV
-bT
-bY
-Bf
-cn
-cK
-da
-dy
-vn
-Bf
-gr
-Pc
-VH
-yD
+aa
+aa
+rT
+rT
+wU
+co
+VI
+cL
+bX
+zF
+hw
+Wg
+dc
+dz
+rb
+Qh
+nL
+Ky
+Ny
+Di
 bE
-iQ
+WR
+MK
 Bf
 Bf
-bP
-bP
-bP
+aa
+aa
 bM
 aa
 aa
@@ -17736,33 +18215,33 @@ aa
 aa
 aa
 bM
-aa
-aa
-aa
-nl
-GY
-GY
-VI
+bP
+bP
+rT
+gG
+Md
+Ru
+QD
 bT
 bY
-Bf
-Bf
-Bf
-dl
-db
-db
-Bf
-ot
 hw
-Ew
-Wc
+hw
+cN
+dd
+dA
+sb
+FF
+Uu
+hw
+fJ
+Xn
 hw
 WR
+MK
 Ot
 Bf
-aa
-aa
-aa
+bP
+bP
 bM
 aa
 aa
@@ -17886,37 +18365,37 @@ aa
 aa
 aa
 aa
-aa
+qY
 bM
 aa
 aa
-nl
-nl
+rT
+XE
 XE
 an
-VI
+sL
 Wq
 GP
 cc
-co
-cL
-dc
-dz
-rb
-Qh
-nL
-Ky
-Ny
-Di
-bE
+cp
+sK
+RO
+dC
+tb
+jd
+IB
+Pc
+Pc
+zN
+hw
 WR
-Ot
-Bf
+MK
+Af
 Bf
 aa
 aa
 bM
-aa
+qY
 aa
 aa
 aa
@@ -18038,37 +18517,37 @@ aa
 aa
 aa
 aa
-aa
 bM
-bP
-bP
-nl
+aa
+aa
+aa
+rT
 OY
-qO
+Eg
 Fb
-VI
+Gx
 Li
 bZ
 hw
-hw
-cN
-dd
-dA
-sb
-FF
+vF
+hN
+hN
+Rm
+YQ
+YQ
 Yu
-hw
-wz
-Xn
-hw
+Pc
+cn
+oj
+PD
 WR
+MK
 Ot
-cm
 Bf
-bP
-bP
-bM
 aa
+aa
+aa
+bM
 aa
 aa
 aa
@@ -18190,37 +18669,37 @@ aa
 aa
 aa
 aa
-qY
 bM
 aa
 aa
 nl
-SR
-FT
+rT
+pr
+zR
 Ud
 qB
 PQ
 Vm
-cd
-cp
-sK
-RO
-dC
-tb
-jd
-IB
-Pc
-Pc
-zN
 hw
-WR
-Ot
+Xb
+Xb
+ay
+KS
+Is
+mf
+GO
+Pc
+uV
+uV
+uV
+cf
+wz
 kr
+Bf
 Bf
 aa
 aa
 bM
-qY
 aa
 aa
 aa
@@ -18345,31 +18824,31 @@ aa
 bM
 aa
 aa
-aa
 nl
-Vw
-FT
+nl
+hY
+hY
 uH
 VI
 bU
 fR
 hw
-vF
+kK
 MW
 OA
-Rm
+KS
 RA
 JT
 BP
 Pc
-cn
-oj
-PD
-WR
-Ot
-cm
+uV
+cd
+uV
+cf
+Om
+kr
 Bf
-aa
+Bf
 aa
 aa
 bM
@@ -18499,8 +18978,8 @@ bP
 bP
 nl
 nl
-SR
-FT
+Fx
+qO
 EE
 VI
 VI
@@ -18652,10 +19131,10 @@ aa
 nl
 nl
 Vw
-FT
+bV
 vp
-bV
-bV
+aS
+Ry
 bb
 ce
 cq
@@ -18804,7 +19283,7 @@ aa
 nl
 nl
 Rh
-FT
+bV
 kB
 jL
 Gk
@@ -19104,9 +19583,9 @@ bI
 bM
 aa
 aa
-aa
-nl
-nl
+GY
+GY
+GY
 SR
 FT
 bb
@@ -19256,9 +19735,9 @@ yb
 bM
 bP
 bP
-bP
-nl
-nl
+ZQ
+bx
+GY
 Vw
 FT
 bb
@@ -19409,8 +19888,8 @@ pt
 Na
 Na
 hE
-nl
-nl
+GY
+GY
 SR
 sJ
 bb
@@ -20498,7 +20977,7 @@ wu
 XV
 XP
 yh
-xh
+ud
 FX
 aa
 aa
@@ -20648,7 +21127,7 @@ ur
 AI
 wu
 ZV
-Np
+mQ
 Ms
 Ti
 FX
@@ -20802,7 +21281,7 @@ wu
 eg
 Np
 Ms
-xh
+ud
 FX
 aa
 aa
@@ -21106,7 +21585,7 @@ Nv
 md
 wu
 Ms
-xh
+ud
 FX
 bF
 bF
@@ -22145,8 +22624,8 @@ Ks
 bP
 yv
 yv
-sm
-sm
+bS
+bS
 Yg
 Nq
 RD
@@ -22615,7 +23094,7 @@ zG
 xy
 sG
 Lr
-rT
+PJ
 we
 WD
 EY
@@ -23516,7 +23995,7 @@ Pi
 ps
 fQ
 xS
-Pe
+JL
 nC
 IF
 kh
@@ -23680,7 +24159,7 @@ RF
 aT
 Kl
 HQ
-Yv
+kD
 Bb
 Bb
 Kb
@@ -25048,13 +25527,13 @@ SW
 lD
 HU
 AW
-jm
+FG
 Mx
 AW
-jm
+FG
 Mx
 AW
-jm
+Zk
 Mx
 AW
 ty
@@ -25200,13 +25679,13 @@ Qt
 lD
 ZA
 AW
-jm
+FG
 Mx
 AW
-jm
+FG
 Mx
 AW
-jm
+Zk
 Mx
 AW
 ty
@@ -25953,7 +26432,7 @@ Hf
 aE
 YH
 SK
-LN
+Ou
 aE
 hJ
 Vu
@@ -27016,7 +27495,7 @@ Ex
 YA
 YA
 KZ
-kD
+Ei
 Ay
 KZ
 KZ
@@ -27168,7 +27647,7 @@ bo
 Eu
 Eu
 UH
-kD
+Ei
 Ay
 KZ
 kG
@@ -28688,9 +29167,9 @@ aa
 BC
 ZS
 ZS
-ZS
+ri
 im
-ZS
+WC
 ZS
 xx
 kV

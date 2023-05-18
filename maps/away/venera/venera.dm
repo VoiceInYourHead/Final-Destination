@@ -94,6 +94,7 @@
 	head = /obj/item/clothing/head/beret/solgov/expedition/medical
 	back = /obj/item/storage/backpack/satchel/med
 	l_ear = /obj/item/device/radio/headset/map_preset/venera
+/*
 /decl/hierarchy/outfit/venera/captain
 	name = OUTFIT_JOB_NAME ("Venera Captain")
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/command
@@ -103,7 +104,7 @@
 	head = /obj/item/clothing/head/solgov/service/expedition/captain
 	back = /obj/item/storage/backpack/satchel/com
 	l_ear = /obj/item/device/radio/headset/map_preset/venera
-
+*/
 
 
 ///////////// Venera Snacks ////////////
