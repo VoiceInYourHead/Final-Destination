@@ -22,6 +22,8 @@
 
 	shield_modflag_counter = MODEFLAG_PHOTONIC
 
+	ignore_blockage = TRUE
+
 	pew_spread = 50
 
 	fire_sound = 'sound/machines/superlaser_firing.ogg'
@@ -29,6 +31,8 @@
 
 	far_fire_sound = 'sound/machines/superlaser_firing.ogg'
 	far_prefire_sound = 'sound/machines/superlaser_prefire.ogg'
+
+	overmap_icon = "ion_beam" // icons\effects\beam.dmi
 
 	var/beam_time = 70
 	var/beam_speed = 1

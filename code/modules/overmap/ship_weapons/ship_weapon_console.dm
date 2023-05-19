@@ -51,6 +51,8 @@
 
 	var/shield_modflag_counter = MODEFLAG_HYPERKINETIC
 
+	var/ignore_blockage = FALSE
+
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// ѕример: при pew_spread = 50 снар€д будет спавнитьс€ с разбросом от -25 до 25 тайлов на нужном краю карты у цели.
 	var/pew_spread = 50
@@ -223,7 +225,7 @@
 		return TOPIC_HANDLED
 
 	if (href_list["choose"])
-		overmapdir = sanitize_integer(text2num(href_list["choose"]), 0, 9, 0)
+		overmapdir = sanitize_integer(text2num(href_list["choose"]), 0, 10, 0)
 		reset_calibration()
 
 	if(href_list["calibration"])

@@ -26,7 +26,7 @@
 	sleep(fire_delay)
 
 	if(!front || !get_charge()) //Meanwhile front might have exploded
-		return
+		return FALSE
 
 	for(var/mob/M in GLOB.player_list)
 		var/turf/T = get_turf(M)
@@ -56,9 +56,10 @@
 			if(((A.density && A.layer != TABLE_LAYER) && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield))))
 				if(istype(A, /obj/effect/shield))
 					var/obj/effect/shield/S = A
-					if(!S.gen.check_flag(shield_modflag_counter))
-						continue
-				return TRUE
+					if(S.gen.check_flag(shield_modflag_counter))
+						return TRUE
+				if(!ignore_blockage)
+					return TRUE
 
 	if(istype(front.loc.loc, /area/exoplanet) && !ground_to_space)
 		return TRUE //Ты чё ебанутый, как твои пули без мини-двигателя собрались атмосферу покидать??
@@ -111,7 +112,6 @@
 
 	var/obj/effect/overmap/target = pick(candidates)
 
-
 	if(istype(target, /obj/effect/overmap/event))
 		var/obj/effect/overmap/event/E = target
 		if(destroy_event_flags & E.weaknesses)
@@ -137,7 +137,7 @@
 		return TRUE
 
 	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
-		fire_at_exoplanet(z_level, finaltarget.name)
+		fire_at_exoplanet(z_level, finaltarget)
 		for(var/mob/M in GLOB.player_list)
 			var/turf/T = get_turf(M)
 			if(!T || !(T.z == z_level))

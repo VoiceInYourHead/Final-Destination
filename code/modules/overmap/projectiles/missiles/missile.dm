@@ -416,3 +416,8 @@
 
 /obj/structure/missile/proc/wawawa()
 	walk(src, NORTH, 1)
+
+/obj/structure/missile/Process()
+	..()
+	if(health <= 0)
+		Destroy()
