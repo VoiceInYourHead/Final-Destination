@@ -40,6 +40,12 @@
 	suffixes = list("small_ruins/build_ruin7.dmm")
 	ruin_tags = RUIN_ALIEN
 
+/datum/map_template/ruin/exoplanet/build/build8
+	name = "Long-distance Communication Module 8"
+	id = "build8"
+	suffixes = list("small_ruins/build_ruin8.dmm")
+	ruin_tags = RUIN_HUMAN
+
 
 
 
@@ -63,7 +69,7 @@
 /area/map_template/build/build7
 	name = "\improper Monolithic Ring"
 /area/map_template/build/build8
-
+	name = "Long-distance Communication Module"
 
 
 // Other Code????    //
