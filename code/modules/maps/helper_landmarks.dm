@@ -53,13 +53,23 @@
 	icon_state = "fire"
 	var/random_dam_min = 20
 	var/random_dam_max = 80
-
+/*
 /obj/effect/landmark/damager/Initialize()
 	var/turf/simulated/T = get_turf(src)
-	sleep(rand(1,4))
 	if(istype(T))
 		T.damage_health(rand(random_dam_min,random_dam_max))
 	. = ..()
+*/
+
+/obj/effect/landmark/damager/Initialize()
+	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/landmark/damager/LateInitialize()
+	var/turf/simulated/T = get_turf(src)
+	if(istype(T))
+		T.damage_health(rand(random_dam_min,random_dam_max))
+	qdel(src)
 
 //Delete specified things when a specified shuttle moves
 /obj/effect/landmark/delete_on_shuttle
