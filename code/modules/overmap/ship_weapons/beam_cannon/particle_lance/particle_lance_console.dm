@@ -24,5 +24,7 @@
 
 	shield_modflag_counter = MODEFLAG_EM
 
+	overmap_icon = "particle_beam" // icons\effects\beam.dmi
+
 	beam_light_color = COLOR_LIGHT_CYAN
 	beam_icon = "particle_beam"

@@ -201,6 +201,25 @@
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)
 
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/handle_overbeam(var/missed = FALSE)
+	set waitfor = FALSE
+	var/turf/target_turf
+	var/beam_dir = overmapdir
+
+	if(missed)
+		beam_dir = turn(overmapdir,pick(45,-45))
+
+	if(linked.z == 11)
+		target_turf = get_turf(linked)
+		for(var/i = 1 to shoot_range)
+			target_turf = get_step(target_turf, beam_dir)
+		linked.Beam(target_turf, overmap_icon, time = beam_time, maxdistance = world.maxx)
+	else
+		target_turf = get_turf(linked.loc)
+		for(var/i = 1 to shoot_range)
+			target_turf = get_step(target_turf, beam_dir)
+		linked.loc.Beam(target_turf, overmap_icon, time = beam_time, maxdistance = world.maxx)
+
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/handle_muzzle()
 	set waitfor = FALSE
 	var/turf/start = front
