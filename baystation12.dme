@@ -3316,6 +3316,7 @@
 #include "maps\away\for_fd\mobs.dm"
 #include "maps\away\for_fd\overmap.dm"
 #include "maps\away\for_fd\papers.dm"
+#include "maps\random_ruins\exoplanet_ruins\shelter\shelters.dm"
 #include "proxima\code\_helpers\colors.dm"
 #include "proxima\code\_helpers\_onclick\hud\_defines_ai.dm"
 #include "proxima\code\_helpers\_onclick\hud\ai_hud.dm"

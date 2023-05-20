@@ -13,6 +13,9 @@
 		"nav_venera_a_3",
 		"nav_venera_a_antag"
 	)
+	initial_restricted_waypoints = list(
+		"Jinx" = list("nav_hangar_jinx")
+	)
 
 
 /obj/effect/overmap/visitable/ship/venera_a/New(nloc, max_x, max_y)
@@ -84,7 +87,7 @@
 		SKILL_WEAPONS = SKILL_ADEPT,
 		SKILL_COMBAT = SKILL_ADEPT,
 		SKILL_DEVICES = SKILL_BASIC,
-		SKILL_PILOT   = SKILL_EXPERT,
+		SKILL_PILOT   = SKILL_BASIC,
 		SKILL_BUREAUCRACY = SKILL_BASIC,
 	)
 
@@ -107,7 +110,7 @@
 	min_skill = list(
 		SKILL_EVA     = SKILL_BASIC,
 		SKILL_WEAPONS = SKILL_ADEPT,
-		SKILL_PILOT   = SKILL_ADEPT,
+		SKILL_PILOT   = SKILL_EXPERT,
 	)
 
 	max_skill = list(
@@ -167,6 +170,7 @@
 		SKILL_MEDICAL = SKILL_MAX,
 		SKILL_ANATOMY = SKILL_MAX,
 		SKILL_CHEMISTRY = SKILL_MAX,
+		SKILL_PILOT   = SKILL_ADEPT,
 	)
 	skill_points = 20
 

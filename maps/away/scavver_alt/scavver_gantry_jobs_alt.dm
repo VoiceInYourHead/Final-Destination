@@ -44,7 +44,7 @@
 /datum/job/submap/scavver
 	title = "Salvager"
 //	total_positions = 4
-	total_positions = 5
+	total_positions = 3
 	outfit_type = /decl/hierarchy/outfit/job/scavver/standart
 	supervisors = "The trust of your fellow crew."
 	info = "You are a part of your meagre Scavenger Crew. Keep yourself safe, and seek supplies for your mother-ship. \
@@ -212,7 +212,7 @@
 	)
 	skill_points = 15
 */
-/datum/job/submap/scavver_bar
+/*/datum/job/submap/scavver_bar
 	title = "Salvage Bartender"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/scavver/bar
@@ -253,7 +253,7 @@
 		SKILL_ANATOMY = SKILL_EXPERT,
 		SKILL_CHEMISTRY = SKILL_MAX
 	)
-	skill_points = 15
+	skill_points = 15*/
 
 /datum/job/submap/scavver_cyborg
 	title = "Salvage Drone"

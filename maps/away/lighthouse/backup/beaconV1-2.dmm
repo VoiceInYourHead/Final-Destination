@@ -24,7 +24,7 @@
 "ax" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
 "ay" = (/obj/effect/floor_decal/spline/plain/orange{dir = 1},/obj/machinery/papershredder{density = 0; pixel_y = 16},/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
 "az" = (/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
-"aA" = (/obj/machinery/hologram/holopad/longrange,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/overmap/visitable/ship/working_beacon,/obj/effect/submap_landmark/joinable_submap/working_beacon,/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
+"aA" = (/obj/machinery/hologram/holopad/longrange,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/overmap/visitable/sector/working_beacon,/obj/effect/submap_landmark/joinable_submap/working_beacon,/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
 "aB" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
 "aC" = (/obj/effect/floor_decal/spline/plain/orange{dir = 1},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/ship/working_beacon/bridge)
 "aD" = (/obj/structure/table/rack,/obj/item/storage/toolbox/mechanical,/obj/item/device/geiger,/turf/simulated/floor/tiled/steel_ridged,/area/ship/working_beacon/reactor)
