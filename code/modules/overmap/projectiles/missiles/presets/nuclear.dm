@@ -19,5 +19,5 @@
 	equipment = list(
 		/obj/item/missile_equipment/thruster,
 		/obj/item/missile_equipment/autoarm,
-		/obj/item/missile_equipment/payload/nuclear/doomsday
+		/obj/item/missile_equipment/payload/doomsday
 	)

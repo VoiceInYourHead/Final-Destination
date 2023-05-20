@@ -31,12 +31,13 @@
 
 	..()
 
-/obj/item/missile_equipment/payload/nuclear/doomsday //adminbus
+/obj/item/missile_equipment/payload/doomsday //adminbus
 	name = "doomsday warhead"
 	desc = "An incredibly dangerous warhead. Detonates when the missile is triggered."
 	icon_state = "nuclear"
+	hull_damage = 100
 
-/obj/item/missile_equipment/payload/nuclear/doomsday/on_trigger(var/atom/triggerer)
+/obj/item/missile_equipment/payload/doomsday/on_trigger(var/atom/triggerer)
 	var/list/relevant_z = GetConnectedZlevels(loc.z)
 
 	for(var/mob/living/M in GLOB.player_list)
@@ -52,18 +53,13 @@
 
 	if(istype(triggerer, /obj/effect/shield))
 		SSradiation.radiate(get_turf(src), 400)
-		explosion(get_turf(src), 64, EX_ACT_HEAVY, turf_breaker = TRUE)
+		explosion(get_turf(src), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(src), rand(10,20), rand(25,50))
 		var/obj/effect/shield/S = triggerer
 		S.take_damage(150000, SHIELD_DAMTYPE_PHYSICAL)
 	else
 		SSradiation.radiate(get_turf(src), 800)
-		explosion(get_turf(src), 128, EX_ACT_HEAVY, turf_breaker = TRUE)
+		explosion(get_turf(src), 128, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(src), rand(50,75), rand(75,100))
-
-	for(var/mob/living/carbon/human/M in GLOB.player_list)
-		if(M.eyecheck() < FLASH_PROTECTION_MAJOR)
-			M.flash_eyes()
-			M.updatehealth()
 
 	..()
