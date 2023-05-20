@@ -41,7 +41,6 @@
 		/datum/job/submap/scavver_engineer,
 //		/datum/job/submap/scavver_cook,
 		/datum/job/submap/scavver_cyborg,
-		/datum/job/submap/scavver_bar,
 		/datum/job/submap/scavver
 	)
 
