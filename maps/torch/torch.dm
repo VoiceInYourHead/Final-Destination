@@ -185,6 +185,7 @@
 	#include "../away/psycho/school.dm"
 	#include "../away/sfv_interceptor/shikra.dm"
 	#include "../away/sfv_bomber/comet.dm"
+	#include "../away/sfv_saboteur/saboteur.dm"
 	#include "../away/cowboy_bebop/swordfish.dm"
 	#include "../away/cowboy_bebop/truck.dm"
 	#include "../away/cowboy_bebop/truck_broken.dm"
