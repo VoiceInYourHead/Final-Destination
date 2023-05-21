@@ -57,14 +57,6 @@
 	name = "\improper Ascent Corvette - Starboard Missile Chamber"
 	icon_state = "green"
 
-/area/ship/ascent_corvette/port_jut
-	name = "\improper Ascent Corvette - Port Jut Dock"
-	icon_state = "green"
-
-/area/ship/ascent_corvette/starboard_jut
-	name = "\improper Ascent Corvette - Starboard Jut Dock"
-	icon_state = "dk_yellow"
-
 /area/ship/ascent_corvette/engine
 	name = "\improper Ascent Corvette - Engine's Chamber"
 	icon_state = "atmos"

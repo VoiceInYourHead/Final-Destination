@@ -180,12 +180,19 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 	req_access = list(access_ascent)
 	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
 	base_type = /obj/machinery/computer/ship/sensors
-	print_language = LANGUAGE_SPACER
+	print_language = LANGUAGE_MANTID_VOCAL
 
 /obj/machinery/computer/ship/missiles/ascent
 	icon_state = "ascent"
 	icon_keyboard = "ascent_key"
 	icon_screen = "ascent_screen"
+	req_access = list(access_ascent)
+	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
+	base_type = /obj/machinery/computer/ship/missiles
+
+/obj/machinery/computer/air_control/ascent
+	icon_state = "ascent"
+	icon_keyboard = "ascent_key"
 	req_access = list(access_ascent)
 	construct_state = /decl/machine_construction/default/panel_closed/computer/no_deconstruct
 	base_type = /obj/machinery/computer/ship/missiles

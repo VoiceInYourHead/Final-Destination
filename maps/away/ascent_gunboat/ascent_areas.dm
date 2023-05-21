@@ -48,14 +48,6 @@
 	name = "\improper Ascent Gunboat - Stern Starboard Missile Chamber"
 	icon_state = "dk_yellow"
 
-/area/ship/ascent_gunboat/port_jut
-	name = "\improper Ascent Gunboat - Port Jut Dock"
-	icon_state = "green"
-
-/area/ship/ascent_gunboat/starboard_jut
-	name = "\improper Ascent Gunboat - Starboard Jut Dock"
-	icon_state = "green"
-
 /area/ship/ascent_gunboat/atmos
 	name = "\improper Ascent Gunboat - Atmospherics Control Chamber"
 	icon_state = "atmos"
