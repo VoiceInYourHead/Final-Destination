@@ -40,7 +40,6 @@
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/suit_jacket
-	allowed_roles = FORMAL_ROLES
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/custom_suit_jacket

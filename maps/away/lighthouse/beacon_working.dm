@@ -1,4 +1,4 @@
-/obj/effect/overmap/visitable/sector/working_beacon
+/obj/effect/overmap/visitable/ship/working_beacon
 	name = "Space beacon"
 	desc = "This is space lighthouse!"
 	icon_state = "beacon"

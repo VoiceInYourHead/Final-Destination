@@ -2,7 +2,7 @@
 	display_name = "The Ascent"
 	associated_strings = list("ascent")
 	associated_paths = list(
-//		/mob/living/silicon/robot/flying/ascent,
+		/mob/living/silicon/robot/flying/ascent,
 		/obj/item/device/multitool/mantid,
 		/obj/item/weldingtool/electric/mantid,
 		/obj/item/cell/mantid,

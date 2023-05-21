@@ -3,6 +3,7 @@
 	desc = "An old mighty father of well-known MK3 Universal Missile. Cannot be modified in the field, but still popular due to it's ruggedness and cheap price."
 	icon = 'icons/obj/bigmissile.dmi'
 	icon_state = "base"
+	health = 200
 
 /obj/structure/missile/locked/attackby(var/obj/item/I, var/mob/user)
 
