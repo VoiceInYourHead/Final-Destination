@@ -71,9 +71,10 @@
 /obj/structure/missile/Bump(var/atom/obstacle)
 	if(istype(obstacle, /obj/effect/shield))
 		var/obj/effect/shield/S = obstacle
-		if(S.gen.mitigation_physical == 0  && !S.gen.check_flag(MODEFLAG_HYPERKINETIC))
+		if(!S.gen.check_flag(MODEFLAG_HYPERKINETIC))
 			forceMove(S.loc)
 			walk(src,dir,1)
+			return
 		else
 			S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
 	detonate(obstacle)
@@ -88,25 +89,29 @@
 		playsound(loc, activation_sound, 100)
 		active = TRUE
 		detonate(loc)
+		return
 
-	if(severity == 1 || turf_breaker)
-		playsound(loc, activation_sound, 100)
-		active = TRUE
-		detonate(loc)
-
-	if(severity == 2)
-		if(prob(60))
+	if(severity == 1)
+		if(prob(80))
 			playsound(loc, activation_sound, 100)
 			active = TRUE
-			detonate(loc)
-		else if(prob(80))
-			Destroy()
+			if(prob(95))
+				detonate(loc)
+		return
 
-	if(severity == 3 && prob(20))
-		playsound(loc, activation_sound, 100)
-		active = TRUE
-		if(prob(75))
-			detonate(loc)
+	if(severity == 2)
+		if(prob(40))
+			playsound(loc, activation_sound, 100)
+			active = TRUE
+			if(prob(75))
+				detonate(loc)
+		return
+
+	if(severity == 3)
+		if(prob(20))
+			playsound(loc, activation_sound, 100)
+			active = TRUE
+		return
 
 	return
 
