@@ -23,6 +23,7 @@
 	title = "Colonist"
 	info = "You are a Colonist, living on the rim of explored, let alone inhabited, space in a reconstructed shelter made from the very ship that took you here."
 	total_positions = 8
+	loadout_allowed = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/colonist
 
 /decl/hierarchy/outfit/job/colonist
