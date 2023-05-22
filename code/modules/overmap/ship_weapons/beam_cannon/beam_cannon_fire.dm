@@ -136,8 +136,7 @@
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
-			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
+			if(S.gen.check_flag(MODEFLAG_PHOTONIC) && !S.disabled_for)
 				S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
 				deflected = TRUE
 		if(deflected)
@@ -148,9 +147,10 @@
 			break
 		if(T.density && !killing_floor)
 			sleep(beam_speed)
-			explosion(T, 6, EX_ACT_DEVASTATING, adminlog = 0, turf_breaker = TRUE)
 			if(T && T.density)
-				T.ex_act(1,TRUE)
+				explosion(T, 6, EX_ACT_DEVASTATING, adminlog = 0, turf_breaker = TRUE)
+				if(T)
+					T.ex_act(1,TRUE)
 		else if(killing_floor && !istype(T, /turf/space))
 			sleep(beam_speed)
 			explosion(T, 6, EX_ACT_DEVASTATING, adminlog = 0, turf_breaker = TRUE)
@@ -161,7 +161,7 @@
 				var/turf/J = get_turf(M)
 				if(!J || !(J.z in relevant_z))
 					continue
-				shake_camera(M, 4)
+				shake_camera(M, shake_camera_force/10, 0.5)
 			var/turf/right = get_step(T,turn(d,90))
 			var/turf/left = get_step(T,turn(d,-90))
 			if(!right.density && !istype(right, /turf/space))

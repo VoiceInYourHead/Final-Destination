@@ -3,8 +3,7 @@
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			S.take_damage(3000,SHIELD_DAMTYPE_EM)
-			if((S.gen.mitigation_em > 0 || S.gen.check_flag(MODEFLAG_EM)) && !S.disabled_for)
+			if(S.gen.check_flag(MODEFLAG_EM) && !S.disabled_for)
 				S.take_damage(3000,SHIELD_DAMTYPE_EM)
 				deflected = TRUE
 		if(deflected)
@@ -28,7 +27,7 @@
 				var/turf/J = get_turf(M)
 				if(!J || !(J.z in relevant_z))
 					continue
-				shake_camera(M, 4)
+				shake_camera(M, shake_camera_force/10, 0.5)
 			if(!T.density && !istype(T, /turf/space))
 				empulse(T, heavy_ion_effect_range, light_ion_effect_range)
 		else
