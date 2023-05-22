@@ -136,7 +136,7 @@
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if(S.gen.check_flag(MODEFLAG_PHOTONIC) && !S.disabled_for)
+			if(S.gen.check_flag(MODEFLAG_PHOTONIC) && !S.density)
 				S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
 				deflected = TRUE
 		if(deflected)
@@ -185,7 +185,7 @@
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.disabled_for)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.density)
 				deflected = TRUE
 		if(deflected)
 			break

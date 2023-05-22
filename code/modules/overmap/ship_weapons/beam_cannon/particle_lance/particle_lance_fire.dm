@@ -3,7 +3,7 @@
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if(S.gen.check_flag(MODEFLAG_EM) && !S.disabled_for)
+			if(S.gen.check_flag(MODEFLAG_EM) && !S.density)
 				S.take_damage(3000,SHIELD_DAMTYPE_EM)
 				deflected = TRUE
 		if(deflected)
