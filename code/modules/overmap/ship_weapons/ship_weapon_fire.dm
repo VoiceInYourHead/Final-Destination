@@ -282,6 +282,7 @@
 	pew.starting = start
 	pew.color = pew_color
 	pew.launch(get_step(start,random_dir()), pick(BP_ALL_LIMBS), start.x, start.y)
+	pew.on_hit(start)
 	pew.Bump(start)
 
 /obj/machinery/computer/ship/ship_weapon/proc/handle_muzzle(turf/start, direction = 1)

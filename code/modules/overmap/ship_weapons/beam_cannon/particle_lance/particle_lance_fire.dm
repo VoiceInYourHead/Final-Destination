@@ -1,9 +1,11 @@
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/particle_lance/handle_beam_damage(var/turf/s, var/d, var/killing_floor = FALSE)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		if(istype(T,/turf/unsimulated/planet_edge))
+			return
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if(S.gen.check_flag(MODEFLAG_EM) && !S.density)
+			if(S.gen.check_flag(MODEFLAG_EM) && S.density)
 				S.take_damage(3000,SHIELD_DAMTYPE_EM)
 				deflected = TRUE
 		if(deflected)
