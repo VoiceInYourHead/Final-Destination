@@ -1,7 +1,7 @@
 /obj/machinery/computer/ship/ship_weapon/beam_cannon
 	name = "ion beam emitter control"
 	caldigit = 6
-	coolinterval = 120 SECONDS
+	coolinterval = 175 SECONDS
 	gun_name = "Ion beam emitter"
 
 	hull_damage = 55
