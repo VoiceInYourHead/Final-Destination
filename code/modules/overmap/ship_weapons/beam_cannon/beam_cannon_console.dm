@@ -4,7 +4,7 @@
 	coolinterval = 120 SECONDS
 	gun_name = "Ion beam emitter"
 
-	hull_damage = 75
+	hull_damage = 55
 
 	front_type = /obj/machinery/ship_weapon/front_part/beam_cannon
 	middle_type = /obj/machinery/ship_weapon/middle_part/beam_cannon
