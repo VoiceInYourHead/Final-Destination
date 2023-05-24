@@ -1,7 +1,7 @@
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/particle_lance
 	name = "particle lance control"
 	caldigit = 5
-	coolinterval = 75 SECONDS //time to wait between safe shots in deciseconds
+	coolinterval = 120 SECONDS //time to wait between safe shots in deciseconds
 
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "ascent"
