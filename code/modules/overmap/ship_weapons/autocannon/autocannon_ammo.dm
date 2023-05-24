@@ -47,11 +47,11 @@
 	var/explosion_max_power = EX_ACT_DEVASTATING
 
 
-/obj/item/projectile/bullet/autocannon/high_explosive/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/bullet/autocannon/high_explosive/Bump(atom/A as mob|obj|turf|area, forced=0)
 	var/backwards = turn(dir, 180)
 	var/exploded = FALSE
 	if(!exploded)
-		explosion(get_step(target, backwards), explosion_radius, explosion_max_power)
+		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power)
 		exploded = TRUE
 	..()
 
@@ -61,10 +61,10 @@
 	explosion_radius = 9
 	explosion_max_power = EX_ACT_DEVASTATING
 
-/obj/item/projectile/bullet/autocannon/anti_hull/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/bullet/autocannon/anti_hull/Bump(atom/A as mob|obj|turf|area, forced=0)
 	var/exploded = FALSE
 	if(!exploded)
-		explosion(target, explosion_radius, explosion_max_power, turf_breaker = TRUE)
+		explosion(get_turf(A), explosion_radius, explosion_max_power, turf_breaker = TRUE)
 		exploded = TRUE
 	..()
 

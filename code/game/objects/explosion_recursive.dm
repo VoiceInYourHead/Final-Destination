@@ -102,8 +102,8 @@ var/global/explosion_in_progress = 0
 	if(T)
 		T.explosion_spread(spread_power, turn(direction,90))
 
-///turf/unsimulated/explosion_spread(power)
-//	return //So it doesn't get to the parent proc, which simulates explosions
+/turf/unsimulated/planet_edge/explosion_spread(power)
+	return //So it doesn't get to the parent proc, which simulates explosions
 
 /// Float. The atom's explosion resistance value. Used to calculate how much of an explosion is 'absorbed' and not passed on to tiles on the other side of the atom's turf. See `/proc/explosion_rec()`.
 /atom/var/explosion_resistance = 0
