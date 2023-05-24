@@ -136,22 +136,13 @@
 		handle_overbeam(TRUE)
 		return TRUE
 
-	if(istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
+	if(istype(finaltarget,/obj/effect/overmap/visitable/sector/exoplanet))
 		fire_at_exoplanet(z_level, finaltarget)
-		for(var/mob/M in GLOB.player_list)
-			var/turf/T = get_turf(M)
-			if(!T || !(T.z == z_level))
-				continue
-			if(!isdeaf(M))
-				sound_to(M, sound(far_fire_sound, volume=5))
-				if(prob(33))
-					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit! This isn't good..."))
-		handle_overbeam()
-		return TRUE
-
-	fire_at_sector(z_level, finaltarget.fore_dir, finaltarget)
+	else
+		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget)
 
 	handle_overbeam()
+
 	return TRUE
 
 /obj/machinery/computer/ship/ship_weapon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/obj/effect/overmap/target)
@@ -273,6 +264,18 @@
 /obj/machinery/computer/ship/ship_weapon/proc/fire_at_exoplanet(var/z_level, var/obj/effect/overmap/target)
 	var/turf/start = locate(rand(8,world.maxx-8),rand(8,world.maxy-8), z_level)
 
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z == z_level))
+			continue
+		if(!isdeaf(M))
+			sound_to(M, sound(far_fire_sound, volume=10))
+			if(prob(33))
+				if(prob(33))
+					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit! This isn't good..."))
+				else
+					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit!"))
+
 	log_and_message_admins("Снаряд от [linked.name], выпущенный из [gun_name] - успешно попал в X [start.x] Y [start.y] на [target] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/ammo_type = get_ammo_type()
@@ -282,7 +285,6 @@
 	pew.starting = start
 	pew.color = pew_color
 	pew.launch(get_step(start,random_dir()), pick(BP_ALL_LIMBS), start.x, start.y)
-	pew.on_hit(start)
 	pew.Bump(start)
 
 /obj/machinery/computer/ship/ship_weapon/proc/handle_muzzle(turf/start, direction = 1)
