@@ -5,7 +5,7 @@
 			return
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if(S.gen.check_flag(MODEFLAG_EM) && S.density)
+			if(S.gen.check_flag(shield_modflag_counter) && S.density)
 				S.take_damage(3000,SHIELD_DAMTYPE_EM)
 				deflected = TRUE
 		if(deflected)
@@ -37,7 +37,7 @@
 		for(var/mob/living/U in T)
 			U.gib()
 		for(var/atom/A in T)
-			if(A.density)
+			if(A.density && !istype(A,/obj/effect/shield))
 				explosion(T, 4, EX_ACT_DEVASTATING,adminlog = 0, turf_breaker = TRUE)
 				if(A && A.density)
 					A.ex_act(1,TRUE)

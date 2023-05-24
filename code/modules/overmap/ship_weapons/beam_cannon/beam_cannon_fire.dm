@@ -122,7 +122,7 @@
 				break
 		if(must_damage) target_vessel.damage_hull(hull_damage)
 
-/obj/machinery/computer/ship/ship_weapon/fire_at_exoplanet(var/z_level, var/obj/effect/overmap/target)
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/fire_at_exoplanet(var/z_level, var/obj/effect/overmap/target)
 	fire_at_sector(z_level, random_dir(), target, TRUE)
 
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/handle_beam(var/turf/s, var/d)
@@ -134,9 +134,11 @@
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/handle_beam_damage(var/turf/s, var/d, var/killing_floor = FALSE)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		if(istype(T,/turf/unsimulated/planet_edge))
+			return
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if(S.gen.check_flag(MODEFLAG_PHOTONIC) && !S.density)
+			if(S.gen.check_flag(shield_modflag_counter) && S.density)
 				S.take_damage(5000,SHIELD_DAMTYPE_HEAT)
 				deflected = TRUE
 		if(deflected)
@@ -175,7 +177,7 @@
 		for(var/mob/living/U in T)
 			U.gib()
 		for(var/atom/A in T)
-			if(A.density)
+			if(A.density && !istype(A,/obj/effect/shield))
 				explosion(T, 6, EX_ACT_DEVASTATING, adminlog = 0, turf_breaker = TRUE)
 				if(A && A.density)
 					A.ex_act(1,TRUE)
@@ -183,9 +185,11 @@
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/handle_beam_on_enemy(var/turf/s, var/d)
 	set waitfor = FALSE
 	for(var/turf/T in getline(s,get_target_turf(s, d)))
+		if(istype(T,/turf/unsimulated/planet_edge))
+			return
 		var/deflected = FALSE
 		for(var/obj/effect/shield/S in T)
-			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && !S.density)
+			if((S.gen.mitigation_heat > 0 || S.gen.check_flag(MODEFLAG_PHOTONIC)) && S.density)
 				deflected = TRUE
 		if(deflected)
 			break
