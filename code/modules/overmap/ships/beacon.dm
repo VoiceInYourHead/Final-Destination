@@ -8,7 +8,6 @@
 	idle_power_usage = 0
 	health_max = 100
 	active_power_usage = 1 KILOWATTS
-	construct_state = /singleton/machine_construction/default/panel_closed
 	var/obj/effect/overmap/radio/signal
 	var/obj/effect/overmap/radio/distress/emergency_signal
 	/// Integer. The `world.time` value of the last distress broadcast.
