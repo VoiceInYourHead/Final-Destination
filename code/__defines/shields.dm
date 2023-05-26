@@ -14,7 +14,7 @@
 // This means shields will become increasingly effective against things like emitters - as they will adapt to heat damage, however they will be vulnerable to brute and EM damage.
 // In a theoretical assault scenario, it is best to combine all damage types, so mitigation can't build up. The value is capped to prevent full scale invulnerability.
 
-#define MAX_MITIGATION_BASE 50		// % Base maximal reachable mitigation.
+#define MAX_MITIGATION_BASE 40		// % Base maximal reachable mitigation.
 #define MAX_MITIGATION_RESEARCH 10	// % Added to MAX_MITIGATION_BASE when generator is built using more advanced components. This value is added for each "tier" of used component, ie. basic one has 1, the best one has 3. Actual maximum should be 80% in this case (with best components). Make sure you won't get above 100%!
 #define MITIGATION_HIT_GAIN 5		// Mitigation gain per hit of respective damage type.
 #define MITIGATION_HIT_LOSS 4		// Mitigation loss per hit. If we get hit once by EM damage type, EM mitigation will grow, while Physical and Heat mitigation values drop.

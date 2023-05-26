@@ -19,12 +19,10 @@
 			sound_to(M, sound('sound/effects/heavy_cannon_blast.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 10, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(src), rand(10,20), rand(25,50))
-		var/obj/effect/shield/S = triggerer
-		S.take_damage(40000)
+		explosion(get_turf(src), 25, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(src), rand(1,2), rand(3,4))
 	else
-		explosion(get_turf(triggerer), 20, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(triggerer), rand(25,50), rand(50,100))
+		explosion(get_turf(triggerer), 25, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(triggerer), rand(6,8), rand(8,12))
 
 	..()
