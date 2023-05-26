@@ -46,14 +46,15 @@
 	var/explosion_radius = 12
 	var/explosion_max_power = EX_ACT_DEVASTATING
 
+	var/exploded = FALSE
+
 
 /obj/item/projectile/bullet/autocannon/high_explosive/Bump(atom/A as mob|obj|turf|area, forced=0)
 	var/backwards = turn(dir, 180)
-	var/exploded = FALSE
 	if(!exploded)
-		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power)
 		exploded = TRUE
-	..()
+		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power)
+		qdel(src)
 
 
 /obj/item/projectile/bullet/autocannon/anti_hull
@@ -62,11 +63,10 @@
 	explosion_max_power = EX_ACT_DEVASTATING
 
 /obj/item/projectile/bullet/autocannon/anti_hull/Bump(atom/A as mob|obj|turf|area, forced=0)
-	var/exploded = FALSE
 	if(!exploded)
-		explosion(get_turf(A), explosion_radius, explosion_max_power, turf_breaker = TRUE)
 		exploded = TRUE
-	..()
+		explosion(get_turf(A), explosion_radius, explosion_max_power, turf_breaker = TRUE)
+		qdel(src)
 
 
 /obj/item/projectile/bullet/autocannon/armour_piercing
@@ -83,19 +83,23 @@
 	penetration_modifier = 1.1
 	explosion_radius = 7
 	explosion_max_power = EX_ACT_HEAVY
-	var/delay = 3
-	var/primed = 0
+	var/delay = 4
 
 /obj/item/projectile/bullet/autocannon/aphe/Bump(atom/A as mob|obj|turf|area, forced=0)
-	if(primed)
+	if(istype(A,/obj/effect/shield))
+		explosion(get_turf(A), explosion_radius, explosion_max_power)
+		qdel(src)
 		return
-	primed = 1
+
+	if(exploded)
+		return
+
+	exploded = TRUE
 	sleep(delay)
+
 	if(src)
 		explosion(get_turf(src), explosion_radius, explosion_max_power)
-		..()
-		if(src)
-			qdel(src)
+		qdel(src)
 
 /obj/item/projectile/bullet/autocannon/aphe/Destroy()
 	if(src)
