@@ -201,6 +201,7 @@
 		ion_beam.light_max_bright = 1
 		ion_beam.light_color = beam_light_color
 		ion_beam.anchored = TRUE //иначе лазеры смешно улетают от взрывов
+		ion_beam.does_spin = FALSE // ^^^
 		playsound(T, beam_sound, 250, 1)
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)
