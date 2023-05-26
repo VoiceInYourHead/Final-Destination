@@ -104,7 +104,7 @@
 "bZ" = (/obj/effect/catwalk_plated/ascent,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/bridge)
 "ca" = (/obj/machinery/conveyor_switch/ammobelt{id = "corvette_ofd_conv_up"},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/port_ofd)
 "cb" = (/obj/effect/catwalk_plated/ascent,/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/bridge)
-"cc" = (/obj/machinery/power/shield_generator{color = "#8f2bab"; field_radius = 45},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/bridge)
+"cc" = (/obj/machinery/power/shield_generator{color = "#8f2bab"; field_radius = 1; target_radius = 45},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/bridge)
 "cd" = (/obj/effect/floor_decal/spline/fancy/black/corner{dir = 8},/obj/machinery/atmospherics/unary/vent_pump/on/ascent{dir = 4},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_corvette/bridge)
 "ce" = (/obj/machinery/light/ascent{dir = 4; layer = 3.99; pixel_x = 6},/obj/effect/floor_decal/spline/fancy/black{dir = 4; icon_state = "spline_fancy"},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_corvette/bridge)
 "cf" = (/obj/effect/floor_decal/spline/fancy/black{dir = 8; icon_state = "spline_fancy"},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_corvette/bridge)
