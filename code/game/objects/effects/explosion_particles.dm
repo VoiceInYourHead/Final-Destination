@@ -4,6 +4,7 @@
 	icon_state = "explosion_particle"
 	opacity = 1
 	anchored = TRUE
+	does_spin = FALSE
 	mouse_opacity = 0
 
 /obj/effect/expl_particles/New()
@@ -36,6 +37,7 @@
 	icon_state = "explosion"
 	opacity = 1
 	anchored = TRUE
+	does_spin = FALSE
 	mouse_opacity = 0
 	pixel_x = -32
 	pixel_y = -32
