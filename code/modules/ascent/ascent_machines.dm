@@ -263,7 +263,7 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 	icon = 'icons/obj/machines/power/mantid_smes.dmi'
 	overlay_icon = 'icons/obj/machines/power/mantid_smes.dmi'
 	uncreated_component_parts = list(
-		/obj/item/stock_parts/smes_coil/advanced = 2
+		/obj/item/stock_parts/smes_coil/advanced = 3
 	)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
