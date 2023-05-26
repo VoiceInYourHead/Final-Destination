@@ -34,7 +34,7 @@
 "aH" = (/obj/machinery/light/ascent{dir = 1; pixel_y = 6},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/armory_port)
 "aI" = (/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent{dir = 4},/turf/simulated/floor/ascent/tiled,/area/ship/ascent_corvette/missile_port)
 "aJ" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_corvette/missile_port)
-"aK" = (/obj/structure/cable/green,/obj/machinery/power/shield_generator{color = "#8f2bab"},/obj/machinery/light/ascent{dir = 4; pixel_x = 6},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/missile_starboard)
+"aK" = (/obj/structure/cable/green,/obj/machinery/power/shield_generator{color = "#8f2bab"; field_radius = 39},/obj/machinery/light/ascent{dir = 4; pixel_x = 6},/turf/simulated/floor/ascent,/area/ship/ascent_corvette/missile_starboard)
 "aL" = (/turf/simulated/wall/r_titanium/ascent,/area/ship/ascent_corvette/armory_port)
 "aM" = (/obj/structure/table/rack/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/obj/item/light/tube/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_corvette/engine)
 "aN" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_corvette/engineering)
