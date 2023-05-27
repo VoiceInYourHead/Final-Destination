@@ -3,7 +3,7 @@
 	archetype = /decl/submap_archetype/providence
 
 /decl/submap_archetype/providence
-	descriptor = "Suspicious Transport Ship"
+	descriptor = "ITV Providence"
 	map = "ITV Providence"
 	crew_jobs = list(
 		/datum/job/submap/providence/trucker
