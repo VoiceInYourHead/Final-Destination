@@ -3,7 +3,7 @@
 	coolinterval = 16 SECONDS
 	gun_name = "Autocannon"
 
-	hull_damage = 5
+	hull_damage = 3
 
 	front_type = /obj/machinery/ship_weapon/front_part/autocannon
 	middle_type = /obj/machinery/ship_weapon/middle_part/autocannon

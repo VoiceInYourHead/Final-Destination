@@ -4,7 +4,7 @@
 	fore_dir = WEST
 	dir = WEST
 	vessel_mass = 100000
-	integrity_failure_cap = 300
+	integrity_failure_cap = 460
 	repair_speed = 0.01
 	burn_delay = 2 SECONDS
 	base = TRUE

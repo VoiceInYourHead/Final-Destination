@@ -32,7 +32,7 @@
 	name = "doomsday warhead"
 	desc = "An incredibly dangerous warhead. Detonates when the missile is triggered."
 	icon_state = "nuclear"
-	hull_damage = 100
+	hull_damage = 400
 
 /obj/item/missile_equipment/payload/doomsday/on_trigger(var/atom/triggerer)
 	var/list/relevant_z = GetConnectedZlevels(loc.z)
@@ -49,11 +49,11 @@
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 128, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		explosion(get_turf(src), 300, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(src), rand(50,75), rand(75,100))
 	else
 		SSradiation.radiate(get_turf(triggerer), 800)
-		explosion(get_turf(triggerer), 128, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		explosion(get_turf(triggerer), 300, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(triggerer), rand(50,75), rand(75,100))
 
 	..()
