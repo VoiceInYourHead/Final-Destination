@@ -83,7 +83,7 @@
 	penetration_modifier = 1.1
 	explosion_radius = 7
 	explosion_max_power = EX_ACT_HEAVY
-	var/delay = 4
+	var/delay = 7
 
 /obj/item/projectile/bullet/autocannon/aphe/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(istype(A,/obj/effect/shield))
