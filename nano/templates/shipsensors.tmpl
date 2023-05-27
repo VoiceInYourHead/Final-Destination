@@ -92,7 +92,19 @@
 	{{/for}}
 	</table>
 {{/if}}
-</div>
+</fieldset>
+<fieldset style="background-color: #202020;border-color: rgb(117, 117, 117);">
+	<legend style="text-align:center">Scan data</legend> 
+	{{if data.last_scan}}
+		<b>{{:data.last_scan.name}}</b> at {{:data.last_scan.location}}
+		{{:helper.link('Print', 'print' ,{ 'print' : 1 }, null, null)}}
+		<div class='block'>
+			{{:data.last_scan.data}}
+		</div>
+	{{else}}
+		N/A
+	{{/if}}
+</fieldset>
 {{if data.status == 'MISSING'}}
 	<div class='item'>
 		{{:helper.link('Link up with the sensor suite', 'gear', { 'link' : 1 }, data.status == 'MISSING' ? null : 'disabled', null)}}
