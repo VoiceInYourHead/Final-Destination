@@ -5,7 +5,10 @@
 	icon_state = "probe"
 	hull_damage = 0
 
-/obj/item/missile_equipment/payload/emp/on_trigger()
-	empulse(get_turf(src), rand(6,8), rand(8,10))
+/obj/item/missile_equipment/payload/emp/on_trigger(var/atom/triggerer)
+	if(istype(triggerer, /obj/effect/shield))
+		empulse(get_turf(src), rand(3,6), rand(7,9))
+	else
+		empulse(get_turf(triggerer), rand(6,12), rand(14,20))
 
 	..()

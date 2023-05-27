@@ -8,6 +8,7 @@
 	machine_name = "sensors console"
 	machine_desc = "Used to activate, monitor, and configure a spaceship's sensors. Higher range means higher temperature; dangerously high temperatures may fry the delicate equipment."
 	var/obj/machinery/shipsensors/sensors
+	var/list/last_scan
 	var/print_language = LANGUAGE_HUMAN_EURO
 
 /obj/machinery/computer/ship/sensors/spacer
@@ -62,9 +63,10 @@
 			var/bearing = round(90 - Atan2(O.x - linked.x, O.y - linked.y),5)
 			if(bearing < 0)
 				bearing += 360
-			contacts.Add(list(list("name"=O.name, "ref"="\ref[O]", "bearing"=bearing)))
+			contacts.Add(list(list("name"=O.name, "color"= O.get_color(), "ref"="\ref[O]", "bearing"=bearing)))
 		if(contacts.len)
 			data["contacts"] = contacts
+		data["last_scan"] = last_scan
 	else
 		data["status"] = "MISSING"
 		data["range"] = "N/A"
@@ -107,9 +109,21 @@
 
 	if (href_list["scan"])
 		var/obj/effect/overmap/O = locate(href_list["scan"])
-		if(istype(O) && !QDELETED(O) && (O in view(7,linked)))
-			playsound(loc, "sound/machines/dotprinter.ogg", 30, 1)
-			new/obj/item/paper/(get_turf(src), O.get_scan_data(user), "paper (Sensor Scan - [O])", L = print_language)
+		if(istype(O) && !QDELETED(O))
+			if((O in view(7,linked)))
+				playsound(loc, "sound/effects/ping.ogg", 50, 1)
+				LAZYSET(last_scan, "data", O.get_scan_data(user))
+				LAZYSET(last_scan, "location", "[O.x],[O.y]")
+				LAZYSET(last_scan, "name", "[O]")
+				to_chat(user, SPAN_NOTICE("Successfully scanned \the [O]."))
+				return TOPIC_HANDLED
+
+		to_chat(user, SPAN_WARNING("Could not get a scan from \the [O]!"))
+		return TOPIC_HANDLED
+
+	if (href_list["print"])
+		playsound(loc, "sound/machines/dotprinter.ogg", 30, 1)
+		new/obj/item/paper/(get_turf(src), last_scan["data"], "paper (Sensor Scan - [last_scan["name"]])", L = print_language)
 		return TOPIC_HANDLED
 
 /obj/machinery/computer/ship/sensors/Process()
@@ -117,7 +131,7 @@
 	if(!linked)
 		return
 	if(sensors && sensors.use_power && sensors.powered())
-		var/sensor_range = round(sensors.range*1.5)
+		var/sensor_range = round(sensors.range*1.5) + 1
 		linked.set_light(1, sensor_range, sensor_range+1)
 	else
 		linked.set_light(0)
@@ -167,11 +181,16 @@
 	return 1
 
 /obj/machinery/shipsensors/on_update_icon()
+	overlays.Cut()
 	if(use_power)
 		icon_state = "sensors"
+	if(health <= 0)
+		icon_state = "sensors_broken"
 	else
 		icon_state = "sensors_off"
-
+	if(panel_open)
+		overlays += "sensors_panel"
+	. = ..()
 /obj/machinery/shipsensors/examine(mob/user)
 	. = ..()
 	if(health <= 0)

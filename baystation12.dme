@@ -2650,6 +2650,7 @@
 #include "code\modules\overmap\ship_weapons\heavy_rotary_gun\minigun.dm"
 #include "code\modules\overmap\ship_weapons\heavy_rotary_gun\minigun_ammo.dm"
 #include "code\modules\overmap\ship_weapons\heavy_rotary_gun\minigun_console.dm"
+#include "code\modules\overmap\ships\beacon.dm"
 #include "code\modules\overmap\ships\landable.dm"
 #include "code\modules\overmap\ships\ship.dm"
 #include "code\modules\overmap\ships\computers\engine_control.dm"

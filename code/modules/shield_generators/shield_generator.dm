@@ -76,9 +76,9 @@
 	current_energy = clamp(current_energy, 0, max_energy)
 
 	mitigation_max = MAX_MITIGATION_BASE + MAX_MITIGATION_RESEARCH * total_component_rating_of_type(/obj/item/stock_parts/capacitor)
-	mitigation_em = clamp(mitigation_em, 0, mitigation_max)
-	mitigation_physical = clamp(mitigation_physical, 0, mitigation_max)
-	mitigation_heat = clamp(mitigation_heat, 0, mitigation_max)
+	mitigation_em = clamp(mitigation_em, 0, min(mitigation_max,100))
+	mitigation_physical = clamp(mitigation_physical, 0, min(mitigation_max,100))
+	mitigation_heat = clamp(mitigation_heat, 0, min(mitigation_max,100))
 	..()
 
 

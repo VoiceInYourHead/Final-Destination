@@ -5,9 +5,9 @@
 	icon_state = "diffuse"
 	hull_damage = 0
 
-	var/diffuse_range = 100
+	var/diffuse_range = 60
 	var/diffuse_duration = 120
-	var/damage_induced = 400 //Two will certainly take out a 9MJ shield.
+	var/damage_induced = 600 //Two will certainly take out a 9MJ shield.
 
 /obj/item/missile_equipment/payload/diffuser/on_trigger()
 	for(var/turf/T in trange(diffuse_range, get_turf(src)))

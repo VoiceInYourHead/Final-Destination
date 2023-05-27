@@ -19,15 +19,12 @@
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		SSradiation.radiate(get_turf(src), 40)
-		explosion(get_turf(src), 16, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(src), rand(10,20), rand(25,50))
-		var/obj/effect/shield/S = triggerer
-		S.take_damage(50000, SHIELD_DAMTYPE_PHYSICAL)
-	else
-		SSradiation.radiate(get_turf(src), 80)
 		explosion(get_turf(src), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(src), rand(25,50), rand(50,100))
+		empulse(get_turf(src), rand(20,40), rand(50,80))
+	else
+		SSradiation.radiate(get_turf(triggerer), 80)
+		explosion(get_turf(triggerer), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(triggerer), rand(20,40), rand(50,80))
 
 	..()
 
@@ -52,14 +49,11 @@
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		SSradiation.radiate(get_turf(src), 400)
-		explosion(get_turf(src), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
-		empulse(get_turf(src), rand(10,20), rand(25,50))
-		var/obj/effect/shield/S = triggerer
-		S.take_damage(150000, SHIELD_DAMTYPE_PHYSICAL)
-	else
-		SSradiation.radiate(get_turf(src), 800)
 		explosion(get_turf(src), 128, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(src), rand(50,75), rand(75,100))
+	else
+		SSradiation.radiate(get_turf(triggerer), 800)
+		explosion(get_turf(triggerer), 128, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		empulse(get_turf(triggerer), rand(50,75), rand(75,100))
 
 	..()

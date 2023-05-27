@@ -62,7 +62,7 @@
 	chargedesc = "INDARRA"
 
 /obj/structure/ship_munition/disperser_charge/explosive/fire(turf/target, strength, range)
-	var/explosion_range = max(1, round((strength * range) / 3))
+	var/explosion_range = max(1, round((strength * range) / 2))
 	explosion(target, explosion_range)
 
 /obj/structure/ship_munition/disperser_charge/bluespace
