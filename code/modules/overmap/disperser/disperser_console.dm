@@ -25,7 +25,7 @@
 	var/range = 1 //range of the explosion
 	var/strength = 1 //strength of the explosion
 	var/next_shot = 0 //round time where the next shot can start from
-	var/const/coolinterval = 90 SECONDS //time to wait between safe shots in deciseconds
+	var/coolinterval = 90 SECONDS //time to wait between safe shots in deciseconds
 
 /obj/machinery/computer/ship/disperser/Initialize()
 	. = ..()
@@ -186,13 +186,13 @@ obj/machinery/computer/ship/disperser/proc/is_valid_setup()
 		var/input = input("1-5", "disperser strength", 1) as num|null
 		if(input && CanInteract(user, state))
 			strength = sanitize_integer(input, 1, 5, 1)
-			middle.idle_power_usage = strength * range * 100
+			middle.idle_power_usage = strength * range * 200
 
 	if(href_list["range"])
-		var/input = input("1-7", "disperser radius", 1) as num|null
+		var/input = input("1-3", "disperser fire range", 1) as num|null
 		if(input && CanInteract(user, state))
-			range = sanitize_integer(input, 1, 7, 1)
-			middle.idle_power_usage = strength * range * 100
+			range = sanitize_integer(input, 1, 3, 1)
+			middle.idle_power_usage = strength * range * 200
 
 	if(href_list["fire"])
 		fire(user)

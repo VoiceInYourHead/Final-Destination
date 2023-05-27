@@ -18,7 +18,7 @@
 	chargedesc = "ENFER"
 
 /obj/structure/ship_munition/disperser_charge/fire/fire(turf/target, strength, range)
-	for(var/turf/T in range(range, target))
+	for(var/turf/T in range(strength * 3, target))
 		var/obj/effect/fake_fire/bluespace/disperserf = new(T)
 		disperserf.lifetime = strength * 20
 
@@ -36,7 +36,7 @@
 	chargedesc = "QUASAR"
 
 /obj/structure/ship_munition/disperser_charge/emp/fire(turf/target, strength, range)
-	empulse(target, strength * range / 3, strength * range)
+	empulse(target, strength, strength * 2)
 
 /obj/structure/ship_munition/disperser_charge/mining
 	name = "MN3-BERGBAU charge"
@@ -46,7 +46,7 @@
 	chargedesc = "BERGBAU"
 
 /obj/structure/ship_munition/disperser_charge/mining/fire(turf/target, strength, range)
-	var/list/victims = range(range * 3, target)
+	var/list/victims = range(strength * 3, target)
 	for(var/turf/simulated/mineral/M in victims)
 		if(prob(strength * 100 / 6)) //6 instead of 5 so there are always leftovers
 			M.GetDrilled(TRUE) //no artifacts survive this
@@ -62,7 +62,7 @@
 	chargedesc = "INDARRA"
 
 /obj/structure/ship_munition/disperser_charge/explosive/fire(turf/target, strength, range)
-	var/explosion_range = max(1, round((strength * range) / 2))
+	var/explosion_range = max(1, strength * 3)
 	explosion(target, explosion_range)
 
 /obj/structure/ship_munition/disperser_charge/bluespace
@@ -73,9 +73,9 @@
 	chargedesc = "RAZLOM"
 
 /obj/structure/ship_munition/disperser_charge/bluespace/fire(turf/target, strength, range)
-	var/list/victims = range(range * 3, target)
+	var/list/victims = range(strength * 4, target)
 	for(var/mob/living/L in victims)
-		var/turf/T = get_random_turf_in_range(L, strength * range, strength * range / 3)
+		var/turf/T = get_random_turf_in_range(L, strength * 4, strength * 2)
 		if(T)
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 			s.set_up(3, 1, get_turf(L))

@@ -76,7 +76,11 @@
 		explosion(middle, rand(6, 9))
 	next_shot = coolinterval + world.time
 
-	var/turf/overmaptarget = get_step(linked, overmapdir)
+	var/turf/targetrange = get_turf(linked)
+	for(var/i = 1 to range)
+		targetrange = get_step(targetrange, overmapdir)
+
+	var/turf/overmaptarget = targetrange
 	var/list/candidates = list()
 
 	//Prioritize events. Thus you can hide in meteor showers in exchange for protection from the disperser.
@@ -99,7 +103,7 @@
 	//Way to waste a charge
 	if(!length(candidates))
 		if(chargetype == OVERMAP_WEAKNESS_BLUESPACE)
-			var/obj/effect/overmap/event/nebula/N = new /obj/effect/overmap/event/nebula(get_step(linked, overmapdir))
+			var/obj/effect/overmap/event/nebula/N = new /obj/effect/overmap/event/nebula(targetrange)
 			N.name = "temporary bluespace nebula"
 			QDEL_IN(N, rand(1 MINUTES, 3 MINUTES))
 		return TRUE
@@ -162,7 +166,11 @@
 
 /obj/machinery/computer/ship/disperser/proc/handle_overbeam()
 	set waitfor = FALSE
-	linked.Beam(get_step(linked, overmapdir), "disperser_beam", time = 150, maxdistance = world.maxx)
+	var/turf/targetrange = get_turf(linked)
+	for(var/i = 1 to range)
+		targetrange = get_step(targetrange, overmapdir)
+
+	linked.Beam(targetrange, "disperser_beam", time = 150, maxdistance = world.maxx)
 
 /obj/machinery/computer/ship/disperser/proc/get_target_turf(turf/start, direction)
 	switch(direction)
