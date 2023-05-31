@@ -16,6 +16,12 @@
 /turf/simulated/wall/r_wall/ascent
 	paint_color = COLOR_PURPLE //INF, WAS color
 
+/turf/simulated/wall/r_titanium/ascent
+	paint_color = COLOR_PURPLE
+
+/turf/simulated/wall/r_titanium/ascent/New(var/newloc)
+	..(newloc, MATERIAL_TITANIUM,MATERIAL_TITANIUM)
+
 /turf/simulated/floor/shuttle_ceiling/ascent
 	color = COLOR_PURPLE
 	icon_state = "jaggy"

@@ -43,8 +43,8 @@
 /obj/item/gun/energy/particle/special_check(mob/living/carbon/human/user)
 	. = ..()
 	if(.)
-//		if(istype(user, /mob/living/silicon/robot/flying/ascent))
-//			return TRUE
+		if(istype(user, /mob/living/silicon/robot/flying/ascent))
+			return TRUE
 		if(!length(species_can_use))
 			return TRUE
 		if(!istype(user) || !(user.species.get_bodytype(user) in species_can_use))
@@ -63,9 +63,9 @@
 	projectile_type = /obj/item/projectile/beam/particle/small
 
 	init_firemodes = list(
-		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun/smalllaser),
-		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock/smalllaser),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/particle/small),
+		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock/smalllaser),
+		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun/smalllaser),
 		)
 
 /obj/item/gun/energy/particle/flechette
@@ -78,7 +78,7 @@
 	color = COLOR_ASCENT_PURPLE
 
 /obj/item/projectile/beam/particle
-	name = "particle lance"
+	name = "particle beam"
 	icon_state = "particle"
 	damage = 35
 	armor_penetration = 50

@@ -34,15 +34,3 @@
 
 /obj/machinery/computer/ship/ship_weapon/disruptor/get_ammo_type()
 	return /obj/item/projectile/bullet/disruptor
-
-/obj/machinery/computer/ship/ship_weapon/disruptor/ascent
-	name = "disruptor control"
-	icon = 'icons/obj/computer.dmi'
-	icon_state = "ascent"
-	icon_keyboard = "ascent_key"
-	icon_screen = "ascent_screen"
-
-	ammo_per_shot = 300
-	burst_size = 8
-	fire_interval = 2
-	pew_spread = 30

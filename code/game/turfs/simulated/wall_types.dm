@@ -53,9 +53,6 @@
 /turf/simulated/wall/r_titanium/New(var/newloc)
 	..(newloc, MATERIAL_TITANIUM,MATERIAL_TITANIUM)
 
-/turf/simulated/wall/r_titanium/ascent
-	paint_color = COLOR_PURPLE
-
 /turf/simulated/wall/ocp_wall
 	icon_state = "r_ocp"
 
