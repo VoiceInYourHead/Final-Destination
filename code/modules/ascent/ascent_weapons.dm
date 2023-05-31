@@ -22,9 +22,9 @@
 	has_safety = FALSE
 
 	init_firemodes = list(
-		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun),
-		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/particle),
+		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
+		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun),
 		)
 
 	var/global/list/species_can_use = list(

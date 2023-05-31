@@ -419,8 +419,8 @@
 			return
 	walk(src, heading, 1)
 
-/obj/structure/missile/proc/wawawa()
-	walk(src, NORTH, 1)
+///obj/structure/missile/proc/wawawa()
+//	walk(src, NORTH, 1)
 
 /obj/structure/missile/Process()
 	..()

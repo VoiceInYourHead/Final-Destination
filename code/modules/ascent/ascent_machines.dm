@@ -5,7 +5,8 @@ MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad"
 MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
 MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
-MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
+MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bath")
+MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shield")
 
 /obj/machinery/optable/ascent
 	construct_state = /decl/machine_construction/default/no_deconstruct
@@ -334,3 +335,23 @@ MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bathing")
 	req_access = list(access_ascent)
 	installation = /obj/item/gun/energy/particle
 	shot_sound = 'sound/weapons/Laser3.ogg'
+
+/obj/machinery/power/shield_generator/ascent
+	base_type = /obj/machinery/power/shield_generator/ascent
+	spinup_delay = 10
+
+/obj/item/stock_parts/circuitboard/shield_generator/ascent
+	name = T_BOARD("mantid shield generator")
+	board_type = "machine"
+	build_path = /obj/machinery/power/shield_generator/ascent
+	origin_tech = list(TECH_MAGNET = 7, TECH_POWER = 5)
+	req_components = list(
+							/obj/item/stock_parts/capacitor = 1,
+							/obj/item/stock_parts/capacitor/super = 1,
+							/obj/item/stock_parts/micro_laser = 1,
+							/obj/item/stock_parts/smes_coil/advanced = 1)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/keyboard = 1,
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
