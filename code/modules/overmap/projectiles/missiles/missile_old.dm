@@ -78,3 +78,12 @@
 
 	health -= damage
 	healthcheck(damage)
+
+/obj/structure/missile/locked/ex_act(severity, turf_breaker)
+	if(detonating || !src)
+		return
+
+	if(active && prob(60))
+		playsound(loc, activation_sound, 100)
+		detonate(loc)
+		return
