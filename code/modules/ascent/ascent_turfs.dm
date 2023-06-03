@@ -20,7 +20,7 @@
 	paint_color = COLOR_PURPLE
 
 /turf/simulated/wall/r_titanium/ascent/New(var/newloc)
-	..(newloc, MATERIAL_TITANIUM,MATERIAL_TITANIUM)
+	..(newloc, MATERIAL_PLASTEEL,MATERIAL_TITANIUM)
 
 /turf/simulated/floor/shuttle_ceiling/ascent
 	color = COLOR_PURPLE

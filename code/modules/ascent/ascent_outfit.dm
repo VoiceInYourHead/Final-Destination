@@ -86,7 +86,7 @@
 /obj/item/clothing/under/ascent
 	name = "mantid undersuit"
 	desc = "A ribbed, spongy undersuit of some sort. It has a big sleeve for a tail, so it probably isn't for humans."
-	species_restricted = ALL_ASCENT_SPECIES
+	species_restricted = list(SPECIES_MANTID_ALATE, SPECIES_MANTID_GYNE)
 	icon_state = "ascent"
 	worn_state = "ascent"
 	color = COLOR_DARK_GUNMETAL

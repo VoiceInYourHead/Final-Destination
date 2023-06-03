@@ -5,7 +5,6 @@ MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad"
 MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
 MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
-MANTIDIFY(/obj/structure/adherent_bath, "mantid mineral bath", "bath")
 MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shield")
 
 /obj/machinery/optable/ascent

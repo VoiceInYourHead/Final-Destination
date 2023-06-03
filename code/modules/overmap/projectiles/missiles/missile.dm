@@ -77,6 +77,7 @@
 			return
 		else
 			S.take_damage(20,SHIELD_DAMTYPE_PHYSICAL)
+			walk(src,dir,0)
 	detonate(obstacle)
 	..()
 
@@ -87,7 +88,6 @@
 
 	if(active && prob(90))
 		playsound(loc, activation_sound, 100)
-		active = TRUE
 		detonate(loc)
 		return
 
@@ -112,8 +112,6 @@
 			playsound(loc, activation_sound, 100)
 			active = TRUE
 		return
-
-	return
 
 /obj/structure/missile/proc/expire()
 	Destroy()
@@ -151,7 +149,6 @@
 	overmap_missile.set_moving(TRUE)
 
 /obj/structure/missile/attackby(var/obj/item/I, var/mob/user)
-
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	if(isWrench(I))
@@ -423,6 +420,6 @@
 //	walk(src, NORTH, 1)
 
 /obj/structure/missile/Process()
-	..()
 	if(health <= 0)
 		Destroy()
+	..()

@@ -40,6 +40,8 @@
 	icon = 'icons/obj/ascent_doodads.dmi'
 	icon_state = "xenobutch"
 
+	slot_flags = SLOT_DENYPOCKET | SLOT_HOLSTER | SLOT_BELT
+
 /obj/structure/closet/crate/freezer/meat/ascent
 	name = "cryogenic stasis unit"
 	desc = "A bizarre alien stasis unit."
