@@ -154,6 +154,7 @@
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/ascent/ascent.dm"
 	#include "../away/ares/_ares.dm"
+	#include "../away/aegis/aegis.dm"
 	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/ascent_corvette/_corvette.dm"
 	#include "../away/ascent_interceptor/_interceptor.dm"

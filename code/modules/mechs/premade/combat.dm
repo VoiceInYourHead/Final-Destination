@@ -36,3 +36,31 @@
 	for(var/obj/thing in list(arms,legs,head,body))
 		thing.color = COLOR_WHITE
 
+/mob/living/exosuit/premade/combat/aegis
+	name = "Aegis Combat Exosuit"
+	desc = "A sleek, modern combat exosuit with PV Aegis marking."
+	decal = "cammo1"
+
+/mob/living/exosuit/premade/combat/aegis/Initialize()
+	if(!arms)
+		arms = new /obj/item/mech_component/manipulators/combat(src)
+		arms.color = COLOR_DARK_GUNMETAL
+	if(!legs)
+		legs = new /obj/item/mech_component/propulsion/combat(src)
+		legs.color = COLOR_DARK_GUNMETAL
+	if(!head)
+		head = new /obj/item/mech_component/sensors/combat(src)
+		head.color = COLOR_GUNMETAL
+	if(!body)
+		body = new /obj/item/mech_component/chassis/combat(src)
+		body.color = COLOR_GUNMETAL
+
+	. = ..()
+
+/mob/living/exosuit/premade/combat/aegis/spawn_mech_equipment()
+	..()
+	install_system(new /obj/item/mech_equipment/mounted_system/taser/machinegun(src), HARDPOINT_LEFT_HAND)
+	install_system(new /obj/item/mech_equipment/mounted_system/taser/laser(src), HARDPOINT_RIGHT_HAND)
+	install_system(new /obj/item/mech_equipment/flash(src), HARDPOINT_LEFT_SHOULDER)
+	install_system(new /obj/item/mech_equipment/light(src), HARDPOINT_RIGHT_SHOULDER)
+	install_system(new /obj/item/mech_equipment/shields(src), HARDPOINT_BACK)

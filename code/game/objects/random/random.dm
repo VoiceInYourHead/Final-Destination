@@ -1404,3 +1404,30 @@ var/list/random_useful_
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "cola"
 	spawn_object = /obj/item/reagent_containers/food/drinks/cans/cola
+
+/obj/random/ship_ammo_autocannon
+	name = "random autocannon ammunition"
+	desc = "This is a random ship ammunition."
+	icon = 'icons/obj/disperser.dmi'
+	icon_state = "ammocrate_autocannon_he"
+	spawn_nothing_percentage = 40
+
+/obj/random/ship_ammo_autocannon/spawn_choices()
+	return list(/obj/structure/ship_munition/ammobox/autocannon/anti_hull,
+				/obj/structure/ship_munition/ammobox/autocannon/aphe,
+				/obj/structure/ship_munition/ammobox/autocannon/armour_piercing,
+				/obj/structure/ship_munition/ammobox/autocannon/high_explosive)
+
+/obj/random/ship_ammo_ofd
+	name = "random OFD ammunition"
+	desc = "This is a random OFD ammunition."
+	icon = 'icons/obj/munitions.dmi'
+	icon_state = "slug"
+	spawn_nothing_percentage = 40
+
+/obj/random/ship_ammo_ofd/spawn_choices()
+	return list(/obj/structure/ship_munition/disperser_charge/mining,
+				/obj/structure/ship_munition/disperser_charge/emp,
+				/obj/structure/ship_munition/disperser_charge/explosive,
+				/obj/structure/ship_munition/disperser_charge/fire,
+				/obj/structure/ship_munition/disperser_charge/bluespace)
