@@ -38,19 +38,19 @@
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/leaper)
 
 /obj/effect/shuttle_landmark/nav_aegis/nav1
-	name = "PV Aegis Navpoint #?"
+	name = "PV Aegis Navpoint #1"
 	landmark_tag = "nav_aegis_1"
 
 /obj/effect/shuttle_landmark/nav_aegis/nav2
-	name = "PV Aegis Navpoint #?"
+	name = "PV Aegis Navpoint #2"
 	landmark_tag = "nav_aegis_2"
 
 /obj/effect/shuttle_landmark/nav_aegis/nav3
-	name = "PV Aegis Navpoint #?"
+	name = "PV Aegis Navpoint #3"
 	landmark_tag = "nav_aegis_3"
 
 /obj/effect/shuttle_landmark/nav_aegis/nav4
-	name = "PV Aegis Navpoint #?"
+	name = "PV Aegis Navpoint #4"
 	landmark_tag = "nav_aegis_antag"
 
 
@@ -242,7 +242,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	skill_points = 20
 
 /datum/job/submap/aegis/gunner
-	title = "Aegis Weapon Operator"
+	title = "Aegis Gunner"
 	info = "You are the gun operator. Your task is to eliminate, destroy, neutralize and completely annihilate the enemy with the help of huge guns."
 	outfit_type = /decl/hierarchy/outfit/aegis/gunner
 	total_positions = 2
@@ -513,7 +513,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/armor/pcarrier/tan/tactical
-	back = /obj/item/storage/backpack/dufflebag/syndie
+	back = /obj/item/storage/backpack/satchel/grey
 	belt = /obj/item/storage/belt/holster/security
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/dutyboots/sneakers
