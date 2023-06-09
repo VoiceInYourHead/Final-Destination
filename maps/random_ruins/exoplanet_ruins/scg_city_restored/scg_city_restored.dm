@@ -9,6 +9,40 @@
 	ruin_tags = RUIN_HUMAN
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/lovely)
 
+/decl/submap_archetype/playablecity
+	descriptor = "SCG City"
+	crew_jobs = list(/datum/job/submap/citydweller, /datum/job/submap/citymayor)
+
+/datum/job/submap/citydweller
+	title = "City Dweller"
+	info = "You are a citizen of abandoned SCG colony, left alone in the rim."
+	total_positions = 20
+	loadout_allowed = TRUE
+	outfit_type = /decl/hierarchy/outfit/job/city
+
+/datum/job/submap/citymayor
+	title = "City Head"
+	info = "You are a last sane man at this colony. Try to not make things even more complicated."
+	total_positions = 1
+	loadout_allowed = TRUE
+	outfit_type = /decl/hierarchy/outfit/job/city
+
+/decl/hierarchy/outfit/job/city
+	name = OUTFIT_JOB_NAME("City Dweller")
+	id_types = null
+	pda_type = null
+	l_ear = /obj/item/device/radio
+
+/obj/effect/submap_landmark/spawnpoint/citydweller_spawn
+	name = "City Dweller"
+
+/obj/effect/submap_landmark/spawnpoint/citymayor_spawn
+	name = "City Head"
+
+/obj/effect/submap_landmark/joinable_submap/city
+	name = "SCG City"
+	archetype = /decl/submap_archetype/playablecity
+
 /area/map_template/scgcity
 	name = "\improper SCG City"
 	icon_state = "dk_yellow"
