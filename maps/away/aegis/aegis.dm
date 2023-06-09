@@ -125,9 +125,6 @@
 /obj/item/gun/energy/k342/sniper/aegis
 	req_access = list(access_aegis)
 
-/obj/item/clothing/shoes/dutyboots/sneakers
-	desc = "An improved version of the shoe with a comfortable rubberized sole with some improvements."
-	slowdown_general = -1
 
 //		ROLES		//
 
@@ -219,7 +216,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	info = "You're a pilot. Do your pilot stuff."
 	outfit_type = /decl/hierarchy/outfit/aegis/pilot
 	total_positions = 2
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
 		SKILL_EVA     = SKILL_ADEPT,
@@ -246,7 +243,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	info = "You are the gun operator. Your task is to eliminate, destroy, neutralize and completely annihilate the enemy with the help of huge guns."
 	outfit_type = /decl/hierarchy/outfit/aegis/gunner
 	total_positions = 2
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
 		SKILL_EVA     = SKILL_BASIC,
@@ -272,7 +269,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	info = "You're the ship's surgeon. Your professional knowledge of anatomy and medicine allows you to perform complex operations on a person to save his life."
 	outfit_type = /decl/hierarchy/outfit/aegis/medic
 	total_positions = 1
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
 		SKILL_COMBAT = SKILL_BASIC,
@@ -299,7 +296,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	info = "You're A Field Engineer. Do your engineering stuff, make Freeman and Clark proud of you."
 	outfit_type = /decl/hierarchy/outfit/aegis/engineer
 	total_positions = 1
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
 		SKILL_EVA     = SKILL_ADEPT,
@@ -331,7 +328,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	info = "You're A Field Medic. Collect your partners as a lego constructor and don't let anyone die until they are ordered to."
 	outfit_type = /decl/hierarchy/outfit/aegis/medic
 	total_positions = 2
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
 		SKILL_COMBAT = SKILL_BASIC,
@@ -358,7 +355,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	info = "You are a professional shooter. Do everything possible not to die and not to let your comrades be killed."
 	outfit_type = /decl/hierarchy/outfit/aegis/rifleman
 	total_positions = 4
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_IPC,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
 		SKILL_EVA     = SKILL_BASIC,
@@ -516,7 +513,7 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	back = /obj/item/storage/backpack/satchel/grey
 	belt = /obj/item/storage/belt/holster/security
 	gloves = /obj/item/clothing/gloves/thick/combat
-	shoes = /obj/item/clothing/shoes/dutyboots/sneakers
+	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/helmet/tactical
 	l_pocket = /obj/item/storage/firstaid/individual/military
 	r_pocket = /obj/item/device/radio/map_preset/aegis

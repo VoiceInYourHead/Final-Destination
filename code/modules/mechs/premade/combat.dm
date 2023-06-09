@@ -58,7 +58,6 @@
 	. = ..()
 
 /mob/living/exosuit/premade/combat/aegis/spawn_mech_equipment()
-	..()
 	install_system(new /obj/item/mech_equipment/mounted_system/taser/machinegun(src), HARDPOINT_LEFT_HAND)
 	install_system(new /obj/item/mech_equipment/mounted_system/taser/laser(src), HARDPOINT_RIGHT_HAND)
 	install_system(new /obj/item/mech_equipment/flash(src), HARDPOINT_LEFT_SHOULDER)

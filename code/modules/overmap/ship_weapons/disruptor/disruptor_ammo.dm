@@ -1,6 +1,7 @@
 /obj/structure/ship_munition/ammobox/cell/disruptor
 	name = "3000 MW fusion gun cell"
 	desc = "3000 megawatts military grade powercell, often used in ship disruptors."
+	icon_state = "ammocrate_disruptor"
 	ammo_count = 3000
 	ammo_type = null
 
