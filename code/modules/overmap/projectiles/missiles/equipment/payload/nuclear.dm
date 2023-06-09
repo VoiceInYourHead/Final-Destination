@@ -2,7 +2,7 @@
 	name = "tactical nuclear warhead"
 	desc = "An incredibly dangerous warhead. Detonates when the missile is triggered."
 	icon_state = "ion"
-	hull_damage = 50
+	hull_damage = 80
 
 /obj/item/missile_equipment/payload/nuclear/on_trigger(var/atom/triggerer)
 	var/list/relevant_z = GetConnectedZlevels(loc.z)
