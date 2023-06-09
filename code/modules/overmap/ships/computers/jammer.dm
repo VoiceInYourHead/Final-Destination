@@ -88,11 +88,18 @@
 			return TOPIC_REFRESH
 
 /obj/effect/overmap/jammer
-	name = "heart of gravity disturbances"
+	name = "gravity disturbance"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "malf-scanline"
 	color = "#ffffff"
 	known = 0
+	var/obj/machinery/computer/ship/jammer/linked_console = null
+
+/obj/effect/overmap/jammer/Process()
+	..()
+	if(!linked_console)
+		linked_console.J = null
+		qdel(src)
 
 /obj/machinery/computer/ship/jammer/Process()
 	..()
@@ -101,14 +108,14 @@
 	if(jammer && jammer.use_power && jammer.powered())
 		if(!J)
 			J = new /obj/effect/overmap/jammer(linked.loc)
+			J.linked_console = src
 		var/jammer_range = round(jammer.range*1.5)
 		J.set_light(-1, jammer_range, jammer_range+3, 2, "#ffffff")
 		if(J.loc != linked.loc)
 			J.forceMove(linked.loc)
-	else
+	else if(!J)
 		J.set_light(0)
 		qdel(J)
-		J = 0
 
 /obj/machinery/sensors_jammer
 	name = "jammer suite"

@@ -14,7 +14,7 @@
 	integrity_failure_cap = 500 // утверждено Воидом
 	do_repair_hull = TRUE
 	repair_speed = 0.1
-	vessel_mass = 30000 // this is fucking flying plasteel ingot, утверждено Воидом
+	vessel_mass = 50000 // this is fucking flying plasteel ingot, утверждено Воидом
 	max_speed = 1/(2 SECONDS)
 	initial_generic_waypoints = list(
 		"nav_aegis_1",
