@@ -19,6 +19,12 @@
 	desc = "Wake signature indicates a small to medium sized vessel of unknown design."
 	color = COLOR_PURPLE
 	vessel_mass = 9000
+	initial_generic_waypoints = list(
+		"nav_ascent_port",
+		"nav_ascent_starboard",
+		"nav_ascent_fore",
+		"nav_ascent_aft"
+	)
 	integrity_failure_cap = 250
 	repair_speed = 0.01
 	fore_dir = EAST
@@ -52,3 +58,19 @@
 	)
 	name = "[pick(all_elements)]-[rand(10,99)]-[rand(10,99)]"
 	. = ..()
+
+/obj/effect/shuttle_landmark/nav_ascent_big/port
+	name = "Alien Corvette - Port"
+	landmark_tag = "nav_ascent_port"
+
+/obj/effect/shuttle_landmark/nav_ascent_big/starboard
+	name = "Alien Corvette - Starboad"
+	landmark_tag = "nav_ascent_starboard"
+
+/obj/effect/shuttle_landmark/nav_ascent_big/fore
+	name = "Alien Corvette - Fore"
+	landmark_tag = "nav_ascent_fore"
+
+/obj/effect/shuttle_landmark/nav_ascent_big/aft
+	name = "Alien Corvette - Aft"
+	landmark_tag = "nav_ascent_aft"
