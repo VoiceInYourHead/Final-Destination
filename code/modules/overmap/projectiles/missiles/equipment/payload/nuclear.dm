@@ -22,7 +22,7 @@
 		explosion(get_turf(src), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(src), rand(20,40), rand(50,80))
 	else
-		SSradiation.radiate(get_turf(triggerer), 80)
+		SSradiation.radiate(get_turf(triggerer), 40)
 		explosion(get_turf(triggerer), 64, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(triggerer), rand(20,40), rand(50,80))
 
@@ -52,7 +52,7 @@
 		explosion(get_turf(src), 300, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(src), rand(50,75), rand(75,100))
 	else
-		SSradiation.radiate(get_turf(triggerer), 800)
+		SSradiation.radiate(get_turf(triggerer), 400)
 		explosion(get_turf(triggerer), 300, EX_ACT_DEVASTATING, turf_breaker = TRUE)
 		empulse(get_turf(triggerer), rand(50,75), rand(75,100))
 
