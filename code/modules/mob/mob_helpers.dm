@@ -161,13 +161,17 @@ var/list/global/organ_rel_size = list(
 		// target isn't trying to fight
 		if(target.a_intent == I_HELP)
 			return zone
-		// you cannot miss if your target is prone or restrained
-		if(target.buckled || target.lying)
+		// you cannot miss if your target is prone
+		if(target.lying)
 			return zone
 		// if your target is being grabbed aggressively by someone you cannot miss either
 		for(var/obj/item/grab/G in target.grabbed_by)
 			if(G.stop_move())
 				return zone
+
+	// you cannot miss if your target restrained
+	if(target.buckled)
+		return zone
 
 	var/miss_chance = 10
 	var/scatter_chance

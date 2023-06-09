@@ -93,9 +93,7 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	base_type = /obj/machinery/power/apc
 
 /obj/machinery/hologram/holopad/longrange/ascent
-	translator_language_prefix = "|"
 	req_access = list(access_ascent)
-	allow_ai = FALSE
 
 /obj/effect/catwalk_plated/ascent
 //ORIG	color = COLOR_GRAY40
