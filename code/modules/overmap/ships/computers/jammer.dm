@@ -113,7 +113,7 @@
 		J.set_light(-1, jammer_range, jammer_range+3, 2, "#ffffff")
 		if(J.loc != linked.loc)
 			J.forceMove(linked.loc)
-	else if(!J)
+	else if(J)
 		J.set_light(0)
 		qdel(J)
 
