@@ -1,6 +1,6 @@
 /obj/machinery/ship_weapon/front_part/beam_cannon/particle_lance
 	name = "particle lance muzzle"
-	desc = "An particle beam muzzle."
+	desc = "A particle beam muzzle."
 	color = COLOR_PURPLE
 
 /obj/machinery/ship_weapon/middle_part/beam_cannon/particle_lance
