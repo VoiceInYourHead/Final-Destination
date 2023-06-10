@@ -18,20 +18,20 @@
 	item_state = "l6closedmag"
 	force = 10
 	projectile_type = /obj/item/projectile/bullet/pistol
-	max_shots = 50
+	max_shots = 40
 	multi_aim = 1
 	move_delay = 0
-	fire_delay=0
-	can_autofire=1
-	burst=3
+	fire_delay = 5
+	can_autofire = 1
+	burst = 3
 	accuracy = -1
 	bulk = GUN_BULK_RIFLE
 	w_class = ITEM_SIZE_HUGE
-	one_hand_penalty= 0
+	one_hand_penalty = 0
 
-	charge_cost = 5
+	charge_cost = 7.5
 	self_recharge = TRUE
-	recharge_time = 2
+	recharge_time = 1
 	use_external_power = TRUE
 	has_safety = FALSE
 
