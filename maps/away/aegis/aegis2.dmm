@@ -185,7 +185,7 @@
 "kX" = (/obj/effect/paint/merc,/turf/simulated/wall/r_titanium,/area/leaper/main)
 "la" = (/obj/machinery/computer/ship/engines,/obj/machinery/alarm/aegis{pixel_x = 24; dir = 8},/turf/simulated/floor/tiled/monotile,/area/leaper/cockpit)
 "ld" = (/obj/effect/floor_decal/corner/yellow{dir = 9},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/tiled/dark,/area/aegis/engineering/hangar/preps)
-"lg" = (/obj/structure/bookcase,/turf/simulated/floor/wood/walnut,/area/aegis/snork_mimimimi/recreation)
+"lg" = (/obj/structure/bookcase,/obj/item/book/manual/barman_recipes,/turf/simulated/floor/wood/walnut,/area/aegis/snork_mimimimi/recreation)
 "lj" = (/obj/structure/handrail,/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{id_tag = "aegis_shuttle_pump"},/obj/machinery/airlock_sensor{frequency = 1331; id_tag = "aegis_shuttle_sensor"; pixel_x = -17; pixel_y = 24},/turf/simulated/floor/tiled/monotile,/area/leaper/main)
 "lq" = (/obj/item/device/radio/intercom/map_preset/aegis{dir = 8; pixel_x = 24},/turf/simulated/floor/wood/walnut,/area/aegis/snork_mimimimi/recreation)
 "lr" = (/turf/simulated/wall/prepainted,/area/aegis/munitions/hardpoint)
@@ -730,7 +730,6 @@
 "RS" = (/obj/random/contraband,/obj/random/contraband,/obj/random/contraband,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/plating,/area/aegis/maintenance/second_floor/starb)
 "RT" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/aegis/engineering/hangar)
 "RW" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/random/ship_ammo_autocannon,/turf/simulated/floor/tiled/steel_ridged,/area/aegis/engineering/hangar)
-"Sc" = (/obj/structure/table/woodentable,/obj/item/book/manual/barman_recipes{url = https:/"Sf"=(/obj/structure/bed/chair/comfy/blue{dir=8},/turf/simulated/floor/wood/walnut,/area/aegis/snork_mimimimi/recreation)
 "Sj" = (/obj/random/trash,/obj/effect/floor_decal/corner/blue{dir = 1},/obj/structure/extinguisher_cabinet{pixel_y = -32},/turf/simulated/floor/tiled/dark,/area/aegis/hallway/second_floor)
 "Sk" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/valve/shutoff/supply{dir = 4},/obj/machinery/atmospherics/valve/shutoff/scrubbers{dir = 4},/obj/effect/floor_decal/industrial/outline/yellow,/obj/effect/floor_decal/industrial/shutoff{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/aegis/maintenance/second_floor)
 "Sm" = (/obj/structure/ladder,/turf/simulated/floor/plating,/area/aegis/engineering/engine)
@@ -938,7 +937,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHbdbdbAlD
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHFHbdUZnonBDTwUlrcbZkrPrPrPQDQDbcVErPbirSxJtvVxiNOyWkWkWkWkWHjxKFKqisGJucuchEMMEuLhxTUzbbUgSGZXucNskXkXPsPscUIaPsPsPskXkXyeBWClsIWXcqfnaPZDdiMsnAKoatSAIgIgItItItItItItItnNNXNXNXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatZmvZSGUHmzvRImjptERHXycyDrPnDrPPUPUgtaHrPsarSFFaBMTrSgUaBaBaBaBMQlHspNkGSkWucucaodSVlcwmSWxQPMOwwdbucNsxhkXEwNnrAQrPsTnljkXxhyeBWRmWiMDwTcoXcmkftjsCQOIcPykztItItItItItItItItnNnNnNNXNXPTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHJDEhEBmuYMRBFDlrSjDCrPrPrPrPrPwEkVrPvyrSmzaBjZrSSraTgQofXLsKQKeqMYOfYGucucAflRsifFrauFzykOUWoAuceBzBkXPqSFtohcPQzriFoFxHSuBWAFXGJnicicicagdiQprpOIruSAIgIgItItItItItItItnNNXNXNXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHbdbdhhGIlDsnbdbdUtUtUtzqXYzqrPrPeQrPvyrSScaBVkrSPGaTPRoflqsKsKsKsKsKsKucLQqbzbzbVNQTfCSvSviGSvSvNszBkXVpfcmOVOPsTbgCkXRTqPBWVSsZtSicQGkBkBSAvxdZOIatSASAdiItItItItItItItaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHbdbdhhGIlDsnbdbdUtUtUtzqXYzqrPrPeQrPvyrSjZaBVkrSPGaTPRoflqsKsKsKsKsKsKucLQqbzbzbVNQTfCSvSviGSvSvNszBkXVpfcmOVOPsTbgCkXRTqPBWVSsZtSicQGkBkBSAvxdZOIatSASAdiItItItItItItItaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHbdGMGROSOSIJbdFqTsqTEdSyABzefggncNZRvyrSlghSdtrSyzaTMSofOgYieeFgpUubWYuciRFdcmbsdClUoSBsVtIkjvSvNswKkXvavaPvBVPvodZxkXRTqPBWwpvZKricDakBSASANWdZOIsmgWLKtwtwtwtwtwCHCHUGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanNFHFHbdGRGROSOSIJbdkyiEaRBGTFJbNykbgncNdEvyrSrSrSrSrSmUrSrSrSrSYicQnqjRubryucBhBhBhucBhBhBhSvLHnTAMSvNszBzBvavaDlprtRvauSKuRTjSMJmNxyMJMJURkBSAuqNWKbOISASASAItItItItItItItItaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFHFHFHFHbdbdGRtJOSIJbdJxtcHlPZwJWdfsfAvqKzITqKVZTqcFYiqvcNejeropKVYiFinqcdFjmJuckrIyfxucMunMHzSvqllxYbSvLOmrzBvavahFSplavavaaQBEqPxBFfWNQzMJiDKQSAHChxhxhxSAItItItItItItItItItnNnNNXNXNXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
