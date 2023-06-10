@@ -22,7 +22,7 @@
 	alpha = 150
 	integrity_failure_cap = 60
 	skill_needed = SKILL_BASIC
-	vessel_mass = 950
+	vessel_mass = 5000
 	vessel_size = SHIP_SIZE_SMALL
 
 /obj/machinery/computer/shuttle_control/explore/leaper

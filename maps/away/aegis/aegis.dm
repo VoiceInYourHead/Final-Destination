@@ -89,8 +89,8 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec)),
 		new/datum/atom_creator/simple(/obj/item/storage/backpack/dufflebag/sec, 50),
+		new/datum/atom_creator/simple(/obj/item/reagent_containers/hypospray/autoinjector/combatpain, 50),
 		new/datum/atom_creator/simple(/obj/item/clothing/glasses/tacgoggles, 50),
-		new/datum/atom_creator/simple(/obj/item/clothing/glasses/thermal, 1),
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/radio/headset/map_preset/aegis,
 		/obj/item/device/flash,
@@ -429,26 +429,24 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	l_ear = /obj/item/device/radio/headset/map_preset/aegis
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
-	suit_store = /obj/item/gun/projectile/pistol/military/alt
-	backpack_contents = list(/obj/item/device/flashlight/flare=2, /obj/item/ammo_magazine/pistol/double=3)
+	suit_store = /obj/item/gun/projectile/pistol/military/icarus
+	backpack_contents = list(/obj/item/device/flashlight/flare=2, /obj/item/ammo_magazine/pistol/double=2)
 
 /decl/hierarchy/outfit/aegis/gunner
 	name = "Aegis Gunner"
 
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	back = /obj/item/storage/backpack/satchel/grey
 	belt = /obj/item/storage/belt/holster/security
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/dutyboots
-	head = /obj/item/clothing/head/helmet
 	l_pocket = /obj/item/storage/firstaid/individual/military
 	r_pocket = /obj/item/device/radio/map_preset/aegis
 	l_ear = /obj/item/device/radio/headset/map_preset/aegis
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
-	suit_store = /obj/item/gun/projectile/pistol/military/alt
-	backpack_contents = list(/obj/item/device/flashlight/flare=2, /obj/item/ammo_magazine/pistol/double=3)
+	suit_store = /obj/item/gun/projectile/pistol/military/icarus
+	backpack_contents = list(/obj/item/device/flashlight/flare=2, /obj/item/ammo_magazine/pistol/double=2)
 
 /decl/hierarchy/outfit/aegis/surgeon
 	name = "Aegis Surgeon"
@@ -472,54 +470,42 @@ obj/effect/submap_landmark/spawnpoint/aegis/surgeon
 	name = "Aegis Engineer"
 
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	back = /obj/item/storage/backpack/satchel/eng
 	belt = /obj/item/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/insulated/combat
 	shoes = /obj/item/clothing/shoes/dutyboots
-	head = /obj/item/clothing/head/helmet
 	l_pocket = /obj/item/storage/firstaid/individual/military
 	r_pocket = /obj/item/device/radio/map_preset/aegis
 	l_ear = /obj/item/device/radio/headset/map_preset/aegis
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
-	suit_store = /obj/item/gun/projectile/pistol/military/alt
-	backpack_contents = list(/obj/item/ammo_magazine/pistol/double=3, /obj/item/gun/energy/plasmacutter=1)
+	backpack_contents = list(/obj/item/gun/energy/plasmacutter=1)
 
 /decl/hierarchy/outfit/aegis/medic
 	name = "Aegis Medic"
 
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/armor/pcarrier/navy
 	back = /obj/item/storage/backpack/satchel/med
 	belt = /obj/item/storage/belt/medical
 	gloves = /obj/item/clothing/gloves/latex
 	shoes = /obj/item/clothing/shoes/dutyboots
-	head = /obj/item/clothing/head/helmet
 	l_pocket = /obj/item/storage/firstaid/individual/military
 	r_pocket = /obj/item/device/radio/map_preset/aegis
 	l_ear = /obj/item/device/radio/headset/map_preset/aegis
-	r_ear = /obj/item/reagent_containers/hypospray/autoinjector/combatpain
+	r_ear = /obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
-	suit_store = /obj/item/gun/projectile/pistol/military/alt
-	backpack_contents = list(/obj/item/ammo_magazine/pistol/double=3, /obj/item/storage/firstaid/adv=1, /obj/item/reagent_containers/hypospray/autoinjector/combatpain=2)
+	backpack_contents = list(/obj/item/storage/firstaid/adv=1, /obj/item/reagent_containers/hypospray/autoinjector/combatpain=2)
 
 /decl/hierarchy/outfit/aegis/rifleman
 	name = "Aegis Rifleman"
 
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/armor/pcarrier/tan/tactical
 	back = /obj/item/storage/backpack/satchel/grey
 	belt = /obj/item/storage/belt/holster/security
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/dutyboots
-	head = /obj/item/clothing/head/helmet/tactical
-	l_pocket = /obj/item/storage/firstaid/individual/military
 	r_pocket = /obj/item/device/radio/map_preset/aegis
 	l_ear = /obj/item/device/radio/headset/map_preset/aegis
-	r_ear = /obj/item/reagent_containers/hypospray/autoinjector/combatpain
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
-	suit_store = /obj/item/gun/projectile/automatic/bullpup_rifle
-	backpack_contents = list(/obj/item/ammo_magazine/mil_rifle=4)
