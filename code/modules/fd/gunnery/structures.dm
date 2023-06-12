@@ -57,6 +57,14 @@
 	name = "swordfish belt"
 	id = "ammobeltfishl"
 
+/obj/machinery/conveyor/ammobelt/scoutdrone_left
+	name = "scout drone belt"
+	id = "ammobeltdronel"
+
+/obj/machinery/conveyor/ammobelt/scoutdrone_right
+	name = "scout drone belt"
+	id = "ammobeltdroner"
+
 /obj/machinery/conveyor_switch/ammobelt
 	name = "munition belt switch"
 	id = "ammobelt1"

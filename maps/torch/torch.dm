@@ -157,6 +157,7 @@
 	#include "../away/aegis/aegis.dm"
 	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/ascent_corvette/_corvette.dm"
+	#include "../away/ascent_auto/auto.dm"
 	#include "../away/ascent_interceptor/_interceptor.dm"
 	#include "../away/ascent_fighter/_fighter.dm"
 	#include "../away/ascent_interceptor2/_interceptor.dm"
