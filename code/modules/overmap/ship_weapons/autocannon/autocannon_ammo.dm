@@ -3,7 +3,6 @@
 /obj/structure/ship_munition/ammobox/autocannon
 	name = "RP 105mm ammo box"
 	desc = "Ammo box that contains solid 105mm rocket-propelled rounds."
-	layer = 2.22
 	ammo_count = 60
 	ammo_type = /obj/item/projectile/bullet/autocannon
 
@@ -102,6 +101,7 @@
 		qdel(src)
 
 /obj/item/projectile/bullet/autocannon/aphe/Destroy()
-	if(src)
+	if(src && !exploded)
 		explosion(get_turf(src), explosion_radius, explosion_max_power)
 	..()
+
