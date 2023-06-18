@@ -13,4 +13,4 @@
 
 	burst_size = 3
 	fire_interval = 4
-	pew_spread = 24
+	pew_spread = 10

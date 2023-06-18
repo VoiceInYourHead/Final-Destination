@@ -13,6 +13,7 @@
 
 	burst_size = 10
 	fire_interval = 3
+	pew_spread = 20
 
 /obj/machinery/computer/ship/ship_weapon/hmg/telescreen	//little hacky but it's only used on one ship so it should be okay
 	icon_state = "tele_hmg"

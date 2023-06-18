@@ -12,6 +12,6 @@
 
 	burst_size = 5
 	fire_interval = 7
-	pew_spread = 40
+	pew_spread = 10
 
 	fire_sound = 'sound/machines/autocannon_fire.ogg'

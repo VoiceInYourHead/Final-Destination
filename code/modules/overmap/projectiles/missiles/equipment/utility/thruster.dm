@@ -11,7 +11,8 @@
 	var/max_fuel = 100
 	var/speed = 0
 //	var/min_speed = 25 // slightly misleading. this is the amount of ticks between each step, so higher min speed => slower initial speed
-	var/min_speed = 75 //bos
+	var/min_speed = 60 //bos
+	var/maneuverability = 20 // turf spread on entering map
 
 /obj/item/missile_equipment/thruster/do_overmap_work(var/obj/effect/overmap/projectile/P)
 	if(!..() || isnull(target) || !fuel)
@@ -67,6 +68,7 @@
 	name = "pointman missile booster"
 	desc = "A missile booster designed to travel to and rest at a given point. Steers away from structures."
 	icon_state = "dumbfire"
+	min_speed = 30 //FD
 
 /obj/item/missile_equipment/thruster/point/on_touch_map_edge(var/obj/effect/overmap/projectile/P)
 	var/turf/turf_location = get_turf(src)

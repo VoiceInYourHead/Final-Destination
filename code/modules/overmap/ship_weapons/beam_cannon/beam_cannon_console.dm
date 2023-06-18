@@ -24,7 +24,7 @@
 
 	ignore_blockage = TRUE
 
-	pew_spread = 50
+	pew_spread = 20
 
 	fire_sound = 'sound/machines/superlaser_firing.ogg'
 	prefire_sound = 'sound/machines/superlaser_prefire.ogg'

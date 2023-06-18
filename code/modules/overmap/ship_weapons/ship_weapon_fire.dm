@@ -132,7 +132,7 @@
 
 	//Success, but we missed.
 	if(prob(100 - cal_accuracy()) && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
-		log_and_message_admins("заебись выстрелил с [linked.name] из [gun_name], и снар€д даже нашЄл цель в виде [finaltarget.name], но калибровка дала осечку! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+		log_and_message_admins("¬ыстрел от [linked.name] из [gun_name] ебанул [finaltarget.name], но калибровка была говном (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 		handle_overbeam(TRUE)
 		return TRUE
 
@@ -151,8 +151,17 @@
 	if(!heading)
 		heading = random_dir()
 
-	var/start_x = Floor(world.maxx / 2) + rand(-pew_spread/2, pew_spread/2)
-	var/start_y = Floor(world.maxy / 2) + rand(-pew_spread/2, pew_spread/2)
+	var/actual_spread = pew_spread / 2
+
+	var/obj/effect/overmap/visitable/ship/target_ship = target
+	if(target_ship)
+		actual_spread = (target_ship.get_helm_skill()+1) / 2 * (pew_spread/2)
+
+		if(target_ship.is_still() || target_ship.get_speed() <= SHIP_SPEED_SLOW)
+			actual_spread = pew_spread / 2
+
+	var/start_x = Floor(world.maxx / 2) + round( rand(-actual_spread, actual_spread) )
+	var/start_y = Floor(world.maxy / 2) + round( rand(-actual_spread, actual_spread) )
 
 	//Normalize killing people :D
 	if(heading in GLOB.cornerdirs)
@@ -233,7 +242,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("—нар€д от [linked.name], выпущенный из [gun_name] - успешно попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("¬ыстрел от [linked.name] из [gun_name] попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)
@@ -276,7 +285,7 @@
 				else
 					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit!"))
 
-	log_and_message_admins("—нар€д от [linked.name], выпущенный из [gun_name] - успешно попал в X [start.x] Y [start.y] на [target] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("¬ыстрел от [linked.name] из [gun_name] попал в {[start.x] ; [start.y]} на [target] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)

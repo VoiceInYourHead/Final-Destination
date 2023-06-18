@@ -294,7 +294,7 @@
 	Destroy()
 
 // Figure out where to pop in and set the missile flying
-/obj/structure/missile/proc/enter_level(var/z_level, var/target_fore_dir, var/target_dir)
+/obj/structure/missile/proc/enter_level(var/z_level, var/obj/effect/overmap/target, var/target_fore_dir, var/target_dir)
 
 
 	// prevent the missile from moving on the overmap
@@ -304,8 +304,21 @@
 	if(!heading)
 		heading = random_dir() // To prevent the missile from popping into the middle of the map and sitting there
 
-	var/start_x = Floor(world.maxx / 2) + rand(-20, 20)
-	var/start_y = Floor(world.maxy / 2) + rand(-20, 20)
+	var/actual_spread = 10
+
+	var/obj/effect/overmap/visitable/ship/target_ship = target
+	if(target_ship)
+		var/missile_maneuverability = 20
+		for(var/obj/item/missile_equipment/thruster/T in equipment)
+			missile_maneuverability = T.maneuverability
+
+		actual_spread = (target_ship.get_helm_skill()+1) / 2 * (missile_maneuverability/2)
+
+		if(target_ship.is_still() || target_ship.get_speed() <= SHIP_SPEED_SLOW)
+			actual_spread = missile_maneuverability / 2
+
+	var/start_x = Floor(world.maxx / 2) + round( rand(-actual_spread, actual_spread) )
+	var/start_y = Floor(world.maxy / 2) + round( rand(-actual_spread, actual_spread) )
 
 
 	//Normalizes this to just be NWES. If you want to do the fuckery required to make this better, be my guest.

@@ -55,7 +55,8 @@
 
 	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
 	// ѕример: при pew_spread = 50 снар€д будет спавнитьс€ с разбросом от -25 до 25 тайлов на нужном краю карты у цели.
-	var/pew_spread = 50
+	// UPD: “еперь разброс умножаетс€ на уровень скилла пилота у корабл€-цели.
+	var/pew_spread = 10
 
 	var/fire_delay = 0
 
@@ -244,6 +245,7 @@
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
 			explosion(middle, rand(7, 12))
+			log_and_message_admins("[gun_name] смешно подорвалась (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time + fire_interval * burst_size

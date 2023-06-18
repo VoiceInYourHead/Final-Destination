@@ -13,7 +13,7 @@
 	ammo_per_shot = 150
 	burst_size = 4
 	fire_interval = 4
-	pew_spread = 20
+	pew_spread = 10
 
 	prefire_sound = 'sound/machines/charge.ogg'
 	fire_delay = 4
