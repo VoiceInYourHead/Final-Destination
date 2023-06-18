@@ -153,6 +153,11 @@ var/list/_client_preferences_by_type
 	key = "CHAT_SHOWICONS"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
+/datum/client_preference/accent_tags
+	description = "Accent tags"
+	key = "CHAT_SHOWACCENTICONS"
+	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
 /datum/client_preference/show_typing_indicator
 	description = "Typing indicator"
 	key = "SHOW_TYPING"

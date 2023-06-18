@@ -83,11 +83,11 @@
 							nverb = "[verb] ([language.shorthand])"
 						if(GLOB.PREF_OFF)//Regular output
 							nverb = verb
-			on_hear_say("<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [language.format_message(message, nverb, fontsize)]</span>")
+			on_hear_say("[get_accent_tag(speaker)]<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [language.format_message(message, nverb, fontsize)]</span>")
 		else
 			var/F1 = fontsize ? "<font size=[fontsize]>" : ""
 			var/F2 = fontsize ? "</font>" : ""
-			on_hear_say("<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [verb], <span class='message'><span class='body'>[F1]\"[message]\"[F2]</span></span></span>")
+			on_hear_say("[get_accent_tag(speaker)]<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [verb], <span class='message'><span class='body'>[F1]\"[message]\"[F2]</span></span></span>")
 		if (speech_sound && (get_dist(speaker, src) <= world.view && src.z == speaker.z))
 			var/turf/source = speaker? get_turf(speaker) : get_turf(src)
 			src.playsound_local(source, speech_sound, sound_vol, 1)

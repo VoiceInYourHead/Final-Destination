@@ -116,3 +116,29 @@
 			return L
 
 	return null
+
+/mob/proc/get_accent_tag(mob/speaker)
+	if(client?.get_preference_value(/datum/client_preference/accent_tags) != GLOB.PREF_SHOW)
+		return ""
+
+	var/static/list/culture2state = list(
+		CULTURE_HUMAN_LUNAPOOR = "luna",
+		CULTURE_HUMAN_LUNARICH = "luna",
+		CULTURE_HUMAN_VENUSIAN = "venus",
+		CULTURE_HUMAN_VENUSLOW = "venus_surfacer",
+		CULTURE_HUMAN_MARTIAN  = "martian_surface",
+		CULTURE_HUMAN_MARSTUN  = "matrian_tunneller",
+		CULTURE_HUMAN_BELTER   = "belter",
+		CULTURE_HUMAN_PLUTO    = "pluto",
+		CULTURE_HUMAN_EARTH    = "earth",
+		CULTURE_HUMAN_CETI     = "ceti",
+		CULTURE_HUMAN_SPACER   = "spacer_core",
+		CULTURE_HUMAN_SPAFRO   = "spacer_frontier",
+		CULTURE_HUMAN_CONFED   = "terran",
+		CULTURE_HUMAN_OTHER    = "human_other"
+
+	)
+
+	var/culture = client.prefs.cultural_info[TAG_CULTURE]
+
+	return (culture in culture2state) ? icon2html(icon('icons/accent_tags.dmi', culture2state[culture]), src, realsize = TRUE, class = "text_tag", incy = 3) : ""
