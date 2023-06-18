@@ -126,7 +126,7 @@
 	var/speed = victim.get_speed()
 	if (skill < SKILL_EXPERT)
 		if(victim.is_still() || speed < SHIP_SPEED_SLOW) //Standing still or being slow means less shit flies your way
-			. = round(. * 0.7)
+			. = round(. * 0.4)
 		if(speed > SHIP_SPEED_FAST) //Sanic stahp
 			. *= 2
 	if (skill == SKILL_EXPERT)
