@@ -1,5 +1,5 @@
 /obj/effect/overmap/visitable/sector/exoplanet/urban
-	name = "ecumenopolis"
+	name = "ruined ecumenopolis"
 	desc = "A world-wide unpowered city covers the entire planetary surface."
 	color = "#615e4f"
 	max_animal_count = 30

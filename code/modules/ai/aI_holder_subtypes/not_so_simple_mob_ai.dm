@@ -31,6 +31,7 @@
 	var/init_aggression
 	var/init_dominance
 	var/init_nervousness
+
 	var/sympathy
 	var/energy
 	var/bravery
