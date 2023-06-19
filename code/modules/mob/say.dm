@@ -132,8 +132,8 @@
 		CULTURE_HUMAN_PLUTO    = "pluto",
 		CULTURE_HUMAN_EARTH    = "earth",
 		CULTURE_HUMAN_CETI     = "ceti",
-		CULTURE_HUMAN_SPACER   = "spacer_core",
-		CULTURE_HUMAN_SPAFRO   = "spacer_frontier",
+		CULTURE_HUMAN_SPACER   = "spacer",
+		CULTURE_HUMAN_SPAFRO   = "spacer",
 		CULTURE_HUMAN_CONFED   = "terran",
 		CULTURE_HUMAN_OTHER    = "human_other"
 
