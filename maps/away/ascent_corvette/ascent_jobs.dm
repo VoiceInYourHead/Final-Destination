@@ -25,12 +25,12 @@
 /datum/submap/ascent_corvette/sync_cell(obj/effect/overmap/visitable/cell)
 	return
 
-/mob/living/carbon/human/proc/gyne_rename_lineage()
+/mob/living/carbon/human/proc/gyne_rename_lineage_corvette()
 	set name = "Name Nest-Lineage"
 	set category = "IC"
 	set desc = "Rename yourself and your alates."
 
-	if(species.name == SPECIES_MANTID_GYNE && mind && istype(mind.assigned_job, /datum/job/submap/ascent))
+	if(species.name == SPECIES_MANTID_GYNE && mind && istype(mind.assigned_job, /datum/job/submap/ascent_corvette))
 		var/datum/job/submap/ascent/ascent_job = mind.assigned_job
 		var/datum/submap/ascent/cutter = ascent_job.owner
 		if(istype(cutter))
@@ -63,7 +63,7 @@
 				H.fully_replace_character_name("[new_alate_number] [new_name]")
 				to_chat(H, SPAN_NOTICE("<font size = 3>Your gyne, [real_name], has awakened, and you recall your place in the nest-lineage: <b>[H.real_name]</b>.</font>"))
 
-	verbs -= /mob/living/carbon/human/proc/gyne_rename_lineage
+	verbs -= /mob/living/carbon/human/proc/gyne_rename_lineage_corvette
 
 // Jobs.
 /datum/job/submap/ascent_corvette
@@ -85,7 +85,7 @@
 		SKILL_SCIENCE = SKILL_ADEPT,
 		SKILL_MEDICAL = SKILL_BASIC
 	)
-	skill_points = 18
+	skill_points = 24
 	var/requires_supervisor = FALSE
 	var/set_species_on_join = SPECIES_MANTID_GYNE
 
@@ -109,7 +109,7 @@
 	switch(H.species.name)
 		if(SPECIES_MANTID_GYNE)
 			H.real_name = "[random_id(/datum/species/mantid, 1, 99)] [cutter.gyne_name]"
-//			H.verbs |= /mob/living/carbon/human/proc/gyne_rename_lineage
+			H.verbs |= /mob/living/carbon/human/proc/gyne_rename_lineage_corvette
 		if(SPECIES_MANTID_ALATE)
 			var/new_alate_number = is_species_whitelisted(H, SPECIES_MANTID_GYNE) ? random_id(/datum/species/mantid, 1000, 9999) : random_id(/datum/species/mantid, 10000, 99999)
 			H.real_name = "[new_alate_number] [cutter.gyne_name]"
@@ -182,7 +182,7 @@
 		SKILL_SCIENCE = SKILL_ADEPT,
 		SKILL_MEDICAL = SKILL_BASIC
 	)
-	skill_points = 18
+	skill_points = 24
 
 /datum/job/submap/ascent_corvette/drone
 	title = "Ascent Drone"

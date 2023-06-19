@@ -83,7 +83,7 @@
 		SKILL_SCIENCE = SKILL_ADEPT,
 		SKILL_MEDICAL = SKILL_BASIC
 	)
-	skill_points = 18
+	skill_points = 24
 	var/requires_supervisor = FALSE
 	var/set_species_on_join = SPECIES_MANTID_GYNE
 
