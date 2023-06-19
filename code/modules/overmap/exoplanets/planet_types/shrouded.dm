@@ -15,11 +15,13 @@
 	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/royalcrab,
 					   /mob/living/simple_animal/hostile/retaliate/jelly/alt,
 					   /mob/living/simple_animal/hostile/smart_beast/shantak/alt,
-					   /mob/living/simple_animal/hostile/leech)
+					   /mob/living/simple_animal/hostile/leech,
+					   /mob/living/simple_animal/hostile/smart_beast/charbaby)
 	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/royalcrab,
 					   /mob/living/simple_animal/hostile/retaliate/jelly/alt,
 					   /mob/living/simple_animal/hostile/smart_beast/shantak/alt,
-					   /mob/living/simple_animal/hostile/leech)
+					   /mob/living/simple_animal/hostile/leech,
+					   /mob/living/simple_animal/hostile/smart_beast/charbaby)
 
 
 /obj/effect/overmap/visitable/sector/exoplanet/shrouded/generate_atmosphere()

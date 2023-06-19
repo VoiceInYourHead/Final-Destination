@@ -179,6 +179,12 @@
 				ChangeArea(src, E.planetary_area)
 	..()
 
+/obj/structure/hygiene/drain/rainworld
+	drainage = 4
+
+/obj/structure/hygiene/drain/rainworld/attackby()
+	return
+
 /********************** WEATHER **********************/
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/handle_repopulation()
@@ -457,11 +463,13 @@
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/release_grab()
 	if(istype(jaws_grab,/mob/living))
 		var/mob/living/carbon/mob_jaws_grab = jaws_grab
+
 		if(istype(mob_jaws_grab,/mob/living/carbon))
 			mob_jaws_grab.resting = 0
 		else
 			jaws_grab.density = 1
-			jaws_grab.anchored = 0
+
+		jaws_grab.anchored = 0
 
 	if(jaws_grab)
 		visible_message(SPAN_WARNING("\The [src] reduces it's grasp pressure, releasing [jaws_grab] from jaws."))
@@ -815,8 +823,8 @@
 	health = 125
 	diet = DIET_CARNIVOROUS
 	mob_bump_flag = HUMAN
-	mob_push_flags = ~HEAVY
-	mob_swap_flags = ~HEAVY
+	mob_swap_flags = HUMAN|SIMPLE_ANIMAL|SLIME|MONKEY
+	mob_push_flags = ALLMOBS
 	mob_size = MOB_MEDIUM
 	melee_attack_delay = 6
 	speed = 2

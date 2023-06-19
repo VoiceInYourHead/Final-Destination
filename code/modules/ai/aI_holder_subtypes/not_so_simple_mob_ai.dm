@@ -318,13 +318,14 @@
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	if(current_pack_members)
 		for(var/mob/living/simple_animal/hostile/smart_beast/pack_member in current_pack_members)
-			var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
 			pack_member.current_pack_members -= src
-			if(member_ai_holder.leader == pack_leader)
-				member_ai_holder.set_follow(null)
-			if(pack_member.pack_leader == src)
-				pack_member.pack_leader = null
-			current_pack_members = list()
+			var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
+			if(member_ai_holder)
+				if(member_ai_holder.leader == pack_leader)
+					member_ai_holder.set_follow(null)
+				if(pack_member.pack_leader == src)
+					pack_member.pack_leader = null
+		current_pack_members = list()
 	if(pack_leader)
 		smart_ai_holder.set_follow(null)
 		pack_leader = null
@@ -409,7 +410,7 @@
 	else
 		set_dir(SOUTH)
 	eating = 1
-	visible_message("[src] starts to consume \the body of [S]!")
+	visible_message("<span class='warning'>[src] starts to consume \the body of [S]!</span>")
 	sleep(consume_delay/2)
 	if(!S || !(S in range(src,1)) || stat == DEAD)
 		eating = 0
@@ -418,7 +419,7 @@
 	if(!S || !(S in range(src,1)) || stat == DEAD)
 		eating = 0
 		return FALSE
-	visible_message("[src] consumes \the body of [S]!")
+	visible_message("<span class='warning'>[src] consumes \the body of [S]!</span>")
 	var/turf/T = get_turf(S)
 	if(istype(S,/mob/living/carbon/human))
 		var/obj/item/remains/human/H = new(T)
