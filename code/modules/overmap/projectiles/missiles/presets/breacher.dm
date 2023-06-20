@@ -22,7 +22,8 @@
 		if(istype(obstacle, /obj/effect/shield))
 			inertia = 0
 		else
-			obstacle.ex_act(1, turf_breaker = TRUE)
+			if(prob(25))
+				obstacle.Destroy()
 			inertia--
 
 		if(!inertia)
