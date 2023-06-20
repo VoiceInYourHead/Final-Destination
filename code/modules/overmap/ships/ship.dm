@@ -50,7 +50,7 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/integrity_failure_cap = 250		// max health
 	var/integrity_failure = 0	// current health level
 
-	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ ОТМЕТКИ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ-"
+	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ ОТМЕТКИ, НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ-"
 	var/announcer_name = "Автоматический отчёт о техническом состоянии"
 
 	var/do_repair_hull = TRUE

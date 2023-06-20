@@ -122,9 +122,9 @@
 	addtimer(CALLBACK(src, .proc/expire), lifetime)
 
 	//Missile destroyed if it fails to hit something
-	if(entered_away)
-		Destroy()
-		return
+//	if(entered_away)
+//		Destroy()
+//		return
 	// In case the proc is called normally alongside the call in Move()
 	if(loc == overmap_missile)
 		return
@@ -140,8 +140,8 @@
 	if(overmap_missile.dangerous)
 		log_and_message_admins("A dangerous [overmap_name] has entered the overmap (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[overmap_missile.x];Y=[overmap_missile.y];Z=[overmap_missile.z]'>JMP</a>)")
 
-
-	origin = map_sectors["[z]"]
+	if(!entered_away)
+		origin = map_sectors["[z]"]
 	overmap_missile.SetName("[origin.name]'s [overmap_name]")
 	// Abort walk
 	walk(src, 0)
@@ -307,7 +307,7 @@
 	var/actual_spread = 10
 
 	var/obj/effect/overmap/visitable/ship/target_ship = target
-	if(target_ship)
+	if(istype(target_ship, /obj/effect/overmap/visitable/ship))
 		var/missile_maneuverability = 20
 		for(var/obj/item/missile_equipment/thruster/T in equipment)
 			missile_maneuverability = T.maneuverability

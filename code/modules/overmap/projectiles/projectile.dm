@@ -91,7 +91,6 @@
 		if(O.missile_notarget)
 			continue
 
-
 		if(!LAZYLEN(O.map_z))
 			continue
 
@@ -120,7 +119,7 @@
 		for(var/obj/effect/overmap/O in potential_levels)
 			if((O.sector_flags & OVERMAP_SECTOR_IN_SPACE))
 				var/obj/effect/overmap/visitable/winner = pick(O)
-				actual_missile.enter_level(pick(winner.map_z), winner.fore_dir, winner.dir)
+				actual_missile.enter_level(pick(winner.map_z), winner, winner.fore_dir, winner.dir)
 	else // Enter the thing with most "votes"
 		var/obj/effect/overmap/visitable/winner = pick(potential_levels)
 		for(var/O in potential_levels)
