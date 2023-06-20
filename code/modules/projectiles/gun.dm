@@ -117,7 +117,7 @@
 	/// What skill governs safe handling of this gun. Basic skill level and higher will also show the safety overlay to the player.
 	var/gun_skill = SKILL_WEAPONS
 	/// What skill level is needed in the gun's skill to completely negate the chance of an accident.
-	var/safety_skill = SKILL_EXPERT
+	var/safety_skill = SKILL_EXPERIENCED
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -254,7 +254,7 @@
 		return
 
 	if(safety())
-		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERT, 0.5)) //reflex un-safeying
+		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
 			toggle_safety(user)
 		else
 			handle_click_safety(user)
@@ -370,7 +370,7 @@
 			spawn()
 				shake_camera(user, screen_shake, sh, 0.5)
 			if (prob(40) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC) && screen_shake >= 2 || \
-							!user.skill_check(SKILL_WEAPONS, SKILL_ADEPT) && !is_twohanded)
+							!user.skill_check(SKILL_WEAPONS, SKILL_TRAINED) && !is_twohanded)
 				user.visible_message(SPAN_WARNING("The [user] couldn't handle recoil and dropped their weapon!"))
 				user.drop_from_inventory(src)
 
@@ -415,7 +415,7 @@
 	var/acc_mod = 0
 	var/stood_still = last_handled
 	//Not keeping gun active will throw off aim (for non-Masters)
-	if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
+	if(user.skill_check(SKILL_WEAPONS, SKILL_MASTER))
 		stood_still = min(user.l_move_time, last_handled)
 	else
 		stood_still = max(user.l_move_time, last_handled)
@@ -430,7 +430,7 @@
 	if(one_hand_penalty >= 4 && !held_twohanded)
 		acc_mod -= one_hand_penalty/2
 
-	if(burst > 1 && !user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+	if(burst > 1 && !user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
 		acc_mod -= 1
 
 	if (aim_targets && (target in aim_targets))
@@ -563,7 +563,7 @@
 	zoom(user, zoom_offset, view_size)
 	if(zoom)
 		accuracy = scoped_accuracy
-		if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
+		if(user.skill_check(SKILL_WEAPONS, SKILL_MASTER))
 			accuracy += 2
 		if(screen_shake)
 			screen_shake = round(screen_shake*zoom_amount+1) //screen shake is worse when looking through a scope

@@ -12,7 +12,7 @@
 	dir = NORTH
 	color = "#0751f3"
 	alpha = 100
-	skill_needed = SKILL_NONE
+	skill_needed = SKILL_UNSKILLED
 	vessel_mass = 750
 	vessel_size = SHIP_SIZE_SMALL
 

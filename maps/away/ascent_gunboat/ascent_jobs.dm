@@ -75,12 +75,12 @@
 	loadout_allowed = FALSE
 	is_semi_antagonist = TRUE
 	min_skill = list(
-		SKILL_EVA = SKILL_ADEPT,
-		SKILL_PILOT = SKILL_ADEPT,
-		SKILL_HAULING = SKILL_ADEPT,
-		SKILL_COMBAT = SKILL_ADEPT,
-		SKILL_WEAPONS = SKILL_ADEPT,
-		SKILL_SCIENCE = SKILL_ADEPT,
+		SKILL_EVA = SKILL_TRAINED,
+		SKILL_PILOT = SKILL_TRAINED,
+		SKILL_HAULING = SKILL_TRAINED,
+		SKILL_COMBAT = SKILL_TRAINED,
+		SKILL_WEAPONS = SKILL_TRAINED,
+		SKILL_SCIENCE = SKILL_TRAINED,
 		SKILL_MEDICAL = SKILL_BASIC
 	)
 	skill_points = 24
@@ -131,21 +131,21 @@
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
 	requires_supervisor = FALSE
 	use_species_whitelist = null
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_TRAINED,
+					SKILL_HAULING = SKILL_TRAINED,
+					SKILL_COMBAT = SKILL_TRAINED,
+					SKILL_WEAPONS = SKILL_TRAINED,
 					SKILL_MEDICAL = SKILL_BASIC)
 	skill_points = 18
 
 /datum/job/submap/ascent_gunboat/alate/pilot
 	title = "Ascent Alate Pilot"
 	total_positions = 1
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_TRAINED,
+					SKILL_HAULING = SKILL_TRAINED,
 					SKILL_COMBAT = SKILL_BASIC,
 					SKILL_WEAPONS = SKILL_BASIC,
-					SKILL_PILOT = SKILL_EXPERT)
+					SKILL_PILOT = SKILL_EXPERIENCED)
 	skill_points = 18
 
 /datum/job/submap/ascent_gunboat/drone

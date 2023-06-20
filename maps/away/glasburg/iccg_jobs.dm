@@ -24,7 +24,7 @@
 	skill_points = 16
 	access = list(access_iccg)
 	outfit_type = /decl/hierarchy/outfit/iccg_diplomat
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_EXPERT,
+	min_skill = list(	SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
 						SKILL_FINANCE     = SKILL_BASIC,
 						SKILL_WEAPONS     = SKILL_BASIC)
 	total_positions = 2
@@ -38,10 +38,10 @@
 	access = list(access_iccg)
 	outfit_type = /decl/hierarchy/outfit/iccg_pilot
 	min_skill = list(	SKILL_EVA         = SKILL_BASIC,
-						SKILL_PILOT       = SKILL_ADEPT,
-						SKILL_HAULING     = SKILL_ADEPT,
+						SKILL_PILOT       = SKILL_TRAINED,
+						SKILL_HAULING     = SKILL_TRAINED,
 						SKILL_COMBAT      = SKILL_BASIC,
-						SKILL_COMPUTER    = SKILL_ADEPT,
+						SKILL_COMPUTER    = SKILL_TRAINED,
 						SKILL_WEAPONS     = SKILL_BASIC)
 	total_positions = 1
 	loadout_allowed = TRUE
@@ -63,7 +63,7 @@
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_EVA         = SKILL_BASIC,
 						SKILL_COMBAT      = SKILL_BASIC,
-						SKILL_WEAPONS     = SKILL_ADEPT,
+						SKILL_WEAPONS     = SKILL_TRAINED,
 						SKILL_FORENSICS   = SKILL_BASIC)
 	total_positions = 2
 	loadout_allowed = TRUE
@@ -82,11 +82,11 @@
 	skill_points = 20
 	access = list(access_iccg)
 	outfit_type = /decl/hierarchy/outfit/iccg_security_chief
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
+	min_skill = list(	SKILL_BUREAUCRACY = SKILL_TRAINED,
 						SKILL_EVA         = SKILL_BASIC,
-						SKILL_COMBAT      = SKILL_ADEPT,
-						SKILL_WEAPONS     = SKILL_ADEPT,
-						SKILL_FORENSICS   = SKILL_ADEPT)
+						SKILL_COMBAT      = SKILL_TRAINED,
+						SKILL_WEAPONS     = SKILL_TRAINED,
+						SKILL_FORENSICS   = SKILL_TRAINED)
 	total_positions = 1
 	loadout_allowed = TRUE
 	is_semi_antagonist = TRUE

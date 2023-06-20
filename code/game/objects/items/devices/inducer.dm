@@ -104,9 +104,9 @@
 		)
 		if (istype(A, /obj/item/gun/energy))
 			length = 30
-			if (user.get_skill_value(SKILL_WEAPONS) <= SKILL_ADEPT)
+			if (user.get_skill_value(SKILL_WEAPONS) <= SKILL_TRAINED)
 				length += rand(10, 30)
-		if (user.get_skill_value(SKILL_ELECTRICAL) < SKILL_ADEPT)
+		if (user.get_skill_value(SKILL_ELECTRICAL) < SKILL_TRAINED)
 			length += rand(40, 60)
 		if(MyC.charge > max(0, MyC.charge*failsafe) && do_after(user, length))
 			if(CannotUse(user))

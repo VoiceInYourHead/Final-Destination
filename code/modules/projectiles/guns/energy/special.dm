@@ -62,7 +62,7 @@
 	combustion = 0
 
 	gun_skill = SKILL_BOTANY
-	safety_skill = SKILL_ADEPT
+	safety_skill = SKILL_TRAINED
 
 	init_firemodes = list(
 		list(mode_name="induce mutations", projectile_type=/obj/item/projectile/energy/floramut, modifystate="floramut"),
@@ -166,7 +166,7 @@
 
 	// As an industrial tool the plasma cutter's safety training falls under construction.
 	gun_skill = SKILL_CONSTRUCTION
-	safety_skill = SKILL_ADEPT
+	safety_skill = SKILL_TRAINED
 
 /obj/item/gun/energy/plasmacutter/mounted
 	name = "mounted plasma cutter"
