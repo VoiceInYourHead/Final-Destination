@@ -490,7 +490,7 @@
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/Life()
 	..()
-	if(stat == DEAD)
+	if(stat == DEAD || stat == 1)
 		release_grab()
 
 	if(jaws_grab)

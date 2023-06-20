@@ -2,7 +2,10 @@ proc/lerp(a, b, t)
 	return a+(b-a)*t
 
 proc/Pow(f, p)
-	return f**p
+	return round(f ** p * 100) / 100
+
+/*************** THE MOB ***************/
+
 
 /mob/living/simple_animal/hostile/scavenger
 	name = "Scavenger"
@@ -21,6 +24,28 @@ proc/Pow(f, p)
 	response_harm   = "kicks"
 
 	say_list = /datum/say_list/meat
+/*
+/mob/living/simple_animal/hostile/scavenger/movement_delay()
+	. = movement_cooldown
+
+	// Turf related slowdown
+	var/turf/T = get_turf(src)
+	if(T && T.movement_delay && !is_floating) // Flying mobs ignore turf-based slowdown. Aquatic mobs ignore water slowdown, and can gain bonus speed in it.
+		. += T.movement_delay
+
+	if(purge)//Purged creatures will move more slowly. The more time before their purge stops, the slower they'll move.
+		if(. <= 0)
+			. = 1
+		. *= purge
+
+	if(a_intent == "walk")
+		. *= 1.5
+
+	 . += ..()
+*/
+
+/*************** SCAVENGER AI ***************/
+
 
 /datum/ai_holder/scavenger
 	var/sympathy
@@ -63,7 +88,7 @@ proc/Pow(f, p)
 //	debug_ai = AI_LOG_DEBUG
 
 /datum/ai_holder/scavenger/proc/random_val()
-	return rand(0.01,1)
+	return rand(1,100) / 100
 
 /datum/ai_holder/scavenger/proc/setup_temper()
 	. = ..()
