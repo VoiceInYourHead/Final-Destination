@@ -17,15 +17,15 @@
 		/datum/mil_rank/ec/o3
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_ADEPT,
-	                    SKILL_SCIENCE     = SKILL_ADEPT,
+	                    SKILL_EVA         = SKILL_TRAINED,
+	                    SKILL_SCIENCE     = SKILL_TRAINED,
 	                    SKILL_PILOT       = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED)
 	skill_points = 22
 
 	access = list(
@@ -75,7 +75,7 @@
 		access_radio_exp, access_radio_sci, access_radio_sup, access_maint_tunnels, access_emergency_storage
 	)
 	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
-						SKILL_PILOT = SKILL_ADEPT,
+						SKILL_PILOT = SKILL_TRAINED,
 						SKILL_MEDICAL = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
@@ -102,11 +102,11 @@
 						SKILL_MEDICAL = SKILL_BASIC
 					)
 
-	max_skill = list(   SKILL_ANATOMY	  = SKILL_ADEPT,
+	max_skill = list(   SKILL_ANATOMY	  = SKILL_TRAINED,
 						SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED)
 
 	access = list(
 		access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
@@ -143,14 +143,14 @@
 		/datum/mil_rank/army/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
-						SKILL_MEDICAL = SKILL_ADEPT
+						SKILL_MEDICAL = SKILL_TRAINED
 					)
-	max_skill = list(   SKILL_MEDICAL	  = SKILL_EXPERT,
-						SKILL_ANATOMY	  = SKILL_ADEPT,
+	max_skill = list(   SKILL_MEDICAL	  = SKILL_EXPERIENCED,
+						SKILL_ANATOMY	  = SKILL_TRAINED,
 						SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED)
 	skill_points = 22
 
 	access = list(
@@ -194,11 +194,11 @@
 						SKILL_ELECTRICAL = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC
 					)
-	max_skill = list(   SKILL_ANATOMY	  = SKILL_ADEPT,
+	max_skill = list(   SKILL_ANATOMY	  = SKILL_TRAINED,
 						SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED)
 	skill_points = 22
 
 	access = list(
@@ -235,13 +235,13 @@
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,
-						SKILL_WEAPONS = SKILL_ADEPT
+						SKILL_WEAPONS = SKILL_TRAINED
 					)
-	max_skill = list(   SKILL_ANATOMY	  = SKILL_ADEPT,
+	max_skill = list(   SKILL_ANATOMY	  = SKILL_TRAINED,
 						SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED)
 
 	access = list(
 		access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,

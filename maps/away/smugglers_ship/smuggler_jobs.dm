@@ -20,7 +20,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/smuggler
 	loadout_allowed = TRUE
 	min_skill = list(
-		SKILL_EVA = SKILL_ADEPT,
+		SKILL_EVA = SKILL_TRAINED,
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_COMBAT = SKILL_BASIC,
 		SKILL_WEAPONS = SKILL_BASIC,

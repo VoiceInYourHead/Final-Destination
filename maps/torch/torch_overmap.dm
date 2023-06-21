@@ -144,4 +144,4 @@
 	desc = "Trace radiation emanating from this sector is consistent with the aftermath of a bluespace jump."
 	icon_state = "event"
 	known = TRUE
-	missile_notarget = TRUE
+	sector_flags = OVERMAP_SECTOR_KNOWN | OVERMAP_SECTOR_UNTARGETABLE

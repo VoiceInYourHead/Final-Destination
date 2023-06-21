@@ -168,7 +168,7 @@ var/list/escape_pods_by_name = list()
 		ui.set_auto_update(1)
 
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth/attackby(var/obj/item/T, var/mob/living/carbon/human/user)
-	if(emagged && isMultitool(T) && user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+	if(emagged && isMultitool(T) && user.skill_check(SKILL_ELECTRICAL, SKILL_TRAINED))
 		to_chat(user, "<span class='notice'>Ты начал сбрасывать настройки [src], чтобы починить его.</span>")
 		if(do_after(user, 100, src))
 			emagged = FALSE

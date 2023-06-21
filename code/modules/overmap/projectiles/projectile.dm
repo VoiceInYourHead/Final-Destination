@@ -88,9 +88,12 @@
 		if(O == actual_missile.origin)
 			continue
 
-		if(O.missile_notarget)
+		var/valid = FALSE
+		for(var/obj/item/missile_equipment/thruster/E in actual_missile.equipment)
+			if(E.is_target_valid(O))
+				valid = TRUE
+		if(!valid)
 			continue
-
 
 		if(!LAZYLEN(O.map_z))
 			continue
@@ -120,7 +123,7 @@
 		for(var/obj/effect/overmap/O in potential_levels)
 			if((O.sector_flags & OVERMAP_SECTOR_IN_SPACE))
 				var/obj/effect/overmap/visitable/winner = pick(O)
-				actual_missile.enter_level(pick(winner.map_z), winner.fore_dir, winner.dir)
+				actual_missile.enter_level(pick(winner.map_z), winner, winner.fore_dir, winner.dir)
 	else // Enter the thing with most "votes"
 		var/obj/effect/overmap/visitable/winner = pick(potential_levels)
 		for(var/O in potential_levels)

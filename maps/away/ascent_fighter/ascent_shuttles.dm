@@ -6,7 +6,7 @@
 	burn_delay = 0.5 SECONDS
 	vessel_mass = 1500
 	integrity_failure_cap = 20
-	skill_needed = SKILL_ADEPT
+	skill_needed = SKILL_TRAINED
 	vessel_size = SHIP_SIZE_TINY
 	fore_dir = NORTH
 	color = COLOR_PURPLE

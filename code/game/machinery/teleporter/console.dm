@@ -153,9 +153,34 @@
 		active_timer = addtimer(CALLBACK(src, .proc/clear_target), 1 MINUTE, TIMER_UNIQUE | TIMER_OVERRIDE | TIMER_STOPPABLE)
 
 
-/obj/machinery/computer/teleporter/proc/get_targets()
+/obj/machinery/computer/teleporter/proc/get_targets(mob/user)
 	var/list/ids = list()
 	var/list/result = list()
+
+// some risky space-boarding stuff
+	var/obj/effect/overmap/visitable/linked = map_sectors["[z]"]
+	for (var/obj/effect/overmap/visitable/S in view(2,linked))
+		if (QDELETED(S) || S == linked || S.z != 11 || istype(S,/obj/effect/overmap/visitable/sector/residue) || istype(S,/obj/effect/overmap/visitable/sector/merc_base))
+			continue
+
+		var/actual_spread = world.maxx / 8
+
+		var/obj/effect/overmap/visitable/ship/target_ship = target
+		if(istype(target_ship, /obj/effect/overmap/visitable/ship))
+			actual_spread = target_ship.get_speed() <= SHIP_SPEED_SLOW ? (target_ship.get_helm_skill()+1)/2 : 1 * (world.maxx/8) / user ? (user.get_skill_value(SKILL_DEVICES)+1)/2 : 1
+
+		if(istype(target, /obj/effect/overmap/visitable/sector/exoplanet))
+			actual_spread = world.maxx / 2 - 8
+
+		var/teleport_x = Floor(world.maxx / 2) + round( rand(-actual_spread, actual_spread) )
+		var/teleport_y = Floor(world.maxy / 2) + round( rand(-actual_spread, actual_spread) )
+
+		var/turf/T = locate(teleport_x, teleport_y, pick(S.map_z))
+		var/bearing = round(90 - Atan2(S.x - linked.x, S.y - linked.y),5)
+
+		result["TLOC - [S.name] [get_dist(linked,S) > 0 ? "\[Bearing: [bearing]°\]" : "\[NEAR\]" ]"] = T
+
+// boring beacons- WUH, YOU CAN LOCK ON TRACKING IMPLANTS??
 	for (var/obj/machinery/tele_beacon/B)
 		if (QDELETED(B) || !B.functioning() || !isPlayerLevel(B.z))
 			continue
@@ -191,7 +216,7 @@
 		if (data_search == "Yes")
 			update_refs()
 		return TRUE
-	var/message = "Teleporter [!target ? "Idle" : !active ? "Locked" : "Engaged"]\n[!target ? "" : "\[[get_area(target)]\]"]"
+	var/message = "Teleporter [!target ? "Idle" : !active ? "Locked" : "Engaged"]\n[!target ? "" : !istype(target,/obj/machinery/tele_beacon) ? "\[Unknown\]" : "\[[get_area(target)]\]"]"
 	var/btn_active = active ? "Shut Down" : target ? "Start Up" : "-"
 	var/btn_target = active ? "-" : "Set Target"
 	var/data_action = alert(user, message, "Teleporter", btn_active, "Cancel", btn_target)
@@ -205,11 +230,12 @@
 		if ("Start Up")
 			set_active(TRUE, TRUE)
 		if ("Set Target")
-			var/list/targets = get_targets()
+			var/list/targets = get_targets(user)
 			var/data_target = input(user, "Select Target", "Teleporter") in null | targets
 			if (isnull(data_target) || !CanDefaultInteract(user))
 				return TRUE
-			if (set_target(targets[data_target]))
-				audible_message(SPAN_NOTICE("\The [src] hums, \"Target updated.\""))
-			else
-				audible_message(SPAN_WARNING("\The [src] buzzes, \"Failed to establish teleporter lock.\""))
+			if(do_after(user, 60 / user.get_skill_value(SKILL_DEVICES), src) || isghost(user))
+				if (set_target(targets[data_target]))
+					audible_message(SPAN_NOTICE("\The [src] hums, \"Target updated.\""))
+				else
+					audible_message(SPAN_WARNING("\The [src] buzzes, \"Failed to establish teleporter lock.\""))

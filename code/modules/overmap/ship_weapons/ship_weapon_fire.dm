@@ -82,7 +82,7 @@
 
 	if(!length(candidates) && canhit_ships)
 		for(var/obj/effect/overmap/visitable/ship/S in overmaptarget)
-			if(S == linked)
+			if(S == linked || S.destroyed)
 				continue //Why are you shooting yourself?
 			candidates += S
 
@@ -154,7 +154,7 @@
 	var/actual_spread = pew_spread / 2
 
 	var/obj/effect/overmap/visitable/ship/target_ship = target
-	if(target_ship)
+	if(istype(target_ship, /obj/effect/overmap/visitable/ship))
 		actual_spread = (target_ship.get_helm_skill()+1) / 2 * (pew_spread/2)
 
 		if(target_ship.is_still() || target_ship.get_speed() <= SHIP_SPEED_SLOW)

@@ -67,5 +67,5 @@
 	shuttle_area = /area/ship/ascent_inf/shuttle_starboard
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
-	skill_needed = SKILL_NONE
+	skill_needed = SKILL_UNSKILLED
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/ascent

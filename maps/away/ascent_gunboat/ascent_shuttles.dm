@@ -7,7 +7,7 @@
 	vessel_mass = 6000
 	integrity_failure_cap = 120
 	repair_speed = 0.01
-	skill_needed = SKILL_ADEPT
+	skill_needed = SKILL_TRAINED
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = EAST
 	dir = EAST

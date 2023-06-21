@@ -125,18 +125,18 @@
 		return ""
 
 	var/static/list/culture2state = list(
-		CULTURE_HUMAN_LUNAPOOR = "luna",
-		CULTURE_HUMAN_LUNARICH = "luna",
+		CULTURE_HUMAN_LUNAPOOR = "luna_low",
+		CULTURE_HUMAN_LUNARICH = "luna_upper",
 		CULTURE_HUMAN_VENUSIAN = "venus",
-		CULTURE_HUMAN_VENUSLOW = "venus_surfacer",
-		CULTURE_HUMAN_MARTIAN  = "martian_surface",
-		CULTURE_HUMAN_MARSTUN  = "matrian_tunneller",
+		CULTURE_HUMAN_VENUSLOW = "venus",
+		CULTURE_HUMAN_MARTIAN  = "mars_surface",
+		CULTURE_HUMAN_MARSTUN  = "mars_tunneller",
 		CULTURE_HUMAN_BELTER   = "belter",
 		CULTURE_HUMAN_PLUTO    = "pluto",
 		CULTURE_HUMAN_EARTH    = "earth",
 		CULTURE_HUMAN_CETI     = "ceti",
-		CULTURE_HUMAN_SPACER   = "spacer_core",
-		CULTURE_HUMAN_SPAFRO   = "spacer_frontier",
+		CULTURE_HUMAN_SPACER   = "spacer",
+		CULTURE_HUMAN_SPAFRO   = "spacer",
 		CULTURE_HUMAN_CONFED   = "terran",
 		CULTURE_HUMAN_OTHER    = "human_other"
 

@@ -36,21 +36,13 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/engines_state = 0 //global on/off toggle for all engines
 	var/thrust_limit = 1  //global thrust limit for all engines, 0..1
 	var/halted = 0        //admin halt or other stop.
-	var/skill_needed = SKILL_ADEPT  //piloting skill needed to steer it without going in random dir
+	var/skill_needed = SKILL_TRAINED  //piloting skill needed to steer it without going in random dir
 	var/operator_skill
-
-	var/ship_target = null
-	var/planet_target = null
-	var/missile_target
-	var/planet_x = 1
-	var/planet_y = 1
-	var/coord_target_x = 10
-	var/coord_target_y = 10
 
 	var/integrity_failure_cap = 250		// max health
 	var/integrity_failure = 0	// current health level
 
-	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ ОТМЕТКИ! НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ-"
+	var/announce_text = "ВНИМАНИЕ! ПОВРЕЖДЕНИЯ ВНУТРЕННИХ СИСТЕМ КОРАБЛЯ ДОСТИГЛИ КРИТИЧЕСКОЙ ОТМЕТКИ, НЕМЕДЛЕННО ПОКИНЬТЕ СУДНО! ПОВТОРЯЮ, НЕМЕДЛЕННО ПОКИНЬТЕ-"
 	var/announcer_name = "Автоматический отчёт о техническом состоянии"
 
 	var/do_repair_hull = TRUE
@@ -352,61 +344,6 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 
 /obj/effect/overmap/visitable/ship/proc/get_landed_info()
 	return "This ship cannot land."
-
-/obj/effect/overmap/visitable/ship/proc/check_target(obj/effect/overmap/target)
-	if(target in view(7, src))
-		return TRUE
-	return FALSE
-
-/obj/effect/overmap/visitable/ship/proc/get_target(var/target_type)
-	if(target_type == TARGET_SHIP)
-		if(ship_target && check_target(ship_target))
-			return ship_target
-
-	if(target_type == TARGET_MISSILE)
-		if(missile_target && check_target(missile_target))
-			return missile_target
-
-	if(target_type == TARGET_POINT)
-		return list(coord_target_x, coord_target_y)
-
-	if(target_type == TARGET_PLANET)
-		if(planet_target && check_target(planet_target))
-			return list(planet_target, planet_x, planet_y)
-		else
-			return list(null, planet_x, planet_y)
-
-	if(target_type == TARGET_PLANETCOORD)
-		return list(planet_x, planet_y)
-
-	return null
-
-/obj/effect/overmap/visitable/ship/proc/set_target(var/target_type, var/obj/effect/overmap/target, var/target_x, var/target_y)
-	if(target_type == TARGET_SHIP)
-		if(target && check_target(target))
-			ship_target = target
-			return TRUE
-
-	if(target_type == TARGET_MISSILE)
-		if(target && check_target(target))
-			missile_target = target
-			return TRUE
-
-	if(target_type == TARGET_POINT)
-		coord_target_x = target_x
-		coord_target_y = target_y
-
-	if(target_type == TARGET_PLANET)
-		if(target && check_target(target))
-			planet_target = target
-			planet_x = target_x
-			planet_y = target_y
-			return TRUE
-		else
-			planet_x = target_x
-			planet_y = target_y
-
-	return FALSE
 
 /*/obj/effect/overmap/visitable/ship/get_scan_data(mob/user)
 	. = ..()

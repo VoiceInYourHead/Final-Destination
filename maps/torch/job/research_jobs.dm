@@ -34,8 +34,8 @@
 	                    SKILL_FINANCE     = SKILL_BASIC,
 	                    SKILL_BOTANY      = SKILL_BASIC,
 	                    SKILL_ANATOMY     = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_ADEPT,
-	                    SKILL_SCIENCE     = SKILL_ADEPT)
+	                    SKILL_DEVICES     = SKILL_TRAINED,
+	                    SKILL_SCIENCE     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_DEVICES     = SKILL_MAX,
@@ -62,7 +62,7 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_ADEPT)
+	                    SKILL_SCIENCE     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_DEVICES     = SKILL_MAX,
@@ -155,14 +155,14 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5
 	)
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_ADEPT
+	                    SKILL_WEAPONS     = SKILL_TRAINED
 						)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED)
 	skill_points = 20
 
 	access = list(

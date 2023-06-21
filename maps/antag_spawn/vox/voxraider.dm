@@ -9,6 +9,7 @@
 	known = FALSE
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 	initial_generic_waypoints = list(
 		"nav_vox_raider_start"
 	)
@@ -33,7 +34,7 @@
 	warmup_time = 5
 	range = 1 //range = 2
 	fuel_consumption = 0
-	skill_needed = SKILL_NONE
+	skill_needed = SKILL_UNSKILLED
 	knockdown = FALSE
 
 /turf/simulated/floor/tiled/dark/vox

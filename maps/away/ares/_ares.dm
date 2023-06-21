@@ -97,6 +97,7 @@
 	desc = "/ERROR/."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 
 /obj/effect/submap_landmark/joinable_submap/ares
 	name = "GM Ltd. mining vessel"

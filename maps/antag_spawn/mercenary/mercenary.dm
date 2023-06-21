@@ -6,7 +6,7 @@
 /obj/effect/overmap/visitable/sector/merc_base
 	name = "Tiny Asteroid"
 	desc = "Sensor array detects an small, insignificant asteroid. The core appears to be reflecting scans."
-	sector_flags = OVERMAP_SECTOR_IN_SPACE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 	icon_state = "meteor4"
 	hide_from_reports = TRUE
 	initial_generic_waypoints = list(
@@ -36,7 +36,7 @@
 	warmup_time = 5
 	range = 1 //range = 2
 	fuel_consumption = 2
-	skill_needed = SKILL_NONE
+	skill_needed = SKILL_UNSKILLED
 
 /turf/simulated/floor/shuttle_ceiling/merc
 	color = COLOR_DARK_GUNMETAL

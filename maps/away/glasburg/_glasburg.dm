@@ -68,6 +68,7 @@
 	desc = "A ruined jumpdrive ring used to transport individual ships at FTL speeds."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 
 /obj/effect/shuttle_landmark/glasburg
 	name = "Ruined Bluespace Jump Ring"

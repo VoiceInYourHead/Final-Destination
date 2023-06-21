@@ -31,8 +31,8 @@
 	outfit_type = /decl/hierarchy/outfit/beacon
 	loadout_allowed = TRUE
 	min_skill = list(
-		SKILL_EVA = SKILL_ADEPT,
-		SKILL_HAULING = SKILL_ADEPT,
+		SKILL_EVA = SKILL_TRAINED,
+		SKILL_HAULING = SKILL_TRAINED,
 		SKILL_DEVICES = SKILL_BASIC,
 		SKILL_MEDICAL = SKILL_BASIC
 	)

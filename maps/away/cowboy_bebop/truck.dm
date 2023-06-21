@@ -6,7 +6,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 4000
 	integrity_failure_cap = 60
-	skill_needed = SKILL_ADEPT
+	skill_needed = SKILL_TRAINED
 	vessel_size = SHIP_SIZE_SMALL
 	fore_dir = NORTH
 	color = "#00ffff"
@@ -42,6 +42,7 @@
 	desc = "A trace of recent bluespace jump."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 
 /obj/effect/shuttle_landmark/space_truck
 	name = "Bluespace Residue"
@@ -82,8 +83,8 @@
 	outfit_type = /decl/hierarchy/outfit/trucker
 	loadout_allowed = TRUE
 	min_skill = list(
-		SKILL_EVA = SKILL_ADEPT,
-		SKILL_HAULING = SKILL_ADEPT,
+		SKILL_EVA = SKILL_TRAINED,
+		SKILL_HAULING = SKILL_TRAINED,
 		SKILL_DEVICES = SKILL_BASIC,
 		SKILL_MEDICAL = SKILL_BASIC
 	)

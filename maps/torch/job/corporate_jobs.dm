@@ -18,7 +18,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/workplace_liaison
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
-	min_skill = list(   SKILL_BUREAUCRACY	= SKILL_EXPERT,
+	min_skill = list(   SKILL_BUREAUCRACY	= SKILL_EXPERIENCED,
 	                    SKILL_FINANCE		= SKILL_BASIC)
 
 	skill_points = 20
@@ -59,28 +59,28 @@
 	)
 	use_species_whitelist = SPECIES_SHELL
 
-	min_skill = list(   SKILL_COMBAT      = SKILL_PROF,
-						SKILL_WEAPONS	  = SKILL_NONE,
+	min_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
+						SKILL_WEAPONS	  = SKILL_UNSKILLED,
 
-						SKILL_BUREAUCRACY  = SKILL_PROF,
-						SKILL_FINANCE      = SKILL_EXPERT,
-						SKILL_EVA          = SKILL_PROF,
+						SKILL_BUREAUCRACY  = SKILL_MASTER,
+						SKILL_FINANCE      = SKILL_EXPERIENCED,
+						SKILL_EVA          = SKILL_MASTER,
 						SKILL_MECH         = HAS_PERK,
-						SKILL_PILOT        = SKILL_PROF,
-						SKILL_HAULING      = SKILL_PROF,
-						SKILL_COMPUTER     = SKILL_PROF,
-						SKILL_BOTANY       = SKILL_PROF,
-						SKILL_COOKING      = SKILL_PROF,
-						SKILL_FORENSICS    = SKILL_PROF,
-						SKILL_CONSTRUCTION = SKILL_PROF,
-						SKILL_ELECTRICAL   = SKILL_PROF,
-						SKILL_ATMOS        = SKILL_PROF,
-						SKILL_ENGINES      = SKILL_PROF,
-						SKILL_DEVICES      = SKILL_PROF,
-						SKILL_SCIENCE      = SKILL_PROF,
-						SKILL_MEDICAL      = SKILL_PROF,
-						SKILL_ANATOMY      = SKILL_PROF,
-						SKILL_CHEMISTRY    = SKILL_PROF)
+						SKILL_PILOT        = SKILL_MASTER,
+						SKILL_HAULING      = SKILL_MASTER,
+						SKILL_COMPUTER     = SKILL_MASTER,
+						SKILL_BOTANY       = SKILL_MASTER,
+						SKILL_COOKING      = SKILL_MASTER,
+						SKILL_FORENSICS    = SKILL_MASTER,
+						SKILL_CONSTRUCTION = SKILL_MASTER,
+						SKILL_ELECTRICAL   = SKILL_MASTER,
+						SKILL_ATMOS        = SKILL_MASTER,
+						SKILL_ENGINES      = SKILL_MASTER,
+						SKILL_DEVICES      = SKILL_MASTER,
+						SKILL_SCIENCE      = SKILL_MASTER,
+						SKILL_MEDICAL      = SKILL_MASTER,
+						SKILL_ANATOMY      = SKILL_MASTER,
+						SKILL_CHEMISTRY    = SKILL_MASTER)
 
 	skill_points = 0
 

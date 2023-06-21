@@ -181,7 +181,7 @@
 		return
 
 	if (isWirecutter(W))
-		if(prob(user.skill_fail_chance(SKILL_SCIENCE, 90, SKILL_EXPERT)))
+		if(prob(user.skill_fail_chance(SKILL_SCIENCE, 90, SKILL_EXPERIENCED)))
 			to_chat(user, SPAN_WARNING("You fail to collect a sample from \the [src]."))
 		else
 			if(!pruned)
