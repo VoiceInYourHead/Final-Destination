@@ -3,13 +3,14 @@
 	id = "build1"
 	description = "Just small ruins."
 	suffixes = list("small_ruins/build_ruin.dmm")
-	spawn_cost = 0.1
+	spawn_cost = 0.4
 	template_flags = TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_CLEAR_CONTENTS// | TEMPLATE_FLAG_ALLOW_DUPLICATES
 	ruin_tags = RUIN_WRECK
 
 /datum/map_template/ruin/exoplanet/build/build2
 	name = "Ruined Garage 2"
 	id = "build2"
+	spawn_cost = 0.3
 	suffixes = list("small_ruins/build_ruin2.dmm")
 
 /datum/map_template/ruin/exoplanet/build/build3
@@ -20,17 +21,19 @@
 /datum/map_template/ruin/exoplanet/build/build4
 	name = "Ruined Voxship 4"
 	id = "build4"
+	spawn_cost = 1
 	suffixes = list("small_ruins/build_ruin4.dmm")
-	spawn_cost = 0.2
 
 /datum/map_template/ruin/exoplanet/build/build5
 	name = "Ruined Rad Wastes 5"
 	id = "build5"
+	spawn_cost = 0.2
 	suffixes = list("small_ruins/build_ruin5.dmm")
 
 /datum/map_template/ruin/exoplanet/build/build6
 	name = "Ruined Ascent Shuttle 6"
 	id = "build6"
+	spawn_cost = 1
 	suffixes = list("small_ruins/build_ruin6.dmm")
 	ruin_tags = RUIN_ALIEN
 
@@ -43,6 +46,7 @@
 /datum/map_template/ruin/exoplanet/build/build8
 	name = "Long-distance Communication Module 8"
 	id = "build8"
+	spawn_cost = 1
 	suffixes = list("small_ruins/build_ruin8.dmm")
 	ruin_tags = RUIN_HUMAN
 

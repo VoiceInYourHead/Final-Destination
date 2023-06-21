@@ -23,6 +23,11 @@ var/global/explosion_in_progress = 0
 
 	explosion_turfs[epicenter] = power
 
+	var/datum/effect/system/explosion/E = new/datum/effect/system/explosion()
+	E.power = power
+	E.set_up(epicenter)
+	E.start()
+
 	//This steap handles the gathering of turfs which will be ex_act() -ed in the next step. It also ensures each turf gets the maximum possible amount of power dealt to it.
 	for(var/direction in GLOB.cardinal)
 		var/turf/T = get_step(epicenter, direction)
@@ -68,7 +73,6 @@ var/global/explosion_in_progress = 0
 
 	explosion_turfs.Cut()
 	explosion_in_progress = 0
-
 
 //Code-wise, a safe value for power is something up to ~25 or ~30.. This does quite a bit of damage to the station.
 //direction is the direction that the spread took to come to this tile. So it is pointing in the main blast direction - meaning where this tile should spread most of it's force.
