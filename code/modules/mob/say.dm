@@ -121,6 +121,9 @@
 	if(client?.get_preference_value(/datum/client_preference/accent_tags) != GLOB.PREF_SHOW)
 		return ""
 
+	if(!iscarbon(speaker))
+		return ""
+
 	var/static/list/culture2state = list(
 		CULTURE_HUMAN_LUNAPOOR = "luna",
 		CULTURE_HUMAN_LUNARICH = "luna",
