@@ -42,6 +42,7 @@
 	desc = "A trace of recent bluespace jump."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 
 /obj/effect/shuttle_landmark/space_truck
 	name = "Bluespace Residue"

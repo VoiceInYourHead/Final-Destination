@@ -21,6 +21,7 @@
 	desc = "A ruined jumpdrive ring of Ascent design, used to transport individual ships at FTL speeds."
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 
 /obj/effect/submap_landmark/joinable_submap/ascent_caulship
 	name = "Ascent Caulship"

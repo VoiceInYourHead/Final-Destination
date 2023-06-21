@@ -9,6 +9,7 @@
 	known = FALSE
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 	initial_generic_waypoints = list(
 		"nav_vox_raider_start"
 	)

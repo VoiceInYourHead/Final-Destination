@@ -31,7 +31,7 @@
 	var/list/equipment = list()
 	var/obj/effect/overmap/projectile/overmap_missile = null
 	var/lifetime = 60 SECONDS
-	var/obj/effect/overmap/origin = null
+	var/obj/effect/overmap/visitable/origin = null
 
 /obj/structure/missile/proc/get_additional_info()
 	var/list/info = list("Detected components:<ul>")

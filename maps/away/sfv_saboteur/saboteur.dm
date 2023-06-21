@@ -16,6 +16,7 @@
 	desc = "Bluespace trace, left by something small"
 	icon_state = "event"
 	hide_from_reports = TRUE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 	known = 0
 
 /decl/submap_archetype/saboteur

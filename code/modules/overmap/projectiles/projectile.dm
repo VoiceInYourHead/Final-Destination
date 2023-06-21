@@ -88,7 +88,11 @@
 		if(O == actual_missile.origin)
 			continue
 
-		if(O.missile_notarget)
+		var/valid = FALSE
+		for(var/obj/item/missile_equipment/thruster/E in actual_missile.equipment)
+			if(E.is_target_valid(O))
+				valid = TRUE
+		if(!valid)
 			continue
 
 		if(!LAZYLEN(O.map_z))
