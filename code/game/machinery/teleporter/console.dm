@@ -178,7 +178,7 @@
 		var/turf/T = locate(teleport_x, teleport_y, pick(S.map_z))
 		var/bearing = round(90 - Atan2(S.x - linked.x, S.y - linked.y),5)
 
-		result["TLOC - [S.name] [get_dist(linked,S) > 0 ? "\[Bearing: [bearing]°\]" : "\[NEAR\]" ]"] = T
+		result["TLOC - [S.name] [get_dist(linked,S) > 0 ? "\[Bearing: [bearing]\]" : "\[NEAR\]" ]"] = T
 
 // boring beacons- WUH, YOU CAN LOCK ON TRACKING IMPLANTS??
 	for (var/obj/machinery/tele_beacon/B)
@@ -228,7 +228,12 @@
 		if ("Shut Down")
 			set_active(FALSE, TRUE)
 		if ("Start Up")
-			set_active(TRUE, TRUE)
+			var/obj/effect/overmap/visitable/linked = map_sectors["[z]"]
+			var/obj/effect/overmap/visitable/target_sector = map_sectors["[target.z ? target.z : target.loc.z]"]
+			if(!(target_sector in view(2,linked)) && !istype(target,/obj/machinery/tele_beacon))
+				lost_target()
+			else
+				set_active(TRUE, TRUE)
 		if ("Set Target")
 			var/list/targets = get_targets(user)
 			var/data_target = input(user, "Select Target", "Teleporter") in null | targets
