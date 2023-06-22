@@ -37,3 +37,7 @@
 /obj/item/stamp/path
 	name = "pathfinder's rubber stamp"
 	icon_state = "stamp-pf"
+
+/obj/item/stamp/cs
+	name = "chief steward's rubber stamp"
+	icon_state = "stamp-cs"
