@@ -121,7 +121,7 @@
 	if(client?.get_preference_value(/datum/client_preference/accent_tags) != GLOB.PREF_SHOW)
 		return ""
 
-	if(!iscarbon(speaker))
+	if(!speaker.client || !iscarbon(speaker))
 		return ""
 
 	var/static/list/culture2state = list(
@@ -137,11 +137,10 @@
 		CULTURE_HUMAN_CETI     = "ceti",
 		CULTURE_HUMAN_SPACER   = "spacer",
 		CULTURE_HUMAN_SPAFRO   = "spacer",
-		CULTURE_HUMAN_CONFED   = "terran",
-		CULTURE_HUMAN_OTHER    = "human_other"
-
+		CULTURE_HUMAN_CONFED   = "terran"
 	)
 
-	var/culture = client.prefs.cultural_info[TAG_CULTURE]
+	var/culture = speaker.client.prefs.cultural_info[TAG_CULTURE]
+	var/state = (culture in culture2state) ? culture2state[culture] : "human_other"
 
-	return (culture in culture2state) ? icon2html(icon('icons/accent_tags.dmi', culture2state[culture]), src, realsize = TRUE, class = "text_tag", incy = 3) : ""
+	return icon2html(icon('icons/accent_tags.dmi', state), src, realsize = TRUE, class = "text_tag", incy = 3)
