@@ -12,7 +12,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/chief_steward
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /singleton/hierarchy/outfit/job/torch/crew/service/chief_steward/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/chief_steward/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e7,
@@ -20,8 +20,8 @@
 		/datum/mil_rank/fleet/e6
 	)
 	min_skill = list(
-		SKILL_BUREAUCRACY = SKILL_ADEPT,
-		SKILL_COOKING = SKILL_ADEPT,
+		SKILL_BUREAUCRACY = SKILL_TRAINED,
+		SKILL_COOKING = SKILL_TRAINED,
 		SKILL_BOTANY = SKILL_BASIC,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
