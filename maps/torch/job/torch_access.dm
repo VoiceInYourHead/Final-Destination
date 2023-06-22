@@ -144,6 +144,12 @@
 	desc = "Research Checkpoint"
 	region = ACCESS_REGION_RESEARCH
 
+var/global/const/access_chief_steward = "ACCESS_TORCH_CHIEF_STEWARD"
+/datum/access/chief_steward
+	id = access_chief_steward
+	desc = "Chief Steward"
+	region = ACCESS_REGION_COMMAND
+
 /datum/access/psychiatrist
 	desc = "Mental Health"
 
