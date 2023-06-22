@@ -98,6 +98,7 @@
 		/obj/item/storage/belt/general,
 		/obj/item/clothing/head/chefhat,
 		/obj/item/clothing/suit/chef/classic,
+		/obj/item/clothing/suit/chef,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/reagent_containers/glass/rag,
 		/obj/item/clothing/glasses/science,
@@ -110,5 +111,9 @@
 		/obj/item/device/megaphone,
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/device/taperecorder,
+		/obj/item/device/tape/random = 3,
 		/obj/item/device/camera/tvcamera,
+		/obj/item/device/camera_film = 2,
+		/obj/item/device/radio/headset/headset_chief_steward,
+		/obj/item/device/radio/headset/headset_chief_steward/alt,
 	)
