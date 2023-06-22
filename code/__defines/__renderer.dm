@@ -1,44 +1,4 @@
-/*This file is a list of all preclaimed planes & layers
-
-All planes & layers should be given a value here instead of using a magic/arbitrary number.
-
-After fiddling with planes and layers for some time, I figured I may as well provide some documentation:
-
-What are planes?
-	Think of Planes as a sort of layer for a layer - if plane X is a larger number than plane Y, the highest number for a layer in X will be below the lowest
-	number for a layer in Y.
-	Planes also have the added bonus of having planesmasters.
-
-What are Planesmasters?
-	Planesmasters, when in the sight of a player, will have its appearance properties (for example, colour matrices, alpha, transform, etc)
-	applied to all the other objects in the plane. This is all client sided.
-	Usually you would want to add the planesmaster as an invisible image in the client's screen.
-
-What can I do with Planesmasters?
-	You can: Make certain players not see an entire plane,
-	Make an entire plane have a certain colour matrices,
-	Make an entire plane transform in a certain way,
-	Make players see a plane which is hidden to normal players - I intend to implement this with the antag HUDs for example.
-	Planesmasters can be used as a neater way to deal with client images or potentially to do some neat things
-
-How do planes work?
-	A plane can be any integer from -100 to 100. (If you want more, bug lummox.)
-	All planes above 0, the 'base plane', are visible even when your character cannot 'see' them, for example, the HUD.
-	All planes below 0, the 'base plane', are only visible when a character can see them.
-
-How do I add a plane?
-	Think of where you want the plane to appear, look through the pre-existing planes and find where it is above and where it is below
-	Slot it in in that place, and change the pre-existing planes, making sure no plane shares a number.
-	Add a description with a comment as to what the plane does.
-
-How do I make something a planesmaster?
-	Add the PLANE_MASTER appearance flag to the appearance_flags variable.
-
-What is the naming convention for planes or layers?
-	Make sure to use the name of your object before the _LAYER or _PLANE, eg: [NAME_OF_YOUR_OBJECT HERE]_LAYER or [NAME_OF_YOUR_OBJECT HERE]_PLANE
-	Also, as it's a define, it is standard practice to use capital letters for the variable so people know this.
-
-*/
+// Planes, layers, and defaults for _renderer.dm
 
 /*
 	from stddef.dm, planes & layers built into byond.
@@ -52,13 +12,12 @@ What is the naming convention for planes or layers?
 	EFFECTS_LAYER = 5000
 	TOPDOWN_LAYER = 10000
 	BACKGROUND_LAYER = 20000
-	EFFECTS_LAYER = 5000
-	TOPDOWN_LAYER = 10000
-	BACKGROUND_LAYER = 20000
 	------
 
 	FLOAT_PLANE = -32767
 */
+
+#define LOWEST_PLANE -200
 
 #define CLICKCATCHER_PLANE -100
 
@@ -72,10 +31,19 @@ What is the naming convention for planes or layers?
 	#define DUST_LAYER                   2
 
 // Openspace uses planes -80 through -70.
+#define OPENTURF_MAX_PLANE -70
+#define OPENTURF_MAX_DEPTH 10		// The maxiumum number of planes deep we'll go before we just dump everything on the same plane.
 
-#define OVER_OPENSPACE_PLANE        -3
+#define OVER_OPENSPACE_PLANE        -4
 
-#define DEFAULT_PLANE                   0
+#define BLACKNESS_PLANE                 0 //Blackness plane as per DM documentation.
+
+#define HEAT_EFFECT_PLANE -4
+#define HEAT_EFFECT_TARGET    "*heat"
+#define HEAT_COMPOSITE_TARGET "*heatc"
+#define WARP_EFFECT_PLANE -3
+
+#define DEFAULT_PLANE                   1
 	#define PLATING_LAYER               1
 	//ABOVE PLATING
 	#define HOLOMAP_LAYER               1.01
@@ -121,6 +89,7 @@ What is the naming convention for planes or layers?
 	#define SIDE_WINDOW_LAYER           3.04
 	#define FULL_WINDOW_LAYER           3.05
 	#define ABOVE_WINDOW_LAYER          3.06
+	#define HOLOMAP_OVERLAY_LAYER       3.061
 	//LYING MOB AND HUMAN
 	#define LYING_MOB_LAYER             3.07
 	#define LYING_HUMAN_LAYER           3.08
@@ -162,19 +131,20 @@ What is the naming convention for planes or layers?
 	#define OBFUSCATION_LAYER           5.2
 	#define BASE_AREA_LAYER             999
 
-#define OBSERVER_PLANE             1
+#define OBSERVER_PLANE             2
 
-#define LIGHTING_PLANE             2 // For Lighting. - The highest plane (ignoring all other even higher planes)
+#define LIGHTING_PLANE             3 // For Lighting. - The highest plane (ignoring all other even higher planes)
 	#define LIGHTBULB_LAYER        0
 	#define LIGHTING_LAYER         1
 	#define ABOVE_LIGHTING_LAYER   2
 
-#define EFFECTS_ABOVE_LIGHTING_PLANE   3 // For glowy eyes, laser beams, etc. that shouldn't be affected by darkness
+#define EFFECTS_ABOVE_LIGHTING_PLANE   4 // For glowy eyes, laser beams, etc. that shouldn't be affected by darkness
 	#define EYE_GLOW_LAYER         1
 	#define BEAM_PROJECTILE_LAYER  2
 	#define SUPERMATTER_WALL_LAYER 3
+	#define SPEECH_INDICATOR_LAYER 4
 
-#define FULLSCREEN_PLANE                4 // for fullscreen overlays that do not cover the hud.
+#define FULLSCREEN_PLANE                5 // for fullscreen overlays that do not cover the hud.
 
 	#define FULLSCREEN_LAYER    0
 	#define DAMAGE_LAYER        1
@@ -182,24 +152,52 @@ What is the naming convention for planes or layers?
 	#define BLIND_LAYER         3
 	#define CRIT_LAYER          4
 
-#define HUD_PLANE                    5
+#define HUD_PLANE                    6
 	#define UNDER_HUD_LAYER              0
 	#define HUD_BASE_LAYER               2
 	#define HUD_ITEM_LAYER               3
 	#define HUD_ABOVE_ITEM_LAYER         4
 
+/// This plane masks out lighting, to create an "emissive" effect for e.g glowing screens in otherwise dark areas.
+#define EMISSIVE_PLANE 10
+#define EMISSIVE_TARGET "*emissive"
+	/// The layer you should use when you -really- don't want an emissive overlay to be blocked.
+	#define EMISSIVE_LAYER_UNBLOCKABLE 9999
 
-//This is difference between planes used for atoms and effects
-#define PLANE_DIFFERENCE              3
+//-------------------- Rendering ---------------------
+
+/// Semantics - The final compositor or a filter effect renderer
+#define RENDER_GROUP_NONE null
+
+/// Things to be drawn within the game context
+#define RENDER_GROUP_SCENE 990
+
+/// Things to be drawn within the screen context
+#define RENDER_GROUP_SCREEN 995
+
+/// The final render group, for compositing
+#define RENDER_GROUP_FINAL 999
 
 
+/// Causes the atom to ignore clicks, hovers, etc.
+#define MOUSE_OPACITY_UNCLICKABLE 0
+
+/// Causes the atom to catch clicks, hovers, etc.
+#define MOUSE_OPACITY_NORMAL 1
+
+/// Causes the atom to catch clicks, hovers, etc, taking priority over NORMAL for a shared pointer target.
+#define MOUSE_OPACITY_PRIORITY 2
+
+
+/// Integer (One of `*_PLANE`). The atom's rendering plane. See `code\__defines\__renderer.dm` for a list of valid planes. Also see the DM Reference for `plane var (atom)`.
 /atom/plane = DEFAULT_PLANE
 
 #define DEFAULT_APPEARANCE_FLAGS (PIXEL_SCALE)
 
 /atom/appearance_flags = DEFAULT_APPEARANCE_FLAGS
+/atom/movable/appearance_flags = DEFAULT_APPEARANCE_FLAGS | TILE_BOUND // Most AMs are not visibly bigger than a tile.
 /image/appearance_flags = DEFAULT_APPEARANCE_FLAGS
-/mutable_appearance/appearance_flags = DEFAULT_APPEARANCE_FLAGS //Inherits /image but re docs, subject to change
+/mutable_appearance/appearance_flags = DEFAULT_APPEARANCE_FLAGS // Inherits /image but re docs, subject to change
 
 
 /image/proc/plating_decal_layerise()
@@ -217,26 +215,3 @@ What is the naming convention for planes or layers?
 /atom/proc/reset_plane_and_layer()
 	plane = initial(plane)
 	layer = initial(layer)
-
-/*
-  PLANE MASTERS
-*/
-
-/obj/screen/plane_master
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS | PLANE_MASTER
-	screen_loc = "CENTER,CENTER"
-	globalscreen = 1
-
-/obj/screen/plane_master/ghost_master
-	plane = OBSERVER_PLANE
-
-/obj/screen/plane_master/ghost_dummy
-	// this avoids a bug which means plane masters which have nothing to control get angry and mess with the other plane masters out of spite
-	alpha = 0
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS
-	plane = OBSERVER_PLANE
-
-GLOBAL_LIST_INIT(ghost_master, list(
-	new /obj/screen/plane_master/ghost_master(),
-	new /obj/screen/plane_master/ghost_dummy()
-))

@@ -14,6 +14,8 @@
 	var/list/climbers
 	var/climb_speed_mult = 1
 	var/init_flags = EMPTY_BITFIELD
+	/// Stores overlays managed by update_overlays() to prevent removing overlays that were not added by the same proc
+	var/list/managed_overlays
 
 	var/trade_blacklisted
 
@@ -295,10 +297,25 @@ its easier to just keep the beam vertical.
 		icon_state = new_icon_state
 
 /atom/proc/update_icon()
+	if (QDELETED(src))
+		return
 	on_update_icon(arglist(args))
+
+	var/list/new_overlays = update_overlays()
+	if (managed_overlays)
+		overlays -= managed_overlays
+		managed_overlays = null
+	if (length(new_overlays))
+		managed_overlays = new_overlays
+		overlays += new_overlays
 
 /atom/proc/on_update_icon()
 	return
+
+/** Updates the overlays of the atom */
+/atom/proc/update_overlays()
+	SHOULD_CALL_PARENT(TRUE)
+	. = list()
 
 /atom/proc/ex_act()
 	return
