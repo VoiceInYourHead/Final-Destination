@@ -10,7 +10,7 @@
 
 /decl/closet_appearance/secure_closet/torch/chief_steward
 	extra_decals = list(
-		"stripe_vertical_right_partial" = COLOR_GREEN_GRAY,
+		"stripe_vertical_right_full" = COLOR_GREEN_GRAY,
 		"stripe_vertical_mid_full" = COLOR_CLOSET_GOLD
 	)
 
@@ -93,7 +93,7 @@
 	req_access = list()
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/chief_steward
 
-/obj/structure/closet/secure_closet/hydroponics_torch/WillContain()
+/obj/structure/closet/secure_closet/cs_torch/WillContain()
 	return list(
 		/obj/item/storage/belt/general,
 		/obj/item/clothing/head/chefhat,
