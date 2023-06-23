@@ -12,6 +12,8 @@
 	habitability_distribution = list(HABITABILITY_IDEAL = 25, HABITABILITY_OKAY = 75)
 	ruin_tags_whitelist = RUIN_RAINWORLD
 	ruin_tags_blacklist = null
+	water_color = null
+	surface_color = "#363531"
 	has_trees = FALSE
 	daycycle = FALSE
 	flora_diversity = 7
