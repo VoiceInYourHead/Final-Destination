@@ -108,8 +108,9 @@
 	var/list/potential_levels
 	var/turf/T = get_turf(src)
 	for(var/obj/effect/overmap/visitable/O in T)
-		if(O == actual_missile.origin)
-			continue
+		if(actual_missile.origin)
+			if(O == actual_missile.origin)
+				continue
 
 		var/valid = FALSE
 		for(var/obj/item/missile_equipment/thruster/E in actual_missile.equipment)

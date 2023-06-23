@@ -142,7 +142,7 @@
 
 	if(!entered_away)
 		origin = map_sectors["[z]"]
-	overmap_missile.SetName("[origin.name]'s [overmap_name]")
+	overmap_missile.SetName("[origin ? origin.name+"'s" : ""] [overmap_name]")
 	// Abort walk
 	walk(src, 0)
 	forceMove(overmap_missile)

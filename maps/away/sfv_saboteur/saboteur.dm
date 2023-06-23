@@ -50,7 +50,7 @@
 	desc = "Wake signature indicates a small armed vessel."
 	fore_dir = NORTH
 	color = "#0751f3"
-	integrity_failure_cap = 60
+	integrity_failure_cap = 30
 	skill_needed = SKILL_BASIC
 	vessel_mass = 3000
 	vessel_size = SHIP_SIZE_SMALL
