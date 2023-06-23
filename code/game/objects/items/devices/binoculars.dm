@@ -5,6 +5,7 @@
 	zoomdevicename = "eyepieces"
 	icon = 'icons/obj/binoculars.dmi'
 	icon_state = "binoculars"
+	item_state = "binoculars"
 
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 5.0

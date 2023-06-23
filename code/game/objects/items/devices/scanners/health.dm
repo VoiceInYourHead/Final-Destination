@@ -3,7 +3,7 @@
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
 	icon = 'icons/obj/health_analyzer.dmi'
 	icon_state = "health"
-	item_state = "analyzer"
+	item_state = "healthanalyzer"
 	item_flags = ITEM_FLAG_NO_BLUDGEON
 	matter = list(MATERIAL_ALUMINIUM = 200)
 	origin_tech = list(TECH_MAGNET = 1, TECH_BIO = 1)
