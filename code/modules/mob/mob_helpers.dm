@@ -304,7 +304,7 @@ proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 fo
 
 		var/atom/oldeye=M.client.eye
 		var/aiEyeFlag = 0
-		if(istype(oldeye, /mob/observer/eye/aiEye))
+		if(istype(oldeye, /mob/observer/eye/freelook/aiEye))
 			aiEyeFlag = 1
 
 		var/x

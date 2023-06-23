@@ -140,7 +140,6 @@
 								sound_to(M, sound(sound_landing, volume=5))
 
 							if (M.client && M.z != D.z && !istype(get_turf(M), /turf/space) && (get_area(M) in src.shuttle_area))
-								to_chat(M, SPAN_DANGER("Engines rumbles as [name] manuevers in for a landing!"))
 								sound_to(M, sound(sound_landing, volume=60))
 
 				sleep(5)
@@ -170,10 +169,12 @@
 	for(var/area/A in shuttle_area)
 		testing("Moving [A]")
 		translation += get_turf_translation(get_turf(current_location), get_turf(destination), A.contents)
-	var/old_location = current_location
+	var/obj/effect/shuttle_landmark/old_location = current_location
 	GLOB.shuttle_pre_move_event.raise_event(src, old_location, destination)
 	shuttle_moved(destination, translation)
 	GLOB.shuttle_moved_event.raise_event(src, old_location, destination)
+	if(istype(old_location))
+		old_location.shuttle_departed(src)
 	destination.shuttle_arrived(src)
 	return TRUE
 

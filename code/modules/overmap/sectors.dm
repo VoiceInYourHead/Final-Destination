@@ -24,6 +24,8 @@
 
 	var/hide_from_reports = FALSE
 
+	var/free_landing = FALSE
+
 	var/ship_target = null
 	var/planet_target = null
 	var/missile_target

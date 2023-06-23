@@ -232,6 +232,8 @@ var/list/ai_verbs_default = list(
 
 	job = "AI"
 	setup_icon()
+
+	eyeobj.living_eye = FALSE
 	eyeobj.possess(src)
 
 /mob/living/silicon/ai/Destroy()

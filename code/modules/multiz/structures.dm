@@ -82,7 +82,7 @@
 	var/mob/living/silicon/ai/ai = M
 	if(!istype(ai))
 		return
-	var/mob/observer/eye/AIeye = ai.eyeobj
+	var/mob/observer/eye/freelook/AIeye = ai.eyeobj
 	if(istype(AIeye))
 		instant_climb(AIeye)
 
