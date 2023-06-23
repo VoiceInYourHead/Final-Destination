@@ -139,7 +139,7 @@
 /obj/machinery/shipsensors
 	name = "sensors suite"
 	desc = "Long range gravity scanner with various other sensors, used to detect irregularities in surrounding space. Can only run in vacuum to protect delicate quantum BS elements."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/fd/munitions_large.dmi'
 	icon_state = "sensors"
 	anchored = TRUE
 	density = TRUE
