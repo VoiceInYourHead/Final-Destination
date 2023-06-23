@@ -57,9 +57,10 @@
 	else location = get_turf(loca)
 
 /datum/effect/system/explosion/proc/start()
-	var/obj/effect/explosion/boom = new/obj/effect/explosion( location )
-	boom.SetTransform(scale = power/4)
-	boom.set_light(1, power, power+2, 2, l_color = "#f18c47")
+	var/obj/effect/explosion/boom_effect = new/obj/effect/explosion( location )
+	boom_effect.SetTransform(scale = power/4)
+	boom_effect.set_light(1, power*1.5, power*2, 2, l_color = "#f18c47")
+
 	var/datum/effect/system/expl_particles/P = new/datum/effect/system/expl_particles()
 	P.set_up(10,location)
 	P.start()
