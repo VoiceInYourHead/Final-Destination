@@ -9,6 +9,7 @@
 
 /// The base /renderer definition and defaults.
 /atom/movable/renderer
+	abstract_type = /atom/movable/renderer
 	appearance_flags = PLANE_MASTER
 	screen_loc = "CENTER"
 	plane = LOWEST_PLANE
@@ -292,12 +293,25 @@ GLOBAL_LIST_EMPTY(zmimic_renderers)
 	var/mob/M = owner
 
 	if(istype(M))
+		var/quality = M.get_preference_value(/datum/client_preference/graphics_quality)
 
 		if(gas_heat_object)
 			vis_contents -= gas_heat_object
 
-		gas_heat_object.particles?.count = 600
-		gas_heat_object.particles?.spawning = 35
+		if (quality == GLOB.PREF_LOW)
+			if(!istype(gas_heat_object, /obj/effect/heat))
+				QDEL_NULL(gas_heat_object)
+				gas_heat_object = new /obj/effect/heat(null)
+		else
+			if(!istype(gas_heat_object, /obj/particle_emitter/heat))
+				QDEL_NULL(gas_heat_object)
+				gas_heat_object = new /obj/particle_emitter/heat(null, -1)
+			if (quality == GLOB.PREF_MED)
+				gas_heat_object.particles?.count = 250
+				gas_heat_object.particles?.spawning = 15
+			else if (quality == GLOB.PREF_HIGH)
+				gas_heat_object.particles?.count = 600
+				gas_heat_object.particles?.spawning = 35
 
 		vis_contents += gas_heat_object
 

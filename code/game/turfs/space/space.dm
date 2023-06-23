@@ -1,3 +1,4 @@
+GLOBAL_LIST_EMPTY(space_turfs)
 /turf/space
 	plane = SPACE_PLANE
 	icon = 'icons/turf/space.dmi'
@@ -14,6 +15,7 @@
 
 /turf/space/Initialize()
 	. = ..()
+	GLOB.space_turfs += src
 	update_starlight()
 
 	appearance = SSskybox.space_appearance_cache[(((x + y) ^ ~(x * y) + z) % 25) + 1]

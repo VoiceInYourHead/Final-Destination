@@ -4,18 +4,18 @@ SUBSYSTEM_DEF(ao)
 	wait = 1
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 	flags = SS_NO_INIT
-	var/static/tmp/list/image_cache = list()
-	var/static/tmp/list/turf/queue = list()
+	var/static/list/image_cache = list()
+	var/static/list/turf/queue = list()
 
 
 /datum/controller/subsystem/ao/UpdateStat(time)
 	if (PreventUpdateStat(time))
 		return ..()
-	..("Queue: [length(queue)]")
+	..("Queue: [queue.len]")
 
 
 /datum/controller/subsystem/ao/fire(resume, no_mc_tick)
-	if (!length(queue))
+	if (!queue.len)
 		return
 	var/cut_until = 1
 	for (var/turf/turf as anything in queue)

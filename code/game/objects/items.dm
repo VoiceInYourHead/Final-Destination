@@ -313,6 +313,10 @@
 		if(user.r_hand)
 			user.r_hand.update_twohanding()
 
+	if(user && (z_flags & ZMM_MANGLE_PLANES))
+		addtimer(CALLBACK(user, /mob/proc/check_emissive_equipment), 0, TIMER_UNIQUE)
+
+
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
 	var/atom/old_loc = loc
@@ -361,6 +365,10 @@
 		M.l_hand.update_twohanding()
 	if(M.r_hand)
 		M.r_hand.update_twohanding()
+
+	if(user && (z_flags & ZMM_MANGLE_PLANES))
+		addtimer(CALLBACK(user, /mob/proc/check_emissive_equipment), 0, TIMER_UNIQUE)
+
 
 //Defines which slots correspond to which slot flags
 var/list/global/slot_flags_enumeration = list(
