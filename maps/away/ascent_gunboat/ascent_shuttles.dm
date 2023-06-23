@@ -2,6 +2,7 @@
 	name = "Ascent Gunboat"
 	shuttle = "Ascent Gunboat"
 	desc = "Wake signature indicates an armed vessel of unknown design."
+	icon_state = "ship"
 	moving_state = "ship_moving"
 	max_speed = 0.6/(2 SECONDS)
 	vessel_mass = 6000
