@@ -12,8 +12,8 @@
 	habitability_distribution = list(HABITABILITY_IDEAL = 25, HABITABILITY_OKAY = 75)
 	ruin_tags_whitelist = RUIN_RAINWORLD
 	ruin_tags_blacklist = null
-	water_color = null
-	surface_color = "#363531"
+	surface_color = "#47463e"
+	water_color = "#47463e"
 	has_trees = FALSE
 	daycycle = FALSE
 	flora_diversity = 7
@@ -49,7 +49,7 @@
 	i_hate_lightlevel = 0.4
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/get_surface_color()
-	return grass_color
+	return surface_color
 
 /obj/effect/overmap/visitable/sector/exoplanet/urban/adapt_seed(var/datum/seed/S)
 	..()

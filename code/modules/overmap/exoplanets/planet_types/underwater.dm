@@ -2,6 +2,7 @@
 	name = "ocean exoplanet"
 	desc = "A planet, which surface is fully covered by liquid water."
 	color = "#708eda"
+	surface_color = "#2d466e"
 	planetary_area = /area/exoplanet/water
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
 	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM")
@@ -22,7 +23,7 @@
 /obj/effect/overmap/visitable/sector/exoplanet/water/generate_atmosphere()
 	..()
 	if(atmosphere)
-		atmosphere.temperature = T20C + rand(10, 30)
+		atmosphere.temperature = T20C + rand(-5, 10)
 		atmosphere.update_values()
 
 /obj/effect/overmap/visitable/sector/exoplanet/water/adapt_seed(var/datum/seed/S)
