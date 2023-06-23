@@ -3,9 +3,8 @@
 	caldigit = 5
 	coolinterval = 120 SECONDS //time to wait between safe shots in deciseconds
 
-	icon = 'icons/obj/computer.dmi'
 	icon_state = "ascent"
-	icon_keyboard = "ascent_key"
+	icon_keyboard = "mining_key"
 	icon_screen = "ascent_screen"
 
 	gun_name = "particle lance"

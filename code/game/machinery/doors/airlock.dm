@@ -697,31 +697,31 @@ About the new airlock wires panel:
 		switch(state)
 			if(AIRLOCK_CLOSED)
 				if(lights && locked)
-					lights_overlay = bolts_file
+					lights_overlay = overlay_image(bolts_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 					set_light(0.25, 0.1, 1, 2, COLOR_RED_LIGHT)
 
 			if(AIRLOCK_DENY)
 				if(lights)
-					lights_overlay = deny_file
+					lights_overlay = overlay_image(deny_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 					set_light(0.25, 0.1, 1, 2, COLOR_RED_LIGHT)
 
 			if(AIRLOCK_EMAG)
-				sparks_overlay = emag_file
+				sparks_overlay = overlay_image(emag_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 
 			if(AIRLOCK_CLOSING)
 				if(lights)
 					lights_overlay = lights_file
-					set_light(0.25, 0.1, 1, 2, COLOR_LIME)
+					lights_overlay = overlay_image(lights_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 
 			if(AIRLOCK_OPENING)
 				if(lights)
 					lights_overlay = lights_file
-					set_light(0.25, 0.1, 1, 2, COLOR_LIME)
+					lights_overlay = overlay_image(lights_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 
 		if(stat & BROKEN)
-			damage_overlay = sparks_broken_file
+			damage_overlay = overlay_image(sparks_broken_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 		else if(health < maxhealth * 3/4)
-			damage_overlay = sparks_damaged_file
+			damage_overlay = overlay_image(sparks_damaged_file, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 
 	if(welded)
 		weld_overlay = welded_file

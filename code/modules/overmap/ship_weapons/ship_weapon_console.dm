@@ -6,8 +6,8 @@
 	core_skill = SKILL_PILOT
 	var/skill_offset = SKILL_TRAINED - 1 //After which skill level it starts to matter. -1, because we have to index from zero
 
-	icon_keyboard = "rd_key"
-	icon_screen = "teleport"
+	icon_keyboard = "syndie_key"
+	icon_screen = "tcboss"
 
 	var/overmapdir = 0
 
