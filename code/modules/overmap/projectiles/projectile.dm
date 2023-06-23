@@ -61,6 +61,7 @@
 		return
 
 	walk_towards(src, target, min_speed - speed)
+
 	walking = TRUE
 	update_icon()
 
@@ -74,6 +75,28 @@
 	// let equipment alter speed/course
 	for(var/obj/item/missile_equipment/E in actual_missile.equipment)
 		E.do_overmap_work(src)
+
+	for(var/obj/effect/overmap/event/E in get_turf(src))
+		if(istype(E, /obj/effect/overmap/event/nebula))
+			var/turf/destination = locate(rand(2, 54), rand(2, 54), GLOB.using_map.overmap_z)
+			if (!isturf(destination))
+				return
+			dropInto(destination)
+
+		if(istype(E, /obj/effect/overmap/event/meteor))
+			if(prob(10))
+				Destroy()
+
+		if(istype(E, /obj/effect/overmap/event/electric))
+			if(prob(33))
+				for(var/obj/item/missile_equipment/thruster/T in actual_missile.equipment)
+					var/list/targets_around = list()
+					for(var/obj/effect/overmap/visitable/V in range(src, 7))
+						if(T.is_target_valid(V))
+							targets_around += V
+					if(targets_around.len)
+						T.target = pick(targets_around)
+				actual_missile.origin = null
 
 	update_icon()
 
