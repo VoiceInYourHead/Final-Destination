@@ -1,3 +1,44 @@
+/datum/job/chief_steward
+	title = "Chief Steward"
+	department = "Service"
+	department_flag = SRV
+	total_positions = 1
+	spawn_positions = 1
+	minimum_character_age = list(SPECIES_HUMAN = 28)
+	ideal_character_age = 35
+	economic_power = 6
+	minimal_player_age = 7
+	supervisors = "the Executive Officer"
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/chief_steward
+	allowed_branches = list(
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/chief_steward/fleet
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/ec/e7,
+		/datum/mil_rank/fleet/e7,
+		/datum/mil_rank/fleet/e6
+	)
+	min_skill = list(
+		SKILL_BUREAUCRACY = SKILL_TRAINED,
+		SKILL_COOKING = SKILL_TRAINED,
+		SKILL_BOTANY = SKILL_BASIC,
+		SKILL_CHEMISTRY = SKILL_BASIC
+	)
+	access = list(
+		access_bridge,
+		access_torch_fax,
+		access_chief_steward,
+		access_solgov_crew,
+		access_radio_comm,
+		access_radio_serv,
+		access_emergency_storage,
+		access_janitor,
+		access_commissary,
+		access_hydroponics,
+		access_kitchen
+	)
+
 /datum/job/chaplain
 	title = "Chaplain"
 	department = "Service"
@@ -37,7 +78,7 @@
 	department_flag = SRV
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Executive Officer"
+	supervisors = "the Chief Steward"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 20
 	alt_titles = list(
@@ -75,7 +116,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	minimum_character_age = list(SPECIES_HUMAN = 18)
-	supervisors = "the Executive Officer"
+	supervisors = "the Chief Steward"
 	alt_titles = list(
 		"Bartender",
 		"Cook",
@@ -118,7 +159,7 @@
 	department_flag = SRV
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the Executive Officer and SolGov Personnel"
+	supervisors = "the Chief Steward"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/crewman

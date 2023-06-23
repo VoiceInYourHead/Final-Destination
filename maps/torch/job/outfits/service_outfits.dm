@@ -60,6 +60,19 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
 
+/decl/hierarchy/outfit/job/torch/crew/service/chief_steward
+	name = OUTFIT_JOB_NAME("Chief Steward")
+	l_ear = /obj/item/device/radio/headset/headset_chief_steward
+	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/service
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_types = list(/obj/item/card/id/torch/crew/service/chief_steward)
+	pda_type = /obj/item/modular_computer/pda/heads
+
+/decl/hierarchy/outfit/job/torch/crew/service/chief_steward/fleet
+	name = OUTFIT_JOB_NAME("Chief Steward - Fleet")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
+	shoes = /obj/item/clothing/shoes/dutyboots
+
 /decl/hierarchy/outfit/job/torch/passenger/research/assist/janitor
 	name = OUTFIT_JOB_NAME("Custodian - Torch")
 	uniform = /obj/item/clothing/under/rank/janitor

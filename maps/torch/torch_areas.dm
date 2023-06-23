@@ -983,6 +983,13 @@
 	icon_state = "crew_quarters"
 	req_access = list(access_commissary)
 
+/area/crew_quarters/chief_steward
+	name = "\improper Chief Steward's Office"
+	icon_state = "kitchen"
+	req_access = list(access_chief_steward)
+	sound_env = SMALL_ENCLOSED
+	lighting_tone = AREA_LIGHTING_WARM
+
 /area/crew_quarters/lounge
 	name = "\improper Lounge"
 	icon_state = "crew_quarters"
