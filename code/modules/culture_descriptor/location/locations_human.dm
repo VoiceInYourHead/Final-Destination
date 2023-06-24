@@ -229,7 +229,8 @@
 	ruling_body = "Magnitka"
 
 /decl/cultural_info/location/human/meotourne
-	name = HOME_SYSTEM_MEOTOURNE
+	name = HOME_SYSTEM_MEOT
+	distance = "23 light years"
 	description = "Meotourne, the only planet in Delta Pavonis system, is a unique temperate world with its own ecosystem. \
 	While a big chunk of its surface is a barren wasteland scorched by the star it's always facing, other areas are many other habitable, although never habitated and mostly unresearched, biomes with lush pine-like flora \
 	of all kinds and no fauna to speak of. The story of its people, united by Belmeone Federation, is one of constant conflicts and a dozen wars; all this kept Meonians to foster their own \
@@ -242,7 +243,8 @@
 	ruling_body = "Belmeone Federation"
 
 /decl/cultural_info/location/human/pospolita
-	name = HOME_SYSTEM_REPUBLIC
+	name = HOME_SYSTEM_REPUBL
+	distance = "25 light years"
 	description = "Nova Respublica is, in fact, not much more than several small planetary and asteroid resource extraction colonies and many space installations across Kestalia and Marfak systems. \
 	Once united as means for simple survival, over time it became a large entity as lots of hardy spacers joined the fledgling colonial alliance. \
 	After several unsuccessful wars with its neighbours the Republic was never viewed as a major player again to this day. \

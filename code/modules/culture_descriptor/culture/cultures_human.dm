@@ -140,8 +140,8 @@
 	economic_power = 0.9
 
 /decl/cultural_info/culture/human/meotourne
-	name = CULTURE_HUMAN_MEOTOURNE
-	description = "You are from Meotourne, one of the frontier worlds relatively close to humanity's core.\
+	name = CULTURE_HUMAN_MEOT
+	description = "You are from Meotourne, one of the frontier worlds relatively close to humanity's core. \
 	Being from either authoritarian city of Treone, industrialist Loinmont, liberalist Algonquin, shiny new Manhattan or one of tiny villages in between, your fellows are \
 	mostly warm and welcoming to most, but distrustful to anyone deep inside. \
 	Meonians are often seen as resourceful, diplomatic and highly aggressive in any hostilities. \
@@ -150,7 +150,7 @@
 	language = LANGUAGE_SPACER
 
 /decl/cultural_info/culture/human/pospolita
-	name = CULTURE_HUMAN_REPUBLIC
+	name = CULTURE_HUMAN_REPUBL
 	description = "You are from Nova Respublica, the tight conglomerate of several frontier colonies and many space installations relatively close to humanity's core. \
 	Republic was never exactly known for any of its strong suits, although it owes its sovereign existence to its aggressive expansion during the early 23rd century. \
 	Nowadays it stands peacefully, having decent relations with frontier nations it once called enemies. \
