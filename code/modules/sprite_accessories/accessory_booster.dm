@@ -57,17 +57,23 @@
 
 /datum/sprite_accessory/marking/booster/horns/ram
 	icon_state = "horns_ram"
-	name = "Horn Biomods (Ram)"
+	name = "Horn Biomods (Goat, Ram)"
 	disallows = list(
 		/datum/sprite_accessory/marking/booster/horns,
 		/datum/sprite_accessory/marking/booster/ears
 	)
 
-
 /datum/sprite_accessory/marking/booster/horns/unathi
 	icon_state = "horns_unathi"
-	name = "Horn Biomods (Unathi)"
+	name = "Horns Biomods (Demonic, Swept, Small)"
 
+/datum/sprite_accessory/marking/booster/horns/unathi2
+	icon_state = "horns_swept"
+	name = "Horns Biomods (Goat, Swept)"
+
+/datum/sprite_accessory/marking/booster/horns/unathi3
+	icon_state = "horns_curved"
+	name = "Horns Biomods (Goat, Curved)"
 
 /datum/sprite_accessory/marking/booster/horns/spines_short
 	icon_state = "horns_spines_short"
