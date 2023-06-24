@@ -145,3 +145,7 @@
 	icon_state = "event"
 	known = TRUE
 	sector_flags = OVERMAP_SECTOR_KNOWN | OVERMAP_SECTOR_UNTARGETABLE
+
+/obj/effect/overmap/visitable/sector/residue/Initialize()
+	..()
+	generic_waypoints = list()
