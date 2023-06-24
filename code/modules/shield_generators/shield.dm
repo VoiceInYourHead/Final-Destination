@@ -7,6 +7,7 @@
 	layer = ABOVE_HUMAN_LAYER
 	density = TRUE
 	invisibility = 0
+	var/list/impact_sounds = list('sound/effects/shield_hit1.ogg','sound/effects/shield_hit2.ogg','sound/effects/shield_hit3.ogg')
 	var/obj/machinery/power/shield_generator/gen = null
 	var/disabled_for = 0
 	var/diffused_for = 0
@@ -317,6 +318,7 @@
 
 // Small visual effect, makes the shield tiles brighten up by changing color for a moment, and spreads to nearby shields.
 /obj/effect/shield/proc/impact_effect(var/i, var/list/affected_shields = list())
+	playsound(get_turf(src), pick(impact_sounds), 120, 0)
 	i = clamp(i, 1, 10)
 	var/backcolor = color
 	if(gen && gen.check_flag(MODEFLAG_OVERCHARGE))
