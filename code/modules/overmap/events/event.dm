@@ -221,12 +221,17 @@
 	name = "system star"
 	color = COLOR_WHITE
 
+/obj/effect/overmap/event/star/LateInitialize()
+	..()
+	for(var/obj/effect/overmap/event/E in get_turf(src))
+		if(!istype(E,/obj/effect/overmap/event/star))
+			qdel(E)
+
 /obj/effect/overmap/event/star/on_update_icon()
 	return
 
 /obj/effect/overmap/event/star/pre_center
 	name = "star corona"
-	events = list(/datum/event/star)
 	icon = 'icons/fd/sun.dmi'
 	event_icon_states = list("sun1")
 	opacity = 0
@@ -265,7 +270,7 @@
 
 /obj/effect/overmap/event/star/border
 	name = "star danger zone"
-	events = list(/datum/event/solar_storm)
+	events = list(/datum/event/star)
 	icon = 'icons/fd/sun.dmi'
 	event_icon_states = list("border1")
 	opacity = 0
