@@ -3,7 +3,7 @@
 #define EXPLOSION_RATIO_LIGHT 4
 
 
-/proc/explosion(turf/epicenter, range, max_power = EX_ACT_DEVASTATING, adminlog = 1, z_transfer = UP|DOWN, shaped, turf_breaker)
+/proc/explosion(turf/epicenter, range, max_power = EX_ACT_DEVASTATING, adminlog = 1, z_transfer = UP|DOWN, shaped, turf_breaker, datum/effect/effect/system/effective = /datum/effect/effect/system/explosion)
 	set waitfor = FALSE
 
 	var/multi_z_scalar = 0.35
@@ -85,11 +85,18 @@
 		GLOB.defer_powernet_rebuild = 1
 
 	if(heavy_impact_range > 1)
-		var/datum/effect/system/explosion/E = new/datum/effect/system/explosion()
+		var/datum/effect/effect/system/explosion/E = new/datum/effect/effect/system/explosion()
 		E.set_up(epicenter)
 		E.start()
 
 	var/power = devastation_range * 2 + heavy_impact_range + light_impact_range //The ranges add up, ie light 14 includes both heavy 7 and devestation 3. So this calculation means devestation counts for 4, heavy for 2 and light for 1 power, giving us a cap of 27 power.
+
+	/// silly effects :p
+	if(effective)
+		var/datum/effect/effect/system/E = new effective()
+		E.set_up(epicenter)
+		E.start(power)
+
 	explosion_rec(epicenter, power, shaped, turf_breaker)
 
 	sleep(8)

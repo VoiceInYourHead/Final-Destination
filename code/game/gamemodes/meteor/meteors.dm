@@ -247,7 +247,7 @@
 
 /obj/effect/meteor/medium/meteor_effect()
 	..()
-	explosion(src.loc, 3, EX_ACT_HEAVY, 0, turf_breaker = TRUE)
+	explosion(src.loc, 3, EX_ACT_HEAVY, 0, turf_breaker = TRUE, effective = FALSE)
 
 //Large-sized
 /obj/effect/meteor/big
@@ -259,7 +259,7 @@
 
 /obj/effect/meteor/big/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE)
+	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
 
 //Flaming meteor
 /obj/effect/meteor/flaming
@@ -271,7 +271,7 @@
 
 /obj/effect/meteor/flaming/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, z_transfer = 0, shaped = 5, turf_breaker = TRUE)
+	explosion(src.loc, 6, adminlog = 0, z_transfer = 0, shaped = 5, turf_breaker = TRUE, effective = FALSE)
 
 //Radiation meteor
 /obj/effect/meteor/irradiated
@@ -282,7 +282,7 @@
 
 /obj/effect/meteor/irradiated/meteor_effect()
 	..()
-	explosion(src.loc, 4, EX_ACT_LIGHT, 0, turf_breaker = TRUE)
+	explosion(src.loc, 4, EX_ACT_LIGHT, 0, turf_breaker = TRUE, effective = FALSE)
 	new /obj/effect/decal/cleanable/greenglow(get_turf(src))
 	SSradiation.radiate(src, 50)
 
@@ -326,7 +326,7 @@
 
 /obj/effect/meteor/tunguska/meteor_effect()
 	..()
-	explosion(src.loc, 18, adminlog = 0, turf_breaker = TRUE)
+	explosion(src.loc, 18, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
 
 // This is the final solution against shields - a single impact can bring down most shield generators.
 /obj/effect/meteor/supermatter
@@ -337,7 +337,7 @@
 
 /obj/effect/meteor/supermatter/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE)
+	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
 	for(var/obj/machinery/power/apc/A in range(rand(12, 20), src))
 		A.energy_fail(round(10 * rand(8, 12)))
 

@@ -257,7 +257,7 @@
 
 	// Effect 4: Medium scale explosion
 	spawn(0)
-		explosion(TS, explosion_power * 3.5)
+		explosion(TS, explosion_power * 3.5, effective = /datum/effect/effect/system/explosion/warp)
 		qdel(src)
 
 /obj/machinery/power/supermatter/examine(mob/user)

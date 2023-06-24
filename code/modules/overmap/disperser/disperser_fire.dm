@@ -33,7 +33,9 @@
 			if(A.density)
 				if(distance < 7)
 					explosion(T, 6, turf_breaker = TRUE)
-					break
+					if(A)
+						A.Destroy()
+					continue
 				else
 					A.ex_act(1)
 

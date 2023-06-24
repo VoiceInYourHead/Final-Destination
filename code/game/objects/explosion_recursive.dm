@@ -23,11 +23,6 @@ var/global/explosion_in_progress = 0
 
 	explosion_turfs[epicenter] = power
 
-	var/datum/effect/system/explosion/E = new/datum/effect/system/explosion()
-	E.power = power
-	E.set_up(epicenter)
-	E.start()
-
 	//This steap handles the gathering of turfs which will be ex_act() -ed in the next step. It also ensures each turf gets the maximum possible amount of power dealt to it.
 	for(var/direction in GLOB.cardinal)
 		var/turf/T = get_step(epicenter, direction)
