@@ -227,3 +227,28 @@
 	capital = "Labortown"
 	economic_power = 0.8
 	ruling_body = "Magnitka"
+
+/decl/cultural_info/location/human/meotourne
+	name = HOME_SYSTEM_MEOTOURNE
+	description = "Meotourne, the only planet in Delta Pavonis system, is a unique temperate world with its own ecosystem. \
+	While a big chunk of its surface is a barren wasteland scorched by the star it's always facing, other areas are many other habitable, although never habitated and mostly unresearched, biomes with lush pine-like flora \
+	of all kinds and no fauna to speak of. The story of its people, united by Belmeone Federation, is one of constant conflicts and a dozen wars; all this kept Meonians to foster their own \
+	military and diplomatic schools over many years. Currently struggling in holding influence against its own corporations, Federation is largely known to humanity \
+	as frontier's largest exporter of quality weaponry, skilled generals and shrewd diplomats. <br><br>\
+	People of Meotourne are in all kinds different, although they tend to share allegiance to their national heritage and a mostly fake friendly attitude to cover their distrust. \
+	Those who leave the home to explore humanity's core are often corporate workers or militarymen."
+	capital = "Treone"
+	economic_power = 1
+	ruling_body = "Belmeone Federation"
+
+/decl/cultural_info/location/human/pospolita
+	name = HOME_SYSTEM_REPUBLIC
+	description = "Nova Respublica is, in fact, not much more than several small planetary and asteroid resource extraction colonies and many space installations across Kestalia and Marfak systems. \
+	Once united as means for simple survival, over time it became a large entity as lots of hardy spacers joined the fledgling colonial alliance. \
+	After several unsuccessful wars with its neighbours the Republic was never viewed as a major player again to this day. \
+	Unsurprisingly, these so-called 'free people of the frontier' resent the idea of becoming a part of SCG themselves and actively discourage others from it. <br><br>\
+	Republicans are often seen as simple and hard-working people, primarily specialised in heavy industry. \
+	As with any outer-rim spacers they're knit closely with family relations, with said family taking precedence when moving within their societal hierarchy."
+	capital = "Redsands Station"
+	economic_power = 0.8
+	ruling_body = "Nova Respublica"
