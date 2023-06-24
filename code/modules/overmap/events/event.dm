@@ -27,6 +27,12 @@
 			var/type = pick(datum_spawn.hazards)
 			new type(event_turf)
 
+		//star cleaning stuff
+		for(var/obj/effect/overmap/event/star/S in world)
+			for(var/obj/effect/overmap/event/E in get_turf(S))
+				if(!istype(E,/obj/effect/overmap/event/star))
+					qdel(E)
+
 		qdel(datum_spawn)//idk help how do I do this better?
 
 /decl/overmap_event_handler/proc/acquire_event_turfs(var/number_of_turfs, var/distance_from_origin, var/list/candidate_turfs, var/continuous = TRUE)
@@ -220,12 +226,6 @@
 /obj/effect/overmap/event/star
 	name = "system star"
 	color = COLOR_WHITE
-
-/obj/effect/overmap/event/star/LateInitialize()
-	..()
-	for(var/obj/effect/overmap/event/E in get_turf(src))
-		if(!istype(E,/obj/effect/overmap/event/star))
-			qdel(E)
 
 /obj/effect/overmap/event/star/on_update_icon()
 	return
