@@ -1,7 +1,7 @@
 /obj/machinery/computer/ship/jammer
 	name = "jammers console"
-	icon_keyboard = "teleport_key"
-	icon_screen = "teleport"
+	icon_keyboard = "atmos_key"
+	icon_screen = "comm_monitor"
 	light_color = "#77fff8"
 	silicon_restriction = STATUS_UPDATE
 	machine_name = "jammers console"
