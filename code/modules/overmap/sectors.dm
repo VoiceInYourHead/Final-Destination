@@ -54,8 +54,8 @@
 
 	var/obj/effect/overmap/visitable/S
 
-	for(var/obj/effect/overmap/event/E in loc)
-		if(E == /obj/effect/overmap/event/star)
+	for(var/obj/effect/overmap/event/E in get_turf(src))
+		if(istype(E,/obj/effect/overmap/event/star))
 			S.forceMove(locate(rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), GLOB.using_map.overmap_z))
 		else
 			qdel(E)

@@ -27,6 +27,12 @@
 			var/type = pick(datum_spawn.hazards)
 			new type(event_turf)
 
+		//star cleaning stuff
+		for(var/obj/effect/overmap/event/star/S in world)
+			for(var/obj/effect/overmap/event/E in get_turf(S))
+				if(!istype(E,/obj/effect/overmap/event/star))
+					qdel(E)
+
 		qdel(datum_spawn)//idk help how do I do this better?
 
 /decl/overmap_event_handler/proc/acquire_event_turfs(var/number_of_turfs, var/distance_from_origin, var/list/candidate_turfs, var/continuous = TRUE)
@@ -226,7 +232,6 @@
 
 /obj/effect/overmap/event/star/pre_center
 	name = "star corona"
-	events = list(/datum/event/star)
 	icon = 'icons/fd/sun.dmi'
 	event_icon_states = list("sun1")
 	opacity = 0
@@ -265,7 +270,7 @@
 
 /obj/effect/overmap/event/star/border
 	name = "star danger zone"
-	events = list(/datum/event/solar_storm)
+	events = list(/datum/event/star)
 	icon = 'icons/fd/sun.dmi'
 	event_icon_states = list("border1")
 	opacity = 0

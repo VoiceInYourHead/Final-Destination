@@ -43,6 +43,14 @@
 			total_moles = max(total_moles - part, 0)
 			i++
 
+	for(var/obj/effect/overmap/event/star/center/sun in range(6,src))
+		if(sun && atmosphere)
+			atmosphere.temperature = temperature + rand(200, 600) / get_dist(sun,src)
+			atmosphere.update_values()
+			daycycle = 0
+			lightlevel = 1
+			update_daynight()
+
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_atmosphere_color()
 	var/list/colors = list()
 	for (var/g in atmosphere.gas)

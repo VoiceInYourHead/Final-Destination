@@ -184,13 +184,16 @@
 	overlays.Cut()
 	if(use_power)
 		icon_state = "sensors"
-	if(health <= 0)
-		icon_state = "sensors_broken"
 	else
 		icon_state = "sensors_off"
+
+	if(health <= 0)
+		icon_state = "sensors_broken"
+
 	if(panel_open)
 		overlays += "sensors_panel"
 	. = ..()
+
 /obj/machinery/shipsensors/examine(mob/user)
 	. = ..()
 	if(health <= 0)
