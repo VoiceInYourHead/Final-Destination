@@ -24,6 +24,8 @@
 	open_sound = 'sound/effects/storage/unzip.ogg'
 	allow_slow_dump = TRUE
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_back_resomi.dmi')
+
 /obj/item/storage/backpack/equipped()
 	if(!has_extension(src, /datum/extension/appearance))
 		set_extension(src, /datum/extension/appearance/cardborg)
@@ -153,6 +155,9 @@
 	desc = "A sturdy, military-grade backpack with low-profile straps. Designed to work well with armor."
 	icon_state = "rucksack"
 	item_state_slots = list(slot_l_hand_str = "rucksack", slot_r_hand_str = "rucksack")
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_back_resomi.dmi'
+		)
 
 /obj/item/storage/backpack/rucksack/blue
 	name = "blue rucksack"
@@ -498,3 +503,4 @@
 	name = "corporate security messenger bag"
 	desc = "A small, tactical backpack worn over one shoulder. This one is in EXO colors."
 	icon_state = "courierbagsec_exo"
+

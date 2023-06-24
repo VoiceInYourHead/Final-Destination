@@ -173,7 +173,7 @@
 /datum/gear/uniform/thermal
 	display_name = "thermal suit selection"
 	path = /obj/item/clothing/under
-	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL)
+	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_SKRELL, SPECIES_RESOMI)
 
 /datum/gear/uniform/thermal/New()
 	..()
@@ -182,4 +182,7 @@
 	thermal["Skrell, white thermal suit"]= /obj/item/clothing/under/thermal/heat/white
 	thermal["Unati, black thermal suit"]= /obj/item/clothing/under/thermal/heat/unati
 	thermal["Unati, white thermal suit"]= /obj/item/clothing/under/thermal/heat/unati/white
+	thermal["Resomi, black thermal suit"]= /obj/item/clothing/under/thermal/resomi
+	thermal["Resomi, white thermal suit"]= /obj/item/clothing/under/thermal/resomi/white
 	gear_tweaks += new/datum/gear_tweak/path(thermal)
+

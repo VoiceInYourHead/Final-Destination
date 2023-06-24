@@ -21,6 +21,7 @@
 #define LANGUAGE_ADHERENT          "Protocol"
 #define LANGUAGE_VOX               "Vox-pidgin"
 #define LANGUAGE_NABBER            "Serpentid"
+#define LANGUAGE_RESOMI            "Schechi"
 
 //Ascent
 #define LANGUAGE_MANTID_NONVOCAL   "Ascent-Glow"

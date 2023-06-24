@@ -58,6 +58,7 @@
 	gender_icons = 1
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_under_corporate_unathi.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_under_resomi.dmi'
 		)
 
 /obj/item/clothing/under/rank/ntpilot

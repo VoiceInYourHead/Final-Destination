@@ -3,7 +3,8 @@
 	desc = "You probably need some welder googles to look at this."
 	icon_state = "hawaii"
 	sprite_sheets = list(
-		"Monkey" = 'icons/mob/species/monkey/onmob_accessories_monkey.dmi'
+		"Monkey" = 'icons/mob/species/monkey/onmob_accessories_monkey.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_accessories_resomi.dmi'
 	)
 
 

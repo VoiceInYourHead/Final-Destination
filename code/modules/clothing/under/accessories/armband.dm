@@ -6,7 +6,8 @@
 	species_restricted = null
 	body_location = ARMS
 	sprite_sheets = list(
-		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_accessories_gas.dmi'
+		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_accessories_gas.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_accessories_resomi.dmi'
 	)
 	on_rolled = list(
 		"down" = "none"

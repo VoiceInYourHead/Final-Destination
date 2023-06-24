@@ -149,3 +149,8 @@
 	name = "\improper Mohrandade passport"
 	icon_state = "passport"
 	desc = "A passport from the Empire of Mohranda, a frontier empire established on Lohrene and Mohranda, in the Luggust system."
+
+/obj/item/passport/alish
+	name = "\improper Alish passport"
+	icon_state = "passport"
+	desc = "A passport from Alish, the alone planet of United Resomi Empire."

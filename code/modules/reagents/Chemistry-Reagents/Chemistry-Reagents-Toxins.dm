@@ -123,6 +123,9 @@
 	if(alien == IS_DIONA)
 		return
 
+	if(alien == IS_RESOMI)
+		return
+
 	var/effectiveness = 1
 	var/effective_dose = 2
 
@@ -141,6 +144,8 @@
 	strength = 5
 
 /datum/reagent/toxin/venom/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_RESOMI)
+		return
 	if(prob(volume*2))
 		M.confused = max(M.confused, 3)
 	..()
@@ -156,6 +161,8 @@
 
 /datum/reagent/toxin/cryotoxin/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien == IS_DIONA)
+		return
+	if(alien == IS_RESOMI)
 		return
 	M.bodytemperature = max(M.bodytemperature - 15 * TEMPERATURE_DAMAGE_COEFFICIENT, 215)
 	if (prob(15))

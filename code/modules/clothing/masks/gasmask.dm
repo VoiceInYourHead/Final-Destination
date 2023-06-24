@@ -78,6 +78,8 @@
 		bio = ARMOR_BIO_RESISTANT
 		)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_mask_resomi.dmi')
+
 //In scaling order of utility and seriousness
 
 /obj/item/clothing/mask/gas/radical
@@ -230,3 +232,6 @@
 	filter_water = TRUE
 	body_parts_covered = FACE
 	w_class = 2
+
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_mask_resomi.dmi')

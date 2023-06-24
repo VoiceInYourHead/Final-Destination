@@ -239,6 +239,8 @@
 		)
 	light_overlay = "helmet_light_dual"
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
+
 /obj/item/clothing/suit/space/void/engineering/alt
 	name = "reinforced engineering voidsuit"
 	desc = "A bulky industrial voidsuit. It's a few generations old, but a reliable design and radiation shielding make up for the lack of climate control."
@@ -251,6 +253,8 @@
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 		)
+
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
 
 /obj/item/clothing/suit/space/void/engineering/alt/Initialize()
 	. = ..()
@@ -326,6 +330,8 @@
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
+
 /obj/item/clothing/suit/space/void/security/alt
 	name = "riot security voidsuit"
 	icon_state = "rig-secalt"
@@ -339,6 +345,8 @@
 		rad = ARMOR_RAD_MINOR)
 	allowed = list(/obj/item/gun,/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/melee/baton)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
+
 /obj/item/clothing/suit/space/void/security/alt/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/security/alt
 	boots = /obj/item/clothing/shoes/magboots
@@ -351,10 +359,14 @@
 	item_state = "atmosalt_helm"
 	light_overlay = "hardhat_light"
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
+
 /obj/item/clothing/suit/space/void/atmos/alt
 	name = "heavy duty atmos voidsuit"
 	desc = "An expensive voidsuit, rated to withstand extreme heat and even minor radiation without exceeding room temperature within."
 	icon_state = "rig-atmosalt"
+
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
 
 /obj/item/clothing/suit/space/void/atmos/alt/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/atmos/alt
@@ -443,6 +455,9 @@
 		)
 	light_overlay = "helmet_light_dual"
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
+	sprite_sheets_obj = list(SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/obj_head_resomi.dmi')
+
 /obj/item/clothing/suit/space/void/pilot
 	desc = "An atmos resistant voidsuit for space and planet exploration."
 	icon_state = "rig-pilot"
@@ -455,6 +470,9 @@
 		rad = ARMOR_RAD_SMALL
 		)
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/storage/toolbox,/obj/item/storage/briefcase/inflatable,/obj/item/device/t_scanner,/obj/item/rcd,/obj/item/rpd)
+
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
+	sprite_sheets_obj = list(SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/obj_suit_resomi.dmi')
 
 /obj/item/clothing/suit/space/void/pilot/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/pilot

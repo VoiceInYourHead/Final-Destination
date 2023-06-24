@@ -13,7 +13,8 @@
 		LANGUAGE_HUMAN_IBERIAN,
 		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_SPACER,
-		LANGUAGE_SIGN
+		LANGUAGE_SIGN,
+		LANGUAGE_RESOMI
 	)
 
 /decl/cultural_info/culture/ipc/sanitize_name(var/new_name)

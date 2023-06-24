@@ -97,6 +97,7 @@
 	slot_flags = null
 	icon_state = "brush"
 	item_state = "brush"
+	var/brushing = FALSE
 
 /obj/item/haircomb/brush/attack_self(mob/living/carbon/human/user)
 	if(!user.incapacitated())
@@ -105,3 +106,26 @@
 			user.visible_message("<span class='notice'>\The [user] just sort of runs \the [src] over their scalp.</span>")
 		else
 			user.visible_message("<span class='notice'>\The [user] meticulously brushes their hair with \the [src].</span>")
+
+/obj/item/haircomb/brush/attack(atom/A, mob/user as mob)
+	if(brushing)
+		return
+	brushing = TRUE
+	if(ishuman(A))
+		var/mob/living/carbon/human/H = A
+		var/cover = "hair"
+		switch(H.get_species())
+			if(SPECIES_VOX)          cover = "quills"
+			if(SPECIES_RESOMI)       cover = "feathers"
+			if(SPECIES_UNATHI)       cover = "scale"
+			if(SPECIES_SKRELL)       cover = "skin"
+			if(SPECIES_IPC)          cover = "body"
+			if(SPECIES_DIONA)        cover = "foliage"
+
+		if(do_after(user, 10, H))
+			if(user.a_intent == I_HURT && cover != "skin" && cover != "body")
+				user.visible_message("<span class='warning'>The [user] brushes [H]'s <b>against</b> [cover] with \the [src]!</span>")
+			else
+				user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
+
+	brushing = FALSE

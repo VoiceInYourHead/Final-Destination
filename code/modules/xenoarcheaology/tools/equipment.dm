@@ -22,6 +22,9 @@
 	)
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/stack/flag,/obj/item/storage/excavation,/obj/item/pickaxe,/obj/item/device/scanner/health,/obj/item/device/measuring_tape,/obj/item/device/ano_scanner,/obj/item/device/depth_scanner,/obj/item/device/core_sampler,/obj/item/device/gps,/obj/item/pinpointer/radio,/obj/item/pickaxe/xeno,/obj/item/storage/bag/fossils)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
+	sprite_sheets_obj = list(SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/obj_suit_resomi.dmi')
+
 /obj/item/clothing/head/helmet/space/void/excavation
 	name = "excavation voidsuit helmet"
 	desc = "A sophisticated voidsuit helmet, capable of protecting the wearer from many exotic alien energies."
@@ -36,6 +39,8 @@
 	)
 	light_overlay = "hardhat_light"
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
+	sprite_sheets_obj = list(SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/obj_head_resomi.dmi')
 /obj/item/clothing/suit/space/void/excavation/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/excavation
 

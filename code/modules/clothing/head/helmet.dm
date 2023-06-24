@@ -26,6 +26,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_ADHERENT)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
+
 /obj/item/clothing/head/helmet/nt
 	name = "\improper corporate security helmet"
 	desc = "A helmet with 'CORPORATE SECURITY' printed on the back in red lettering."

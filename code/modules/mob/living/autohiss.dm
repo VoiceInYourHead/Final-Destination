@@ -77,3 +77,14 @@
 		message = copytext_char(message, min_index + 1)
 
 	return jointext(., null)
+
+/datum/species/resomi
+	autohiss_basic_map = list(
+			"з" = list("с")
+		)
+	autohiss_extra_map = list(
+			"ч" = list("щ"),
+
+			"ж" = list("ш")
+		)
+	autohiss_exempt = list(LANGUAGE_RESOMI)

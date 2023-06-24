@@ -394,6 +394,8 @@
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
+
 /obj/item/clothing/suit/storage/toggle/hoodie/cti
 	name = "\improper CTI hoodie"
 	desc = "A warm, black sweatshirt.  It bears the letters 'CTI' on the back, a lettering to the prestigious university in Tau Ceti, Ceti Technical Institute.  There is a blue supernova embroidered on the front, the emblem of CTI."

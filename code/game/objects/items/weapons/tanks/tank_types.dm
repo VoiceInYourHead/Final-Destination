@@ -112,6 +112,8 @@
 		GAS_OXYGEN = 10 * ONE_ATMOSPHERE
 	)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_belt_resomi.dmi')
+
 
 /obj/item/tank/oxygen_emergency_extended
 	name = "emergency oxygen tank"

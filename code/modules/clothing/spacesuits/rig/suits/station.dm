@@ -113,34 +113,39 @@
 	req_access = list(access_engine_equip)
 
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_rig_back_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_rig_back_unathi.dmi'
 		)
 
 /obj/item/clothing/head/helmet/space/rig/eva
 	light_overlay = "helmet_light_alt"
 	camera = /obj/machinery/camera/network/engineering
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/eva
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/eva
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_feet_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/eva
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	siemens_coefficient = 0
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_hands_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
 		)
 
@@ -180,6 +185,8 @@
 	req_access = list(access_ce)
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
 	min_pressure_protection = 0
+
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_rig_back_resomi.dmi')
 
 /obj/item/rig/ce/equipped
 
@@ -275,30 +282,36 @@
 
 	req_access = list(access_medical_equip)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_rig_back_resomi.dmi')
+
 /obj/item/clothing/head/helmet/space/rig/medical
 	light_overlay = "helmet_light_wide"
 	camera = /obj/machinery/camera/network/medbay
-	species_restricted = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
 		)
 
 /obj/item/clothing/suit/space/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_feet_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_hands_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi'
 		)
 
@@ -341,16 +354,20 @@
 /obj/item/clothing/head/helmet/space/rig/hazard
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/security
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
 
 /obj/item/clothing/suit/space/rig/hazard
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
 
 /obj/item/clothing/shoes/magboots/rig/hazard
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_feet_resomi.dmi')
 
 /obj/item/clothing/gloves/rig/hazard
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_hands_resomi.dmi')
 
 /obj/item/rig/hazard/equipped
 
@@ -388,16 +405,22 @@
 	banned_modules = list(/obj/item/rig_module/grenade_launcher,/obj/item/rig_module/mounted,/obj/item/rig_module/fabricator )
 	req_access = list()
 
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_rig_back_resomi.dmi'
+		)
+
 /obj/item/clothing/head/helmet/space/rig/zero
 	camera = null
-	species_restricted = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	light_overlay = "null_light"
 	desc = "A bubble helmet that maximizes the field of view. A state of the art holographic display provides a stream of information."
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi')
 
 //All in one suit
 /obj/item/clothing/suit/space/rig/zero
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
 		)
 	breach_threshold = 18

@@ -45,6 +45,8 @@
 	down_icon_state = "steriledown"
 	pull_mask = 1
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_mask_resomi.dmi')
+
 /obj/item/clothing/mask/fakemoustache
 	name = "fake moustache"
 	desc = "Warning: moustache is fake."

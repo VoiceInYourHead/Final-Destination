@@ -1175,3 +1175,10 @@
 			break
 	if(old_zflags != z_flags)
 		UPDATE_OO_IF_PRESENT
+
+/mob/proc/switch_tail_layer()
+	set category = "Abilities"
+	set name = "Toggle tail layer"
+	set desc = "tail will be over or under backpack"
+	tail_layer = !tail_layer
+	to_chat(src, "<span class='notice'>Your tail will be [tail_layer == TRUE ? "over" : "under"] backpacks.</span>")

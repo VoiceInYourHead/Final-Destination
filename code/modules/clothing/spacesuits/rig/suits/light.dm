@@ -26,22 +26,33 @@
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/light
 	glove_type = /obj/item/clothing/gloves/rig/light
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_rig_back_resomi.dmi')
+
 /obj/item/clothing/suit/space/rig/light
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL,SPECIES_RESOMI)
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
 
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_feet_resomi.dmi'
+	)
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi'
+	)
 
 /obj/item/rig/light/hacker
 	name = "cybersuit control module"
@@ -125,6 +136,8 @@
 		/obj/item/rig_module/cooling_unit
 		)
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_rig_back_resomi.dmi')
+
 /obj/item/rig/light/ninja/verb/rename_suit()
 	set name = "Name Ninja Suit"
 	set desc = "Rename your black voidsuit."
@@ -160,6 +173,8 @@
 	name = "insulated gloves"
 	siemens_coefficient = 0
 	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_hands_resomi.dmi')
 
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits

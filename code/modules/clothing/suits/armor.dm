@@ -295,6 +295,8 @@
 	blood_overlay_type = "armor"
 	flags_inv = 0
 
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_modular_armor_resomi.dmi')
+
 /obj/item/clothing/suit/armor/pcarrier/light
 	accessories = list(/obj/item/clothing/accessory/armor_plate)
 

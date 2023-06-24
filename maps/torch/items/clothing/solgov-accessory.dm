@@ -646,7 +646,8 @@ ranks - ec
 	gender = PLURAL
 	accessory_flags = ACCESSORY_REMOVABLE | ACCESSORY_HIGH_VISIBILITY
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_accessories_resomi.dmi'
 		)
 
 /obj/item/clothing/accessory/solgov/rank/ec
