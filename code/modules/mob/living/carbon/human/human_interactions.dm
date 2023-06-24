@@ -112,9 +112,9 @@
 
 		else if (href_list["interaction"] == "draw")
 			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
-				H.visible_message("<B>[H]</B> дёргает <B>[P]</B> за плечо.")
+				H.visible_message("<B>[H]</B> трясёт <B>[P]</B> за плечо.")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<B>[H]</B> дёргает <B>[P]</B> за плечо.")
+					P.visible_message("<B>[H]</B> трясёт <B>[P]</B> за плечо.")
 
 		else if (href_list["interaction"] == "five")
 			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
