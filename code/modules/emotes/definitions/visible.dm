@@ -137,17 +137,17 @@
 
 /decl/emote/visible/glare
 	key = "glare"
-	emote_message_3p = "USER недовольно смотрит на TARGET."
+	emote_message_3p_target = "USER недовольно смотрит на TARGET."
 	emote_message_3p = "USER недовольно смотрит."
 
 /decl/emote/visible/stare
 	key = "stare"
-	emote_message_3p = "USER пялится на TARGET."
+	emote_message_3p_target = "USER пялится на TARGET."
 	emote_message_3p = "USER пялится."
 
 /decl/emote/visible/look
 	key = "look"
-	emote_message_3p = "USER смотрит на TARGET."
+	emote_message_3p_target = "USER смотрит на TARGET."
 	emote_message_3p = "USER смотрит."
 
 /decl/emote/visible/point
