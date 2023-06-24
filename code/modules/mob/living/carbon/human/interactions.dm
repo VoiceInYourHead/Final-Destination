@@ -42,21 +42,27 @@
 	var/ya = "&#1103;"
 
 	dat +=  {"• <A href='?src=\ref[src];interaction=bow'>Отвесить поклон.</A><BR>"}
+	dat +=  {"• <A href='?src=\ref[src];interaction=bow_affably'>Приветливо кивнуть.</A><BR>"}
+	dat +=  {"• <A href='?src=\ref[src];interaction=wink'>Подмигнуть.</A><BR>"}
 	if (hashands)
 		dat +=  {"<font size=3><B>Руки:</B></font><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=bow_affably'>Приветливо кивнуть.</A><BR>"}
 		if (Adjacent(P))
 			dat +=  {"• <A href='?src=\ref[src];interaction=handshake'>Пожать руку.</A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=hug'>Обнимашки!</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=cheer'>Похлопать по плечу</A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=cheer'>Похлопать по плечу.</A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=fixform'>Поправить одежду.</A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=draw'>Дёрнуть за плечо.</A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=pointing'>Тыкнуть в нос.</A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=excuse'>Толкнуть в бок.</A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=five'>Дать п[ya]ть.</A><BR>"}
-			if ((P.species.name == SPECIES_VOX)|| (P.species.name == SPECIES_YEOSA) || (P.species.name == SPECIES_UNATHI))
+			dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить.</A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=scratch'>Почесать.</A><BR>"}
+			if ((P.species.name == SPECIES_VOX)|| (P.species.name == SPECIES_YEOSA) || (P.species.name == SPECIES_UNATHI) || (P.species.name == SPECIES_RESOMI))
 				dat +=  {"• <A href='?src=\ref[src];interaction=pull'><font color=red>Дёрнуть за хвост!</font></A><BR>"}
-				dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить.</A><BR>"}
-				dat +=  {"• <A href='?src=\ref[src];interaction=scratch'>Почесать.</A><BR>"}
 			if (hashands_p)
 				dat +=  {"• <A href='?src=\ref[src];interaction=give'>Передать предмет.</A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=slap'><font color=red>Дать пощечину!</font></A><BR>"}
+			dat +=  {"• <A href='?src=\ref[src];interaction=grab'><font color=red>Схватить за воротник.</font></A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=knock'><font color=red>Дать подзатыльник.</font></A><BR>"}
 		dat +=  {"• <A href='?src=\ref[src];interaction=fuckyou'><font color=red>Показать средний палец.</font></A><BR>"}
 		dat +=  {"• <A href='?src=\ref[src];interaction=threaten'><font color=red>Погрозить кулаком.</font></A><BR>"}
