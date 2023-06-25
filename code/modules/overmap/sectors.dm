@@ -36,6 +36,15 @@
 
 //	var/list/associated_machinery
 
+/obj/effect/overmap/visitable/proc/fight_or_flight() // if it's a star - we run, else - kill it with fire
+	for(var/obj/effect/overmap/event/E in get_turf(src))
+		if(istype(E,/obj/effect/overmap/event/star))
+			forceMove(locate(rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), GLOB.using_map.overmap_z))
+			fight_or_flight()
+			break
+		else
+			qdel(E)
+
 /obj/effect/overmap/visitable/Initialize()
 	. = ..()
 	if(. == INITIALIZE_HINT_QDEL)
@@ -52,13 +61,7 @@
 
 	forceMove(locate(start_x, start_y, GLOB.using_map.overmap_z))
 
-	var/obj/effect/overmap/visitable/S
-
-	for(var/obj/effect/overmap/event/E in get_turf(src))
-		if(istype(E,/obj/effect/overmap/event/star))
-			S.forceMove(locate(rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), GLOB.using_map.overmap_z))
-		else
-			qdel(E)
+	fight_or_flight()
 
 	docking_codes = "[ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))]"
 
