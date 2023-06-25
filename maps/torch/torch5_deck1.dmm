@@ -469,7 +469,7 @@
 "aja" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/crew_quarters/sleep/cryo/aux)
 "ajb" = (/obj/random/junk,/obj/random/junk,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/techfloor,/area/maintenance/firstdeck/forestarboard)
 "ajc" = (/obj/structure/closet/crate/trashcart,/obj/random/material,/obj/random/junk,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/techfloor,/area/maintenance/firstdeck/forestarboard)
-"ajd" = (/obj/machinery/alarm{dir = 4; pixel_x = -23},/turf/simulated/floor/tiled/techfloor,/area/maintenance/firstdeck/centralstarboard)
+"ajd" = (/obj/machinery/alarm{pixel_y = 24},/turf/simulated/floor/tiled/techfloor,/area/maintenance/firstdeck/centralstarboard)
 "aje" = (/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/obj/structure/cable/green,/obj/item/device/radio/intercom{dir = 4; pixel_x = -21},/obj/machinery/power/smes/buildable/preset/torch/substation{RCon_tag = "Substation - First Deck"},/turf/simulated/floor/plating,/area/maintenance/substation/firstdeck)
 "ajf" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/terminal{dir = 8},/obj/machinery/alarm{dir = 8; pixel_x = 24},/obj/effect/floor_decal/industrial/warning{dir = 8; icon_state = "warning"},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/maintenance/substation/firstdeck)
 "ajg" = (/obj/structure/catwalk,/obj/machinery/alarm{dir = 8; icon_state = "alarm0"; pixel_x = 24},/turf/simulated/floor/plating,/area/maintenance/firstdeck/forestarboard)
