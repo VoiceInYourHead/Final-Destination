@@ -132,7 +132,7 @@
 
 	//Success, but we missed.
 	if(prob(100 - cal_accuracy()) && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
-		log_and_message_admins("Выстрел от [linked.name] из [gun_name] ебанул [finaltarget.name], но калибровка была говном (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+		log_and_message_admins("Выстрел от [linked.name] из [gun_name] ебанул [finaltarget.name], но калибровка была говном (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)", location=get_turf(front))
 		handle_overbeam(TRUE)
 		return TRUE
 
@@ -242,7 +242,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("Выстрел от [linked.name] из [gun_name] попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Выстрел от [linked.name] из [gun_name] попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)", location=get_turf(front))
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)
@@ -285,7 +285,7 @@
 				else
 					to_chat(M, SPAN_DANGER("The sky overhead roars as bullets slice through exoplanet's atmosphere from orbit!"))
 
-	log_and_message_admins("Выстрел от [linked.name] из [gun_name] попал в {[start.x] ; [start.y]} на [target] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Выстрел от [linked.name] из [gun_name] попал в {[start.x] ; [start.y]} на [target] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start.x];Y=[start.y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)", location=get_turf(front))
 
 	var/ammo_type = get_ammo_type()
 	var/obj/item/projectile/pew = new ammo_type(start)
