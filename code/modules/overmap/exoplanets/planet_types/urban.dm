@@ -8,7 +8,7 @@
 	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM") //сделать позже кучу красного и жёлтого неона
 	grasscolors = list("#9c854b","#9c8d4b","#9c954b","#989c4b","#8f9c4b","#819c4b")
 	map_generators = list(/datum/random_map/noise/exoplanet/urban)
-	possible_themes = list(/datum/exoplanet_theme/ruined_city/ecumenopolis = 100)
+	possible_themes = list(/datum/exoplanet_theme/ruined_city/ecumenopolis)
 	habitability_distribution = list(HABITABILITY_IDEAL = 25, HABITABILITY_OKAY = 75)
 	ruin_tags_whitelist = RUIN_RAINWORLD
 	ruin_tags_blacklist = null

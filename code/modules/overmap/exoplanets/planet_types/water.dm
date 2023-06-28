@@ -2,18 +2,18 @@
 	name = "ocean exoplanet"
 	desc = "A planet, which surface is fully covered by liquid water."
 	color = "#708eda"
-	surface_color = "#2d466e"
+	surface_color = "#617ec9"
 	planetary_area = /area/exoplanet/water
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
 	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM")
-	map_generators = list(/datum/random_map/noise/exoplanet/water)
-	possible_themes = list(/datum/exoplanet_theme = 85, /datum/exoplanet_theme/radiation_bombing = 15)
+	map_generators = list(/datum/random_map/noise/exoplanet/water, /datum/random_map/noise/ore/poor)
+	possible_themes = list(/datum/exoplanet_theme, /datum/exoplanet_theme/radiation_bombing, /datum/exoplanet_theme/mountains)
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = FALSE
 	flora_diversity = 3
-	fauna_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly)
+	fauna_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly, /mob/living/simple_animal/hostile/retaliate/aquatic/carp, /mob/living/simple_animal/aquatic/fish/grump, /mob/living/simple_animal/aquatic/fish/judge)
 	megafauna_types = list(/mob/living/simple_animal/hostile/aquatic/deathsquid)
-	repopulate_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly)
+	repopulate_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly, /mob/living/simple_animal/hostile/retaliate/aquatic/carp, /mob/living/simple_animal/aquatic/fish/grump, /mob/living/simple_animal/aquatic/fish/judge)
 
 /obj/effect/overmap/visitable/sector/exoplanet/water/generate_map()
 	if(prob(40))
@@ -58,7 +58,6 @@
 	descriptor = "ocean exoplanet"
 	smoothing_iterations = 2
 	land_type = /turf/simulated/ocean
-
-	flora_prob = 0.1
-	large_flora_prob = 0
-	fauna_prob = 0
+	water_type = /turf/unsimulated/floor/exoplanet/barren
+	flora_prob = 5
+	large_flora_prob = 20

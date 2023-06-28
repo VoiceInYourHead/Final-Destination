@@ -233,6 +233,7 @@
 /obj/effect/overmap/event/star/pre_center
 	name = "star corona"
 	icon = 'icons/fd/sun.dmi'
+	events = list(/datum/event/star/strong)
 	event_icon_states = list("sun1")
 	opacity = 0
 	color = "#da6439"
@@ -243,7 +244,7 @@
 /obj/effect/overmap/event/star/center
 	name = "star dead zone"
 	icon = 'icons/fd/sun.dmi'
-	events = list(/datum/event/star/strong)
+	events = list()
 	event_icon_states = list("sun5")
 	opacity = 0
 
