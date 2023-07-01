@@ -76,6 +76,9 @@
 		var/obj/effect/overmap/O = locate(href_list["ship_lock"])
 		if(istype(O) && !QDELETED(O) && (O in view(7,linked)))
 			if(linked.set_target(TARGET_SHIP, O))
+				var/obj/effect/overmap/visitable/ship/tfr = O
+				tfr.warn_by_something(linked, WARN_LOCKED) //Собщаем СПО цели, что АХХАХАХ ПОПАЛАСЬ СВОЛОЧЬ СЕЙЧАС МЫ ТЕБЯ ВЫЕБЕМ ПРИ ПОМОЩИ МОЕЙ ТОЛСТОЙ ЖИЛИСТОЙ Х-101
+
 				visible_message(SPAN_NOTICE("[src] states, 'TARGET LOCKED: [O.name]'"))
 				playsound(loc, "sound/machines/sensors/target_lock.ogg", 30, 1)
 			else
