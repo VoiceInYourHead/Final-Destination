@@ -153,7 +153,7 @@
 	name = CULTURE_HUMAN_REPUBL
 	description = "You are from Nova Respublica, the tight conglomerate of several frontier colonies and many space installations relatively close to humanity's core. \
 	Republic was never exactly known for any of its strong suits, although it owes its sovereign existence to its aggressive expansion during the early 23rd century. \
-	Nowadays it stands peacefully, having decent relations with frontier nations it once called enemies. \
+	Nowadays it stands peacefully, having decent relations with frontier nations it once called enemies, and even incorporating some of them into itself. \
 	With most of its space running dry of minerals from almost two centuries of mining, Republic struggles to reform itself into a less industrialist economy."
 	economic_power = 0.8
 	language = LANGUAGE_SPACER
