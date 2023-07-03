@@ -81,8 +81,11 @@
 
 	overlays.Cut()
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
+	var/crappy_type_check
+	if(istype(src, /obj/item/modular_computer/telescreen) )
+		crappy_type_check++
 	if(os)
-		overlays += os.get_screen_overlay()
+		overlays += os.get_screen_overlay(crappy_type_check)
 		overlays += os.get_keyboard_overlay()
 
 	if(enabled)
