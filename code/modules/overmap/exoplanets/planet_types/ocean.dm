@@ -1,4 +1,4 @@
-/obj/effect/overmap/visitable/sector/exoplanet/water
+/obj/effect/overmap/visitable/sector/exoplanet/ocean
 	name = "ocean exoplanet"
 	desc = "A planet, which surface is fully covered by liquid water."
 	color = "#708eda"
@@ -6,7 +6,7 @@
 	planetary_area = /area/exoplanet/water
 	rock_colors = list(COLOR_ASTEROID_ROCK, COLOR_GRAY80, COLOR_BROWN)
 	plant_colors = list("#0e1e14","#1a3e38","#5a7467","#9eab88","#6e7248", "RANDOM")
-	map_generators = list(/datum/random_map/noise/exoplanet/water, /datum/random_map/noise/ore/poor)
+	map_generators = list(/datum/random_map/noise/exoplanet/water, /datum/random_map/noise/seafloor, /datum/random_map/noise/ore/poor)
 	possible_themes = list(/datum/exoplanet_theme, /datum/exoplanet_theme/radiation_bombing, /datum/exoplanet_theme/mountains)
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = FALSE
@@ -58,6 +58,6 @@
 	descriptor = "ocean exoplanet"
 	smoothing_iterations = 2
 	land_type = /turf/simulated/ocean
-	water_type = /turf/unsimulated/floor/exoplanet/barren
+	water_type = /turf/simulated/ocean
 	flora_prob = 5
 	large_flora_prob = 20

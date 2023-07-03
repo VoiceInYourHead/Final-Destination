@@ -10,6 +10,7 @@
 	force_multiplier = 0.1
 	thrown_force_multiplier = 0.1
 	w_class = 1
+	throw_speed = 0.25
 	slot_flags = SLOT_EARS
 	var/string_colour
 
@@ -45,6 +46,10 @@
 /obj/item/material/coin/attack_self(var/mob/user)
 	playsound(user.loc, 'sound/effects/coin_flip.ogg', 75, 1)
 	user.visible_message(SPAN_NOTICE("\The [user] flips \the [src] into the air and catches it, revealing that it landed on [pick("tails", "heads")]!"))
+
+/obj/item/material/coin/throw_at()
+	playsound(src.loc, 'sound/effects/coin_flip.ogg', 75, 1)
+	..()
 
 // Subtypes.
 /obj/item/material/coin/gold

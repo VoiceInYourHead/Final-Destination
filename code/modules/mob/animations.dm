@@ -291,3 +291,14 @@ note dizziness decrements automatically in the mob's Life() proc.
 /mob/living/Move()
 	. = ..()
 	on_structure_offset(0)
+
+/atom/movable/proc/do_crush_animation(windup_time, fly_alpha)
+	var/default_pixel_x = initial(pixel_x)
+	var/default_pixel_y = initial(pixel_y)
+	var/mob/mob = src
+	if(istype(mob))
+		default_pixel_x = mob.default_pixel_x
+		default_pixel_y = mob.default_pixel_y
+
+	animate(src, pixel_x = pixel_x, pixel_y = pixel_y + 20, alpha = fly_alpha, time = windup_time - windup_time/5)
+	animate(pixel_x = default_pixel_x, pixel_y = default_pixel_y, alpha = 255, time = windup_time/5)

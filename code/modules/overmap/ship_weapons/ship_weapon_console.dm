@@ -82,6 +82,7 @@
 	. = ..()
 	link_parts()
 	reset_calibration()
+	linked = map_sectors["[z]"]
 
 /obj/machinery/computer/ship/ship_weapon/Destroy()
 	release_links()
@@ -156,10 +157,13 @@
 	return get_next_shot_seconds() * 1000 / coolinterval
 
 /obj/machinery/computer/ship/ship_weapon/proc/get_charge()
-	munition = locate() in get_turf(back)
-	if(munition && istype(munition,munition_type))
+	for(var/obj/structure/ship_munition/ammobox/ammo in get_turf(back))
+		if(istype(munition,munition_type))
+			munition = ammo
+	if(munition)
 		return munition
-	return 0
+	else
+		return FALSE
 
 /obj/machinery/computer/ship/ship_weapon/proc/get_ammo()
 	munition = locate() in get_turf(back)
@@ -244,17 +248,18 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
+			log_and_message_admins("[gun_name] смешно подорвалась", location=get_turf(middle))
 			explosion(middle, rand(7, 12))
-			log_and_message_admins("[gun_name] смешно подорвалась (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+			explosion(front, rand(7, 12))
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH
 		next_shot = coolinterval + world.time + fire_interval * burst_size
 		log_and_message_admins("attempted to fire the [gun_name].")
 		for(var/i = 1 to burst_size)
-			if(get_charge() == 0)
+			if(!get_charge())
 				break
 			if(atomcharge_ammo == 0 && play_emptymag_sound)
-				playsound(get_turf(get_charge()), 'sound/weapons/smg_empty_alarm.ogg', 60, 1)
+				playsound(get_charge(), 'sound/weapons/smg_empty_alarm.ogg', 100, 0)
 				break
 			fire(user)
 			remove_ammo()

@@ -201,9 +201,34 @@
 
 	original = new_target
 	if(new_firer)
-		firer = src
+		firer = new_firer
 
 	setup_trajectory(starting_loc, new_target)
+
+//Called when the projectile meets a coin. Basically an ULTRAKILL reference, pls dont eat me for this one
+/obj/item/projectile/proc/RicoShot(atom/movable/coin)
+	if(!firer)
+		return FALSE
+	visible_message("<span class='danger'>\The [src] ricochets off a [coin]!</span>")
+	if(ricochet_sounds)
+		playsound(coin.loc, pick(ricochet_sounds), 150, 1, falloff = 4)
+	damage *= 2
+	if(firer.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER || (firer.get_skill_value(SKILL_WEAPONS) == SKILL_EXPERIENCED && prob(40)) && firer.a_intent == I_HURT)
+		for(var/obj/item/material/coin/C in view(7,src))
+			if(C == src || isnull(C.throwing))
+				continue
+			launch(C, pick(BP_ALL_LIMBS))
+			return TRUE
+
+		for(var/mob/living/L in view(7,src))
+			if(L == firer)
+				continue
+			redirect(L.x, L.y, get_turf(src))
+			return TRUE
+
+	var/turf/T = pick(block(locate(x+7,y+7,z),locate(x-7,y-7,z)))
+	redirect(T.x, T.y, get_turf(src))
+	return FALSE
 
 //Called when the projectile intercepts a mob. Returns 1 if the projectile hit the mob, 0 if it missed and should keep flying.
 /obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/special_miss_modifier=0)
@@ -309,6 +334,13 @@
 				O.bullet_act(src)
 			for(var/mob/living/M in A)
 				attack_mob(M, distance)
+
+
+	if(istype(A, /obj/item/material/coin))
+		var/obj/item/material/coin/coin = A
+		if(!isnull(coin.throwing))
+			RicoShot(coin)
+			passthrough = TRUE
 
 	//penetrating projectiles can pass through things that otherwise would not let them
 	if(!passthrough && penetrating > 0)

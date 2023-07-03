@@ -87,3 +87,23 @@
 
 /obj/item/natural_weapon/giant
 	force = 30
+
+///////////////////////* PRIME SOUL *///////////////////////
+
+/obj/item/natural_weapon/punch/minos
+	attack_cooldown = 20
+	force = 20
+
+/obj/item/natural_weapon/punch/minos/snake
+	attack_cooldown = 5
+	force = 30
+
+/obj/item/natural_weapon/punch/minos/uppercut
+	attack_cooldown = 5
+	attack_verb = list("uppercutted")
+	force = 45
+
+/obj/item/natural_weapon/kick
+	attack_cooldown = 5
+	attack_verb = list("kicked", "kicked", "kicked", "kneed")
+	force = 30

@@ -330,6 +330,7 @@
 	var/list/possible_shelters = list()
 	var/turf/shelter
 	randomize_tone = TRUE
+	status_flags = CANPUSH
 
 /mob/living/simple_animal/hostile/smart_beast/rain_world/proc/seek_shelter(var/returning_with_catch = FALSE)
 	if(stat == DEAD || !ai_holder)
