@@ -1,6 +1,6 @@
 /obj/machinery/computer/ship/ship_weapon/deck_gun
 	name = "Ship weapon control"
-	caldigit = 6		//number of digits that needs calibration
+	caldigit = 4		//number of digits that needs calibration
 	coolinterval = 30 SECONDS
 	gun_name = "Deck Gun"
 	hull_damage = 5		//урон каждой пули по корпусу
@@ -16,8 +16,10 @@
 
 	muzzle_flash = "deck_turret_firing" //now we use this var as icon name for shooting anim
 
+	var/safety_active = TRUE // should we refrain from turning if there is something in the way
+	var/rotating = FALSE // are we rotating now?
+
 	var/old_overmapdir
-	var/rotating = FALSE
 	var/rotation_speed = 5
 	var/tower_angle = 0
 
@@ -40,7 +42,7 @@
 			GLOB.destroyed_event.register(front, src, .proc/release_links)
 			GLOB.destroyed_event.register(middle, src, .proc/release_links)
 			GLOB.destroyed_event.register(back, src, .proc/release_links)
-			old_overmapdir = front.dir
+			rotate(tower_angle)
 			overmapdir = front.dir
 			return TRUE
 	return FALSE
@@ -80,10 +82,31 @@
 		return TOPIC_HANDLED
 
 	if (href_list["choose"])
+		if(!front || !front.powered() || rotating)
+			return TOPIC_REFRESH
 		overmapdir = sanitize_integer(text2num(href_list["choose"]), 0, 10, 0)
-			rotate(overmapdir)
+		if(safety_active && overmapdir != 0)
+			var/turf/getline_end = get_step(front,overmapdir)
+			for(var/i = 0 to 15)
+				getline_end = get_step(getline_end,overmapdir)
+				i++
+			for(var/turf/T in getline(get_step(front,overmapdir),getline_end))
+				if(T.density && !istype(T, /turf/unsimulated/planet_edge) && !ignore_blockage)
+					overmapdir = old_overmapdir
+					return TOPIC_REFRESH
+				for(var/atom/A in T)
+					if(((A.density && A.layer != TABLE_LAYER) && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield))))
+						if(istype(A, /obj/effect/shield))
+							var/obj/effect/shield/S = A
+							if(S.gen.check_flag(shield_modflag_counter))
+								overmapdir = old_overmapdir
+								return TOPIC_REFRESH
+						if(!ignore_blockage)
+							overmapdir = old_overmapdir
+							return TOPIC_REFRESH
+		rotate(overmapdir)
 		reset_calibration()
-		return TOPIC_REFRESH
+		return TOPIC_HANDLED
 
 	if(href_list["calibration"])
 		var/input = input("0-9", "[gun_name] calibration", 0) as num|null
@@ -96,6 +119,8 @@
 			calibration[i] = calexpected[i]
 
 	if(href_list["fire"])
+		if(!front || !front.powered() || rotating)
+			return TOPIC_REFRESH
 		var/atomcharge_ammo = get_ammo()
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
@@ -151,8 +176,7 @@
 	playsound(get_turf(front), 'sound/mecha/hydraulic.ogg', 100, 1)
 	playsound(get_turf(middle), 'sound/mecha/hydraulic.ogg', 100, 1)
 
-
-	var/rotation_time = (tower_angle - old_tower_angle) // / 2
+	var/rotation_time = (tower_angle - old_tower_angle)
 	if(tower_angle == 360)
 		rotation_time -= 360
 	if(rotation_time < 0)
@@ -162,10 +186,10 @@
 	rotation_time /= rotation_speed
 
 	var/matrix/rotate
+	rotating = TRUE
 
 	// We split rotation part cause turn() with angle more than 180 causes unfunny sprite flip
 	// NWM its shit
-	rotating = TRUE
 //	rotate = matrix(transform).Update(rotation = tower_angle / 2)
 //	animate(front, transform = rotate, time = rotation_time)
 //	sleep(rotation_time)

@@ -21,7 +21,7 @@
 			if(!T || !(T.z in relevant_z))
 				continue
 			if(!isdeaf(M))
-				sound_to(M, sound(far_prefire_sound, volume=10))
+				sound_to(M, sound(far_prefire_sound, volume=30))
 
 	sleep(fire_delay)
 
@@ -34,20 +34,17 @@
 			continue
 		shake_camera(M, shake_camera_force)
 		if(!isdeaf(M))
-			sound_to(M, sound(far_fire_sound, volume=10))
+			sound_to(M, sound(far_fire_sound, volume=30))
 
 	playsound(start, fire_sound, 250, 1)
 	handle_muzzle(start, direction)
 
 	if(get_ammo_type())
 		var/ammo_type = get_ammo_type()
-		var/obj/item/projectile/pew = new ammo_type(front.loc)
-		pew.starting = front.loc
+		var/obj/item/projectile/pew = new ammo_type(get_step(get_step(get_step(front.loc, overmapdir), overmapdir), overmapdir))
+		pew.starting = get_step(get_step(get_step(front.loc, overmapdir), overmapdir), overmapdir)
 		pew.color = pew_color
-		pew.launch(get_step(get_step(get_step(front.loc, overmapdir), overmapdir), overmapdir), pick(BP_ALL_LIMBS))
-
-	if(front) //Meanwhile front might have exploded
-		front.layer = 4.01 //So the beam goes below us. Looks a lot better
+		pew.launch(get_step(pew.starting, overmapdir), pick(BP_ALL_LIMBS))
 
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
 		if(T.density && !istype(T, /turf/unsimulated/planet_edge))

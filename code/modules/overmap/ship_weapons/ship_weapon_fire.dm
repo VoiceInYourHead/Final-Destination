@@ -50,7 +50,7 @@
 		front.layer = ABOVE_OBJ_LAYER //So the beam goes below us. Looks a lot better
 
 	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
-		if(T.density && !istype(T, /turf/unsimulated/planet_edge))
+		if(T.density && !istype(T, /turf/unsimulated/planet_edge) && !ignore_blockage)
 			return TRUE
 		for(var/atom/A in T)
 			if(((A.density && A.layer != TABLE_LAYER) && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield))))
