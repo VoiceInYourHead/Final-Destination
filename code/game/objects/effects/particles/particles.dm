@@ -204,6 +204,10 @@
 	. = ..()
 	filters = filter(type="blur", size=1.5)
 
+/obj/particle_emitter/fire_sparks
+	layer = FIRE_LAYER
+	particles = new/particles/fire_sparks
+
 /obj/particle_emitter/sparks_flare
 	plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	particles = new/particles/flare_sparks
