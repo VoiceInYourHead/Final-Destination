@@ -14,7 +14,11 @@
 
 	canhit_missiles = FALSE
 
+	shake_camera_force = 16
+
 	muzzle_flash = "deck_turret_firing" //now we use this var as icon name for shooting anim
+
+	var/starting_dir = 1
 
 	var/safety_active = TRUE // should we refrain from turning if there is something in the way
 	var/rotating = FALSE // are we rotating now?
@@ -42,7 +46,7 @@
 			GLOB.destroyed_event.register(front, src, .proc/release_links)
 			GLOB.destroyed_event.register(middle, src, .proc/release_links)
 			GLOB.destroyed_event.register(back, src, .proc/release_links)
-			rotate(tower_angle)
+			rotate(starting_dir, TRUE)
 			overmapdir = front.dir
 			return TRUE
 	return FALSE
@@ -133,10 +137,9 @@
 		next_shot = coolinterval + world.time + fire_interval * burst_size
 		log_and_message_admins("attempted to fire the [gun_name].")
 		for(var/i = 1 to burst_size)
-			if(!get_charge())
-				break
 			if(atomcharge_ammo == 0 && play_emptymag_sound)
 				playsound(get_charge(), 'sound/weapons/smg_empty_alarm.ogg', 100, 0)
+			if(!get_charge())
 				break
 			fire(user)
 			remove_ammo()
@@ -192,10 +195,9 @@
 	// NWM its shit
 //	rotate = matrix(transform).Update(rotation = tower_angle / 2)
 //	animate(front, transform = rotate, time = rotation_time)
-//	sleep(rotation_time)
 
 	rotate = matrix(transform).Update(rotation = tower_angle)
-	animate(front, transform = rotate, time = rotation_time)
+	animate(front, transform = rotate, time = rotation_time, easing = SINE_EASING)
 	sleep(rotation_time)
 
 	rotating = FALSE

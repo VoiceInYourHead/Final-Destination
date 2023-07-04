@@ -258,10 +258,9 @@
 		next_shot = coolinterval + world.time + fire_interval * burst_size
 		log_and_message_admins("attempted to fire the [gun_name].")
 		for(var/i = 1 to burst_size)
-			if(!get_charge())
-				break
 			if(atomcharge_ammo == 0 && play_emptymag_sound)
 				playsound(get_charge(), 'sound/weapons/smg_empty_alarm.ogg', 100, 0)
+			if(!get_charge())
 				break
 			fire(user)
 			remove_ammo()
