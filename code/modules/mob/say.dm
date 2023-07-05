@@ -137,7 +137,10 @@
 		CULTURE_HUMAN_CETI     = "ceti",
 		CULTURE_HUMAN_SPACER   = "spacer",
 		CULTURE_HUMAN_SPAFRO   = "spacer",
-		CULTURE_HUMAN_CONFED   = "terran"
+		CULTURE_HUMAN_CONFED   = "terran",
+		CULTURE_HUMAN_MEOT	   = "meonian",
+		CULTURE_HUMAN_REPUBL   = "republican"
+
 	)
 
 	var/culture = speaker.client.prefs.cultural_info[TAG_CULTURE]
