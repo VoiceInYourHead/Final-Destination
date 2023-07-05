@@ -15,6 +15,9 @@
 			Paralyse(Proj.agony / 20)
 			visible_message(SPAN_WARNING("[src] is stunned momentarily!"))
 
+	if(Proj.damage_flags & DAM_EDGE || Proj.damage_flags & DAM_SHARP)
+		adjustBleedTicks(Proj.damage/2)
+
 	bullet_impact_visuals(Proj)
 	adjustBruteLoss(damage)
 	Proj.on_hit(src)

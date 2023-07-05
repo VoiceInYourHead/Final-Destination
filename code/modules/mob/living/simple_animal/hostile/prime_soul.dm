@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/prime_soul
+/mob/living/simple_animal/hostile/boss/prime_soul
 	name = "Andrey Surov"
 	desc = "run"
 	icon = 'icons/mob/simple_animal/prime_soul.dmi'
@@ -10,8 +10,8 @@
 	response_harm = "hits"
 	speed = 4
 	movement_cooldown = 0
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1000
+	health = 1000
 	harm_intent_damage = 5
 	can_escape = TRUE
 	a_intent = I_HURT
@@ -39,7 +39,7 @@
 	var/datum/sound_token/boss_theme
 	var/sound_id = "minos"
 
-/mob/living/simple_animal/hostile/prime_soul/proc/meet_player(mob/player)
+/mob/living/simple_animal/hostile/boss/prime_soul/proc/meet_player(mob/player)
 	face_atom(player)
 	anchored = 1
 	playsound(src, 'sound/prime_soul/Mp_intro2.ogg', 60, 0, extrarange = 13, falloff = 4)
@@ -72,7 +72,7 @@
 
 ///////////////////////* ATTACK TYPES START *///////////////////////
 
-/mob/living/simple_animal/hostile/prime_soul/proc/PREPARE_THYSELF(atom/movable/target)
+/mob/living/simple_animal/hostile/boss/prime_soul/proc/PREPARE_THYSELF(atom/movable/target)
 	playsound(src, pick('sound/prime_soul/Mp_prepare.ogg', 'sound/prime_soul/Mp_prepare2.ogg'), 80, 0, extrarange = 13, falloff = 4)
 	ai_holder.set_busy(TRUE)
 	natural_weapon = /obj/item/natural_weapon/kick
@@ -104,7 +104,7 @@
 	ai_holder.set_busy(FALSE)
 	attacking = FALSE
 
-/mob/living/simple_animal/hostile/prime_soul/proc/THY_END_IS_NOW(atom/movable/target)
+/mob/living/simple_animal/hostile/boss/prime_soul/proc/THY_END_IS_NOW(atom/movable/target)
 	playsound(src, pick('sound/prime_soul/Mp_thyend.ogg', 'sound/prime_soul/Mp_thyend2.ogg'), 80, 0, extrarange = 13, falloff = 4)
 	ai_holder.set_busy(TRUE)
 	natural_weapon = /obj/item/natural_weapon/punch/minos/snake
@@ -130,7 +130,7 @@
 	ai_holder.set_busy(FALSE)
 	attacking = FALSE
 
-/mob/living/simple_animal/hostile/prime_soul/proc/DIE(atom/movable/target)
+/mob/living/simple_animal/hostile/boss/prime_soul/proc/DIE(atom/movable/target)
 	ai_holder.set_busy(TRUE)
 	sleep(5)
 	density = 0
@@ -140,16 +140,14 @@
 	playsound(src, pick('sound/prime_soul/Mp_die.ogg', 'sound/prime_soul/Mp_die2.ogg'), 80, 0, extrarange = 13, falloff = 4)
 	ISay("DIE!")
 	sleep(4)
-	var/hp_before_exp = health
 	explosion(get_turf(src), 3, EX_ACT_LIGHT)
-	health = hp_before_exp
 	density = 1
 	sleep(10)
 	ai_holder.forget_path()
 	ai_holder.set_busy(FALSE)
 	attacking = FALSE
 
-/mob/living/simple_animal/hostile/prime_soul/proc/CRUSH(atom/movable/target)
+/mob/living/simple_animal/hostile/boss/prime_soul/proc/CRUSH(atom/movable/target)
 	ai_holder.set_busy(TRUE)
 	density = 0
 	do_crush_animation(10, 160)
@@ -157,16 +155,14 @@
 	playsound(src, 'sound/prime_soul/Mp_crush.ogg', 80, 0, extrarange = 17, falloff = 4)
 	ISay("CRUSH!")
 	sleep(4)
-	var/hp_before_exp = health
 	explosion(get_turf(src), 3, EX_ACT_LIGHT)
-	health = hp_before_exp
 	density = 1
 	sleep(10)
 	ai_holder.forget_path()
 	ai_holder.set_busy(FALSE)
 	attacking = FALSE
 
-/mob/living/simple_animal/hostile/prime_soul/proc/JUDGEMENT(atom/movable/target)
+/mob/living/simple_animal/hostile/boss/prime_soul/proc/JUDGEMENT(atom/movable/target)
 	playsound(src, pick('sound/prime_soul/Mp_judgement.ogg', 'sound/prime_soul/Mp_judgement2.ogg'), 80, 0, extrarange = 13, falloff = 4)
 	ai_holder.set_busy(TRUE)
 	do_windup_animation(target,10)
@@ -194,10 +190,8 @@
 	throw_at(target, get_dist(src,target), get_dist(src,target) / 6)
 	face_atom(target)
 	sleep(6)
-	var/hp_before_exp = health
 	anchored = 1
 	explosion(get_step(src,dir), 3, EX_ACT_LIGHT)
-	health = hp_before_exp
 	anchored = 0
 	sleep(2)
 	dropckick = matrix(transform).Update(rotation = -rotation_angle)
@@ -209,7 +203,7 @@
 
 ///////////////////////* ATTACK TYPES END *///////////////////////
 
-/mob/living/simple_animal/hostile/prime_soul/Life()
+/mob/living/simple_animal/hostile/boss/prime_soul/Life()
 	..()
 //	var/datum/ai_holder/simple_animal/prime_soul/minos_holder = ai_holder
 	var/target = ai_holder.target
@@ -283,10 +277,10 @@
 		else
 			stamina_recharge++
 
-/mob/living/simple_animal/hostile/prime_soul/New()
+/mob/living/simple_animal/hostile/boss/prime_soul/New()
 	..()
 
-/mob/living/simple_animal/hostile/prime_soul/death(gibbed, deathmessage, show_dead_message)
+/mob/living/simple_animal/hostile/boss/prime_soul/death(gibbed, deathmessage, show_dead_message)
 	if(gibbed)
 		return
 	anchored = 1
@@ -310,20 +304,18 @@
 	set_light(0)
 	qdel(src)
 
-/mob/living/simple_animal/hostile/prime_soul/Destroy()
+/mob/living/simple_animal/hostile/boss/prime_soul/Destroy()
 	QDEL_NULL(boss_theme)
 	. = ..()
 
-/mob/living/simple_animal/hostile/prime_soul/Allow_Spacemove(check_drift = 0)
+/mob/living/simple_animal/hostile/boss/prime_soul/Allow_Spacemove(check_drift = 0)
 	return 1
 
 
-/mob/living/simple_animal/hostile/prime_soul/do_attack(atom/A, turf/T)
+/mob/living/simple_animal/hostile/boss/prime_soul/do_attack(atom/A, turf/T)
 	face_atom(A)
 	var/missed = FALSE
 	if (get_dist(src, A) > 1 || (get_dir(src,A) != 0 && get_dir(src,A) != src.dir && get_dir(src,A) != turn(src.dir,45) && get_dir(src,A) != turn(src.dir,-45)))
-		missed = TRUE
-	else if (!T.AdjacentQuick(src))
 		missed = TRUE
 
 	if(missed) // Most likely we have a slow attack and they dodged it or we somehow got moved.
@@ -340,10 +332,13 @@
 
 	return TRUE
 
-/mob/living/simple_animal/hostile/prime_soul/melee_pre_animation(atom/A)
+/mob/living/simple_animal/hostile/boss/prime_soul/melee_pre_animation(atom/A)
 	if(attacking)
 		return
 	..()
+
+/mob/living/simple_animal/hostile/boss/prime_soul/ex_act()
+	return
 
 /datum/ai_holder/simple_animal/prime_soul
 	intelligence_level = AI_SMART
