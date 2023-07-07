@@ -4,6 +4,8 @@
 	coolinterval = 45 SECONDS
 	gun_name = "Harpoon gun"
 
+	hull_damage = 0
+
 	front_type = /obj/machinery/ship_weapon/front_part/harpoon_cannon
 	middle_type = /obj/machinery/ship_weapon/middle_part/harpoon_cannon
 	back_type = /obj/machinery/ship_weapon/back_part/harpoon_cannon

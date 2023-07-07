@@ -29,5 +29,5 @@
 	var/backwards = turn(dir, 180)
 	if(!exploded)
 		exploded = TRUE
-		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power, adminlog = 0, turf_breaker = TRUE)
+		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power, adminlog = 0)
 		qdel(src)

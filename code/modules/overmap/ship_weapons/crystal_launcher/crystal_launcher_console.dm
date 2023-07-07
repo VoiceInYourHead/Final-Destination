@@ -9,7 +9,7 @@
 	gun_name = "Crystal cannon"
 
 	caldigit = 2
-	hull_damage = 3
+	hull_damage = 1
 
 	front_type = /obj/machinery/ship_weapon/front_part/crystal_launcher
 	middle_type = /obj/machinery/ship_weapon/middle_part/crystal_launcher

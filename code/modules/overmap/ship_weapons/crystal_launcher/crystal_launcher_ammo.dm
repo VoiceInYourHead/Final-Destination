@@ -25,7 +25,7 @@
 
 /obj/structure/ship_munition/ammobox/crystal
 	name = "Mobile crystal growth chamber"
-	desc = "A box where the crystals growth (PLACEHOLDER)."
+	desc = "A box where the crystals growth. (PLACEHOLDER)"
 	ammo_count = 48
 	ammo_type = /obj/item/projectile/bullet/crystal
 
@@ -69,6 +69,7 @@
 	if(!exploded)
 		exploded = TRUE
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
+	..()
 
 /obj/item/projectile/bullet/crystal/Destroy()
 	if(src)
@@ -94,6 +95,7 @@
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
 		src.fragmentate(get_turf(src), rand(40,60), 7, list(/obj/item/projectile/bullet/pellet/fragment/crystal))
 		qdel(src)
+	..()
 
 /obj/item/projectile/bullet/crystal/shrapnel/Destroy()
 	if(src && !exploded)

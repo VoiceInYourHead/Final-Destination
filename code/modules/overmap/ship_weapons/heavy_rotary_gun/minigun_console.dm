@@ -4,7 +4,7 @@
 	coolinterval = 25 SECONDS
 	gun_name = "Heavy rotary gun"
 
-	hull_damage = 0.75
+	hull_damage = 0.2
 
 	front_type = /obj/machinery/ship_weapon/front_part/minigun
 	middle_type = /obj/machinery/ship_weapon/middle_part/minigun

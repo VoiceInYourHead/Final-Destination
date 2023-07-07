@@ -9,7 +9,7 @@
 	back_type = /obj/machinery/ship_weapon/back_part/hmg
 	munition_type = /obj/structure/ship_munition/ammobox/hmg
 
-	hull_damage = 0.4
+	hull_damage = 0.2
 
 	burst_size = 10
 	fire_interval = 3

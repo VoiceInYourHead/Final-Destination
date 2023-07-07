@@ -20,7 +20,7 @@
 	fire_sound = null
 	distance_falloff = 0.1
 	life_span = 200
-	var/explosion_radius = 6
+	var/explosion_radius = 5
 	var/explosion_max_power = EX_ACT_HEAVY
 
 	var/exploded = FALSE
@@ -29,5 +29,5 @@
 	var/backwards = turn(dir, 180)
 	if(!exploded)
 		exploded = TRUE
-		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power, adminlog = 0, turf_breaker = TRUE)
+		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power, adminlog = 0)
 		qdel(src)

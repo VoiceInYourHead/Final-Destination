@@ -42,7 +42,7 @@
 	fire_sound = null
 	distance_falloff = 0.1
 	life_span = 250
-	var/explosion_radius = 12
+	var/explosion_radius = 8
 	var/explosion_max_power = EX_ACT_DEVASTATING
 
 	var/exploded = FALSE
@@ -57,8 +57,8 @@
 
 
 /obj/item/projectile/bullet/autocannon/anti_hull
-	armor_penetration = 80
-	explosion_radius = 9
+	armor_penetration = 60
+	explosion_radius = 7
 	explosion_max_power = EX_ACT_DEVASTATING
 
 /obj/item/projectile/bullet/autocannon/anti_hull/Bump(atom/A as mob|obj|turf|area, forced=0)
@@ -71,18 +71,18 @@
 /obj/item/projectile/bullet/autocannon/armour_piercing
 	damage = 200
 	armor_penetration = 100
-	penetrating = 30
+	penetrating = 6
 	penetration_modifier = 1.1
 
 
 /obj/item/projectile/bullet/autocannon/aphe
 	damage = 200
 	armor_penetration = 100
-	penetrating = 18
+	penetrating = 2
 	penetration_modifier = 1.1
 	explosion_radius = 7
 	explosion_max_power = EX_ACT_HEAVY
-	var/delay = 7
+	var/delay = 4
 
 /obj/item/projectile/bullet/autocannon/aphe/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(istype(A,/obj/effect/shield))
@@ -103,5 +103,3 @@
 /obj/item/projectile/bullet/autocannon/aphe/Destroy()
 	if(src && !exploded)
 		explosion(get_turf(src), explosion_radius, explosion_max_power)
-	..()
-

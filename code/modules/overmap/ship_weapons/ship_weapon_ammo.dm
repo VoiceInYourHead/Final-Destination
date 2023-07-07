@@ -22,12 +22,12 @@
 	if(can_explode)
 		if(severity < 3 && ammo_count > ammo_count/3)
 			can_explode = FALSE
-			explosion(get_turf(src), 7, EX_ACT_DEVASTATING)
+			explosion(get_turf(src), 6, EX_ACT_DEVASTATING)
 			if(src)
 				qdel(src)
 		else if(severity < 3 && ammo_count > 0)
 			can_explode = FALSE
-			explosion(get_turf(src), 4, EX_ACT_DEVASTATING)
+			explosion(get_turf(src), 3, EX_ACT_DEVASTATING)
 			if(src)
 				qdel(src)
 	return
