@@ -440,6 +440,10 @@
 /mob/living/simple_animal/hostile/smart_beast/proc/find_and_eat_food()
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 
+	if(ai_holder.stance == STANCE_FOLLOW || ai_holder.busy == TRUE)
+		movement_target = null
+		return
+
 	if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
 		movement_target = null
 
@@ -451,6 +455,11 @@
 			for(var/obj/item/reagent_containers/food/snacks/meat/S in oview(src, range))
 				if(isturf(S.loc) || ishuman(S.loc))
 					movement_target = S
+					break
+
+			for(var/obj/item/organ/O in oview(src, range))
+				if(isturf(O.loc) || ishuman(O.loc))
+					movement_target = O
 					break
 
 		if(diet == DIET_HERBIVOROUS)
@@ -528,9 +537,6 @@
 						hunger = max(0, hunger - movement_target.reagents.total_volume*5)
 						health = min(maxHealth, health + movement_target.reagents.total_volume + 5)
 
-						qdel(movement_target)
-						eating = 0
-
 						if(movement_target.fingerprintslast in beastmasters && tameable)
 							if(respect_stats)
 								smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
@@ -556,6 +562,9 @@
 
 						else
 							beastmasters[movement_target.fingerprintslast] = 1
+
+						qdel(movement_target)
+						eating = 0
 
 	if(get_dist(src, movement_target) > smart_ai_holder.vision_range)
 		eating = 0
