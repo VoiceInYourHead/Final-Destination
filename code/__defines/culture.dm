@@ -228,7 +228,7 @@
 #define CULTURE_RESOMI_CONCORD    		"Alish, Child of Concord"
 #define CULTURE_RESOMI_SPACER 			"Spacer, Imperial Refugee"
 
-#define FACTION_RESOMI_CONCORD			"Concrord"
+#define FACTION_RESOMI_CONCORD			"Concord"
 #define FACTION_RESOMI_EXPEDITIONARY 	"Expeditionary Corps"
 #define FACTION_RESOMI_URI				"United Resomi Empire"
 #define FACTION_RESOMI_REFUGEE			"Independent"

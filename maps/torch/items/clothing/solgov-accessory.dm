@@ -491,7 +491,8 @@ department tags
 	slot = ACCESSORY_SLOT_DEPT
 	accessory_flags = EMPTY_BITFIELD
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_accessories_sol_unathi.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_accessories_resomi.dmi'
 		)
 
 /obj/item/clothing/accessory/solgov/department/command

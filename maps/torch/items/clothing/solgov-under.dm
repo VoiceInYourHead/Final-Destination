@@ -58,7 +58,8 @@
 	icon_state = "blackutility_crew"
 	worn_state = "blackutility_crew"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_under_resomi.dmi'
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary_skirt

@@ -1,10 +1,10 @@
 /datum/species/resomi
 	name = SPECIES_RESOMI
 	name_plural = "Resomii"
-	description = "A race of feathered raptors who developed on a cold world, almost \
-	outside of the Goldilocks zone. Extremely fragile, they developed hunting skills \
-	that emphasized taking out their prey without themselves getting hit. They are an \
-	advanced culture on good terms with Skrellian and Human interests."
+	description = "A race of feathered raptors who developed on a cold world. \
+	Extremely fragile, they developed hunting skills that emphasized taking \
+	out their prey without themselves getting hit. They are an pretty new species, \
+	opened by humans."
 
 	min_age = 15
 	max_age = 45

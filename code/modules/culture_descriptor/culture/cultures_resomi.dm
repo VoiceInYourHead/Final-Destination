@@ -4,6 +4,7 @@
 
 /decl/cultural_info/culture/resomi/tribe
 	name = CULTURE_RESOMI_TRIBE
+	language = list(LANGUAGE_RESOMI,LANGUAGE_HUMAN_EURO)
 	description = "\\FILL THIS FIELD PLEASE\\."
 	economic_power = 0.85
 
