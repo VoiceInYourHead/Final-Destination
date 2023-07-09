@@ -1,6 +1,6 @@
-#define DIET_OMNIVOROUS  1
-#define DIET_CARNIVOROUS 2
-#define DIET_HERBIVOROUS 4
+#define DIET_OMNIVOROUS  "Omnivorous"
+#define DIET_CARNIVOROUS "Carnivorous"
+#define DIET_HERBIVOROUS "Herbivorous"
 
 /mob/living/simple_animal/proc/name_species(newname as text)
 	set name = "Name Alien Species"
@@ -85,12 +85,12 @@
 	var/list/beastmasters = list()
 	var/list/current_pack_members = list()
 	var/hunger = 0
-	var/eating = null
-	var/tameable = 1
+	var/eating = FALSE
+	var/tameable = TRUE
 	var/tame_difficulty = 0
 	var/init_tame_difficulty = 3
 	var/diet = DIET_OMNIVOROUS
-	var/hostility_threshold = 150
+	var/hostility_threshold = 120
 	var/hunger_threshold = 100
 	var/turns_since_scan = 0
 	var/turns_since_pack_attach = 0
@@ -102,7 +102,7 @@
 	var/nomad = FALSE
 	var/obj/movement_target
 	var/mob/living/owner
-	taser_kill = 0
+	taser_kill = FALSE
 	name = "Mr. Beast"
 
 	ai_holder = /datum/ai_holder/smart_animal
@@ -113,7 +113,7 @@
 	can_escape = TRUE
 
 //	var/init_movement_cooldown = 8 //6 is min
-	movement_cooldown = 6
+	movement_cooldown = 2
 	movement_sound = null			// If set, will play this sound when it moves on its own will.
 	turn_sound = null				// If set, plays the sound when the mob's dir changes in most cases.
 
@@ -157,6 +157,8 @@
 
 /datum/ai_holder/smart_animal/proc/calculate_stats()
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = holder
+
+	smart_holder.tame_difficulty = round(smart_holder.init_tame_difficulty + aggression/50 + dominance/75)
 
 /////////////////////////////SYMPATHY/////////////////////////////
 	threaten_timeout = round( init_threaten_timeout / sympathy )
@@ -210,8 +212,8 @@
 	if(AM.key)
 		if(AM.key in smart_holder.beastmasters)
 			smart_holder.beastmasters[AM.key] = round( smart_holder.beastmasters[AM.key] / 2 )
-	if(leader == AM)
-		set_follow(null)
+		if(leader == AM)
+			set_follow(null)
 	return
 
 /datum/ai_holder/smart_animal/New(new_holder)
@@ -369,25 +371,21 @@
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	var/hostility = get_tension() + smart_ai_holder.aggression
 
-	if(smart_ai_holder.hostile)
-		if(aggression_affects_hostility && hunger_affects_hostility)
-			if(hunger < hunger_threshold*2 && hostility < hostility_threshold)	//stop hunting when satiated and not threated
-				smart_ai_holder.hostile = FALSE
-		else if(aggression_affects_hostility)
-			if(hostility < hostility_threshold)									//stop hunting when not threated
-				smart_ai_holder.hostile = FALSE
-		else if(hunger_affects_hostility)
-			if(hunger < hunger_threshold*2)										//stop hunting when satiated
-				smart_ai_holder.hostile = FALSE
-	else
-		if (((hunger > hunger_threshold*5 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet != DIET_HERBIVOROUS)
-			smart_ai_holder.hostile = TRUE
-		else if (((hunger > hunger_threshold*8 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet == DIET_HERBIVOROUS)
-			smart_ai_holder.hostile = TRUE
+	if(aggression_affects_hostility)
+		if(hostility < hostility_threshold)									//stop hunting when not threated
+			smart_ai_holder.hostile = FALSE
+	if(hunger_affects_hostility)
+		if(hunger < hunger_threshold*2)										//stop hunting when satiated
+			smart_ai_holder.hostile = FALSE
+
+	if(((hunger > hunger_threshold*5 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet != DIET_HERBIVOROUS)
+		smart_ai_holder.hostile = TRUE
+	if(((hunger > hunger_threshold*8 && hunger_affects_hostility) || (hostility >= hostility_threshold && aggression_affects_hostility)) && diet == DIET_HERBIVOROUS)
+		smart_ai_holder.hostile = TRUE
 
 /mob/living/simple_animal/hostile/smart_beast/proc/hunger_checks()
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
-	if(!eating && (diet == DIET_CARNIVOROUS || diet == DIET_OMNIVOROUS))
+	if(diet == DIET_CARNIVOROUS || diet == DIET_OMNIVOROUS)
 		for(var/mob/living/simple_animal/S in range(src,1))
 			if(S.stat == DEAD && S != src && (smart_ai_holder.stance == STANCE_MOVE || smart_ai_holder.stance == STANCE_IDLE))
 				consume(S)
@@ -429,10 +427,7 @@
 		X.desc += " These look like they belong to \a [S.name]."
 	hunger = max(0, hunger - S.maxHealth*5)
 	health = min(maxHealth, health + S.maxHealth/3)
-	if(prob(15))
-		qdel(S)
-	else
-		S.gib()
+	S.gib()
 	eating = 0
 
 	return TRUE
@@ -451,44 +446,43 @@
 		movement_target = null
 		var/range = smart_ai_holder.vision_range + 3
 
-		if(diet == DIET_CARNIVOROUS)
+		if(diet == DIET_CARNIVOROUS || diet == DIET_OMNIVOROUS)
 			for(var/obj/item/reagent_containers/food/snacks/meat/S in oview(src, range))
 				if(isturf(S.loc) || ishuman(S.loc))
 					movement_target = S
 					break
 
-			for(var/obj/item/organ/O in oview(src, range))
-				if(isturf(O.loc) || ishuman(O.loc))
-					movement_target = O
+			for(var/obj/item/organ/internal/I in oview(src, range))
+				if(isturf(I.loc) || ishuman(I.loc))
+					movement_target = I
 					break
 
-		if(diet == DIET_HERBIVOROUS)
-			for(var/obj/machinery/portable_atmospherics/hydroponics/H in oview(src, range))
-				if(H.harvest)
-					movement_target = H
+			for(var/obj/item/organ/external/E in oview(src, range))
+				if(isturf(E.loc) && E.get_contents_recursive().len)
+					movement_target = E
 					break
 
+			for(var/mob/living/L in oview(src, range))
+				if(L.stat == 2 || (L.stat == 1 && isnull(L.client))) // if dead or sleeping and mob
+					movement_target = L
+					break
+
+		if(diet == DIET_HERBIVOROUS || diet == DIET_OMNIVOROUS)
 			for(var/obj/item/reagent_containers/food/snacks/grown/S in oview(src, range))
 				if(isturf(S.loc) || ishuman(S.loc))
 					movement_target = S
 					break
 
-		if(diet == DIET_OMNIVOROUS)
 			for(var/obj/machinery/portable_atmospherics/hydroponics/H in oview(src, range))
 				if(H.harvest)
 					movement_target = H
-					break
-
-			for(var/obj/item/reagent_containers/food/snacks/S in oview(src, range))
-				if(isturf(S.loc) || ishuman(S.loc))
-					movement_target = S
 					break
 
 	if(!movement_target)
 		return
 
 	if(ishuman(movement_target.loc) && hunger > hunger_threshold && !(movement_target.loc in friends))
-		visible_emote("stares at the [movement_target] that [movement_target.loc] has with eyes full of rage!")
+		visible_emote("stares at the [movement_target] that [movement_target.loc] have with eyes full of rage!")
 		if(hunger_affects_hostility)
 			smart_ai_holder.hostile = TRUE
 		smart_ai_holder.give_target(movement_target.loc, urgent = TRUE)
@@ -498,9 +492,9 @@
 		eating = 1
 		for(var/i = 1 to smart_ai_holder.vision_range)
 			if(movement_target.fingerprintslast && tameable && !owner)
-				sleep(max( movement_cooldown, round(smart_ai_holder.nervousness / 10) ))
+				sleep(max( move_to_delay, round(smart_ai_holder.nervousness / 10) ))
 			else
-				sleep(movement_cooldown)
+				sleep(move_to_delay)
 			step_to(src,movement_target,1)
 			if(get_dist(src, movement_target) <= 1)
 				break
@@ -526,8 +520,12 @@
 						tray_target = null
 						movement_target = null
 
-				if(istype(movement_target,/obj/item/reagent_containers/food))
-					playsound(src.loc, 'sound/items/eatfood.ogg', 50, 1)
+				else if(istype(movement_target,/mob/living/carbon))
+					var/mob/living/living_target = movement_target
+					consume(living_target, living_target.maxHealth)
+
+				else if(!isnull(movement_target.reagents))
+					playsound(src.loc, 'sound/items/eatfood.ogg', 75, 1)
 					UnarmedAttack(movement_target)
 					eating = 1
 					if(movement_target.reagents)
@@ -537,37 +535,43 @@
 						hunger = max(0, hunger - movement_target.reagents.total_volume*5)
 						health = min(maxHealth, health + movement_target.reagents.total_volume + 5)
 
-						if(movement_target.fingerprintslast in beastmasters && tameable)
-							if(respect_stats)
-								smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 2)
-								smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 2)
-
-							beastmasters[movement_target.fingerprintslast] ++
-
-							if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 ))
-								for(var/client/C in GLOB.clients)
-									if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
-										friends += C.mob
-
-							if(beastmasters[movement_target.fingerprintslast] >= round( tame_difficulty + smart_ai_holder.aggression/75 + smart_ai_holder.dominance/100 + tame_difficulty/2 ))
-								for(var/client/C in GLOB.clients)
-									if(C.key == movement_target.fingerprintslast)
-										faction = "[C.mob.name]"
-										owner = C.mob
-										smart_ai_holder.set_follow(owner)
-
-							for(var/client/C in GLOB.clients)
-								if(C.key == movement_target.fingerprintslast && smart_ai_holder.check_attacker(C.mob) && prob(50))
-									smart_ai_holder.remove_attacker(C.mob)
-
-						else
-							beastmasters[movement_target.fingerprintslast] = 1
+						if(!isnull(movement_target.fingerprintslast))
+							if(tameable)
+								check_taming()
 
 						qdel(movement_target)
 						eating = 0
 
-	if(get_dist(src, movement_target) > smart_ai_holder.vision_range)
+	if(get_dist(src, movement_target) > smart_ai_holder.vision_range || hunger < hunger_threshold || !movement_target)
 		eating = 0
+
+/mob/living/simple_animal/hostile/smart_beast/proc/check_taming()
+	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+	if(movement_target.fingerprintslast in beastmasters)
+		if(respect_stats)
+			smart_ai_holder.aggression = max(1, smart_ai_holder.aggression - 1)
+			smart_ai_holder.sympathy = min(150, smart_ai_holder.sympathy + 1)
+
+		beastmasters[movement_target.fingerprintslast] ++
+
+		if(beastmasters[movement_target.fingerprintslast] >= tame_difficulty)
+			for(var/client/C in GLOB.clients)
+				if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
+					friends += C.mob
+
+		if(beastmasters[movement_target.fingerprintslast] >= tame_difficulty + init_tame_difficulty/2)
+			for(var/client/C in GLOB.clients)
+				if(C.key == movement_target.fingerprintslast)
+					faction = "[C.mob.name]"
+					owner = C.mob
+					smart_ai_holder.set_follow(owner)
+
+		for(var/client/C in GLOB.clients)
+			if(C.key == movement_target.fingerprintslast && smart_ai_holder.check_attacker(C.mob) && prob(50))
+				smart_ai_holder.remove_attacker(C.mob)
+
+	if(!(movement_target.fingerprintslast in beastmasters) && tameable)
+		beastmasters[movement_target.fingerprintslast] = 1
 
 /mob/living/simple_animal/hostile/smart_beast/Life()
 	. = ..()
@@ -587,7 +591,7 @@
 		hunger_affects_hostility = FALSE
 
 	else
-		hunger += 0.5 + smart_ai_holder.energy/100
+		hunger += 0.75 + smart_ai_holder.energy/200
 		if(hunger > hunger_threshold*10)
 			health = max(0, health - (hunger - hunger_threshold*10))
 
@@ -606,6 +610,28 @@
 
 	if(pulledby && ai_holder.retaliate && smart_ai_holder.aggression > 15 && !(pulledby in friends) && prob(75))
 		smart_ai_holder.give_target(pulledby, urgent = TRUE)
+
+/mob/living/simple_animal/hostile/smart_beast/proc/take_orders(mob/commander, atom/target)
+	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+	if(!commander || !target || !smart_ai_holder)
+		return FALSE
+	if(commander != owner)
+		return FALSE
+
+	if(istype(target,/mob/living) && target != src)
+		if(target in friends || target == commander)
+			smart_ai_holder.set_follow(target, 0, FALSE)
+		else
+			smart_ai_holder.give_target(target)
+
+	else if(target == src)
+		smart_ai_holder.target_last_seen_turf = null
+		smart_ai_holder.lose_follow()
+		smart_ai_holder.remove_target()
+
+	else smart_ai_holder.set_follow(target, 30 SECONDS / (smart_ai_holder.nervousness/75), TRUE)
+
+	return TRUE
 
 ///////////////////////////////////////////////EXOPLANET ANIMALS///////////////////////////////////////////////
 
@@ -787,7 +813,7 @@
 	icon_state = "shantak"
 	icon_living = "shantak"
 	icon_dead = "shantak_dead"
-	movement_cooldown = 4
+	movement_cooldown = 1
 	init_tame_difficulty = 5
 	move_to_delay = 1
 	maxHealth = 75
@@ -831,7 +857,7 @@
 	icon_state = "tindalos"
 	icon_living = "tindalos"
 	icon_dead = "tindalos_dead"
-	movement_cooldown = 4
+	movement_cooldown = 2
 	mob_size = MOB_TINY
 	density = FALSE
 	diet = DIET_OMNIVOROUS
@@ -847,7 +873,7 @@
 	icon_state = "thinbug"
 	icon_living = "thinbug"
 	icon_dead = "thinbug_dead"
-	movement_cooldown = 4
+	movement_cooldown = 1
 	mob_size = MOB_MINISCULE
 	density = FALSE
 	diet = DIET_CARNIVOROUS

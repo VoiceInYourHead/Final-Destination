@@ -44,11 +44,10 @@
 /datum/ai_holder/proc/set_follow(atom/L, follow_for = 0, var/walk_straight_to = FALSE)
 	ai_log("set_follow() : Entered.", AI_LOG_DEBUG)
 	if (!L)
-		ai_log("set_follow() : Was told to follow a nonexistant mob.", AI_LOG_ERROR)
+		ai_log("set_follow() : Was told to follow a nonexistant atom.", AI_LOG_ERROR)
 		return FALSE
 
-	if(walk_straight_to)
-		do_walk_straight_to = TRUE
+	do_walk_straight_to = walk_straight_to
 
 	leader = L
 	follow_until_time = !follow_for ? 0 : world.time + follow_for

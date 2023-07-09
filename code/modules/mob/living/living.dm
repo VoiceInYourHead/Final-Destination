@@ -31,6 +31,9 @@
 	if(!..())
 		return 0
 
+	for(var/mob/living/simple_animal/hostile/smart_beast/B in oview(7, src)) // point-to-command animals stuff
+		B.take_orders(commander = src, target = A)
+
 	usr.visible_message("<b>[src]</b> points to [A]")
 	return 1
 

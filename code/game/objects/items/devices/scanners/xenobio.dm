@@ -60,6 +60,10 @@
 			. += "Known toxins:\t[list_gases(A.max_gas)]"
 		if(A.minbodytemp && A.maxbodytemp)
 			. += "Temperature comfort zone:\t[A.minbodytemp] K to [A.maxbodytemp] K"
+		if(istype(target, /mob/living/simple_animal/hostile/smart_beast))
+			var/mob/living/simple_animal/hostile/smart_beast/S = target
+			. += "Diet:\t[S.diet]"
+			. += "Hunger:\t[round(S.hunger)]"
 		var/area/map = locate(/area/overmap)
 		for(var/obj/effect/overmap/visitable/sector/exoplanet/P in map)
 			if((A in P.animals) || is_type_in_list(A, P.repopulate_types))
