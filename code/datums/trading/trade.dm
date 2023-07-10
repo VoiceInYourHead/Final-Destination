@@ -83,6 +83,8 @@
 
 /datum/trader/proc/update_disposition_list()
 	for(var/obj/effect/overmap/visitable/possible_trading_visitables)
+		if(!possible_trading_visitables)
+			continue
 		if(possible_trading_visitables in disposition)
 			continue
 		disposition += possible_trading_visitables
