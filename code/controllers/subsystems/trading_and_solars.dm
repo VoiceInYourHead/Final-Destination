@@ -55,8 +55,8 @@ SUBSYSTEM_DEF(misc_slow)
 
 GLOBAL_LIST_EMPTY(traders)
 GLOBAL_LIST_EMPTY(trader_types)
-GLOBAL_VAR_INIT(trader_max, 10)
-GLOBAL_VAR_INIT(trader_station_count, 3)
+GLOBAL_VAR_INIT(trader_max, 4)
+GLOBAL_VAR_INIT(trader_station_count, 2)
 GLOBAL_VAR_INIT(trader_unique_chance, 5)
 GLOBAL_LIST_INIT(trader_stations, subtypesof(/datum/trader) - typesof(/datum/trader/ship))
 GLOBAL_LIST_INIT(trader_ships, subtypesof(/datum/trader/ship) - typesof(/datum/trader/ship/unique))
@@ -97,6 +97,7 @@ GLOBAL_LIST_INIT(trader_uniques, subtypesof(/datum/trader/ship/unique))
 		if (!trader.tick())
 			GLOB.trader_types -= trader_type
 			GLOB.traders[trader_type] = null
+			trader.leave_map()
 			qdel(trader)
 		if (no_mc_tick)
 			CHECK_TICK

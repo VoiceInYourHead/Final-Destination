@@ -28,7 +28,7 @@
 			wanted_items -= subtypesof(type)
 */
 /datum/trader/ship/unique/tick()
-	if(prob(-disposition) || refuse_comms)
+	if(prob(-min(list_values(disposition))))
 		duration_of_stay--
 	return --duration_of_stay > 0
 

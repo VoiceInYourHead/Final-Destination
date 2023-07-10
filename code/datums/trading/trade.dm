@@ -2,7 +2,7 @@
 	var/name = "unsuspicious trader"                            //The name of the trader in question
 	var/origin = "some place"                                   //The place that they are trading from
 	var/list/possible_origins                                   //Possible names of the trader origin
-	var/disposition = 0                                         //The current disposition of them to us.
+	var/list/disposition = list()                               //The current disposition of them to us.
 	var/trade_flags = TRADER_MONEY                              //Flags
 	var/name_language                                                //If this is set to a language name this will generate a name from the language
 	var/icon/portrait                                           //The icon that shows up in the menu @TODO
@@ -13,6 +13,9 @@
 	var/list/trading_items = list()                             //What items they are currently trading away.
 	var/list/blacklisted_trade_items = list(/mob/living/carbon/human)
 	                                                            //Things they will automatically refuse
+	var/obj/effect/overmap/trading/overmap_representation       //Эффект на карте, представляющий судно/станцию данного торговца
+	var/overmap_object_type = /obj/effect/overmap/trading       //Путь к эффекту выше
+	var/overmap_object_color = COLOR_WHITE                      //Цвет судна/станции
 
 	var/list/speech = list()                                    //The list of all their replies and messages. Structure is (id = talk)
 	/*SPEECH IDS:
@@ -36,7 +39,6 @@
 	var/price_rng = 10                                          //Percentage max variance in sell prices.
 	var/insult_drop = 5                                         //How far disposition drops on insult
 	var/compliment_increase = 5                                 //How far compliments increase disposition
-	var/refuse_comms = 0                                        //Whether they refuse further communication
 
 	var/mob_transfer_message = "You are transported to ORIGIN." //What message gets sent to mobs that get sold.
 
@@ -58,9 +60,13 @@
 	if(possible_trading_items)
 		possible_trading_items = generate_pool(possible_trading_items)
 
+	update_disposition_list()
+
 	for(var/i in 3 to 6)
 		add_to_pool(trading_items, possible_trading_items, force = 1)
 		add_to_pool(wanted_items, possible_wanted_items, force = 1)
+
+	generate_overmap_representation()
 
 /datum/trader/proc/generate_pool(var/list/trading_pool)
 	. = list()
@@ -74,6 +80,42 @@
 			. -= type
 		if(status & TRADER_BLACKLIST_SUB)
 			. -= subtypesof(type)
+
+/datum/trader/proc/update_disposition_list()
+	for(var/obj/effect/overmap/visitable/possible_trading_visitables)
+		if(possible_trading_visitables in disposition)
+			continue
+		disposition += possible_trading_visitables
+		disposition[possible_trading_visitables] = 0
+
+/datum/trader/proc/generate_overmap_representation()
+	var/list/map_turfs = block(locate(2,2,GLOB.using_map.overmap_z),locate(GLOB.using_map.overmap_size-2,GLOB.using_map.overmap_size-2,GLOB.using_map.overmap_z))
+	var/turf/spawn_location
+
+	for(var/turf/T in shuffle(map_turfs))
+		var/valid = TRUE
+		for(var/obj/effect/overmap/event/E in T)
+			if(E) valid = FALSE
+		for(var/obj/effect/overmap/trading/M in T)
+			if(M) valid = FALSE
+		for(var/obj/effect/overmap/visitable/V)
+			if(T in view(15,V)) valid = FALSE
+		if(valid)
+			spawn_location = T
+			break
+		else continue
+
+	if(!spawn_location)
+		return log_and_message_admins("КРИНЖАНУЛ, НЕГДЕ СПАВНИТЬ ТОРГОВЦА!!!")
+
+	overmap_representation = new overmap_object_type(spawn_location)
+	overmap_representation.color = overmap_object_color
+	overmap_representation.trader_merchant_datum = src
+	overmap_representation.name = origin
+//	overmap_representation.desc =
+
+/datum/trader/proc/leave_map()
+	qdel(overmap_representation) // TODO: overmap bluespace jump animation
 
 
 //If this hits 0 then they decide to up and leave.
@@ -194,13 +236,13 @@
 	if(!trading_worth)
 		return make_response(TRADER_NOT_ENOUGH, "That's not enough.", 0, FALSE)
 	var/percent = offer_worth/trading_worth
-	if(percent > max(0.9, 0.9-disposition / 100))
+	if(percent > max(0.9, 0.9-disposition[map_sectors["[location.z]"]] / 100))
 		trade_quantity(quantity, offers, num, location)
 		return make_response(TRADER_TRADE_COMPLETE, "Thank you for your patronage!", 0, TRUE)
 	return make_response(TRADER_NOT_ENOUGH, "That's not enough.", 0, FALSE)
 
 /datum/trader/proc/hail(var/mob/user)
-	if(!can_hail())
+	if(!can_hail(user))
 		return make_response(TRADER_HAIL_DENY, "No, go away.", 0, FALSE)
 	var/specific
 	if(istype(user, /mob/living/carbon/human))
@@ -215,25 +257,23 @@
 	tr.text = replacetext_char(tr.text, "MOB", user.name)
 	return tr
 
-/datum/trader/proc/can_hail()
-	if(!refuse_comms && prob(-disposition))
-		refuse_comms = 1
-	return !refuse_comms
+/datum/trader/proc/can_hail(mob/user)
+	if(prob(-disposition[map_sectors["[user.z]"]]))
+		return FALSE
+	return TRUE
 
-/datum/trader/proc/insult()
-	disposition -= rand(insult_drop, insult_drop * 2)
-	if(prob(-disposition/10))
-		refuse_comms = 1
-	if(disposition > 50)
+/datum/trader/proc/insult(ship_z)
+	disposition[map_sectors["[ship_z]"]] -= rand(insult_drop, insult_drop * 2)
+	if(disposition[map_sectors["[ship_z]"]] > 50)
 		return make_response(TRADER_INSULT_GOOD,"What? I thought we were cool!", 0, TRUE)
 	else
 		return make_response(TRADER_INSULT_BAD, "Right back at you asshole!", 0, FALSE)
 
-/datum/trader/proc/compliment()
-	if(prob(-disposition))
+/datum/trader/proc/compliment(ship_z)
+	if(prob(-disposition[map_sectors["[ship_z]"]]))
 		return make_response(TRADER_COMPLEMENT_FAILURE, "Fuck you!", 0, FALSE)
-	if(prob(100-disposition))
-		disposition += rand(compliment_increase, compliment_increase * 2)
+	if(prob(100-disposition[map_sectors["[ship_z]"]]))
+		disposition[map_sectors["[ship_z]"]] += rand(compliment_increase, compliment_increase * 2)
 	return make_response(TRADER_COMPLEMENT_SUCCESS, "Thank you!", 0, TRUE)
 
 /datum/trader/proc/trade_quantity(quantity, list/offers, num, turf/location)
@@ -251,7 +291,7 @@
 		M += new type(location)
 
 	playsound(location, 'sound/effects/teleport.ogg', 50, 1)
-	disposition += quantity * (rand(compliment_increase, compliment_increase * 3))
+	disposition[map_sectors["[location.z]"]] += quantity * (rand(compliment_increase, compliment_increase * 3))
 
 	return M
 
@@ -296,5 +336,5 @@
 		qdel(offer)
 	return make_response(TRADER_TRADE_COMPLETE, "Thanks for the goods!", total, TRUE)
 
-/datum/trader/proc/bribe_to_stay_longer(var/amt)
+/datum/trader/proc/bribe_to_stay_longer(var/amt, ship_z)
 	return make_response(TRADER_BRIBE_FAILURE, "How about no?", 0, FALSE)

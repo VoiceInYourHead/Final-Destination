@@ -12,6 +12,7 @@
 	var/current_merchant = 0
 	var/show_trades = FALSE
 	var/hailed_merchant = FALSE
+	var/ignore_distance = FALSE
 	var/last_comms = null
 	var/temp = null
 	/// Stores the money deposited into the merchant program
@@ -101,7 +102,7 @@
 	if(bank < amt)
 		last_comms = "ERROR: NOT ENOUGH FUNDS."
 		return
-	get_response(T.bribe_to_stay_longer(amt))
+	get_response(T.bribe_to_stay_longer(amt,holder.loc.z))
 
 /datum/computer_file/program/merchant/proc/offer_item(var/datum/trader/T, var/num, skill)
 	var/quantity = 1
@@ -165,6 +166,7 @@
 /datum/computer_file/program/merchant/Topic(href, href_list)
 	if(..())
 		return TOPIC_HANDLED
+	var/obj/effect/overmap/visitable/linked = map_sectors["[holder.loc.z]"]
 	var/mob/user = usr
 	if(href_list["PRG_connect_pad"])
 		. = TOPIC_HANDLED
@@ -184,7 +186,7 @@
 	if(href_list["PRG_merchant_list"])
 		if (!GLOB.trader_types.len)
 			. = TOPIC_NOACTION
-			temp = "Cannot find any traders within broadcasting range."
+			temp = "Cannot find any traders within sensors reach."
 		else
 			. = TOPIC_HANDLED
 			current_merchant = 1
@@ -214,8 +216,11 @@
 		if(!hailed_merchant)
 			if(href_list["PRG_hail"])
 				. = TOPIC_HANDLED
-				hailed_merchant = get_response(T.hail(user))
-				show_trades = FALSE
+				if((T.overmap_representation in view(12,linked)) || ignore_distance)
+					hailed_merchant = get_response(T.hail(user))
+					show_trades = FALSE
+				else
+					temp = "Cannot find this trader within sensors reach."
 			. = TOPIC_HANDLED
 		else
 			if(href_list["PRG_show_trades"])
@@ -223,10 +228,10 @@
 				show_trades = !show_trades
 			if(href_list["PRG_insult"])
 				. = TOPIC_HANDLED
-				get_response(T.insult())
+				get_response(T.insult(holder.loc.z))
 			if(href_list["PRG_compliment"])
 				. = TOPIC_HANDLED
-				get_response(T.compliment())
+				get_response(T.compliment(holder.loc.z))
 			if(href_list["PRG_offer_item"])
 				. = TOPIC_HANDLED
 				offer_item(T,text2num(href_list["PRG_offer_item"]) + 1, user.get_skill_value(SKILL_FINANCE))
@@ -251,3 +256,7 @@
 			if(href_list["PRG_bribe"])
 				. = TOPIC_HANDLED
 				bribe(T, text2num(href_list["PRG_bribe"]))
+
+/datum/computer_file/program/merchant/ignore_distance
+	available_on_ntnet = FALSE
+	ignore_distance = TRUE

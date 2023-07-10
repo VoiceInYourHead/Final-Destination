@@ -216,6 +216,8 @@
 	if(known)
 		update_known_connections(TRUE)
 
+	for(var/datum/trader/merchant)
+		merchant.update_disposition_list()
 
 /obj/effect/overmap/visitable/sector/update_known_connections(notify = FALSE)
 	. = ..()
