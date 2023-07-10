@@ -619,7 +619,7 @@
 		return FALSE
 
 	if(istype(target,/mob/living) && target != src)
-		if(target in friends || target == commander)
+		if(target in friends || target == owner)
 			smart_ai_holder.set_follow(target, 0, FALSE)
 		else
 			smart_ai_holder.give_target(target)
