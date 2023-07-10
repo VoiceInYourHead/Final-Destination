@@ -3202,6 +3202,7 @@
 #include "code\modules\synthesized_instruments\real_instruments\Violin\violin.dm"
 #include "code\modules\tables\flipping.dm"
 #include "code\modules\tables\interactions.dm"
+#include "code\modules\tables\mag_tables.dm"
 #include "code\modules\tables\presets.dm"
 #include "code\modules\tables\rack.dm"
 #include "code\modules\tables\tables.dm"
