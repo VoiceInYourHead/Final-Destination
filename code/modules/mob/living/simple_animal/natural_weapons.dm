@@ -23,6 +23,7 @@
 
 /obj/item/natural_weapon/bite/holo
 	damtype = PAIN
+	force = 5
 
 /obj/item/natural_weapon/bite/weak
 	force = 5
