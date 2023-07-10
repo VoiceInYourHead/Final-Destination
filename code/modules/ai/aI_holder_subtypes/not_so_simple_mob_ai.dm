@@ -599,7 +599,7 @@
 
 	if(ai_holder.cooperative)
 		turns_since_pack_attach++
-		if(turns_since_pack_attach > 100)
+		if(turns_since_pack_attach > 30)
 			attach_to_pack()
 
 		if(pack_leader)
