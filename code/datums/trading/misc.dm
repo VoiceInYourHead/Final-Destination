@@ -62,7 +62,6 @@
 								/mob/living/simple_animal/hostile/smart_beast/samak= TRADER_THIS_TYPE,
 								/mob/living/simple_animal/hostile/retaliate/goat = TRADER_THIS_TYPE,
 								/mob/living/simple_animal/hostile/carp= TRADER_THIS_TYPE,
-								/obj/item/device/dociler              = TRADER_THIS_TYPE,
 								/obj/structure/dogbed                 = TRADER_THIS_TYPE)
 
 /datum/trader/ship/pet_shop/New()
