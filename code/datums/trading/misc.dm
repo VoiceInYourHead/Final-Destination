@@ -108,7 +108,7 @@
 								/obj/item/clothing/mask/fakemoustache   = TRADER_THIS_TYPE,
 								/obj/item/grenade/spawnergrenade/fake_carp = TRADER_THIS_TYPE)
 
-/datum/trader/ship/pet_shop/New()
+/datum/trader/ship/prank_shop/New()
 	..()
 	speech[TRADER_HAIL_START + SPECIES_DIONA] = "Welcome, other gestalt. We invite you to learn of our experiences, and teach us of your own."
 
@@ -160,6 +160,6 @@
 								/obj/item/material/star         = TRADER_THIS_TYPE,
 								/obj/item/material/twohanded/baseballbat = TRADER_THIS_TYPE)
 
-/datum/trader/ship/pet_shop/New()
+/datum/trader/ship/replica_shop/New()
 	..()
 	speech[TRADER_HAIL_START + SPECIES_UNATHI] = "Ah, you've the look of a lizard who knows his way around martial combat. Come in! We can only hope our steel meets the formidable Moghedi standards."
