@@ -24,7 +24,7 @@
 
 
 /datum/gear/eyes/material/New()
-	allowed_roles = TECHNICAL_ROLES | EXPLORATION_ROLES
+	allowed_roles = list(/datum/job/mining)
 	..()
 
 
