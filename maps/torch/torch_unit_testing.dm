@@ -35,7 +35,7 @@
 		/area/shuttle/petrov/maint = NO_SCRUBBER|NO_VENT,
 		/area/shuttle/escape_pod6/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/escape_pod7/station = NO_SCRUBBER|NO_APC|NO_VENT,
-		/area/shuttle/escape_pod8/station = NO_SCRUBBER|NO_APC|NO_VENT,
+//		/area/shuttle/escape_pod8/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/escape_pod9/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/escape_pod10/station = NO_SCRUBBER|NO_APC|NO_VENT,
 		/area/shuttle/escape_pod11/station = NO_SCRUBBER|NO_APC|NO_VENT,

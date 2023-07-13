@@ -42,6 +42,7 @@
 	desc = "An easy to fit wooden floor tile."
 	icon_state = "tile-wood"
 	color = WOOD_COLOR_GENERIC
+	amount = 30
 	matter = list(MATERIAL_WOOD = 450)
 
 /obj/item/stack/tile/wood/cyborg
@@ -58,6 +59,7 @@
 	desc = "An easy to fit mahogany wood floor tile."
 	icon_state = "tile-wood"
 	color = WOOD_COLOR_RICH
+	amount = 30
 	matter = list(MATERIAL_WOOD = 450)
 
 /obj/item/stack/tile/maple
@@ -65,6 +67,7 @@
 	singular_name = "maple floor tile"
 	desc = "An easy to fit maple wood floor tile."
 	icon_state = "tile-wood"
+	amount = 30
 	color = WOOD_COLOR_PALE
 	matter = list(MATERIAL_WOOD = 450)
 
@@ -73,6 +76,7 @@
 	singular_name = "ebony floor tile"
 	desc = "An easy to fit ebony floor tile."
 	icon_state = "tile-wood"
+	amount = 30
 	color = WOOD_COLOR_BLACK
 	matter = list(MATERIAL_WOOD = 450)
 
@@ -81,6 +85,7 @@
 	singular_name = "walnut floor tile"
 	desc = "An easy to fit walnut wood floor tile."
 	icon_state = "tile-wood"
+	amount = 30
 	color = WOOD_COLOR_CHOCOLATE
 	matter = list(MATERIAL_WOOD = 450)
 
@@ -89,6 +94,7 @@
 	singular_name = "bamboo floor tile"
 	desc = "An easy to fit bamboo wood floor tile."
 	icon_state = "tile-wood"
+	amount = 30
 	color = WOOD_COLOR_PALE2
 	matter = list(MATERIAL_WOOD = 450)
 
@@ -97,6 +103,7 @@
 	singular_name = "yew floor tile"
 	desc = "An easy to fit yew wood floor tile."
 	icon_state = "tile-wood"
+	amount = 30
 	color = WOOD_COLOR_YELLOW
 	matter = list(MATERIAL_WOOD = 450)
 

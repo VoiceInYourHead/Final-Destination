@@ -299,9 +299,9 @@
 	name = "Escape Pod Two"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
-/area/shuttle/escape_pod8/station
+/*/area/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT*/
 
 /area/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
@@ -410,6 +410,16 @@
 
 /area/guppy_hangar/start
 	name = "\improper Guppy"
+	icon_state = "shuttlered"
+	requires_power = 1
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	req_access = list(access_guppy)
+
+//Guppy
+
+/area/bubble_hangar/start
+	name = "\improper Bubble"
 	icon_state = "shuttlered"
 	requires_power = 1
 	dynamic_lighting = 1
