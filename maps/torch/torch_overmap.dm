@@ -123,7 +123,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/bubble
 	name = "Bubble"
-	desc = "An SSE-U3 utility pod, broadcasting SCGEC codes and the callsign \"Torch-3 Bubble\"."
+	desc = "An SSE-U2 utility pod, broadcasting SCGEC codes and the callsign \"Torch-4 Bubble\"."
 	shuttle = "Bubble"
 	max_speed = 1/(3 SECONDS)
 	burn_delay = 2 SECONDS
