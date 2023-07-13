@@ -14,6 +14,7 @@
 		"Charon" = list("nav_hangar_charon"), 	//can't have random shuttles popping inside the ship
 		"Guppy" = list("nav_hangar_guppy"),
 		"Bubble" = list("nav_hangar_bubble"),
+		"Butterfly" = list("nav_hangar_butterfly"),
 		"Aquila" = list("nav_hangar_aquila"),
 		"Ascent Caulship" = list("nav_ascent_caulship_torch"), //restricts caulship specific docking waypoint on deck 4 starboard side
 		"Skrellian Scout" = list("nav_skrellscout_dock"), //restricts Skrell Scoutship specific docking waypoint on deck 4 portside
@@ -35,6 +36,7 @@
 		"nav_bridge_charon",
 		"nav_bridge_guppy",
 		"nav_bridge_bubble",
+		"nav_bridge_butterfly",
 		"nav_bridge_aquila",
 
 		//start First Deck
@@ -45,6 +47,7 @@
 		"nav_deck4_charon",
 		"nav_deck4_guppy",
 		"nav_deck4_bubble",
+		"nav_deck4_butterfly",
 		"nav_deck4_aquila",
 
 		//start Second Deck
@@ -55,6 +58,7 @@
 		"nav_deck3_charon",
 		"nav_deck3_guppy",
 		"nav_deck3_bubble",
+		"nav_deck3_butterfly",
 		"nav_deck3_aquila",
 
 		//start Third Deck
@@ -65,6 +69,7 @@
 		"nav_deck2_charon",
 		"nav_deck2_guppy",
 		"nav_deck2_bubble",
+		"nav_deck2_butterfly",
 		"nav_deck2_aquila",
 
 		//start Forth Deck
@@ -75,6 +80,7 @@
 		"nav_deck1_charon",
 		"nav_deck1_guppy",
 		"nav_deck1_bubble",
+		"nav_deck1_butterfly",
 		"nav_deck1_aquila",
 		"nav_vox_raider_dock",
 
@@ -134,6 +140,19 @@
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_TINY
 
+/obj/effect/overmap/visitable/ship/landable/butterfly
+	name = "Butterfly"
+	desc = "An SSE-U09 long range shuttle, broadcasting SCGEC codes and the callsign \"Torch-5 Butterfly\"."
+	shuttle = "Butterfly"
+	max_speed = 1/(2 SECONDS)
+	burn_delay = 1 SECONDS
+	integrity_failure_cap = 40
+	vessel_mass = 4000
+	fore_dir = SOUTH
+	dir = SOUTH
+	skill_needed = SKILL_BASIC
+	vessel_size = SHIP_SIZE_TINY
+
 /obj/machinery/computer/shuttle_control/explore/aquila
 	name = "aquila control console"
 	shuttle_tag = "Aquila"
@@ -153,6 +172,10 @@
 	name = "Bubble control console"
 	shuttle_tag = "Bubble"
 	req_access = list(access_guppy_helm)
+
+/obj/machinery/computer/shuttle_control/explore/butterfly
+	name = "Butterfly control console"
+	shuttle_tag = "Butterfly"
 
 /obj/effect/overmap/visitable/ship/torch/Initialize()
 	. = ..()

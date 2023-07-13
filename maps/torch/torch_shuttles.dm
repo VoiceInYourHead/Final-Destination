@@ -486,6 +486,56 @@ TORCH_ESCAPE_POD(17)
 
 // end
 
+// Butterfly
+
+/datum/shuttle/autodock/overmap/butterfly
+	name = "Butterfly"
+	warmup_time = 5
+	move_time = 30
+	shuttle_area = list(/area/butterfly_hangar,/area/butterfly_hangar/cockpit)
+	dock_target ="butterfly_shuttle"
+	current_location = "nav_hangar_butterfly"
+	landmark_transition = "nav_transit_butterfly"
+	sound_takeoff = 'sound/effects/rocket.ogg'
+	sound_landing = 'sound/effects/rocket_backwards.ogg'
+	fuel_consumption = 2
+	logging_home_tag = "nav_hangar_butterfly"
+	logging_access = access_guppy_helm
+	skill_needed = SKILL_UNSKILLED
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+
+/obj/effect/shuttle_landmark/torch/hangar/butterfly
+	name = "Butterfly Hangar"
+	landmark_tag = "nav_hangar_butterfly"
+	base_area = /area/quartermaster/hangar
+	base_turf = /turf/simulated/floor/plating
+
+/obj/effect/shuttle_landmark/torch/deck1/butterfly
+	name = "Space near Forth Deck"
+	landmark_tag = "nav_deck1_butterfly"
+
+/obj/effect/shuttle_landmark/torch/deck2/butterfly
+	name = "Space near Third Deck"
+	landmark_tag = "nav_deck2_butterfly"
+
+/obj/effect/shuttle_landmark/torch/deck3/butterfly
+	name = "Space near Second Deck"
+	landmark_tag = "nav_deck3_butterfly"
+
+/obj/effect/shuttle_landmark/torch/deck4/butterfly
+	name = "Space near First Deck"
+	landmark_tag = "nav_deck4_butterfly"
+
+/obj/effect/shuttle_landmark/torch/deck5/butterfly
+	name = "Space near Bridge"
+	landmark_tag = "nav_bridge_butterfly"
+
+/obj/effect/shuttle_landmark/transit/torch/butterfly
+	name = "In transit"
+	landmark_tag = "nav_transit_butterfly"
+
+// end
+
 /datum/shuttle/autodock/overmap/aquila
 	name = "Aquila"
 	move_time = 60
