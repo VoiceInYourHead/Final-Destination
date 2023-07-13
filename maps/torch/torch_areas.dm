@@ -416,7 +416,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	req_access = list(access_guppy)
 
-//Guppy
+//Bubble
 
 /area/bubble_hangar/start
 	name = "\improper Bubble"
@@ -425,6 +425,18 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	req_access = list(access_guppy)
+
+
+//Butterfly
+
+/area/butterfly_hangar/
+	name = "\improper Butterfly"
+	icon_state = "shuttlered"
+	requires_power = 1
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/butterfly_hangar/cockpit
 
 
 //Petrov
