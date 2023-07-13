@@ -70,7 +70,7 @@
 		if(H.species)
 			switch(H.species.name)
 				if(SPECIES_VOX)
-					disposition = 1000
+					disposition[map_sectors["[user.z]"]] = 1000
 					hailed_vox = TRUE
 					speech = visited_vox_speech
 	. = ..()

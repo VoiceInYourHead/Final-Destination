@@ -96,6 +96,9 @@
 				continue //Why are you shooting yourself?
 			candidates += O
 
+		for(var/obj/effect/overmap/trading/T in overmaptarget)
+			candidates += T
+
 	if(!length(candidates) && destroy_event_flags)
 		for(var/obj/effect/overmap/event/E in overmaptarget)
 			candidates += E

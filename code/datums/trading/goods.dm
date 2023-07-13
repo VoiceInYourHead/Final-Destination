@@ -255,7 +255,7 @@ Sells devices, odds and ends, and medical stuff
 	possible_trading_items = list(
 								/obj/item/device/bot_kit                          = TRADER_THIS_TYPE,
 								/obj/item/device/paicard                          = TRADER_THIS_TYPE,
-								/obj/item/aicard                           = TRADER_THIS_TYPE,
+								/obj/item/aicard                                  = TRADER_THIS_TYPE,
 								/mob/living/bot                                   = TRADER_SUBTYPES_ONLY)
 	speech = list(TRADER_HAIL_GENERIC = "Welcome to ORIGIN! Let me walk you through our fine robotic selection!",
 				TRADER_HAIL_DENY      = "ORIGIN no longer wants to speak to you.",
@@ -300,16 +300,15 @@ Sells devices, odds and ends, and medical stuff
 				TRADER_INSULT_BAD        = "I have traded dogs with more bark than that.",
 				)
 
-	possible_wanted_items = list(/mob/living/simple_animal/hostile/smart_beast/tindalos    = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/passive/tomato      = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/smart_beast/yithian     = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/smart_beast/diyaab = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/smart_beast/shantak= TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/smart_beast/samak= TRADER_THIS_TYPE,
-								/mob/living/simple_animal/hostile/carp = TRADER_THIS_TYPE)
+	possible_wanted_items = list(/mob/living/simple_animal/hostile/smart_beast/tindalos = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/passive/tomato                = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/yithian   = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/diyaab    = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/shantak   = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/smart_beast/samak     = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/hostile/carp                  = TRADER_THIS_TYPE)
 
 	possible_trading_items = list(/mob/living/simple_animal/hostile/carp= TRADER_THIS_TYPE,
-								/obj/item/device/dociler              = TRADER_THIS_TYPE,
 								/obj/item/beartrap			  = TRADER_THIS_TYPE,
 								/obj/item/device/scanner/xenobio = TRADER_THIS_TYPE)
 
@@ -367,6 +366,45 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/item/reagent_containers/chem_disp_cartridge/dexalin/small = TRADER_THIS_TYPE,
 								  /obj/item/sign/medipolma = TRADER_THIS_TYPE
 								)
+
+/datum/trader/medical/chem
+	name = "Chemical Supplier"
+	origin = "Legit Chemical Supplies (No Refund)"
+	possible_origins = list("Nah's Chems Inc.", "PH International", "Wagner's Chemical Group & Co.", "Legit Chemical Supplies (No Refund)")
+
+	possible_wanted_items = list(/obj/item/reagent_containers/glass/bottle = TRADER_ALL,
+								 /obj/item/reagent_containers/chem_disp_cartridge = TRADER_ALL
+								)
+
+	possible_trading_items = list(/obj/item/reagent_containers/glass/bottle =              TRADER_SUBTYPES_ONLY,
+								  /obj/item/reagent_containers/glass/bottle/adminordrazine = TRADER_BLACKLIST,
+								  /obj/item/reagent_containers/glass/bottle/chloralhydrate = TRADER_BLACKLIST,
+								  /obj/item/reagent_containers/glass/bottle/cyanide = TRADER_BLACKLIST,
+								  /obj/item/reagent_containers/glass/bottle/diethylamine = TRADER_BLACKLIST,
+								  /obj/item/reagent_containers/glass/bottle/frostoil = TRADER_BLACKLIST,
+								  /obj/item/reagent_containers/glass/bottle/frostoil = TRADER_BLACKLIST,
+								  /obj/item/reagent_containers/chem_disp_cartridge = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/hydrazine = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/lithium = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/carbon = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/ammonia = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/acetone = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/sodium = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/aluminium = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/silicon = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/phosphorus = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/sulfur = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/hclacid = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/potassium = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/iron = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/copper = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/mercury = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/radium = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/ethanol = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/sugar = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/sacid = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/chem_disp_cartridge/tungsten = TRADER_THIS_TYPE
+								  )
 
 /datum/trader/mining
 	name = "Rock'n'Drill Mining Inc"

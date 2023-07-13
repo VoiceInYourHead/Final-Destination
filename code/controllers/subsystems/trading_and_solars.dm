@@ -55,7 +55,7 @@ SUBSYSTEM_DEF(misc_slow)
 
 GLOBAL_LIST_EMPTY(traders)
 GLOBAL_LIST_EMPTY(trader_types)
-GLOBAL_VAR_INIT(trader_max, 4)
+GLOBAL_VAR_INIT(trader_max, 5)
 GLOBAL_VAR_INIT(trader_station_count, 2)
 GLOBAL_VAR_INIT(trader_unique_chance, 5)
 GLOBAL_LIST_INIT(trader_stations, subtypesof(/datum/trader) - typesof(/datum/trader/ship))
