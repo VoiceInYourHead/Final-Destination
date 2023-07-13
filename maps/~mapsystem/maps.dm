@@ -404,13 +404,13 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	if(!use_overmap)
 		return
 
-	for(var/i = 0, i < num_exoplanets, i++)
+	for(var/i = 0 to i < num_exoplanets)
 		var/exoplanet_type = pick(subtypesof(/obj/effect/overmap/visitable/sector/exoplanet))
 		if(exoplanet_type == /obj/effect/overmap/visitable/sector/exoplanet/urban) // до лучших времён
-			i--
 			continue
 		var/obj/effect/overmap/visitable/sector/exoplanet/new_planet = new exoplanet_type(null, planet_size[1], planet_size[2])
 		new_planet.build_level()
+		i++
 
 /*/datum/map/proc/build_junkyards()
 	if(!use_overmap)

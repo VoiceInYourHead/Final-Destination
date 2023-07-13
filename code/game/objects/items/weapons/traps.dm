@@ -67,6 +67,7 @@
 			anchored = FALSE
 			update_icon()
 	else
+		anchored = FALSE
 		..()
 
 /obj/item/beartrap/proc/attack_mob(mob/living/L)
@@ -89,17 +90,17 @@
 /obj/item/beartrap/Crossed(AM as mob|obj)
 	if(deployed && isliving(AM))
 		var/mob/living/L = AM
-		if(!MOVING_DELIBERATELY(L))
-			L.visible_message(
-				"<span class='danger'>[L] steps on \the [src].</span>",
-				"<span class='danger'>You step on \the [src]!</span>",
-				"<b>You hear a loud metallic snap!</b>"
-				)
-			attack_mob(L)
-			if(!buckled_mob)
-				anchored = FALSE
-			deployed = 0
-			update_icon()
+//		if(!MOVING_DELIBERATELY(L))
+		L.visible_message(
+			"<span class='danger'>[L] steps on \the [src].</span>",
+			"<span class='danger'>You step on \the [src]!</span>",
+			"<b>You hear a loud metallic snap!</b>"
+			)
+		attack_mob(L)
+		if(!buckled_mob)
+			anchored = FALSE
+		deployed = 0
+		update_icon()
 	..()
 
 /obj/item/beartrap/on_update_icon()

@@ -98,8 +98,9 @@
 /obj/effect/overmap/jammer/Process()
 	..()
 	if(!linked_console)
-		linked_console.J = null
 		qdel(src)
+		return
+	forceMove(linked_console.linked.loc)
 
 /obj/machinery/computer/ship/jammer/Process()
 	..()
@@ -131,6 +132,10 @@
 	var/heat = 0
 	var/range = 1
 	idle_power_usage = 7500
+
+/obj/machinery/sensors_jammer/New()
+	..()
+	toggle()
 
 /obj/machinery/sensors_jammer/attackby(obj/item/W, mob/user)
 	var/damage = max_health - health
