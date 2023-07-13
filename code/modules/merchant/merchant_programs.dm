@@ -108,10 +108,10 @@
 	var/quantity = 1
 	if(pad)
 		var/list/targets = pad.get_targets()
-		for(var/target in targets)
-			if(!computer.emagged() && istype(target,/mob/living/carbon/human))
-				last_comms = "SAFETY LOCK ENABLED: SENTIENT MATTER UNTRANSMITTABLE"
-				return
+//		for(var/target in targets)
+//			if(!computer.emagged() && istype(target,/mob/living/carbon/human))
+//				last_comms = "SAFETY LOCK ENABLED: SENTIENT MATTER UNTRANSMITTABLE"
+//				return
 		get_response(T.offer_items_for_bulk(quantity, targets, num, get_turf(pad), skill))
 	else
 		last_comms = "PAD NOT CONNECTED"
@@ -156,6 +156,9 @@
 /datum/computer_file/program/merchant/proc/get_money()
 	if(!pad)
 		last_comms = "PAD NOT CONNECTED. CANNOT TRANSFER"
+		return
+	if(bank <= 0)
+		last_comms = "BANK IS EMPTY. CANNOT TRANSFER"
 		return
 	var/turf/T = get_turf(pad)
 	var/obj/item/spacecash/bundle/B = new(T)
