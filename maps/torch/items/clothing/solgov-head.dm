@@ -55,19 +55,19 @@
 	desc = "A navy blue utility cover bearing the crest of the SCG Fleet."
 	icon_state = "navyutility"
 
-/obj/item/clothing/head/solgov/utility/army
-	name = "army utility cover"
-	desc = "A green utility cover bearing the crest of the SCG Army."
+/obj/item/clothing/head/solgov/utility/fleet/green
+	name = "green utility cover"
+	desc = "A green utility cover bearing the crest of the SCG Fleet."
 	icon_state = "greenutility"
 
-/obj/item/clothing/head/solgov/utility/army/tan
+/obj/item/clothing/head/solgov/utility/fleet/tan
 	name = "tan utility cover"
-	desc = "A tan utility cover bearing the crest of the SCG Army."
+	desc = "A tan utility cover bearing the crest of the SCG Fleet."
 	icon_state = "tanutility"
 
-/obj/item/clothing/head/solgov/utility/army/urban
+/obj/item/clothing/head/solgov/utility/fleet/urban
 	name = "urban utility cover"
-	desc = "A grey utility cover bearing the crest of the SCG Army."
+	desc = "A grey utility cover bearing the crest of the SCG Fleet."
 	icon_state = "greyutility"
 
 //Service

@@ -1,3 +1,4 @@
+/* fuck that shit there's too much army uniform paths to delete
 /decl/hierarchy/mil_uniform/army/com //Can only be officers
 	name = "Marine command"
 	departments = COM
@@ -336,3 +337,4 @@
 	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
+*/

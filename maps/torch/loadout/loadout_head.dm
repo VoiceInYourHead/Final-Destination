@@ -19,20 +19,20 @@
 
 /datum/gear/head/armyberet
 	display_name = "marine beret selection"
-	description = "A beret denoting service in one of the branches within the SCG Marine Corps."
+	description = "A beret denoting service in one of the branches within the SCGF Marines."
 	path = /obj/item/clothing/head/beret/solgov/army
-	allowed_branches = list(/datum/mil_branch/army)
+	allowed_branches = list(/datum/mil_branch/fleet) //yes, any questions?
 
 /datum/gear/head/armyberet/New()
 	..()
 	var/berets = list()
 	//berets["marine beret"] = /obj/item/clothing/head/beret/solgov/army // depreciated because it's ugly as fuck and almost indentical to .../infantry beret
 	//berets["airborne army beret"] = /obj/item/clothing/head/beret/solgov/army/airborne //unused for now
-	berets["marine beret"] = /obj/item/clothing/head/beret/solgov/army/infantry // old infantry beret
+	//berets["marine beret"] = /obj/item/clothing/head/beret/solgov/army/infantry // old infantry beret
 	berets["orbital assaul marine beret"] = /obj/item/clothing/head/beret/solgov/army/orbital
-	berets["logistical supply marine beret"] = /obj/item/clothing/head/beret/solgov/army/logistical_supply
+	//berets["logistical supply marine beret"] = /obj/item/clothing/head/beret/solgov/army/logistical_supply
 	berets["engineering-sapper marine beret"] = /obj/item/clothing/head/beret/solgov/army/engisapper
-	berets["command marine beret"] = /obj/item/clothing/head/beret/solgov/army/command
+	//berets["command marine beret"] = /obj/item/clothing/head/beret/solgov/army/command
 	berets["medical marine beret"] = /obj/item/clothing/head/beret/solgov/army/medical
 	gear_tweaks += new/datum/gear_tweak/path(berets)
 
