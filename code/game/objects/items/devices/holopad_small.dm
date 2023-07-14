@@ -22,7 +22,8 @@
 
 /obj/item/device/holopad/Initialize()
 	uniq_id = random_id("holopad_device", 00000, 99999)
-	id = rand(1000, 9999)
+	id = generate_planet_name() // Выглядит чуток получше
+                                // Было rand(1000, 9999)
 	name = "[initial(name)] [id] #[uniq_id]"
 	voice = "Holopad [id]"
 	GLOB.listening_objects += src
@@ -58,7 +59,7 @@
 	abonent = caller
 	call_state = CALL_RINGING
 	icon_state = "holopad_ringing"
-	desc = "[initial(desc)] Входящий вызов - [caller.getName()]."
+	desc = "[initial(desc)]" + SPAN_NOTICE("<br>Входящий вызов - [caller.getName()].")
 	INVOKE_ASYNC(src, .proc/ring)
 	return TRUE
 
@@ -84,32 +85,37 @@
 		call_state = CALL_CALLING
 		abonent = target
 		icon_state = "holopad_calling"
-		desc = "[initial(desc)] Устанавливается соединение - [abonent.getName()]."
-		audible_message("<span class='name'>[voice]</span> передаёт, \"Запрос на соединение: [sanitize(abonent.getName(1))]\"", hearing_distance = 4)
+		desc = "[initial(desc)]" + SPAN_NOTICE("<br>Устанавливается соединение - [abonent.getName()].")
+		audible_message("<span class='name'>[voice]</span> передаёт, \"Запрос на подключение: [sanitize(abonent.getName(1))].\"", hearing_distance = 4)
 	else
-		audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение разорвано\"", hearing_distance = 4)
+		desc = initial(desc)
+		audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение разорвано.\"", hearing_distance = 4)
 
 /obj/item/device/holopad/proc/acceptCall()
 	if(call_state == CALL_RINGING)
-		if(abonent && abonent.call_state == CALL_CALLING)
+		var/confirm = alert(usr, "Ответить на звонок?", "Входящий вызов - [abonent.id]", "Да", "Нет")
+		if(isnull(confirm) || !CanDefaultInteract(usr))
+			return TRUE
+		if(abonent && abonent.call_state == CALL_CALLING && confirm == "Да")
 			abonent.acceptCall()
 			call_state = CALL_IN_CALL
 			icon_state = "holopad_in_call"
 			addtimer(CALLBACK(src, .proc/update_holo), 1)
-			audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение установлено\"", hearing_distance = 4)
+			playsound(src.loc, 'sound/items/holopad_boot.ogg', 75, 1)
+			audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение установлено.\"", hearing_distance = 4)
+			desc = "[initial(desc)]" + SPAN_NOTICE("<br>Связь - [abonent.getName()].")
 		else
-			call_state = CALL_NONE
 			icon_state = initial(icon_state)
 			desc = initial(desc)
-			abonent.desc = initial(desc)
-			abonent = null
+			abonent.hangUp()
 
 	else if(call_state == CALL_CALLING)
 		call_state = CALL_IN_CALL
 		icon_state = "holopad_in_call"
 		addtimer(CALLBACK(src, .proc/update_holo), 1)
-
-		audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение установлено\"", hearing_distance = 4)
+		playsound(src.loc, 'sound/items/holopad_boot.ogg', 75, 1)
+		audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение установлено.\"", hearing_distance = 4)
+		desc = "[initial(desc)]" + SPAN_NOTICE("<br>Связь - [abonent.getName()].")
 
 /obj/item/device/holopad/proc/hangUp(remote = 0)
 	if(!remote && abonent)
@@ -118,7 +124,7 @@
 	if(call_state==CALL_NONE)
 		return
 
-	audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение разорвано\"", hearing_distance = 4)
+	audible_message("<span class='name'>[voice]</span> передаёт, \"Соединение разорвано.\"", hearing_distance = 4)
 	call_state = CALL_NONE
 	icon_state = initial(icon_state)
 	desc = initial(desc)
@@ -132,16 +138,21 @@
 	..()
 	update_holo()
 
+/mob/living/carbon/update_icon()
+	..()
+	for(var/obj/item/device/holopad/pad in src)
+		pad.update_holo()
+
 /obj/item/device/holopad/proc/update_holo()
 	if(!abonent)
 		return
 	if(call_state == CALL_IN_CALL)
 		if(!abonent.hologram)
 			abonent.hologram = new()
-			abonent.hologram.name = "Hologram [sanitize(id)]"
 			abonent.hologram.anchored = 1
 			abonent.hologram.layer = 5
 		if(isliving(loc))
+			abonent.hologram.name = "[abonent.loc.name] Hologram"
 			abonent.hologram.icon = getHologramIcon(getFullIcon(loc), hologram_color = hologram_color)
 		else
 			QDEL_NULL(abonent.hologram)
@@ -184,8 +195,13 @@
 //EMOTES & SPEECH STUFF//
 
 /obj/item/device/holopad/hear_talk(mob/living/M, text, verb, datum/language/speaking)
-	if(abonent)
+	if(abonent && call_state == CALL_IN_CALL)
 		abonent.broadcast_message(M, text, verb, speaking)
+		for(var/obj/item/device/holopad/holopads_around in view(abonent))
+			if(isnull(abonent) || holopads_around == src)
+				continue
+			if(holopads_around.abonent && holopads_around.abonent != src)
+				holopads_around.abonent.broadcast_message(M, text, verb, speaking)
 
 //Leaving this here, but as far as I can see, nowhere actually calls this proc???
 /obj/item/device/holopad/see_emote(mob/living/M, text)
@@ -194,7 +210,7 @@
 
 /obj/item/device/holopad/show_message(msg, type, alt, alt_type)
 	var/rendered
-	if(abonent)
+	if(abonent && call_state == CALL_IN_CALL)
 		var/mob/master = abonent.loc
 		if(istype(master))
 			if(findtext(msg, master.name))
@@ -235,7 +251,7 @@
 /*
 /obj/item/device/holopad/cheap
 	name = "Holopda"
-	desc = "New brand pda now with holo-link and built-in clock."
+	desc = "New brand pda, now with holo-link and built-in clock!"
 	icon = 'icons/bos/obj/holopda.dmi'
 	w_class = ITEM_SIZE_SMALL
 
