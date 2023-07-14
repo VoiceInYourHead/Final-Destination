@@ -164,6 +164,13 @@
 		/datum/computer_file/program/wordprocessor
 	)
 
+/obj/machinery/computer/modular/preset/merchant/no_id
+	default_software = list(
+		/datum/computer_file/program/merchant/no_id,
+		/datum/computer_file/program/email_client,
+		/datum/computer_file/program/wordprocessor
+	)
+
 /obj/machinery/computer/modular/preset/merchant/ignore_distance
 	default_software = list(
 		/datum/computer_file/program/merchant/ignore_distance,

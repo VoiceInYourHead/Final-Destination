@@ -7,7 +7,7 @@
 	nanomodule_path = /datum/nano_module/program/merchant
 	size = 12
 	usage_flags = PROGRAM_CONSOLE
-//	required_access = access_merchant
+	required_access = access_cargo
 	var/obj/machinery/merchant_pad/pad = null
 	var/current_merchant = 0
 	var/show_trades = FALSE
@@ -260,6 +260,10 @@
 				. = TOPIC_HANDLED
 				bribe(T, text2num(href_list["PRG_bribe"]))
 
+/datum/computer_file/program/merchant/no_id
+	required_access = null
+
 /datum/computer_file/program/merchant/ignore_distance
 	available_on_ntnet = FALSE
 	ignore_distance = TRUE
+	required_access = null
