@@ -21,9 +21,9 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
 	shoes = /obj/item/clothing/shoes/dutyboots
 
-/decl/hierarchy/outfit/job/torch/crew/service/janitor/army
+/decl/hierarchy/outfit/job/torch/crew/service/janitor/marine
 	name = OUTFIT_JOB_NAME("Sanitation Technician - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/torch/crew/service/cook
@@ -59,6 +59,9 @@
 	name = OUTFIT_JOB_NAME("Crewman - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
+/decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet/marine
+	name = OUTFIT_JOB_NAME("Crewman - Marine")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
 
 /decl/hierarchy/outfit/job/torch/crew/service/chief_steward
 	name = OUTFIT_JOB_NAME("Chief Steward")
@@ -90,9 +93,4 @@
 /decl/hierarchy/outfit/job/torch/crew/service/chaplain/fleet
 	name = OUTFIT_JOB_NAME("Chaplain - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
-	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/torch/crew/service/chaplain/army
-	name = OUTFIT_JOB_NAME("Chaplain - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 	shoes = /obj/item/clothing/shoes/dutyboots
