@@ -404,7 +404,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	if(!use_overmap)
 		return
 
-	for(var/i = 0 to i < num_exoplanets)
+	for(var/i = 1 to i < num_exoplanets)
 		var/exoplanet_type = pick(subtypesof(/obj/effect/overmap/visitable/sector/exoplanet))
 		if(exoplanet_type == /obj/effect/overmap/visitable/sector/exoplanet/urban) // до лучших времён
 			continue
