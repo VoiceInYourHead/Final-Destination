@@ -48,9 +48,9 @@
 	pda_type = /obj/item/modular_computer/pda/explorer
 	l_ear = /obj/item/device/radio/headset/expmed
 
-/decl/hierarchy/outfit/job/torch/crew/exploration/expmed/army
+/decl/hierarchy/outfit/job/torch/crew/exploration/expmed/fleet
 	name = OUTFIT_JOB_NAME("Expedition Medic - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/army/urban/medical
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/exploration
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/torch/crew/exploration/expeng
@@ -61,14 +61,14 @@
 	pda_type = /obj/item/modular_computer/pda/explorer
 	l_ear = /obj/item/device/radio/headset/expeng
 
-/decl/hierarchy/outfit/job/torch/crew/exploration/expeng/army
+/decl/hierarchy/outfit/job/torch/crew/exploration/expeng/fleet
 	name = OUTFIT_JOB_NAME("Expedition Engineer - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/army/urban/engineering
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/exploration
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/torch/crew/exploration/expmar
 	name = OUTFIT_JOB_NAME("Expedition Guard - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/army/urban/security
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/exploration
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/torch/crew/explorer)
 	pda_type = /obj/item/modular_computer/pda/explorer

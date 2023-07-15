@@ -54,7 +54,7 @@
 	dress_gloves = /obj/item/clothing/gloves/white
 
 	dress_extra = list(/obj/item/clothing/accessory/solgov/ec_scarf)
-
+/*
 /decl/hierarchy/mil_uniform/army
 	name = "Master army outfit"
 	hierarchy_type = /decl/hierarchy/mil_uniform/army
@@ -81,7 +81,7 @@
 	dress_shoes = /obj/item/clothing/shoes/dress
 	dress_hat = /obj/item/clothing/head/solgov/dress/army
 	dress_gloves = /obj/item/clothing/gloves/white
-
+*/
 /decl/hierarchy/mil_uniform/fleet
 	name = "Master fleet outfit"
 	hierarchy_type = /decl/hierarchy/mil_uniform/fleet
