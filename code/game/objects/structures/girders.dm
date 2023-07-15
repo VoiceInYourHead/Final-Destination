@@ -165,7 +165,7 @@
 
 	to_chat(user, "<span class='notice'>You begin adding the plating...</span>")
 
-	if(!do_after(user,40,src) || !S.use(2))
+	if(!do_after(user,40,src) || !S.use(istype(S, /obj/item/stack/material/rods) ? 4 : 2))
 		return 1 //once we've gotten this far don't call parent attackby()
 
 	if(anchored)
@@ -199,7 +199,7 @@
 		return 0
 
 	to_chat(user, "<span class='notice'>Now reinforcing...</span>")
-	if (!do_after(user, 40,src) || !S.use(2))
+	if (!do_after(user, 40,src) || !S.use(istype(S, /obj/item/stack/material/rods) ? 4 : 2))
 		return 1 //don't call parent attackby() past this point
 	to_chat(user, "<span class='notice'>You added reinforcement!</span>")
 

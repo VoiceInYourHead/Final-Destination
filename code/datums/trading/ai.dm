@@ -7,25 +7,25 @@ They sell generic supplies and ask for generic supplies.
 */
 
 /datum/trader/trading_beacon
-	name = "AI"
-	origin = "Trading Beacon"
+	name = "Омега"
+	origin = "Торговый Маяк"
 	name_language = LANGUAGE_EAL
 	trade_flags = TRADER_MONEY|TRADER_GOODS
-	speech = list(TRADER_HAIL_GENERIC    = "Greetings, I am MERCHANT, Artifical Intelligence onboard ORIGIN, tasked with trading goods in return for CURRENCY and supplies.",
-				TRADER_HAIL_DENY         = "We are sorry, your connection has been blacklisted. Have a nice day.",
+	speech = list(TRADER_HAIL_GENERIC    = "Приветствую, Я MERCHANT, ИскИн на борту ORIGIN, основной задачей которого является покупка и продажа вещей за CURRENCY и другие припасы.",
+				TRADER_HAIL_DENY         = "Приношу свои извинения, ваша линия была добавлена в чёрный список. Хорошего дня.",
 
-				TRADER_TRADE_COMPLETE    = "Thank you for your patronage.",
-				TRADER_NOT_ENOUGH  = "I'm sorry, your offer is not worth what you are asking for.",
-				TRADER_NO_BLACKLISTED = "You have offered a blacklisted item. My laws do not allow me to trade for that.",
-				TRADER_HOW_MUCH          = "ITEM will cost you roughly VALUE CURRENCY, or something of equal worth.",
-				TRADER_WHAT_WANT         = "I have logged need for",
+				TRADER_TRADE_COMPLETE    = "Благодарю за покупку.",
+				TRADER_NOT_ENOUGH  = "Прошу прощения, но ваше предложение не удовлетворяет реальную стоимость этого товара.",
+				TRADER_NO_BLACKLISTED = "Предлагаемый вами товар запрещён на территории большинства известных государств. Мои законы не позволяют принять его в качестве оплаты.",
+				TRADER_HOW_MUCH          = "ITEM будет стоить для вас VALUE CURRENCY, или объекта аналогичной ценности.",
+				TRADER_WHAT_WANT         = "Я регестрирую потребность в",
 
-				TRADER_COMPLEMENT_FAILURE   = "I'm sorry, I am not allowed to let compliments affect the trade.",
-				TRADER_COMPLEMENT_SUCCESS = "Thank you, but that will not not change our business interactions.",
-				TRADER_INSULT_GOOD       = "I do not understand, are we not on good terms?",
-				TRADER_INSULT_BAD        = "I do not understand, are you insulting me?",
+				TRADER_COMPLEMENT_FAILURE   = "Прошу прощения, но я не могу позволить своим вне-рабочим отношениям как-то повлиять на торги.",
+				TRADER_COMPLEMENT_SUCCESS = "Благодарю, но я не могу позволить своим вне-рабочим отношениям как-то повлиять на торги.",
+				TRADER_INSULT_GOOD       = "Я не понимаю, разве эти условия недостаточно удовлетворяют спрос?",
+				TRADER_INSULT_BAD        = "Я не понимаю, это было оскорблением?",
 
-				TRADER_BRIBE_FAILURE     = "You have given me money to stay, however, I am a station. I do not leave.",
+				TRADER_BRIBE_FAILURE     = "Мы благодарим вас за ваше вложение - но ORIGIN является станцией. Он в любом случае никуда не улетит.",
 				)
 	possible_wanted_items = list(/obj/item/device/                       = TRADER_SUBTYPES_ONLY,
 								/obj/item/device/assembly                = TRADER_BLACKLIST_ALL,
@@ -69,7 +69,7 @@ They sell generic supplies and ask for generic supplies.
 	origin = "[origin] #[rand(100,999)]"
 
 /datum/trader/trading_beacon/mine
-	origin = "Mining Beacon"
+	origin = "Добывающий Маяк"
 
 	possible_trading_items = list(/obj/item/ore                    = TRADER_SUBTYPES_ONLY,
 								/obj/item/stack/material/glass            = TRADER_ALL,
@@ -93,7 +93,7 @@ They sell generic supplies and ask for generic supplies.
 								)
 
 /datum/trader/trading_beacon/manufacturing
-	origin = "Manifacturing Beacon"
+	origin = "Производственный Маяк"
 
 	possible_trading_items = list(/obj/structure/AIcore             = TRADER_THIS_TYPE,
 								/obj/structure/girder               = TRADER_THIS_TYPE,
