@@ -5,6 +5,8 @@ var/const/NETWORK_EXPEDITION  = "Expedition"
 var/const/NETWORK_FIRST_DECK  = "First Deck"
 var/const/NETWORK_FOURTH_DECK = "Fourth Deck"
 var/const/NETWORK_POD         = "General Utility Pod"
+var/const/NETWORK_POD2         = "General Utility Pod #2"
+var/const/NETWORK_YACHT			= "Private Catamaran"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
@@ -22,6 +24,8 @@ var/const/NETWORK_PETROV  = "Petrov"
 		if(NETWORK_CHARON)
 			return access_expedition_shuttle
 		if(NETWORK_POD)
+			return access_guppy
+		if(NETWORK_POD2)
 			return access_guppy
 		if(NETWORK_SUPPLY)
 			return access_mailsorting
@@ -56,6 +60,8 @@ var/const/NETWORK_PETROV  = "Petrov"
 		NETWORK_AQUILA,
 		NETWORK_CHARON,
 		NETWORK_POD,
+		NETWORK_POD2,
+		NETWORK_YACHT,
 		NETWORK_PETROV,
 		NETWORK_ALARM_ATMOS,
 		NETWORK_ALARM_CAMERA,
@@ -93,6 +99,12 @@ var/const/NETWORK_PETROV  = "Petrov"
 
 /obj/machinery/camera/network/pod
 	network = list(NETWORK_POD)
+
+/obj/machinery/camera/network/pod2
+	network = list(NETWORK_POD2)
+
+/obj/machinery/camera/network/yacht
+	network = list(NETWORK_YACHT)
 
 /obj/machinery/camera/network/second_deck
 	network = list(NETWORK_SECOND_DECK)
