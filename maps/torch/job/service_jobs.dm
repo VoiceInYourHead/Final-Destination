@@ -91,10 +91,7 @@
 		/datum/mil_rank/fleet/e2,
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/fleet/marine/e2 = /decl/hierarchy/outfit/job/torch/crew/service/janitor/marine,
-		/datum/mil_rank/fleet/marine/e3 = /decl/hierarchy/outfit/job/torch/crew/service/janitor/marine,
-		/datum/mil_rank/fleet/marine/e4 = /decl/hierarchy/outfit/job/torch/crew/service/janitor/marine
+		/datum/mil_rank/fleet/e4
 	)
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
@@ -163,10 +160,7 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e2,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/fleet/marine/e2 = /decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet/marine,
-		/datum/mil_rank/fleet/marine/e3 = /decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet/marine,
-		/datum/mil_rank/fleet/marine/e4 = /decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet/marine
+		/datum/mil_rank/fleet/e4
 	)
 
 	access = list(

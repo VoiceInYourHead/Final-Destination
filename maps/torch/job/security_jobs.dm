@@ -16,9 +16,7 @@
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e6,
 		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/fleet/e8,
-		/datum/mil_rank/fleet/marine/e6,
-		/datum/mil_rank/fleet/marine/e7
+		/datum/mil_rank/fleet/e8
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
@@ -115,10 +113,7 @@
 		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/fleet/marine/e3 = /decl/hierarchy/outfit/job/torch/crew/security/maa/marine,
-		/datum/mil_rank/fleet/marine/e4 = /decl/hierarchy/outfit/job/torch/crew/security/maa/marine,
-		/datum/mil_rank/fleet/marine/e5 = /decl/hierarchy/outfit/job/torch/crew/security/maa/marine
+		/datum/mil_rank/fleet/e5
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,

@@ -284,7 +284,7 @@
 
 /obj/item/clothing/under/solgov/utility/fleet/combat/tan
 	name = "tan marine fatigues"
-	desc = "Alternative utility uniform of the SCG Fleet, intended for use in arid terrains on planets. Favoured by Marine Special Ops."
+	desc = "Alternative utility uniform of the SCG Fleet, intended for use in arid terrains on planets. Favoured by the most jarhead Armsmen."
 	icon_state = "tanutility"
 	item_state = "johnny"
 	worn_state = "tanutility"
