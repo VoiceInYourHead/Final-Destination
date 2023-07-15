@@ -1,27 +1,29 @@
 /datum/trader/ship/toyshop
-	name = "Toy Shop Employee"
+	name = "Продавец магазина игрушек"
 	name_language = TRADER_DEFAULT_NAME
-	origin = "Toy Shop"
+	origin = "Магазин Игрушек"
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY
-	possible_origins = list("Toys R Ours", "LEGS GO", "Kay-Cee Toys", "Build-a-Cat", "Magic Box", "The Positronic's Dungeon and Baseball Card Shop")
-	speech = list(TRADER_HAIL_GENERIC    = "Uhh... hello? Welcome to ORIGIN, I hope you have a, uhh.... good shopping trip.",
-				TRADER_HAIL_DENY         = "Nah, you're not allowed here. At all",
+	possible_origins = list("LEGS GO", "Игрушки Кейси", "Собери-своего-кота", "Магическая коробка", "Тех-тоннели и Гриферы")
+	speech = list(TRADER_HAIL_GENERIC    = "Э-э... привет? Добро пожаловать в ORIGIN, Я желаю вам, м-м...найти то что вы ищите.",
+				TRADER_HAIL_DENY         = "Не, вам тут не рады. Проваливайте.",
 
-				TRADER_TRADE_COMPLETE       = "Thanks for shopping... here... at ORIGIN.",
-				TRADER_NO_BLACKLISTED      = "Uuuhhh.... no.",
-				TRADER_FOUND_UNWANTED = "Nah! That's not what I'm looking for. Something rarer.",
-				TRADER_NOT_ENOUGH   = "Just 'cause they're made of cardboard doesn't mean they don't cost money...",
-				TRADER_HOW_MUCH          = "Uhh... I'm thinking like... VALUE. Right? Or something rare that complements my interest.",
-				TRADER_WHAT_WANT         = "Ummmm..... I guess I want",
+				TRADER_TRADE_COMPLETE       = "Спасибо за покупку в...ORIGIN.",
+				TRADER_NO_BLACKLISTED      = "Э-э-э...не-а, нет.",
+				TRADER_FOUND_UNWANTED = "Не-а! Подобная мелочь мне неинтересна. Мне нужно что-то по-солиднее.",
+				TRADER_NOT_ENOUGH   = "То, что они сделаны из пластика - ещё не значит что они ничего не стоят...",
+				TRADER_HOW_MUCH          = "Ну-у...что-то в районе...VALUE. Окей? Или, может, вы предложете мне что-то для обмена?",
+				TRADER_WHAT_WANT         = "М-м-м.....Я хочу-у...",
 
-				TRADER_COMPLEMENT_FAILURE   = "Ha! Very funny! You should write your own television show.",
-				TRADER_COMPLEMENT_SUCCESS = "Why yes, I do work out.",
-				TRADER_INSULT_GOOD       = "Well, well, well. Guess we learned who was the troll here.",
-				TRADER_INSULT_BAD        = "I've already written a nasty Spacebook post in my mind about you.",
+				TRADER_COMPLEMENT_FAILURE   = "Ха! Очень смешно! Вам стоит попробовать себя в ведении собственного стендапа.",
+				TRADER_COMPLEMENT_SUCCESS = "Ну...эм, да, я хожу время от времени в спорт-зал, а что?",
+				TRADER_INSULT_GOOD       = "А вы тот ещё тролль, знаете?",
+				TRADER_INSULT_BAD        = "Я уже напечатал злостный пост про вас на спейс-эддите, поняли?",
 
-				TRADER_BRIBE_FAILURE     = "Nah. I need to get moving as soon as uhh... possible.",
-				TRADER_BRIBE_SUCCESS      = "You know what, I wasn't doing anything for TIME minutes anyways.",
+				TRADER_BRIBE_FAILURE     = "Не-е. У меня ещё куча точек, которые нужно облететь...",
+				TRADER_BRIBE_SUCCESS      = "А знаете? Я всё равно не планировал чем-либо заниматься в ближайшие TIME минут, энивей.",
 				)
+
+	overmap_object_color = COLOR_YELLOW
 
 	possible_wanted_items = list(/obj/item/toy/figure       = TRADER_THIS_TYPE,
 								/obj/item/toy/figure/ert    = TRADER_THIS_TYPE,
@@ -44,28 +46,30 @@
 								/obj/item/gun/launcher/money   = TRADER_THIS_TYPE)
 
 /datum/trader/ship/electronics
-	name = "Electronic Shop Employee"
+	name = "Продавец магазина электроники"
 	name_language = TRADER_DEFAULT_NAME
-	origin = "Electronic Shop"
-	possible_origins = list("Best Sale", "Overstore", "Oldegg", "Circuit Citadel", "Silicon Village", "Positronic Solutions LLC", "Sunvolt Inc.")
+	origin = "Магазин Электроники"
+	possible_origins = list("Лучшее по Скидке", "Перегрузка", "Старое Яйцо", "Цитадель Плат", "Синтетическая Деревня", "Позитронное Решение", "Корпорация Санволт.")
 
-	speech = list(TRADER_HAIL_GENERIC    = "Hello, sir! Welcome to ORIGIN, I hope you find what you are looking for.",
-				TRADER_HAIL_DENY         = "Your call has been disconnected.",
+	speech = list(TRADER_HAIL_GENERIC    = "Приветствую! Добро пожаловать в ORIGIN, Я надеюсь что вы найдёте здесь то что ищите.",
+				TRADER_HAIL_DENY         = "Позвоните нам в другой раз.",
 
-				TRADER_TRADE_COMPLETE    = "Thank you for shopping at ORIGIN, would you like to get the extended warranty as well?",
-				TRADER_NO_BLACKLISTED   = "Sir, this is a /electronics/ store.",
-				TRADER_NO_GOODS    = "As much as I'd love to buy that from you, I can't.",
-				TRADER_NOT_ENOUGH  = "Your offer isn't adequate, sir.",
-				TRADER_HOW_MUCH          = "Your total comes out to VALUE CURRENCY.",
+				TRADER_TRADE_COMPLETE    = "Благодарим вас за покупку в ORIGIN, хотели бы вы также продлить гарантию на приобретённые товары?",
+				TRADER_NO_BLACKLISTED   = "Слушайте, это магазин /electronics/, НЕ оружия и ядерных боеголовок.",
+				TRADER_NO_GOODS    = "Как бы мне не хотелось это купить...но я не могу, простите.",
+				TRADER_NOT_ENOUGH  = "Вы предлагаете мне неадекватно маленькую сумму.",
+				TRADER_HOW_MUCH          = "Ваша общая сумма составит VALUE CURRENCY.",
 
-				TRADER_COMPLEMENT_FAILURE   = "Hahaha! Yeah... funny...",
-				TRADER_COMPLEMENT_SUCCESS = "That's very nice of you!",
-				TRADER_INSULT_GOOD       = "That was uncalled for, sir. Don't make me get my manager.",
-				TRADER_INSULT_BAD        = "Sir, I am allowed to hang up the phone if you continue, sir.",
+				TRADER_COMPLEMENT_FAILURE   = "Ха-ха-ха! Ага...очень смешно...",
+				TRADER_COMPLEMENT_SUCCESS = "Это было очень милым поступком с вашей стороны!",
+				TRADER_INSULT_GOOD       = "Это замечание было неуместным. Прошу, не заставляйте меня звать менеджера.",
+				TRADER_INSULT_BAD        = "Послушайте, если вы продолжите в том же духе - мне придётся бросить трубку.",
 
-				TRADER_BRIBE_FAILURE     = "Sorry, sir, but I can't really do that.",
-				TRADER_BRIBE_SUCCESS      = "Why not! Glad to be here for a few more minutes.",
+				TRADER_BRIBE_FAILURE     = "Простите, но не в моих силах решать это.",
+				TRADER_BRIBE_SUCCESS      = "Почему бы и нет? Небольшая задержка не сделает особой погоды.",
 				)
+
+	overmap_object_color = COLOR_YELLOW
 
 	possible_trading_items = list(/obj/item/stock_parts/computer/battery_module      = TRADER_SUBTYPES_ONLY,
 								/obj/item/stock_parts/circuitboard                            = TRADER_SUBTYPES_ONLY,
@@ -85,111 +89,8 @@
 								/obj/item/cell/super                              = TRADER_THIS_TYPE,
 								/obj/item/cell/hyper                              = TRADER_THIS_TYPE,
 								/obj/item/module                                  = TRADER_SUBTYPES_ONLY,
-								/obj/item/tracker_electronics                     = TRADER_THIS_TYPE)
-
-
-/* Clothing stores: each a different type. A hat/glove store, a shoe store, and a jumpsuit store. */
-
-/datum/trader/ship/clothingshop
-	name = "Clothing Store Employee"
-	name_language = TRADER_DEFAULT_NAME
-	origin = "Clothing Store"
-	possible_origins = list("Space Eagle", "Banana Democracy", "Forever 22", "Textiles Factory Warehouse Outlet", "Blocks Brothers")
-	speech = list(TRADER_HAIL_GENERIC    = "Hello, sir! Welcome to ORIGIN!",
-				TRADER_HAIL_DENY         = "We do not trade with rude customers. Consider yourself blacklisted.",
-
-				TRADER_TRADE_COMPLETE    = "Thank you for shopping at ORIGIN. Remember: We cannot accept returns without the original tags!",
-				TRADER_NO_BLACKLISTED   = "Hm, how about no?",
-				TRADER_NO_GOODS    = "We don't buy, sir. Only sell.",
-				TRADER_NOT_ENOUGH  = "Sorry, ORIGIN policy to not accept trades below our marked prices.",
-				TRADER_HOW_MUCH          = "Your total comes out to VALUE CURRENCY.",
-
-				TRADER_COMPLEMENT_FAILURE   = "Excuse me?",
-				TRADER_COMPLEMENT_SUCCESS = "Aw, you're so nice!",
-				TRADER_INSULT_GOOD       = "Sir.",
-				TRADER_INSULT_BAD        = "Wow. I don't have to take this.",
-
-				TRADER_BRIBE_FAILURE     = "ORIGIN policy clearly states we cannot stay for more than the designated time.",
-				TRADER_BRIBE_SUCCESS      = "Hm.... sure! We'll have a few minutes of 'engine troubles'.",
-				)
-
-	possible_trading_items = list(/obj/item/clothing/under                = TRADER_SUBTYPES_ONLY,
-								/obj/item/clothing/under/acj              = TRADER_BLACKLIST,
-								/obj/item/clothing/under/chameleon        = TRADER_BLACKLIST,
-								/obj/item/clothing/under/cloud            = TRADER_BLACKLIST,
-								/obj/item/clothing/under/color            = TRADER_BLACKLIST,
-								/obj/item/clothing/under/dress            = TRADER_BLACKLIST,
-								/obj/item/clothing/under/ert              = TRADER_BLACKLIST,
-								/obj/item/clothing/under/gimmick          = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/under/lawyer           = TRADER_BLACKLIST,
-								/obj/item/clothing/under/pj               = TRADER_BLACKLIST,
-								/obj/item/clothing/under/rank             = TRADER_BLACKLIST,
-								/obj/item/clothing/under/shorts           = TRADER_BLACKLIST,
-								/obj/item/clothing/under/stripper         = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/under/swimsuit         = TRADER_BLACKLIST,
-								/obj/item/clothing/under/syndicate        = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/under/tactical         = TRADER_BLACKLIST,
-								/obj/item/clothing/under/vox              = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/under/wedding          = TRADER_BLACKLIST,
-								/obj/item/clothing/under/punpun           = TRADER_BLACKLIST)
-
-
-/datum/trader/ship/clothingshop/New()
-	..()
-	speech[TRADER_HAIL_START + SPECIES_VOX] = "Well hello, sir! I don't believe we have any clothes that fit you... but you can still look!"
-
-/datum/trader/ship/clothingshop/shoes
-	possible_origins = list("Foot Safe", "Paysmall", "Popular Footwear", "Grimbly's Shoes", "Right Steps")
-	possible_trading_items = list(/obj/item/clothing/shoes                = TRADER_SUBTYPES_ONLY,
-								/obj/item/clothing/shoes/chameleon        = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/combat           = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/clown_shoes      = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/cult             = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/cyborg           = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/lightrig         = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/shoes/magboots         = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/shoes/swat             = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/syndigaloshes    = TRADER_BLACKLIST)
-
-/datum/trader/ship/clothingshop/hatglovesaccessories
-	possible_origins = list("Baldie's Hats and Accessories", "The Right Fit", "Like a Glove", "Space Fashion")
-	possible_trading_items = list(/obj/item/clothing/accessory            = TRADER_ALL,
-								/obj/item/clothing/accessory/badge        = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/accessory/storage/holster      = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/accessory/medal        = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/accessory/storage      = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/gloves                 = TRADER_SUBTYPES_ONLY,
-								/obj/item/clothing/gloves/lightrig        = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/gloves/rig             = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/gloves/thick/swat            = TRADER_BLACKLIST,
-								/obj/item/clothing/gloves/chameleon       = TRADER_BLACKLIST,
-								/obj/item/clothing/head                   = TRADER_SUBTYPES_ONLY,
-								/obj/item/clothing/head/HoS               = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/beret/centcom     = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/bio_hood          = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/bomb_hood         = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/caphat            = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/centhat           = TRADER_BLACKLIST,
-								/obj/item/clothing/head/chameleon         = TRADER_BLACKLIST,
-								/obj/item/clothing/head/collectable       = TRADER_BLACKLIST,
-								/obj/item/clothing/head/culthood          = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/helmet            = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/lightrig          = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/head/radiation         = TRADER_BLACKLIST,
-								/obj/item/clothing/head/warden            = TRADER_BLACKLIST,
-								/obj/item/clothing/head/welding           = TRADER_BLACKLIST)
-
-
-
-/*
-Sells devices, odds and ends, and medical stuff
-*/
-/datum/trader/devices
-	name = "Drugstore Employee"
-	name_language = TRADER_DEFAULT_NAME
-	origin = "Drugstore"
-	possible_origins = list("Buy 'n Save", "Drug Carnival", "C&B", "Fentles", "Dr. Goods", "Beevees", "McGillicuddy's")
-	possible_trading_items = list(/obj/item/device/flashlight              = TRADER_ALL,
+								/obj/item/tracker_electronics                     = TRADER_THIS_TYPE,
+								/obj/item/device/flashlight              = TRADER_ALL,
 								/obj/item/device/kit/paint                 = TRADER_SUBTYPES_ONLY,
 								/obj/item/aicard                    = TRADER_THIS_TYPE,
 								/obj/item/device/binoculars                = TRADER_THIS_TYPE,
@@ -225,79 +126,199 @@ Sells devices, odds and ends, and medical stuff
 								/obj/item/device/depth_scanner             = TRADER_THIS_TYPE,
 								/obj/item/pinpointer/radio            = TRADER_THIS_TYPE,
 								/obj/item/stack/medical/advanced           = TRADER_BLACKLIST)
-	speech = list(TRADER_HAIL_GENERIC    = "Hello, hello! Bits and bobs and everything in between, I hope you find what you're looking for!",
-				TRADER_HAIL_DENY         = "Oh no. I don't want to deal with YOU.",
 
-				TRADER_TRADE_COMPLETE    = "Thank you! Now remember, there isn't any return policy here, so be careful with that!",
-				TRADER_NO_BLACKLISTED   = "Hm. Well that would be illegal, so no.",
-				TRADER_NO_GOODS    = "I'm sorry, I only sell goods.",
-				TRADER_NOT_ENOUGH  = "Gotta pay more than that to get that!",
-				TRADER_HOW_MUCH          = "Well... I bought it for a lot, but I'll give it to you for VALUE.",
 
-				TRADER_COMPLEMENT_FAILURE   = "Uh... did you say something?",
-				TRADER_COMPLEMENT_SUCCESS = "Mhm! I can agree to that!",
-				TRADER_INSULT_GOOD       = "Wow, where was that coming from?",
-				TRADER_INSULT_BAD        = "Don't make me blacklist your connection.",
+/* Clothing stores: each a different type. A hat/glove store, a shoe store, and a jumpsuit store. */
 
-				TRADER_BRIBE_FAILURE     = "Well, as much as I'd love to say 'yes', you realize I operate on a station, correct?",
+/datum/trader/ship/clothingshop
+	name = "Продавец магазина одежды"
+	name_language = TRADER_DEFAULT_NAME
+	origin = "Магазин Одежды"
+	possible_origins = list("Космический Сокол", "Демокративная Республика Банана", "22 Навечно", "Текстильная Фабрика Ньюбергов", "Братья Блокс")
+	speech = list(TRADER_HAIL_GENERIC    = "Приветствую вас! Добро пожаловать в ORIGIN!",
+				TRADER_HAIL_DENY         = "Мы не предоставляем наши услуги кому-попало.",
+
+				TRADER_TRADE_COMPLETE    = "Спасибо за приобретение наших товаров! И помните: мы не принимаем возвраты без оригинальных лычек!",
+				TRADER_NO_BLACKLISTED   = "Хм, как насчёт пойти куда подальше?",
+				TRADER_NO_GOODS    = "Мы не покупаем - только продаём.",
+				TRADER_NOT_ENOUGH  = "Прошу прощения, ценовая политика ORIGIN не позволяет нам продавать товары ниже указанного ценника.",
+				TRADER_HOW_MUCH          = "Ваша общая сумма составит VALUE CURRENCY.",
+
+				TRADER_COMPLEMENT_FAILURE   = "Простите?",
+				TRADER_COMPLEMENT_SUCCESS = "Оу, мне так приятно слышать это!",
+				TRADER_INSULT_GOOD       = "Остановитесь.",
+				TRADER_INSULT_BAD        = "Серьёзно, вам стоит прекратить это.",
+
+				TRADER_BRIBE_FAILURE     = "К сожалению, правила запрещают нам оставаться на одном месте дольше указанного времени.",
+				TRADER_BRIBE_SUCCESS      = "Хм...хорошо! Думаю, у вас есть пара минут, пока мы разбираемся с внезапным 'отказом двигателей'.",
 				)
 
+	overmap_object_color = COLOR_PINK
 
-/datum/trader/devices/New()
+	possible_trading_items = list(/obj/item/clothing/under                = TRADER_SUBTYPES_ONLY,
+								/obj/item/clothing/under/acj              = TRADER_BLACKLIST,
+								/obj/item/clothing/under/chameleon        = TRADER_BLACKLIST,
+								/obj/item/clothing/under/cloud            = TRADER_BLACKLIST,
+								/obj/item/clothing/under/color            = TRADER_BLACKLIST,
+								/obj/item/clothing/under/dress            = TRADER_BLACKLIST,
+								/obj/item/clothing/under/ert              = TRADER_BLACKLIST,
+								/obj/item/clothing/under/gimmick          = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/under/lawyer           = TRADER_BLACKLIST,
+								/obj/item/clothing/under/pj               = TRADER_BLACKLIST,
+								/obj/item/clothing/under/rank             = TRADER_BLACKLIST,
+								/obj/item/clothing/under/shorts           = TRADER_BLACKLIST,
+								/obj/item/clothing/under/stripper         = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/under/swimsuit         = TRADER_BLACKLIST,
+								/obj/item/clothing/under/syndicate        = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/under/tactical         = TRADER_BLACKLIST,
+								/obj/item/clothing/under/vox              = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/under/wedding          = TRADER_BLACKLIST,
+								/obj/item/clothing/under/punpun           = TRADER_BLACKLIST)
+
+
+/datum/trader/ship/clothingshop/New()
 	..()
-	speech[TRADER_HAIL_START + "silicon"] = "Ah! Hello, robot. We only sell things that, ah.... people can hold in their hands, unfortunately. You are still allowed to buy, though!"
+	speech[TRADER_HAIL_START + SPECIES_VOX] = "Добрый...день? Я не знаю, найдётся ли у нас что-то по размеру для вас...но вы всё ещё можете посмотреть!"
+
+/datum/trader/ship/clothingshop/shoes
+	possible_origins = list("Безопасно для Ног", "Звёздная Обувь", "Сапоги Гримбли", "Правильные Шаги")
+	possible_trading_items = list(/obj/item/clothing/shoes                = TRADER_SUBTYPES_ONLY,
+								/obj/item/clothing/shoes/chameleon        = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/combat           = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/clown_shoes      = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/cult             = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/cyborg           = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/lightrig         = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/shoes/magboots         = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/shoes/swat             = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/syndigaloshes    = TRADER_BLACKLIST)
+
+/datum/trader/ship/clothingshop/hatglovesaccessories
+	possible_origins = list("Шляпы и аксессуары Балди", "Шляпа как раз", "Космическая Мода")
+	possible_trading_items = list(/obj/item/clothing/accessory            = TRADER_ALL,
+								/obj/item/clothing/accessory/badge        = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/accessory/storage/holster      = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/accessory/medal        = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/accessory/storage      = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/gloves                 = TRADER_SUBTYPES_ONLY,
+								/obj/item/clothing/gloves/lightrig        = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/gloves/rig             = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/gloves/thick/swat            = TRADER_BLACKLIST,
+								/obj/item/clothing/gloves/chameleon       = TRADER_BLACKLIST,
+								/obj/item/clothing/head                   = TRADER_SUBTYPES_ONLY,
+								/obj/item/clothing/head/HoS               = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/beret/centcom     = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/bio_hood          = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/bomb_hood         = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/caphat            = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/centhat           = TRADER_BLACKLIST,
+								/obj/item/clothing/head/chameleon         = TRADER_BLACKLIST,
+								/obj/item/clothing/head/collectable       = TRADER_BLACKLIST,
+								/obj/item/clothing/head/culthood          = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/helmet            = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/lightrig          = TRADER_BLACKLIST_ALL,
+								/obj/item/clothing/head/radiation         = TRADER_BLACKLIST,
+								/obj/item/clothing/head/warden            = TRADER_BLACKLIST,
+								/obj/item/clothing/head/welding           = TRADER_BLACKLIST)
+
+
+
+/*
+Sells devices, odds and ends, and medical stuff
+*/
+/datum/trader/drugs
+	name = "Наркодиллер"
+	name_language = TRADER_DEFAULT_NAME
+	origin = "Наркопритон"
+	possible_origins = list("Карнавал чувств", "CBT", "Отвал башки", "Доктор Стоун", "Страна развлечений МакМаффина")
+	possible_trading_items = list(/obj/item/device/kit/paint                 = TRADER_SUBTYPES_ONLY,
+
+								/obj/item/device/paint_sprayer             = TRADER_THIS_TYPE,
+								/obj/item/device/megaphone                 = TRADER_THIS_TYPE,
+								/obj/item/device/scanner/health            = TRADER_THIS_TYPE,
+								/obj/item/reagent_containers/syringe/drugs            = TRADER_THIS_TYPE,
+								/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris = TRADER_THIS_TYPE,
+								/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus = TRADER_THIS_TYPE,
+								/obj/item/reagent_containers/food/drinks/bottle/oiljug = TRADER_THIS_TYPE,
+								/obj/item/device/scanner/reagent           = TRADER_ALL,
+								/obj/item/stack/medical/advanced           = TRADER_ALL,
+								)
+	speech = list(TRADER_HAIL_GENERIC    = "ЙО-О-ОУ! Присаживайся! У нас тут есть буквально всё, чувак! От марихуаны до три-глаза и синего сока!",
+				TRADER_HAIL_DENY         = "Чувак, даже у наркоши вроде меня есть чувства.",
+
+				TRADER_TRADE_COMPLETE    = "Пасибки! А, и это, возврату если чё не подлежит, окда?",
+				TRADER_NO_BLACKLISTED   = "Э-э...не, это нелегально даже для меня, чел.",
+				TRADER_NO_GOODS    = "Сорян, но я только продаю!",
+				TRADER_NOT_ENOUGH  = "Чел, я продаю РЕАЛЬНЫЙ ТОВАР, и я требую РЕАЛЬНЫХ денег.",
+				TRADER_HOW_MUCH          = "Слушай...достать эту штучку мне стоило многого, но я бы продал её за VALUE.",
+
+				TRADER_COMPLEMENT_FAILURE   = "Че-е-ел.",
+				TRADER_COMPLEMENT_SUCCESS = "Брата-ан! Я всегда знал что ты крут!",
+				TRADER_INSULT_GOOD       = "Чё говоришь? Не слышу! ВЖВЖВЖВЖВЖЖВЖВЖВЖВ!",
+				TRADER_INSULT_BAD        = "Слушай, я же тебя копам...а, да, точно.",
+
+				TRADER_BRIBE_FAILURE     = "Чувак, это СТАНЦИЯ. Ты там накурился уже, что ли? Как мы нахуй улетим куда-то?",
+				)
+
+	overmap_object_color = COLOR_PURPLE
+
+/datum/trader/drugs/New()
+	..()
+	speech[TRADER_HAIL_START + "silicon"] = "Йо-оу, кибер-братан! Заходи-заходи, не стесняйся! У нас тут для тебя масло припасено!"
 
 /datum/trader/ship/robots
-	name = "Robot Seller"
+	name = "Роботехник"
 	name_language = TRADER_DEFAULT_NAME
-	origin = "Robot Store"
-	possible_origins = list("AI for the Straight Guy", "Mechanical Buddies", "Bot Chop Shop", "Omni Consumer Projects")
+	origin = "Магазин Роботов"
+	possible_origins = list("ИскИн здорового человека", "Механические Друзья", "Бот-Чоп-Шоп", "Производственная баржа ОМНИ")
 	possible_trading_items = list(
 								/obj/item/device/bot_kit                          = TRADER_THIS_TYPE,
 								/obj/item/device/paicard                          = TRADER_THIS_TYPE,
 								/obj/item/aicard                                  = TRADER_THIS_TYPE,
 								/mob/living/bot                                   = TRADER_SUBTYPES_ONLY)
-	speech = list(TRADER_HAIL_GENERIC = "Welcome to ORIGIN! Let me walk you through our fine robotic selection!",
-				TRADER_HAIL_DENY      = "ORIGIN no longer wants to speak to you.",
+	speech = list(TRADER_HAIL_GENERIC = "Добро пожаловать в ORIGIN! Позвольте мне продемонстрировать вам весь ассортимент наших синтетических друзей!",
+				TRADER_HAIL_DENY      = "ORIGIN не собирается продолжать с вами разговор.",
 
-				TRADER_TRADE_COMPLETE = "I hope you enjoy your new robot!",
-				TRADER_NO_BLACKLISTED= "I work with robots, sir. Not that.",
-				TRADER_NO_GOODS = "You gotta buy the robots, sir. I don't do trades.",
-				TRADER_NOT_ENOUGH = "You're coming up short on cash.",
-				TRADER_HOW_MUCH       = "My fine selection of robots will cost you VALUE!",
+				TRADER_TRADE_COMPLETE = "Надеюсь, этот борг сослужит вам отличную службу!",
+				TRADER_NO_BLACKLISTED= "Я работаю с РОБОТАМИ, а не с...этим.",
+				TRADER_NO_GOODS = "Я продаю роботов, не покупаю их.",
+				TRADER_NOT_ENOUGH = "Вижу, у вас не очень хорошо с деньгами.",
+				TRADER_HOW_MUCH       = "Этот юнит обойдётся вам в VALUE!",
 
-				TRADER_COMPLEMENT_FAILURE= "Well, I almost believed that.",
-				TRADER_COMPLEMENT_SUCCESS= "Thank you! My craftsmanship is my life.",
-				TRADER_INSULT_GOOD    = "Uncalled for.... uncalled for.",
-				TRADER_INSULT_BAD     = "I've programmed AI better at insulting than you!",
+				TRADER_COMPLEMENT_FAILURE= "Ну, я почти поверил в сказанное вами.",
+				TRADER_COMPLEMENT_SUCCESS= "Спасибо! Эта мастерская - работа всей моей жизни!",
+				TRADER_INSULT_GOOD    = "Я промолчу...",
+				TRADER_INSULT_BAD     = "Даже мои ИскИны способны на большее!",
 
-				TRADER_BRIBE_FAILURE  = "I've got too many customers waiting in other sectors, sorry.",
-				TRADER_BRIBE_SUCCESS   = "Hm. Don't keep me waiting too long, though.",
+				TRADER_BRIBE_FAILURE  = "Меня ждёт ещё туева куча клиентов.",
+				TRADER_BRIBE_SUCCESS   = "Ну...я могу потратить ещё пару минут своего времени.",
 				)
+
+	overmap_object_color = COLOR_WHITE
 
 /datum/trader/ship/robots/New()
 	..()
-	speech[TRADER_HAIL_START + "silicon"] = "Welcome to ORIGIN! Let- oh, you're a synth! Well, your money is good anyway. Welcome, welcome!"
+	speech[TRADER_HAIL_START + "silicon"] = "Добро пожаловать в ORIGIN! Я- оу, ты синтетик! Что же, твои деньги тоже сойдут. Проходи, проходи!"
 
 /datum/trader/xeno_shop
-	name = "Xenolife Collector"
-	origin = "CSV Not a Poacher"
+	name = "Коллекционер Ксенофауны"
+	origin = "СТС 'Не браконьер'"
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY|TRADER_WANTED_ALL
-	possible_origins = list("XenoHugs", "Xynergy Specimen Acquisition", "Skinner Catering Reseller", "NanoTrasen Companionship Division", "Lonely Pete's Exotic Companionship","Space Wei's Exotic Cuisine")
-	speech = list(TRADER_HAIL_GENERIC    = "Welcome! We are always looking to acquire more exotic life forms.",
-				TRADER_HAIL_DENY         = "We no longer wish to speak to you. Please contact our legal representative if you wish to rectify this.",
+	possible_origins = list("Ксено-обнимашки", "Сборщик образцов корпорации 'Xynergy'", "Реселлер животных", "Отдел восстановления 'NanoTrasen '", "Пет-шоп одинокого Пита","Магазин Кузины Вей")
+	speech = list(TRADER_HAIL_GENERIC    = "Добро пожаловать! У вас есть что предложить нам?.",
+				TRADER_HAIL_DENY         = "Простите, но мы не желаем разговаривать с живодёрами и моральными уродами.",
 
-				TRADER_TRADE_COMPLETE    = "Remember to give them attention and food. They are living beings, and you should treat them like so.",
-				TRADER_NO_BLACKLISTED   = "Legally I can't do that. Morally... well, I refuse to do that.",
-				TRADER_FOUND_UNWANTED = "I only want animals. I don't need food or shiny things. I'm looking for specific ones, at that. Ones I already have the cage and food for.",
-				TRADER_NOT_ENOUGH   = "I'd give you this for free, but I need the money to feed the specimens. So you must pay in full.",
-				TRADER_HOW_MUCH          = "This is a good choice. I believe it will cost you VALUE CURRENCY.",
-				TRADER_WHAT_WANT         = "I have the facilities, currently, to support",
+				TRADER_TRADE_COMPLETE    = "Не забывайте следить за ними! Мы навестим вас, чтобы проверить их состояние позже!",
+				TRADER_NO_BLACKLISTED   = "Легально, я не могу приобрести это. Морально...ну, я просто отказываюсь это делать.",
+				TRADER_FOUND_UNWANTED = "Меня интересует лишь живность. Мне не нужна еда или эти ваши светящиеся штучки.",
+				TRADER_NOT_ENOUGH   = "Я бы, конечно, отдал тебе его так...Но мне ещё нужно кормить чем-то остальных.",
+				TRADER_HOW_MUCH          = "Отличный выбор. Он обойдётся вам в VALUE CURRENCY.",
+				TRADER_WHAT_WANT         = "На данный момент у меня достаточно посредников.",
 
-				TRADER_COMPLEMENT_FAILURE   = "According to customs on 34 planets I traded with, this constitutes sexual harrasment.",
-				TRADER_COMPLEMENT_SUCCESS = "Thank you. I needed that.",
-				TRADER_INSULT_GOOD       = "No need to be upset, I believe we can do business.",
-				TRADER_INSULT_BAD        = "I have traded dogs with more bark than that.",
+				TRADER_COMPLEMENT_FAILURE   = "Согласно законам 34 планет, с которыми я регулярно торгую, сказанное вами считается сексуальным харассментом.",
+				TRADER_COMPLEMENT_SUCCESS = "Спасибо. Мне действительно было это нужно.",
+				TRADER_INSULT_GOOD       = "Не нужно расстраиваться. Я уверена, что мы можем решить это.",
+				TRADER_INSULT_BAD        = "Я продавала собак, которые лаяли громче и страшнее этого.",
 				)
 
 	possible_wanted_items = list(/mob/living/simple_animal/hostile/smart_beast/tindalos = TRADER_THIS_TYPE,
@@ -312,27 +333,29 @@ Sells devices, odds and ends, and medical stuff
 								/obj/item/beartrap			  = TRADER_THIS_TYPE,
 								/obj/item/device/scanner/xenobio = TRADER_THIS_TYPE)
 
+	overmap_object_color = COLOR_PURPLE
+
 /datum/trader/medical
-	name = "Medical Supplier"
-	origin = "Infirmary of CSV Iniquity"
+	name = "Поставщик Медицины"
+	origin = "Лазарет СТС 'Неподчинённый'"
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY
 	want_multiplier = 1.2
 	margin = 2
-	possible_origins = list("Dr.Krieger's Practice", "Legit Medical Supplies (No Refund)", "Mom's & Pop's Addictive Opoids", "Legitimate Pharmaceutical Firm", "Designer Drugs by Lil Xanny")
-	speech = list(TRADER_HAIL_GENERIC    = "Huh? How'd you get this number?! Oh well, if you wanna talk biz, I'm listening.",
-				TRADER_HAIL_DENY         = "This is an automated message. Feel free to fuck the right off after the buzzer. *buzz*",
+	possible_origins = list("Практика др. Крюгера", "Абсолютно легальная медицина (Возврату не подлежит)", "Опиоиды Мома и Попа", "Частная клиника Лили Свит")
+	speech = list(TRADER_HAIL_GENERIC    = "Э? Откуда у вас этот номер?! Ну, если вы хотите поторговать...",
+				TRADER_HAIL_DENY         = "Это предзаписанное сообщение. 'Трахни себя, мудила'.",
 
-				TRADER_TRADE_COMPLETE    = "Good to have business with ya. Remember, no refunds.",
-				TRADER_NO_BLACKLISTED   = "Whoa whoa, I don't want this shit, put it away.",
-				TRADER_FOUND_UNWANTED = "What the hell do you expect me to do with this junk?",
-				TRADER_NOT_ENOUGH   = "Sorry, pal, full payment upfront, I don't write the rules. Well, I do, but that's beside the point.",
-				TRADER_HOW_MUCH          = "Hmm, this is one damn fine item, but I'll part with it for VALUE CURRENCY.",
-				TRADER_WHAT_WANT         = "I could always use some fucking",
+				TRADER_TRADE_COMPLETE    = "Было приятно иметь с вами дело. И помните, возврату не подлежит.",
+				TRADER_NO_BLACKLISTED   = "Воу-воу-воу, полегче! Мы тут таким не промышляем.",
+				TRADER_FOUND_UNWANTED = "И что, по вашему мнению, я должна делать с этим мусором?",
+				TRADER_NOT_ENOUGH   = "Прости, приятель, но деньги вперёд.",
+				TRADER_HOW_MUCH          = "Хм-м, как насчёт VALUE CURRENCY?",
+				TRADER_WHAT_WANT         = "Слушай, мне бы действительно не помешало немного...",
 
-				TRADER_COMPLEMENT_FAILURE   = "Haha, how nice of you. Why don't you go fall in an elevator shaft.",
-				TRADER_COMPLEMENT_SUCCESS = "Damn right I'm awesome, tell me more.",
-				TRADER_INSULT_GOOD       = "Damn, pal, no need to get snippy.",
-				TRADER_INSULT_BAD        = "*muffled laughter* Sorry, was that you trying to talk shit? Adorable.",
+				TRADER_COMPLEMENT_FAILURE   = "Ха-ха, как мило с твоей стороны. Почему бы тебе не пойти и грохнуться в лифтовую шахту?.",
+				TRADER_COMPLEMENT_SUCCESS = "Слушай, ты всегда можешь пригласить мен на свидание в нерабочее время.",
+				TRADER_INSULT_GOOD       = "Воу, приятель, обязательно быть ТАКИМ грубым? Я же девушка, всё-таки.",
+				TRADER_INSULT_BAD        = "*приглушённый смех* Прости, кажется, я должна была оскорбиться?",
 				)
 
 	possible_wanted_items = list(/obj/item/reagent_containers/food/drinks/bottle = TRADER_THIS_TYPE,
@@ -367,10 +390,12 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/item/sign/medipolma = TRADER_THIS_TYPE
 								)
 
+	overmap_object_color = COLOR_BLUE
+
 /datum/trader/medical/chem
-	name = "Chemical Supplier"
-	origin = "Legit Chemical Supplies (No Refund)"
-	possible_origins = list("Nah's Chems Inc.", "PH International", "Wagner's Chemical Group & Co.", "Legit Chemical Supplies (No Refund)")
+	name = "Поставщик Химикатов"
+	origin = "Абсолютно легальная медицина (Возврату не подлежит)"
+	possible_origins = list("Корпорация Ток-Хем", "PH International", "Группа Вагнера", "Абсолютно легальная медицина (Возврату не подлежит)")
 
 	possible_wanted_items = list(/obj/item/reagent_containers/glass/bottle = TRADER_ALL,
 								 /obj/item/reagent_containers/chem_disp_cartridge = TRADER_ALL
@@ -407,27 +432,32 @@ Sells devices, odds and ends, and medical stuff
 								  )
 
 /datum/trader/mining
-	name = "Rock'n'Drill Mining Inc"
-	origin = "Automated Smelter AH-532"
+	name = "Добывающая корпорация 'Rock'n'Drill'"
+	origin = "Автоматическая добывающая станция AH-532"
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY|TRADER_WANTED_ALL
 	want_multiplier = 1.5
 	margin = 2
-	possible_origins = list("Automated Smelter AH-532", "CMV Locust", "The Galactic Foundry Company", "Crucible LLC")
-	speech = list(TRADER_HAIL_GENERIC    = "Welcome to R'n'D Mining. Please place your order.",
-				TRADER_HAIL_DENY         = "There is no response on the line.",
+	possible_origins = list("RnD-AS 'Пивоварня'", "RnD-AS 'Саранча'",)
+	speech = list(TRADER_HAIL_GENERIC    = "Добро пожаловать на производственную фабрику R'n'D. Пожалуйста, назовите ваш запрос.",
+				TRADER_HAIL_DENY         = "...",
 
-				TRADER_TRADE_COMPLETE    = "Transaction complete. Please use our services again",
-				TRADER_NO_BLACKLISTED   = "Whoa whoa, I don't want this shit, put it away.",
-				TRADER_FOUND_UNWANTED = "Sorry, we are currently not looking to purchase these items.",
-				TRADER_NOT_ENOUGH   = "Sorry, this is an insufficient sum for this purchase.",
-				TRADER_HOW_MUCH          = "For ONE entry of ITEM the price would be VALUE CURRENCY.",
-				TRADER_WHAT_WANT         = "We are currently looking to procure",
+				TRADER_TRADE_COMPLETE    = "Транзакция произведена.",
+				TRADER_NO_BLACKLISTED   = "Данный товар не принимается.",
+				TRADER_FOUND_UNWANTED = "На данный момент мы не нуждаемся в данных ресурсах.",
+				TRADER_NOT_ENOUGH   = "Данной суммы недостаточно для произведения покупки.",
+				TRADER_HOW_MUCH          = "За один экземпляр ITEM, вы должны будете заплатить VALUE CURRENCY.",
+				TRADER_WHAT_WANT         = "На данный момент нам требуется...",
 
-				TRADER_COMPLEMENT_FAILURE   = "I am afraid this is beyond my competency.",
-				TRADER_COMPLEMENT_SUCCESS = "Thank you.",
-				TRADER_INSULT_GOOD       = "Alright, we will reconsider the terms.",
-				TRADER_INSULT_BAD        = "This is not acceptable, please cease.",
+				TRADER_COMPLEMENT_FAILURE   = "Простите, повторите ваш запрос.",
+				TRADER_COMPLEMENT_SUCCESS = "Простите, повторите ваш запрос.",
+				TRADER_INSULT_GOOD       = "Простите, повторите ваш запрос.",
+				TRADER_INSULT_BAD        = "Простите, повторите ваш запрос.",
 				)
+
+	overmap_object_color = COLOR_BROWN
+
+	insult_drop = 0
+	compliment_increase = 0
 
 	possible_wanted_items = list(/obj/item/ore/ = TRADER_SUBTYPES_ONLY,
 								/obj/item/disk/survey = TRADER_THIS_TYPE,
