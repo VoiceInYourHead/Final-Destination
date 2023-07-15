@@ -10,10 +10,14 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/brig_chief
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/brig_chief/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/brig_chief/fleet,
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/security/brig_chief/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e7,
+		/datum/mil_rank/army/e6,
+		/datum/mil_rank/army/e7,
+		/datum/mil_rank/army/e8,
 		/datum/mil_rank/fleet/e6,
 		/datum/mil_rank/fleet/e7,
 		/datum/mil_rank/fleet/e8
@@ -106,11 +110,16 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/maa
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/maa/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/maa/fleet,
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/security/maa/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/army/e3,
+		//datum/mil_rank/army/e4,
+		/datum/mil_rank/army/e4_alt,
+		/datum/mil_rank/army/e5,
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5

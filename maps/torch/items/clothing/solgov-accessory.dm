@@ -312,11 +312,6 @@ specialty pins
 	desc = "An iron pin denoting some special qualification."
 	icon_state = "fleetpin_enlisted"
 
-/obj/item/clothing/accessory/solgov/specialty/marine
-	name = "marine qualification pin"
-	desc = "A green pin denoting some special qualification."
-	icon_state = "fleetpin_marine"
-
 /obj/item/clothing/accessory/solgov/specialty/officer
 	name = "officer's qualification pin"
 	desc = "A golden pin denoting some special qualification."
@@ -324,7 +319,7 @@ specialty pins
 
 /obj/item/clothing/accessory/solgov/specialty/pilot
 	name = "pilot's qualification pin"
-	desc = "A golden pin denoting the qualification to fly SCG spacecraft."
+	desc = "An iron pin denoting the qualification to fly SCG spacecraft."
 	icon_state = "pin_pilot"
 
 /*****
@@ -976,79 +971,65 @@ ranks - marines
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted
-	name = "ranks (E-1 recruit)"
-	desc = "Insignia denoting the rank of Recruit."
+	name = "ranks (E-1 private)"
+	desc = "Insignia denoting the rank of Private."
 	icon_state = "armyrank_enlisted"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e2
-	name = "ranks (E-2 private)"
-	desc = "Insignia denoting the rank of Private."
-	icon_state = "army_e2_device"
+	name = "ranks (E-2 private first class)"
+	desc = "Insignia denoting the rank of Private First Class."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e3
-	name = "ranks (E-3 private first class)"
-	desc = "Insignia denoting the rank of Private First Class."
-	icon_state = "army_e3_device"
+	name = "ranks (E-3 lance corporal)"
+	desc = "Insignia denoting the rank of Lance Corporal."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e4
-	name = "ranks (E-4 corporal)"
-	desc = "Insignia denoting the rank of Corporal."
-	icon_state = "army_e4_device"
-
-/obj/item/clothing/accessory/solgov/rank/army/enlisted/e4_alt
 	name = "ranks (E-4 specialist)"
 	desc = "Insignia denoting the rank of Specialist."
-	icon_state = "army_e4_device"
+
+/obj/item/clothing/accessory/solgov/rank/army/enlisted/e4_alt
+	name = "ranks (E-4 corporal)"
+	desc = "Insignia denoting the rank of Corporal."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e5
 	name = "ranks (E-5 sergeant)"
 	desc = "Insignia denoting the rank of Sergeant."
-	icon_state = "army_e5_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e6
 	name = "ranks (E-6 staff sergeant)"
 	desc = "Insignia denoting the rank of Staff Sergeant."
-	icon_state = "army_e6_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e7
-	name = "ranks (E-7 sergeant first class)"
-	desc = "Insignia denoting the rank of Sergeant First Class."
-	icon_state = "army_e7_device"
+	name = "ranks (E-7 gunnery sergeant)"
+	desc = "Insignia denoting the rank of Gunnery Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e7_meme
 	name = "ranks (E-7 gaming sergeant)"
 	desc = "Insignia denoting 'honorable' rank of the Gaming Sergeant."
-	icon_state = "army_e7_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e8
 	name = "ranks (E-8 master sergeant)"
 	desc = "Insignia denoting the rank of Master Sergeant."
-	icon_state = "army_e8_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e8_alt
 	name = "ranks (E-8 first sergeant)"
 	desc = "Insignia denoting the rank of First Sergeant."
-	icon_state = "army_e8_alt_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9
 	name = "ranks (E-9 sergeant major)"
 	desc = "Insignia denoting the rank of Sergeant Major."
-	icon_state = "army_e9_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt1
 	name = "ranks (E-9 master gunnery sergeant)"
 	desc = "Insignia denoting the rank of Master Gunnery Sergeant."
-	icon_state = "army_e9_alt_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_meme
 	name = "ranks (E-9 master gaming sergeant)"
 	desc = "Insignia denoting the most 'honorable' rank of the Master 'Gaming' Sergeant."
-	icon_state = "army_e9_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt2
 	name = "ranks (E-9 sergeant major of the corps)"
 	desc = "Insignia denoting the rank of Sergeant Major of the Corps."
-	icon_state = "army_e9_alt_device"
 
 /obj/item/clothing/accessory/solgov/rank/army/officer
 	name = "ranks (O-1 second lieutenant)"

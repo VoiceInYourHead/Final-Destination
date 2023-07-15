@@ -132,14 +132,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expmed
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/exploration/expmed/fleet
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/exploration/expmed/army
 		)
 
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/fleet/e5
+		/datum/mil_rank/army/e3,
+		/datum/mil_rank/army/e4_alt,
+		/datum/mil_rank/army/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_TRAINED
@@ -178,15 +179,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expeng
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/exploration/expeng/fleet
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/exploration/expeng/army
 		)
 
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/fleet/e5
+		/datum/mil_rank/army/e3,
+		/datum/mil_rank/army/e4_alt,
+		/datum/mil_rank/army/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_CONSTRUCTION = SKILL_BASIC,
@@ -223,13 +224,14 @@
 	ideal_character_age = 21
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/expmar
 	allowed_branches = list(
-		/datum/mil_branch/fleet
+		/datum/mil_branch/army
 		)
 
 	allowed_ranks = list(
-		/datum/mil_rank/fleet/marine/e2,
-		/datum/mil_rank/fleet/marine/e3,
-		/datum/mil_rank/fleet/marine/e4
+		/datum/mil_rank/army/e2,
+		/datum/mil_rank/army/e3,
+		/datum/mil_rank/army/e4_alt,
+		/datum/mil_rank/army/e5
 	)
 	min_skill = list(   SKILL_EVA = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,

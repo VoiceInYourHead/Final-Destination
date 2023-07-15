@@ -220,97 +220,97 @@
 /obj/item/clothing/under/solgov/utility/fleet/combat/supply
 	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/fleet)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green
-	name = "green fleet fatigues"
-	desc = "Alternative utility uniform of the SCG Fleet, intended for use in lush terrains on planets."
+/obj/item/clothing/under/solgov/utility/army
+	name = "green marine fatigues"
+	desc = "The utility uniform of the SCG Marine Corps, made from durable material."
 	icon_state = "greenutility"
 	item_state = "jensensuit"
 	worn_state = "greenutility"
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/command
+/obj/item/clothing/under/solgov/utility/army/command
 	accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/engineering
+/obj/item/clothing/under/solgov/utility/army/engineering
 	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/security
+/obj/item/clothing/under/solgov/utility/army/security
 	accessories = list(/obj/item/clothing/accessory/solgov/department/security/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/medical
+/obj/item/clothing/under/solgov/utility/army/medical
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/medical/banded
+/obj/item/clothing/under/solgov/utility/army/medical/banded
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army, /obj/item/clothing/accessory/armband/medblue)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/supply
+/obj/item/clothing/under/solgov/utility/army/supply
 	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/service
+/obj/item/clothing/under/solgov/utility/army/service
 	accessories = list(/obj/item/clothing/accessory/solgov/department/service/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/green/exploration
+/obj/item/clothing/under/solgov/utility/army/exploration
 	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban
-	name = "urban fleet fatigues"
-	desc = "Alternative utility uniform of the SCG Fleet, intended for use in urban jungles. Actually sucks at camouflaging."
+/obj/item/clothing/under/solgov/utility/army/urban
+	name = "navy marine fatigues"
+	desc = "A dark 'urban' version of the SCG Marine Corps utility uniform, made from durable material."
 	icon_state = "greyutility"
 	item_state = "gy_suit"
 	worn_state = "greyutility"
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/command
+/obj/item/clothing/under/solgov/utility/army/urban/command
 	accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/engineering
+/obj/item/clothing/under/solgov/utility/army/urban/engineering
 	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/security
+/obj/item/clothing/under/solgov/utility/army/urban/security
 	accessories = list(/obj/item/clothing/accessory/solgov/department/security/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/medical
+/obj/item/clothing/under/solgov/utility/army/urban/medical
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/medical/banded
+/obj/item/clothing/under/solgov/utility/army/urban/medical/banded
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army, /obj/item/clothing/accessory/armband/medblue)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/supply
+/obj/item/clothing/under/solgov/utility/army/urban/supply
 	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/service
+/obj/item/clothing/under/solgov/utility/army/urban/service
 	accessories = list(/obj/item/clothing/accessory/solgov/department/service/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/urban/exploration
+/obj/item/clothing/under/solgov/utility/army/urban/exploration
 	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan
+/obj/item/clothing/under/solgov/utility/army/tan
 	name = "tan marine fatigues"
-	desc = "Alternative utility uniform of the SCG Fleet, intended for use in arid terrains on planets. Favoured by the most jarhead Armsmen."
+	desc = "A tan version of the SCG Marine Corps utility uniform, made from durable material."
 	icon_state = "tanutility"
 	item_state = "johnny"
 	worn_state = "tanutility"
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/command
+/obj/item/clothing/under/solgov/utility/army/tan/command
 	accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/engineering
+/obj/item/clothing/under/solgov/utility/army/tan/engineering
 	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/security
+/obj/item/clothing/under/solgov/utility/army/tan/security
 	accessories = list(/obj/item/clothing/accessory/solgov/department/security/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/medical
+/obj/item/clothing/under/solgov/utility/army/tan/medical
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/medical/banded
+/obj/item/clothing/under/solgov/utility/army/tan/medical/banded
 	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army, /obj/item/clothing/accessory/armband/medblue)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/supply
+/obj/item/clothing/under/solgov/utility/army/tan/supply
 	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/service
+/obj/item/clothing/under/solgov/utility/army/tan/service
 	accessories = list(/obj/item/clothing/accessory/solgov/department/service/army)
 
-/obj/item/clothing/under/solgov/utility/fleet/combat/tan/exploration
+/obj/item/clothing/under/solgov/utility/army/tan/exploration
 	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
 
 //Service

@@ -5,12 +5,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/command
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/command,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -50,12 +44,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/engineering,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/engineering,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/engineering,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/engineering,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/engineering,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -93,12 +81,6 @@
 
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/engineering,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/engineering,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/engineering,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/engineering,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/beret/solgov/fleet/engineering,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
@@ -142,12 +124,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/security
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/security,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/security,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/security,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/security,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/security,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -190,12 +166,6 @@
 
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/security,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/security,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/security,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/security,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/beret/solgov/fleet/security,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
@@ -236,12 +206,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/medical
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/medical,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/medical,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/medical,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/medical,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/medical,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -277,12 +241,6 @@
 
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/medical,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/medical,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/medical,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/medical,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/beret/solgov/fleet/medical,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
@@ -323,12 +281,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/supply
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/supply,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/supply,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/supply,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/supply,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/supply,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -364,12 +316,6 @@
 
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/supply,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/supply,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/supply,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/supply,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/beret/solgov/fleet/supply,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
@@ -414,12 +360,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/service
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/service,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/service,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/service,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/service,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/service,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -456,12 +396,6 @@
 
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/service,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/service,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/service,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/service,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/beret/solgov/fleet/service,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
@@ -484,12 +418,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/exploration
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/exploration,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/exploration,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/exploration,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/exploration,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/exploration,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -525,12 +453,6 @@
 
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/exploration,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/exploration,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/exploration,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/exploration,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/beret/solgov/fleet/exploration,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
@@ -553,12 +475,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/command
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/command,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
@@ -595,12 +511,6 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/command
 	utility_extra = list(
 				/obj/item/clothing/under/solgov/utility/fleet/combat/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/green/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/urban/command,
-				/obj/item/clothing/under/solgov/utility/fleet/combat/tan/command,
-				/obj/item/clothing/head/solgov/utility/fleet/green,
-				/obj/item/clothing/head/solgov/utility/fleet/urban,
-				/obj/item/clothing/head/solgov/utility/fleet/tan,
 				/obj/item/clothing/head/beret/solgov/fleet/command,
 				/obj/item/clothing/head/ushanka/solgov/fleet,
 				/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,

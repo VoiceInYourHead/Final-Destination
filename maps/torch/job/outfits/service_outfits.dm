@@ -21,9 +21,9 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
 	shoes = /obj/item/clothing/shoes/dutyboots
 
-/decl/hierarchy/outfit/job/torch/crew/service/janitor/marine
+/decl/hierarchy/outfit/job/torch/crew/service/janitor/army
 	name = OUTFIT_JOB_NAME("Sanitation Technician - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/torch/crew/service/cook
@@ -44,12 +44,11 @@
 	name = OUTFIT_JOB_NAME("Cook - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
 	shoes = /obj/item/clothing/shoes/dutyboots
-/*
+
 /decl/hierarchy/outfit/job/torch/crew/service/cook/army
 	name = OUTFIT_JOB_NAME("Cook - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/service
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 	shoes = /obj/item/clothing/shoes/dutyboots
-*/
 /decl/hierarchy/outfit/job/torch/crew/service/crewman
 	name = OUTFIT_JOB_NAME("Crewman")
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary
@@ -60,9 +59,6 @@
 	name = OUTFIT_JOB_NAME("Crewman - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
-/decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet/marine
-	name = OUTFIT_JOB_NAME("Crewman - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
 
 /decl/hierarchy/outfit/job/torch/crew/service/chief_steward
 	name = OUTFIT_JOB_NAME("Chief Steward")
@@ -94,4 +90,9 @@
 /decl/hierarchy/outfit/job/torch/crew/service/chaplain/fleet
 	name = OUTFIT_JOB_NAME("Chaplain - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
+	shoes = /obj/item/clothing/shoes/dutyboots
+
+/decl/hierarchy/outfit/job/torch/crew/service/chaplain/army
+	name = OUTFIT_JOB_NAME("Chaplain - Marine")
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 	shoes = /obj/item/clothing/shoes/dutyboots

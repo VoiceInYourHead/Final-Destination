@@ -1,12 +1,11 @@
 //army outfits
-/*
 /decl/hierarchy/outfit/job/torch/army
 	name = OUTFIT_JOB_NAME("SCGM Soldier - Torch")
 	uniform = /obj/item/clothing/under/solgov/utility/army
 	head = /obj/item/clothing/head/solgov/utility/army
 	back = /obj/item/storage/backpack/rucksack/green
 	shoes = /obj/item/clothing/shoes/jungleboots
-*/
+
 /decl/hierarchy/outfit/job/torch/armyservice
 	name = OUTFIT_JOB_NAME("SCGM Service - Torch")
 	uniform = /obj/item/clothing/under/solgov/service/army
