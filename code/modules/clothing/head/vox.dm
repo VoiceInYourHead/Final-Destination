@@ -3,6 +3,8 @@
 	icon = 'icons/obj/clothing/species/vox/obj_head_vox.dmi'
 	item_flags = 0
 	flags_inv = 0
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi')
 
 /obj/item/clothing/head/helmet/vox/quill_crown
 	name = "quill crown"
