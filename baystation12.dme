@@ -276,6 +276,7 @@
 #include "code\datums\appearances\automatic\cardborg.dm"
 #include "code\datums\audio\_audio.dm"
 #include "code\datums\audio\_tracks.dm"
+#include "code\datums\audio\fd_tracks.dm"
 #include "code\datums\audio\jukebox.dm"
 #include "code\datums\colors\color_generator.dm"
 #include "code\datums\communication\_defines.dm"

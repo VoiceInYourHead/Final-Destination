@@ -241,7 +241,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 
 /datum/map/proc/get_lobby_track(banned)
-	var/path = /decl/audio/track/absconditus
+	var/path = /decl/audio/track/space_oddity/lobby
 	var/count = length(lobby_tracks)
 	if (count != 1)
 		var/allowed

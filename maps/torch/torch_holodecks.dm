@@ -6,7 +6,7 @@
 		"boxingcourt"      = new/datum/holodeck_program(/area/holodeck/source_boxingcourt, list('sound/music/THUNDERDOME.ogg')),
 		"basketball"       = new/datum/holodeck_program(/area/holodeck/source_basketball, list('sound/music/THUNDERDOME.ogg')),
 		"thunderdomecourt" = new/datum/holodeck_program(/area/holodeck/source_thunderdomecourt, list('sound/music/THUNDERDOME.ogg')),
-		"beach"            = new/datum/holodeck_program(/area/holodeck/source_beach, list('sound/music/europa/WildEncounters.ogg')),
+		"beach"            = new/datum/holodeck_program(/area/holodeck/source_beach, list('sound/ambience/shore.ogg')),
 		"desert"           = new/datum/holodeck_program(/area/holodeck/source_desert,
 														list(
 															'sound/effects/wind/wind_2_1.ogg',
@@ -30,15 +30,13 @@
 		"space"            = new/datum/holodeck_program(/area/holodeck/source_space,
 														list(
 															'sound/ambience/ambispace.ogg',
-															'sound/music/main.ogg',
 															'sound/music/space.ogg',
-															'sound/music/traitor.ogg',
 															)
 														),
 		"picnicarea"       = new/datum/holodeck_program(/area/holodeck/source_picnicarea, list('sound/music/title2.ogg')),
 		"theatre"          = new/datum/holodeck_program(/area/holodeck/source_theatre),
 		"meetinghall"      = new/datum/holodeck_program(/area/holodeck/source_meetinghall),
-		"courtroom"        = new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/traitor.ogg')),
+		"courtroom"        = new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/hull_rupture.ogg')),
 		"volleyball"        = new/datum/holodeck_program(/area/holodeck/source_volleyball, list('sound/music/THUNDERDOME.ogg')),
 		"cafe"             = new/datum/holodeck_program(/area/holodeck/source_cafe),
 		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),

@@ -1217,7 +1217,7 @@
 /area/medical/morgue
 	name = "\improper Morgue"
 	icon_state = "morgue"
-	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
+	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
 	req_access = list(list(access_morgue,access_forensics_lockers))
 
 /area/medical/morgue/autopsy
@@ -1704,7 +1704,7 @@ area/assembly/robotics/office
 /area/chapel/main
 	name = "\improper Chapel"
 	icon_state = "chapel"
-	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
+	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 	sound_env = LARGE_ENCLOSED
 
 /area/chapel/office
