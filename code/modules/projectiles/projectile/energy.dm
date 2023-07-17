@@ -75,8 +75,8 @@
 			if(T && (T != TO) && (TO.z == T.z) && !mob.blinded)
 				to_chat(mob, SPAN_NOTICE("You see a bright light to \the [dir2text(get_dir(T,TO))]"))
 			CHECK_TICK
-				
-/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit 
+
+/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit
 	name = "electrode"
 	icon_state = "spark"
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -177,6 +177,7 @@
 		M.make_dizzy(med_dizziness_amt)
 
 	if(M.ear_damage >= 15)
+		sound_to(M, sound('sound/effects/ringing_ears.ogg', volume=50))
 		to_chat(M, SPAN_DANGER("Your ears start to ring badly!"))
 		if(prob(M.ear_damage - 5))
 			to_chat(M, SPAN_DANGER("You can't hear anything!"))

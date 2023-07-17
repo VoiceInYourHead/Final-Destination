@@ -128,7 +128,7 @@
 	if(!blinded)
 		flash_eyes()
 
-	sound_to(src, sound('sound/effects/ringing_ears.ogg', volume=100))
+	sound_to(src, sound('sound/effects/ringing_ears.ogg', volume=100/severity))
 
 	var/b_loss = null
 	var/f_loss = null
@@ -144,17 +144,17 @@
 
 			if (get_sound_volume_multiplier() >= 0.2)
 				ear_damage += 30
-				ear_deaf += 120
+				ear_deaf += 40
 			if (prob(70))
-				Paralyse(10)
+				Paralyse(1)
 
 		if(3.0)
 			b_loss = 30
 			if (get_sound_volume_multiplier() >= 0.2)
 				ear_damage += 15
-				ear_deaf += 60
+				ear_deaf += 20
 			if (prob(50))
-				Paralyse(10)
+				Paralyse(1)
 
 	// focus most of the blast on one organ
 	apply_damage(0.7 * b_loss, BRUTE, null, DAM_EXPLODE, used_weapon = "Explosive blast")

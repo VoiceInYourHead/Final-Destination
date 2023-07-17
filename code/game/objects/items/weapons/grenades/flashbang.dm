@@ -75,6 +75,7 @@
 	//This really should be in mob not every check
 	if (M.ear_damage >= 15)
 		to_chat(M, "<span class='danger'>Your ears start to ring badly!</span>")
+		sound_to(M, sound('sound/effects/ringing_ears.ogg', volume=100))
 	else
 		if (M.ear_damage >= 5)
 			to_chat(M, "<span class='danger'>Your ears start to ring!</span>")
