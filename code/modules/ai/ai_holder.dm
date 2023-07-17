@@ -312,7 +312,7 @@ if (!(datum.process_flags & AI_FASTPROCESSING)) { \
 		ai_log("handle_stance_strategical() : Giving up a chase.", AI_LOG_DEBUG)
 		remove_target()
 
-	if (stance in STANCES_COMBAT)
+	if (stance in STANCES_COMBAT || stance == STANCE_FLEE)
 		request_help() // Call our allies.
 
 	switch(stance)

@@ -49,8 +49,6 @@
 	if (!cooperative || world.time < next_sent_help_request  || world.time < next_received_help_request)
 		return
 
-
-
 	ai_log("request_help() : Asking for help.", AI_LOG_DEBUG)
 	next_sent_help_request  = world.time + 10 SECONDS
 	if (!faction_friends)
