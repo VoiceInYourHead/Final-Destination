@@ -6,8 +6,8 @@
 /obj/item/clothing/head/bio_hood/anomaly
 	name = "anomaly hood"
 	desc = "A hood that protects the head and face from exotic alien energies and biological contamination."
-	icon_state = "bio_anom"
-	item_state = "bio_anom"
+	icon_state = "bio_anom_hood"
+	item_state = "bio_anom_hood"
 
 /obj/item/clothing/suit/space/void/excavation
 	name = "excavation voidsuit"

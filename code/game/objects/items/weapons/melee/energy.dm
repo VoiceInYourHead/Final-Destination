@@ -287,6 +287,7 @@
 		)
 	active_force = 40
 	active_throwforce = 15
+	lighting_color = COLOR_ORANGE
 	force = 5
 	throwforce = 2
 	w_class = ITEM_SIZE_NORMAL
@@ -310,6 +311,7 @@
 		slot_l_hand_str = "murasama_l",
 		slot_belt_str = "murasama_belt"
 		)
+	lighting_color = COLOR_RED
 	active_force = 35
 	active_throwforce = 30
 	force = 20
