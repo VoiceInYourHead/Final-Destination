@@ -2,12 +2,12 @@
 	display = "Lone Digger"
 	title = "Lone Digger"
 	author = "Caravan Palace"
-	source = 'sound/music/finaldesignation/CaravanPalace_LoneDigger.ogg'
+	source = 'sound/music/finaldestination/CaravanPalace_LoneDigger.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/ChildrenOfEnceladus
 	display = "Eons Might Have Passed"
-	source = 'sound/music/finaldesignation/ChildrenOfEnceladus.ogg'
+	source = 'sound/music/finaldestination/ChildrenOfEnceladus.ogg'
 	title = "Children of Enceladus"
 	author = "Space Cadets"
 	license = /decl/license/grandfathered
@@ -15,7 +15,7 @@
 
 /decl/audio/track/Dawsons_Christian
 	display = "Dawson's Christian"
-	source = 'sound/music/finaldesignation/Dawsons_Christian.ogg'
+	source = 'sound/music/finaldestination/Dawsons_Christian.ogg'
 	title = "Dawson's Christian"
 	author = "Christophe"
 	license = /decl/license/grandfathered
@@ -25,14 +25,14 @@
 	display = "Dogfighting"
 	title = "Dogfighting"
 	author = "Space Cadets"
-	source = 'sound/music/finaldesignation/Dogfighting.ogg'
+	source = 'sound/music/finaldestination/Dogfighting.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/doomsday
 	display = "Doomsday"
 	title = "Doomsday"
 	author = "Murray Gold"
-	source = 'sound/music/finaldesignation/doomsday.ogg'
+	source = 'sound/music/finaldestination/doomsday.ogg'
 	license = /decl/license/grandfathered
 	url = "https://www.youtube.com/watch?v=ZAi77XhoYck"
 
@@ -40,49 +40,56 @@
 	display = "Space Shanty"
 	title = "Sea Shanty"
 	author = "Uhh idk its from bos"
-	source = 'sound/music/finaldesignation/drunkensailor.ogg'
+	source = 'sound/music/finaldestination/drunkensailor.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/Kavinsky_Nightcall
 	display = "Nightcall"
 	title = "Nightcall"
 	author = "Kavinsky"
-	source = 'sound/music/finaldesignation/Kavinsky_Nightcall.ogg'
+	source = 'sound/music/finaldestination/Kavinsky_Nightcall.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/killallxenos
 	display = "Xenophobia"
 	title = "Kill All Xenos"
 	author = "Kavinsky"
-	source = 'sound/music/finaldesignation/killallxenos.ogg'
+	source = 'sound/music/finaldestination/killallxenos.ogg'
+	license = /decl/license/grandfathered
+
+/decl/audio/track/Nickelback_WhenWeStandTogether
+	display = "Humans"
+	title = "When We Stand Together"
+	author = "Nickelback"
+	source = 'sound/music/finaldestination/Nickelback_WhenWeStandTogether.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/REACH
 	display = "Murderbone"
 	title = "REACH"
 	author = "Motherland"
-	source = 'sound/music/finaldesignation/REACH.ogg'
+	source = 'sound/music/finaldestination/REACH.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/roundEnd
 	display = "The End Of The Story"
 	title = "roundEnd.ogg"
 	author = "Uhh idk its from infinitybay"
-	source = 'sound/music/finaldesignation/roundEnd.ogg'
+	source = 'sound/music/finaldestination/roundEnd.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/SmashIntoPieces_AllEyesOnYou
 	display = "Mercenary"
 	title = "All Eyes On You"
 	author = "Smash Into Pieces"
-	source = 'sound/music/finaldesignation/SmashIntoPieces_AllEyesOnYou.ogg'
+	source = 'sound/music/finaldestination/SmashIntoPieces_AllEyesOnYou.ogg'
 	license = /decl/license/grandfathered
 
 /decl/audio/track/WarsofExpansion
 	display = "ICCG Fleet Theme"
 	title = "Wars of Expansion"
 	author = "Space Cadets"
-	source = 'sound/music/finaldesignation/WarsofExpansion.ogg'
+	source = 'sound/music/finaldestination/WarsofExpansion.ogg'
 	license = /decl/license/grandfathered
 
 //////////////////////*  Chill Music (Gneiss)  *//////////////////////

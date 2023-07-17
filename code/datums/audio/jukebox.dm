@@ -158,6 +158,7 @@ GLOBAL_LIST_INIT(jukebox_tracks, list(
 	/decl/audio/track/doomsday,
 	/decl/audio/track/drunkensailor,
 	/decl/audio/track/Kavinsky_Nightcall,
+	/decl/audio/track/Nickelback_WhenWeStandTogether,
 	/decl/audio/track/killallxenos,
 	/decl/audio/track/REACH,
 	/decl/audio/track/roundEnd,
