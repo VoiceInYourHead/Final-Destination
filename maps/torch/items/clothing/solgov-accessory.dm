@@ -312,11 +312,6 @@ specialty pins
 	desc = "An iron pin denoting some special qualification."
 	icon_state = "fleetpin_enlisted"
 
-/obj/item/clothing/accessory/solgov/specialty/marine
-	name = "marine qualification pin"
-	desc = "A green pin denoting some special qualification."
-	icon_state = "fleetpin_marine"
-
 /obj/item/clothing/accessory/solgov/specialty/officer
 	name = "officer's qualification pin"
 	desc = "A golden pin denoting some special qualification."
@@ -719,7 +714,7 @@ ranks - fleet
 	name = "naval ranks"
 	desc = "Insignia denoting naval rank of some kind."
 	icon_state = "e1_patch"
-	overlay_state = "fleetrank_enlisted"
+	overlay_state = "fleetrank_e"
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted
@@ -790,7 +785,7 @@ ranks - fleet
 	name = "ranks (O-1 ensign)"
 	desc = "Shoulderboards denoting the rank of Ensign."
 	icon_state = "fleetrank_o1"
-	overlay_state = "fleetrank_officer"
+	overlay_state = "fleetrank_o"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/wo1_monkey
 	name = "makeshift ranks (WO-1 warrant officer 1)"
@@ -821,6 +816,7 @@ ranks - fleet
 	name = "ranks (O-6 captain)"
 	desc = "Shoulderboards denoting the rank of Captain."
 	icon_state = "fleetrank_o6"
+	overlay_state = "fleetrank_f"
 
 //flags are placeholdered and use o7 boards sprite, wip -xero
 
@@ -828,7 +824,6 @@ ranks - fleet
 	name = "ranks (O-7 commodore)"
 	desc = "Insignia denoting the rank of Commodore."
 	icon_state = "fleetrank_o7"
-	overlay_state = "fleetrank_command"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag/o8
 	name = "ranks (O-8 rear admiral)"
@@ -857,7 +852,7 @@ ranks - fleet
 /obj/item/clothing/accessory/solgov/rank/fleet/fancy/enlisted
 	name = "patch (E-1 crewman recruit)"
 	desc = "A blank patch denoting the rank of Crewman Recruit."
-	overlay_state = "fleetrank_enlisted"
+	overlay_state = "fleetrank_e"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/fancy/enlisted/e2
 	name = "device (E-2 crewman apprentice)"
@@ -967,12 +962,13 @@ ranks - fleet
 	overlay_state = "device_silver"
 
 /**************
-ranks - marines
+ranks - army
 **************/
 /obj/item/clothing/accessory/solgov/rank/army
 	name = "army ranks"
 	desc = "Insignia denoting army rank of some kind. These appear blank."
 	icon_state = "armyrank_enlisted"
+	overlay_state = "device_silver"
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted
@@ -1063,8 +1059,8 @@ ranks - marines
 	overlay_state = "device_silver"
 
 /obj/item/clothing/accessory/solgov/rank/army/officer/o3
-	name = "ranks (O-3 marine captain)"
-	desc = "Collar pin denoting the rank of Marine Captain."
+	name = "ranks (O-3 army captain)"
+	desc = "Collar pin denoting the rank of Captain. The Army one."
 	icon_state = "o3_device"
 	overlay_state = "device_silver"
 
@@ -1089,19 +1085,24 @@ ranks - marines
 	name = "ranks (O-7 brigadier general)"
 	desc = "Collar pin denoting the rank of Brigadier General."
 	icon_state = "armyrank_command"
+	overlay_state = "device_silver"
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o8
 	name = "ranks (O-8 major general)"
 	desc = "Collar pin denoting the rank of Major General."
+	overlay_state = "device_silver"
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o9
 	name = "ranks (O-9 lieutenant general)"
 	desc = "Collar pin denoting the rank of Lieutenant general."
+	overlay_state = "device_silver"
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o10
 	name = "ranks (O-10 general)"
 	desc = "Collar pin denoting the rank of General."
+	overlay_state = "device_silver"
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o10_alt
 	name = "ranks (O-10 general of the corps)"
 	desc = "Collar pin denoting the rank of General of the Corps."
+	overlay_state = "device_silver"

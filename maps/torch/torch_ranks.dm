@@ -251,7 +251,7 @@
 		/datum/mil_rank/army/e1,
 		/datum/mil_rank/army/e2,
 		/datum/mil_rank/army/e3,
-		///datum/mil_rank/army/e4,
+		/datum/mil_rank/army/e4,
 		/datum/mil_rank/army/e4_alt,
 		/datum/mil_rank/army/e5,
 		/datum/mil_rank/army/e6,
@@ -260,8 +260,7 @@
 		/datum/mil_rank/army/e8,
 		/datum/mil_rank/army/e8_alt,
 		/datum/mil_rank/army/e9,
-		/datum/mil_rank/army/e9_alt1,
-		/datum/mil_rank/army/e9_alt2,
+		/datum/mil_rank/army/e9_alt,
 		/datum/mil_rank/army/e9_meme,
 		/datum/mil_rank/army/o1,
 		/datum/mil_rank/army/o2,
@@ -280,7 +279,7 @@
 		/datum/mil_rank/army/e1,
 		/datum/mil_rank/army/e2,
 		/datum/mil_rank/army/e3,
-		///datum/mil_rank/army/e4,
+		/datum/mil_rank/army/e4,
 		/datum/mil_rank/army/e4_alt,
 		/datum/mil_rank/army/e5,
 		/datum/mil_rank/army/e6,
@@ -288,8 +287,7 @@
 		/datum/mil_rank/army/e8,
 		/datum/mil_rank/army/e8_alt,
 		/datum/mil_rank/army/e9,
-		/datum/mil_rank/army/e9_alt1,
-		/datum/mil_rank/army/e9_alt2,
+		/datum/mil_rank/army/e9_alt,
 		/datum/mil_rank/army/o1,
 		/datum/mil_rank/army/o2,
 		/datum/mil_rank/army/o3,
@@ -649,7 +647,7 @@
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e9)
 	sort_order = 9
 
-/datum/mil_rank/army/e9_alt1
+/datum/mil_rank/army/e9_alt
 	name = "Command Sergeant Major"
 	name_short = "CSgM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt1)
