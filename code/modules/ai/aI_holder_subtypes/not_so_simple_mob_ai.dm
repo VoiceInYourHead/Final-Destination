@@ -54,7 +54,7 @@
 	var/init_speak_chance = 1				// If the mob's saylist is empty, nothing will happen.
 
 	cooperative = FALSE
-	var/init_call_distance = 7
+	var/init_call_distance = 25
 
 	can_flee = TRUE
 	flee_when_dying = TRUE
@@ -599,8 +599,9 @@
 
 	if(ai_holder.cooperative)
 		turns_since_pack_attach++
-		if(turns_since_pack_attach > 30)
+		if(turns_since_pack_attach > 20)
 			attach_to_pack()
+			turns_since_pack_attach = 0
 
 		if(pack_leader)
 			friends = pack_leader.friends

@@ -92,13 +92,13 @@
 		if (!can_attack(their_target, vision_required = FALSE))
 			ai_log("help_requested() : Help requested by [friend] but we don't want to fight their target.", AI_LOG_DEBUG)
 			return
-		if (get_dist(holder, friend) <= follow_distance)
-			ai_log("help_requested() : Help requested by [friend] but we're already here.", AI_LOG_DEBUG)
-			return
+//		if (get_dist(holder, friend) <= follow_distance)
+//			ai_log("help_requested() : Help requested by [friend] but we're already here.", AI_LOG_DEBUG)
+//			return
 		if (get_dist(holder, friend) <= vision_range) // Within our sight.
 			ai_log("help_requested() : Help requested by [friend], and within target sharing range.", AI_LOG_DEBUG)
 			last_conflict_time = world.time // So we attack immediately and not threaten.
-			next_received_help_request  = world.time + 15 SECONDS
+			next_received_help_request  = world.time + 5 SECONDS
 			give_target(their_target, urgent = TRUE) // This will set us to the appropiate stance.
 			ai_log("help_requested() : Given target [target] by [friend]. Exiting", AI_LOG_DEBUG)
 			return
@@ -108,5 +108,5 @@
 	ai_log("help_requested() : Help requested by [friend], going to go to friend.", AI_LOG_DEBUG)
 	if (their_target)
 		add_attacker(their_target) // We won't wait and 'warn' them while they're stabbing our ally
-	set_follow(friend, 10 SECONDS)
+	give_destination(get_turf(their_target))
 	ai_log("help_requested() : Exiting.", AI_LOG_DEBUG)
