@@ -101,6 +101,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/id_hud_icons = 'icons/mob/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
 
 	var/num_exoplanets = 0
+	var/list/banned_exoplanet_types = list(/obj/effect/overmap/visitable/sector/exoplanet/urban)
 //	var/num_junkyards = 0
 	var/list/planet_size  //dimensions of planet zlevel, defaults to world size. Due to how maps are generated, must be (2^n+1) e.g. 17,33,65,129 etc. Map will just round up to those if set to anything other.
 	var/away_site_budget = 0
@@ -404,13 +405,12 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	if(!use_overmap)
 		return
 
-	for(var/i = 1 to i < num_exoplanets)
-		var/exoplanet_type = pick(subtypesof(/obj/effect/overmap/visitable/sector/exoplanet))
-		if(exoplanet_type == /obj/effect/overmap/visitable/sector/exoplanet/urban) // до лучших времён
-			continue
+	for(var/i = 0, i < num_exoplanets, i++)
+		var/list/exoplanet_types_to_pick = subtypesof(/obj/effect/overmap/visitable/sector/exoplanet)
+		exoplanet_types_to_pick -= banned_exoplanet_types
+		var/exoplanet_type = pick(exoplanet_types_to_pick)
 		var/obj/effect/overmap/visitable/sector/exoplanet/new_planet = new exoplanet_type(null, planet_size[1], planet_size[2])
 		new_planet.build_level()
-		i++
 
 /*/datum/map/proc/build_junkyards()
 	if(!use_overmap)
