@@ -7,7 +7,7 @@ PROCESSING_SUBSYSTEM_DEF(psi)
 
 	var/list/faculties_by_id =        list()
 	var/list/faculties_by_name =      list()
-	var/list/faculties_by_name_suka = list()
+	var/list/faculties_by_name_new =  list()
 	var/list/all_aura_images =        list()
 	var/list/all_psi_complexes =      list()
 	var/list/psi_dampeners =          list()
@@ -27,7 +27,7 @@ PROCESSING_SUBSYSTEM_DEF(psi)
 		faculties_by_id[faculty.id] = faculty
 		faculties_by_name[faculty.name] = faculty
 		faculties_by_intent[faculty.associated_intent] = faculty.id
-		faculties_by_name_suka[faculty.name] = faculty.id
+		faculties_by_name_new[faculty.name] = faculty.id
 
 	var/list/powers = decls_repository.get_decls_of_subtype(/decl/psionic_power)
 	for(var/ptype in powers)

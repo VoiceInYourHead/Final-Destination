@@ -54,13 +54,13 @@
 	return FALSE
 
 /decl/psionic_power/psychokinesis/gravigeddon
-	name =           "Gravigeddon"
-	cost =           60
+	name =           "Repulse"
+	cost =           30
 	cooldown =       150
 	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone near you in a random direction."
+	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone from you."
 
 /decl/psionic_power/psychokinesis/gravigeddon/invoke(var/mob/living/user, var/mob/living/target)
 	if(!(user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
@@ -77,9 +77,9 @@
 			if(prob(20) && iscarbon(M))
 				var/mob/living/carbon/C = M
 				if(C.can_feel_pain())
-					M.emote("scream")
-			if(!M.anchored)
-				to_chat(M, SPAN_DANGER("A violent force slams into you, pushing you away!"))
+					C.emote("scream")
+			if(!M.anchored && !M.buckled)
+				to_chat(M, SPAN_DANGER("A violent force slams into your body, pushing you away!"))
 				new /obj/effect/temporary(get_turf(M),4, 'icons/effects/effects.dmi', "smash")
-				M.throw_at(get_edge_target_turf(M, pick(GLOB.alldirs)), pk_rank*1, pk_rank*2, user)
+				M.throw_at(get_edge_target_turf(M, get_dir(user, M)), pk_rank*2, pk_rank*2, user)
 		return TRUE

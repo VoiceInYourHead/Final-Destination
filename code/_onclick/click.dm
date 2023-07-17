@@ -237,19 +237,19 @@
 
 	if(psi)
 		if(a_intent == I_HURT)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Cryokinesis"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Electronics"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Energistics"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psychoballistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Cryokinesis"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Electronics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Energistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Psychoballistics"]), A)
 		if(a_intent == I_GRAB)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Manifestation"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Psi-Archery"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Psychokinesis"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Manifestation"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Psi-Archery"]), A)
 		if(a_intent == I_DISARM)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Consciousness"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Coercion"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Consciousness"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Coercion"]), A)
 		if(a_intent == I_HELP)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_suka["Redaction"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Redaction"]), A)
 	return 1
 
 /*
@@ -271,21 +271,21 @@
 /mob/living/RangedAttack(var/atom/A, var/params)
 	if(psi)
 		if(a_intent == I_HURT)
-			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Energistics"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Psychoballistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Energistics"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Psychoballistics"]), A)
 		if(a_intent == I_GRAB)
-			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Psychokinesis"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Psychokinesis"]), A)
 		if(a_intent == I_DISARM)
-			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Coercion"]), A)
-			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_suka["Consciousness"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Coercion"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Consciousness"]), A)
 	..()
 
 /mob/living/proc/check_psi_grab(var/obj/item/grab/grab)
 	if(psi && ismob(grab.affecting))
 		if(a_intent == I_DISARM)
-			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_suka["Consciousness"]), grab.affecting)
+			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Consciousness"]), grab.affecting)
 		if(a_intent == I_HELP)
-			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_suka["Redaction"]), grab.affecting)
+			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Redaction"]), grab.affecting)
 
 /*
 	Restrained ClickOn
@@ -301,7 +301,9 @@
 	Only used for swapping hands
 */
 /mob/proc/MiddleClickOn(var/atom/A)
-	swap_hand()
+//	swap_hand()
+	pointed(A)
+	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	return
 
 // In case of use break glass
@@ -384,7 +386,6 @@
 /mob/proc/CtrlAltClickOn(var/atom/A)
 	if(A.CtrlAltClick(src))
 		return
-	pointed(A)
 
 /atom/proc/CtrlAltClick(var/mob/user)
 	return
