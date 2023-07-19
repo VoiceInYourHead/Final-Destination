@@ -54,7 +54,7 @@
 	dress_gloves = /obj/item/clothing/gloves/white
 
 	dress_extra = list(/obj/item/clothing/accessory/solgov/ec_scarf)
-/*
+
 /decl/hierarchy/mil_uniform/army
 	name = "Master army outfit"
 	hierarchy_type = /decl/hierarchy/mil_uniform/army
@@ -66,11 +66,11 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban
 	utility_shoes = /obj/item/clothing/shoes/dutyboots
 	utility_hat = /obj/item/clothing/head/solgov/utility/army
-	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green, /obj/item/clothing/suit/storage/solgov/utility/army/navy, /obj/item/clothing/suit/storage/solgov/utility/army, /obj/item/clothing/head/ushanka/solgov/army, /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army)
+	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green, /obj/item/clothing/head/ushanka/solgov/army, /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army)
 
 	service_under = /obj/item/clothing/under/solgov/service/army
 	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
-	service_over = null
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army
 	service_shoes = /obj/item/clothing/shoes/dress
 	service_hat = /obj/item/clothing/head/solgov/service/army
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison)
@@ -81,7 +81,7 @@
 	dress_shoes = /obj/item/clothing/shoes/dress
 	dress_hat = /obj/item/clothing/head/solgov/dress/army
 	dress_gloves = /obj/item/clothing/gloves/white
-*/
+
 /decl/hierarchy/mil_uniform/fleet
 	name = "Master fleet outfit"
 	hierarchy_type = /decl/hierarchy/mil_uniform/fleet

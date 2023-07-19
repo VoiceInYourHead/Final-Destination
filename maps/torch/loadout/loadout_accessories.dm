@@ -107,6 +107,12 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	allowed_branches = list(/datum/mil_branch/fleet)
 
+/datum/gear/accessory/armypatch
+	display_name = "army patch"
+	path = /obj/item/clothing/accessory/solgov/army_patch
+	flags = GEAR_HAS_TYPE_SELECTION
+	allowed_branches = list(/datum/mil_branch/army)
+
 /datum/gear/accessory/armband_ma
 	display_name = "master at arms brassard"
 	path = /obj/item/clothing/accessory/armband/solgov/ma

@@ -70,6 +70,22 @@
 	desc = "A grey utility cover bearing the crest of the SCG Fleet."
 	icon_state = "greyutility"
 
+/obj/item/clothing/head/solgov/utility/army/green
+	name = "army green utility cover"
+	desc = "A green utility cover bearing the crest of the SCG Army."
+	icon_state = "greenutility"
+
+/obj/item/clothing/head/solgov/utility/army/tan
+	name = "army tan utility cover"
+	desc = "A tan utility cover bearing the crest of the SCG Army."
+	icon_state = "tanutility"
+
+/obj/item/clothing/head/solgov/utility/army/urban
+	name = "army urban utility cover"
+	desc = "A grey utility cover bearing the crest of the SCG Army."
+	icon_state = "greyutility"
+
+
 //Service
 
 /obj/item/clothing/head/solgov/service
@@ -105,23 +121,23 @@
 	icon_state = "greydresscap_senior"
 
 /obj/item/clothing/head/solgov/service/army
-	name = "marine wheel cover"
-	desc = "A green service uniform cover with an SCG Marine crest."
+	name = "army wheel cover"
+	desc = "A green service uniform cover with an SCG Army crest."
 	icon_state = "greenwheelcap"
 
 /obj/item/clothing/head/solgov/service/army/command
-	name = "marine officer's wheel cover"
-	desc = "A green service uniform cover with an SCG Marine crest and gold stripe."
+	name = "army officer's wheel cover"
+	desc = "A green service uniform cover with an SCG Army crest and gold stripe."
 	icon_state = "greenwheelcap_com"
 
 /obj/item/clothing/head/solgov/service/army/garrison
-	name = "marine garrison cap"
+	name = "army garrison cap"
 	desc = "A green garrison cap belonging to the SCG Marine."
 	icon_state = "greengarrisoncap"
 
 /obj/item/clothing/head/solgov/service/army/garrison/command
-	name = "marine officer's garrison cap"
-	desc = "A green garrison cap belonging to the SCG Marine. This one has a gold pin."
+	name = "army officer's garrison cap"
+	desc = "A green garrison cap belonging to the SCG Army. This one has a gold pin."
 	icon_state = "greengarrisoncap_com"
 
 /obj/item/clothing/head/solgov/service/army/campaign
@@ -156,13 +172,13 @@
 	icon_state = "whitepeakcap_com"
 
 /obj/item/clothing/head/solgov/dress/army
-	name = "marine dress wheel cover"
-	desc = "A white dress uniform cover with an SCG Marine crest."
+	name = "army dress wheel cover"
+	desc = "A white dress uniform cover with an SCG Army crest."
 	icon_state = "whitewheelcap"
 
 /obj/item/clothing/head/solgov/dress/army/command
-	name = "marine officer's dress wheel cover"
-	desc = "A white dress uniform cover with an SCG Marine crest and gold stripe."
+	name = "army officer's dress wheel cover"
+	desc = "A white dress uniform cover with an SCG Army crest and gold stripe."
 	icon_state = "whitewheelcap_com"
 
 //Berets
@@ -225,51 +241,46 @@
 	icon_state = "beret_greensilver"
 
 /obj/item/clothing/head/beret/solgov/army
-	name = "marine beret"
-	desc = "A green beret belonging to the SCG Marine. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_infantry"
+	name = "army beret"
+	desc = "A green beret with a silver SCG Army crest. For personnel that are more inclined towards style than safety."
+	icon_state = "beret_inf"
 	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 
 /obj/item/clothing/head/beret/solgov/army/orbital
-	name = "orbital assault marine beret"
-	desc = "A blue beret denoting orbital assault marine training. For helljumpers that are more inclined towards style than safety."
-	icon_state = "beret_army_airborne"
+	name = "orbital assault beret"
+	desc = "A red beret denoting orbital assault training. For helljumpers that are more inclined towards style than safety."
+	icon_state = "beret_odst"
 
-/obj/item/clothing/head/beret/solgov/army/elite
-	name = "elite marine beret"
-	desc = "A blue beret with Space Shark denoting special training of Space Carps, an elite secret team consisting of members both Marine Corps and Fleet. They have been declassified after the end of War on Gaia, denouncing their war crimes and failures. For operatives that are more inclined towards style than safety."
-	icon_state = "beret_blue"
+/obj/item/clothing/head/beret/solgov/army/firstinf
+	name = "first infantry beret"
+	desc = "A black beret carrying insignia of SCG Army First Infantry Division, the current active Earth PDF and Gaia force. For infantrymen that are more inclined towards style than safety."
+	icon_state = "beret_firstinf"
 
 /obj/item/clothing/head/beret/solgov/army/airborne
-	name = "airborne marine beret"
-	desc = "An SCG Marine beret carrying insignia of the Airborne Division. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_airborne"
+	name = "first airborne beret"
+	desc = "A red beret carrying insignia of SCG Army First Airborne Division, the main planetary air unit. For pilots that are more inclined towards style than safety."
+	icon_state = "beret_air"
 
-/obj/item/clothing/head/beret/solgov/army/infantry
-	name = "marine beret"
-	desc = "An SCG Marine beret carrying insignia of the Marine Corps. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_infantry"
+/obj/item/clothing/head/beret/solgov/army/secondinf
+	name = "second infantry beret"
+	desc = "A black beret carrying insignia of SCG Army Second Infantry Division, the main peacekeeping and excercise unit off-Gaia. For infantrymen that are more inclined towards style than safety."
+	icon_state = "beret_secondinf"
 
-/obj/item/clothing/head/beret/solgov/army/logistical_supply
-	name = "logistical supply marine beret"
-	desc = "An SCG Marine beret carrying insignia of the Logistical Marine Support Division. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_logistical supply"
+/obj/item/clothing/head/beret/solgov/army/firstcav
+	name = "first cavalry beret"
+	desc = "An olive beret carrying insignia of SCG Army First Cavalry Division, the mechanized unit tasked with assisting both infantry divisions. For mech pilots that are more inclined towards style than safety."
+	icon_state = "beret_firstcav"
 
-/obj/item/clothing/head/beret/solgov/army/engisapper
-	name = "engineering-sapper marine beret"
-	desc = "An SCG Marine beret carrying insignia of the Engineering-Sapper Marine Division. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_engisapper"
+/obj/item/clothing/head/beret/solgov/army/firstarm
+	name = "first armored beret"
+	desc = "An olive beret carrying insignia of SCG Army First Armored Division, the smallest active unit tasked with heavy combat support. For tank crews that are more inclined towards style than safety."
+	icon_state = "beret_firstarm"
 
-/obj/item/clothing/head/beret/solgov/army/command
-	name = "command marine beret"
-	desc = "An SCG Marine beret with a golden crest. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_command"
-
-/obj/item/clothing/head/beret/solgov/army/medical
-	name = "medical army beret"
-	desc = "An SCG Marine beret with a red crest. For personnel that are more inclined towards style than safety."
-	icon_state = "beret_army_medical"
+/obj/item/clothing/head/beret/solgov/army/maritime
+	name = "army maritime corps beret"
+	desc = "An olive beret carrying insignia of SCG Army Maritime Corps, the waterborne navy stationed on Gaia. For sailors that are more inclined towards style than safety."
+	icon_state = "beret_maritime"
 
 /obj/item/clothing/head/beret/solgov/expedition
 	name = "expeditionary beret"
@@ -418,13 +429,13 @@
 
 /obj/item/clothing/head/ushanka/solgov/army
 	name = "army fur hat"
-	desc = "An SCG Marine synthfur-lined hat for operating in cold environments."
+	desc = "An SCG Army synthfur-lined hat for operating in cold environments."
 	icon_state = "barushankadown"
 	icon_state_up = "barushankaup"
 
 /obj/item/clothing/head/ushanka/solgov/army/green
 	name = "green army fur hat"
-	desc = "An SCG Marine synthfur-lined hat for operating in cold environments."
+	desc = "An SCG Army synthfur-lined hat for operating in cold environments."
 	icon_state = "arushankadown"
 	icon_state_up = "mcushankaup"
 

@@ -21,9 +21,9 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
 	shoes = /obj/item/clothing/shoes/dutyboots
 
-/decl/hierarchy/outfit/job/torch/crew/service/janitor/marine
-	name = OUTFIT_JOB_NAME("Sanitation Technician - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+/decl/hierarchy/outfit/job/torch/crew/service/janitor/army
+	name = OUTFIT_JOB_NAME("Sanitation Technician - Army")
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/torch/crew/service/cook
@@ -44,25 +44,27 @@
 	name = OUTFIT_JOB_NAME("Cook - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
 	shoes = /obj/item/clothing/shoes/dutyboots
-/*
+
 /decl/hierarchy/outfit/job/torch/crew/service/cook/army
-	name = OUTFIT_JOB_NAME("Cook - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/service
+	name = OUTFIT_JOB_NAME("Cook - Army")
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 	shoes = /obj/item/clothing/shoes/dutyboots
-*/
+
 /decl/hierarchy/outfit/job/torch/crew/service/crewman
 	name = OUTFIT_JOB_NAME("Crewman")
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/torch/crew)
 	pda_type = /obj/item/modular_computer/pda
+
 /decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet
 	name = OUTFIT_JOB_NAME("Crewman - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
-/decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet/marine
-	name = OUTFIT_JOB_NAME("Crewman - Marine")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+
+/decl/hierarchy/outfit/job/torch/crew/service/crewman/army
+	name = OUTFIT_JOB_NAME("Crewman - Army")
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban/service
 
 /decl/hierarchy/outfit/job/torch/crew/service/chief_steward
 	name = OUTFIT_JOB_NAME("Chief Steward")

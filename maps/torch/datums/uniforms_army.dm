@@ -1,6 +1,5 @@
-/* fuck that shit there's too much army uniform paths to delete
 /decl/hierarchy/mil_uniform/army/com //Can only be officers
-	name = "Marine command"
+	name = "Army command"
 	departments = COM
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/command
@@ -8,13 +7,12 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/command,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -25,7 +23,7 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/eng
-	name = "Marine engineering"
+	name = "Army engineering"
 	departments = ENG
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -33,20 +31,18 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/engineering,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/engineering,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/engineering,
 						/obj/item/clothing/gloves/thick)
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/engineering
 
 
 /decl/hierarchy/mil_uniform/army/eng/sword
-	name = "Marine NCO sword engineering"
+	name = "Army NCO sword engineering"
 	min_rank = 4
 
 	dress_extra = list(/obj/item/material/sword/replica/officersword/army)
 
 /decl/hierarchy/mil_uniform/army/eng/officer
-	name = "Marine engineering CO"
+	name = "Army engineering CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -54,12 +50,11 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/engineering,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/engineering/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/engineering/command,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -70,30 +65,28 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/eng/officer/com //Can only be officers
-	name = "Marine engineering command"
+	name = "Army engineering command"
 	departments = ENG|COM
 
 /decl/hierarchy/mil_uniform/army/sec
-	name = "Marine security"
+	name = "Army security"
 	departments = SEC
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/security
 	utility_extra = list(/obj/item/clothing/under/solgov/utility/army/security,
 						/obj/item/clothing/head/ushanka/solgov/army/green,
-						/obj/item/clothing/suit/storage/solgov/utility/army/security,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/security,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
 /decl/hierarchy/mil_uniform/army/sec/sword
-	name = "Marine NCO sword security"
+	name = "Army NCO sword security"
 	min_rank = 4
 
 	dress_extra = list(/obj/item/material/sword/replica/officersword/army)
 
 /decl/hierarchy/mil_uniform/army/sec/officer
-	name = "Marine security CO"
+	name = "Army security CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -101,12 +94,11 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/security,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/security/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/security/command,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -117,11 +109,11 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/sec/officer/com //Can only be officers
-	name = "Marine security command"
+	name = "Army security command"
 	departments = SEC|COM
 
 /decl/hierarchy/mil_uniform/army/med
-	name = "Marine medical"
+	name = "Army medical"
 	departments = MED
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/medical
@@ -130,18 +122,16 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/medical,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/medical,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/medical,
 						/obj/item/clothing/gloves/thick)
 
 /decl/hierarchy/mil_uniform/army/med/sword
-	name = "Marine NCO sword medical"
+	name = "Army NCO sword medical"
 	min_rank = 4
 
 	dress_extra = list(/obj/item/material/sword/replica/officersword/army)
 
 /decl/hierarchy/mil_uniform/army/med/officer
-	name = "Marine medical CO"
+	name = "Army medical CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -149,12 +139,11 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/medical,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/medical/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/medical/command,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -165,11 +154,11 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/med/officer/com //Can only be officers
-	name = "Marine medical command"
+	name = "Army medical command"
 	departments = MED|COM
 
 /decl/hierarchy/mil_uniform/army/sup
-	name = "Marine supply"
+	name = "Army supply"
 	departments = SUP
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/supply
@@ -178,18 +167,16 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/supply,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/supply,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/supply,
 						/obj/item/clothing/gloves/thick)
 
 /decl/hierarchy/mil_uniform/army/sup/sword
-	name = "Marine NCO sword supply"
+	name = "Army NCO sword supply"
 	min_rank = 4
 
 	dress_extra = list(/obj/item/material/sword/replica/officersword/army)
 
 /decl/hierarchy/mil_uniform/army/sup/officer
-	name = "Marine supply CO"
+	name = "Army supply CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -197,12 +184,11 @@
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/supply,
 						/obj/item/clothing/head/solgov/utility/army/urban,
-						/obj/item/clothing/suit/storage/solgov/utility/army/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/command,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -213,7 +199,7 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/srv
-	name = "Marine service"
+	name = "Army service"
 	departments = SRV
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/service
@@ -221,19 +207,17 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/service,
-						/obj/item/clothing/suit/storage/solgov/utility/army/service,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/service,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
 /decl/hierarchy/mil_uniform/army/srv/sword
-	name = "Marine NCO sword service"
+	name = "Army NCO sword service"
 	min_rank = 4
 
 	dress_extra = list(/obj/item/material/sword/replica/officersword/army)
 
 /decl/hierarchy/mil_uniform/army/srv/officer
-	name = "Marine service CO"
+	name = "Army service CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -244,8 +228,9 @@
 						/obj/item/clothing/gloves/thick)
 
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -256,7 +241,7 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/exp
-	name = "Marine exploration"
+	name = "Army exploration"
 	departments = EXP
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/exploration
@@ -264,20 +249,18 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/exploration,
-						/obj/item/clothing/suit/storage/solgov/utility/army/exploration,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/exploration,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
 
 /decl/hierarchy/mil_uniform/army/exp/sword
-	name = "Marine NCO sword exploration"
+	name = "Army NCO sword exploration"
 	min_rank = 4
 
 	dress_extra = list(/obj/item/material/sword/replica/officersword/army)
 
 /decl/hierarchy/mil_uniform/army/exp/officer
-	name = "Marine exploration CO"
+	name = "Army exploration CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -287,8 +270,9 @@
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -299,7 +283,7 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/spt
-	name = "Marine command support"
+	name = "Army command support"
 	departments = SPT
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/command
@@ -307,8 +291,6 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/command,
-						/obj/item/clothing/suit/storage/solgov/utility/army/navy/command,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -317,7 +299,7 @@
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
 /decl/hierarchy/mil_uniform/army/spt/officer
-	name = "Marine command support CO"
+	name = "Army command support CO"
 	min_rank = 11
 
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
@@ -327,8 +309,9 @@
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
-	service_under = /obj/item/clothing/under/solgov/service/army/command
-	service_skirt = /obj/item/clothing/under/solgov/service/army/command/skirt
+	service_under = /obj/item/clothing/under/solgov/service/army
+	service_skirt = /obj/item/clothing/under/solgov/service/army/skirt
+	service_over = /obj/item/clothing/suit/storage/solgov/service/army/command
 	service_hat = /obj/item/clothing/head/solgov/service/army/command
 	service_extra = list(/obj/item/clothing/head/solgov/service/army/garrison/command)
 
@@ -337,4 +320,3 @@
 	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
-*/

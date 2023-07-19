@@ -139,6 +139,38 @@ patches
 	desc = "A tactical shoulder patch carrying insignia of Fifth Fleet, the Quick Reaction Force, recently formed and outfited with last tech."
 	icon_state = "fleetpatch5"
 
+/obj/item/clothing/accessory/solgov/army_patch
+	name = "\improper First Infantry Division patch"
+	desc = "A fancy shoulder patch carrying insignia of First Infantry Division, the PDF of Earth and main force on Gaia."
+	icon_state = "armypatch1"
+	on_rolled = list("down" = "none")
+	slot = ACCESSORY_SLOT_INSIGNIA
+
+/obj/item/clothing/accessory/solgov/army_patch/secondinf
+	name = "\improper Second Infantry Division patch"
+	desc = "A hardy shoulder patch carrying insignia of Second Infantry Division, often deployed as peacekeepers and stationed in many places."
+	icon_state = "armypatch2"
+
+/obj/item/clothing/accessory/solgov/army_patch/firstcav
+	name = "\improper First Cavalry Division patch"
+	desc = "A tacticool shoulder patch carrying insignia of First Cavalry Division, the mechanized support arm of the Army."
+	icon_state = "armypatch3"
+
+/obj/item/clothing/accessory/solgov/army_patch/firstarm
+	name = "\improper First Armored Division patch"
+	desc = "A menacing shoulder patch carrying insignia of First Armored Division, the depreciated and partially inactive support force."
+	icon_state = "armypatch4"
+
+/obj/item/clothing/accessory/solgov/army_patch/airborne
+	name = "\improper First Infantry Division patch"
+	desc = "A bleached shoulder patch carrying insignia of First Airborne Division, the main airborne force of Army."
+	icon_state = "armypatch5"
+
+/obj/item/clothing/accessory/solgov/army_patch/maritime
+	name = "\improper Maritime Corps patch"
+	desc = "An eyesoring shoulder patch carrying insignia of Army Maritime Corps, the waterborne unit currently on Gaia."
+	icon_state = "armypatch6"
+
 /*****
 scarves
 *****/
