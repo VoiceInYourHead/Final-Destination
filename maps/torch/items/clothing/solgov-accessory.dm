@@ -162,8 +162,8 @@ patches
 	icon_state = "armypatch4"
 
 /obj/item/clothing/accessory/solgov/army_patch/airborne
-	name = "\improper First Infantry Division patch"
-	desc = "A bleached shoulder patch carrying insignia of First Airborne Division, the main airborne force of Army."
+	name = "\improper First Airborne Division patch"
+	desc = "A bleached shoulder patch carrying insignia of First Airborne Division, the main air unit of Army."
 	icon_state = "armypatch5"
 
 /obj/item/clothing/accessory/solgov/army_patch/maritime

@@ -7,6 +7,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/command,
+						/obj/item/clothing/under/solgov/utility/army/tan/command,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -30,6 +31,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/engineering,
+						/obj/item/clothing/under/solgov/utility/army/tan/engineering,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/engineering
@@ -49,6 +51,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/engineering,
+						/obj/item/clothing/under/solgov/utility/army/tan/engineering,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -74,6 +77,7 @@
 
 	utility_under = /obj/item/clothing/under/solgov/utility/army/urban/security
 	utility_extra = list(/obj/item/clothing/under/solgov/utility/army/security,
+						/obj/item/clothing/under/solgov/utility/army/tan/security,
 						/obj/item/clothing/head/ushanka/solgov/army/green,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/head/solgov/utility/army/urban,
@@ -92,6 +96,7 @@
 	utility_extra = list(/obj/item/clothing/head/ushanka/solgov/army/green,
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
+						/obj/item/clothing/under/solgov/utility/army/tan/security,
 						/obj/item/clothing/under/solgov/utility/army/security,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
@@ -121,6 +126,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/medical,
+						/obj/item/clothing/under/solgov/utility/army/tan/medical,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -138,6 +144,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/medical,
+						/obj/item/clothing/under/solgov/utility/army/tan/medical,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -166,6 +173,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/supply,
+						/obj/item/clothing/under/solgov/utility/army/tan/supply,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -183,6 +191,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/supply,
+						/obj/item/clothing/under/solgov/utility/army/tan/supply,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -207,6 +216,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/service,
+						/obj/item/clothing/under/solgov/utility/army/tan/service,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -224,6 +234,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/service,
+						/obj/item/clothing/under/solgov/utility/army/tan/service,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -249,6 +260,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/exploration,
+						/obj/item/clothing/under/solgov/utility/army/tan/exploration,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -267,6 +279,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/exploration,
+						/obj/item/clothing/under/solgov/utility/army/tan/exploration,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
@@ -306,6 +319,7 @@
 						/obj/item/clothing/head/ushanka/solgov/army,
 						/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/army,
 						/obj/item/clothing/under/solgov/utility/army/command,
+						/obj/item/clothing/under/solgov/utility/army/tan/command,
 						/obj/item/clothing/head/solgov/utility/army/urban,
 						/obj/item/clothing/gloves/thick)
 
