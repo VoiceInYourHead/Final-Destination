@@ -886,7 +886,7 @@
 "vt" = (/turf/simulated/wall/r_titanium,/area/shuttle/escape_pod10/station)
 "vv" = (/obj/machinery/door/airlock/external{frequency = 1380; icon_state = "closed"; id_tag = "escape_pod_10_hatch"; locked = 1; name = "Escape Pod Five Hatch"},/turf/simulated/floor/tiled/steel_ridged,/area/shuttle/escape_pod10/station)
 "vy" = (/obj/machinery/door/blast/regular{dir = 8; id_tag = "bsd"; name = "Drive Containment"},/turf/simulated/floor/bluegrid,/area/engineering/bluespace)
-"vz" = (/obj/structure/ladder,/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/tiled/techfloor,/area/maintenance/seconddeck/foreport)
+"vz" = (/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/techfloor,/area/maintenance/seconddeck/foreport)
 "vA" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/alarm{dir = 1; pixel_y = -22},/turf/simulated/floor/tiled/techfloor,/area/engineering/drone_fabrication)
 "vB" = (/obj/machinery/disposal,/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/disposalpipe/trunk{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/engineering/drone_fabrication)
 "vC" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/machinery/light/small,/obj/machinery/firealarm{dir = 1; pixel_x = 0; pixel_y = -24},/turf/simulated/floor/tiled/techfloor,/area/engineering/drone_fabrication)
