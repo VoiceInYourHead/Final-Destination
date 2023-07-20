@@ -161,6 +161,31 @@ var/list/ghost_traps
 		return
 	P.UpdateNames()
 
+/********************
+* Survivor *
+*********************/
+/datum/ghosttrap/survivor
+	object = "space sleeper"
+	ghost_trap_message = "They are occupying a space sleeper now."
+	ghost_trap_role = "Space Sleeper"
+	list_as_special_role = TRUE
+
+/datum/ghosttrap/survivor/welcome_candidate(mob/target)
+	to_chat(target, SPAN_BOLD("Вы - счастливчик, которому повезло оказаться найденным среди этого бескрайнего звёздного моря."))
+	to_chat(target, "Интересно, сколько вы спали?...")
+	var/mob/living/carbon/human/joinable/P = target.loc
+	if (!istype(P))
+		return
+	P.visible_message(SPAN_ITALIC("[P] начинает жадно глотать воздух!"), range = 3)
+	P.update_icon()
+
+/datum/ghosttrap/survivor/set_new_name(mob/target)
+	. = ..()
+	var/mob/living/carbon/human/joinable/P = target.loc
+	if (!istype(P))
+		return
+	P.UpdateNames()
+
 /***********************************
 * Diona pods and walking mushrooms *
 ***********************************/
