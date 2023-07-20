@@ -18,22 +18,22 @@
 	gear_tweaks += new/datum/gear_tweak/path(berets)
 
 /datum/gear/head/armyberet
-	display_name = "marine beret selection"
-	description = "A beret denoting service in one of the branches within the SCG Marine Corps."
+	display_name = "army beret selection"
+	description = "A beret denoting service in one of the divisions within the SCG Army."
 	path = /obj/item/clothing/head/beret/solgov/army
 	allowed_branches = list(/datum/mil_branch/army)
 
 /datum/gear/head/armyberet/New()
 	..()
 	var/berets = list()
-	//berets["marine beret"] = /obj/item/clothing/head/beret/solgov/army // depreciated because it's ugly as fuck and almost indentical to .../infantry beret
-	//berets["airborne army beret"] = /obj/item/clothing/head/beret/solgov/army/airborne //unused for now
-	berets["marine beret"] = /obj/item/clothing/head/beret/solgov/army/infantry // old infantry beret
-	berets["orbital assaul marine beret"] = /obj/item/clothing/head/beret/solgov/army/orbital
-	berets["logistical supply marine beret"] = /obj/item/clothing/head/beret/solgov/army/logistical_supply
-	berets["engineering-sapper marine beret"] = /obj/item/clothing/head/beret/solgov/army/engisapper
-	berets["command marine beret"] = /obj/item/clothing/head/beret/solgov/army/command
-	berets["medical marine beret"] = /obj/item/clothing/head/beret/solgov/army/medical
+	berets["army beret"] = /obj/item/clothing/head/beret/solgov/army //please tell me we're gonna remove them
+	berets["first airborne beret"] = /obj/item/clothing/head/beret/solgov/army/airborne
+	berets["orbital assault beret"] = /obj/item/clothing/head/beret/solgov/army/orbital
+	berets["first infantry beret"] = /obj/item/clothing/head/beret/solgov/army/firstinf
+	berets["second infantry beret"] = /obj/item/clothing/head/beret/solgov/army/secondinf
+	berets["first cavalry beret"] = /obj/item/clothing/head/beret/solgov/army/firstcav
+	berets["first armored beret"] = /obj/item/clothing/head/beret/solgov/army/firstarm
+	berets["maritime corps beret"] = /obj/item/clothing/head/beret/solgov/army/maritime
 	gear_tweaks += new/datum/gear_tweak/path(berets)
 
 /datum/gear/head/veteranhat

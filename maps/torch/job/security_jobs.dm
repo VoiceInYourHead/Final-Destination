@@ -15,12 +15,12 @@
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e7,
-		/datum/mil_rank/army/e6,
-		/datum/mil_rank/army/e7,
-		/datum/mil_rank/army/e8,
 		/datum/mil_rank/fleet/e6,
 		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/fleet/e8
+		/datum/mil_rank/fleet/e8,
+		/datum/mil_rank/army/e6,
+		/datum/mil_rank/army/e7,
+		/datum/mil_rank/army/e8
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
@@ -116,13 +116,12 @@
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/army/e3,
-		//datum/mil_rank/army/e4,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5,
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/fleet/e5
+		/datum/mil_rank/fleet/e5,
+		/datum/mil_rank/army/e3,
+		/datum/mil_rank/army/e4,
+		/datum/mil_rank/army/e5
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,

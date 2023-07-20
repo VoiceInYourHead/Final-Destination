@@ -220,9 +220,103 @@
 /obj/item/clothing/under/solgov/utility/fleet/combat/supply
 	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/fleet)
 
+/obj/item/clothing/under/solgov/utility/fleet/combat/green
+	name = "green fleet fatigues"
+	desc = "Alternative utility uniform of the SCG Fleet, intended for use in lush terrains on planets."
+	icon_state = "greenutility"
+	item_state = "jensensuit"
+	worn_state = "greenutility"
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/command
+	accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/engineering
+	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/security
+	accessories = list(/obj/item/clothing/accessory/solgov/department/security/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/medical
+	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/medical/banded
+	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army, /obj/item/clothing/accessory/armband/medblue)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/supply
+	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/service
+	accessories = list(/obj/item/clothing/accessory/solgov/department/service/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/green/exploration
+	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban
+	name = "urban fleet fatigues"
+	desc = "Alternative utility uniform of the SCG Fleet, intended for use in urban jungles. Actually sucks at camouflaging."
+	icon_state = "greyutility"
+	item_state = "gy_suit"
+	worn_state = "greyutility"
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/command
+	accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/engineering
+	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/security
+	accessories = list(/obj/item/clothing/accessory/solgov/department/security/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/medical
+	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/medical/banded
+	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army, /obj/item/clothing/accessory/armband/medblue)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/supply
+	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/service
+	accessories = list(/obj/item/clothing/accessory/solgov/department/service/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/urban/exploration
+	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan
+	name = "tan fleet fatigues"
+	desc = "Alternative utility uniform of the SCG Fleet, intended for use in arid terrains on planets. Favoured by the most jarhead Armsmen."
+	icon_state = "tanutility"
+	item_state = "johnny"
+	worn_state = "tanutility"
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/command
+	accessories = list(/obj/item/clothing/accessory/solgov/department/command/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/engineering
+	accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/security
+	accessories = list(/obj/item/clothing/accessory/solgov/department/security/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/medical
+	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/medical/banded
+	accessories = list(/obj/item/clothing/accessory/solgov/department/medical/army, /obj/item/clothing/accessory/armband/medblue)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/supply
+	accessories = list(/obj/item/clothing/accessory/solgov/department/supply/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/service
+	accessories = list(/obj/item/clothing/accessory/solgov/department/service/army)
+
+/obj/item/clothing/under/solgov/utility/fleet/combat/tan/exploration
+	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
+
+// army utils
 /obj/item/clothing/under/solgov/utility/army
-	name = "green marine fatigues"
-	desc = "The utility uniform of the SCG Marine Corps, made from durable material."
+	name = "army green fatigues"
+	desc = "Robust utility uniform of SCG Army, coloured lovely forest green for hiding in woodland."
 	icon_state = "greenutility"
 	item_state = "jensensuit"
 	worn_state = "greenutility"
@@ -252,8 +346,8 @@
 	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
 
 /obj/item/clothing/under/solgov/utility/army/urban
-	name = "navy marine fatigues"
-	desc = "A dark 'urban' version of the SCG Marine Corps utility uniform, made from durable material."
+	name = "army urban fatigues"
+	desc = "Robust utility uniform of SCG Army, coloured grey for hiding in urban areas and space installations."
 	icon_state = "greyutility"
 	item_state = "gy_suit"
 	worn_state = "greyutility"
@@ -283,8 +377,8 @@
 	accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
 
 /obj/item/clothing/under/solgov/utility/army/tan
-	name = "tan marine fatigues"
-	desc = "A tan version of the SCG Marine Corps utility uniform, made from durable material."
+	name = "army tan fatigues"
+	desc = "Robust utility uniform of SCG Army, coloured tasteful arid tan for hiding in deserts and the like."
 	icon_state = "tanutility"
 	item_state = "johnny"
 	worn_state = "tanutility"
@@ -425,32 +519,18 @@
 	worn_state = "whiteservicefem"
 
 /obj/item/clothing/under/solgov/service/army
-	name = "marine service uniform"
-	desc = "The service uniform of the SCG Marine Corps. Slimming."
+	name = "army service uniform"
+	desc = "The service uniform of the SCG Army, a classic set of olive-on-white. Slimming."
 	icon_state = "greenservice"
 	item_state = "johnny"
 	worn_state = "greenservice"
-	accessories = list(/obj/item/clothing/accessory/brown)
+	accessories = list(/obj/item/clothing/accessory/black)
 
 /obj/item/clothing/under/solgov/service/army/skirt
-	name = "marine service skirt"
-	desc = "The service uniform skirt of the SCG Marine Corps. Slimming."
+	name = "army service skirt"
+	desc = "The service uniform skirt of the SCG Army, a classic set of olive-on-white. Slimming."
 	icon_state = "greenservicefem"
 	worn_state = "greenservicefem"
-
-/obj/item/clothing/under/solgov/service/army/command
-	name = "marine officer's service uniform"
-	desc = "The service uniform of the SCG Marine Corps. Slimming and stylish."
-	icon_state = "greenservice_com"
-	item_state = "johnny"
-	worn_state = "greenservice_com"
-	accessories = list(/obj/item/clothing/accessory/brown)
-
-/obj/item/clothing/under/solgov/service/army/command/skirt
-	name = "marine officer's service skirt"
-	desc = "The service uniform skirt of the SCG Marine Corps. Slimming and stylish."
-	icon_state = "greenservicefem_com"
-	worn_state = "greenservicefem_com"
 
 //Dress
 /obj/item/clothing/under/solgov/mildress
@@ -461,26 +541,26 @@
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/solgov/mildress/army
-	name = "marine dress uniform"
-	desc = "The dress uniform of the SCG Marine Corps, class given form."
+	name = "army dress uniform"
+	desc = "The dress uniform of the SCG Army, class given form."
 	icon_state = "blackdress"
 	worn_state = "blackdress"
 
 /obj/item/clothing/under/solgov/mildress/army/skirt
-	name = "marine dress skirt"
-	desc = "A  feminine version of the SCG Marine Corps dress uniform, class given form."
+	name = "army dress skirt"
+	desc = "A  feminine version of the SCG Army dress uniform, class given form."
 	icon_state = "blackdressfem"
 	worn_state = "blackdressfem"
 
 /obj/item/clothing/under/solgov/mildress/army/command
-	name = "marine officer's dress uniform"
-	desc = "The dress uniform of the SCG Marine Corps, even classier in gold."
+	name = "army officer's dress uniform"
+	desc = "The dress uniform of the SCG Army, even classier in gold."
 	icon_state = "blackdress"
 	worn_state = "blackdress_com"
 
 /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	name = "marine officer's dress skirt"
-	desc = "A feminine version of the SCG Marine Corps dress uniform, even classier in gold."
+	name = "army officer's dress skirt"
+	desc = "A feminine version of the SCG Army dress uniform, even classier in gold."
 	icon_state = "blackdressfem"
 	worn_state = "blackdressfem_com"
 

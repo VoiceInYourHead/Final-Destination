@@ -53,12 +53,12 @@
 
 /obj/item/material/sword/replica/officersword/army
 	name = "army NCO's sword"
-	desc = "A polished sword issued to SCG Marine Corps NCOs."
+	desc = "A polished sword issued to SCG Army NCOs."
 	icon_state = "armysword"
 
 /obj/item/material/sword/replica/officersword/armyofficer
 	name = "marine officer's sword"
-	desc = "A curved sword issued to SCG Marine Corps officers."
+	desc = "A curved sword issued to SCG Army officers."
 	icon_state = "armyofficersword"
 	item_state = "armyofficersword"
 

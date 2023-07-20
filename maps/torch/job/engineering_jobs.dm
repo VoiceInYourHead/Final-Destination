@@ -80,7 +80,7 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/army/e3,
-		/datum/mil_rank/army/e4_alt,
+		/datum/mil_rank/army/e4,
 		/datum/mil_rank/army/e5,
 		/datum/mil_rank/civ/contractor
 	)
@@ -129,12 +129,12 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/fleet,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/army,
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/army
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/army/e2,
+		/datum/mil_rank/army/e2
 	)
 
 	skill_points = 4
@@ -196,8 +196,6 @@
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/army/e4_alt,
-		/datum/mil_rank/army/e5,
 		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/civ/contractor
 	)

@@ -149,7 +149,8 @@
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/fleet/o3,
 		/datum/mil_rank/fleet/o4,
-		/datum/mil_rank/army/o3
+		/datum/mil_rank/army/o3,
+		/datum/mil_rank/army/o4
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_EXPERIENCED,
@@ -246,7 +247,7 @@
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/cos/fleet,
 		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/command/cos/army
-	)
+		)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/fleet/o2,
