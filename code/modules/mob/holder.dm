@@ -222,3 +222,15 @@ var/list/holder_mob_icon_cache = list()
 
 	// Handle the rest of sync().
 	..(M)
+
+/mob/living/proc/get_scooped_self()
+
+	if(!holder_type || buckled || pinned.len)
+		return
+
+	var/obj/item/holder/H = new holder_type(get_turf(src))
+
+	src.forceMove(H)
+
+	H.sync(src)
+	return H

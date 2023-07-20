@@ -1644,6 +1644,18 @@ area/assembly/robotics/office
 	icon_state = "Sleep"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
+/area/crew_quarters/sleep/cryo/cabin1
+	name = "\improper Third Deck General Cabin #1"
+
+/area/crew_quarters/sleep/cryo/cabin2
+	name = "\improper Third Deck General Cabin #2"
+
+/area/crew_quarters/sleep/cryo/cabin3
+	name = "\improper Third Deck General Cabin #3"
+
+/area/crew_quarters/sleep/cryo/cabin4
+	name = "\improper Third Deck General Cabin #4"
+
 /area/hydroponics
 	name = "\improper Hydroponics"
 	icon_state = "hydro"

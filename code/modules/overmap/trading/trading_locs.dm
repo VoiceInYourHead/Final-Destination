@@ -8,6 +8,9 @@
 
 	var/datum/trader/trader_merchant_datum
 
+/obj/effect/overmap/trading/on_update_icon()
+	return
+
 /obj/effect/overmap/trading/ship
 	name = "ship"
 	desc = "A trading station."

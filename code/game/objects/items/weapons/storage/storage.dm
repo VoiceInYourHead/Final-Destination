@@ -497,3 +497,14 @@
 /obj/item/proc/get_storage_cost()
 	//If you want to prevent stuff above a certain w_class from being stored, use max_w_class
 	return BASE_STORAGE_COST(w_class)
+
+/obj/item/storage/MouseDrop_T(atom/dropping, mob/living/user)
+	if(dropping == user && usr == user)
+		var/obj/item/holder/H = user.get_scooped_self()
+		if(can_be_inserted(H))
+			handle_item_insertion(H)
+			src.show_message("<span class='notice'>\The [usr] gets into the [src].</span>", VISIBLE_MESSAGE)
+		else
+			to_chat(usr, "<span class='notice'>The [src] is full!.</span>")
+			H.Destroy()
+	..()
