@@ -13,6 +13,6 @@
 
 /obj/effect/overmap/trading/ship
 	name = "ship"
-	desc = "A trading station."
+	desc = "A trading ship."
 	icon_state = "trading_ship"
 	known = FALSE
