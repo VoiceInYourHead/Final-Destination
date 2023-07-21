@@ -485,3 +485,30 @@
 	log_and_message_admins("is spawning [new_planet] at [new_planet.start_x],[new_planet.start_y], containing Z [english_list(new_planet.map_z)]")
 	new_planet.build_level()
 	message_admins("[new_planet] has completed generation.")
+
+/client/proc/spawn_junkyard(junkyard_type as anything in subtypesof(/obj/effect/overmap/visitable/sector/junkyard))
+	set category = "Debug"
+	set name = "Create Junkyard"
+
+	var/budget = input("Ruins budget. Default is 5, a budget of 0 will not spawn any ruins, 5 will spawn around 3-5 ruins:", "Ruins Budget", 5) as num | null
+
+	if (isnull(budget) || budget < 0)
+		budget = 5
+
+	var/theme = input("Choose a theme:", "Theme") as anything in typesof(/datum/junkyard_theme/) | null
+
+	if (!theme)
+		theme = /datum/junkyard_theme
+
+	var/last_chance = alert("Spawn junkyard?", "Final Confirmation", "Yes", "Cancel")
+
+	if (last_chance == "Cancel")
+		return
+
+	var/obj/effect/overmap/visitable/sector/junkyard/new_junkyard = new junkyard_type(null, world.maxx, world.maxy)
+	new_junkyard.features_budget = budget
+	new_junkyard.themes = list(new theme)
+
+	log_and_message_admins("is spawning [new_junkyard] at [new_junkyard.start_x],[new_junkyard.start_y], containing Z [english_list(new_junkyard.map_z)]")
+	new_junkyard.build_level()
+	message_admins("[new_junkyard] has completed generation.")

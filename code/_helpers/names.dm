@@ -4,6 +4,9 @@
 /proc/generate_planet_name()
 	return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
 
+/proc/generate_junkyard_name()
+	return "[rand(100,999)]"
+
 /proc/generate_planet_type()
 	return pick("terrestial planet", "ice planet", "dwarf planet", "desert planet", "ocean planet", "lava planet", "gas giant", "forest planet")
 

@@ -17,8 +17,8 @@
 /obj/structure/abandoned_cryo
 	name = "emergency cryogenic freezer"
 	desc = "A man-sized pod of pretty old design."
-	icon = 'icons/obj/Cryogenic2.dmi'
-	icon_state = "redpod1"
+	icon = 'icons/fd/structures/old_cryo.dmi'
+	icon_state = "pod_closed"
 	density = TRUE
 	anchored = TRUE
 	var/opened = FALSE
@@ -50,7 +50,7 @@
 			playsound(loc, 'sound/machines/airlock_creaking.ogg', 100, TRUE)
 			if(do_after(user, 30, src))
 				opened = TRUE
-				icon_state = "redpod0"
+				icon_state = "pod_opened"
 				var/new_species = pickweight(species)
 				var/mob/living/carbon/human/joinable/survivor = new (loc, new_species)
 				randomize_appearance(survivor, new_species)

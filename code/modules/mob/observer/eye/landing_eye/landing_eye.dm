@@ -68,7 +68,7 @@
 			img.icon_state = "red"
 			. = FALSE
 			continue
-		if(!istype(A, /area/space) && !istype(A, /area/exoplanet)) // Can only land in space or outside.
+		if(!istype(A, /area/space) && !istype(A, /area/exoplanet) && !istype(A, /area/junkyard)) // Can only land in space or outside.
 			img.icon_state = "red"
 			. = FALSE
 			continue

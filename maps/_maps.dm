@@ -42,6 +42,8 @@
 #include "random_ruins\exoplanet_ruins\pollux\station.dm"
 #include "random_ruins\exoplanet_ruins\shelters\shelters.dm"
 #include "random_ruins\space_ruins\space_ruins.dm"
+#include "random_ruins\junkyard_ruins\junkyard_ruins.dm"
+#include "random_ruins\junkyard_ruins\ruins\main.dm"
 #include "~mapsystem\map_preferences.dm"
 #include "~mapsystem\map_ranks.dm"
 #include "~mapsystem\maps.dm"
