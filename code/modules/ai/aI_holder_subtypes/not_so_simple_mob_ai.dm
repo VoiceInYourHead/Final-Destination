@@ -179,10 +179,10 @@
 ////////////////////////////AGGRESSION////////////////////////////
 	smart_holder.hostility_threshold = smart_holder.hostility_threshold
 	smart_holder.pry_time = smart_holder.pry_time
-	if(aggression>80)  can_breakthrough = TRUE
+	if(aggression>60)  can_breakthrough = TRUE
+	if(aggression>60)  violent_breakthrough = TRUE
 	if(aggression>120) mauling = TRUE
-	if(aggression>160) violent_breakthrough = TRUE
-	if(aggression>190) destructive = TRUE
+	if(aggression>160) destructive = TRUE
 
 /////////////////////////////DOMINANCE////////////////////////////
 	call_distance = round( init_call_distance + dominance / 10 )
@@ -554,6 +554,11 @@
 
 		beastmasters[movement_target.fingerprintslast] ++
 
+		if(ai_holder.retaliate)
+			for(var/client/C in GLOB.clients)
+				if(C.key == movement_target.fingerprintslast && prob(30))
+					smart_ai_holder.attackers.Remove(C.mob)
+
 		if(beastmasters[movement_target.fingerprintslast] >= tame_difficulty)
 			for(var/client/C in GLOB.clients)
 				if(C.key == movement_target.fingerprintslast && !(C.mob in friends))
@@ -752,7 +757,7 @@
 	icon_state = "samak"
 	icon_living = "samak"
 	icon_dead = "samak_dead"
-	init_tame_difficulty = 8
+	init_tame_difficulty = 10
 	maxHealth = 125
 	health = 125
 	speed = 2
@@ -785,7 +790,7 @@
 	icon_state = "diyaab"
 	icon_living = "diyaab"
 	icon_dead = "diyaab_dead"
-	init_tame_difficulty = 10
+	init_tame_difficulty = 8
 	move_to_delay = 1
 	maxHealth = 25
 	health = 25
