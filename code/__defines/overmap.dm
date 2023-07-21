@@ -19,4 +19,9 @@
 #define TARGET_PLANET 2
 #define TARGET_PLANETCOORD 4
 #define TARGET_POINT 8
+
+#define WARN_LAUNCH 3
+#define WARN_SEARCH 1
+#define WARN_LOCKED 2
+
 //#define SENSOR_COEFFICENT 1000

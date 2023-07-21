@@ -19,6 +19,8 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	var/moving_state = "ship_moving"
 	var/list/consoles
 
+	var/obj/machinery/computer/ship/rwr/rwr_console
+
 	var/vessel_mass = 10000             // tonnes, arbitrary number, affects acceleration provided by engines
 	var/vessel_size = SHIP_SIZE_LARGE	// arbitrary number, affects how likely are we to evade meteors
 	var/max_speed = 1/(1 SECOND)        // "speed of light" for the ship, in turfs/tick.
@@ -345,6 +347,20 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 
 /obj/effect/overmap/visitable/ship/proc/get_landed_info()
 	return "This ship cannot land."
+
+/obj/effect/overmap/visitable/ship/proc/warn_by_something(var/obj/effect/overmap/visitable/ship/source, var/power)
+	if (!rwr_console)
+
+		for(var/obj/machinery/computer/ship/rwr/S in SSmachines.machinery)
+			if (src.check_ownership(S)) //Если консоль из списка всех консолей принадлежит нужному ведру, то выполняем привязку
+				S.attempt_hook_up()
+				S.linked = src
+				S.analyze_warn(source, power)
+				return
+
+		return
+
+	rwr_console.analyze_warn(source, power) //Передаем консоли излучатель для анализа
 
 /*/obj/effect/overmap/visitable/ship/get_scan_data(mob/user)
 	. = ..()

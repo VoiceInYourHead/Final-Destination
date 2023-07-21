@@ -64,6 +64,9 @@
 			if(bearing < 0)
 				bearing += 360
 			contacts.Add(list(list("name"=O.name, "color"= O.get_color(), "ref"="\ref[O]", "bearing"=bearing)))
+			var/obj/effect/overmap/visitable/ship/tfrd = O
+			if (tfrd)
+				tfrd.warn_by_something(linked, WARN_SEARCH) //Сообщаем СПО цели, что ебать, мы тебя видим)
 		if(contacts.len)
 			data["contacts"] = contacts
 		data["last_scan"] = last_scan
