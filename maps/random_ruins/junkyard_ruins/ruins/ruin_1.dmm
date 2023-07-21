@@ -127,7 +127,7 @@
 "cw" = (/obj/effect/floor_decal/techfloor,/obj/structure/solbanner/exo,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cx" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange/corner{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cy" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
-"cz" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange/corner{dir = 1},/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 24},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
+"cz" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange/corner{dir = 1},/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc/derelict{dir = 1; icon_state = "apc0"; pixel_y = 22},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cA" = (/obj/effect/floor_decal/techfloor{dir = 4},/obj/effect/floor_decal/techfloor/corner{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cB" = (/obj/structure/catwalk,/obj/structure/closet/secure_closet/guncabinet,/obj/machinery/light{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/map_template/wreck/wreckone)
 "cC" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/techfloor{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)

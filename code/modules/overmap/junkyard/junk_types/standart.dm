@@ -1,12 +1,12 @@
 /obj/effect/overmap/visitable/sector/junkyard/standart
 	name = "junkyard"
 	desc = "An old junkyard"
-	color = "#6c6c6c"
+	color = "#b4aeae"
 	junkyard_area = /area/junkyard/standart
 	possible_themes = list(/datum/junkyard_theme/robotic_guardians)
 	map_generators = list(/datum/random_map/noise/junkyard/standart)
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER|RUIN_RAINWORLD
-	features_budget = 6
+	features_budget = 8
 
 /obj/effect/overmap/visitable/sector/junkyard/standart/handle_repopulation()
 	return

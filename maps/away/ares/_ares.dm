@@ -18,6 +18,9 @@
 	stripe_color = COLOR_SILVER
 
 /obj/machinery/suit_storage_unit/mining/ares
+	suit= /obj/item/clothing/suit/space/void/mining/rockanddrill
+	helmet = /obj/item/clothing/head/helmet/space/void/mining/rockanddrill
+	mask = /obj/item/clothing/mask/breath
 	req_access = list(access_ares)
 
 /obj/structure/closet/secure_closet/miner/ares
