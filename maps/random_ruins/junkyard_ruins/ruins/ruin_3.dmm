@@ -1,0 +1,32 @@
+"a" = (/turf/template_noop,/area/space)
+"b" = (/turf/template_noop,/area/template_noop)
+"c" = (/obj/effect/paint/silver,/turf/simulated/wall/r_wall/hull,/area/map_template/wreck/wreckthree)
+"d" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/silver,/turf/simulated/floor/plating,/area/map_template/wreck/wreckthree)
+"e" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/abandoned_cryo{pixel_y = 7},/obj/machinery/power/apc/derelict{dir = 4; pixel_x = 19},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/map_template/wreck/wreckthree)
+"f" = (/obj/effect/floor_decal/industrial/warning,/obj/machinery/hologram/holopad/longrange,/obj/machinery/embedded_controller/radio/airlock{dir = 4; pixel_x = -16},/turf/simulated/floor/tiled/techfloor,/area/map_template/wreck/wreckthree)
+"g" = (/obj/effect/paint/red,/turf/simulated/wall/r_wall/hull,/area/map_template/wreck/wreckthree)
+"h" = (/obj/effect/floor_decal/techfloor/orange,/obj/machinery/door/airlock/external/bolted,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckthree)
+"i" = (/obj/effect/floor_decal/techfloor/orange{dir = 10},/obj/structure/shuttle/engine/propulsion/burst/left,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckthree)
+"j" = (/turf/simulated/wall,/area/template_noop)
+"k" = (/obj/effect/floor_decal/techfloor/orange{dir = 6; icon_state = "techfloororange_edges"},/obj/structure/shuttle/engine/propulsion/burst/right,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckthree)
+"l" = (/obj/structure/grille/broken,/turf/simulated/floor/plating,/area/template_noop)
+"m" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"n" = (/turf/simulated/floor/plating,/area/template_noop)
+"o" = (/turf/simulated/wall/r_wall,/area/template_noop)
+"p" = (/obj/structure/grille,/turf/simulated/floor/plating,/area/template_noop)
+
+(1,1,1) = {"
+bbbbbbjjbbbbb
+bbbbbblmjbbbb
+bbmnnbbbbbbbb
+bbmobbbbbbbbb
+pbbmbcdcbbbbb
+jnbbbcecbbbbb
+jnbbbcfcbbbbb
+jjbbgghggbbbb
+jmbbigagkbbbm
+bbbbbbbbbbbnm
+bbbbboobbbmjj
+bbbmmoobbbbmj
+bbbbbbmbbbbbb
+"}
