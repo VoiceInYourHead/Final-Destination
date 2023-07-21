@@ -30,7 +30,7 @@
 "D" = (/obj/effect/overmap/visitable/sector/shikra_ring,/turf/space,/area/space)
 "E" = (/obj/effect/paint/red,/turf/simulated/wall/r_wall,/area/ship/shikra)
 "F" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/ship/shikra)
-"G" = (/obj/machinery/ship_weapon/back_part/hmg{icon_state = "ammo_loader"; dir = 1},/obj/structure/ship_munition/ammobox/hmg,/turf/simulated/floor/plating,/area/ship/shikra)
+"G" = (/obj/machinery/ship_weapon/back_part/hmg{icon_state = "ammo_loader"; dir = 1},/obj/item/ammo_magazine/ammobox/hmg,/turf/simulated/floor/plating,/area/ship/shikra)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

@@ -14,7 +14,6 @@
 	front_type = /obj/machinery/ship_weapon/front_part/beam_cannon/particle_lance
 	middle_type = /obj/machinery/ship_weapon/middle_part/beam_cannon/particle_lance
 	back_type = /obj/machinery/ship_weapon/back_part/beam_cannon/particle_lance
-	munition_type = /obj/structure/ship_munition/ammobox/cell
 
 	destroy_event_flags = OVERMAP_WEAKNESS_EMP
 

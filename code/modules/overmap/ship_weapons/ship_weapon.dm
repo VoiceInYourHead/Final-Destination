@@ -25,6 +25,7 @@
 	desc = "An old-fashion cannon muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
+	layer = 3.01
 
 /obj/machinery/ship_weapon/middle_part
 	name = "ship weapon barrel"

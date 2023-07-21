@@ -21,42 +21,21 @@
 	var/console_html_name = "autocannon.tmpl"
 	var/gun_name = "Epic cannon"
 
-	var/hull_damage = 1		//урон каждой пули по корпусу
-
 	var/front_type = /obj/machinery/ship_weapon/front_part
 	var/middle_type = /obj/machinery/ship_weapon/middle_part
 	var/back_type = /obj/machinery/ship_weapon/back_part
-	var/munition_type = /obj/structure/ship_munition/ammobox
+	var/munition_type = /obj/item/ammo_magazine/ammobox
 
 	var/obj/machinery/ship_weapon/front_part/front
 	var/obj/machinery/ship_weapon/middle_part/middle
 	var/obj/machinery/ship_weapon/back_part/back
-	var/obj/structure/ship_munition/ammobox/munition
+	var/obj/item/ammo_magazine/ammobox/munition
 
 	var/link_range = 10		//How far can the above stuff be maximum before we start complaining
 
 	var/ammo_per_shot = 1	//как много пуль тратитьс€ на выстрел
 	var/burst_size = 3		//сколько раз пиу
 	var/fire_interval = 5	//как долго между каждым пиу
-
-	var/shoot_range = 1 // how far will we go on the overmap
-
-	var/ground_to_space = TRUE //стрельба с планеты по космическим цел€м
-	var/canhit_missiles = TRUE
-	var/canhit_planets = TRUE
-	var/canhit_sectors = TRUE
-	var/canhit_ships = TRUE
-
-	var/destroy_event_flags = null
-
-	var/shield_modflag_counter = MODEFLAG_HYPERKINETIC
-
-	var/ignore_blockage = FALSE
-
-	// Ќасколько большой будет разброс в тайлах при попадании на овермап судна-цели.
-	// ѕример: при pew_spread = 50 снар€д будет спавнитьс€ с разбросом от -25 до 25 тайлов на нужном краю карты у цели.
-	// UPD: “еперь разброс умножаетс€ на уровень скилла пилота у корабл€-цели.
-	var/pew_spread = 10
 
 	var/fire_delay = 0
 
@@ -70,11 +49,6 @@
 
 	var/muzzle_flash = /obj/effect/projectile/bullet/muzzle/ship_weapon
 	var/muzzle_color = null
-
-	var/overmap_icon = "bullet" // icons\effects\beam.dmi
-	var/overmap_color = null
-
-	var/pew_color = null
 
 	var/play_emptymag_sound = 1
 
@@ -157,28 +131,29 @@
 	return get_next_shot_seconds() * 1000 / coolinterval
 
 /obj/machinery/computer/ship/ship_weapon/proc/get_charge()
-	for(var/obj/structure/ship_munition/ammobox/ammo in get_turf(back))
-		if(istype(munition,munition_type))
+	for(var/obj/item/ammo_magazine/ammobox/ammo in get_turf(back))
+		if(istype(ammo,munition_type))
 			munition = ammo
-	if(munition)
-		return munition
-	else
-		return FALSE
-
-/obj/machinery/computer/ship/ship_weapon/proc/get_ammo()
-	munition = locate() in get_turf(back)
-	if(munition && istype(munition,munition_type))
-		return munition.ammo_count
+	if(munition) return munition
+	else return FALSE
 
 /obj/machinery/computer/ship/ship_weapon/proc/get_ammo_type()
 	munition = locate() in get_turf(back)
 	if(munition && istype(munition,munition_type))
-		return munition.ammo_type
+		return munition.stored_ammo[munition.stored_ammo.len].projectile_type
+
+/obj/machinery/computer/ship/ship_weapon/proc/get_ammo()
+	munition = locate() in get_turf(back)
+	if(munition && istype(munition,munition_type))
+		return munition.stored_ammo.len
 
 /obj/machinery/computer/ship/ship_weapon/proc/remove_ammo()
 	munition = locate() in get_turf(back)
 	if(get_ammo() >= ammo_per_shot)
-		munition.ammo_count -= ammo_per_shot
+		var/to_remove = munition.stored_ammo[get_ammo()]
+		munition.stored_ammo -= to_remove
+		munition.contents -= to_remove
+//		QDEL_NULL(to_remove) // RUNTIME: Was deleted before initialization
 	return
 
 /obj/machinery/computer/ship/ship_weapon/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
@@ -200,16 +175,20 @@
 
 		var/ammo_count_console = SPAN_BOLD("UNKNOWN ERROR")
 		switch(get_charge())
-			if(0)
+			if(FALSE)
 				ammo_count_console = "[SPAN_BOLD("ERROR")]: No valid ammo detected."
+			if("energy")
+				ammo_count_console = ""
 			else
 				ammo_count_console = get_ammo()
 		data["chargeload"] = ammo_count_console
 
 		var/charge = SPAN_BOLD("UNKNOWN ERROR")
 		switch(get_charge())
-			if(0)
+			if(FALSE)
 				charge = "No valid ammo detected"
+			if("energy")
+				charge = "/Energy/"
 			else
 				charge = get_charge().name
 		data["chargename"] = charge
@@ -245,8 +224,9 @@
 
 	if(href_list["fire"])
 		var/atomcharge_ammo = get_ammo()
-		if(atomcharge_ammo < ammo_per_shot)
-			return TOPIC_REFRESH
+		if(atomcharge_ammo != "energy")
+			if(atomcharge_ammo < ammo_per_shot)
+				return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
 			log_and_message_admins("[gun_name] смешно подорвалась", location=get_turf(middle))
 			explosion(middle, rand(7, 12))
@@ -263,7 +243,6 @@
 			if(!get_charge())
 				break
 			fire(user)
-			remove_ammo()
 			sleep(fire_interval)
 		reset_calibration()
 	return TOPIC_REFRESH

@@ -14,7 +14,7 @@
 	var/min_speed = 60 //bos
 	var/maneuverability = 20 // turf spread on entering map
 
-/obj/item/missile_equipment/thruster/do_overmap_work(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/thruster/do_overmap_work(var/obj/effect/overmap/missile/P)
 	if(!..() || isnull(target) || !fuel)
 		return 0
 
@@ -37,7 +37,7 @@
 /obj/item/missile_equipment/thruster/proc/is_target_valid(var/obj/effect/overmap/visitable/O)
 	return ((O.sector_flags & OVERMAP_SECTOR_IN_SPACE) && !(O.sector_flags & OVERMAP_SECTOR_UNTARGETABLE) && LAZYLEN(O.map_z))
 
-/obj/item/missile_equipment/thruster/on_touch_map_edge(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/thruster/on_touch_map_edge(var/obj/effect/overmap/missile/P)
 	var/turf/turf_location = get_turf(src)
 	var/obj/effect/overmap/visitable/ship/ship = waypoint_sector(turf_location)
 	target = ship.get_target(TARGET_SHIP)
@@ -55,9 +55,9 @@
 	fuel = 40
 
 /obj/item/missile_equipment/thruster/hunter/is_target_valid(var/obj/effect/overmap/O)
-	return istype(O, /obj/effect/overmap/projectile)
+	return istype(O, /obj/effect/overmap/missile)
 
-/obj/item/missile_equipment/thruster/hunter/on_touch_map_edge(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/thruster/hunter/on_touch_map_edge(var/obj/effect/overmap/missile/P)
 	var/turf/turf_location = get_turf(src)
 	var/obj/effect/overmap/visitable/ship/ship = waypoint_sector(turf_location)
 	target = ship.get_target(TARGET_MISSILE)
@@ -70,7 +70,7 @@
 	icon_state = "dumbfire"
 	min_speed = 30 //FD
 
-/obj/item/missile_equipment/thruster/point/on_touch_map_edge(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/thruster/point/on_touch_map_edge(var/obj/effect/overmap/missile/P)
 	var/turf/turf_location = get_turf(src)
 	var/obj/effect/overmap/visitable/ship/ship = waypoint_sector(turf_location)
 	target = locate(ship.get_target(TARGET_POINT)[1], ship.get_target(TARGET_POINT)[2], GLOB.using_map.overmap_z)
@@ -105,7 +105,7 @@
 
 	return null
 
-/obj/item/missile_equipment/thruster/planet/on_touch_map_edge(var/obj/effect/overmap/projectile/P) //TODO: THIS WILL FUCKING RUNTIME
+/obj/item/missile_equipment/thruster/planet/on_touch_map_edge(var/obj/effect/overmap/missile/P) //TODO: THIS WILL FUCKING RUNTIME
 
 	var/turf/turf_location = get_turf(src)
 	var/obj/effect/overmap/visitable/ship/ship = waypoint_sector(turf_location)

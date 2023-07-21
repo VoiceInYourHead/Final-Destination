@@ -3,15 +3,12 @@
 	coolinterval = 16 SECONDS
 	gun_name = "Autocannon"
 
-	hull_damage = 1
-
 	front_type = /obj/machinery/ship_weapon/front_part/autocannon
 	middle_type = /obj/machinery/ship_weapon/middle_part/autocannon
 	back_type = /obj/machinery/ship_weapon/back_part/autocannon
-	munition_type = /obj/structure/ship_munition/ammobox/autocannon
+	munition_type = /obj/item/ammo_magazine/ammobox/autocannon
 
 	burst_size = 5
 	fire_interval = 7
-	pew_spread = 10
 
 	fire_sound = 'sound/machines/autocannon_fire.ogg'

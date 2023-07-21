@@ -1,4 +1,150 @@
-/obj/machinery/computer/ship/ship_weapon/beam_cannon/fire_at_sector(var/z_level, var/target_fore_dir, var/obj/effect/overmap/target, var/firing_at_exoplanet = FALSE)
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/fire(mob/user)
+	set waitfor = FALSE
+	if(!link_parts())
+		return FALSE //no disperser, no service
+	if(!front.powered() || !middle.powered() || !back.powered())
+		return FALSE //no power, no boom boom
+
+	var/turf/start = front
+	var/direction = front.dir
+
+	if(prefire_sound)
+		playsound(start, prefire_sound, 250, 0)
+
+	var/list/relevant_z = GetConnectedZlevels(start.z)
+	if(far_prefire_sound)
+		for(var/mob/M in GLOB.player_list)
+			var/turf/T = get_turf(M)
+			if(!T || !(T.z in relevant_z))
+				continue
+			if(!isdeaf(M))
+				sound_to(M, sound(far_prefire_sound, volume=10))
+
+	front.change_power_consumption(ammo_per_shot, POWER_USE_ACTIVE)
+
+	sleep(fire_delay)
+
+	front.change_power_consumption(initial(front.idle_power_usage), POWER_USE_IDLE)
+
+	if(!front || !front.powered()) //Meanwhile front might have exploded
+		return FALSE
+
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!T || !(T.z in relevant_z))
+			continue
+		shake_camera(M, shake_camera_force)
+		if(!isdeaf(M))
+			sound_to(M, sound(far_fire_sound, volume=10))
+
+	playsound(start, fire_sound, 250, 1)
+	handle_muzzle(start, direction)
+
+	if(!front) //Meanwhile front might have exploded
+		return
+
+	for(var/turf/T in getline(get_step(front,front.dir),get_target_turf(start, direction)))
+		if(T.density && !istype(T, /turf/unsimulated/planet_edge) && !ignore_blockage)
+			return TRUE
+		for(var/atom/A in T)
+			if(((A.density && A.layer != TABLE_LAYER) && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield))))
+				if(istype(A, /obj/effect/shield))
+					var/obj/effect/shield/S = A
+					if(S.gen.check_flag(shield_modflag_counter))
+						return TRUE
+				if(!ignore_blockage)
+					return TRUE
+
+	var/turf/target_turf
+	if(linked.z == 11)
+		target_turf = get_turf(linked)
+		for(var/i = 1 to shoot_range)
+			target_turf = get_step(target_turf, overmapdir)
+
+	else
+		target_turf = get_turf(linked.loc)
+		for(var/i = 1 to shoot_range)
+			target_turf = get_step(target_turf, overmapdir)
+
+	var/turf/overmaptarget = target_turf
+	var/list/candidates = list()
+
+	//Next we see if there are any targets around. Logically they are between us and the sector if one exists.
+
+	if(!length(candidates))
+		for(var/obj/effect/overmap/visitable/ship/S in overmaptarget)
+			if(S == linked || S.destroyed)
+				continue //Why are you shooting yourself?
+			candidates += S
+
+	if(!length(candidates))
+		for(var/obj/effect/overmap/projectile/M in overmaptarget)
+			candidates += M
+
+	if(!length(candidates))
+		for(var/obj/effect/overmap/visitable/sector/O in overmaptarget)
+			if(O == linked)
+				continue //Why are you shooting yourself?
+			if(O.sector_flags & OVERMAP_SECTOR_UNTARGETABLE || istype(O,/obj/effect/overmap/visitable/sector/exoplanet))
+				continue
+			candidates += O
+
+		for(var/obj/effect/overmap/trading/T in overmaptarget)
+			candidates += T
+
+	if(!length(candidates) && destroy_event_flags)
+		for(var/obj/effect/overmap/event/E in overmaptarget)
+			candidates += E
+
+	if(!length(candidates))
+		for(var/obj/effect/overmap/visitable/sector/exoplanet/P in overmaptarget)
+			candidates += P
+
+	//Way to waste a charge
+	if(!length(candidates))
+		handle_overbeam()
+		return TRUE
+
+	var/obj/effect/overmap/target = pick(candidates)
+
+	if(istype(target, /obj/effect/overmap/trading))
+		qdel(target)
+		return TRUE
+
+	if(istype(target, /obj/effect/overmap/event))
+		var/obj/effect/overmap/event/E = target
+		if(destroy_event_flags & E.weaknesses)
+			var/turf/T = E.loc
+			qdel(E)
+			overmap_event_handler.update_hazards(T)
+		handle_overbeam()
+		return TRUE
+
+	if(istype(target, /obj/effect/overmap/projectile))
+		if(prob(100 - cal_accuracy() / 2))
+			target.Destroy()
+		handle_overbeam()
+		return TRUE
+
+	var/obj/effect/overmap/visitable/finaltarget = target
+	var/z_level = pick(finaltarget.map_z)
+
+	//Success, but we missed.
+	if(prob(100 - cal_accuracy()) && !istype(finaltarget, /obj/effect/overmap/visitable/sector/exoplanet))
+		log_and_message_admins("Г‚Г»Г±ГІГ°ГҐГ« Г®ГІ [linked.name] ГЁГ§ [gun_name] ГҐГЎГ Г­ГіГ« [finaltarget.name], Г­Г® ГЄГ Г«ГЁГЎГ°Г®ГўГЄГ  ГЎГ»Г«Г  ГЈГ®ГўГ­Г®Г¬ (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)", location=get_turf(front))
+		handle_overbeam(TRUE)
+		return TRUE
+
+	if(istype(finaltarget,/obj/effect/overmap/visitable/sector/exoplanet))
+		fire_at_exoplanet(z_level, finaltarget)
+	else
+		fire_at_sector(z_level, finaltarget.fore_dir, finaltarget)
+
+	handle_overbeam()
+
+	return TRUE
+
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/fire_at_sector(var/z_level, var/target_fore_dir, var/obj/effect/overmap/target, var/firing_at_exoplanet = FALSE)
 	var/heading = overmapdir
 
 	if(!heading)
@@ -90,7 +236,7 @@
 
 	var/turf/start = locate(start_x, start_y, z_level)
 
-	log_and_message_admins("Луч от [linked.name], выпущенный из [gun_name] - успешно попал в [target.name] на Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
+	log_and_message_admins("Р›СѓС‡ РѕС‚ [linked.name], РІС‹РїСѓС‰РµРЅРЅС‹Р№ РёР· [gun_name] - СѓСЃРїРµС€РЅРѕ РїРѕРїР°Р» РІ [target.name] РЅР° Z [z_level] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[start_x];Y=[start_y];Z=[z_level]'>JMP</a>) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[linked.x];Y=[linked.y];Z=[linked.z]'>MAP</a>)")
 
 	var/list/relevant_z = GetConnectedZlevels(z_level)
 	for(var/mob/M in GLOB.player_list)
@@ -100,8 +246,8 @@
 		if(!isdeaf(M))
 			sound_to(M, sound(fire_sound, volume=5))
 
-//	handle_beam(start, heading)				ебаная параша на beam() без каких либо причин не хочет проводить лучик через судно врага, ни рантаймов ни ошибок - по этому меняем на костыль
-	handle_beam_on_enemy(start, heading)//	хоть и костыль но выглядит очень модно :P
+//	handle_beam(start, heading)				РµР±Р°РЅР°СЏ РїР°СЂР°С€Р° РЅР° beam() Р±РµР· РєР°РєРёС… Р»РёР±Рѕ РїСЂРёС‡РёРЅ РЅРµ С…РѕС‡РµС‚ РїСЂРѕРІРѕРґРёС‚СЊ Р»СѓС‡РёРє С‡РµСЂРµР· СЃСѓРґРЅРѕ РІСЂР°РіР°, РЅРё СЂР°РЅС‚Р°Р№РјРѕРІ РЅРё РѕС€РёР±РѕРє - РїРѕ СЌС‚РѕРјСѓ РјРµРЅСЏРµРј РЅР° РєРѕСЃС‚С‹Р»СЊ
+	handle_beam_on_enemy(start, heading)//	С…РѕС‚СЊ Рё РєРѕСЃС‚С‹Р»СЊ РЅРѕ РІС‹РіР»СЏРґРёС‚ РѕС‡РµРЅСЊ РјРѕРґРЅРѕ :P
 	handle_beam_damage(start, heading, TRUE)
 
 	if(istype(target, /obj/effect/overmap/visitable/ship))
@@ -122,7 +268,7 @@
 				break
 		if(must_damage) target_vessel.damage_hull(hull_damage)
 
-/obj/machinery/computer/ship/ship_weapon/beam_cannon/fire_at_exoplanet(var/z_level, var/obj/effect/overmap/target)
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/fire_at_exoplanet(var/z_level, var/obj/effect/overmap/target)
 	fire_at_sector(z_level, random_dir(), target, TRUE)
 
 /obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/handle_beam(var/turf/s, var/d)
@@ -145,7 +291,7 @@
 			var/def_angle = pick(90,-90,0)
 			handle_beam_damage(get_step(T, turn(d, 180)), turn(d,180 + def_angle), TRUE)
 			handle_beam_on_enemy(get_step(T, turn(d, 180)), turn(d,180 + def_angle))
-			log_and_message_admins("Луч [gun_name] смешно отрикошетил от щита.")
+			log_and_message_admins("Р›СѓС‡ [gun_name] СЃРјРµС€РЅРѕ РѕС‚СЂРёРєРѕС€РµС‚РёР» РѕС‚ С‰РёС‚Р°.")
 			break
 		if(T.density && !killing_floor)
 			sleep(beam_speed)
@@ -200,13 +346,13 @@
 		ion_beam.light_outer_range = 2
 		ion_beam.light_max_bright = 1
 		ion_beam.light_color = beam_light_color
-		ion_beam.anchored = TRUE //иначе лазеры смешно улетают от взрывов
+		ion_beam.anchored = TRUE //РёРЅР°С‡Рµ Р»Р°Р·РµСЂС‹ СЃРјРµС€РЅРѕ СѓР»РµС‚Р°СЋС‚ РѕС‚ РІР·СЂС‹РІРѕРІ
 		ion_beam.does_spin = FALSE // ^^^
 		playsound(T, beam_sound, 250, 1)
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)
 
-/obj/machinery/computer/ship/ship_weapon/beam_cannon/handle_overbeam(var/missed = FALSE)
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/proc/handle_overbeam(var/missed = FALSE)
 	set waitfor = FALSE
 	var/turf/target_turf
 	var/beam_dir = overmapdir

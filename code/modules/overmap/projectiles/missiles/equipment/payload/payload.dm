@@ -4,7 +4,7 @@
 	desc = "dangerous equipment!!"
 	var/hull_damage = 15
 
-/obj/item/missile_equipment/payload/on_missile_activated(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/payload/on_missile_activated(var/obj/effect/overmap/missile/P)
 	P.set_dangerous(TRUE)
 	P.set_enter_zs(TRUE)
 

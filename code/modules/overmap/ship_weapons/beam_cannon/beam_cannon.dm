@@ -14,6 +14,7 @@
 	name = "ion beam emitter charger"
 	desc = "An ammo reciever. Munition then goes to ion beam barrel."
 	icon_state = "back"
+	density = TRUE
 
 ////////////////////////////////CIRCUIT////////////////////////////////
 

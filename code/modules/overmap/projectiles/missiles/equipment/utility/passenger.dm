@@ -50,7 +50,7 @@
 
 	..()
 
-/obj/item/missile_equipment/passenger/on_missile_activated(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/passenger/on_missile_activated(var/obj/effect/overmap/missile/P)
 	P.set_enter_zs(TRUE)
 	close_hatch()
 

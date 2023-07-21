@@ -1,18 +1,15 @@
 /obj/machinery/computer/ship/ship_weapon/deck_gun
-	name = "Ship weapon control"
+	name = "Deck gun control"
 	caldigit = 4		//number of digits that needs calibration
 	coolinterval = 30 SECONDS
 	gun_name = "Deck Gun"
-	hull_damage = 5		//урон каждой пули по корпусу
 
 	front_type = /obj/machinery/ship_weapon/front_part/deck_gun
 	middle_type = /obj/machinery/ship_weapon/middle_part/deck_gun
 	back_type = /obj/machinery/ship_weapon/back_part/deck_gun
-	munition_type = /obj/structure/ship_munition/ammobox
+	munition_type = /obj/item/ammo_magazine/ammobox/deck_gun
 
 	burst_size = 1		//сколько раз пиу
-
-	canhit_missiles = FALSE
 
 	shake_camera_force = 16
 
@@ -64,23 +61,13 @@
 	if(munition && istype(munition,munition_type))
 		return munition
 	return 0
-
+/*
 /obj/machinery/computer/ship/ship_weapon/deck_gun/get_ammo()
-	munition = locate() in get_turf(back)
-	if(munition && istype(munition,munition_type))
-		return munition.ammo_count
 
 /obj/machinery/computer/ship/ship_weapon/deck_gun/get_ammo_type()
-	munition = locate() in get_turf(back)
-	if(munition && istype(munition,munition_type))
-		return munition.ammo_type
 
 /obj/machinery/computer/ship/ship_weapon/deck_gun/remove_ammo()
-	munition = locate() in get_turf(back)
-	if(get_ammo() >= ammo_per_shot)
-		munition.ammo_count -= ammo_per_shot
-	return
-
+*/
 /obj/machinery/computer/ship/ship_weapon/deck_gun/OnTopic(mob/user, list/href_list, state)
 	if(!linked)
 		return TOPIC_HANDLED
@@ -95,19 +82,14 @@
 				getline_end = get_step(getline_end,overmapdir)
 				i++
 			for(var/turf/T in getline(get_step(front,overmapdir),getline_end))
-				if(T.density && !istype(T, /turf/unsimulated/planet_edge) && !ignore_blockage)
+				if(T.density && !istype(T, /turf/unsimulated/planet_edge))
 					overmapdir = old_overmapdir
 					return TOPIC_REFRESH
 				for(var/atom/A in T)
 					if(((A.density && A.layer != TABLE_LAYER) && !istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield))))
-						if(istype(A, /obj/effect/shield))
-							var/obj/effect/shield/S = A
-							if(S.gen.check_flag(shield_modflag_counter))
-								overmapdir = old_overmapdir
-								return TOPIC_REFRESH
-						if(!ignore_blockage)
-							overmapdir = old_overmapdir
-							return TOPIC_REFRESH
+						overmapdir = old_overmapdir
+						return TOPIC_REFRESH
+
 		rotate(overmapdir)
 		reset_calibration()
 		return TOPIC_HANDLED

@@ -4,27 +4,28 @@
 	coolinterval = 175 SECONDS
 	gun_name = "Ion beam emitter"
 
-	hull_damage = 55
+	var/hull_damage = 55
 
 	front_type = /obj/machinery/ship_weapon/front_part/beam_cannon
 	middle_type = /obj/machinery/ship_weapon/middle_part/beam_cannon
 	back_type = /obj/machinery/ship_weapon/back_part/beam_cannon
-	munition_type = /obj/structure/ship_munition/ammobox/cell
 
-	ammo_per_shot = 1000
+	ammo_per_shot = 15 KILOWATTS
 	burst_size = 1
 
 	fire_delay = 200
 
 	shake_camera_force = 50
 
-	destroy_event_flags = OVERMAP_WEAKNESS_EXPLOSIVE
+	var/shoot_range = 1
 
-	shield_modflag_counter = MODEFLAG_PHOTONIC
+	var/destroy_event_flags = OVERMAP_WEAKNESS_EXPLOSIVE
 
-	ignore_blockage = TRUE
+	var/shield_modflag_counter = MODEFLAG_PHOTONIC
 
-	pew_spread = 20
+	var/ignore_blockage = TRUE
+
+	var/pew_spread = 20
 
 	fire_sound = 'sound/machines/superlaser_firing.ogg'
 	prefire_sound = 'sound/machines/superlaser_prefire.ogg'
@@ -32,7 +33,7 @@
 	far_fire_sound = 'sound/machines/superlaser_firing.ogg'
 	far_prefire_sound = 'sound/machines/superlaser_prefire.ogg'
 
-	overmap_icon = "ion_beam" // icons\effects\beam.dmi
+	var/overmap_icon = "ion_beam" // icons\effects\beam.dmi
 
 	var/beam_time = 70
 	var/beam_speed = 1
@@ -41,3 +42,15 @@
 	var/beam_icon = "ion_beam" // icons\effects\beam.dmi
 
 	var/beam_sound = 'sound/machines/ion_beam_hit.ogg'
+
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/get_charge()
+	return "energy"
+
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/get_ammo_type()
+	return "energy"
+
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/get_ammo()
+	return "energy"
+
+/obj/machinery/computer/ship/ship_weapon/beam_cannon/remove_ammo()
+	return "energy"

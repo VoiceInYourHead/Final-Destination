@@ -13,12 +13,12 @@
 	since missiles move along z levels at max speed, there's no point in going into the z level to chase the missile.
 	so this just waits patiently until it's moving again, then gets it (if it goes back out)
 */
-/obj/item/missile_equipment/payload/antimissile/do_overmap_work(var/obj/effect/overmap/projectile/P)
+/obj/item/missile_equipment/payload/antimissile/do_overmap_work(var/obj/effect/overmap/missile/P)
 	if(!..())
 		return
 
 	var/turf/T = get_turf(P)
-	for(var/obj/effect/overmap/projectile/O in T)
+	for(var/obj/effect/overmap/missile/O in T)
 		if(O == P)
 			continue
 
