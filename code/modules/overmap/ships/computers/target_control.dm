@@ -31,7 +31,7 @@
 		else if(istype(O, /obj/effect/overmap/visitable/sector/exoplanet))
 			contacts_planets.Add(list(list("name"=O.name, "ref"="\ref[O]", "bearing"=bearing)))
 
-		else if(istype(O, /obj/effect/overmap/projectile))
+		else if(istype(O, /obj/effect/overmap/missile))
 			contacts_missiles.Add(list(list("name"=O.name, "ref"="\ref[O]", "bearing"=bearing)))
 
 	if(contacts_ships.len)

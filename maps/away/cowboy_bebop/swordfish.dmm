@@ -18,7 +18,7 @@
 "r" = (/obj/machinery/conveyor/ammobelt/swordfish_right{icon_state = "conveyor0"; dir = 8},/turf/simulated/floor/tiled/techfloor/grid{initial_gas = null},/area/ship/swordfish)
 "s" = (/obj/machinery/light,/obj/machinery/conveyor/ammobelt/swordfish_right{icon_state = "conveyor0"; dir = 5},/turf/simulated/floor/tiled/techfloor/grid{initial_gas = null},/area/ship/swordfish)
 "t" = (/obj/machinery/ion_engine{dir = 1},/turf/simulated/floor/plating,/area/ship/swordfish)
-"u" = (/obj/machinery/ship_weapon/back_part/hmg{dir = 1; icon_state = "ammo_loader"; pixel_y = 5},/obj/structure/ship_munition/ammobox/hmg,/obj/effect/floor_decal/spline/plain/black,/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techfloor/grid{initial_gas = null},/area/ship/swordfish)
+"u" = (/obj/machinery/ship_weapon/back_part/hmg{dir = 1; icon_state = "ammo_loader"; pixel_y = 5},/obj/item/ammo_magazine/ammobox/hmg,/obj/effect/floor_decal/spline/plain/black,/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techfloor/grid{initial_gas = null},/area/ship/swordfish)
 "v" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/effect/floor_decal/spline/plain/black,/obj/structure/handrail,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/techfloor/grid{initial_gas = null},/area/ship/swordfish)
 "w" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/ship/swordfish)
 "x" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/effect/floor_decal/spline/plain/black,/obj/structure/handrail,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/techfloor/grid{initial_gas = null},/area/ship/swordfish)

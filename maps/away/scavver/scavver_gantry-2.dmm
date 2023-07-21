@@ -2181,7 +2181,7 @@
 	},
 /area/scavver/lifepod)
 "rd" = (
-/obj/machinery/hologram/holopad/longrange/remoteship,
+/obj/machinery/hologram/holopad/longrange,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -2480,7 +2480,7 @@
 	},
 /area/scavver/lifepod)
 "ta" = (
-/obj/machinery/hologram/holopad/longrange/remoteship,
+/obj/machinery/hologram/holopad/longrange,
 /obj/effect/overmap/visitable/ship/landable/scavver_gantry/two,
 /turf/simulated/floor/tiled/white/monotile{
 	initial_gas = newlist()
@@ -2794,7 +2794,7 @@
 	name = "Aft Access Blast Door";
 	pixel_x = 24
 	},
-/obj/machinery/hologram/holopad/longrange/remoteship,
+/obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/scavver/harvestpod)
 "vp" = (

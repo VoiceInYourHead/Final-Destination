@@ -1,6 +1,6 @@
-/obj/effect/overmap/projectile
-	name = "projectile"
-	icon_state = "projectile"
+/obj/effect/overmap/missile
+	name = "missile"
+	icon_state = "missile"
 	sector_flags = OVERMAP_SECTOR_KNOWN // technically in space, but you can't visit the missile during its flight
 	scannable = TRUE
 	var/obj/structure/missile/actual_missile = null
@@ -10,7 +10,7 @@
 	var/dangerous = FALSE
 	var/should_enter_zs = FALSE
 
-/obj/effect/overmap/projectile/Initialize(var/maploading, var/sx, var/sy)
+/obj/effect/overmap/missile/Initialize(var/maploading, var/sx, var/sy)
 	. = ..()
 	x = sx
 	y = sy
@@ -18,42 +18,42 @@
 	START_PROCESSING(SSobj, src)
 
 
-/obj/effect/overmap/projectile/Destroy()
+/obj/effect/overmap/missile/Destroy()
 	if(!QDELETED(actual_missile))
 		QDEL_NULL(actual_missile)
 	actual_missile = null
 
 	. = ..()
 
-/obj/effect/overmap/projectile/Bump(var/atom/A)
+/obj/effect/overmap/missile/Bump(var/atom/A)
 	if(istype(A,/turf/unsimulated/map/edge))
 		// Destroy() in the missile will qdel this object as well
 		qdel(actual_missile)
 	..()
 
-/obj/effect/overmap/projectile/proc/set_missile(var/obj/structure/missile/missile)
+/obj/effect/overmap/missile/proc/set_missile(var/obj/structure/missile/missile)
 	actual_missile = missile
 
-/obj/effect/overmap/projectile/proc/set_dangerous(var/is_dangerous)
+/obj/effect/overmap/missile/proc/set_dangerous(var/is_dangerous)
 	dangerous = is_dangerous
 
-/obj/effect/overmap/projectile/proc/set_moving(var/is_moving)
+/obj/effect/overmap/missile/proc/set_moving(var/is_moving)
 	moving = is_moving
 
-/obj/effect/overmap/projectile/proc/set_enter_zs(var/enter_zs)
+/obj/effect/overmap/missile/proc/set_enter_zs(var/enter_zs)
 	should_enter_zs = enter_zs
 
-/obj/effect/overmap/projectile/get_scan_data(mob/user)
+/obj/effect/overmap/missile/get_scan_data(mob/user)
 	. = ..()
 	. += "<br>General purpose projectile frame"
 	. += "<br>Additional information:<br>[get_additional_info()]"
 
-/obj/effect/overmap/projectile/proc/get_additional_info()
+/obj/effect/overmap/missile/proc/get_additional_info()
 	if(actual_missile)
 		return actual_missile.get_additional_info()
 	return "N/A"
 
-/obj/effect/overmap/projectile/proc/move_to(var/datum/target, var/min_speed, var/speed)
+/obj/effect/overmap/missile/proc/move_to(var/datum/target, var/min_speed, var/speed)
 	if(isnull(target) || !speed)
 		walk(src, 0)
 		walking = FALSE
@@ -65,7 +65,7 @@
 	walking = TRUE
 	update_icon()
 
-/obj/effect/overmap/projectile/Process()
+/obj/effect/overmap/missile/Process()
 	// Whether overmap movement occurs is controlled by the missile itself
 	if(!moving || !actual_missile)
 		return
@@ -101,7 +101,7 @@
 	update_icon()
 
 // Checks if the missile should enter the z level of an overmap object
-/obj/effect/overmap/projectile/proc/check_enter()
+/obj/effect/overmap/missile/proc/check_enter()
 	if(!should_enter_zs)
 		return
 
@@ -155,10 +155,7 @@
 				winner = O
 		actual_missile.enter_level(pick(winner.map_z), winner, winner.fore_dir, winner.dir)
 
-/obj/effect/overmap/projectile/on_update_icon()
-	icon_state  = "projectile"
-	if(walking)
-		icon_state  += "_moving"
-
+/obj/effect/overmap/missile/on_update_icon()
+	icon_state = initial(icon_state)
 	if(dangerous)
 		icon_state  += "_danger"

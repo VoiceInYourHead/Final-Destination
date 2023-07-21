@@ -7,13 +7,10 @@
 	front_type = /obj/machinery/ship_weapon/front_part/hmg
 	middle_type = /obj/machinery/ship_weapon/middle_part/hmg
 	back_type = /obj/machinery/ship_weapon/back_part/hmg
-	munition_type = /obj/structure/ship_munition/ammobox/hmg
-
-	hull_damage = 0.2
+	munition_type = /obj/item/ammo_magazine/ammobox/hmg
 
 	burst_size = 10
 	fire_interval = 3
-	pew_spread = 20
 
 /obj/machinery/computer/ship/ship_weapon/hmg/telescreen	//little hacky but it's only used on one ship so it should be okay
 	icon_state = "tele_hmg"

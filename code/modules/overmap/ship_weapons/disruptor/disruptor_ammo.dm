@@ -1,11 +1,20 @@
-/obj/structure/ship_munition/ammobox/cell/disruptor
-	name = "3000 MW fusion gun cell"
-	desc = "3000 megawatts military grade powercell, often used in ship disruptors."
-	icon_state = "ammocrate_disruptor"
-	ammo_count = 3000
-	ammo_type = null
+#define CALIBER_SHIP_DISRUPTOR    "fusion cells"
 
-/obj/item/projectile/bullet/disruptor
+/obj/item/ammo_magazine/ammobox/disruptor
+	name = "ammo box"
+	desc = "Military grade fusion cells box, used in ship disruptors."
+	icon_state = "ammocrate_disruptor"
+	caliber = CALIBER_SHIP_DISRUPTOR
+	max_ammo = 40
+	ammo_type = /obj/item/ammo_casing/huge_caliber/disruptor
+
+/obj/item/ammo_casing/huge_caliber/disruptor
+	name = "disruptor charge"
+	desc = "A disruptor charge stored in casing-like structure."
+	caliber = CALIBER_SHIP_DISRUPTOR
+	projectile_type = /obj/item/projectile/bullet/huge_caliber/disruptor
+
+/obj/item/projectile/bullet/huge_caliber/disruptor
 	name = "energy bolt"
 	icon_state = "spark_green"
 	temperature = T0C + 300
@@ -13,12 +22,14 @@
 	agony = 20
 	damage_type = BURN
 	damage_flags = 0
-	muzzle_type = null
-	fire_sound = null
-	distance_falloff = 0.1
-	life_span = 200
 	var/heavy_effect_range = 2
 	var/light_effect_range = 3
+
+	ground_to_space = FALSE
+	hull_damage = 0
+	pew_spread = 10
+
+	overmap_color = COLOR_YELLOW
 
 	on_impact(var/atom/A)
 		empulse(A, heavy_effect_range, light_effect_range)

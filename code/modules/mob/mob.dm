@@ -317,7 +317,7 @@
 	face_atom(A)
 
 	if(!isghost(src))
-		if(A.loc != src || A == l_hand || A == r_hand)
+		if(A.loc != src || A == l_hand || A == r_hand || istype(A, /obj/screen))
 			for(var/mob/M in viewers(4, src))
 				if(M == src)
 					continue

@@ -1413,10 +1413,10 @@ var/list/random_useful_
 	spawn_nothing_percentage = 40
 
 /obj/random/ship_ammo_autocannon/spawn_choices()
-	return list(/obj/structure/ship_munition/ammobox/autocannon/anti_hull,
-				/obj/structure/ship_munition/ammobox/autocannon/aphe,
-				/obj/structure/ship_munition/ammobox/autocannon/armour_piercing,
-				/obj/structure/ship_munition/ammobox/autocannon/high_explosive)
+	return list(/obj/item/ammo_magazine/ammobox/autocannon/anti_hull,
+				/obj/item/ammo_magazine/ammobox/autocannon/aphe,
+				/obj/item/ammo_magazine/ammobox/autocannon/armour_piercing,
+				/obj/item/ammo_magazine/ammobox/autocannon/high_explosive)
 
 /obj/random/ship_ammo_ofd
 	name = "random OFD ammunition"

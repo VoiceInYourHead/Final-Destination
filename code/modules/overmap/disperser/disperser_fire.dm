@@ -174,17 +174,6 @@
 
 	linked.Beam(targetrange, "disperser_beam", time = 150, maxdistance = world.maxx)
 
-/obj/machinery/computer/ship/disperser/proc/get_target_turf(turf/start, direction)
-	switch(direction)
-		if(NORTH)
-			return locate(start.x,world.maxy,start.z)
-		if(SOUTH)
-			return locate(start.x,1,start.z)
-		if(WEST)
-			return locate(1,start.y,start.z)
-		if(EAST)
-			return locate(world.maxx,start.y,start.z)
-
 #undef QUICK_TO_STANDING
 #undef DELIBERATE_TO_STANDING
 #undef RUNNING_FALL_PROB
