@@ -2,7 +2,7 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 
 /obj/effect/overmap/visitable/sector/junkyard
 	name = "junkyard"
-	icon_state = "globe"
+	icon_state = "junkyard"
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	free_landing = TRUE
 	var/area/junkyard_area
@@ -30,7 +30,7 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 	//Flags deciding what features to pick
 	var/ruin_tags_whitelist
 	var/ruin_tags_blacklist = RUIN_RAINWORLD
-	var/features_budget = 6
+	var/features_budget = 8
 	var/list/possible_features = list()
 	var/list/spawned_features
 

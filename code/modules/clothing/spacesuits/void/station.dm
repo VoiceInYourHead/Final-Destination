@@ -378,8 +378,8 @@
 	desc = "A heavily modified salvage voidsuit helmet. It has been fitted with radiation-resistant plating."
 //	icon_state = "rig0-salvage"
 //	item_state = "salvage_helm"
-	icon_state = "rig0-miningalt"
-	item_state = "miningalt_helm"
+	icon_state = "rig0-salvager"
+	item_state = "rig0-salvager"
 	item_state_slots = list(
 		slot_l_hand_str = "eng_helm",
 		slot_r_hand_str = "eng_helm",
@@ -416,14 +416,14 @@
 	name = "salvage voidsuit"
 	desc = "A hand-me-down salvage voidsuit. It has obviously had a lot of repair work done to its radiation shielding."
 //	icon_state = "rig-salvage"
-	icon_state = "rig-mining"
+	icon_state = "rig-salvager"
 //	item_state_slots = list(
 //		slot_l_hand_str = "eng_voidsuit",
 //		slot_r_hand_str = "eng_voidsuit",
 //	)
 	item_state_slots = list(
-		slot_l_hand_str = "mining_voidsuit",
-		slot_r_hand_str = "mining_voidsuit",
+		slot_l_hand_str = "eng_voidsuit",
+		slot_r_hand_str = "eng_voidsuit",
 	)
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
@@ -476,35 +476,4 @@
 
 /obj/item/clothing/suit/space/void/pilot/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/pilot
-	boots = /obj/item/clothing/shoes/magboots
-
-//Retro
-/obj/item/clothing/suit/space/void/retro
-	name = "retro voidsuit"
-	desc = "A voidsuit designed to replicate older designs with newer technology."
-	icon_state = "rig-retro"
-	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
-		energy = ARMOR_ENERGY_RESISTANT,
-		bomb = ARMOR_BOMB_PADDED,
-		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_SHIELDED
-	)
-	allowed = list(/obj/item/gun,/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit)
-
-/obj/item/clothing/head/helmet/space/void/retro
-	name = "retro voidsuit helmet"
-	desc = "A voidsuit helmet designed to replicate older designs with newer technology."
-	icon_state = "rig0-retro"
-	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
-		energy = ARMOR_ENERGY_RESISTANT,
-		bomb = ARMOR_BOMB_PADDED,
-		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_SHIELDED
-	)
-	light_overlay = "helmet_light_alt"
-
-/obj/item/clothing/suit/space/void/retro/prepared
-	helmet = /obj/item/clothing/head/helmet/space/void/retro
 	boots = /obj/item/clothing/shoes/magboots
