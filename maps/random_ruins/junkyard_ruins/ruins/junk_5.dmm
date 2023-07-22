@@ -1,0 +1,102 @@
+"aJ" = (/turf/simulated/wall/r_wall,/area/template_noop)
+"cM" = (/obj/structure/railing/mapped,/turf/template_noop,/area/template_noop)
+"dW" = (/obj/random/junkyard/hostile,/turf/simulated/floor/plating,/area/template_noop)
+"eg" = (/turf/simulated/wall/titanium,/area/template_noop)
+"fp" = (/obj/structure/handrail{dir = 1},/turf/simulated/floor/plating,/area/template_noop)
+"fF" = (/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"gd" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"hI" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
+"hT" = (/obj/structure/railing/mapped{dir = 8},/turf/template_noop,/area/template_noop)
+"ig" = (/obj/structure/closet/crate/medical,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical,/obj/random/junkyard/medical/lite,/turf/simulated/floor/plating,/area/template_noop)
+"iY" = (/obj/structure/lattice,/obj/structure/girder/displaced,/turf/template_noop,/area/template_noop)
+"kC" = (/obj/structure/girder/displaced,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"kK" = (/turf/simulated/wall/prepainted,/area/template_noop)
+"kM" = (/obj/structure/lattice,/obj/random/junkyard/obstruction,/turf/template_noop,/area/template_noop)
+"kR" = (/obj/structure/girder,/turf/template_noop,/area/template_noop)
+"lk" = (/obj/structure/girder/displaced,/turf/template_noop,/area/template_noop)
+"lv" = (/obj/structure/grille/broken,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"lG" = (/obj/structure/lattice,/obj/structure/girder,/turf/template_noop,/area/template_noop)
+"os" = (/obj/structure/grille,/turf/simulated/floor/plating,/area/template_noop)
+"pF" = (/turf/simulated/floor/plating,/area/template_noop)
+"pG" = (/obj/random/junkyard/obstruction,/turf/template_noop,/area/template_noop)
+"pY" = (/obj/structure/lattice,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"sr" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"tk" = (/obj/random/junkyard/cash,/turf/template_noop,/area/template_noop)
+"ty" = (/obj/structure/railing/mapped,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"ul" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall,/area/template_noop)
+"vk" = (/obj/structure/railing/mapped,/turf/simulated/floor/plating,/area/template_noop)
+"vG" = (/obj/structure/closet/crate/trashcart,/obj/random/junkyard/loot,/obj/random/junkyard/loot,/turf/template_noop,/area/template_noop)
+"xe" = (/turf/simulated/floor/tiled/techfloor,/area/template_noop)
+"xV" = (/obj/structure/handrail,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"zb" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_titanium,/area/template_noop)
+"zL" = (/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"At" = (/turf/simulated/floor/steel_dirty,/area/template_noop)
+"BQ" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"DH" = (/obj/structure/lattice,/obj/structure/wall_frame/standard,/turf/template_noop,/area/template_noop)
+"DW" = (/turf/simulated/wall/r_titanium,/area/template_noop)
+"Ev" = (/obj/structure/grille/broken,/turf/simulated/floor/plating,/area/template_noop)
+"EB" = (/obj/random/junkyard/pod,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"EG" = (/obj/structure/girder,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"EW" = (/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"GL" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/steel_dirty,/area/template_noop)
+"Hp" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/random/junkyard/loot,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"HE" = (/obj/structure/closet/crate/secure/gear,/obj/random/junkyard/handgun,/obj/random/junkyard/ammo,/obj/random/junkyard/ammo,/turf/template_noop,/area/template_noop)
+"Ix" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"Kh" = (/obj/structure/closet/crate/large,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/loot,/obj/random/junkyard/bomb_supply,/obj/random/junkyard/bomb_supply,/obj/random/junkyard/material,/turf/simulated/floor/plating,/area/template_noop)
+"KD" = (/obj/random/junkyard/toolbox,/turf/template_noop,/area/template_noop)
+"KT" = (/obj/random/junkyard/powercell,/turf/template_noop,/area/template_noop)
+"Le" = (/obj/effect/decal/cleanable/dirt,/obj/structure/wall_frame/standard,/turf/simulated/floor/plating,/area/template_noop)
+"My" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/template_noop)
+"MO" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/template_noop)
+"MU" = (/turf/simulated/wall,/area/template_noop)
+"Nf" = (/obj/structure/wall_frame/standard,/turf/simulated/floor/plating,/area/template_noop)
+"Ns" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
+"Os" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/steel_dirty,/area/template_noop)
+"PA" = (/obj/random/trash,/obj/random/trash,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"PD" = (/obj/random/junkyard/tool,/turf/template_noop,/area/template_noop)
+"Qc" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"Qw" = (/obj/structure/handrail{dir = 4},/turf/simulated/floor/plating,/area/template_noop)
+"QI" = (/obj/structure/grille/broken,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"Rf" = (/turf/template_noop,/area/template_noop)
+"Rz" = (/obj/structure/closet/crate/large,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/material,/obj/random/junkyard/loot,/turf/template_noop,/area/template_noop)
+"Ss" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"To" = (/obj/structure/girder,/turf/simulated/floor/plating,/area/template_noop)
+"Xs" = (/obj/random/trash,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"Yi" = (/obj/random/trash,/turf/simulated/floor/plating,/area/template_noop)
+"Yj" = (/obj/random/junkyard/hostile,/turf/simulated/floor/steel_dirty,/area/template_noop)
+"YV" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall,/area/template_noop)
+"Zd" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall,/area/template_noop)
+"ZQ" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+
+(1,1,1) = {"
+RfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfMURfEWRflkRfRf
+RfRfRfkKkKRfRfRfRfRfRfRfRfRfRfRfpGHEaJRfRfRfRfMUgdHpMURfRfRf
+RfRftkkKkKRfRfRfRfRfRfRfRfRfRfpGaJaJaJaJaJRfRfMUEWpFZdMURfRf
+RfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfgdaJkMRfRfRfZdQwBQpFRfRfRf
+RfRfRfRfRfRfRfRfRflGgdRfRfRfRfRfRfRfaJgdRfRfgdMUEBEWgdgdgdpG
+RfRfpGRfRfRfRfRfRfgddWRfRfRfRfRfRfRfgdgdRfRfRfMUZdZdQIosRfRf
+RfRfRfRfRfRfRfRfospFQcgdRfRfRfRfRfRfRfgdRfRfRfRfRfRfgdRfRfRf
+RfRfRfRfRfRfRfMUZdpFpFDHvGRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRf
+RfRfRfRfRfgdRfMUMUZdZdZdMUgdRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRf
+RfRfRfgdgdgdgdpFpFxVXsZdpFRfRfRfRfRfRfRfgdRfRfRfRfRfRfRfRfkM
+RfRfRfRfiYRfRfRftyvkpFQcgdRfRfRfRfRfaJaJaJRfRfRfRfRfcMMURfgd
+RfRfRfRfgdRfRfRfRfpGRfRfgdRfRfRfRfRfRfgdaJRfRfRfRfpYLeMUMUMU
+RfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfpGgdKTRfRfgdgdZQdWpFSsMU
+RfRfRfRfRfRfRfRfRfRfRfRfRfkRegRfRfRfRfRfRfRfRfRfRfRfgdfFsrMU
+RfRfRfRfRfRfRfRfRfRfRfRfRfRfegRfRfRfRfRfkRRfRfRfRfRfRffFZdMU
+RfRfRfRfRfRfRfRfRfRfRfRfRfRfRftkRfRfRfRfRfRfRfRfRfRfRfgdgdTo
+RfRfRfRfRfRfRfRfgdRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfgdRfRfgdRfRf
+RfRfRfRfRfRfRfgdgdRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfiYRfRfRfRfRf
+RfRfNsRfRfRflvNfgdlGRfRfRfRfRfRfRfRfRfRfcMcMegegMygdRfRfRfRf
+RfDWNsRfpFRfpFxepFdWRfRfRfRfRfRfRfRfRfRfQcpFQcKhegpFzLRfRfRf
+gdzbzbDWzbDWzbxehINszbDWkMRfRfRfRfRfRfgdgdgdfppFIxpFgdRfRfRf
+RfRfRfRfRfRfzbxegdNsDWRfRfRfRfRfRfRfRfRfkMRfegegMyEvRfRfRfRf
+RfRzRfRfRfRfDWQcgdxexehTRfRfRfRfPDRfRfRfRfRfegMOegRfRfRfRfRf
+RfRfRfRfRfRfDWYiRfRfgdRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfRfgdRfRf
+RfRfRfRfRfRfRfRfRfRfRfRfRfRfgdRfRfRfRfRfRfRfRfRfRfRfRfkMRfRf
+RfRfRfRfRfRfRfRfRfgdRfRfRfgdgdgdRfRfRfRfRfRfRfRfpFPABQgdRfRf
+RfRfRfRfRfRfRfRfRfkMRfRfRfaJkCRfRfRfRfKDRfpYQczLpFMUpFZdMURf
+RfRfRfpGRfRfRfRfRfYVAtRfRfAtaJRfRfRfgdgdgdEGululMUulMUMUMURf
+RfRfRfRfRfRfRfRfRfYVOsGLpFYjaJRfRfRfRfRfRfNfpFpFMUMUMURfRfRf
+RfRfRfRfRfRfRfRfRfYVigRfGLpFDHRfRfRfRfRfRfRfRfRfRfgdRfRfRfRf
+"}

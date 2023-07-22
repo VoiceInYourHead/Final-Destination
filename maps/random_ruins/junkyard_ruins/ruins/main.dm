@@ -13,6 +13,8 @@
 
 /area/map_template/wreck/wreckthree
 
+/area/map_template/wreck/wreckfour
+
 /datum/map_template/ruin/junkyard/wreck
 	name = "Fleet ship derelict"
 	id = "wreck1"
@@ -33,3 +35,9 @@
 	id = "wreck3"
 	suffixes = list("ruins/ruin_3.dmm")
 	spawn_cost = 0.2
+
+/datum/map_template/ruin/junkyard/wreck/wreck4
+	name = "Station fragment #2"
+	id = "wreck4"
+	suffixes = list("ruins/ruin_4.dmm")
+	spawn_cost = 1

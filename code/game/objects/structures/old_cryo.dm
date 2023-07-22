@@ -57,6 +57,11 @@
 				equip_outfit(survivor)
 				survivor.update_icon()
 				survivor.add_language(LANGUAGE_SPACER)
+				if(prob(30))
+					survivor.adjustBruteLoss(20)
+					user.visible_message(
+						SPAN_DANGER("You damaged \the [src], while trying to open it!"),
+					)
 	if(isWrench(C))
 		if(!anchored)
 			anchored = TRUE
@@ -65,11 +70,36 @@
 			to_chat(user, "<span class='notice'>You unsecure pod from the floor.</span>")
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			anchored = FALSE
+
+	if(isMultitool(C) && user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
+		if(opened)
+			to_chat(user, SPAN_DANGER("Pod were alreade opened!"))
+		else if(!opened)
+			user.visible_message(
+				SPAN_WARNING("\The [user] starts to hacking \the [src] with \the [C]!"),
+				SPAN_DANGER("You start hacking \the [src]."),
+				SPAN_WARNING("You hear various beeps!")
+			)
+			playsound(loc, 'sound/machines/button4.ogg', 100, TRUE)
+			if(do_after(user, 50, src))
+				opened = TRUE
+				icon_state = "pod_opened"
+				var/new_species = pickweight(species)
+				var/mob/living/carbon/human/joinable/survivor = new (loc, new_species)
+				randomize_appearance(survivor, new_species)
+				equip_outfit(survivor)
+				survivor.update_icon()
+				survivor.add_language(LANGUAGE_SPACER)
+
 	else
 		user.visible_message(
-			SPAN_WARNING("You probably need crowbar or wrench to do something with this old crap!")
+			SPAN_WARNING("You probably need crowbar or wrench to do something with this old crap! Or, better, get someone more professional.")
 		)
 
+/obj/structure/abandoned_cryo/attack_hand(mob/user)
+	user.visible_message(
+		SPAN_WARNING("You can't open this thing with bare hands!")
+	)
 
 #define HEX_COLOR_TO_RGB_ARGS(X) arglist(GetHexColors(X))
 /obj/structure/abandoned_cryo/proc/randomize_appearance(var/mob/living/carbon/human/M, species_choice)
