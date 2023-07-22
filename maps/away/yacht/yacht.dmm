@@ -119,6 +119,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/bridge)
 "at" = (
@@ -1216,6 +1217,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 6
 	},
+/obj/machinery/radio_beacon,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "dD" = (

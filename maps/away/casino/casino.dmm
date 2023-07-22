@@ -4988,6 +4988,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/casino/casino_mainfloor)
+"oK" = (
+/obj/machinery/radio_beacon,
+/turf/simulated/floor/tiled,
+/area/casino/casino_bridge)
 "pb" = (
 /obj/item/ammo_casing/pistol/magnum/used,
 /turf/simulated/floor/tiled,
@@ -5133,6 +5137,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/casino/casino_crew_cantina)
+"vJ" = (
+/obj/machinery/hologram/holopad/longrange,
+/turf/simulated/floor/tiled,
+/area/casino/casino_bridge)
 "wb" = (
 /obj/item/ammo_casing/rifle/used,
 /obj/item/ammo_casing/rifle/used,
@@ -9767,7 +9775,7 @@ gb
 ax
 ax
 ax
-ap
+oK
 aV
 am
 bj
@@ -9969,7 +9977,7 @@ an
 ar
 au
 ay
-ap
+vJ
 qb
 rb
 ub
