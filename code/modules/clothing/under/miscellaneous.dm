@@ -765,3 +765,9 @@
 obj/item/clothing/under/bathrobe/New()
     ..()
     color = get_random_colour()
+
+/obj/item/clothing/under/frontier/old
+	name = "frontier clothes"
+	desc = "A rugged brown sweater and denim overalls. A popular style among frontier colonists."
+	icon_state = "frontierold"
+	worn_state = "frontierold"
