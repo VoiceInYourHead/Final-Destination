@@ -18,7 +18,7 @@
 /obj/item/clothing/suit/space/void/ascent
 	name = "\improper Ascent voidsuit"
 	desc = "A form-fitting spacesuit of mantid manufacture."
-	icon_state = "ascent_general"
+	icon_state = "kexosuit"
 	max_pressure_protection = ENG_VOIDSUIT_MAX_PRESSURE
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
