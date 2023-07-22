@@ -8,6 +8,7 @@
 	volume = 30
 	possible_transfer_amounts = "5;10;15;30"
 	rim_pos = "y=23;x_left=13;x_right=20"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/rocks
 	name = "rocks glass"
@@ -19,6 +20,7 @@
 	volume = 20
 	possible_transfer_amounts = "5;10;20"
 	rim_pos = "y=21;x_left=10;x_right=23"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/shake
 	name = "sherry glass"
@@ -30,6 +32,7 @@
 	volume = 30
 	possible_transfer_amounts = "5;10;15;30"
 	rim_pos = "y=25;x_left=13;x_right=21"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/cocktail
 	name = "cocktail glass"
@@ -41,6 +44,7 @@
 	volume = 15
 	possible_transfer_amounts = "5;10;15"
 	rim_pos = "y=22;x_left=13;x_right=21"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/shot
 	name = "shot glass"
@@ -53,6 +57,7 @@
 	matter = list(MATERIAL_GLASS = 15)
 	possible_transfer_amounts = "1;2;5"
 	rim_pos = "y=17;x_left=13;x_right=21"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/pint
 	name = "pint glass"
@@ -64,6 +69,7 @@
 	matter = list(MATERIAL_GLASS = 125)
 	possible_transfer_amounts = "5;10;15;30;60"
 	rim_pos = "y=25;x_left=12;x_right=21"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/mug
 	name = "glass mug"
@@ -75,6 +81,7 @@
 	volume = 40
 	possible_transfer_amounts = "5;10;20;40"
 	rim_pos = "y=22;x_left=12;x_right=20"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/wine
 	name = "wine glass"
@@ -86,6 +93,7 @@
 	volume = 25
 	possible_transfer_amounts = "5;10;15;25"
 	rim_pos = "y=25;x_left=12;x_right=21"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/flute
 	name = "flute glass"
@@ -97,6 +105,7 @@
 	volume = 25
 	possible_transfer_amounts = "5;10;15;25"
 	rim_pos = "y=24;x_left=13;x_right=19"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/carafe
 	name = "pitcher"
@@ -279,6 +288,7 @@
 	volume = 20
 	possible_transfer_amounts = "5;10;20"
 	rim_pos = "y=22;x_left=14;x_right=22"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/goblet
 	name = "goblet"
@@ -290,6 +300,7 @@
 	volume = 25
 	possible_transfer_amounts = "5;10;15;25"
 	rim_pos = "y=24;x_left=14;x_right=20"
+	filling_overlayed = TRUE
 
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/glass
 	name = "glass coffee cup"

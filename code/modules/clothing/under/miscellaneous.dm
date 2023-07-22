@@ -759,3 +759,11 @@
 	icon_state = "kimono"
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/bathrobe
+	name = "bathrobe"
+	desc = "A classic bathrobe for your pastime in the sauna."
+	icon_state = "bathrobe"
+	item_state = "bathrobe"
+	worn_state = "bathrobe"
+	gender_icons = 1
