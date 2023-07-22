@@ -20,11 +20,11 @@
 			if(!isdeaf(M))
 				sound_to(M, sound(far_prefire_sound, volume=10))
 
-	front.change_power_consumption(ammo_per_shot, POWER_USE_ACTIVE)
+	back.change_power_consumption(ammo_per_shot, POWER_USE_IDLE)
 
 	sleep(fire_delay)
 
-	front.change_power_consumption(initial(front.idle_power_usage), POWER_USE_IDLE)
+	back.change_power_consumption(initial(back.idle_power_usage), POWER_USE_IDLE)
 
 	if(!front || !front.powered()) //Meanwhile front might have exploded
 		return FALSE

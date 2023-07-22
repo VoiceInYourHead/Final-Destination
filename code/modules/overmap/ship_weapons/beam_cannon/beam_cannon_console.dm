@@ -10,7 +10,7 @@
 	middle_type = /obj/machinery/ship_weapon/middle_part/beam_cannon
 	back_type = /obj/machinery/ship_weapon/back_part/beam_cannon
 
-	ammo_per_shot = 15 KILOWATTS
+	ammo_per_shot = 9750000
 	burst_size = 1
 
 	fire_delay = 200
