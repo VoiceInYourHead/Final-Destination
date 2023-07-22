@@ -74,3 +74,9 @@
 
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_RESET_EQUIPMENT
 
+/decl/hierarchy/outfit/survivor
+	name = "Space Sleeper"
+	shoes = /obj/item/clothing/shoes/black
+	uniform = /obj/item/clothing/under/frontier/old
+	id_slot = slot_wear_id
+	id_types = list(/obj/item/card/id/civilian)

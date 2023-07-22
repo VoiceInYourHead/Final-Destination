@@ -26,7 +26,7 @@
 // corpse landmark code
 
 	var/species = list(SPECIES_HUMAN)                 // List of species to pick from.
-	var/survivor_outfits = list(/decl/hierarchy/outfit) // List of outfits to pick from. Uses pickweight()
+	var/survivor_outfits = list(/decl/hierarchy/outfit/survivor) // List of outfits to pick from. Uses pickweight()
 	var/spawn_flags = (~0)
 
 	var/skin_colors_per_species   = list() // Custom skin colors, per species -type-, if any. For example if you want dead Skrell to always have blue headtails, or similar
