@@ -16,7 +16,7 @@
 "ap" = (/obj/effect/floor_decal/techfloor/corner{dir = 1},/obj/structure/ore_box,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "aq" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/item/trash/candy,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/map_template/wreck/wrecktwo/second)
 "ar" = (/obj/effect/floor_decal/techfloor/corner{dir = 4},/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/item/wrench,/obj/item/weldingtool/experimental,/obj/item/stack/nanopaste{pixel_x = 9},/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
-"as" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/structure/closet/crate/large,/obj/item/reagent_containers/food/drinks/bottle/cognac,/obj/item/device/robotanalyzer,/obj/random/bomb_supply,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
+"as" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/structure/closet/crate/large,/obj/item/reagent_containers/food/drinks/bottle/cognac,/obj/item/device/robotanalyzer,/obj/random/bomb_supply,/obj/random/junkyard/loot,/obj/random/junkyard/loot,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "at" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/machinery/atm{pixel_y = 28},/obj/effect/decal/remains,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "au" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/machinery/vending/snack,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "av" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/machinery/vending/sovietsoda,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
@@ -54,7 +54,7 @@
 "bb" = (/obj/effect/floor_decal/techfloor,/obj/structure/disposalpipe/segment,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "bc" = (/obj/effect/floor_decal/techfloor,/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/item/extinguisher/empty,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "bd" = (/obj/effect/floor_decal/techfloor,/obj/structure/barricade,/obj/machinery/light,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
-"be" = (/obj/effect/floor_decal/techfloor,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
+"be" = (/obj/effect/floor_decal/techfloor,/obj/effect/decal/cleanable/dirt,/obj/random/junkyard/loot,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "bf" = (/obj/item/stack/tile/floor{pixel_x = -9; pixel_y = 15},/turf/simulated/floor/plating,/area/map_template/wreck/wrecktwo/second)
 "bg" = (/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wrecktwo/second)
 "bh" = (/obj/structure/lattice,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/template_noop,/area/map_template/wreck/wrecktwo/second)
@@ -107,7 +107,7 @@
 "cc" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/lino,/area/map_template/wreck/wrecktwo)
 "cd" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/lino,/area/map_template/wreck/wrecktwo)
 "ce" = (/obj/machinery/cooker/fryer,/turf/simulated/floor/lino,/area/map_template/wreck/wrecktwo)
-"cf" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/lino,/area/map_template/wreck/wrecktwo)
+"cf" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/random/junkyard/loot,/turf/simulated/floor/lino,/area/map_template/wreck/wrecktwo)
 "cg" = (/obj/structure/table/marble,/obj/machinery/reagent_temperature/cooler{pixel_y = 15},/obj/machinery/reagent_temperature,/turf/simulated/floor/lino,/area/map_template/wreck/wrecktwo)
 "ch" = (/turf/template_noop,/area/template_noop)
 "ci" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall,/area/template_noop)
@@ -135,6 +135,10 @@
 "cE" = (/obj/item/stack/cable_coil/single,/turf/template_noop,/area/template_noop)
 "cF" = (/obj/structure/lattice,/obj/structure/disposalpipe/segment,/turf/template_noop,/area/template_noop)
 "cG" = (/obj/structure/lattice,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/template_noop,/area/template_noop)
+"cH" = (/obj/random/junkyard/hostile,/turf/simulated/floor/plating,/area/map_template/wreck/wrecktwo/second)
+"cI" = (/obj/structure/catwalk,/obj/structure/disposalpipe/segment{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/random/junkyard/hostile,/turf/simulated/floor/plating,/area/map_template/wreck/wrecktwo/second)
+"cJ" = (/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"cK" = (/obj/structure/lattice,/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
 chchchchchchchchchchchchchcicjckckchchch
@@ -142,18 +146,18 @@ chchchchchclcmcnchchchchchchcocjchchchch
 chchchaaabcpcqchcqchchchchchchchchchchch
 chchchaaacadaeaacqchchchchchchchchchchch
 afagahaaaiajakagagaaaaaaaaaaaaaaaaaaaaaa
-alamanaoapaqarasatauavawaxaeaeayazchaeaA
-aBaCaDaEaFaGaHaIaJaFaKaFaLaMaNaOaJcrcscq
+alamanaoapaqarasatauavawaxaecHayazchaeaA
+aBaCaDaEcIaGaHaIaJaFaKaFaLaMaNaOaJcrcscq
 aPaQaRaSaeaTaUaVaWaXaYaZbabbbcbdbebfchae
 agagbgbhbibjbjbkbjblblblbmbnbjbjaacqctch
 chcqchcuaebjbobpbqbrbsbtbubvbwbjchchchch
 chchchcvchbjbxbybzbAbBbCbDbEbFbjchchchcw
 chcwchchcxchchchbGbybHbtbDbIbJbjchchchch
 chchchcychchchcqchbCbKbCbLbMbNbjchchchch
-chcjczcAchcBcqcqczbCbObCbPbQbRbjchchchch
+chcjczcAchcBcqcqczbCbObCbPbQbRbjchcJchch
 chcjczcCchchcqcDbSbTbBbUbVbWbXbjchchchch
 chchchchchchchchbjbYbybZcacbbjbjchchckch
-chchchchcwchchcqbycccqbZchcdcebjchchchch
+chchchchcwchchcKbycccqbZchcdcebjchchchch
 chcEchchchchchchchcfchcFcqcGcgbjchchchch
 chchchchchchchchchbychcqcEchchbjchchchch
 chchchchchchchchchcqchchchchchchchchchch

@@ -51,7 +51,7 @@
 "aY" = (/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/papershredder,/turf/simulated/floor/tiled/techfloor,/area/map_template/wreck/wreckone)
 "aZ" = (/obj/structure/closet/crate/secure/large,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
 "ba" = (/obj/effect/floor_decal/techfloor/corner,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
-"bb" = (/obj/effect/floor_decal/techfloor,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
+"bb" = (/obj/effect/floor_decal/techfloor,/obj/random/junkyard/hostile,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
 "bc" = (/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/map_template/wreck/wreckone)
 "bd" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/structure/table/reinforced,/obj/machinery/light{dir = 1},/obj/item/paper_bin,/obj/item/pen/multi/cmd/co,/turf/simulated/floor/tiled/steel_ridged,/area/map_template/wreck/wreckone)
 "be" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/decal/remains,/obj/item/stock_parts/circuitboard/autocannon{pixel_x = 4; pixel_y = 13},/turf/simulated/floor/tiled/steel_grid,/area/map_template/wreck/wreckone)
@@ -128,7 +128,7 @@
 "cx" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange/corner{dir = 4},/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cy" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cz" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/techfloor/orange/corner{dir = 1},/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc/derelict{dir = 1; icon_state = "apc0"; pixel_y = 22},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
-"cA" = (/obj/effect/floor_decal/techfloor{dir = 4},/obj/effect/floor_decal/techfloor/corner{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
+"cA" = (/obj/effect/floor_decal/techfloor{dir = 4},/obj/effect/floor_decal/techfloor/corner{dir = 8},/obj/random/junkyard/hostile,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone)
 "cB" = (/obj/structure/catwalk,/obj/structure/closet/secure_closet/guncabinet,/obj/machinery/light{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/map_template/wreck/wreckone)
 "cC" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/techfloor{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
 "cD" = (/obj/structure/closet/crate/plastic,/turf/simulated/floor/plating,/area/map_template/wreck/wreckone/second)
@@ -180,7 +180,7 @@
 "dx" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/disposalpipe/junction/mirrored,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/plating,/area/map_template/wreck/wreckone/second)
 "dy" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/disposalpipe/segment/bent,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/plating,/area/map_template/wreck/wreckone/second)
 "dz" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/item/storage/belt/utility/full,/turf/simulated/floor/tiled/techfloor,/area/map_template/wreck/wreckone/second)
-"dA" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/techfloor{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
+"dA" = (/obj/effect/floor_decal/techfloor{dir = 5},/obj/random/junkyard/hostile,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "dB" = (/obj/effect/floor_decal/corner/blue/border{dir = 1},/obj/effect/floor_decal/corner/blue/border,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
 "dC" = (/obj/structure/catwalk,/obj/structure/disposalpipe/segment/bent{dir = 4},/turf/simulated/floor/plating,/area/map_template/wreck/wreckone/second)
 "dD" = (/obj/effect/floor_decal/corner/blue/border{dir = 1},/obj/effect/floor_decal/corner/blue/border,/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
@@ -203,13 +203,15 @@
 "dU" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/plating,/area/template_noop)
 "dV" = (/obj/effect/decal/cleanable/dirt,/obj/effect/paint/silver,/turf/simulated/wall/titanium,/area/template_noop)
 "dW" = (/obj/effect/floor_decal/techfloor/corner{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
-"dX" = (/obj/effect/floor_decal/techfloor{dir = 5},/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
+"dX" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/techfloor{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/random/junkyard/hostile,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckone/second)
 "dY" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "dZ" = (/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "ea" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/template_noop,/area/template_noop)
 "eb" = (/obj/structure/largecrate,/turf/template_noop,/area/template_noop)
 "ec" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "ed" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
+"ee" = (/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"ef" = (/obj/structure/lattice,/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
 "hx" = (/obj/effect/paint/ocean,/turf/simulated/wall/titanium,/area/map_template/wreck/wreckone)
 "qK" = (/obj/effect/floor_decal/corner/blue/border{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/machinery/alarm{dir = 4; icon_state = "alarm0"; pixel_x = -32; pixel_y = 0},/turf/simulated/floor/tiled/techfloor,/area/map_template/wreck/wreckone)
 "vj" = (/obj/effect/decal/cleanable/dirt,/obj/effect/paint/silver,/turf/simulated/wall/titanium,/area/map_template/wreck/wreckone/second)
@@ -239,14 +241,14 @@ aKaKaKaKaKdRaKaKaKaKdScucucvcwcxcycycyczcwcAcBUqcCcDFxFxaKaK
 aKaKaKdSaKaKaKaKaKaKaKTPbCcEcFcGcHcIcJcKcFcLcMUqcCcNFxaKaKaK
 aKaKdSdSaKaKaKaKaKaKaKTPTPcOcPcQcRcScTcUcVcWTPTPcXcYFxaKaKaK
 aKaKdRdTdUaKaKaKaKaKaKaKTPTPcZdaTPUqUqdbdcTPTPdddeFxFxaKaKaK
-aKaKdVdWdXaKaKaKaKaKaKaKbpdfdgdhdidjdkdldmdndodpdqvjaKaKaKaK
-aKaKdRdYdYaKaKaKaKaKaKaKaKbpdsdtdudvdwdxdydzaAdAdsFxFxaKaKaK
+aKaKdVdWdAaKaKaKaKaKaKaKbpdfdgdhdidjdkdldmdndodpdqvjaKaKaKaK
+aKaKdRdYdYaKaKaKaKaKaKaKaKbpdsdtdudvdwdxdydzaAdXdsFxFxaKaKaK
 aKaKdRdRdQdSaKaKaKaKaKaKaKdtdtdBdBdCdDdEdFdGdrdHdgdIFxaKaKaK
 aKaKaKdRdQdZaKaKaKaKaKaKaAdJdKaKdLdMdNaAeadGaAdOdSdQFxFxdSaK
 aKaKaKdRdQaKaKaKaKaKaKaKaAdPbpaKaAaAaAaAaKdGaAaKaKaKaKdSaKaK
-aKaKaKdRdRaKaKaKebaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKdSaKaK
+aKaKaKdRdRaKaKaKebaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKeedSaKaK
 aKaKaKaKaKaKdSaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaK
-aKaKaKaKaKaKdSeceddSaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaK
+aKaKaKaKaKaKdSecedefaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaK
 aKaKaKaKaKdSdRdVdVaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaK
 aKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaK
 aKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaKaK

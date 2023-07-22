@@ -44,6 +44,7 @@
 #include "random_ruins\space_ruins\space_ruins.dm"
 #include "random_ruins\junkyard_ruins\junkyard_ruins.dm"
 #include "random_ruins\junkyard_ruins\ruins\main.dm"
+#include "random_ruins\junkyard_ruins\ruins\junk_chunk.dm"
 #include "~mapsystem\map_preferences.dm"
 #include "~mapsystem\map_ranks.dm"
 #include "~mapsystem\maps.dm"

@@ -1,0 +1,37 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/obj/random/junkyard/hostile,/turf/simulated/floor/plating,/area/template_noop)
+"c" = (/obj/structure/lattice,/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"e" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/template_noop)
+"j" = (/obj/structure/grille/broken,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"l" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"m" = (/obj/random/trash,/obj/random/junkyard/loot,/turf/template_noop,/area/template_noop)
+"o" = (/turf/simulated/wall,/area/template_noop)
+"s" = (/obj/random/junkyard/bomb_supply,/turf/template_noop,/area/template_noop)
+"v" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"x" = (/obj/structure/lattice,/obj/random/junkyard/tech_supply,/turf/template_noop,/area/template_noop)
+"z" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall,/area/template_noop)
+"C" = (/obj/structure/lattice,/obj/random/trash,/turf/template_noop,/area/template_noop)
+"D" = (/obj/structure/railing/mapped,/turf/simulated/floor/plating,/area/template_noop)
+"G" = (/obj/random/junkyard/cash,/turf/simulated/floor/plating,/area/template_noop)
+"H" = (/obj/structure/girder/displaced,/turf/template_noop,/area/template_noop)
+"J" = (/obj/structure/grille,/turf/simulated/floor/plating,/area/template_noop)
+"K" = (/obj/structure/girder,/turf/simulated/floor/plating,/area/template_noop)
+"L" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall,/area/template_noop)
+"M" = (/turf/simulated/floor/plating,/area/template_noop)
+"N" = (/turf/simulated/wall/r_wall,/area/template_noop)
+"O" = (/obj/random/junkyard/smokes,/turf/template_noop,/area/template_noop)
+"T" = (/turf/simulated/wall/titanium,/area/template_noop)
+"Y" = (/obj/random/junkyard/obstruction,/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+amzooaYvva
+YavzaaaJlv
+aavHaNLNMb
+aaaavlNNDa
+azvsaMLNOa
+voxaaavaaa
+aacvaavava
+TJevvaaYoz
+llTvaaYozj
+aGTaaaCvKM
+"}
