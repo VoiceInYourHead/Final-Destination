@@ -7014,6 +7014,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/errant_pisces/head_m)
+"Jc" = (
+/obj/machinery/hologram/holopad/longrange,
+/turf/simulated/floor/tiled,
+/area/errant_pisces/bridge)
 "Ph" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile{
@@ -7028,6 +7032,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/errant_pisces/science_wing)
+"ZL" = (
+/obj/machinery/radio_beacon,
+/turf/simulated/floor/tiled,
+/area/errant_pisces/bridge)
 
 (1,1,1) = {"
 aa
@@ -30577,7 +30585,7 @@ oi
 oi
 oS
 ph
-oS
+Jc
 oS
 qf
 po
@@ -31787,7 +31795,7 @@ nw
 nS
 oi
 oi
-oS
+ZL
 oS
 oS
 oS

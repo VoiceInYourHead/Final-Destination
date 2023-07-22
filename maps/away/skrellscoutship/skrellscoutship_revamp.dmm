@@ -3585,6 +3585,11 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/hull,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/skrellscoutship/crew/rec)
+"lN" = (
+/obj/machinery/light/skrell,
+/obj/machinery/radio_beacon,
+/turf/simulated/floor/tiled/skrell/red,
+/area/ship/skrellscoutship/command/bridge)
 "lQ" = (
 /obj/structure/bed/chair/comfy/yellow{
 	dir = 1
@@ -4813,7 +4818,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/hologram/holopad/longrange/remoteship,
+/obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/skrell/red,
 /area/ship/skrellscoutship/command/bridge)
 "GN" = (
@@ -8408,7 +8413,7 @@ AU
 AU
 Eq
 ig
-QA
+lN
 CX
 CX
 CX

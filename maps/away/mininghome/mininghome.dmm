@@ -3242,6 +3242,7 @@
 	dir = 4;
 	icon_state = "bordercolorhalf"
 	},
+/obj/machinery/radio_beacon,
 /turf/simulated/floor/steel_dirty,
 /area/map_template/mininghome_lockers)
 "BX" = (
@@ -4059,7 +4060,6 @@
 /area/map_template/mininghome_hangar)
 "KP" = (
 /obj/item/mech_equipment/drill,
-/obj/item/device/kit/paint/powerloader/flames_blue,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
