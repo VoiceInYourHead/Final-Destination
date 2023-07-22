@@ -343,11 +343,10 @@
 		ion_beam.dir = d
 		ion_beam.icon = 'icons/effects/beam.dmi'
 		ion_beam.icon_state = beam_icon
-		ion_beam.light_outer_range = 2
-		ion_beam.light_max_bright = 1
-		ion_beam.light_color = beam_light_color
+		ion_beam.layer = ABOVE_LIGHTING_LAYER
 		ion_beam.anchored = TRUE //иначе лазеры смешно улетают от взрывов
 		ion_beam.does_spin = FALSE // ^^^
+		ion_beam.set_light(1, 2, 4, l_color = beam_light_color)
 		playsound(T, beam_sound, 250, 1)
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)

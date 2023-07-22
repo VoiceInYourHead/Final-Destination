@@ -64,7 +64,7 @@
 	icon = 'icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
 	anchored = TRUE
-	layer = ABOVE_HUMAN_LAYER
+	layer = ABOVE_LIGHTING_LAYER
 	density = FALSE
 	invisibility = 0
 	atmos_canpass = CANPASS_NEVER

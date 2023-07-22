@@ -19,6 +19,7 @@
 //----------------------------
 /obj/effect/projectile/laser/
 	light_color = COLOR_RED_LIGHT
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/laser/tracer
 	icon_state = "beam"
@@ -129,12 +130,14 @@
 	icon_state = "muzzle_pulse"
 	light_max_bright = 1
 	light_color = COLOR_DEEP_SKY_BLUE
+	layer = ABOVE_LIGHTING_LAYER
 
 //----------------------------
 // Treye beam
 //----------------------------
 /obj/effect/projectile/trilaser/
 	light_color = COLOR_LUMINOL
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/trilaser/tracer
 	icon_state = "plasmacutter"
@@ -166,6 +169,7 @@
 //----------------------------
 /obj/effect/projectile/stun/
 	light_color = COLOR_YELLOW
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/stun/tracer
 	icon_state = "stun"
@@ -184,12 +188,14 @@
 	light_outer_range = 5
 	light_max_bright = 1
 	light_color = COLOR_MUZZLE_FLASH
+	layer = ABOVE_LIGHTING_LAYER
 
 //----------------------------
 // confuse ray
 //----------------------------
 /obj/effect/projectile/confuseray
 	light_color = COLOR_GREEN_GRAY
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/confuseray/tracer
 	icon_state = "beam_grass"
@@ -205,6 +211,7 @@
 //----------------------------
 /obj/effect/projectile/laser_particle
 	light_color = COLOR_CYAN
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/laser_particle/tracer
 	icon_state = "beam_particle"
@@ -220,6 +227,7 @@
 //----------------------------
 /obj/effect/projectile/darkmatter
 	light_color = COLOR_PURPLE
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/darkmatter/tracer
 	icon_state = "beam_darkb"
@@ -251,6 +259,7 @@
 /obj/effect/projectile/pointdefense
 	light_color = COLOR_GOLD
 	light_max_bright = 1
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/pointdefense/tracer
 	icon_state = "beam_pointdef_d"
@@ -266,6 +275,7 @@
 //----------------------------
 /obj/effect/projectile/incen
 	light_color = COLOR_PALE_ORANGE
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/incen/tracer
 	icon_state = "beam_incen"
