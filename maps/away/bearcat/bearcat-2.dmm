@@ -145,12 +145,12 @@
 "av" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/hologram/holopad/longrange/remoteship,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/dark,
 /area/ship/scrap/command/bridge)
 "aw" = (
@@ -5884,6 +5884,10 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/crew/wash)
+"UQ" = (
+/obj/machinery/radio_beacon,
+/turf/simulated/floor/bluegrid,
+/area/ship/scrap/comms)
 "Va" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -12561,7 +12565,7 @@ Yv
 Yv
 ed
 ar
-aH
+UQ
 aO
 aX
 Yv

@@ -56,7 +56,7 @@
 "bd" = (/obj/structure/table/woodentable/walnut,/obj/item/storage/box/glasses/square,/turf/simulated/floor/wood/yew,/area/ship/smuggler/bar)
 "be" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/hologram/holopad/longrange,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/smuggler/bridge)
 "bf" = (/obj/structure/table/woodentable/walnut,/turf/simulated/floor/wood/yew,/area/ship/smuggler/bar)
-"bg" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/unary/vent_pump/on,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/smuggler/bridge)
+"bg" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/unary/vent_pump/on,/obj/machinery/light{dir = 1},/obj/machinery/radio_beacon,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/smuggler/bridge)
 "bh" = (/obj/machinery/alarm{dir = 1; pixel_y = -22},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/smuggler/bridge)
 "bi" = (/obj/machinery/light{icon_state = "tube_map"; dir = 4},/obj/structure/safe/floor,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/smuggler/living)
 "bj" = (/obj/machinery/atmospherics/unary/engine{icon_state = "nozzle"; dir = 4},/turf/simulated/floor,/area/ship/smuggler/engine)

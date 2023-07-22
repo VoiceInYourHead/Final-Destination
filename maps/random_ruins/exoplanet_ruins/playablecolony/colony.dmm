@@ -382,6 +382,7 @@
 /obj/effect/floor_decal/techfloor/hole/right{
 	dir = 1
 	},
+/obj/machinery/radio_beacon,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/command)
 "bc" = (

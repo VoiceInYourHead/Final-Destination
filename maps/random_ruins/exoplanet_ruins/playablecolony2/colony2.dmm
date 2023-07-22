@@ -686,9 +686,7 @@
 /obj/effect/floor_decal/corner_steel_grid/diagonal{
 	dir = 4
 	},
-/obj/structure/bed/chair/shuttle/white{
-	dir = 8
-	},
+/obj/machinery/radio_beacon,
 /turf/simulated/floor/tiled/techmaint,
 /area/map_template/colony2/ship)
 "lZ" = (
