@@ -650,12 +650,6 @@
 	icon_state = "frontier"
 	worn_state = "frontier"
 
-/obj/item/clothing/under/frontier/old
-	name = "frontier clothes"
-	desc = "A rugged brown sweater and denim overalls. A popular style among frontier colonists."
-	icon_state = "frontierold"
-	worn_state = "frontierold"
-
 /obj/item/clothing/under/aether
 	name = "\improper Aether jumpsuit"
 	desc = "A jumpsuit belonging to Aether Atmospherics and Recycling, a company that supplies recycling and atmospheric systems to colonies."
@@ -767,3 +761,7 @@
 	item_state = "bathrobe"
 	worn_state = "bathrobe"
 	gender_icons = 1
+
+obj/item/clothing/under/bathrobe/New()
+    ..()
+    color = get_random_colour()
