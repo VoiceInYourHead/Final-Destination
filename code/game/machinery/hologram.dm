@@ -75,9 +75,6 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 			remove_holo(M)
 		if(connected)
 			end_call()
-		update_use_power(POWER_USE_OFF)
-	else
-		update_use_power(POWER_USE_IDLE)
 
 /obj/machinery/hologram/holopad/attack_hand(var/mob/living/carbon/human/user) //Carn: Hologram requests.
 	if(!istype(user) && !isrobot(user))
