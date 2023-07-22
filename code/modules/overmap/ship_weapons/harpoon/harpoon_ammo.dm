@@ -25,6 +25,7 @@
 	armor_penetration = 50
 	penetrating = 6
 	penetration_modifier = 1.1
+	shoot_range = 4 // how far will we go on the overmap
 	hull_damage = 1
 	pew_spread = 8
 
