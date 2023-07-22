@@ -204,6 +204,7 @@
 	icon_state = "nozzle_burn"
 	light_color = "#00a2ff"
 	anchored = TRUE
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/engine_exhaust/New(turf/nloc, ndir)
 	..(nloc)

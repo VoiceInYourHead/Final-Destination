@@ -184,6 +184,7 @@
 
 /obj/effect/projectile/meatstation/
 	light_color = COLOR_RED_LIGHT
+	layer = ABOVE_LIGHTING_LAYER
 	icon = 'maps/away/meatstation/meatstation_sprites.dmi'
 
 /obj/effect/projectile/meatstation/tracer

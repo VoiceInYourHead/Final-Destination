@@ -492,9 +492,9 @@
 		eating = 1
 		for(var/i = 1 to smart_ai_holder.vision_range)
 			if(movement_target.fingerprintslast && tameable && !owner)
-				sleep(max( move_to_delay, round(smart_ai_holder.nervousness / 10) ))
+				sleep(max( movement_cooldown+2, round(smart_ai_holder.nervousness / 10) ))
 			else
-				sleep(move_to_delay)
+				sleep(movement_cooldown)
 			step_to(src,movement_target,1)
 			if(get_dist(src, movement_target) <= 1)
 				break
@@ -791,7 +791,7 @@
 	icon_living = "diyaab"
 	icon_dead = "diyaab_dead"
 	init_tame_difficulty = 8
-	move_to_delay = 1
+	movement_cooldown = 1
 	maxHealth = 25
 	health = 25
 	speed = 1
@@ -821,7 +821,7 @@
 	icon_dead = "shantak_dead"
 	movement_cooldown = 1
 	init_tame_difficulty = 5
-	move_to_delay = 1
+	movement_cooldown = 1
 	maxHealth = 75
 	health = 75
 	speed = 1
@@ -896,7 +896,7 @@
 	icon_state = "royalcrab"
 	icon_living = "royalcrab"
 	icon_dead = "royalcrab_dead"
-	move_to_delay = 3
+	movement_cooldown = 3
 	maxHealth = 150
 	health = 150
 	speed = 1

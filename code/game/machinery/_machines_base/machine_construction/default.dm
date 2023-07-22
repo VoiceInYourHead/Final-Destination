@@ -59,6 +59,11 @@
 	if((. = ..()))
 		return
 	if(isCrowbar(I))
+		var/obj/machinery/computer/ship/ship_weapon/weapon_console = machine
+		if(istype(weapon_console))
+			if(weapon_console.get_next_shot_seconds())
+				to_chat(user, SPAN_WARNING("You can't dismantle \the [machine] right now!"))
+				return
 		TRANSFER_STATE(down_state)
 		machine.dismantle()
 		return

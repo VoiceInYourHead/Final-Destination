@@ -20,11 +20,11 @@
 			if(!isdeaf(M))
 				sound_to(M, sound(far_prefire_sound, volume=10))
 
-	front.change_power_consumption(ammo_per_shot, POWER_USE_ACTIVE)
+	back.change_power_consumption(ammo_per_shot, POWER_USE_IDLE)
 
 	sleep(fire_delay)
 
-	front.change_power_consumption(initial(front.idle_power_usage), POWER_USE_IDLE)
+	back.change_power_consumption(initial(back.idle_power_usage), POWER_USE_IDLE)
 
 	if(!front || !front.powered()) //Meanwhile front might have exploded
 		return FALSE
@@ -343,11 +343,10 @@
 		ion_beam.dir = d
 		ion_beam.icon = 'icons/effects/beam.dmi'
 		ion_beam.icon_state = beam_icon
-		ion_beam.light_outer_range = 2
-		ion_beam.light_max_bright = 1
-		ion_beam.light_color = beam_light_color
+		ion_beam.layer = ABOVE_LIGHTING_LAYER
 		ion_beam.anchored = TRUE //иначе лазеры смешно улетают от взрывов
 		ion_beam.does_spin = FALSE // ^^^
+		ion_beam.set_light(1, 2, 4, l_color = beam_light_color)
 		playsound(T, beam_sound, 250, 1)
 		QDEL_IN(ion_beam,beam_time)
 		sleep(beam_speed)

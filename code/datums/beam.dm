@@ -140,6 +140,7 @@
 
 /obj/effect/ebeam
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
+	layer = ABOVE_LIGHTING_LAYER
 	anchored = TRUE
 	var/datum/beam/owner
 

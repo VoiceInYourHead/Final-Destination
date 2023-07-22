@@ -12,6 +12,7 @@
 
 /obj/effect/projectile/plasma
 	light_color = COLOR_BLUE
+	layer = ABOVE_LIGHTING_LAYER
 
 /obj/effect/projectile/plasma/heavy
 	light_color = COLOR_RED

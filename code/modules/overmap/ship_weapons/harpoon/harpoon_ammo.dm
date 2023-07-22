@@ -25,6 +25,7 @@
 	armor_penetration = 50
 	penetrating = 6
 	penetration_modifier = 1.1
+	shoot_range = 4 // how far will we go on the overmap
 	hull_damage = 1
 	pew_spread = 8
 
@@ -180,13 +181,13 @@
 			sound_to(M, sound('sound/effects/harpoon_creak_thud.ogg', volume=50))
 
 	var/sizes[0]
-	sizes[target] = target.get_vessel_weight(origin)
 	sizes[origin] = origin.get_vessel_weight(target)
+	sizes[target] = target.get_vessel_weight(origin)
 
 	var/obj/effect/overmap/visitable/puller = max(sizes[target], sizes[origin])
 	var/obj/effect/overmap/visitable/victim = min(sizes[target], sizes[origin])
 
-	if(puller == victim)
+	if(puller == INFINITY && victim == INFINITY)
 		overmap_projectile.Destroy()
 		return TRUE // immovable object VS unstoppable force momento, let's skip
 

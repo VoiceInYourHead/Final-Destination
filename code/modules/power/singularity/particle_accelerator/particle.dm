@@ -3,6 +3,7 @@
 	desc = "Small things moving very fast."
 	icon = 'icons/obj/machines/particle_accelerator2.dmi'
 	icon_state = "particle"
+	layer = ABOVE_LIGHTING_LAYER
 	anchored = TRUE
 	density = TRUE
 	var/movement_range = 10

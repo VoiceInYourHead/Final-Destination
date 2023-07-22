@@ -69,7 +69,7 @@
 	color = "#233012"
 	icon_state = "ship"
 	moving_state = "ship_moving"
-	vessel_mass = 6000
+	vessel_mass = 8000
 	integrity_failure_cap = 110
 	fore_dir = NORTHWEST
 	dir = NORTHWEST

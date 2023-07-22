@@ -101,6 +101,7 @@
 	spread_chance = seed.get_trait(TRAIT_POTENCY)
 	spread_distance = (growth_type ? round(spread_chance*0.6) : round(spread_chance*0.3))
 	possible_children = seed.get_trait(TRAIT_POTENCY)
+	color = seed.get_trait(TRAIT_PLANT_COLOUR)
 	update_icon()
 
 	START_PROCESSING(SSvines, src)

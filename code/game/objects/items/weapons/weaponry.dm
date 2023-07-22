@@ -95,6 +95,7 @@
 	opacity = 0
 	mouse_opacity = 1
 	anchored = TRUE
+	layer = ABOVE_LIGHTING_LAYER
 	can_buckle = 0 //no manual buckling or unbuckling
 
 	var/health = 25
