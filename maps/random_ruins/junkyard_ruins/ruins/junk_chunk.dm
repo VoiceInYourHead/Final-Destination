@@ -31,6 +31,18 @@
 	suffixes = list("ruins/junk_5.dmm")
 	spawn_cost = 1
 
+/datum/map_template/ruin/junkyard/junk_chunk/sixth
+	name = "Random trash #6"
+	id = "chunk6"
+	suffixes = list("ruins/junk_6.dmm")
+	spawn_cost = 0.2
+
+/datum/map_template/ruin/junkyard/junk_chunk/seventh
+	name = "Random trash #7"
+	id = "chunk7"
+	suffixes = list("ruins/junk_7.dmm")
+	spawn_cost = 0.2
+
 // Random spawns for junkyard with not-guaranteed chances, literally a copypaste of original ones made for easy access
 
 /obj/random/junkyard/tool
