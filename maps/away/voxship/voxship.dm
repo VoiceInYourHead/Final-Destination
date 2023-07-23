@@ -162,7 +162,7 @@
 /obj/machinery/power/smes/buildable/preset/voxship/ship
 	uncreated_component_parts = list(
 		/obj/item/stock_parts/smes_coil/super_capacity = 1,
-		/obj/item/stock_parts/smes_coil/super_io = 2
+		/obj/item/stock_parts/smes_coil/super_io = 4
 	)
 	_input_maxed = TRUE
 	_output_maxed = TRUE

@@ -55,6 +55,8 @@ proc/Pow(f, p)
 	var/dominance
 	var/nervousness
 
+	var/go_melee = FALSE
+
 	intelligence_level = AI_SMART
 	retaliate = TRUE				// The majority of smart mobs will fight back.
 	use_astar = TRUE
@@ -82,6 +84,7 @@ proc/Pow(f, p)
 	alpha_vision_threshold = FAKE_INVIS_ALPHA_THRESHOLD
 
 	base_wander_delay = 4
+	min_distance_to_destination = 1
 
 //	path_display = TRUE
 //	stance_coloring = TRUE
@@ -91,9 +94,7 @@ proc/Pow(f, p)
 	return rand(1,100) / 100
 
 /datum/ai_holder/scavenger/proc/setup_temper()
-	. = ..()
-
-	var/mob/living/simple_animal/hostile/scavenger/scav_ai_holder = holder
+//	var/mob/living/simple_animal/hostile/scavenger/scav_ai_holder = holder
 
 	sympathy = random_val()
 	energy = random_val()
@@ -107,11 +108,47 @@ proc/Pow(f, p)
 	..()
 	setup_temper()
 
+/datum/ai_holder/scavenger/handle_stance_tactical()
+	if(stance == STANCE_REPOSITION)
+		min_distance_to_destination = 5
+	else
+		min_distance_to_destination = 1
+	..()
+/*
 /datum/ai_holder/scavenger/on_engagement(atom/A)
 	var/run_if_this_close = round(vision_range * (1-aggression))
 	if(get_dist(holder, A) < run_if_this_close)
 		holder.IMove(get_step_away(holder, A, run_if_this_close))
 		holder.face_atom(A)
+*/
+/datum/ai_holder/scavenger/walk_to_target()
+	ai_log("walk_to_target() : Entering.", AI_LOG_DEBUG)
+	// Make sure we can still chase/attack them.
+	if (!target || !can_attack(target))
+		ai_log("walk_to_target() : Lost target.", AI_LOG_INFO)
+		lose_target()
+		return
+
+	// Find out where we're going.
+	var/get_to = go_melee ? closest_distance(target) : round(vision_range * (1-aggression))
+	var/distance = get_dist(holder, target)
+	ai_log("walk_to_target() : get_to is [get_to].", AI_LOG_TRACE)
+
+	// We're here!
+	// Special case: Our holder has a special attack that is ranged, but normally the holder uses melee.
+	// If that happens, we'll switch to STANCE_FIGHT so they can use it. If the special attack is limited, they'll likely switch back next tick.
+	if (distance <= get_to || holder.ICheckSpecialAttack(target))
+		ai_log("walk_to_target() : Within range.", AI_LOG_INFO)
+		forget_path()
+		set_stance(STANCE_FIGHT)
+		ai_log("walk_to_target() : Exiting.", AI_LOG_DEBUG)
+		return
+
+	// Otherwise keep walking.
+	if (!stand_ground)
+		walk_path(target, get_to)
+
+	ai_log("walk_to_target() : Exiting.", AI_LOG_DEBUG)
 
 /datum/ai_holder/scavenger/handle_wander_movement()
 	ai_log("handle_wander_movement() : Entered.", AI_LOG_TRACE)
@@ -140,7 +177,7 @@ proc/Pow(f, p)
 		return
 
 	ai_log("flee_from_target() : Stepping away.", AI_LOG_TRACE)
-	step_away(holder, target, vision_range*=nervousness)
+	step_away(holder, target, vision_range*=nervousness+1)
 	if(get_dist(holder, target) < vision_range)
 		holder.face_atom(target)
 	ai_log("flee_from_target() : Exiting.", AI_LOG_DEBUG)
