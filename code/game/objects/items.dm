@@ -580,7 +580,9 @@ var/list/global/slot_flags_enumeration = list(
 		return 0
 	if(!istype(attacker))
 		return 0
-	attacker.apply_damage(force, damtype, attacker.hand ? BP_L_HAND : BP_R_HAND, used_weapon = src)
+	if(attacker.a_intent == I_HELP)
+		return 0
+	attacker.apply_damage(force/2, damtype, attacker.hand ? BP_L_HAND : BP_R_HAND, used_weapon = src)
 	attacker.visible_message("<span class='danger'>[attacker] hurts \his hand on [src]!</span>")
 	admin_attack_log(attacker, target, "Attempted to disarm but was blocked", "Was targeted with a disarm but blocked the attack", "attmpted to disarm but was blocked by")
 	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
