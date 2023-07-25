@@ -8,14 +8,14 @@
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER|RUIN_RAINWORLD
 	features_budget = 20
 
-/obj/effect/overmap/visitable/sector/junkyard/standart/handle_repopulation()
-	return
+/*/obj/effect/overmap/visitable/sector/junkyard/standart/handle_repopulation()
+	return*/
 
 /datum/random_map/noise/junkyard/standart
 	descriptor = "junkyard"
 	smoothing_iterations = 4
 	land_type = /turf/space
-	fauna_prob = 0
+//	fauna_prob = 0
 
 /area/junkyard/standart
 	name = "\improper Junkyard area"

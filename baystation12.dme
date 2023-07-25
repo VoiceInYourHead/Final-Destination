@@ -2637,7 +2637,6 @@
 #include "code\modules\overmap\exoplanets\planet_types\urban.dm"
 #include "code\modules\overmap\exoplanets\planet_types\volcanic.dm"
 #include "code\modules\overmap\junkyard\_junkyard.dm"
-#include "code\modules\overmap\junkyard\junkyard_fauna.dm"
 #include "code\modules\overmap\junkyard\random_map.dm"
 #include "code\modules\overmap\junkyard\turf.dm"
 #include "code\modules\overmap\junkyard\junk_themes\_junk_theme.dm"

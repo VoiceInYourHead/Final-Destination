@@ -1,4 +1,4 @@
-GLOBAL_VAR(junkyard_repopulation_disabled)
+//GLOBAL_VAR(junkyard_repopulation_disabled)
 
 /obj/effect/overmap/visitable/sector/junkyard
 	name = "junkyard"
@@ -6,9 +6,9 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	free_landing = TRUE
 	var/area/junkyard_area
-	var/list/fauna_types = list()		// possible types of mobs to spawn
-	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
-	var/list/animals = list()
+//	var/list/fauna_types = list()		// possible types of mobs to spawn
+//	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
+//	var/list/animals = list()
 	var/max_animal_count = 40
 
 	var/maxx
@@ -17,8 +17,8 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 
 	var/vessel_mass = 20000
 
-	var/repopulating = FALSE
-	var/repopulate_types = list() // animals which have died that may come back
+//	var/repopulating = FALSE
+//	var/repopulate_types = list() // animals which have died that may come back
 
 	var/list/possible_themes = list(
 		/datum/junkyard_theme/robotic_guardians = 45
@@ -80,14 +80,14 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 	generate_landing(2)
 	START_PROCESSING(SSobj, src)
 
-/obj/effect/overmap/visitable/sector/junkyard/Process(wait, tick)
+/*/obj/effect/overmap/visitable/sector/junkyard/Process(wait, tick)
 	if (animals.len < 0.5*max_animal_count && !repopulating)
 		repopulating = TRUE
 		max_animal_count = max_animal_count
 
 	for (var/zlevel in map_z)
 		if (repopulating && !GLOB.junkyard_repopulation_disabled)
-			handle_repopulation()
+			handle_repopulation()*/
 
 /obj/effect/overmap/visitable/sector/junkyard/proc/generate_map()
 
@@ -117,9 +117,9 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 
 /obj/effect/landmark/junkyard_spawn/LateInitialize()
 	. = ..()
-	var/obj/effect/overmap/visitable/sector/junkyard/E = map_sectors["[z]"]
-	if (istype(E))
-		do_spawn(E)
+//	var/obj/effect/overmap/visitable/sector/junkyard/E = map_sectors["[z]"]
+/*	if (istype(E))
+		do_spawn(E)*/
 
 //Tries to generate num landmarks, but avoids repeats.
 /obj/effect/overmap/visitable/sector/junkyard/proc/generate_landing(num = 1)
@@ -155,8 +155,8 @@ GLOBAL_VAR(junkyard_repopulation_disabled)
 	. = ..()
 	var/list/extra_data = list("<hr>")
 
-	if (animals.len && user.skill_check(SKILL_SCIENCE, SKILL_BASIC))
-		extra_data += "Life traces detected"
+/*	if (animals.len && user.skill_check(SKILL_SCIENCE, SKILL_BASIC))
+		extra_data += "Life traces detected"*/
 
 	for (var/datum/junkyard_theme/T in themes)
 		if (T.get_sensor_data())
