@@ -22,3 +22,6 @@
 /obj/effect/submap_landmark/joinable_submap/smuggler
 	name = "FTV Miss Fortune"
 	archetype = /decl/submap_archetype/smuggler
+
+/turf/simulated/wall/secret_passage
+	can_open = 1
