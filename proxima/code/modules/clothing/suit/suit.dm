@@ -2,7 +2,8 @@
 	name = "old green platecarrier"
 	desc = "A set of armor worn by many corporate and private asset protection forces."
 	item_icons = list(slot_wear_suit_str = 'proxima/icons/mob/onmob/mob_suit.dmi')
-	icon_state = "platecarrier_green"
+	icon = 'proxima/icons/obj/clothing/icon_suit.dmi'
+	icon_state = "pcarrier_green"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
@@ -15,7 +16,8 @@
 	name = "old black platecarrier"
 	desc = "A set of armor worn by many corporate and private asset protection forces."
 	item_icons = list(slot_wear_suit_str = 'proxima/icons/mob/onmob/mob_suit.dmi')
-	icon_state = "platecarrier"
+	icon = 'proxima/icons/obj/clothing/icon_suit.dmi'
+	icon_state = "pcarrier"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
@@ -29,7 +31,8 @@
 	name = "old tan platecarrier"
 	desc = "A set of armor worn by many corporate and private asset protection forces."
 	item_icons = list(slot_wear_suit_str = 'proxima/icons/mob/onmob/mob_suit.dmi')
-	icon_state = "platecarrier_tan"
+	icon = 'proxima/icons/obj/clothing/icon_suit.dmi'
+	icon_state = "pcarrier_tan"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
@@ -43,6 +46,7 @@
 	name = "old tactical plate carrier"
 	desc = "A set of old armor worn by many corporate and private security."
 	item_icons = list(slot_wear_suit_str = 'proxima/icons/mob/onmob/mob_suit.dmi')
+	icon = 'proxima/icons/obj/clothing/icon_suit.dmi'
 	icon_state = "webvest_ironhammer"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor = list(
