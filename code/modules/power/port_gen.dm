@@ -462,7 +462,7 @@
 /obj/machinery/power/port_gen/pacman/super/potato
 	name = "nuclear reactor"
 	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source. Rated for 150 kW max safe output."
-	power_gen = 30000		//Watts output per power_output level
+	power_gen = 60000		//Watts output per power_output level
 	icon_state = "potato"
 	max_safe_output = 4
 	max_power_output = 8	//The maximum power setting without emagging.

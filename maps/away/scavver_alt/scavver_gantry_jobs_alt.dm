@@ -5,7 +5,7 @@
 	supervisors = "The trust of your fellow crew."
 	info = "You are the pilot of your meagre Scavenger Crew. Keep your crew safe, and seek supplies for your rig. \
 	Your weapons are limited; trade, salvage, but avoid conflict as a matter of course."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_RESOMI)
 	is_semi_antagonist = TRUE
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,

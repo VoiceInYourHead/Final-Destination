@@ -39,9 +39,10 @@
 /decl/audio/track/drunkensailor
 	display = "Space Shanty"
 	title = "Sea Shanty"
-	author = "Uhh idk its from bos"
+	author = "The Irish Rovers"
 	source = 'sound/music/finaldestination/drunkensailor.ogg'
 	license = /decl/license/grandfathered
+	url = "https://youtu.be/V12FuCX9xJM"
 
 /decl/audio/track/Kavinsky_Nightcall
 	display = "Nightcall"

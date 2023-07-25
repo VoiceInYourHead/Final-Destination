@@ -159,15 +159,4 @@
 	TLV[GAS_OXYGEN] =	list(-1, -1, 0.1, 0.1) // Partial pressure, kpa
 	TLV[GAS_NITROGEN] = list(16, 19, 135, 140) // Partial pressure, kpa
 
-/obj/machinery/power/smes/buildable/preset/voxship/ship
-	uncreated_component_parts = list(
-		/obj/item/stock_parts/smes_coil/super_capacity = 1,
-		/obj/item/stock_parts/smes_coil/super_io = 4
-	)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
-
 #undef WEBHOOK_SUBMAP_LOADED_VOX

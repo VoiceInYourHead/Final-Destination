@@ -218,7 +218,7 @@
 	name = "rapid crossbow device"
 	desc = "A hacked RCD turns an innocent construction tool into the penultimate deconstruction tool. Flashforges bolts using matter units when the string is drawn back."
 	icon_state = "rxb"
-	slot_flags = null
+	slot_flags = SLOT_BELT
 	draw_time = 10
 	var/stored_matter = 0
 	var/max_stored_matter = 120

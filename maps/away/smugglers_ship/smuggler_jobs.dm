@@ -14,8 +14,8 @@
 	title = "Smuggler"
 	total_positions = 5
 	supervisors = "nobody but yourself"
-	info = "You are the crewman of your small Smuggler's vessel. Keep an eye on your cargo, and avoid other ships. Pursue your goals, trade, smuggle; try not to get caught"
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	info = "You are the crewman of your small Smuggler's vessel. Keep an eye on your cargo, and avoid other ships. Pursue your goals, trade, smuggle; try not to get caught."
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_RESOMI)
 	is_semi_antagonist = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/smuggler
 	loadout_allowed = TRUE
