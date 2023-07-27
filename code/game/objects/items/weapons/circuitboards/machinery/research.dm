@@ -128,3 +128,17 @@
 		/obj/item/stock_parts/power/battery/buildable/stock = 1,
 		/obj/item/cell/high = 1
 	)
+
+/obj/item/stock_parts/circuitboard/weapons_analyzer
+	name = T_BOARD("weapons analyzer")
+	build_path = /obj/machinery/weapons_analyzer
+	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 4, TECH_COMBAT = 3)
+	board_type = "machine"
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/micro_laser = 1)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/keyboard = 1
+	)

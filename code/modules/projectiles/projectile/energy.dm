@@ -75,8 +75,8 @@
 			if(T && (T != TO) && (TO.z == T.z) && !mob.blinded)
 				to_chat(mob, SPAN_NOTICE("You see a bright light to \the [dir2text(get_dir(T,TO))]"))
 			CHECK_TICK
-				
-/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit 
+
+/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit
 	name = "electrode"
 	icon_state = "spark"
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -135,6 +135,42 @@
 	damage = 20
 	damage_type = TOX
 	irradiate = 20
+
+/obj/item/projectile/energy/bfg
+	name = "distortion"
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "bluespace"
+	damage = 60
+	damage_type = BRUTE
+
+/obj/item/projectile/energy/bfg/on_impact(var/atom/A)
+	//if(ismob(A))
+	//	var/mob/M = A
+	//	M.gib()
+	explosion(A, -1, 0, 5)
+	..()
+
+/obj/item/projectile/energy/bfg/New()
+	var/matrix/M = matrix()
+	M.Scale(2)
+	src.transform = M
+	..()
+
+/obj/item/projectile/energy/bfg/moved()
+	for(var/a in range(1, src))
+		if(isliving(a) && a != firer)
+			var/mob/living/M = a
+			if(M.stat == DEAD)
+				M.gib()
+			else
+				M.apply_damage(60, BRUTE, BP_HEAD)
+			playsound(src, 'sound/magic/lightningshock.ogg', 75, 1)
+		else if(isturf(a) || isobj(a))
+			var/atom/A = a
+			if(!A.density)
+				continue
+			A.ex_act(2)
+			playsound(src, 'sound/magic/lightningshock.ogg', 75, 1)
 
 /obj/item/projectile/energy/plasmastun
 	name = "plasma pulse"
@@ -222,3 +258,36 @@
 	damage = 10
 	armor_penetration = 35
 	damage_type = BRUTE
+
+/obj/item/projectile/energy/blaster
+	name = "blaster bolt"
+	icon_state = "heavybolt"
+	damage = 30
+	damage_type = BURN
+
+/obj/item/projectile/energy/blaster/disruptor
+	damage = 20
+
+/obj/item/projectile/energy/disruptorstun
+	name = "disruptor bolt"
+	icon_state = "blue_laser"
+	damage = 1
+	agony = 40
+	damage_type = BURN
+	eyeblur = TRUE
+
+/obj/item/projectile/energy/blaster/heavy
+	damage = 35
+	armor_penetration = 10
+
+/obj/item/projectile/energy/blaster/incendiary
+	icon_state = "laser"
+	damage = 15
+
+/obj/item/projectile/energy/blaster/incendiary/on_hit(var/atom/target, var/blocked = 0)
+	..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjust_fire_stacks(rand(2,4))
+		if(L.fire_stacks >= 3)
+			L.IgniteMob()
