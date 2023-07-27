@@ -821,7 +821,7 @@
 	icon_state = "shantak-alt"
 	icon_living = "shantak-alt"
 	icon_dead = "shantak-alt_dead"
-	tame_difficulty = 8
+	tame_difficulty = 12
 	maxHealth = 125
 	health = 125
 	diet = DIET_CARNIVOROUS
@@ -830,8 +830,7 @@
 	mob_push_flags = ALLMOBS
 	mob_size = MOB_MEDIUM
 	melee_attack_delay = 6
-	speed = 2
-	movement_cooldown = 3
+	movement_cooldown = 1
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
