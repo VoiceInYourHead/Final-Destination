@@ -46,6 +46,11 @@
 	base_icon = "bench_middle"
 	buckle_lying = 1
 
+/obj/structure/bed/sofa/sauna_bench/middle/north
+	icon_state = "bench_middlenorth"
+	base_icon = "bench_middlenorth"
+	buckle_lying = 1
+
 /obj/structure/bed/sofa/sauna_bench/north
 	icon_state = "bench_north"
 	base_icon = "bench_north"
@@ -55,3 +60,4 @@
 	icon_state = "bench_south"
 	base_icon = "bench_south"
 	buckle_lying = 1
+

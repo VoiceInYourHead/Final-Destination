@@ -967,7 +967,11 @@
 	name = "\improper First Deck Head"
 
 /area/crew_quarters/head/sauna
-	name = "\improper Sauna"
+	name = "\improper First Bathhouse"
+	icon_state = "sauna"
+
+/area/crew_quarters/head/sauna2
+	name = "\improper Second Bathhouse"
 	icon_state = "sauna"
 
 /area/crew_quarters/gym
