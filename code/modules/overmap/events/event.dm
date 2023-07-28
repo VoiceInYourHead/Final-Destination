@@ -174,15 +174,15 @@
 	icon_state = "event"
 	opacity = 1
 
-/*	// Events must be detected by sensors, but are otherwise instantly visible.
-	instant_contact = TRUE*/
-
 	color = "#880000"
 	var/list/events
 	var/list/event_icon_states
 	var/difficulty = EVENT_LEVEL_MODERATE
 	var/weaknesses //if the BSA can destroy them and with what
 	var/list/victims //basically cached events on which Z level
+
+/*	// Events must be detected by sensors, but are otherwise instantly visible.
+	instant_contact = TRUE*/
 
 /obj/effect/overmap/event/Initialize()
 	. = ..()
@@ -381,98 +381,15 @@
 	event_icon_states = list("carp1", "carp2")
 	weaknesses = OVERMAP_WEAKNESS_EXPLOSIVE | OVERMAP_WEAKNESS_FIRE
 	color = "#783ca4"
-	var/move_self = 1
-	var/target = /obj/effect/overmap/visitable/ship
-	var/last_failed_movement = 0
-
-
-/obj/effect/overmap/event/carp/New(loc)
-	..()
-	START_PROCESSING(SSobj, src)
-
-/obj/effect/overmap/event/carp/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	. = ..()
-
-/obj/effect/overmap/event/carp/Process()
-	move()
-
-/obj/effect/overmap/event/carp/proc/move(var/force_move = 0)
-	if(!move_self)
-		return 0
-
-	var/movement_dir = pick(GLOB.alldirs - last_failed_movement)
-
-	if(force_move)
-		movement_dir = force_move
-
-	if(target && prob(60))
-		movement_dir = get_dir(src,target) //moves to a ship, if there is one
-
-	if(check_turfs_in(movement_dir))
-		last_failed_movement = 0 // Reset this because we moved
-		spawn(0)
-			step(src, movement_dir)
-		return 1
-	else
-		last_failed_movement = movement_dir
-	return 0
-
-/obj/effect/overmap/event/carp/proc/check_turfs_in(var/direction = 0, var/step = 1)
-	if(!direction)
-		return 0
-
-	var/steps = 1
-
-	steps = step
-
-	var/list/turfs = list()
-	var/turf/T = src.loc
-	for(var/i = 1 to steps)
-		T = get_step(T,direction)
-	if(!isturf(T))
-		return 0
-	turfs.Add(T)
-	var/dir2 = 0
-	var/dir3 = 0
-	switch(direction)
-		if(NORTH||SOUTH)
-			dir2 = 4
-			dir3 = 8
-		if(EAST||WEST)
-			dir2 = 1
-			dir3 = 2
-	var/turf/T2 = T
-	for(var/j = 1 to steps)
-		T2 = get_step(T2,dir2)
-		if(!isturf(T2))
-			return 0
-		turfs.Add(T2)
-	for(var/k = 1 to steps)
-		T = get_step(T,dir3)
-		if(!isturf(T))
-			return 0
-		turfs.Add(T)
-	for(var/turf/T3 in turfs)
-		if(isnull(T3))
-			continue
-		if(!can_move(T3))
-			return 0
-	return 1
-
-/obj/effect/overmap/event/carp/proc/can_move(const/turf/T)
-	if (!isturf(T))
-		return 0
-
-	if ((locate(/obj/effect/overmap/event) in T) || (locate(/obj/effect/overmap/visitable/sector/exoplanet) in T))
-		return 0
-	return 1
+	wander_around = TRUE // so we WALK
+	follow_ships = TRUE // so we APPROACH
 
 /obj/effect/overmap/event/carp/major
 	name = "carp school"
 	difficulty = EVENT_LEVEL_MAJOR
 	event_icon_states = list("carp3", "carp4")
-
+	wander_timer_min = 36
+	wander_timer_max = 90
 
 /obj/effect/overmap/event/gravity
 	name = "dark matter influx"
