@@ -2,7 +2,7 @@
 
 /obj/item/ammo_magazine/ammobox/harpoon_cannon
 	name = "ammo box"
-	desc = "Ammo box that contains 1.5 meters long harpoon rods."
+	desc = "Ammo box that contains 1.5 meters wide harpoon rods."
 	icon_state = "ammocrate_autocannon1"
 	caliber = CALIBER_SHIP_HARPOON
 	max_ammo = 5
