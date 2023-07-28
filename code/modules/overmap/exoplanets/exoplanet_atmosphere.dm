@@ -45,11 +45,12 @@
 
 	for(var/obj/effect/overmap/event/star/center/sun in range(6,src))
 		if(sun && atmosphere)
-			atmosphere.temperature = temperature + rand(200, 600) / get_dist(sun,src)
+			atmosphere.temperature = temperature + rand(400, 800) / get_dist(sun,src)
 			atmosphere.update_values()
 			daycycle = 0
 			lightlevel = 1
 			update_daynight()
+			return
 
 /obj/effect/overmap/visitable/sector/exoplanet/proc/get_atmosphere_color()
 	var/list/colors = list()
