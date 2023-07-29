@@ -6,14 +6,21 @@
 	icon = 'icons/turf/areas.dmi'
 
 /area/map_template/wreck/wreckone
+	name = "\improper Fleet ship derelict"
 /area/map_template/wreck/wreckone/second
 
 /area/map_template/wreck/wrecktwo
+	name = "\improper Station fragment #1"
 /area/map_template/wreck/wrecktwo/second
 
 /area/map_template/wreck/wreckthree
+	name = "\improper Lost escape pod"
 
 /area/map_template/wreck/wreckfour
+	name = "\improper Station fragment #2"
+
+/area/map_template/wreck/wreckfive
+	name = "\improper Shipbreakers abandoned shuttle"
 
 /datum/map_template/ruin/junkyard/wreck
 	name = "Fleet ship derelict"
@@ -41,3 +48,9 @@
 	id = "wreck4"
 	suffixes = list("ruins/ruin_4.dmm")
 	spawn_cost = 1
+
+/datum/map_template/ruin/junkyard/wreck/wreck5
+	name = "Shipbreakers abandoned shuttle"
+	id = "wreck5"
+	suffixes = list("ruins/ruin_5.dmm")
+	spawn_cost = 0.5
