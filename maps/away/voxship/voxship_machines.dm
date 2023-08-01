@@ -18,4 +18,17 @@
 	_fully_charged = TRUE
 
 /obj/machinery/power/port_gen/pacman/super/potato/reactor/vox
-	power_gen = 9000
+	name = "nuclear reactor"
+	desc = "ICRER-2-V, an industrial-yet-compact nuclear fusion reactor powered by sheets of uranium and liquid coolant. Rated for 540 KW maximum safe output on a full coolant tank for one hour. Exceeding this is likely to result in nuclear detonation and is not recommended. Modificated by Voxs"
+	icon_state = "potato"
+	max_safe_output = 5
+	max_power_output = 8
+	temperature_gain = 70
+	max_temperature = 500
+	rad_power = 8
+	coolant_use = 0.2
+	coolant_volume = 360
+	power_gen = 90000
+	coolant_reagent = /datum/reagent/coolant
+	machine_name = "\improper ICRER-2-V nuclear generator"
+	machine_desc = "A standard nuclear generator that produces a respectable amount of power by processing uranium and industrial coolant. Rated for 540 kW max safe output. Modificated by Voxs"

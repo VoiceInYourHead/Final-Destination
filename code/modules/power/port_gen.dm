@@ -461,7 +461,7 @@
 
 /obj/machinery/power/port_gen/pacman/super/potato
 	name = "nuclear reactor"
-	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source. Rated for 150 kW max safe output."
+	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source. Rated for 300 kW max safe output."
 	power_gen = 60000		//Watts output per power_output level
 	icon_state = "potato"
 	max_safe_output = 4
@@ -473,7 +473,7 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	anchored = TRUE
 	machine_name = "\improper PTTO-3 nuclear generator"
-	machine_desc = "This nuclear generator uses a combination of uranium and, strangely, vodka. Rated for 150 kW max safe output."
+	machine_desc = "This nuclear generator uses a combination of uranium and, strangely, vodka. Rated for 300 kW max safe output."
 	var/coolant_volume = 120
 	var/coolant_use = 1
 	var/coolant_reagent = /datum/reagent/ethanol/vodka
@@ -519,7 +519,7 @@
 
 /obj/machinery/power/port_gen/pacman/super/potato/reactor
 	name = "nuclear reactor"
-	desc = "ICRER-2, an industrial-yet-compact nuclear fusion reactor powered by sheets of uranium and liquid coolant. Rated for 180 KW maximum safe output on a full coolant tank for one hour. Exceeding this is likely to result in nuclear detonation and is not recommended."
+	desc = "ICRER-2, an industrial-yet-compact nuclear fusion reactor powered by sheets of uranium and liquid coolant. Rated for 360 KW maximum safe output on a full coolant tank for one hour. Exceeding this is likely to result in nuclear detonation and is not recommended."
 	icon_state = "potato"
 	max_safe_output = 5
 	max_power_output = 8
@@ -530,7 +530,7 @@
 	coolant_volume = 360
 	coolant_reagent = /datum/reagent/coolant
 	machine_name = "\improper ICRER-2 nuclear generator"
-	machine_desc = "A standard nuclear generator that produces a respectable amount of power by processing uranium and industrial coolant. Rated for 180 kW max safe output."
+	machine_desc = "A standard nuclear generator that produces a respectable amount of power by processing uranium and industrial coolant. Rated for 360 kW max safe output."
 
 /obj/machinery/power/port_gen/pacman/mrs
 	name = "M.R.S.P.A.C.M.A.N.-type Portable Generator"

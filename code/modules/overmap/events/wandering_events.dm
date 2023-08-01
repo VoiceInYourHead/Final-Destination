@@ -1,8 +1,8 @@
 /obj/effect/overmap/event
 	pixel_step_size = 2 // looks alot smoother :P
 	var/wander_around = FALSE
-	var/wander_timer_min = 20
-	var/wander_timer_max = 50
+	var/wander_timer_min = 50
+	var/wander_timer_max = 100
 	var/wander_timer = 0
 	var/wander_blockers = list(/obj/effect/overmap/event) // list of types we won't enter when fuckin' around and not
 	var/follow_ships = FALSE
@@ -27,8 +27,8 @@
 
 	if(follow_ships)
 		var/list/guys_around = list()
-		guys_around += range(2,src)
-		guys_around += view(5,src) - range(2,src)
+		guys_around += range(1,src)
+		guys_around += view(3,src) - range(1,src)
 		for(var/obj/effect/overmap/visitable/V in guys_around) // we look for the ships/stations around
 			if(!V) continue
 			if(V.sector_flags & OVERMAP_SECTOR_UNTARGETABLE) continue

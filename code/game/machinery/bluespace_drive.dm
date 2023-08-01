@@ -25,6 +25,7 @@
 	/// The token for the drive's idle loop
 	var/drive_sound
 
+	var/disable_admin = FALSE
 
 /obj/machinery/bluespacedrive/Destroy()
 	QDEL_NULL(drive_sound)

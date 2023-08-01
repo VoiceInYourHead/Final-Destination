@@ -93,8 +93,15 @@
 	if(!_emergency_evac)
 		doomed = TRUE
 		for(var/obj/machinery/bluespacedrive/BSD in SSmachines.machinery)
-			if(BSD.z in GetConnectedZlevels(1) || BSD.z == 1)
-				doomed = FALSE
+			if(!BSD)
+				continue
+			if(!(BSD.z in GetConnectedZlevels(1)))
+				continue
+			if(BSD.stat & NOPOWER)
+				continue
+			if(BSD.disable_admin)
+				continue
+			doomed = FALSE
 
 	if(doomed)
 		to_chat(user, "Unable to initiate jump preparation due to lack of BSD.")

@@ -388,8 +388,8 @@
 	name = "carp school"
 	difficulty = EVENT_LEVEL_MAJOR
 	event_icon_states = list("carp3", "carp4")
-	wander_timer_min = 36
-	wander_timer_max = 90
+	wander_timer_min = 75
+	wander_timer_max = 150
 
 /obj/effect/overmap/event/gravity
 	name = "dark matter influx"
