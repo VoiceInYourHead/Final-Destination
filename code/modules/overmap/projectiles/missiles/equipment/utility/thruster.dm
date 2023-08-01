@@ -100,6 +100,10 @@
 				impact_turf = T
 				break
 
+		playsound(impact_turf, 'sound/effects/bomb_fall.ogg', 75, FALSE, falloff = 5)
+
+		sleep(rand(35,50))
+
 		M.forceMove(impact_turf)
 		M.detonate(impact_turf)
 

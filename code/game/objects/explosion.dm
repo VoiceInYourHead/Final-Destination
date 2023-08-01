@@ -66,12 +66,14 @@
 	far_dist += devastation_range * 20
 	var/frequency = get_rand_frequency()
 	for(var/mob/M in GLOB.player_list)
+//		var/list/relevant_z = GetConnectedZlevels(epicenter.z)
+//		if(M.z in relevant_z)
 		if(M.z == epicenter.z)
 			var/turf/M_turf = get_turf(M)
 			var/dist = get_dist(M_turf, epicenter)
 			// If inside the blast radius + world.view - 2
 			if(dist <= round(max_range + world.view - 2, 1))
-				M.playsound_local(epicenter, get_sfx("explosion"), 100, 1, frequency, falloff = 5) // get_sfx() is so that everyone gets the same sound
+				M.playsound_local(epicenter, get_sfx(heavy_impact_range>3 ? "explosion_big" : "explosion"), 100, 1, frequency, falloff = 5) // get_sfx() is so that everyone gets the same sound
 			else if(dist <= far_dist)
 				var/far_volume = clamp(far_dist, 30, 50) // Volume is based on explosion size and dist
 				far_volume += (dist <= far_dist * 0.5 ? 50 : 0) // add 50 volume if the mob is pretty close to the explosion

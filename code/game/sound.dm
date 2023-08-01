@@ -38,6 +38,7 @@
 
 GLOBAL_LIST_INIT(shatter_sound,list('sound/effects/Glassbr1.ogg','sound/effects/Glassbr2.ogg','sound/effects/Glassbr3.ogg'))
 GLOBAL_LIST_INIT(explosion_sound,list('sound/effects/Explosion1.ogg','sound/effects/Explosion2.ogg'))
+GLOBAL_LIST_INIT(giant_explosion_sound,list('sound/effects/bigboom1.ogg','sound/effects/bigboom2.ogg','sound/effects/bigboom3.ogg','sound/effects/bigboom4.ogg'))
 GLOBAL_LIST_INIT(spark_sound,list('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg','sound/effects/sparks4.ogg'))
 GLOBAL_LIST_INIT(rustle_sound,list('sound/effects/rustle1.ogg','sound/effects/rustle2.ogg','sound/effects/rustle3.ogg','sound/effects/rustle4.ogg','sound/effects/rustle5.ogg'))
 GLOBAL_LIST_INIT(punch_sound,list('sound/weapons/punch1.ogg','sound/weapons/punch2.ogg','sound/weapons/punch3.ogg','sound/weapons/punch4.ogg'))
@@ -184,6 +185,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 		switch(soundin)
 			if ("shatter") soundin = pick(GLOB.shatter_sound)
 			if ("explosion") soundin = pick(GLOB.explosion_sound)
+			if ("explosion_big") soundin = pick(GLOB.giant_explosion_sound)
 			if ("sparks") soundin = pick(GLOB.spark_sound)
 			if ("rustle") soundin = pick(GLOB.rustle_sound)
 			if ("punch") soundin = pick(GLOB.punch_sound)
