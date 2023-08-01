@@ -39,7 +39,7 @@
 	set name="Set ID"
 	set category = "Object"
 	set src in usr
-	if(!CALL_NONE)
+	if(call_state != CALL_NONE)
 		to_chat(usr, SPAN_WARNING("Нельзя сменить ID прямо сейчас."))
 		return
 	var/newid = sanitize(input(usr, "Укажите ID голопада!") as null|text, MAX_NAME_LEN)
