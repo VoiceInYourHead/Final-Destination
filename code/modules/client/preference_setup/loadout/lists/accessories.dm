@@ -70,9 +70,9 @@
 /datum/gear/accessory/ntaward/New()
 	..()
 	var/ntawards = list()
-	ntawards["sciences medal"] = /obj/item/clothing/accessory/medal/bronze/nanotrasen
-	ntawards["distinguished service"] = /obj/item/clothing/accessory/medal/silver/nanotrasen
-	ntawards["command medal"] = /obj/item/clothing/accessory/medal/gold/nanotrasen
+	ntawards["sciences medal"] = /obj/item/storage/medalbox/corp_science
+	ntawards["distinguished service"] = /obj/item/storage/medalbox/corp_service
+	ntawards["command medal"] = /obj/item/storage/medalbox/corp_command
 	gear_tweaks += new/datum/gear_tweak/path(ntawards)
 
 
