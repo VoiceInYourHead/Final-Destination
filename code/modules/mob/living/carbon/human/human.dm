@@ -1913,6 +1913,11 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 
 
 /mob/living/carbon/human/joinable/attack_ghost(mob/observer/ghost/user)
+	var/question = ""
+	question += "Вы уверены, что хотите начать игру за выжившего из криопода?"
+	var/ask = alert(question, "Мы не даём никакой гарантии того, что вы не окажетесь посреди космоса без скафандра!", "Да", "Нет")
+	if(ask != "Да")
+		return
 	var/datum/ghosttrap/T = get_ghost_trap("space sleeper")
 	T.transfer_personality(user, src)
 
