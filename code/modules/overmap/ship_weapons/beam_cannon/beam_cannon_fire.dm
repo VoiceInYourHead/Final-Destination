@@ -343,7 +343,6 @@
 		ion_beam.dir = d
 		ion_beam.icon = 'icons/effects/beam.dmi'
 		ion_beam.icon_state = beam_icon
-		ion_beam.layer = ABOVE_LIGHTING_LAYER
 		ion_beam.anchored = TRUE //иначе лазеры смешно улетают от взрывов
 		ion_beam.does_spin = FALSE // ^^^
 		ion_beam.set_light(1, 2, 4, l_color = beam_light_color)
