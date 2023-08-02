@@ -168,6 +168,7 @@ var/list/ghost_traps
 	object = "space sleeper"
 	ghost_trap_message = "They are occupying a space sleeper now."
 	ghost_trap_role = "Space Sleeper"
+	minutes_since_death = 5
 	list_as_special_role = TRUE
 
 /datum/ghosttrap/survivor/welcome_candidate(mob/target)
