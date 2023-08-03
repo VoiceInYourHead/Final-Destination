@@ -148,6 +148,8 @@ Class Procs:
 	/// A simple description of what this machine does, shown on examine for circuit boards.
 	var/machine_desc = null
 
+	throwforce = 300
+
 /obj/machinery/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
 	if(d)

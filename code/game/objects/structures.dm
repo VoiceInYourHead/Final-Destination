@@ -13,6 +13,8 @@
 	var/footstep_type
 	var/mob_offset = 0 //used for on_structure_offset mob animation
 
+	throwforce = 200
+
 /obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
 	if(wallbreaker && damage && breakable)
 		visible_message("<span class='danger'>\The [user] smashes the \[src] to pieces!</span>")
