@@ -38,7 +38,7 @@
 				break
 			use_power_oneoff(500)
 			spawn( 0 )
-				O.throw_at(target, drive_range * power, power)
+				O.throw_at(target, drive_range * power, power / 2)
 	flick("mass_driver1", src)
 	return
 
