@@ -31,7 +31,7 @@
 
 /obj/item/device/holopad/Destroy()
 	GLOB.listening_objects -= src
-	abonent = null
+	hangUp()
 	. = ..()
 
 
@@ -71,8 +71,13 @@
 
 /obj/item/device/holopad/proc/placeCall(mob/user)
 	var/list/Targets = list()
+	var/list/valid_z = GetConnectedZlevels(loc.z)
+	var/our_ship = map_sectors["[loc.z]"]
+	for(var/obj/effect/overmap/visitable/ship in range(our_ship, 5))
+		if(ship != our_ship)
+			valid_z += ship.map_z
 	for(var/obj/item/device/holopad/H in GLOB.listening_objects)
-		if(H == src || !(H.loc.z in GetConnectedZlevels(loc.z)))
+		if( H == src || (!(H.loc.z in valid_z) && !(H.loc.loc?.z in valid_z)) )
 			continue
 		Targets[H.getName()] = H
 	var/selection = input("Кого вы хотите вызвать?") as null|anything in Targets

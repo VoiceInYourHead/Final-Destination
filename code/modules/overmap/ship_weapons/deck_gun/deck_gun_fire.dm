@@ -46,6 +46,4 @@
 	return TRUE
 
 /obj/machinery/computer/ship/ship_weapon/deck_gun/handle_muzzle()
-	front.icon_state = muzzle_flash
-	sleep(1)
-	front.icon_state = initial(front.icon_state)
+	flick(muzzle_flash,front)

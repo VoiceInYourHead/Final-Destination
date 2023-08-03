@@ -23,7 +23,7 @@
 	bullet_size = 4
 	damage = 450
 	armor_penetration = 50
-	penetrating = 6
+	penetrating = 4
 	penetration_modifier = 1.1
 	shoot_range = 4 // how far will we go on the overmap
 	hull_damage = 1

@@ -8,5 +8,9 @@
 	P.set_dangerous(TRUE)
 	P.set_enter_zs(TRUE)
 
-/obj/item/missile_equipment/payload/on_trigger()
-	qdel(loc)
+/obj/item/missile_equipment/payload/on_trigger(atom/triggerer)
+	var/obj/effect/overmap/visitable/ship/target_ship = map_sectors["[loc.z]"]
+	if(!istype(triggerer, /obj/effect/shield))
+		target_ship.damage_hull(hull_damage)
+
+	loc.Destroy()

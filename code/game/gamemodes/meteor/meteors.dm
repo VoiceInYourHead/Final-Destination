@@ -131,8 +131,8 @@
 	icon_state = "small"
 	density = TRUE
 	anchored = TRUE
-	var/hits = 4
-	var/hitpwr = 2 //Level of ex_act to be called on hit.
+	var/hits = 3
+	var/hitpwr = 3 //Level of ex_act to be called on hit.
 	var/dest
 	pass_flags = PASS_FLAG_TABLE
 	var/heavy = 0
@@ -144,7 +144,7 @@
 	var/move_count = 0
 
 /obj/effect/meteor/proc/get_shield_damage()
-	return max(((max(hits, 2)) * (heavy + 1) * rand(30, 60)) / hitpwr , 0)
+	return max(((max(hits*2, 2)) * (heavy + 1) * rand(30, 60)) , 0)
 
 /obj/effect/meteor/New()
 	..()
@@ -243,6 +243,7 @@
 //Medium-sized
 /obj/effect/meteor/medium
 	name = "meteor"
+	hits = 3
 	dropamt = 2
 
 /obj/effect/meteor/medium/meteor_effect()
@@ -265,13 +266,13 @@
 /obj/effect/meteor/flaming
 	name = "flaming meteor"
 	icon_state = "flaming"
-	hits = 5
+	hits = 3
 	heavy = 1
 	meteordrop = /obj/item/ore/phoron
 
 /obj/effect/meteor/flaming/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, z_transfer = 0, shaped = 5, turf_breaker = TRUE, effective = FALSE)
+	explosion(src.loc, 6, adminlog = 0, z_transfer = 0, shaped = 5, turf_breaker = TRUE)
 
 //Radiation meteor
 /obj/effect/meteor/irradiated
@@ -307,9 +308,7 @@
 
 /obj/effect/meteor/emp/meteor_effect()
 	..()
-	// Best case scenario: Comparable to a low-yield EMP grenade.
-	// Worst case scenario: Comparable to a standard yield EMP grenade.
-	empulse(src, rand(2, 4), rand(4, 10))
+	empulse(src, rand(1, 2), rand(3, 6))
 
 /obj/effect/meteor/emp/get_shield_damage()
 	return ..() * rand(2,4)
@@ -320,13 +319,13 @@
 	icon_state = "flaming"
 	desc = "Your life briefly passes before your eyes the moment you lay them on this monstrosity."
 	hits = 10
-	hitpwr = 1
+	hitpwr = 2
 	heavy = 1
 	meteordrop = /obj/item/ore/diamond	// Probably means why it penetrates the hull so easily before exploding.
 
 /obj/effect/meteor/tunguska/meteor_effect()
 	..()
-	explosion(src.loc, 18, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
+	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
 
 // This is the final solution against shields - a single impact can bring down most shield generators.
 /obj/effect/meteor/supermatter

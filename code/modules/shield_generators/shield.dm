@@ -20,6 +20,11 @@
 	else
 		set_opacity(0)
 
+	if(gen && gen.check_flag(MODEFLAG_HYPERKINETIC) && !disabled_for && !diffused_for)
+		throwpass = 0
+	else
+		throwpass = 1
+
 	if (!gen)
 		color = COLOR_RED_LIGHT
 	else if (gen.check_flag(MODEFLAG_OVERCHARGE))
@@ -115,6 +120,24 @@
 	if(gen?.check_flag(MODEFLAG_OVERCHARGE) && istype(source, /mob/living/))
 		overcharge_shock(source)
 	..(source, damage, emote)
+
+
+/obj/effect/shield/hitby(atom/movable/AM, var/datum/thrownthing/TT)
+	..()
+	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
+	var/tforce = 0
+	if(ismob(AM)) // All mobs have a multiplier and a size according to mob_defines.dm
+		var/mob/I = AM
+		tforce = I.mob_size * (TT.speed/THROWFORCE_SPEED_DIVISOR)
+		if(gen?.check_flag(MODEFLAG_OVERCHARGE))
+			overcharge_shock(AM)
+	else if(isobj(AM))
+		var/obj/item/I = AM
+		tforce = I.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
+	take_damage(tforce, SHIELD_DAMTYPE_PHYSICAL, AM)
+	if(istype(AM, /obj/structure/missile))
+		var/obj/structure/missile/kaboom = AM
+		kaboom.detonate(loc)
 
 
 // Fails shield segments in specific range. Range of 1 affects the shielded turf only.
@@ -318,7 +341,7 @@
 
 // Small visual effect, makes the shield tiles brighten up by changing color for a moment, and spreads to nearby shields.
 /obj/effect/shield/proc/impact_effect(var/i, var/list/affected_shields = list())
-	playsound(get_turf(src), pick(impact_sounds), 120, 0)
+	playsound(get_turf(src), pick(impact_sounds), 150, 0)
 	i = clamp(i, 1, 10)
 	var/backcolor = color
 	if(gen && gen.check_flag(MODEFLAG_OVERCHARGE))
