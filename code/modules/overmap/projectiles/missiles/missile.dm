@@ -278,11 +278,6 @@
 
 	detonating = TRUE
 
-	for(var/obj/effect/overmap/visitable/ship/target in world)
-		if(src.z in target.map_z)
-			for(var/obj/item/missile_equipment/payload/P in equipment)
-				target.damage_hull(P.hull_damage)
-
 	// missile equipment triggers before the missile itself
 	for(var/obj/item/missile_equipment/E in equipment)
 		E.on_trigger(obstacle)
@@ -291,7 +286,6 @@
 
 	// stop moving
 	walk(src, 0)
-	Destroy()
 
 // Figure out where to pop in and set the missile flying
 /obj/structure/missile/proc/enter_level(var/z_level, var/obj/effect/overmap/target, var/target_fore_dir, var/target_dir)
