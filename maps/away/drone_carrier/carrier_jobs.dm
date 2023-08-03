@@ -3,13 +3,13 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/scavver/pilot
 	supervisors = "Captain and FTU itself."
-	info = "You are the pilot of your meagre Scavenger Crew. Keep your crew safe, don't left the ship, try not to get bored."
+	info = "You are the pilot of your meagre Scavenger Crew. Keep your metal buddy safe, don't left it, try not to get bored."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
 		SKILL_MECH = SKILL_MAX,
-		SKILL_SCIENCE = SKILL_TRAINED,
+		SKILL_SCIENCE = SKILL_BASIC,
 		SKILL_PILOT = SKILL_EXPERIENCED,
 		SKILL_COMBAT = SKILL_TRAINED,
 		SKILL_WEAPONS = SKILL_TRAINED
@@ -36,6 +36,50 @@
 		SKILL_MEDICAL = SKILL_EXPERIENCED,
 		SKILL_ANATOMY = SKILL_EXPERIENCED,
 		SKILL_CHEMISTRY = SKILL_EXPERIENCED
+	)
+	skill_points = 20
+
+/datum/job/submap/carrier_captain
+	title = "Bigsby Captain"
+	total_positions = 1
+	outfit_type = /decl/hierarchy/outfit/job/scavver/pilot
+	supervisors = "FTU itself."
+	info = "You are the captain of your meagre Scavenger Crew. Keep your crew safe, make money, try not to die from rebelios hands."
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	min_skill = list(
+		SKILL_HAULING = SKILL_TRAINED,
+		SKILL_EVA = SKILL_EXPERIENCED,
+		SKILL_MECH = SKILL_MAX,
+		SKILL_SCIENCE = SKILL_BASIC,
+		SKILL_PILOT = SKILL_EXPERIENCED,
+		SKILL_COMBAT = SKILL_TRAINED,
+		SKILL_WEAPONS = SKILL_EXPERIENCED,
+		SKILL_MEDICAL = SKILL_TRAINED,
+		SKILL_CONSTRUCTION = SKILL_TRAINED,
+		SKILL_ELECTRICAL = SKILL_TRAINED,
+	)
+
+	max_skill = list(
+		SKILL_BUREAUCRACY = SKILL_MAX,
+		SKILL_FINANCE = SKILL_MAX,
+		SKILL_EVA = SKILL_MAX,
+		SKILL_PILOT = SKILL_MAX,
+		SKILL_HAULING = SKILL_MAX,
+		SKILL_COMPUTER = SKILL_MAX,
+		SKILL_BOTANY = SKILL_MAX,
+		SKILL_COOKING = SKILL_MAX,
+		SKILL_COMBAT = SKILL_MAX,
+		SKILL_WEAPONS = SKILL_MAX,
+		SKILL_FORENSICS = SKILL_MAX,
+		SKILL_CONSTRUCTION = SKILL_MAX,
+		SKILL_ELECTRICAL = SKILL_MAX,
+		SKILL_ATMOS = SKILL_EXPERIENCED,
+		SKILL_ENGINES = SKILL_EXPERIENCED,
+		SKILL_DEVICES = SKILL_MAX,
+		SKILL_SCIENCE = SKILL_MAX,
+		SKILL_MEDICAL = SKILL_MAX,
+		SKILL_ANATOMY = SKILL_MAX,
+		SKILL_CHEMISTRY = SKILL_MAX
 	)
 	skill_points = 20
 
@@ -134,7 +178,7 @@
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_UNATHI,SPECIES_MULE,SPECIES_RESOMI)
 	is_semi_antagonist = TRUE
 	min_skill = list(
-		SKILL_HAULING = SKILL_BASIC,
+		SKILL_HAULING = SKILL_TRAINED,
 		SKILL_COMPUTER = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
 		SKILL_CONSTRUCTION = SKILL_TRAINED,
@@ -247,8 +291,11 @@
 /obj/effect/submap_landmark/spawnpoint/carrier_pilot
 	name = "Bigsby Corporate Pilot"
 
-/obj/effect/submap_landmark/spawnpoint/scavver
+/obj/effect/submap_landmark/spawnpoint/carrier_salvager
 	name = "Bigsby Salvager"
+
+/obj/effect/submap_landmark/spawnpoint/carrier_captain
+	name = "Bigsby Captain"
 
 /obj/effect/submap_landmark/spawnpoint/carrier_chef
 	name = "Bigsby Cook"

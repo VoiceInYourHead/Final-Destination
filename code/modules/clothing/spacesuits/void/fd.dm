@@ -69,9 +69,8 @@
 	desc = "A voidsuit designed to replicate older designs with newer technology."
 	icon_state = "rig-retro"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
+		melee = ARMOR_MELEE_KNIVES,
 		energy = ARMOR_ENERGY_RESISTANT,
-		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 	)
@@ -82,9 +81,8 @@
 	desc = "A voidsuit helmet designed to replicate older designs with newer technology."
 	icon_state = "rig0-retro"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
+		melee = ARMOR_MELEE_KNIVES,
 		energy = ARMOR_ENERGY_RESISTANT,
-		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 	)
@@ -137,3 +135,49 @@
 /obj/item/clothing/suit/space/void/mining/rockanddrill/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/mining/rockanddrill
 
+// Мусорщики Свободного Торгового Союза
+
+/obj/item/clothing/head/helmet/space/void/ftu_salvager
+	name = "old-ass voidsuit helmet"
+	desc = "Old space helmet model, designed for work in dangerous environment, where you can got hit with different things"
+	icon_state = "rig0-ftu"
+	item_state = "rig0-ftu"
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_BIO_SHIELDED
+		)
+	siemens_coefficient = 0.3
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SHELL)
+	light_overlay = "explorer_light"
+
+/obj/item/clothing/suit/space/void/ftu_salvager
+	icon_state = "rig-ftu"
+	name = "old-ass green voidsuit"
+	desc = "Old space suit model, designed for work in dangerous environment, where you can got hit with different things"
+	item_state_slots = list(
+		slot_l_hand_str = "syndicate-green-dark",
+		slot_r_hand_str = "syndicate-green-dark",
+	)
+	w_class = ITEM_SIZE_LARGE //normally voidsuits are bulky but the merc voidsuit is 'advanced' or something
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_BIO_SHIELDED
+		)
+	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/melee/energy/sword,/obj/item/handcuffs)
+	siemens_coefficient = 0.3
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SHELL)
+
+/obj/item/clothing/suit/space/void/battlewizards/Initialize()
+	. = ..()
+	slowdown_per_slot[slot_wear_suit] = 1
+
+/obj/item/clothing/suit/space/void/ftu_salvager/prepared
+	helmet = /obj/item/clothing/head/helmet/space/void/ftu_salvager
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/oxygen

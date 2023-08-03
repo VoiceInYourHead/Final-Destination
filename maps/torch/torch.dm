@@ -194,6 +194,7 @@
 	#include "../away/lighthouse/beacon_working.dm"
 	#include "../away/verne/verne.dm"
 	#include "../away/itv_providence/providence.dm"
+	#include "../away/drone_carrier/carrier.dm"
 
 	#define using_map_DATUM /datum/map/torch
 

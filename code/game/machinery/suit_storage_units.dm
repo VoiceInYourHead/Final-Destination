@@ -116,3 +116,12 @@
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
 	islocked = FALSE
+
+/obj/machinery/suit_storage_unit/ftu
+	name = "Salvage Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/ftu_salvager
+	helmet = /obj/item/clothing/head/helmet/space/void/ftu_salvager
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/oxygen
+	mask = /obj/item/clothing/mask/breath
+	islocked = FALSE
