@@ -77,7 +77,7 @@ var/global/explosion_in_progress = 0
 		return //The turf already sustained and spread a power greated than what we are dealing with. No point spreading again.
 	explosion_turfs[src] = power
 /*
-	sleep(2)
+	sleep(1)
 	var/obj/effect/debugging/M = locate() in src
 	if (!M)
 		M = new(src, power, direction)
@@ -129,6 +129,8 @@ var/global/explosion_in_progress = 0
 
 /turf/simulated/wall/get_explosion_resistance()
 	return 5 // Standardized health results in explosion_resistance being used to reduce overall damage taken, instead of changing explosion severity. 5 was the original default, so 5 is always returned here.
+
+/turf/simulated/explosion_resistance = 1
 
 /turf/simulated/floor/explosion_resistance = 1
 
