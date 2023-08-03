@@ -15,18 +15,18 @@
 	megafauna_types = list(/mob/living/simple_animal/hostile/aquatic/deathsquid)
 	repopulate_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly, /mob/living/simple_animal/hostile/retaliate/aquatic/carp, /mob/living/simple_animal/aquatic/fish/grump, /mob/living/simple_animal/aquatic/fish/judge)
 
-/obj/effect/overmap/visitable/sector/exoplanet/water/generate_map()
+/obj/effect/overmap/visitable/sector/exoplanet/ocean/generate_map()
 	if(prob(40))
 		lightlevel = rand(7,10)/10	//give a chance of twilight jungle
 	..()
 
-/obj/effect/overmap/visitable/sector/exoplanet/water/generate_atmosphere()
+/obj/effect/overmap/visitable/sector/exoplanet/ocean/generate_atmosphere()
 	..()
 	if(atmosphere)
 		atmosphere.temperature = T20C + rand(-5, 10)
 		atmosphere.update_values()
 
-/obj/effect/overmap/visitable/sector/exoplanet/water/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/visitable/sector/exoplanet/ocean/adapt_seed(var/datum/seed/S)
 	..()
 	var/carnivore_prob = rand(100)
 	if(carnivore_prob < 30)
