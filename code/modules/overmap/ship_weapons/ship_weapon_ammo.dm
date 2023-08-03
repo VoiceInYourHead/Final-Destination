@@ -108,6 +108,7 @@
 
 /obj/item/projectile/bullet/huge_caliber/New()
 	origin = map_sectors["[z]"]
+	transform *= bullet_size
 
 /obj/item/projectile/bullet/huge_caliber/Move()
 	. = ..()
@@ -122,7 +123,6 @@
 	var/first_step = 1
 
 	spawn while(src && src.loc)
-		transform = initial(transform) * bullet_size
 		if(loc == overmap_projectile || entered_overmap)
 			return
 		if(life_span-- < 1)
