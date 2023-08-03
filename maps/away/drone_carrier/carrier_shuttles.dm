@@ -112,7 +112,7 @@
 	name = "GUP #3 Hangar"
 	landmark_tag = "nav_hangar_carrier_3"
 	docking_controller = "carrier_3_shuttle_dock_airlock"
-	base_area = /area/ship/carrier/deck2/living1
+	base_area = /area/ship/carrier/deck2/living3
 
 /obj/effect/shuttle_landmark/transit/carrier/gup3
 	name = "In transit"
