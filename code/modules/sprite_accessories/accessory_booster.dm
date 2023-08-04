@@ -42,13 +42,11 @@
 /datum/sprite_accessory/marking/booster/ears/cat
 	icon_state = "ears_cat"
 	name = "Ear Biomods (Cat)"
-	do_coloration = DO_COLORATION_USER
 
 
 /datum/sprite_accessory/marking/booster/ears/rabbit
 	icon_state = "ears_bun"
 	name = "Ear Biomods (Rabbit)"
-	do_coloration = DO_COLORATION_USER
 
 
 /datum/sprite_accessory/marking/booster/horns

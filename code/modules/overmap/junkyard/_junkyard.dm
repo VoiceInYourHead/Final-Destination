@@ -124,14 +124,14 @@
 //Tries to generate num landmarks, but avoids repeats.
 /obj/effect/overmap/visitable/sector/junkyard/proc/generate_landing(num = 1)
 	var/places = list()
-//	var/attempts = 30*num
+	var/attempts = 30*num
 	var/new_type = landmark_type
 	while(num)
-//		attempts--
+		attempts--
 		var/turf/T = locate(rand(TRANSITIONEDGE + LANDING_ZONE_RADIUS, maxx - TRANSITIONEDGE - LANDING_ZONE_RADIUS), rand(TRANSITIONEDGE + LANDING_ZONE_RADIUS, maxy - TRANSITIONEDGE - LANDING_ZONE_RADIUS),map_z[map_z.len])
 		if (!T || (T in places)) // Two landmarks on one turf is forbidden as the landmark code doesn't work with it.
 			continue
-/*		if (attempts >= 0) // While we have the patience, try to find better spawn points. If out of patience, put them down wherever, so long as there are no repeats.
+		if (attempts >= 0) // While we have the patience, try to find better spawn points. If out of patience, put them down wherever, so long as there are no repeats.
 			var/valid = TRUE
 			var/list/block_to_check = block(locate(T.x - LANDING_ZONE_RADIUS, T.y - LANDING_ZONE_RADIUS, T.z), locate(T.x + LANDING_ZONE_RADIUS, T.y + LANDING_ZONE_RADIUS, T.z))
 			for (var/turf/check in block_to_check)
@@ -145,9 +145,9 @@
 				new_type = /obj/effect/shuttle_landmark/automatic/clearing
 
 			if (!valid)
-				continue*/
+				continue
 
-//		num--
+		num--
 		places += T
 		new new_type(T)
 

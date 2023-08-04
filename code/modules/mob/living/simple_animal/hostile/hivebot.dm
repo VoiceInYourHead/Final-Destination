@@ -5,8 +5,8 @@
 	icon_state = "basic"
 	icon_living = "basic"
 	icon_dead = "basic"
-	health = 85
-	maxHealth = 85
+	health = 65
+	maxHealth = 65
 	natural_weapon = /obj/item/natural_weapon/hivebot
 	faction = "hivebot"
 	min_gas = null
@@ -43,8 +43,8 @@
 
 /mob/living/simple_animal/hostile/hivebot/strong
 	desc = "A junky looking robot with four spiky legs - this one has thick armour plating."
-	health = 180
-	maxHealth = 180
+	health = 160
+	maxHealth = 160
 	melee_attack_delay = 6
 	ranged = 1
 	can_escape = 1

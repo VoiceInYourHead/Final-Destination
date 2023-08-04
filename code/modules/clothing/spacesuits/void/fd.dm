@@ -72,7 +72,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_MINOR
+		rad = ARMOR_RAD_SHIELDED
 	)
 	allowed = list(/obj/item/gun,/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit)
 
@@ -84,7 +84,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_MINOR
+		rad = ARMOR_RAD_SHIELDED
 	)
 	light_overlay = "helmet_light_alt"
 
@@ -108,7 +108,7 @@
 		laser = ARMOR_LASER_MINOR,
 		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_SMALL
+		rad = ARMOR_RAD_MINOR
 		)
 	light_overlay = "helmet_light_dual_alt"
 	max_pressure_protection = ENG_VOIDSUIT_MAX_PRESSURE
@@ -127,7 +127,7 @@
 		laser = ARMOR_LASER_MINOR,
 		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
-		rad = ARMOR_RAD_SMALL
+		rad = ARMOR_RAD_MINOR
 		)
 	max_pressure_protection = ENG_VOIDSUIT_MAX_PRESSURE
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/stack/flag,/obj/item/device/suit_cooling_unit,/obj/item/storage/ore,/obj/item/device/t_scanner,/obj/item/pickaxe, /obj/item/rcd,/obj/item/rpd)
