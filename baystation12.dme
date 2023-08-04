@@ -1579,6 +1579,7 @@
 #include "code\modules\clothing\suits\alien.dm"
 #include "code\modules\clothing\suits\armor.dm"
 #include "code\modules\clothing\suits\bio.dm"
+#include "code\modules\clothing\suits\fd.dm"
 #include "code\modules\clothing\suits\jobs.dm"
 #include "code\modules\clothing\suits\labcoat.dm"
 #include "code\modules\clothing\suits\miscellaneous.dm"

@@ -33,6 +33,11 @@
 	display_name = "poncho, supply"
 	path = /obj/item/clothing/suit/poncho/roles/cargo
 
+/datum/gear/suit/kimono
+	display_name = "kimono, colour select"
+	path = /obj/item/clothing/suit/storage/toggle/kimono
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/suit/suit_jacket
 	display_name = "standard suit jackets"
 	path = /obj/item/clothing/suit/storage/toggle/suit
