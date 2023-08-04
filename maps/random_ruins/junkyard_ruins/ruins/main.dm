@@ -22,6 +22,10 @@
 /area/map_template/wreck/wreckfive
 	name = "\improper Shipbreakers abandoned shuttle"
 
+/area/map_template/wreck/wrecksix
+	name = "\improper Station fragment #3"
+/area/map_template/wreck/wrecksix/second
+
 /area/ship/stomper
 	name = "\improper PV Stomper"
 	icon_state = "bridge"
@@ -70,6 +74,11 @@
 	area_usage_test_exempted_root_areas = /area/ship/stomper
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/stomper)
 
+/datum/map_template/ruin/junkyard/wreck/wreck6
+	name = "Station fragment #3"
+	id = "wreck6"
+	suffixes = list("ruins/ruin_6.dmm")
+	spawn_cost = 1
 
 /*
 					Additional Things for wrecks

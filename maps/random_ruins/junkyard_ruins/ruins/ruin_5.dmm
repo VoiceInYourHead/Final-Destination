@@ -39,7 +39,7 @@
 "aM" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/random/junkyard/bomb_supply,/obj/random/junkyard/bomb_supply,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "aN" = (/obj/effect/floor_decal/techfloor/orange{dir = 9},/obj/machinery/constructable_frame/computerframe/deconstruct,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "aO" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/machinery/constructable_frame/computerframe/deconstruct,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
-"aP" = (/obj/effect/floor_decal/techfloor/orange{dir = 5},/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/item/stock_parts/circuitboard/comm_server,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
+"aP" = (/obj/effect/floor_decal/techfloor/orange{dir = 5},/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/item/stock_parts/circuitboard/comm_server,/obj/item/stock_parts/console_screen,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "aQ" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "aR" = (/obj/effect/floor_decal/industrial/warning{dir = 5},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1; level = 2},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "aS" = (/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/plating,/area/map_template/wreck/wreckfive)
@@ -50,7 +50,7 @@
 "aX" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "aY" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/plating,/area/map_template/wreck/wreckfive)
 "aZ" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/machinery/constructable_frame/computerframe/deconstruct{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
-"ba" = (/obj/structure/bed/chair/comfy/captain{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/remains,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
+"ba" = (/obj/structure/bed/chair/comfy/captain{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/remains,/obj/item/stock_parts/keyboard{pixel_x = -11; pixel_y = -26},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bb" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/machinery/constructable_frame/computerframe/deconstruct{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bc" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bd" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
@@ -62,7 +62,7 @@
 "bj" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bk" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bl" = (/obj/effect/floor_decal/techfloor/orange{dir = 10},/obj/machinery/constructable_frame/machine_frame/deconstruct,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
-"bm" = (/obj/effect/floor_decal/techfloor/orange,/obj/machinery/hologram/holopad/longrange,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
+"bm" = (/obj/effect/floor_decal/techfloor/orange,/obj/machinery/hologram/holopad/longrange,/obj/item/stock_parts/computer/tesla_link,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bn" = (/obj/effect/floor_decal/techfloor/orange{dir = 6},/obj/machinery/constructable_frame/computerframe/deconstruct{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
 "bo" = (/obj/machinery/portable_atmospherics/powered/pump,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/plating,/area/map_template/wreck/wreckfive)
 "bp" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/wreck/wreckfive)
@@ -138,12 +138,19 @@
 "cH" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wreckfive)
 "cI" = (/obj/effect/floor_decal/techfloor{dir = 6; icon_state = "techfloor_edges"},/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wreckfive)
 "cJ" = (/obj/machinery/ion_engine/big,/turf/template_noop,/area/map_template/wreck/wreckfive)
+"dO" = (/obj/effect/paint/silver,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
 "ir" = (/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"jF" = (/obj/effect/paint/black,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
 "kw" = (/obj/structure/girder/displaced,/turf/template_noop,/area/template_noop)
 "kS" = (/obj/structure/closet/crate/solar,/turf/template_noop,/area/template_noop)
 "mY" = (/turf/simulated/mineral/random/volcanic,/area/template_noop)
 "uQ" = (/turf/template_noop,/area/template_noop)
+"vc" = (/obj/effect/paint/green,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
+"wF" = (/obj/effect/paint/vox,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
+"HS" = (/obj/effect/paint/green,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
+"Ky" = (/obj/effect/paint/vox,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
 "Lg" = (/obj/structure/lattice,/obj/machinery/shipsensors/weak,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"Oc" = (/obj/effect/paint/red/dark,/obj/effect/landmark/damager,/turf/simulated/wall/r_wall,/area/map_template/wreck/wreckfive)
 "OJ" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
@@ -159,22 +166,22 @@ uQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQ
 uQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQuQuQmYmYmYmYmYmYmYuQmYmYuQuQ
 uQuQuQmYmYmYmYmYmYuQOJiruQuQuQuQuQuQmYmYmYmYmYmYmYmYmYmYmYuQ
 uQuQuQuQmYmYmYmYuQuQaaaaabacacadacaeaeOJmYmYmYmYmYmYmYmYmYuQ
-uQuQuQmYmYmYOJOJOJOJafagahaiajakalamanLguQmYmYmYmYmYmYmYmYuQ
-uQuQuQmYmYmYuQuQuQaoafapaqarasatauavaaafuQuQuQmYmYmYmYmYmYmY
+uQuQuQmYmYmYOJOJOJOJjFagahaiajakalamanLguQmYmYmYmYmYmYmYmYuQ
+uQuQuQmYmYmYuQuQuQHSafapaqarasatauavaaafuQuQuQmYmYmYmYmYmYmY
 uQuQmYmYmYmYmYaoawaxayazaAaBaCaCaDaEaFafaGaHOJOJmYmYmYmYmYmY
-uQuQmYmYmYmYmYaoaIaJaKaLaMaNaOaPaQaRapaSaTaGuQuQuQuQmYmYmYmY
-uQuQmYmYmYOJuQaoaUaVaWaXaYaZbabbbcbdapbebfaHuQuQuQuQmYmYmYmY
-uQmYmYmYOJaoaoaxbgbhbibjbkblbmbnbobpapbqbrbsbtbtOJmYmYmYmYmY
-uQmYmYmYaoaxaxaobubvbwbjbxbybzasbybpbAbBbCbDbtbtbtmYmYmYmYmY
-uQuQmYmYaobEbFbGbzbHbIbJbKbxbzbLasbMbNbObPbQbEbEbtuQmYmYuQuQ
-uQuQuQuQOJuQOJbGbRbSbTbUbVbWbXbYbZcaancbaeaeuQuQOJuQmYmYuQuQ
-uQuQuQuQOJuQOJuQbGcccdbjcecfaeaeanaecgchcianuQuQOJuQuQuQuQuQ
+uQuQmYmYmYmYmYHSaIaJaKaLaMaNaOaPaQaRapaSaTaGuQuQuQuQmYmYmYmY
+uQuQmYmYmYOJuQHSaUaVaWaXaYaZbabbbcbdapbebfaHuQuQuQuQmYmYmYmY
+uQmYmYmYOJaoaoaxbgbhbibjbkblbmbnbobpapbqbrbsOcOcOJmYmYmYmYmY
+uQmYmYmYaoaxvcHSbubvbwbjbxbybzasbybpbAbBbCbDOcbtOcmYmYmYmYmY
+uQuQmYmYaobEbFdObzbHbIbJbKbxbzbLasbMbNbObPbQbEbEbtuQmYmYuQuQ
+uQuQuQuQOJuQOJdObRbSbTbUbVbWbXbYbZcaancbwFwFuQuQOJuQmYmYuQuQ
+uQuQuQuQOJuQOJuQdOcccdbjcecfaeaeanaecgchciKyuQuQOJuQuQuQuQuQ
 uQmYmYmYmYuQOJmYbGbGcjckaeclcmaecncocpcqcrcsuQuQOJuQuQuQuQuQ
 uQmYmYmYOJOJOJOJOJbzbzctcucvcwcxbzchchchcyczuQuQmYmYmYuQuQuQ
 mYmYmYmYmYuQuQuQuQcvbzaaafcAcvafcBcCcCcDcEcFOJOJmYmYmYmYuQuQ
 mYmYmYmYuQuQuQuQkwafafafaaafcvcfcGcHcHbzcIOJuQmYmYmYmYmYuQuQ
-mYmYuQuQuQuQmYOJOJaabKbzbzafuQuQuQuQuQuQuQOJmYmYmYmYmYuQuQuQ
-uQuQuQuQuQmYmYmYuQuQcvcvcvuQuQuQkwuQuQkSuQuQmYmYuQmYmYuQuQuQ
+mYmYuQuQuQuQmYOJOJaabzbzbzafuQuQuQuQuQuQuQOJmYmYmYmYmYuQuQuQ
+uQuQuQuQuQmYmYmYuQuQbzbzbzuQuQuQkwuQuQkSuQuQmYmYuQmYmYuQuQuQ
 uQuQuQuQuQmYmYmYuQuQcJcvcvuQuQuQuQuQuQuQuQuQmYuQuQuQuQuQuQuQ
 uQuQuQmYuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQ
 "}

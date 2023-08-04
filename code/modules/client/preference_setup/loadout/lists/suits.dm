@@ -55,6 +55,11 @@
 	path = /obj/item/clothing/suit/storage/toggle/suit_double
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/suit/uniform/kimono
+	display_name = "kimono, colour select"
+	path = /obj/item/clothing/suit/storage/toggle/kimono
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/suit/hazard
 	display_name = "hazard vests"
 	path = /obj/item/clothing/suit/storage/hazardvest
