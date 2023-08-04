@@ -1,7 +1,7 @@
 /datum/job/submap/carrier_pilot
 	title = "Bigsby Corporate Pilot"
 	total_positions = 1
-	outfit_type = /decl/hierarchy/outfit/job/scavver/pilot
+	outfit_type = /decl/hierarchy/outfit/job/carrier/pilot
 	supervisors = "Captain and FTU itself."
 	info = "You are the pilot of your meagre Scavenger Crew. Keep your metal buddy safe, don't left it, try not to get bored."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
@@ -42,7 +42,7 @@
 /datum/job/submap/carrier_captain
 	title = "Bigsby Captain"
 	total_positions = 1
-	outfit_type = /decl/hierarchy/outfit/job/scavver/pilot
+	outfit_type = /decl/hierarchy/outfit/job/carrier/captain
 	supervisors = "FTU itself."
 	info = "You are the captain of your meagre Scavenger Crew. Keep your crew safe, make money, try not to die from rebelios hands."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
@@ -86,12 +86,11 @@
 /datum/job/submap/carrier_salvager
 	title = "Bigsby Salvager"
 	total_positions = 6
-	outfit_type = /decl/hierarchy/outfit/job/scavver/standart
+	outfit_type = /decl/hierarchy/outfit/job/carrier/salvager
 	supervisors = "Captain and FTU itself."
 	info = "You are a part of your meagre Scavenger Crew. Keep yourself safe, and seek goodies for your ship and company. \
 	Your weapons are limited; trade, salvage, but avoid conflict as a matter of course."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
-	is_semi_antagonist = TRUE
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -129,11 +128,10 @@
 /datum/job/submap/carrier_doctor
 	title = "Bigsby Doctor"
 	total_positions = 1
-	outfit_type = /decl/hierarchy/outfit/job/scavver/doctor
+	outfit_type = /decl/hierarchy/outfit/job/carrier/doctor
 	supervisors = "Captain and FTU itself."
 	info = "You are the doctor aboard your meagre Salvage team. Keep everyone alive. Try not to get bored while waiting for salvagers to return."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_SKRELL,SPECIES_RESOMI)
-	is_semi_antagonist = TRUE
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -171,12 +169,11 @@
 /datum/job/submap/carrier_crewman
 	title = "Bigsby Crewman"
 	total_positions = 2
-	outfit_type = /decl/hierarchy/outfit/job/scavver/engineer
+	outfit_type = /decl/hierarchy/outfit/job/carrier/crewman
 	supervisors = "Captain, other crewmates and FTU itself."
 	info = "You are an young crewman aboard FTU-SV Bigsby. Try to help anyone around - you have just enough skills for everything! Probably... \
 	Also, some spare hands on the salvage mission will be helpful too!"
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_UNATHI,SPECIES_MULE,SPECIES_RESOMI)
-	is_semi_antagonist = TRUE
 	min_skill = list(
 		SKILL_HAULING = SKILL_TRAINED,
 		SKILL_COMPUTER = SKILL_BASIC,
@@ -224,11 +221,10 @@
 /datum/job/submap/carrier_chef
 	title = "Bigsby Cook"
 	total_positions = 1
-	outfit_type = /decl/hierarchy/outfit/job/scavver/cook
+	outfit_type = /decl/hierarchy/outfit/job/carrier/cook
 	supervisors = "Captain and FTU itself"
 	info = "You are the cook onboard salvagers vessel. Keep your crew in good mood and well-fed."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_DIONA,SPECIES_UNATHI,SPECIES_RESOMI)
-	is_semi_antagonist = TRUE
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -301,10 +297,93 @@
 	name = "Bigsby Cook"
 
 /obj/effect/submap_landmark/spawnpoint/carrier_doctor
-	name = "Salvage Doctor"
+	name = "Bigsby Doctor"
 
 /obj/effect/submap_landmark/spawnpoint/carrier_crewman
 	name = "Bigsby Crewman"
 
 /obj/effect/submap_landmark/spawnpoint/carrier_cyborg
 	name = "Salvage Drone"
+
+// OUTFITS
+
+/decl/hierarchy/outfit/job/carrier
+	name = "Bigsby"
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	r_ear = null
+	uniform = /obj/item/clothing/under/ftu/official
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/thick
+	hierarchy_type = /decl/hierarchy/outfit/job/carrier
+	belt = /obj/item/storage/belt/utility/full
+	id_types = null
+	pda_type = null
+
+/decl/hierarchy/outfit/job/carrier/crewman
+	name = "Bigsby Crewman"
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	r_ear = null
+	uniform = /obj/item/clothing/under/ftu/official
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/thick
+	belt = /obj/item/storage/belt/utility/full
+	id_types = null
+	pda_type = null
+
+/decl/hierarchy/outfit/job/carrier/salvager
+	name = "Bigsby Salvager"
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	r_ear = null
+	uniform = /obj/item/clothing/under/ftu/worker
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/thick
+	belt = null
+
+/decl/hierarchy/outfit/job/carrier/pilot
+	name = "Bigsby Pilot"
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	head = /obj/item/clothing/head/soft/black
+	uniform = /obj/item/clothing/under/ftu/official
+	suit = /obj/item/clothing/suit/armor/pcarrier/light
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = null
+
+/decl/hierarchy/outfit/job/carrier/captain
+	name = "Bigsby Captain"
+	head = /obj/item/clothing/head/cowboy_hat
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	uniform = /obj/item/clothing/under/ftu/official
+	suit = /obj/item/clothing/suit/storage/toggle/bomber
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = null
+
+/decl/hierarchy/outfit/job/carrier/doctor
+	name = "Bigsby Doctor"
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	uniform = /obj/item/clothing/under/ftu/medical
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/white
+	gloves = /obj/item/clothing/gloves/latex
+	belt = null
+
+/decl/hierarchy/outfit/job/carrier/cook
+	name = "Bigsby Cook"
+	l_ear = /obj/item/device/radio/headset/map_preset/carrier
+	uniform = /obj/item/clothing/under/rank/chef
+	r_pocket = /obj/item/device/radio/map_preset/carrier
+	l_pocket = /obj/item/crowbar/prybar
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/thick/duty
+	belt = null

@@ -31,7 +31,7 @@
 	fore_dir = NORTH
 	initial_restricted_waypoints = list(
 			"FTU-SV GUP #1" = list("nav_hangar_carrier_1", "nav_carrier_1"),
-			"FTU-SV GUP #1" = list("nav_hangar_carrier_2", "nav_carrier_2"),
+			"FTU-SV GUP #2" = list("nav_hangar_carrier_2", "nav_carrier_2"),
 			"FTU-SV GUP #3" = list("nav_hangar_carrier_3", "nav_carrier_3"),
 			"FTU-SV GUP #4" = list("nav_hangar_carrier_4", "nav_carrier_4"),
 			"FTU-SV GUP #5" = list("nav_hangar_carrier_5", "nav_carrier_5"),

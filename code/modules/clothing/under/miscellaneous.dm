@@ -771,3 +771,21 @@ obj/item/clothing/under/bathrobe/New()
 	desc = "A rugged brown sweater and denim overalls. A popular style among frontier colonists."
 	icon_state = "frontierold"
 	worn_state = "frontierold"
+
+/obj/item/clothing/under/ftu/worker
+	name = "FTU working overalls"
+	desc = "Red jumpsuit with pale overalls, used by FTU workers."
+	icon_state = "ftu"
+	worn_state = "ftu"
+
+/obj/item/clothing/under/ftu/official
+	name = "FTU service uniform"
+	desc = "A rugged brown sweater with black pants, used by FTU officials."
+	icon_state = "ftuinf"
+	worn_state = "ftuinf"
+
+/obj/item/clothing/under/ftu/medical
+	name = "FTU medical service uniform"
+	desc = "A rugged white sweater with black, comfy pants, used by FTU doctors in charge."
+	icon_state = "ftuinfmed"
+	worn_state = "ftuinfmed"
