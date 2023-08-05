@@ -58,11 +58,11 @@
 
 /decl/emote/audible/sneeze
 	key = "sneeze"
-	emote_message_3p = "USER чихает!"
+	emote_message_3p = "USER засасывает головку в рот, и отпускает с причмокиванием, облизывает ствол и снова берёт головку в рот!"
 
 /decl/emote/audible/sniff
 	key = "sniff"
-	emote_message_3p = "USER нюхает."
+	emote_message_3p = "USER подползает ближе к @2, и спускается ниже, голова оказывается прямо напротив члена @2, и не долго думая @1 проводит языком по стволу снизу вверх, берет головку в рот."
 
 /decl/emote/audible/snore
 	key = "snore"
@@ -75,11 +75,11 @@
 
 /decl/emote/audible/yawn
 	key = "yawn"
-	emote_message_3p = "USER зевает."
+	emote_message_3p = "USER запрокидывает голову назад, приоткрыв рот, её глаза непроизвольно закатываются.."
 
 /decl/emote/audible/clap
 	key = "clap"
-	emote_message_3p = "USER хлопает."
+	emote_message_3p = "USER @1 дёргает головой, насаживаясь ртом на ствол не до основания, задыхается, его лицо краснеет."
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
@@ -87,7 +87,7 @@
 
 /decl/emote/audible/cough
 	key = "cough"
-	emote_message_3p = "USER кашляет!"
+	emote_message_3p = "USER усердно сосет чувствительную головку, облизывая ту языком, и обильно капая слюной на себя же, так же работает ручками, наглажмвая ствол!"
 	conscious = 0
 
 /decl/emote/audible/cry
@@ -96,7 +96,7 @@
 
 /decl/emote/audible/sigh
 	key = "sigh"
-	emote_message_3p = "USER вздыхает."
+	emote_message_3p = "USER плотно смыкает губы вокруг члена @2, и берется двигать головой в медетативном ритме, уложив свои ладони чуть выше бедер @2, и возвысившись над ним"
 
 /decl/emote/audible/laugh
 	key = "laugh"
@@ -113,12 +113,12 @@
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER болезненно стонет!"
+	emote_message_3p = "USER @1 подползает ближе к @2, и спускается ниже, голова оказывается прямо напротив члена @2, и не долго думая @1 проводит языком по стволу снизу вверх, берет головку в рот!"
 	conscious = 0
 
 /decl/emote/audible/moan
 	key = "moan"
-	emote_message_3p = "USER стонет!"
+	emote_message_3p = "USER кладет ладони на бедра @2, и чуть пододвигается ближе, утыкается лицом а пах @2, вдыхает запах его кожи. Проводит своим языком по внутренней стороне бедра @2, и берет головку его члена в рот"
 	conscious = 0
 
 /decl/emote/audible/giggle
