@@ -753,39 +753,3 @@
 	icon_state = "kimono"
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS*/
-
-/obj/item/clothing/under/bathrobe
-	name = "bathrobe"
-	desc = "A classic bathrobe for your pastime in the sauna."
-	icon_state = "bathrobe"
-	item_state = "bathrobe"
-	worn_state = "bathrobe"
-	gender_icons = 1
-
-obj/item/clothing/under/bathrobe/New()
-    ..()
-    color = get_random_colour()
-
-/obj/item/clothing/under/frontier/old
-	name = "frontier clothes"
-	desc = "A rugged brown sweater and denim overalls. A popular style among frontier colonists."
-	icon_state = "frontierold"
-	worn_state = "frontierold"
-
-/obj/item/clothing/under/ftu/worker
-	name = "FTU working overalls"
-	desc = "Red jumpsuit with pale overalls, used by FTU workers."
-	icon_state = "ftu"
-	worn_state = "ftu"
-
-/obj/item/clothing/under/ftu/official
-	name = "FTU service uniform"
-	desc = "A rugged brown sweater with black pants, used by FTU officials."
-	icon_state = "ftuinf"
-	worn_state = "ftuinf"
-
-/obj/item/clothing/under/ftu/medical
-	name = "FTU medical service uniform"
-	desc = "A rugged white sweater with black, comfy pants, used by FTU doctors in charge."
-	icon_state = "ftuinfmed"
-	worn_state = "ftuinfmed"
