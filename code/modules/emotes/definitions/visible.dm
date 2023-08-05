@@ -92,7 +92,7 @@
 /decl/emote/visible/flap
 	key = "flap"
 	check_restraints = TRUE
-	emote_message_3p = "USER сглатывает и принюхивается."
+	emote_message_3p = "USER машет крыльями."
 
 /decl/emote/visible/aflap
 	key = "aflap"
@@ -110,12 +110,12 @@
 
 /decl/emote/visible/twitch_v
 	key = "twitch_v"
-	emote_message_3p = "USER сильно трахаеь!"
+	emote_message_3p = "USER сильно дергается!"
 	conscious = 0
 
 /decl/emote/visible/faint
 	key = "faint"
-	emote_message_3p = "USER падает в секс!"
+	emote_message_3p = "USER падает в обморок!"
 
 /decl/emote/visible/faint/do_extra(var/mob/user)
 	if(istype(user) && user.sleeping <= 0)
