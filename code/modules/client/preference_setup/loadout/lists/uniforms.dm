@@ -204,11 +204,11 @@
 
 /datum/gear/uniform/rippedpunk
 	display_name = "ripped punk clothes"
-	path = /obj/item/clothing/under/frontier
+	path = /obj/item/clothing/under/rippedpunk
 
 /datum/gear/uniform/punk
 	display_name = "punk clothes"
-	path = /obj/item/clothing/under/frontier
+	path = /obj/item/clothing/under/punk
 
 /datum/gear/uniform/victoriandressblack
 	display_name = "black victorian dress"

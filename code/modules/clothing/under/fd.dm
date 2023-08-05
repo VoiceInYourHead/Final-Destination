@@ -49,22 +49,20 @@ obj/item/clothing/under/bathrobe/New()
 /obj/item/clothing/under/victoriamusk
 	name = "White victorian shirt"
 	desc = "An old-fashion white suit with 'open window', used by rich woman."
-	icon_state = "victorianvest"
-	worn_state = "victorianvest"
+	icon_state = "victorianmusk"
+	worn_state = "victorianmusk"
 
 /obj/item/clothing/under/victoriandressblack
 	name = "Black victorian dress"
 	desc = "An old-fashion black dress, very rare in our time!"
 	icon_state = "victorianblackdress"
 	worn_state = "victorianblackdress"
-	flags_inv = HIDESHOES
 
 /obj/item/clothing/under/victoriandressred
 	name = "Red victorian dress"
 	desc = "An old-fashion red dress, very rare in our time!"
 	icon_state = "victorianreddress"
 	worn_state = "victorianreddress"
-	flags_inv = HIDESHOES
 
 /obj/item/clothing/under/revealingdress
 	name = "Rich neon dress"
