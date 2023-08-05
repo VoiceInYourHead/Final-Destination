@@ -202,6 +202,10 @@
 		sleep(20)
 		victim.Move(get_step(victim,get_dir(victim,puller)))
 
+		if(istype(victim, /obj/effect/overmap/visitable/ship))
+			var/obj/effect/overmap/visitable/ship/vessel = victim
+			vessel.adjust_speed(-vessel.speed[1] / 1.5, -vessel.speed[2] / 1.5)
+
 	if(overmap_projectile)
 		overmap_projectile.Destroy()
 
