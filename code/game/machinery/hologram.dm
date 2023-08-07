@@ -76,6 +76,14 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 		if(connected)
 			end_call()
 
+/obj/machinery/hologram/holopad/bullet_act(var/atom/projectile)
+	..()
+	for(var/mob/M in masters)
+		remove_holo(M)
+	if(connected)
+		end_call()
+		visible_message("Holopad shuts down as \the [projectile] hits it!")
+
 /obj/machinery/hologram/holopad/attack_hand(var/mob/living/carbon/human/user) //Carn: Hologram requests.
 	if(!istype(user) && !isrobot(user))
 		return
