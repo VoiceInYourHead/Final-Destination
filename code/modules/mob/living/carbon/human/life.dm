@@ -59,8 +59,6 @@
 
 	..()
 
-	update_water_overlay()
-
 	if(life_tick%30==15)
 		hud_updateflag = 1022
 

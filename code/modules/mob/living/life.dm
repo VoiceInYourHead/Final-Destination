@@ -42,6 +42,8 @@
 
 	handle_regular_hud_updates()
 
+	update_water_overlay()
+
 	return 1
 
 /mob/living/proc/handle_breathing()
