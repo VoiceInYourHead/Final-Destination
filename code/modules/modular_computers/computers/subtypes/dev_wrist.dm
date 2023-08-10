@@ -178,3 +178,77 @@
 /obj/item/modular_computer/pda/wrist/lila/black
 	icon_state = "wrist-lila-black"
 	icon_state_unpowered = "wrist-lila-black"
+
+// wrist modules
+
+/obj/item/modular_computer/pda/wrist/medical/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/medical(src)
+
+/obj/item/modular_computer/pda/wrist/chemistry/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/reagent(src)
+
+/obj/item/modular_computer/pda/wrist/engineering/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/atmos(src)
+
+/obj/item/modular_computer/pda/wrist/science/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/reagent(src)
+
+/obj/item/modular_computer/pda/wrist/forensics/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/reagent(src)
+
+/obj/item/modular_computer/pda/wrist/heads/install_default_programs()
+	..()
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
+	if(os)
+		os.create_file(new/datum/computer_file/program/reports())
+
+/obj/item/modular_computer/pda/wrist/heads/hop/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/paper(src)
+
+/obj/item/modular_computer/pda/wrist/heads/hos/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/paper(src)
+
+/obj/item/modular_computer/pda/wrist/heads/ce/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/atmos(src)
+
+/obj/item/modular_computer/pda/wrist/heads/cmo/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/medical(src)
+
+/obj/item/modular_computer/pda/wrist/heads/rd/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/paper(src)
+
+/obj/item/modular_computer/pda/wrist/cargo/install_default_programs()
+	..()
+	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
+	if(os)
+		os.create_file(new/datum/computer_file/program/reports())
+
+/obj/item/modular_computer/pda/wrist/cargo/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/paper(src)
+
+/obj/item/modular_computer/pda/wrist/mining/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/atmos(src)
+
+/obj/item/modular_computer/pda/wrist/explorer/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/atmos(src)
+
+/obj/item/modular_computer/pda/wrist/captain/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/paper(src)
+
+/obj/item/modular_computer/pda/wrist/roboticist/install_default_hardware()
+	..()
+	scanner = new /obj/item/stock_parts/computer/scanner/robotic(src)
