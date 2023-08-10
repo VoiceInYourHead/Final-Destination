@@ -95,6 +95,26 @@
 			turf_to_check.update_icon()
 
 //Water
+
+/mob/living/carbon/human/proc/update_water_overlay()
+	if(istype(loc, /turf/unsimulated/floor/exoplanet/water))
+		if(!get_filter("underwater"))
+			add_filter("underwater", 1, list("type" = "alpha", "icon" = icon('icons/effects/watermask.dmi')))
+	else
+		remove_filter("underwater")
+
+/turf/unsimulated/floor/exoplanet/water/Entered(mob/living/carbon/human/H)
+	..()
+	if(istype(H))
+		H.update_water_overlay()
+
+/turf/unsimulated/floor/exoplanet/water/Exited(mob/living/carbon/human/H)
+	..()
+	if(istype(H))
+		H.update_water_overlay()
+
+
+
 /turf/unsimulated/floor/exoplanet/water/on_update_icon()
 	return
 
