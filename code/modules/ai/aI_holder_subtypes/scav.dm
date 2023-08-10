@@ -6,12 +6,11 @@ proc/Pow(f, p)
 
 /*************** THE MOB ***************/
 
-
 /mob/living/simple_animal/hostile/scavenger
 	name = "Scavenger"
 
-	icon_state = "green_bot"
-	icon = 'icons/32x48.dmi'
+	icon_state = "vannatusk"
+	icon = 'icons/fd/animals/vannatusk.dmi'
 
 	ai_holder = /datum/ai_holder/scavenger
 
@@ -93,6 +92,12 @@ proc/Pow(f, p)
 /datum/ai_holder/scavenger/proc/random_val()
 	return rand(1,100) / 100
 
+/proc/round_to_two(number)
+	number = number * (100)
+	number = round(number)
+	number = number / (100)
+	return number
+
 /datum/ai_holder/scavenger/proc/setup_temper()
 //	var/mob/living/simple_animal/hostile/scavenger/scav_ai_holder = holder
 
@@ -100,13 +105,15 @@ proc/Pow(f, p)
 	energy = random_val()
 	bravery = random_val()
 
-	nervousness = lerp(random_val(), lerp(energy,1-bravery,0.5), Pow(random_val(),0.25))
-	aggression = lerp(random_val(), energy+bravery/2*(1-sympathy), Pow(random_val(),0.25))
-	dominance = lerp(random_val(), energy+bravery+aggression/3, Pow(random_val(),0.25))
+	nervousness = round_to_two( lerp(random_val(), lerp(energy,1-bravery,0.5), Pow(random_val(),0.25)) )
+	aggression = round_to_two( lerp(random_val(), energy+bravery/2*(1-sympathy), Pow(random_val(),0.25)) )
+	dominance = round_to_two( lerp(random_val(), energy+bravery+aggression/3, Pow(random_val(),0.25)) )
 
 /datum/ai_holder/scavenger/New()
 	..()
 	setup_temper()
+
+	message_admins("sympathy [sympathy]; energy [energy]; bravery [bravery]; nervousness [nervousness]; aggression [aggression]; dominance [dominance]")
 
 /datum/ai_holder/scavenger/handle_stance_tactical()
 	if(stance == STANCE_REPOSITION)
@@ -137,7 +144,7 @@ proc/Pow(f, p)
 	// We're here!
 	// Special case: Our holder has a special attack that is ranged, but normally the holder uses melee.
 	// If that happens, we'll switch to STANCE_FIGHT so they can use it. If the special attack is limited, they'll likely switch back next tick.
-	if (distance <= get_to || holder.ICheckSpecialAttack(target))
+	if (distance == get_to || holder.ICheckSpecialAttack(target))
 		ai_log("walk_to_target() : Within range.", AI_LOG_INFO)
 		forget_path()
 		set_stance(STANCE_FIGHT)
@@ -146,7 +153,14 @@ proc/Pow(f, p)
 
 	// Otherwise keep walking.
 	if (!stand_ground)
-		walk_path(target, get_to)
+		if(distance > get_to)
+			walk_path(target, get_to)
+		else
+			var/atom/retreat_target = holder.loc
+			while(get_dist(retreat_target, target) < get_to)
+				if(!target) break
+				retreat_target = get_step_away(retreat_target, target)
+			walk_path(retreat_target, 0)
 
 	ai_log("walk_to_target() : Exiting.", AI_LOG_DEBUG)
 
@@ -159,8 +173,7 @@ proc/Pow(f, p)
 				ai_log("handle_wander_movement() : Being pulled and cannot wander. Exiting.", AI_LOG_DEBUG)
 				return
 
-			var/list/wander_turf_candidates = block(locate(holder.x+3,holder.y+3,holder.z),locate(holder.x-3,holder.y-3,holder.z))
-			var/turf/moving_to = pick(wander_turf_candidates)
+			var/turf/moving_to = pick(range(3,holder))
 			give_destination(moving_to, combat = FALSE)
 			holder.face_atom(moving_to)
 			wander_delay = base_wander_delay
