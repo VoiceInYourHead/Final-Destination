@@ -45,6 +45,7 @@ obj/item/clothing/under/bathrobe/New()
 	desc = "An old-fashion brown suit with black vest and pants, used by various people in the past."
 	icon_state = "victorianvest"
 	worn_state = "victorianvest"
+	gender_icons = 1
 
 /obj/item/clothing/under/victoriamusk
 	name = "White victorian shirt"
@@ -112,3 +113,4 @@ obj/item/clothing/under/bathrobe/New()
 	desc = "An modern punk clothes"
 	icon_state = "cyberhell"
 	worn_state = "cyberhell"
+	gender_icons = 1
