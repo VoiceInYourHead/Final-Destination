@@ -27,7 +27,7 @@
 	if(I)
 		var/image/eye_overlay = image(I)
 		if(owner && owner.is_cloaked())
-			eye_overlay.alpha = 100
+			eye_overlay.alpha = 60
 		if(eyes_shielded)
 			eye_overlay.color = "#aaaaaa"
 		return eye_overlay
@@ -209,3 +209,25 @@
 				var/obj/item/organ/internal/I = pick(owner.internal_organs)
 				I.take_internal_damage(5)
 	..()
+
+
+/obj/item/organ/internal/brain/insectoid/nabber/proc/change_skin_color()
+	set name = "Change Skin Color"
+	set desc = "Changes your skin color."
+	set category = "Abilities"
+	set src in usr
+	if (!owner || owner.incapacitated())
+		return
+	var/new_eyes = input("Please select skin color.", "Skin Color", rgb(owner.r_skin, owner.g_skin, owner.b_skin)) as color|null
+	if(new_eyes)
+		var/r_skin = hex2num(copytext_char(new_eyes, 2, 4))
+		var/g_skin = hex2num(copytext_char(new_eyes, 4, 6))
+		var/b_skin = hex2num(copytext_char(new_eyes, 6, 8))
+		if(do_after(owner, 10) && owner.change_skin_color(r_skin, g_skin, b_skin))
+			owner.update_hair() // dunno why hair
+			owner.regenerate_icons()
+			owner.visible_message(SPAN_NOTICE("\The [owner] skin color shifts."),SPAN_NOTICE("You change your skin color."),)
+
+/obj/item/organ/internal/brain/insectoid/nabber/New()
+	..()
+	verbs |= /obj/item/organ/internal/brain/insectoid/nabber/proc/change_skin_color
