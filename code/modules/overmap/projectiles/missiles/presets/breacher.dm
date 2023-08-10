@@ -10,7 +10,7 @@
 	)
 
 	// how many pieces of dense objects can this missile still punch through
-	var/inertia = 8
+	var/inertia = 16
 
 // This doesn't have a detonation mechanism, it simply punches through hulls.
 /obj/structure/missile/breacher/Bump(var/atom/obstacle)
@@ -18,19 +18,17 @@
 		return
 
 	// cleaves through anything that isn't a shield while it still has inertia left
-	if(inertia)
-		if(istype(obstacle, /obj/effect/shield))
-			inertia = 0
-		else
-			if(prob(25))
-				obstacle.Destroy()
-			inertia--
+	if(istype(obstacle, /obj/effect/shield))
+		inertia = 0
+	else
+		obstacle.ex_act(2)
+		inertia--
 
-		if(!inertia)
-			..()
-			walk(src, 0)
-			qdel(src)
-//			log_and_message_admins("A breacher missile reached it's destignation (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[obstacle.x];Y=[obstacle.y];Z=[obstacle.z]'>JMP</a>)")
+	if(!inertia)
+		..()
+		walk(src, 0)
+		qdel(src)
+//		log_and_message_admins("A breacher missile reached it's destignation (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[obstacle.x];Y=[obstacle.y];Z=[obstacle.z]'>JMP</a>)")
 
 /obj/structure/missile/attackby(var/obj/item/I, var/mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
