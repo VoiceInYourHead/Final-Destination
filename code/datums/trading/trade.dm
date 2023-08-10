@@ -101,20 +101,20 @@
 		for(var/obj/effect/overmap/trading/M in T)
 			if(M) valid = FALSE
 		for(var/obj/effect/overmap/visitable/V)
-			if(T in view(15,V)) valid = FALSE
+			if(T in view(7,V)) valid = FALSE
 		if(valid)
 			spawn_location = T
 			break
 		else continue
 
 	if(!spawn_location)
-		return log_and_message_admins("КРИНЖАНУЛ, НЕГДЕ СПАВНИТЬ ТОРГОВЦА!!!")
+		log_and_message_admins("КРИНЖАНУЛ, НЕГДЕ СПАВНИТЬ ТОРГОВЦА!!!")
+		return
 
 	overmap_representation = new overmap_object_type(spawn_location)
 	overmap_representation.color = overmap_object_color
 	overmap_representation.trader_merchant_datum = src
 	overmap_representation.name = origin
-//	overmap_representation.desc =
 
 /datum/trader/proc/leave_map()
 	qdel(overmap_representation) // TODO: overmap bluespace jump animation
