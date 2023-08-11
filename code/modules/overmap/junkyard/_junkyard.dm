@@ -168,3 +168,5 @@
 	always_unpowered = TRUE
 	area_flags = AREA_FLAG_EXTERNAL
 	junkyard_surface = TRUE
+
+	has_gravity = FALSE
