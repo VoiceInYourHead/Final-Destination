@@ -164,6 +164,8 @@ GLOBAL_LIST_INIT(jukebox_tracks, list(
 	/decl/audio/track/roundEnd,
 	/decl/audio/track/SmashIntoPieces_AllEyesOnYou,
 	/decl/audio/track/WarsofExpansion,
+	/decl/audio/track/TerranTheme1,
+	/decl/audio/track/TerranTheme3,
 // Chill tracks by Gneiss,
 	/decl/audio/track/Codebrain,
 	/decl/audio/track/GetSet,

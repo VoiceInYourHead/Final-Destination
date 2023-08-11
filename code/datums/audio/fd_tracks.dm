@@ -93,6 +93,20 @@
 	source = 'sound/music/finaldestination/WarsofExpansion.ogg'
 	license = /decl/license/grandfathered
 
+/decl/audio/track/TerranTheme1
+	display = "Terran"
+	title = "Terran Theme 1"
+	author = "Glenn Stafford"
+	source = 'sound/music/finaldestination/TerranTheme1.ogg'
+	license = /decl/license/grandfathered
+
+/decl/audio/track/TerranTheme3
+	display = "Mars"
+	title = "Terran Theme 3"
+	author = "Glenn Stafford"
+	source = 'sound/music/finaldestination/TerranTheme3.ogg'
+	license = /decl/license/grandfathered
+
 //////////////////////*  Chill Music (Gneiss)  *//////////////////////
 
 /decl/audio/track/Codebrain
@@ -140,7 +154,7 @@
 //////////////////////*  Lobby Track variants  *//////////////////////
 
 /decl/audio/track/ChildrenOfEnceladus/lobby
-	volume = 15
+	volume = 20
 
 /decl/audio/track/Dawsons_Christian/lobby
 	volume = 15
@@ -150,3 +164,6 @@
 
 /decl/audio/track/space_oddity/lobby
 	volume = 15
+
+/decl/audio/track/TerranTheme3/lobby
+	volume = 20
