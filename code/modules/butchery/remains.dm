@@ -10,4 +10,3 @@
 /obj/item/bone/skull/deer
 	name = "deer skull"
 	icon_state = "deer_skull"
-	anchored = 1
