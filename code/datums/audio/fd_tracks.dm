@@ -163,7 +163,7 @@
 	volume = 15
 
 /decl/audio/track/space_oddity/lobby
-	volume = 15
+	volume = 20
 
 /decl/audio/track/TerranTheme3/lobby
 	volume = 20
