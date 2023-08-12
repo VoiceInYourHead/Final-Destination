@@ -1,3 +1,4 @@
+#define TRANSITIONEDGE_BULLET 8
 #define CALIBER_SHIP    "100mm"
 
 /obj/item/ammo_magazine/ammobox
@@ -115,7 +116,7 @@
 
 	// for some reason, touch_map_edge doesn't always trigger like it should
 	// this ensures that it does
-	if(x < TRANSITIONEDGE || x > world.maxx - TRANSITIONEDGE || y < TRANSITIONEDGE || y > world.maxy - TRANSITIONEDGE)
+	if(x < TRANSITIONEDGE_BULLET || x > world.maxx - TRANSITIONEDGE_BULLET || y < TRANSITIONEDGE_BULLET || y > world.maxy - TRANSITIONEDGE_BULLET)
 		if(z != 0) //в нуллспейсе торпеда сразу решала что она на краю мапы
 			touch_map_edge()
 

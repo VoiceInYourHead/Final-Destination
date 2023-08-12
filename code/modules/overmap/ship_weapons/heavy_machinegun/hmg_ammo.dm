@@ -25,7 +25,7 @@
 /obj/item/projectile/bullet/huge_caliber/hmg_ship
 	name = "heavy machine gun bullet"
 	icon_state = "bullet"
-	damage = 250
+	damage = 150
 	armor_penetration = 30
 //	hull_damage = 0.2
 	pew_spread = 20
