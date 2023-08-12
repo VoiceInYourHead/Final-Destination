@@ -74,7 +74,7 @@
 	. = ..()
 	for(var/obj/item/clothing/accessory/A in accessories)
 		if (!(A.accessory_flags & ACCESSORY_HIDDEN))
-			to_chat(user, "[icon2html(A, user)] \A [A] is attached to it.")
+			to_chat(user, "[icon2html(A, user)] \A [A] is attached to it.[istype(A, /obj/item/clothing/accessory/wristwatches) ? "  <a href='?src=\ref[A];check_watch=1'>\[Check Watch\]</a>" : ""]")
 	switch(ironed_state)
 		if(WRINKLES_WRINKLY)
 			to_chat(user, "<span class='bad'>It's wrinkly.</span>")

@@ -197,6 +197,15 @@ default behaviour is:
 
 	return can_move_mob(tmob, 1, 0)
 
+/mob/living/Stat()
+	. = ..()
+	if(statpanel("Status"))
+		var/obj/item/clothing/under/U = locate() in src
+		if (istype(U))
+			var/obj/item/clothing/accessory/wristwatches/W = locate() in U.accessories
+			if (istype(W))
+				stat("Local Time:", "[stationtime2text()]")
+
 
 /mob/living/proc/updatehealth()
 	if(status_flags & GODMODE)
