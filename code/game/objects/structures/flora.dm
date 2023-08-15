@@ -41,7 +41,6 @@
 	..()
 	icon_state = "tree_[rand(1, 6)]"
 
-
 //grass
 /obj/structure/flora/grass
 	name = "grass"

@@ -14,6 +14,7 @@
 		/datum/sprite_accessory/marking/booster/horns/ram
 	)
 
+//Ears
 
 /datum/sprite_accessory/marking/booster/ears/pointy
 	icon_state = "ears_pointy"
@@ -50,6 +51,17 @@
 	name = "Ear Biomods (Rabbit)"
 	do_coloration = DO_COLORATION_USER
 
+/datum/sprite_accessory/marking/booster/ears/fox
+	icon_state = "ears_fox"
+	name = "Ear Biomods (Fox)"
+	do_coloration = DO_COLORATION_USER
+
+/datum/sprite_accessory/marking/booster/ears/mouse
+	icon_state = "ears_mouse"
+	name = "Ear Biomods (Mouse)"
+	do_coloration = DO_COLORATION_USER
+
+//Horns
 
 /datum/sprite_accessory/marking/booster/horns
 	body_parts = list(BP_HEAD)
@@ -64,6 +76,10 @@
 		/datum/sprite_accessory/marking/booster/horns,
 		/datum/sprite_accessory/marking/booster/ears
 	)
+
+/datum/sprite_accessory/marking/booster/horns/venom_snake
+	icon_state = "venom_snake"
+	name = "Horns Biomods (Single, Demonic, Small)"
 
 /datum/sprite_accessory/marking/booster/horns/unathi
 	icon_state = "horns_unathi"
