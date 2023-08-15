@@ -10,8 +10,16 @@
 	return FALSE
 
 /turf/unsimulated/floor/exoplanet/New()
+
+//yeah this is stupid and you can cry about it
+	if(istype(src.loc,/area/jplanet/outdoors))
+		set_light(0.7, 1, 5, l_color = "#a3dba3")
+	if(istype(src.loc,/area/jplanet/outdoors/water))
+		set_light(0.7, 1, 5, l_color = "#008600")
+
 	if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/visitable/sector/exoplanet/E = map_sectors["[z]"]
+
 		if(istype(E,/obj/effect/overmap/visitable/sector/exoplanet/urban))
 			var/obj/effect/overmap/visitable/sector/exoplanet/urban/U = E
 			if(U.atmosphere)
