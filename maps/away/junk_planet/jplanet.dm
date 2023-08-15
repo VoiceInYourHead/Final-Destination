@@ -1,21 +1,25 @@
+//SEV MAGNUS CRASHSITE
+
 /obj/effect/overmap/visitable/sector/junk_planet
-	name = "Lush planetoid"
-	desc = "Sensor array detects an lush planet with a large amount of wastes on the planet's surface. Scans further indicate an emergency signal broadcasting SCG codes, coming from beneath of the planet's ocean."
+	name = "Planet sector 1"
+	desc = "Scans indicate an emergency signal broadcasting SCG codes, coming somewhere from this sector."
 	sector_flags = OVERMAP_SECTOR_KNOWN
-	icon_state = "globe"
-	color = "#0c5709"
+	icon_state = "junk_planet1"
 	initial_generic_waypoints = list(
 		"nav_jplanet_1",
 		"nav_jplanet_2",
 		"nav_jplanet_3"
 	)
 
+/obj/effect/overmap/visitable/sector/junk_planet/on_update_icon()
+	return
+
 /datum/map_template/ruin/away_site/junk_planet
-	name = "Lush planetoid"
+	name = "Planet sector 1"
 	id = "awaysite_jplanet"
 	spawn_cost = 1000 //NO BITCHES??
 	player_cost = 2
-	description = "Junk Planet with SEV Magnus crashsite. For events only."
+	description = "Sector with SEV Magnus crashsite. For events only."
 	suffixes = list("junk_planet/jplanet-1.dmm")
 	area_usage_test_exempted_root_areas = list(/area/jplanet/)
 	apc_test_exempt_areas = list(
@@ -37,12 +41,61 @@
 	landmark_tag = "nav_jplanet_3"
 	base_area = /area/jplanet/outdoors
 
+//JUNGLE
+
+/obj/effect/overmap/visitable/sector/junk_planet_jungle1
+	name = "Planet sector 2"
+	desc = "Sensor array detects an lush sector with alot of fauna."
+	sector_flags = OVERMAP_SECTOR_KNOWN
+	icon_state = "junk_planet"
+	initial_generic_waypoints = list(
+		"nav_jplanet2_1",
+		"nav_jplanet2_2",
+		"nav_jplanet2_3"
+	)
+
+/obj/effect/overmap/visitable/sector/junk_planet_jungle1/on_update_icon()
+	return
+
+/datum/map_template/ruin/away_site/junk_planet_jungle1
+	name = "Planet sector 2"
+	id = "awaysite_jplanet2"
+	spawn_cost = 1000 //NO BITCHES??
+	player_cost = 2
+	description = "Lush sector with alot of fauna."
+	suffixes = list("junk_planet/jplanet-2.dmm")
+	area_usage_test_exempted_root_areas = list(/area/jplanet/)
+	apc_test_exempt_areas = list(
+		/area/jplanet/outdoors = NO_SCRUBBER|NO_VENT|NO_APC
+	)
+
+/obj/effect/shuttle_landmark/nav_jplanet2/nav1
+	name = "Jungle Landing Point #1"
+	landmark_tag = "nav_jplanet2_1"
+	base_area = /area/jplanet/outdoors
+
+/obj/effect/shuttle_landmark/nav_jplanet2/nav2
+	name = "Jungle Landing Point #2"
+	landmark_tag = "nav_jplanet2_2"
+	base_area = /area/jplanet/outdoors
+
+/obj/effect/shuttle_landmark/nav_jplanet2/nav3
+	name = "Jungle Landing Point #3"
+	landmark_tag = "nav_jplanet2_3"
+	base_area = /area/jplanet/outdoors
+
+
+//PROPS AND ETC
+
 /area/jplanet/outdoors
 	name = "Junk Planet"
 	icon_state = "centcom"
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	ambience = list('sound/ambience/fd/shore.ogg', 'sound/ambience/fd/jungle.ogg')
 	base_turf = /turf/unsimulated/floor/exoplanet/desert
+
+/area/jplanet/outdoors/Initialize()
+	loc.set_light(0.7, 1, 5, l_color = "#a3dba3")
 
 /area/jplanet/indoors
 	name = "Junk Planet Indoors"
@@ -54,6 +107,9 @@
 	name = "Junk Planet Ocean"
 	ambience = list('sound/ambience/fd/shore.ogg')
 	base_turf = /turf/unsimulated/floor/exoplanet/water/shallow
+
+/area/jplanet/outdoors/water/Initialize()
+	loc.set_light(0.7, 1, 5, l_color = "#008600")
 
 //‘ÀŒ–¿
 
