@@ -101,7 +101,7 @@
 					if((A in G.localareas) && (G.on))
 						break
 				if(!G)
-					A.gravitychange(0)
+					A.gravitychange(initial(A.has_gravity))
 		else
 			for(var/area/A in gravity_generator.localareas)
 				gravity_generator.on = 1

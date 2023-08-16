@@ -104,6 +104,15 @@
 			M.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, hearing_distance = use_range, checkghosts = /datum/client_preference/ghost_sight)
 		else
 			M.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, range = use_range, checkghosts = /datum/client_preference/ghost_sight)
+		var/list/listening = list()
+		var/list/listening_obj = list()
+		get_mobs_and_objs_in_view_fast(get_turf(M), use_range, listening, listening_obj, /datum/client_preference/ghost_ears)
+		var/list/speech_bubble_recipients = list()
+		for(var/mob/MM in listening)
+			if(MM)
+				if(MM.client)
+					speech_bubble_recipients += MM.client
+		INVOKE_ASYNC(M, /atom/movable/proc/animate_chat, copytext_char(use_3p, length(M.name)+9, length(use_3p)), all_languages["Noise"], TRUE, speech_bubble_recipients)
 
 	do_extra(user, target)
 
