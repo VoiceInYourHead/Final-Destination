@@ -143,6 +143,15 @@
 		visible_message(message, checkghosts = check_ghosts)
 	else
 		audible_message(message, checkghosts = check_ghosts)
+	var/list/listening = list()
+	var/list/listening_obj = list()
+	get_mobs_and_objs_in_view_fast(get_turf(src), world.view, listening, listening_obj, /datum/client_preference/ghost_ears)
+	var/list/speech_bubble_recipients = list()
+	for(var/mob/MM in listening)
+		if(MM)
+			if(MM.client)
+				speech_bubble_recipients += MM.client
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, copytext_char(message, length(src.name)+9, length(message)), all_languages["Noise"], TRUE, speech_bubble_recipients)
 
 // Specific mob type exceptions below.
 /mob/living/silicon/ai/emote(var/act, var/type, var/message)
