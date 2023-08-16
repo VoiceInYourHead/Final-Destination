@@ -13,9 +13,9 @@
 
 //yeah this is stupid and you can cry about it
 	if(istype(src.loc,/area/jplanet/outdoors))
-		set_light(0.7, 1, 5, l_color = "#a3dba3")
+		set_light(0.7, 1, 5, l_color = "#cc9440")
 	if(istype(src.loc,/area/jplanet/outdoors/water))
-		set_light(0.7, 1, 5, l_color = "#008600")
+		set_light(0.7, 1, 5, l_color = "#6fb45c")
 
 	if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/visitable/sector/exoplanet/E = map_sectors["[z]"]

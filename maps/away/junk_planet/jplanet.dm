@@ -94,9 +94,6 @@
 	ambience = list('sound/ambience/fd/shore.ogg', 'sound/ambience/fd/jungle.ogg')
 	base_turf = /turf/unsimulated/floor/exoplanet/desert
 
-/area/jplanet/outdoors/Initialize()
-	loc.set_light(0.7, 1, 5, l_color = "#a3dba3")
-
 /area/jplanet/indoors
 	name = "Junk Planet Indoors"
 	icon_state = "centcom"
@@ -107,9 +104,6 @@
 	name = "Junk Planet Ocean"
 	ambience = list('sound/ambience/fd/shore.ogg')
 	base_turf = /turf/unsimulated/floor/exoplanet/water/shallow
-
-/area/jplanet/outdoors/water/Initialize()
-	loc.set_light(0.7, 1, 5, l_color = "#008600")
 
 //‘ÀŒ–¿
 
