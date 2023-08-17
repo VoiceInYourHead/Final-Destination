@@ -1431,3 +1431,25 @@ var/list/random_useful_
 				/obj/structure/ship_munition/disperser_charge/explosive,
 				/obj/structure/ship_munition/disperser_charge/fire,
 				/obj/structure/ship_munition/disperser_charge/bluespace)
+
+
+/obj/random/flora
+	name = "random flora spawn"
+	desc = "This is a random flora spawner."
+	icon_state = "trees"
+	spawn_nothing_percentage = 50
+
+/obj/random/flora/spawn_choices()
+	return list(/obj/structure/flora/tree/jungle,
+				/obj/structure/flora/tree/jungle/small,
+				/obj/structure/flora/ausbushes/brflowers,
+				/obj/structure/flora/ausbushes/fullgrass,
+				/obj/structure/flora/ausbushes/grassybush,
+				/obj/structure/flora/ausbushes/lavendergrass,
+				/obj/structure/flora/ausbushes/ppflowers,
+				/obj/structure/flora/ausbushes/sparsegrass,
+				/obj/structure/flora/ausbushes/ywflowers,
+				/obj/structure/flora/ausbushes/genericbush,
+				/obj/structure/flora/ausbushes/sunnybush,
+				/obj/structure/flora/tropic/rock,
+				/obj/structure/flora/jungle/bush)

@@ -107,6 +107,34 @@
 
 //‘ÀŒ–¿
 
+/obj/structure/flora/tree/jungle
+	icon = 'icons/fd/structures/jungletree.dmi'
+	icon_state = "tree1"
+	pixel_x = -50
+	pixel_y = -25
+
+/obj/structure/flora/tree/jungle/New()
+	..()
+	icon_state = "tree[rand(1, 6)]"
+
+/obj/structure/flora/tree/jungle/small
+	icon = 'icons/fd/structures/jungletreesmall.dmi'
+	icon_state = "tree1"
+	pixel_x = -32
+	pixel_y = 0
+
+/obj/structure/flora/jungle
+	anchored = TRUE
+
+/obj/structure/flora/jungle/bush
+	icon = 'icons/fd/structures/largejungleflora.dmi'
+	icon_state = "bush1"
+	pixel_x = -16
+
+/obj/structure/flora/jungle/bush/New()
+	..()
+	icon_state = "bush[rand(1, 3)]"
+
 /obj/structure/flora/tree/tropic
 	icon = 'icons/fd/structures/cm/joshuatree.dmi'
 	icon_state = "joshua_2"
