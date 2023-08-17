@@ -105,6 +105,21 @@
 	ambience = list('sound/ambience/fd/shore.ogg')
 	base_turf = /turf/unsimulated/floor/exoplanet/water/shallow
 
+/obj/structure/fd/scorched
+	name = "Scorched body"
+	desc = "Something turned this man into literal ash sculpture"
+	icon = 'icons/fd/structures/Leftovers.dmi'
+	icon_state = "Loner2"
+	density = TRUE
+	anchored = TRUE
+
+/obj/structure/fd/scorched/attack_hand(mob/user as mob)
+	to_chat(user, "<span class='notice'>[src] sinks together into a pile of ash.</span>")
+	var/turf/simulated/floor/F = get_turf(src)
+	if (istype(F))
+		new /obj/effect/decal/cleanable/ash(F)
+	qdel(src)
+
 //‘ÀŒ–¿
 
 /obj/structure/flora/tree/jungle
@@ -127,6 +142,7 @@
 	anchored = TRUE
 
 /obj/structure/flora/jungle/bush
+	name = "bush"
 	icon = 'icons/fd/structures/largejungleflora.dmi'
 	icon_state = "bush1"
 	pixel_x = -16
@@ -147,6 +163,7 @@
 	anchored = TRUE
 
 /obj/structure/flora/tropic/rock
+	name = "rock"
 	icon_state = "brown_1"
 	density = TRUE
 	icon = 'icons/fd/structures/cm/rocks.dmi'
@@ -156,6 +173,7 @@
 	icon_state = "brown_[rand(1, 2)]"
 
 /obj/structure/flora/tropic/small_tree
+	name = "small tropical tree"
 	icon_state = "tree_1"
 	icon = 'icons/fd/structures/cm/dam.dmi'
 
@@ -172,6 +190,7 @@
 	icon_state = "tree_[rand(3, 4)]"
 
 /obj/structure/flora/tropic/cactus
+	name = "cactus"
 	icon_state = "cactus_4"
 	icon = 'icons/fd/structures/cm/dam.dmi'
 
