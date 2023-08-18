@@ -279,7 +279,7 @@
 	ks1type = /obj/item/device/encryptionkey/headset_service
 
 /obj/item/device/radio/headset/foundation
-	name = "\improper Foundation radio headset"
+	name = "\improper Institute radio headset"
 	desc = "The headeset of the occult cavalry."
 	icon_state = "com_headset"
 	item_state = "headset"

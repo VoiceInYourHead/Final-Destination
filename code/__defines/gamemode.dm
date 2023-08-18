@@ -53,7 +53,7 @@
 #define MODE_GODCULTIST    "god cultist"
 #define MODE_THRALL        "mind thrall"
 #define MODE_PARAMOUNT     "paramount"
-#define MODE_FOUNDATION    "foundation agent"
+#define MODE_FOUNDATION    "institute agent"
 #define MODE_MISC_AGITATOR "provocateur"
 #define MODE_HUNTER        "hunter"
 #define MODE_VOXRAIDER     "vox raider"

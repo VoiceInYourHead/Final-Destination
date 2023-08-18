@@ -452,7 +452,7 @@ var/const/NO_EMAG_ACT = -50
 	return
 
 /obj/item/card/id/foundation
-	name = "\improper Foundation warrant card"
+	name = "\improper Institute warrant card"
 	desc = "A warrant card in a handsome leather case."
 	assignment = "Field Agent"
 	icon_state = "warrantcard"

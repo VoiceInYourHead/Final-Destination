@@ -1,15 +1,15 @@
 /datum/codex_entry/cuchulain_foundation
-	display_name = "Cuchulain Foundation"
-	associated_strings = list("Cuchulain", "Foundation")
+	display_name = "Cuchulain's Institute of Science"
+	associated_strings = list("Cuchulain", "Institute")
 	associated_paths = list(
-		/obj/item/storage/briefcase/foundation, 
+		/obj/item/storage/briefcase/foundation,
 		/obj/item/gun/projectile/revolver/foundation,
 		/obj/item/card/id/foundation,
 		/obj/item/card/id/foundation_civilian,
 		/obj/item/clothing/suit/storage/toggle/labcoat/foundation,
 		/obj/item/reagent_containers/food/drinks/glass2/coffeecup/foundation
 	)
-	lore_text = "The Cuchulain Foundation is a non-profit body based out of Neptune orbit. Their logo is \
+	lore_text = "CIS is a non-profit body based out of Neptune orbit. Their logo is \
 	an upward-facing radio telescope dish, usually printed in green. They perform niche research on behalf \
 	of private parties, the SGC, and their own interests. They are also the single largest psionic registration \
 	and oversight body in human space, responsible for educating and training operants at no cost, even across \
@@ -17,7 +17,7 @@
 	<br><br> \
 	The rest of the article is an indecipherable haze that slips out of your memory as soon as you \
 	finish reading it, but you feel pretty satisfied and informed by the end."
-	antag_text = "The Cuchulain Foundation is an anti-occult ERT-like body. They are equipped with \
+	antag_text = "CIS is an anti-occult ERT-like body. They are equipped with \
 	nullglass weapons that can disrupt or destroy psi-powers, and have their own moderately powerful \
 	psionic abilities. They make heavy use of psionic influence to cloud and disrupt efforts at \
 	researching or understanding them, and the depth and nature of their connections to political \
@@ -36,7 +36,7 @@
 	ability to perform small feats like levitating coins or removing a headache with nothing but their mind. \
 	A decade of study has resulted in the SCG determining that these psionics, mild as they are, don't pose \
 	an operational or health risk, but they do encourage operants to register with a psionic regulation body \
-	like the Cuchulain Foundation. \
+	like Cuchulain's Institute of Science. \
 	<br><br> \
 	However, psionics-enhancing implants, drugs and procedures are illegal in most human space, and \
 	statistically seem to end in death for those foolish enough to make use of them. Being caught with a \

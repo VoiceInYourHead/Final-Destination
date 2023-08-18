@@ -62,8 +62,8 @@
 	species_restricted = list(SPECIES_IPC, SPECIES_SHELL)
 
 /obj/item/clothing/suit/storage/toggle/labcoat/foundation
-	name = "\improper Foundation labcoat"
-	desc = "A medical labcoat with a Cuchulain Foundation crest stencilled on the back."
+	name = "\improper Institute labcoat"
+	desc = "A medical labcoat with a Cuchulain's Institute crest stencilled on the back."
 	icon_state = "labcoat_foundation"
 
 /obj/item/clothing/suit/storage/toggle/labcoat/science

@@ -1,11 +1,11 @@
-GLOBAL_DATUM_INIT(foundation_agents, /datum/antagonist/foundation, new)
+GLOBAL_DATUM_INIT(institute_agents, /datum/antagonist/foundation, new)
 
 /datum/antagonist/foundation
 	id = MODE_FOUNDATION
-	role_text = "Foundation Agent"
+	role_text = "CIS Agent"
 	antag_indicator = "hudfoundation"
-	role_text_plural = "Foundation Agents"
-	welcome_text = "<span class='info'>You are a field agent of the Cuchulain Foundation, \
+	role_text_plural = "CIS Agents"
+	welcome_text = "<span class='info'>You are a field agent of the Cuchulain's Institute of Science, \
 	a body that specializes in taking down psychic threats. You have a free pass to anywhere \
 	you like, a pistol loaded with anti-psi nullglass rounds, and a clear duty. Naturally, \
 	nobody takes your employers seriously - until a day like today.</span>"
@@ -14,7 +14,7 @@ GLOBAL_DATUM_INIT(foundation_agents, /datum/antagonist/foundation, new)
 		Try to make sure other players have <i>fun</i>! If you are confused or at a loss, always adminhelp, \
 		and before taking extreme actions, please try to also contact the administration! \
 		Think through your actions and make the roleplay immersive! <b>Please remember all \
-		rules aside from those without explicit exceptions apply to Foundation Agents.</b>"
+		rules aside from those without explicit exceptions apply to Institute Agents.</b>"
 
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_SET_APPEARANCE
 	antaghud_indicator = "hudfoundation"
@@ -41,4 +41,4 @@ GLOBAL_DATUM_INIT(foundation_agents, /datum/antagonist/foundation, new)
 	var/decl/hierarchy/outfit/foundation = outfit_by_type(/decl/hierarchy/outfit/foundation)
 	foundation.equip(player)
 
-	create_id("Foundation Agent", player)
+	create_id("Institute Agent", player)

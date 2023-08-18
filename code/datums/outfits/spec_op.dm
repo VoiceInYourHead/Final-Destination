@@ -86,7 +86,7 @@
 	l_pocket = /obj/item/tank/oxygen_emergency
 
 /decl/hierarchy/outfit/foundation
-	name = "Cuchulain Foundation Agent"
+	name = "CIS Agent"
 	glasses =  /obj/item/clothing/glasses/sunglasses
 	uniform =  /obj/item/clothing/under/suit_jacket/charcoal
 	shoes =    /obj/item/clothing/shoes/black
