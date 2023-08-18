@@ -9,8 +9,8 @@
 
 /decl/psionic_power/electronics/spark
 	name =            "Spark"
-	cost =            1
-	cooldown =        1
+	cost =            5
+	cooldown =        5
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	use_description = "Target a non-living target in melee range on harm intent to cause some sparks to appear. This can light fires."
@@ -18,11 +18,30 @@
 /decl/psionic_power/electronics/spark/invoke(var/mob/living/user, var/mob/living/target)
 	if(isnull(target) || istype(target)) return FALSE
 	. = ..()
+
+	var/el_rank = user.psi.get_rank(PSI_ELECTRONICS)
+
 	if(.)
 		if(istype(target,/obj/item/clothing/mask/smokable/cigarette))
 			var/obj/item/clothing/mask/smokable/cigarette/S = target
 			S.light("[user] snaps \his fingers and \the [S.name] lights up.")
 			playsound(S.loc, "sparks", 50, 1)
+
+		if(el_rank >= PSI_RANK_OPERANT)
+			if(istype(target,/obj/machinery/door/airlock))
+				var/obj/machinery/door/airlock/D = target
+				D.open("[user] snaps \his fingers and \the [D.name] opens.")
+				new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
+				playsound(D.loc, "sparks", 50, 1)
+
+//right now doesn't work and i dunno why - probably cause intent change
+/*		if(el_rank >= PSI_RANK_MASTER && user.a_intent == I_GRAB)
+			if(istype(target,/obj/machinery/door/airlock))
+				var/obj/machinery/door/airlock/D = target
+				D.toggle_lock("[user] snaps \his fingers and \the [D.name] opens.")
+				new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
+				playsound(D.loc, "sparks", 50, 1)*/
+
 		else
 			var/datum/effect/effect/system/spark_spread/sparks = new ()
 			sparks.set_up(3, 0, get_turf(target))
