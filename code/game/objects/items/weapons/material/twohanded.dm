@@ -128,6 +128,16 @@
 		new /obj/item/stack/cable_coil(get_turf(src), 3)
 	..()
 
+/obj/item/material/twohanded/spear/chichi
+	icon_state = "spearresomi0"
+	base_icon = "spearresomi"
+	name = "wooden spear"
+	desc = "A deadly weapon, shaped and engraved with unic style of resomi culture in it."
+	default_material = MATERIAL_MAPLE
+
+/obj/item/material/twohanded/spear/shatter(var/consumed)
+	return
+
 /obj/item/material/twohanded/baseballbat
 	name = "bat"
 	desc = "HOME RUN!"

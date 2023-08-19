@@ -34,8 +34,7 @@
 				new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
 				playsound(D.loc, "sparks", 50, 1)
 
-//right now doesn't work and i dunno why - probably cause intent change
-/*		if(el_rank >= PSI_RANK_MASTER && user.a_intent == I_GRAB)
+/*		if(el_rank >= PSI_RANK_MASTER)
 			if(istype(target,/obj/machinery/door/airlock))
 				var/obj/machinery/door/airlock/D = target
 				D.toggle_lock("[user] snaps \his fingers and \the [D.name] opens.")
