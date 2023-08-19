@@ -432,7 +432,7 @@
 		var/mob/living/mob_target = target
 		if(mob_target.buckled)
 			mob_target.buckled.user_unbuckle_mob(src)
-		mob_target.stunned = 5
+		mob_target.Stun(2)
 		mob_target.anchored = 1
 		if(istype(mob_target,/mob/living/carbon))
 			mob_target.resting = 1
@@ -504,7 +504,7 @@
 					ISay(pick(say_list.say_stand_down))
 		if(istype(jaws_grab,/mob/living))
 			var/mob/living/mob_jaws_grab = jaws_grab
-			mob_jaws_grab.stunned = 5
+			mob_jaws_grab.Stun(2)
 			mob_jaws_grab.anchored = 1
 			if(istype(mob_jaws_grab,/mob/living/carbon))
 				mob_jaws_grab.resting = 1
@@ -629,7 +629,7 @@
 	if(jaws_grab)
 		to_chat(user, "<span class='warning'>There is [jaws_grab] dangling in [src]'s mouth!</span>")
 	if(distance <= 5 && fleeing_for_shelter)
-		to_chat(user, "<span class='notice'>It appears to be too concerned to notice you.</span>")
+		to_chat(user, "<span class='notice'>It appears to be too distracted to notice you.</span>")
 
 /********************** FAUNA AI **********************/
 
