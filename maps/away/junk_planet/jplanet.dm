@@ -205,3 +205,46 @@
 /obj/structure/flora/tropic/cactus/alt/New()
 	..()
 	icon_state = "cacti_[rand(1, 4)]"
+
+//–≈¿À‹Õ¿ﬂ ‘ÀŒ–¿
+
+
+
+//‘¿”Õ¿
+
+/mob/living/simple_animal/hostile/smart_beast/rain_world/crab
+	name = "junkrab"
+	desc = "A fast, armoured predator accustomed to hiding and ambushing in jungles."
+	faction = "crab"
+	icon_state = "shantak-alt"
+	icon_living = "shantak-alt"
+	icon_dead = "shantak-alt_dead"
+	maxHealth = 125
+	health = 125
+	diet = DIET_CARNIVOROUS
+	mob_bump_flag = HUMAN
+	mob_swap_flags = HUMAN|SIMPLE_ANIMAL|SLIME|MONKEY
+	mob_push_flags = ALLMOBS
+	mob_size = MOB_MEDIUM
+	melee_attack_delay = 6
+	movement_cooldown = 1
+	natural_weapon = /obj/item/natural_weapon/pincers/giant
+	natural_armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL
+		)
+	ai_holder = /datum/ai_holder/smart_animal/rain_world/carnivore_placeholder
+	say_list_type = /datum/say_list/smart/shantak
+	flash_vulnerability = 0
+
+	aggression_affects_hostility = FALSE
+	hunger_affects_hostility = FALSE
+	respect_stats = TRUE
+
+	attack_sound = null
+	movement_sound = null			// If set, will play this sound when it moves on its own will.
+	turn_sound = null				// If set, plays the sound when the mob's dir changes in most cases.
+
+/mob/living/simple_animal/hostile/smart_beast/rain_world/crab/attack_hand(mob/living/carbon/C)
+	. = ..()
+	reflect_unarmed_damage(C, BRUTE, "armoured carapace")
