@@ -19,32 +19,46 @@
 	if(isnull(target) || istype(target)) return FALSE
 	. = ..()
 
-	var/el_rank = user.psi.get_rank(PSI_ELECTRONICS)
-
 	if(.)
 		if(istype(target,/obj/item/clothing/mask/smokable/cigarette))
 			var/obj/item/clothing/mask/smokable/cigarette/S = target
 			S.light("[user] snaps \his fingers and \the [S.name] lights up.")
 			playsound(S.loc, "sparks", 50, 1)
 
-		if(el_rank >= PSI_RANK_OPERANT)
-			if(istype(target,/obj/machinery/door/airlock))
-				var/obj/machinery/door/airlock/D = target
-				D.open("[user] snaps \his fingers and \the [D.name] opens.")
-				new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
-				playsound(D.loc, "sparks", 50, 1)
-
-/*		if(el_rank >= PSI_RANK_MASTER)
-			if(istype(target,/obj/machinery/door/airlock))
-				var/obj/machinery/door/airlock/D = target
-				D.toggle_lock("[user] snaps \his fingers and \the [D.name] opens.")
-				new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
-				playsound(D.loc, "sparks", 50, 1)*/
-
 		else
 			var/datum/effect/effect/system/spark_spread/sparks = new ()
 			sparks.set_up(3, 0, get_turf(target))
 			sparks.start()
+		return TRUE
+
+/decl/psionic_power/electronics/sneaky
+	name =            "Sneaky Hands"
+	cost =            30
+	cooldown =        40
+	use_melee =       TRUE
+	min_rank =        PSI_RANK_OPERANT
+	use_description = "Choose the left hand and target a door on harm intent to open it. You also can bolt it, by choosing right hand."
+
+/decl/psionic_power/electronics/sneaky/invoke(var/mob/living/user, var/mob/living/target)
+	if(isnull(target) || istype(target)) return FALSE
+	. = ..()
+
+	var/el_rank = user.psi.get_rank(PSI_ELECTRONICS)
+
+	if(.)
+		if(istype(target,/obj/machinery/door/airlock) && user.zone_sel.selecting == BP_L_HAND)
+			var/obj/machinery/door/airlock/D = target
+			D.open("[user] snaps \his fingers and \the [D.name] opens.")
+			new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
+			playsound(D.loc, "sparks", 50, 1)
+
+		if(el_rank >= PSI_RANK_MASTER && user.zone_sel.selecting == BP_R_HAND)
+			if(istype(target,/obj/machinery/door/airlock))
+				var/obj/machinery/door/airlock/D = target
+				D.toggle_lock("[user] snaps \his fingers and \the [D.name] opens.")
+				new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
+				playsound(D.loc, "sparks", 50, 1)
+
 		return TRUE
 
 /decl/psionic_power/electronics/electrocute
