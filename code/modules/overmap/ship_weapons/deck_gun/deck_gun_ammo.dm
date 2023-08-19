@@ -28,7 +28,7 @@
 	armor_penetration = 30
 	shoot_range = 5 // how far will we go on the overmap
 //	hull_damage = 0.2
-	bullet_size = 2
+	projectile_size = 2
 	pew_spread = 20
 
 /obj/item/projectile/bullet/huge_caliber/deck_gun/high_explosive

@@ -20,7 +20,7 @@
 /obj/item/projectile/bullet/huge_caliber/harpoon_cannon
 	name = "giant steel rod"
 	icon_state = "rod"
-	bullet_size = 4
+	projectile_size = 4
 	damage = 450
 	armor_penetration = 50
 	penetrating = 4

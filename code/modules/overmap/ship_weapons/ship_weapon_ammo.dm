@@ -77,7 +77,6 @@
 	var/explosion_max_power = EX_ACT_DEVASTATING
 	var/proximity_detonation = TRUE //should we explode near our target, and not inside of it?
 	var/exploded = FALSE
-	var/bullet_size = 1
 
 	var/entered_overmap = FALSE
 
@@ -109,7 +108,6 @@
 
 /obj/item/projectile/bullet/huge_caliber/New()
 	origin = map_sectors["[z]"]
-	transform *= bullet_size
 
 /obj/item/projectile/bullet/huge_caliber/Move()
 	. = ..()
