@@ -32,15 +32,15 @@
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL,SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_feet_resomi.dmi'
@@ -48,7 +48,7 @@
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi'
@@ -172,13 +172,13 @@
 /obj/item/clothing/gloves/rig/light/ninja
 	name = "insulated gloves"
 	siemens_coefficient = 0
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_hands_resomi.dmi')
 
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/rig/light/stealth
 	name = "stealth suit control module"

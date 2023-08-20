@@ -1,7 +1,7 @@
 /datum/sprite_accessory/marking/shell
 	icon = 'icons/mob/human_races/species/shell/markings.dmi'
 	blend = ICON_MULTIPLY
-	species_allowed = list(SPECIES_SHELL, SPECIES_HUMAN)
+	species_allowed = list(SPECIES_IPC, SPECIES_HUMAN)
 
 /datum/sprite_accessory/marking/shell/spirit_lights
 	name = "Ward - Spirit FBP Lights"
