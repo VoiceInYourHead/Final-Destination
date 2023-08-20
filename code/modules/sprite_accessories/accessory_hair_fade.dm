@@ -1,6 +1,6 @@
 /datum/sprite_accessory/marking/hair_fade
 	icon = 'icons/mob/human_races/species/human/hair_fade.dmi'
-	species_allowed = list(SPECIES_HUMAN)
+	species_allowed = list(SPECIES_HUMAN, SPECIES_IPC)
 	body_parts = list(BP_HEAD)
 	draw_target = MARKING_TARGET_HAIR
 	draw_order = 50 //before ears & horns
