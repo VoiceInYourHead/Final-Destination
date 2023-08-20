@@ -1192,7 +1192,7 @@
 //Black
 /datum/chemical_reaction/slime/mutate2
 	name = "Advanced Mutation Toxin"
-	result = /datum/reagent/aslimetoxin
+	result = /datum/reagent/acid/aslimetoxin
 	required_reagents = list(/datum/reagent/toxin/phoron = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black

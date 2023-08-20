@@ -971,8 +971,8 @@
 		return
 	if(H.species.name == SPECIES_PROMETHEAN)
 		return
-	H.adjustToxLoss(40 * removed)
-	if(H.chem_doses[type] < 1 || prob(30))
+	H.adjustToxLoss(55 * removed)
+	if(H.chem_doses[type] < 1 || prob(45))
 		return
 	H.chem_doses[type] = 0
 	var/list/meatchunks = list()
@@ -1001,26 +1001,34 @@
 		E.status |= ORGAN_MUTATED
 		E.limb_flags &= ~ORGAN_FLAG_CAN_BREAK
 		E.dislocated = -1
-		E.max_damage = 5
+		E.max_damage = 10
 		E.update_icon(1)
-	O.max_damage = 15
-	if(prob(10))
+	O.max_damage = 25
+	if(prob(25))
 		to_chat(H, "<span class='danger'>Your slimy [O.name] plops off!</span>")
 		O.droplimb()
 	H.update_body()
 
-/datum/reagent/aslimetoxin
+/datum/reagent/acid/aslimetoxin
 	name = "Advanced Mutation Toxin"
 	description = "An advanced corruptive toxin produced by slimes."
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#13bc5e"
+	power = 10
+	meltdose = 4
+	max_damage = 80
+	should_admin_log = TRUE
 
-/datum/reagent/aslimetoxin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed) // TODO: check if there's similar code anywhere else
-	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(M))
+/datum/reagent/acid/aslimetoxin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed) // TODO: check if there's similar code anywhere else
+	if(alien == IS_DIONA)
 		return
-	to_chat(M, "<span class='danger'>Your flesh rapidly mutates!</span>")
-	ADD_TRANSFORMATION_MOVEMENT_HANDLER(M)
+	to_chat(M, "<span class='danger'>Your flesh starts to melt!</span>")
+	M.adjustToxLoss(rand(100, 300) * removed)
+/*	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(M))
+		return*/
+
+/*	ADD_TRANSFORMATION_MOVEMENT_HANDLER(M)
 	M.icon = null
 	M.overlays.Cut()
 	M.set_invisibility(101)
@@ -1036,7 +1044,7 @@
 		M.mind.transfer_to(new_mob)
 	else
 		new_mob.key = M.key
-	qdel(M)
+	qdel(M)*/
 
 /datum/reagent/nanites
 	name = "Nanomachines"
