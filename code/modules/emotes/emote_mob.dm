@@ -151,7 +151,8 @@
 		if(MM)
 			if(MM.client)
 				speech_bubble_recipients += MM.client
-	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, copytext_char(message, length(src.name)+9, length(message)), all_languages["Noise"], TRUE, speech_bubble_recipients)
+	var/we_have_the = findtext(message,"the",1,length(message)/1.5)
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, copytext_char(message, length(name) + (we_have_the ? 13 : 9), length(message)), all_languages["Noise"], TRUE, speech_bubble_recipients)
 
 // Specific mob type exceptions below.
 /mob/living/silicon/ai/emote(var/act, var/type, var/message)
