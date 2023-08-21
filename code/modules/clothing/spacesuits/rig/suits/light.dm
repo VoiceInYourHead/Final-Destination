@@ -21,6 +21,8 @@
 	max_pressure_protection = LIGHT_RIG_MAX_PRESSURE
 	min_pressure_protection = 0
 
+	slot_flags = SLOT_BACK | SLOT_BELT
+
 	chest_type = /obj/item/clothing/suit/space/rig/light
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/light
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/light
@@ -133,6 +135,7 @@
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/datajack,
 		/obj/item/rig_module/self_destruct,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit
 		)
 

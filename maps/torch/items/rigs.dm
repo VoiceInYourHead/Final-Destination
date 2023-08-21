@@ -65,6 +65,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit
 		)
 
@@ -106,6 +107,7 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash/advanced,
 		/obj/item/rig_module/grenade_launcher/smoke,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /*
@@ -147,6 +149,7 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash/advanced,
 		/obj/item/rig_module/grenade_launcher/smoke,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /*
@@ -235,6 +238,7 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/vision/sechud,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /*
@@ -356,6 +360,7 @@
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/device/anomaly_scanner,
 		/obj/item/rig_module/grenade_launcher/light,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /obj/item/rig/hazard/research_guard
@@ -412,4 +417,5 @@
 		/obj/item/rig_module/vision/medhud,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)

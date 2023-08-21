@@ -399,6 +399,7 @@
 	max_pressure_protection = null
 	min_pressure_protection = 0
 
+	slot_flags = SLOT_BACK | SLOT_BELT
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit)
 	//Bans the most common combat items, idea is that this isn't a mass built shouldergun rig.
