@@ -13,7 +13,7 @@
 	var/footstep_type
 	var/mob_offset = 0 //used for on_structure_offset mob animation
 
-	throwforce = 200
+	throwforce = 80
 
 /obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
 	if(wallbreaker && damage && breakable)
