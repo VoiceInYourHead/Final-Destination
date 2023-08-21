@@ -83,6 +83,7 @@
 		/obj/item/rig_module/device/orescanner,
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit
 		)
 
