@@ -112,7 +112,8 @@
 			if(MM)
 				if(MM.client)
 					speech_bubble_recipients += MM.client
-		INVOKE_ASYNC(M, /atom/movable/proc/animate_chat, copytext_char(use_3p, length(M.name)+9, length(use_3p)), all_languages["Noise"], TRUE, speech_bubble_recipients)
+		var/we_have_the = findtext(use_3p,"The",1,length(use_3p)/1.5)
+		INVOKE_ASYNC(M, /atom/movable/proc/animate_chat, copytext_char(use_3p, length(M.name) + (we_have_the ? 13 : 9), length(use_3p)), all_languages["Noise"], TRUE, speech_bubble_recipients)
 
 	do_extra(user, target)
 

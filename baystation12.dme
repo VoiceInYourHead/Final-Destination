@@ -1559,6 +1559,7 @@
 #include "code\modules\clothing\spacesuits\rig\rig_pieces.dm"
 #include "code\modules\clothing\spacesuits\rig\rig_verbs.dm"
 #include "code\modules\clothing\spacesuits\rig\rig_wiring.dm"
+#include "code\modules\clothing\spacesuits\rig\modules\actuators.dm"
 #include "code\modules\clothing\spacesuits\rig\modules\combat.dm"
 #include "code\modules\clothing\spacesuits\rig\modules\computer.dm"
 #include "code\modules\clothing\spacesuits\rig\modules\modules.dm"

@@ -222,8 +222,14 @@
 		visible_message("\The [src] falls through \the [landing]!", "You hear a whoosh of displaced air.")
 	else
 		visible_message("\The [src] slams into \the [landing]!", "You hear something slam into the deck.")
-		if(fall_damage())
-			for(var/mob/living/M in landing.contents)
+		var/obj/item/rig/rig = get_rig()
+		if (istype(rig))
+			for (var/obj/item/rig_module/actuators/A in rig.installed_modules)
+				if (A.active)
+					visible_message(SPAN_NOTICE("\The [src]'s suit whirrs loudly as the [rig] absorbs the fall!"),
+					SPAN_NOTICE("You hear an electric <i>*whirr*</i> right after the slam!"))
+		if (fall_damage())
+			for (var/mob/living/M in landing.contents)
 				if(M == src)
 					continue
 				visible_message("\The [src] hits \the [M.name]!")
@@ -239,23 +245,37 @@
 		return 150
 	return BASE_STORAGE_COST(w_class)
 
-/mob/living/carbon/human/handle_fall_effect(var/turf/landing)
+/mob/living/carbon/human/handle_fall_effect(var/mob/living/carbon/human/user,var/turf/landing)
 	if(species && species.handle_fall_special(src, landing))
 		return
+
+	var/obj/item/rig/rig = get_rig()
+	if (istype(rig))
+		for (var/obj/item/rig_module/actuators/A in rig.installed_modules)
+			if (A.active && rig.check_power_cost(src, 50 KILOWATTS, A, 0))
+				return
 
 	..()
 	var/min_damage = 4
 	var/max_damage = 9
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_HEAD, armor_pen = 50)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_CHEST, armor_pen = 50)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_GROIN, armor_pen = 75)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_L_LEG, armor_pen = 100)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_R_LEG, armor_pen = 100)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_L_FOOT, armor_pen = 100)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_R_FOOT, armor_pen = 100)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_L_ARM, armor_pen = 75)
-	apply_damage(rand(min_damage, max_damage), BRUTE, BP_R_ARM, armor_pen = 75)
+	apply_damage(rand(2, 7), BRUTE, BP_L_LEG, armor_pen = 100)
+	apply_damage(rand(2, 7), BRUTE, BP_R_LEG, armor_pen = 100)
+	apply_damage(rand(2, 7), BRUTE, BP_L_FOOT, armor_pen = 100)
+	apply_damage(rand(2, 7), BRUTE, BP_R_FOOT, armor_pen = 100)
+	for(var/falldamage in list(BP_L_LEG, BP_R_LEG))
+		var/obj/item/organ/external/legs = get_organ(falldamage)
+		if(!BP_IS_ROBOTIC(legs))
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_HEAD, armor_pen = 50)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_CHEST, armor_pen = 50)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_GROIN, armor_pen = 75)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_L_LEG, armor_pen = 100)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_R_LEG, armor_pen = 100)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_L_FOOT, armor_pen = 100)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_R_FOOT, armor_pen = 100)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_L_ARM, armor_pen = 75)
+			apply_damage(rand(min_damage, max_damage), BRUTE, BP_R_ARM, armor_pen = 75)
 	weakened = max(weakened, 3)
+
 	if(prob(skill_fail_chance(SKILL_HAULING, 40, SKILL_EXPERIENCED, 2)))
 		var/list/victims = list()
 		for(var/tag in list(BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM))
@@ -275,7 +295,16 @@
 
 	var/turf/T = get_turf(A)
 	var/turf/above = GetAbove(src)
+	var/obj/item/rig/rig = get_rig()
 	if(above && T.Adjacent(bound_overlay) && above.CanZPass(src, UP)) //Certain structures will block passage from below, others not
+		if (istype(rig))
+			for (var/obj/item/rig_module/actuators/R in rig.installed_modules)
+				if (R.active && rig.check_power_cost(src, 50 KILOWATTS, A, 0))
+					visible_message(SPAN_NOTICE("[src] prepares to leap upwards onto \the [A]!"), SPAN_NOTICE("You crouch, preparing to leap upwards onto \the [A]!"))
+					if (do_after(src, 2 SECONDS, A))
+						visible_message(SPAN_NOTICE("[src]'s suit whirrs aggressively as they leap up to \the [A]!"), SPAN_NOTICE("You leap to \the [A]!"))
+						src.Move(T)
+						return TRUE
 		var/area/location = get_area(loc)
 		if(location.has_gravity && !can_overcome_gravity())
 			return FALSE
