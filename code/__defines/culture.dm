@@ -164,14 +164,6 @@
 
 #define HOME_SYSTEM_SERPENTIDS "Tau-Wilo"
 
-// Ascent
-#define CULTURE_ASCENT           "The Ascent"
-#define HOME_SYSTEM_KHARMAANI    "Core"
-#define FACTION_ASCENT_GYNE      "Ascent Gyne"
-#define FACTION_ASCENT_ALATE     "Ascent Alate"
-#define FACTION_ASCENT_SERPENTID "Ascent Serpentid"
-#define RELIGION_KHARMAANI       "Nest-Lineage Veneration"
-
 // Unathi cultures.
 #define CULTURE_UNATHI_YEOSA_ABYSS    "Abyssal Yeosa Clans"
 #define CULTURE_UNATHI_YEOSA_LITTORAL "Littoral Yeosa Clans"

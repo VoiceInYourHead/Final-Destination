@@ -173,9 +173,14 @@
 		return FALSE
 	entered_overmap = TRUE
 
-	overmap_projectile = new /obj/effect/overmap/projectile(null, map_sectors["[z]"]?.x, map_sectors["[z]"]?.y)
+	var/obj/effect/overmap/source = map_sectors["[z]"]
 
-	overmap_projectile.SetName("[map_sectors["[z]"] ? map_sectors["[z]"]?.name+"'s" : ""] [name]")
+	if(!source)
+		Destroy()
+
+	overmap_projectile = new /obj/effect/overmap/projectile(null, source.x, source.y)
+
+	overmap_projectile.SetName("[source.name+"'s"] [name]")
 
 	forceMove(overmap_projectile)
 	overmap_projectile.set_projectile(src, cal_accuracy)

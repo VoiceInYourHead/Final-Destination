@@ -111,6 +111,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 		return 0
 
 /obj/machinery/computer/ship/sensors/Destroy()
+	..()
 	sensors = null
 	if(LAZYLEN(viewers))
 		for(var/weakref/W in viewers)

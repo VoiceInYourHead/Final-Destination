@@ -130,7 +130,7 @@
 	source = 'sound/music/gneiss/Gneiss.mp3'
 	license = /decl/license/grandfathered
 
-/decl/audio/track/O.W.L
+/decl/audio/track/OWL
 	display = "O.W.L"
 	title = "O.W.L"
 	author = "Gneiss"

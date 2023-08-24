@@ -33,9 +33,9 @@
 
 	var/link_range = 10		//How far can the above stuff be maximum before we start complaining
 
-	var/ammo_per_shot = 1	//как много пуль тратиться на выстрел
-	var/burst_size = 3		//сколько раз пиу
-	var/fire_interval = 5	//как долго между каждым пиу
+	var/ammo_per_shot = 1	//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	var/burst_size = 3		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ
+	var/fire_interval = 5	//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 
 	var/fire_delay = 0
 
@@ -140,7 +140,8 @@
 /obj/machinery/computer/ship/ship_weapon/proc/get_ammo_type()
 	munition = locate() in get_turf(back)
 	if(munition && istype(munition,munition_type))
-		return munition.stored_ammo[munition.stored_ammo.len].projectile_type
+		var/obj/item/ammo_casing/AC = munition.stored_ammo[munition.stored_ammo.len]
+		return AC.projectile_type
 
 /obj/machinery/computer/ship/ship_weapon/proc/get_ammo()
 	munition = locate() in get_turf(back)
@@ -190,7 +191,8 @@
 			if("energy")
 				charge = "/Energy/"
 			else
-				charge = get_charge().name
+				var/obj/item/ammo_magazine/ammobox = get_charge()
+				charge = ammobox.name
 		data["chargename"] = charge
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -228,7 +230,7 @@
 			if(atomcharge_ammo < ammo_per_shot)
 				return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			log_and_message_admins("[gun_name] смешно подорвалась", location=get_turf(middle))
+			log_and_message_admins("[gun_name] пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", location=get_turf(middle))
 			explosion(middle, rand(7, 12))
 			explosion(front, rand(5, 9))
 			if(front)

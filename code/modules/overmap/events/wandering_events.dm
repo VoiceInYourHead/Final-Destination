@@ -9,7 +9,8 @@
 
 /obj/effect/overmap/event/New(loc)
 	..()
-	if(wander_around) START_PROCESSING(SSobj, src)
+	if(wander_around)
+		START_PROCESSING(SSobj, src)
 		wander_timer = rand(wander_timer_min,wander_timer_max)
 
 /obj/effect/overmap/event/Destroy()
