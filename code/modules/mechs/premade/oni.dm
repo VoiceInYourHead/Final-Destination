@@ -5,13 +5,13 @@
 /mob/living/exosuit/premade/oni/Initialize()
 	if(!arms)
 		arms = new /obj/item/mech_component/manipulators/light(src)
-		arms.color = COLOR_RED
+		arms.color = COLOR_PALE_YELLOW
 	if(!legs)
 		legs = new /obj/item/mech_component/propulsion/light(src)
-		legs.color = COLOR_RED
+		legs.color = COLOR_PALE_YELLOW
 	if(!head)
 		head = new /obj/item/mech_component/sensors/light/combat/oni(src)
-		head.color = COLOR_RED
+		head.color = COLOR_PALE_YELLOW
 	if(!body)
 		body = new /obj/item/mech_component/chassis/combat/horned(src)
 		body.color = COLOR_GUNMETAL
