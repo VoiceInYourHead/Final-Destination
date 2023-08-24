@@ -30,7 +30,6 @@
 	species_to_branch_blacklist = list(
 		/datum/species/human   = list(/datum/mil_branch/alien, /datum/mil_branch/skrell_fleet),
 		/datum/species/machine = list(/datum/mil_branch/alien, /datum/mil_branch/skrell_fleet),
-		/datum/species/machine/shell = list(/datum/mil_branch/alien, /datum/mil_branch/skrell_fleet),
 		/datum/species/vox     = list(
 			/datum/mil_branch/expeditionary_corps,
 			/datum/mil_branch/fleet,
@@ -62,35 +61,6 @@
 
 	species_to_rank_whitelist = list(
 		/datum/species/machine = list(
-			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e3,
-				/datum/mil_rank/ec/e5,
-				/datum/mil_rank/ec/e7,
-				/datum/mil_rank/ec/o1
-			),
-			/datum/mil_branch/fleet = list(
-				/datum/mil_rank/fleet/e1,
-				/datum/mil_rank/fleet/e2,
-				/datum/mil_rank/fleet/e3,
-				/datum/mil_rank/fleet/e4,
-				/datum/mil_rank/fleet/e5,
-				/datum/mil_rank/fleet/e6,
-				/datum/mil_rank/fleet/e7,
-				/datum/mil_rank/fleet/o1
-			),
-			/datum/mil_branch/army = list(
-				/datum/mil_rank/army/e1,
-				/datum/mil_rank/army/e2,
-				/datum/mil_rank/army/e3,
-				///datum/mil_rank/army/e4,
-				/datum/mil_rank/army/e4_alt,
-				/datum/mil_rank/army/e5,
-				/datum/mil_rank/army/e6,
-				/datum/mil_rank/army/e7,
-				/datum/mil_rank/army/o1
-			)
-		),
-		/datum/species/machine/shell = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/e3,
 				/datum/mil_rank/ec/e5,
