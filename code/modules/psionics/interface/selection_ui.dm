@@ -115,7 +115,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "psi_ui.tmpl", "Psi abilities", 550, 370, src, state = state)
+		ui = new(user, src, ui_key, "psi_ui.tmpl", "Psi abilities", 600, 370, src, state = state)
 		ui.set_initial_data(data)
 		ui.open()
 
