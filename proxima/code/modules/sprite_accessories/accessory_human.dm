@@ -2,7 +2,7 @@
 
 /datum/sprite_accessory/marking/human
 	icon = 'proxima/icons/mob/human_races/species/human/markings.dmi'
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SHELL)
+	species_allowed = list(SPECIES_HUMAN, SPECIES_IPC)
 
 /datum/sprite_accessory/marking/human/burnface
 	name = "Burnface (severe, right)"

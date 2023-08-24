@@ -15,7 +15,7 @@
 		rad = ARMOR_RAD_SMALL
 		)
 	siemens_coefficient = 0.3
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 	light_overlay = "explorer_light"
 
 /obj/item/clothing/head/helmet/space/void/battlewizards/captain
@@ -43,7 +43,7 @@
 		)
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/melee/energy/sword,/obj/item/handcuffs)
 	siemens_coefficient = 0.3
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/suit/space/void/battlewizards/Initialize()
 	. = ..()
@@ -150,7 +150,7 @@
 		rad = ARMOR_BIO_SHIELDED
 		)
 	siemens_coefficient = 0.3
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 	light_overlay = "explorer_light"
 
 /obj/item/clothing/suit/space/void/ftu_salvager
@@ -171,7 +171,7 @@
 		)
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/melee/energy/sword,/obj/item/handcuffs)
 	siemens_coefficient = 0.3
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/suit/space/void/battlewizards/Initialize()
 	. = ..()
