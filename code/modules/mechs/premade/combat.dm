@@ -56,6 +56,9 @@
 /obj/item/mech_component/sensors/light/combat
 	max_damage = 50
 
+/obj/item/mech_component/sensors/light/combat/oni //so we can see horns atleast in some way
+	icon_state = "light_head_special"
+
 /obj/item/mech_component/sensors/light/combat/prebuild()
 	..()
 	software = new(src)

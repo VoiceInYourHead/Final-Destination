@@ -34,7 +34,7 @@
 
 	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION
-	appearance_flags = HAS_UNDERWEAR | HAS_EYE_COLOR //IPCs can wear undies too :(
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | HAS_EYE_COLOR //IPCs can wear undies too :(
 
 	blood_color = "#1f181f"
 	flesh_color = "#575757"
@@ -48,7 +48,7 @@
 	heat_discomfort_strings = list(
 		"Your CPU temperature probes warn you that you are approaching critical heat levels!"
 		)
-	genders = list(NEUTER)
+	genders = list(NEUTER, MALE, FEMALE, PLURAL)
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(

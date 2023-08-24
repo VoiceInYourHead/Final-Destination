@@ -26,7 +26,6 @@
 		SPECIES_SPACER = list(-7, -4, 0, 4, 7),
 		SPECIES_GRAVWORLDER = list(-7, -4, 0, 4, 7),
 		SPECIES_MULE = list(-7, -4, 0, 4, 7),
-		SPECIES_SHELL = list(-7, -4, 0, 4, 7),
 		SPECIES_IPC = list(-7, -4, 0, 4, 7),
 		SPECIES_UNATHI = list(-7, -4, 0, 4, 7),
 		SPECIES_YEOSA = list(-7, -4, 0, 4, 7),

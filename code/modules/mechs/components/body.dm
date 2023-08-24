@@ -38,6 +38,7 @@
 	var/max_pilot_size = MOB_LARGE
 	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
 	var/climb_time = 25
+	var/horned = FALSE
 
 /obj/item/mech_component/chassis/New()
 	..()
@@ -161,6 +162,16 @@
 			return
 		if(install_component(thing, user))
 			m_armour = thing
+	else if(istype(thing, /obj/item/stack/material/steel))
+		var/obj/item/stack/material/steel/metal = thing
+		if(metal.amount < 10)
+			to_chat(user, SPAN_WARNING("That's not enough for the horns!"))
+			return
+		if(do_after(user, 10, src))
+			to_chat(user, SPAN_WARNING("You starting to make horns for your chassis!"))
+			icon_state = "[initial(icon_state)]_h"
+			horned = TRUE
+			metal.amount -= 10
 	else
 		return ..()
 
@@ -214,6 +225,12 @@ obj/item/mech_component/chassis/MouseDrop(atom/over)
 	. = ..()
 	m_armour = new /obj/item/robot_parts/robot_component/armour/exosuit(src)
 
+/obj/item/mech_component/chassis/powerloader/attackby(var/obj/item/thing, var/mob/user)
+	. = ..()
+	if(istype(thing, /obj/item/stack/material/steel))
+		to_chat(user, SPAN_WARNING("There is no place for horns!"))
+		return
+
 /obj/item/mech_component/chassis/powerloader/Initialize()
 	pilot_positions = list(
 		list(
@@ -259,6 +276,9 @@ obj/item/mech_component/chassis/MouseDrop(atom/over)
 	)
 	. = ..()
 
+/obj/item/mech_component/chassis/light/horned
+	horned = TRUE
+
 /obj/item/mech_component/chassis/pod
 	name = "spherical exosuit chassis"
 	hatch_descriptor = "hatch"
@@ -302,6 +322,12 @@ obj/item/mech_component/chassis/MouseDrop(atom/over)
 		)
 	)
 	. = ..()
+
+/obj/item/mech_component/chassis/pod/attackby(var/obj/item/thing, var/mob/user)
+	. = ..()
+	if(istype(thing, /obj/item/stack/material/steel))
+		to_chat(user, SPAN_WARNING("There is no place for horns!"))
+		return
 
 /obj/item/mech_component/chassis/heavy
 	name = "reinforced exosuit chassis"
@@ -354,3 +380,7 @@ obj/item/mech_component/chassis/MouseDrop(atom/over)
 	)
 
 	. = ..()
+
+/obj/item/mech_component/chassis/combat/horned
+	icon_state = "combat_body_h"
+	horned = TRUE

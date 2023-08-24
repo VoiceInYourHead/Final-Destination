@@ -1,6 +1,6 @@
 /datum/sprite_accessory/marking/booster
-	species_allowed = list(SPECIES_HUMAN)
-	subspecies_allowed = list(SPECIES_HUMAN)
+	species_allowed = list(SPECIES_HUMAN, SPECIES_IPC)
+	subspecies_allowed = list(SPECIES_HUMAN, SPECIES_IPC)
 	icon = 'icons/mob/human_races/species/human/subspecies/booster_mods.dmi'
 
 
