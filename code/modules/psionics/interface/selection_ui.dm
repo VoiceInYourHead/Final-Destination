@@ -37,7 +37,7 @@
 		if(3)
 			. = 9
 		if(4)
-			. = 13
+			. = 14
 
 	for(var/category in selected)
 		for(var/level in 1 to levels.len)
