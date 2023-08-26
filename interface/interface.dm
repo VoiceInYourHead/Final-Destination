@@ -91,7 +91,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tCtrl+q = drop
 \tCtrl+e = equip
 \tCtrl+r = throw
-\tCtrl+x or Middle Mouse = swap-hand
+\tCtrl+x = swap-hand
 \tCtrl+z = activate held object (or Ctrl+y)
 \tCtrl+f = cycle-intents-left
 \tCtrl+g = cycle-intents-right
@@ -106,7 +106,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tDEL = pull
 \tINS = cycle-intents-right
 \tHOME = drop
-\tPGUP or Middle Mouse = swap-hand
+\tPGUP = swap-hand
 \tPGDN = activate held object
 \tEND = throw
 \tCtrl + Click = drag

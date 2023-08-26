@@ -457,8 +457,8 @@ GLOBAL_LIST_INIT(click_catchers, create_click_catcher())
 /obj/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)
 	if(modifiers["middle"] && istype(usr, /mob/living/carbon))
-		var/mob/living/carbon/C = usr
-		C.swap_hand()
+//		var/mob/living/carbon/C = usr
+//		C.swap_hand()
 	else
 		var/turf/T = screen_loc2turf(screen_loc, get_turf(usr))
 		if(T)
