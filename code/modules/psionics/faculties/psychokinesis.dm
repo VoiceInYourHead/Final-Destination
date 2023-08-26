@@ -60,7 +60,7 @@
 	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone from you."
+	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone away from you."
 
 /decl/psionic_power/psychokinesis/gravigeddon/invoke(var/mob/living/user, var/mob/living/target)
 	if(!(user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
