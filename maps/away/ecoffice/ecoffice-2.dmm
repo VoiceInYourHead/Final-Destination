@@ -1,0 +1,319 @@
+"ah" = (/turf/simulated/floor/tiled/steel_grid,/area/ec_office/indoor/mission/second)
+"ak" = (/turf/simulated/floor/carpet/blue2,/area/ec_office/indoor/fleet)
+"ar" = (/obj/effect/floor_decal/corner/blue/mono,/obj/structure/flora/pottedplant/orientaltree,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"aG" = (/turf/simulated/floor/wood/mahogany,/area/ec_office/indoor)
+"aO" = (/obj/effect/paint/hull,/turf/simulated/wall/concrete,/area/ec_office/indoor)
+"aP" = (/obj/effect/floor_decal/corner/blue/half{dir = 1},/obj/machinery/firealarm{pixel_y = 17},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"aY" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/obj/machinery/door/blast/shutters/open{name = "Lockdown Shutters"; id_tag = "ecoffice_security_lockdown"; dir = 4},/turf/simulated/floor/plating,/area/ec_office/outdoor/near)
+"be" = (/obj/effect/floor_decal/corner/blue/half{dir = 8},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"bj" = (/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"bF" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor)
+"bL" = (/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"bS" = (/obj/effect/paint/black,/obj/effect/paint_stripe/yellow,/turf/simulated/wall/concrete,/area/ec_office/indoor/mission/second)
+"cj" = (/obj/effect/floor_decal/corner/blue/half{dir = 8},/obj/structure/table/standard,/obj/machinery/recharger,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"cl" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/obj/machinery/door/blast/shutters/open{name = "Lockdown Shutters"; id_tag = "ecoffice_security_lockdown"},/turf/simulated/floor/plating,/area/ec_office/indoor/mission/second)
+"cs" = (/obj/machinery/door/airlock/atmos{name = "FIRE EXIT"},/obj/item/airlock_brace,/turf/simulated/floor/tiled/steel_grid,/area/ec_office/indoor/mission/second)
+"cM" = (/obj/structure/table/woodentable/walnut,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/carpet/blue2,/area/ec_office/indoor/fleet)
+"df" = (/turf/simulated/floor/wood,/area/ec_office/indoor)
+"dk" = (/obj/structure/noticeboard{pixel_y = 26},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"eW" = (/turf/simulated/floor/tiled/steel_grid,/area/ec_office/indoor)
+"fb" = (/turf/simulated/floor/carpet/green,/area/ec_office/indoor/exo)
+"fh" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; pixel_y = -21},/turf/simulated/floor/wood/walnut,/area/ec_office/indoor)
+"fM" = (/obj/structure/sign/double/solgovflag/right{dir = 1; pixel_x = 0; pixel_y = -32},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"fR" = (/obj/effect/floor_decal/stoneborder/corner{dir = 8},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"fV" = (/obj/structure/railing/mapped{dir = 1},/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"gH" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/obj/machinery/door/blast/shutters/open{name = "Lockdown Shutters"; id_tag = "ecoffice_security_lockdown"; dir = 4},/turf/simulated/floor/plating,/area/ec_office/indoor/exo)
+"gI" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"hk" = (/obj/machinery/power/apc/debug{cell_type = /obj/item/cell/infinite; pixel_y = -25},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"hq" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor/near)
+"hv" = (/obj/structure/table/woodentable/walnut,/turf/simulated/floor/carpet/blue2,/area/ec_office/indoor/fleet)
+"hA" = (/obj/machinery/door/unpowered/simple/iron,/turf/simulated/floor/tiled/monotile,/area/ec_office/indoor)
+"hW" = (/obj/machinery/papershredder,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"in" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/obj/machinery/door/blast/shutters/open{name = "Lockdown Shutters"; id_tag = "ecoffice_security_lockdown"; dir = 4},/turf/simulated/floor/plating,/area/ec_office/indoor/fleet)
+"iq" = (/obj/effect/paint/hull,/turf/simulated/floor/lino,/area/ec_office/indoor)
+"iw" = (/obj/effect/floor_decal/stoneborder{dir = 8},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"je" = (/obj/structure/catwalk,/turf/simulated/open,/area/ec_office/outdoor)
+"ji" = (/obj/effect/floor_decal/industrial/hatch/red,/obj/structure/sign/directions/evac{pixel_y = 22; pixel_x = 32; dir = 4; name = "\improper BREAK WINDOW IN CASE OF FIRE"},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"jL" = (/obj/effect/floor_decal/corner/blue/half,/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"jY" = (/obj/effect/floor_decal/stoneborder/corner,/obj/effect/floor_decal/industrial/warning/dust{dir = 8},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"kh" = (/obj/effect/paint/black,/obj/effect/paint_stripe/green,/turf/simulated/wall/concrete,/area/ec_office/indoor/exo)
+"ks" = (/obj/structure/flora/pottedplant/aquatic,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"ku" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 8},/turf/simulated/open,/area/ec_office/outdoor)
+"kT" = (/obj/structure/table/woodentable/maple,/obj/item/material/ashtray/bronze,/turf/simulated/floor/carpet/green,/area/ec_office/indoor/exo)
+"lc" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; dir = 4; pixel_x = -23},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor)
+"lq" = (/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor)
+"lr" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"lK" = (/obj/structure/noticeboard{pixel_y = 26},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"lR" = (/obj/machinery/door/unpowered/simple/plastic/open,/turf/simulated/floor/tiled/white,/area/ec_office/indoor)
+"lS" = (/obj/effect/floor_decal/corner/blue/half{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"mk" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/obj/machinery/door/blast/shutters/open{name = "Lockdown Shutters"; id_tag = "ecoffice_security_lockdown"; dir = 4},/turf/simulated/floor/plating,/area/ec_office/indoor/mission/second)
+"mJ" = (/obj/structure/table/woodentable/walnut,/obj/item/book/manual/military_law,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"mK" = (/turf/simulated/open,/area/ec_office/outdoor)
+"na" = (/obj/structure/bed/chair/office/comfy/blue{dir = 8},/obj/effect/submap_landmark/spawnpoint/ecoffice/fleet,/turf/simulated/floor/carpet/blue2,/area/ec_office/indoor/fleet)
+"nk" = (/obj/effect/floor_decal/stoneborder/corner{dir = 1},/obj/effect/floor_decal/industrial/warning/dust{dir = 4},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"no" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"nE" = (/turf/simulated/floor/tiled,/area/ec_office/indoor)
+"nF" = (/obj/effect/floor_decal/corner/lightgrey{dir = 4; pixel_x = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"nJ" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; pixel_y = -21},/turf/simulated/floor/tiled,/area/ec_office/indoor)
+"nU" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"nZ" = (/turf/simulated/floor/tiled/dark,/area/ec_office/indoor)
+"oa" = (/obj/machinery/photocopier,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"oc" = (/obj/machinery/door/unpowered/simple/iron{locked = 1; name = "Apartment 1"},/turf/simulated/floor/wood/walnut,/area/ec_office/indoor)
+"ok" = (/obj/effect/floor_decal/stoneborder{dir = 4},/obj/effect/floor_decal/industrial/warning/dust{dir = 8},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"ol" = (/obj/machinery/computer/modular/preset/full/ert,/turf/simulated/floor/carpet/blue2,/area/ec_office/indoor/fleet)
+"oq" = (/obj/structure/coatrack,/obj/item/clothing/suit/storage/leather_jacket/nanotrasen,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"oJ" = (/obj/effect/paint/black,/turf/simulated/wall/concrete,/area/ec_office/indoor/mission/second)
+"oK" = (/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"pb" = (/obj/structure/sign/emergonly{dir = 1; pixel_y = -32},/obj/effect/floor_decal/corner/blue/half,/obj/effect/floor_decal/industrial/warning/corner{dir = 8; icon_state = "warningcorner"},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"ph" = (/obj/machinery/firealarm{dir = 1; pixel_y = -24},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"pn" = (/obj/effect/paint/black,/obj/effect/paint_stripe/blue,/turf/simulated/wall/concrete,/area/ec_office/indoor/fleet)
+"pJ" = (/obj/effect/floor_decal/stoneborder/corner{dir = 4},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"pO" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/obj/machinery/door/blast/shutters/open{name = "Lockdown Shutters"; id_tag = "ecoffice_security_lockdown"},/turf/simulated/floor/plating,/area/ec_office/outdoor/near)
+"qs" = (/obj/effect/floor_decal/corner/blue/half,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"qy" = (/turf/simulated/open,/area/ec_office/outdoor/near)
+"qC" = (/turf/simulated/floor/carpet/orange,/area/ec_office/indoor)
+"qK" = (/obj/structure/closet/firecloset,/obj/effect/floor_decal/industrial/outline/red,/turf/simulated/floor/tiled/steel_ridged,/area/ec_office/indoor/mission/second)
+"qZ" = (/obj/structure/sign/directions/evac{pixel_y = 22; pixel_x = 32; dir = 4; name = "\improper BREAK WINDOW IN CASE OF FIRE"},/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"rp" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; pixel_y = -21},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor)
+"rA" = (/obj/machinery/door/airlock/atmos{name = "FIRE EXIT"},/turf/simulated/floor/tiled/steel_grid,/area/ec_office/indoor/mission/second)
+"rH" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 8},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor)
+"sr" = (/obj/effect/floor_decal/corner/blue/half,/obj/machinery/power/apc/debug{cell_type = /obj/item/cell/infinite; pixel_y = -25},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"st" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor/near)
+"sy" = (/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"sK" = (/obj/structure/railing/mapped{dir = 8},/obj/structure/railing/mapped,/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"th" = (/obj/effect/floor_decal/stoneborder{dir = 1},/obj/effect/floor_decal/industrial/warning/dust,/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"ti" = (/obj/effect/paint/red/dark,/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/ec_office/indoor)
+"tw" = (/obj/effect/floor_decal/corner/lightgrey{pixel_y = -1; pixel_x = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"uH" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 1},/turf/simulated/open,/area/ec_office/outdoor)
+"ve" = (/obj/structure/table/woodentable/maple,/obj/structure/flora/pottedplant/deskleaf,/turf/simulated/floor/carpet/green,/area/ec_office/indoor/exo)
+"vi" = (/obj/structure/table/woodentable/maple,/obj/machinery/photocopier/faxmachine{department = "Mars ECO - Corporate Liaison"},/obj/machinery/newscaster{pixel_x = 32},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"vk" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8},/turf/simulated/open,/area/ec_office/outdoor)
+"vr" = (/obj/effect/floor_decal/stoneborder,/obj/effect/floor_decal/industrial/warning/dust{dir = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"vX" = (/obj/effect/floor_decal/corner/blue/half{dir = 4; icon_state = "bordercolorhalf"},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"wv" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor)
+"xo" = (/obj/effect/paint/silver,/turf/simulated/wall/concrete,/area/ec_office/indoor)
+"xC" = (/obj/structure/closet/secure_closet/personal/cabinet,/obj/item/clothing/head/beret/solgov/fleet/dress/command,/obj/item/clothing/head/beret/solgov/fleet/command,/obj/item/clothing/head/solgov/utility/fleet,/obj/item/clothing/suit/storage/solgov/dress/fleet/command,/obj/item/clothing/under/solgov/utility/fleet/polopants/command,/obj/item/gun/energy/confuseray,/obj/item/clothing/glasses/sunglasses,/obj/item/storage/secure/briefcase,/obj/item/crowbar/emergency_forcing_tool,/obj/item/clothing/accessory/storage/holster/armpit,/obj/item/clothing/accessory/badge/solgov/tags,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"yj" = (/obj/structure/ladder,/obj/structure/catwalk,/turf/simulated/open,/area/ec_office/outdoor)
+"yo" = (/turf/simulated/floor/lino,/area/ec_office/indoor)
+"yv" = (/obj/effect/floor_decal/stoneborder/corner{dir = 4},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"yP" = (/obj/effect/paint/red/dark,/turf/simulated/wall/concrete,/area/ec_office/indoor)
+"zG" = (/turf/simulated/floor/wood/walnut,/area/ec_office/indoor)
+"zT" = (/obj/structure/table/woodentable/walnut,/obj/item/material/sword/replica/officersword/pettyofficer,/obj/item/toy/bosunwhistle,/turf/simulated/floor/carpet/blue2,/area/ec_office/indoor/fleet)
+"Ak" = (/obj/structure/railing/mapped{dir = 4},/obj/structure/railing/mapped,/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"Al" = (/obj/effect/floor_decal/stoneborder{dir = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"Ao" = (/obj/effect/floor_decal/corner/blue/half{dir = 4; icon_state = "bordercolorhalf"},/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"Aq" = (/obj/effect/paint/black,/obj/effect/paint_stripe/blue,/obj/effect/wallframe_spawn/reinforced/polarized{id = "eco_fleet"},/turf/simulated/floor/plating,/area/ec_office/indoor/fleet)
+"Aw" = (/obj/machinery/door/airlock/lift,/turf/simulated/floor/plating,/area/ec_office/indoor)
+"AD" = (/obj/machinery/door/unpowered/simple/iron,/turf/simulated/floor/tiled/steel_ridged,/area/ec_office/indoor)
+"AI" = (/obj/machinery/firealarm{dir = 1; pixel_y = -24},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"AN" = (/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"Bi" = (/turf/simulated/floor/carpet,/area/ec_office/indoor)
+"Bn" = (/obj/structure/sign/directions/evac{pixel_y = 21},/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"Bq" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/indoor)
+"Bv" = (/obj/effect/floor_decal/corner/blue/half{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"BA" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor/near)
+"BG" = (/obj/structure/ladder,/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/ec_office/outdoor)
+"BW" = (/obj/effect/floor_decal/stoneborder{dir = 4},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"Cn" = (/obj/effect/paint/sun,/turf/simulated/wall/concrete,/area/ec_office/indoor)
+"Cs" = (/obj/effect/floor_decal/stoneborder,/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"Ew" = (/obj/item/storage/secure/safe{pixel_y = 23},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"EJ" = (/obj/structure/railing/mapped{dir = 8},/obj/structure/railing/mapped{dir = 1},/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"EP" = (/obj/effect/paint/black,/turf/simulated/wall/concrete,/area/ec_office/indoor/fleet)
+"ES" = (/obj/structure/sign/warning/secure_area{pixel_y = 24},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"Fd" = (/obj/structure/table/woodentable/maple,/obj/item/book/manual/nt_regs,/obj/item/book/union_charter,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"Fs" = (/obj/machinery/power/apc/debug{cell_type = /obj/item/cell/infinite; pixel_y = -25},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"FO" = (/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"FT" = (/turf/simulated/floor/carpet/purple,/area/ec_office/indoor)
+"FW" = (/obj/effect/floor_decal/stoneborder,/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"GT" = (/obj/effect/paint/sun,/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/ec_office/indoor)
+"Hc" = (/obj/structure/railing/mapped,/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"Hg" = (/turf/simulated/floor/tiled/monotile,/area/ec_office/indoor)
+"HC" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; pixel_y = 21},/turf/simulated/floor/tiled,/area/ec_office/indoor)
+"HH" = (/obj/structure/ladder,/obj/structure/catwalk,/turf/simulated/open,/area/ec_office/outdoor/near)
+"HM" = (/obj/structure/coatrack,/obj/item/clothing/suit/storage/jacket/solgov/fleet/command,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"HZ" = (/obj/structure/railing/mapped{dir = 8},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/indoor)
+"In" = (/obj/machinery/button/windowtint{pixel_y = 23; id = "eco_fleet"},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"Jf" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/turf/simulated/open,/area/ec_office/outdoor)
+"JZ" = (/obj/structure/closet/firecloset,/obj/effect/floor_decal/industrial/outline/red,/obj/item/crowbar/brace_jack,/turf/simulated/floor/tiled/steel_ridged,/area/ec_office/indoor/mission/second)
+"Kq" = (/obj/structure/closet/secure_closet/personal/cabinet,/obj/item/gun/energy/confuseray,/obj/item/clothing/glasses/sunglasses,/obj/item/storage/secure/briefcase,/obj/item/crowbar/emergency_forcing_tool,/obj/item/clothing/accessory/storage/holster/armpit,/obj/item/clothing/under/rank/ntwork,/obj/item/clothing/under/rank/ntpilot,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"Kr" = (/obj/machinery/computer/modular/preset/full/ert,/turf/simulated/floor/carpet/green,/area/ec_office/indoor/exo)
+"KJ" = (/obj/machinery/door/airlock/research{name = "Corporate Liaison"},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"KQ" = (/obj/effect/floor_decal/stoneborder/corner{dir = 8},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"LG" = (/obj/machinery/button/windowtint{pixel_y = 23; id = "eco_corporate"},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"LY" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; pixel_y = 21},/turf/simulated/floor/wood/walnut,/area/ec_office/indoor)
+"Mr" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"Mx" = (/obj/structure/table/woodentable/walnut,/obj/machinery/photocopier/faxmachine{department = "Mars ECO - Armed Forces Liaison"},/obj/machinery/newscaster{pixel_x = 32},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"My" = (/obj/item/storage/secure/safe{pixel_y = 23},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"Mz" = (/obj/effect/floor_decal/stoneborder,/obj/effect/floor_decal/industrial/warning/dust{dir = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"MS" = (/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/ec_office/indoor)
+"Nh" = (/obj/effect/floor_decal/stoneborder/corner,/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"Nm" = (/turf/simulated/floor/carpet/red,/area/ec_office/indoor)
+"NG" = (/obj/machinery/door/unpowered/simple/iron{locked = 1; name = "Apartment 1"},/turf/simulated/floor/wood/bamboo,/area/ec_office/indoor)
+"Oi" = (/obj/structure/table/woodentable/maple,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/carpet/green,/area/ec_office/indoor/exo)
+"Oz" = (/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"OE" = (/obj/effect/floor_decal/stoneborder/corner{dir = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"OH" = (/obj/structure/table/woodentable/walnut,/obj/item/material/ashtray/glass,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"OM" = (/obj/effect/paint/black,/turf/simulated/wall/concrete,/area/ec_office/outdoor/near)
+"OO" = (/obj/machinery/papershredder,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"Pg" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 1; icon_state = "warningcorner"},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"PI" = (/obj/machinery/door/unpowered/simple/iron{locked = 1; name = "Apartment 1"},/turf/simulated/floor/wood,/area/ec_office/indoor)
+"Ql" = (/obj/structure/flora/pottedplant/unusual,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"Qm" = (/obj/structure/bed/chair/office/comfy/green{dir = 8},/obj/effect/submap_landmark/spawnpoint/ecoffice/exo,/turf/simulated/floor/carpet/green,/area/ec_office/indoor/exo)
+"Qw" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor/near)
+"Re" = (/obj/effect/floor_decal/stoneborder{dir = 8},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"RF" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/floor_decal/industrial/warning/corner{dir = 8; icon_state = "warningcorner"},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"RN" = (/obj/effect/floor_decal/stoneborder{dir = 4},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"Si" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor/mission/second)
+"Sj" = (/obj/structure/railing/mapped{dir = 1},/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"Sp" = (/obj/item/material/bell{icon_state = "doorbell"; anchored = 1; dir = 4; pixel_x = 23},/turf/simulated/floor/tiled/dark,/area/ec_office/indoor)
+"ST" = (/obj/structure/sign/warning/smoking{pixel_y = 22},/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"Tp" = (/obj/effect/floor_decal/corner/blue/mono,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"Tw" = (/turf/simulated/floor/tiled/steel_ridged,/area/ec_office/indoor/mission/second)
+"TJ" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/ec_office/outdoor)
+"TL" = (/turf/simulated/open,/area/ec_office/indoor)
+"TO" = (/turf/simulated/floor/wood/bamboo,/area/ec_office/indoor)
+"TS" = (/obj/structure/hygiene/sink{dir = 8; pixel_x = -11},/obj/item/storage/mirror{pixel_x = -25},/turf/simulated/floor/tiled/white,/area/ec_office/indoor)
+"Ue" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/indoor)
+"Ur" = (/obj/effect/floor_decal/stoneborder{dir = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"UE" = (/obj/effect/floor_decal/stoneborder{dir = 8},/obj/effect/floor_decal/industrial/warning/dust{dir = 4},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"UR" = (/obj/structure/sign/warning/smoking{pixel_y = 22},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"UU" = (/obj/machinery/photocopier,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"Vc" = (/obj/effect/floor_decal/stoneborder/corner,/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"Vj" = (/obj/effect/floor_decal/stoneborder/corner{dir = 1},/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"Vs" = (/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor/near)
+"VD" = (/obj/structure/railing/mapped{dir = 8},/turf/simulated/open,/area/ec_office/indoor/mission/second)
+"VI" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 1},/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/ec_office/outdoor)
+"VT" = (/obj/effect/paint/black,/turf/simulated/wall/concrete,/area/ec_office/indoor/exo)
+"Wy" = (/obj/effect/paint/merc,/turf/simulated/wall/concrete,/area/ec_office/indoor)
+"WW" = (/obj/structure/sign/double/solgovflag/left{dir = 1; pixel_x = 0; pixel_y = -32},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"XD" = (/turf/simulated/floor/shuttle_ceiling/air,/area/ec_office/outdoor)
+"XI" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/open,/area/ec_office/outdoor/near)
+"Yc" = (/obj/machinery/door/airlock/sol{name = "Armed Forces Liaison"},/turf/simulated/floor/lino,/area/ec_office/indoor/fleet)
+"YY" = (/obj/structure/catwalk,/turf/simulated/open,/area/ec_office/outdoor/near)
+"Zh" = (/obj/effect/paint/black,/obj/effect/paint_stripe/green,/obj/effect/wallframe_spawn/reinforced/polarized{id = "eco_corporate"},/turf/simulated/floor/plating,/area/ec_office/indoor/exo)
+"Zp" = (/obj/structure/sign/directions/evac{pixel_y = -20},/obj/effect/floor_decal/corner/blue/half,/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled/dark/monotile,/area/ec_office/indoor/mission/second)
+"Zu" = (/obj/structure/table/woodentable/maple,/obj/item/storage/box/large/union_cards,/turf/simulated/floor/lino,/area/ec_office/indoor/exo)
+"ZW" = (/obj/structure/hygiene/toilet{dir = 8},/turf/simulated/floor/tiled/white,/area/ec_office/indoor)
+
+(1,1,1) = {"
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJoJclclcloJoJoJclclclcloJoJoJclclcloJEPEPEPEPEPEPEPEPFWFWFWFWFWFWFWFWFWFWFWFWFWFWVjqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJarlSlSlSlSlSlSlSlSlSlSlSaPlSlSlSlSBnAqksInlKEwURxCEPVsVsVsVsVsVsVsVsVsVsVsVsVsVsnFFWFWFWFWFWFWVjqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJBvbLbjbjbjbjbjbjbjbjbjbjbjbjbjbjRFEJAqoaakcMolakjiinVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqymkBvgIEJSjSjSjSjSjSjSjSjSjSjSjSjfVSiVDAqOOakzTnaakOHinVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqymkcjgIVDOzOzOzOzOzOzOzOzOzOzOzOzANnoAopnHMakhvakakmJinVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqymkbegIVDOzOzOzOzOzOzOzOzOzOzOzOzANMrvXYchkAIfMWWFOMxEPVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJBvgIVDOzOzOzOzOzOzOzOzOzOzOzOzANMrvXEPEPEPEPEPEPEPEPVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqymkbegIVDOzOzOzOzOzOzOzOzOzOzOzOzANMrvXZhQlLGdkMySTKqVTVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqymkbegIVDOzOzOzOzOzOzOzOzOzOzOzOzANMrvXZhUUfbOiKrfbqZgHVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqymkBvgIsKHcHcHcHcHcHcHcHcHcHcHcHcAkMrvXZhhWfbkTQmfbFdgHVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReBAstQwqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJBvnUlrlrlrlrlrlrlrlrlrlrlrlrlrlrPgvXkhoqfbvefbfbZugHVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReXIHHhqqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJarZpjLpbqsqssrqsqsqsqsqsqsqsqsqsqsTpKJFsphsysysyviVTVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsnFMzMzMzVjqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyoJbSbSrAbSbSoJoJclclclcloJoJclclcloJoJVTVTVTVTVTVTVTVTVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNbSJZahTwbSVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNbSqKahTwbSVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNbSbScsbSbSVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsoKESVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsOMpOpOpOpOpOpOpOpOpOpOpOOMVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsaYYYYYYYYYYYYYYYYYYYYYYYaYVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsaYYYqyqyqyqyqyqyqyqyqyYYaYVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsaYYYYYYYYYYYYYYYYYYYYYYYaYVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsOMpOpOpOpOpOpOpOpOpOpOpOOMVsVsVsVsVsVsVsVsVsVsVstwAlAlAlAlAlyvqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyKQAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlAlyvqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyVcFWFWFWFWFWVjqyqyqyqyqyVsVsVsVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsReqyqyqyqyVsVsVsVsVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsReqyqyqyqyVsVsVsVsVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsReqyqyqyqyVsVsVsVsVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyRNVsVsVsVsVsReqyqyqyqyVsVsVsVsVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyKQAlAlAlAlAlyvqyqyqyqyqyVsVsVsVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyVsVsVsVsVsVsVsVsVsVsqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKVcFWFWFWVjqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKRNVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKRNVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKRNVsVsVsReqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKKQAlAlAlyvqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqyqymKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKyPyPtititiyPyPyPtititiyPyPmKmKCnCnGTGTGTCnCnCnGTGTGTCnCnmKmKNhCsCsCsCsCsCsCsCsCsCsCsCsCsCsCsCsOEmKmKaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOmKmKmKmKmKmKmKNhCsCsCsCsCsCsCsCsCsCsCsCsCsCsCsCsCsCsOEmKmKyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPmK
+mKyPBiBiBiBiBixodfdfBiBiBiyPmKmKCndfdfdfdfdfxoaGaGaGaGaGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfWynZyonZWydfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPBiBiBiBiBixodfdfBiBiBiyPmKmKCndfNmNmNmdfxoFTFTFTaGaGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfWynZyonZWydfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPdfdfdfdfdfxodfdfBiBiBiyPmKmKCndfNmNmNmdfxoFTFTFTaGaGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfPInZyonZPIdfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPdfdfdfdfdfxodfdfBiBiBiyPmKmKCndfdfdfdfdfxoFTFTFTaGaGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfWylcyoSpWydfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPxoocxoxolRxolRxoxoocxoyPmKmKCnxoocxoxolRxolRxoxoocxoCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOWyWyWyWyWyWyWynZyonZWyWyWyWyWyWyWyaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPzGzGLYxoTSxoTSxozGzGLYyPmKmKCnzGzGLYxoTSxoTSxozGzGLYCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfWynZyonZWydfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPzGNmzGxoZWxoZWxozGNmzGyPmKmKCnzGqCzGxoZWxoZWxozGqCzGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfWynZyonZWydfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPzGNmzGxoxoxoxoxozGNmzGyPmKmKCnzGqCzGxoxoxoxoxozGqCzGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfPInZyonZPIdfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPzGNmzGxoTLTLTLxozGNmzGyPmKmKCnzGqCzGxoTLTLTLxozGqCzGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOdfdfdfdfdfdfWylcyoSpWydfdfdfdfdfdfaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPzGNmzGxoTLTLTLxozGNmzGyPmKmKCnzGqCzGxoTLTLTLxozGqCzGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOWyWyWyWyWyWyWynZyonZWyWyWyWyWyWyWyaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPTOTOTOTOTOTOTOxonEnExoTOTOTOTOTOTOTOyPmK
+mKyPzGNmzGxoTLTLTLxozGNmzGyPmKmKCnzGqCzGxoTLTLTLxozGqCzGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOnZnZnZnZnZnZnZnZyonZnZnZnZnZnZnZnZaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPxoxoxoNGxoxoxoxonEnExoxoxoxoNGxoxoxoyPmK
+mKyPzGNmzGxoAwAwAwxozGNmzGyPmKmKCnzGqCzGxoAwAwAwxozGqCzGCnmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKaOyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoiqmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKyPnEnEnEnEHCnEnEnEnEnEnEnEnEnEnEHCnEnEyPmK
+mKyPzGNmzGyoyoyoyoyozGNmzGyPmKmKCnzGqCzGyoyoyoyoyozGqCzGCnmKmKfRUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrpJmKmKaOnZrprpnZnZnZnZnZnZnZnZnZnZnZnZnZnZaOmKmKmKmKmKmKmKfRUrUrUrUrUrUrUrthththUrUrUrUrUrUrUrUrpJmKmKyPnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEnJnEnEyPmK
+mKyPzGzGzGyoyoyoyoyofhzGzGyPmKmKCnzGzGzGyoyoyoyoyofhzGzGCnmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKaOWyWyPIWyWyWyWyWyWyWyWyADWyWylqlqlqaOmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKkujebFmKmKmKmKmKmKmKmKmKmKmKyPAwAwAwxoxohAxoxoxoxoxoxoxoxoxoxoNGxoyPmK
+mKyPxoADxoxoxoxoxoxoxoPIxoyPmKmKCnxoADxoxoxoxoxoxoxoPIxoCnmKrHwvjYCsCsCsCsCsCsCsCsCsCsCsCsCsCsOEmKmKmKaOdfdfdfdfdfdfdfdfdfdfWynEBqWyAwAwAwaOmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKkujebFmKmKmKmKmKmKmKmKmKmKmKyPTLTLTLxoeWeWeWeWxoTOTOTOTOTOTOTOTOTOyPmK
+mKyPHgnEnExodfdfdfdfdfdfdfyPmKmKCnHgnEnExodfdfdfdfdfdfdfCnmKkuyjokXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKmKaOdfdfdfdfdfdfdfdfdfdfWynEBqWyTLTLTLaOmKmKmKmKmKmKmKNhCsCsCsCsCsCsCsvrvrvrCsCsCsCsCsnkuHVImKmKmKyPTLTLTLxoeWeWeWeWxoTOTOTOTOTOTOTOTOTOyPmK
+mKyPMSnEnExodfdfdfdfdfdfdfyPmKmKCnMSnEnExodfdfdfdfdfdfdfCnmKvkJfokXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKmKaOdfdfdfdfdfdfdfdfdfdfWynEnEWyTLTLTLaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDUEjeBGmKmKmKyPTLTLTLxoeWHZUeeWxoTOTOTOTOTOTOTOTOTOyPmK
+mKyPMSnEnExodfdfdfdfdfdfdfyPmKmKCnMSnEnExodfdfdfdfdfdfdfCnmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKmKaOdfdfdfdfdfdfdfdfdfdfWynEnEWyTLTLTLaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDUEJfTJmKmKmKyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPyPmK
+mKyPyPyPyPyPtititiyPyPyPyPyPmKmKCnCnCnCnCnGTGTGTCnCnCnCnCnmKmKmKfRUrUrUrUrUrUrUrUrUrUrUrUrUrUrpJmKmKmKaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOaOmKmKmKmKmKmKmKBWXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDiwmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+mKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKfRUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrpJmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmKmK
+"}

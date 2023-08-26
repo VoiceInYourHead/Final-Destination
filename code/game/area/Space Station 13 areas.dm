@@ -96,6 +96,11 @@ area/space/atmosalert()
 /area/space/partyalert()
 	return
 
+/area/space/aerospace
+	name = "\improper Aerospace"
+	icon_state = "aerospace"
+	ambience = list('sound/effects/wind/desert0.ogg', 'sound/effects/wind/desert1.ogg', 'sound/effects/wind/desert2.ogg', 'sound/effects/wind/desert3.ogg', 'sound/effects/wind/desert4.ogg')
+
 //////////////////////
 //AREAS USED BY CODE//
 //////////////////////

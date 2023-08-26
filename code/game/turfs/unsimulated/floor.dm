@@ -91,3 +91,14 @@
 
 /turf/unsimulated/floor/steeldirty
 	icon_state = "steel_dirty"
+
+// Sky
+
+/turf/unsimulated/clouds
+	name = "dense clouds"
+	desc = "You surely won't survive falling from such height."
+	icon = 'icons/turf/space.dmi'
+	icon_state = "clouds"
+
+/turf/unsimulated/clouds/attackby(obj/O as obj, mob/user as mob)
+	return
