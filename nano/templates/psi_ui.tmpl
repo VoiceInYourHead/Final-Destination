@@ -1,0 +1,61 @@
+<style>
+	.Selectable,
+	.Current,
+	.Unavailable,
+	.Toohigh{border: 1px solid #161616;padding: 1px 4px 1px 4px;margin: 0 2px 0 0; text-align:center; width:14%}
+	.Selectable,
+	a.Selectable{background: #40628a}
+	.Current,
+	a.Current{background: #2f943c}
+	.Unavailable{background: #404040}
+	.center {
+	  margin: auto;
+	}
+	.link, .linkOn, .linkOff, .selected, .disabled, .yellowButton, .redButton
+	{
+		float:none;
+		border:none;
+		margin:none;
+	}
+
+</style>
+
+<div style="text-align: center">
+	<b>Points remaining: {{:data.free_points}}</b><br>
+	<div class="Selectable" style="width:auto">
+	{{:helper.link("Confirm", null, {'confirm' : 1})}}
+	</div>
+</div>
+
+<table style="width:100%">
+	{{for data.faculties}}
+		<tr class="candystripe">
+		<th colspan="6">
+			<div class="average">
+				{{:value.name}}:
+			</div>
+		</th>
+		{{for value.levels :levelValue:levelIndex}}
+			{{if levelValue.selected}}
+				<td class="Current">
+					<div class="center">
+						{{:levelValue.name}}
+					</div>
+				</td>
+			{{else levelValue.selectable}}
+				<td class="Selectable">
+					<div class="center">
+						{{:helper.link(levelValue.name, null, {'select' : levelValue.level, 'category' : levelValue.category})}}
+					</div>
+				</td>
+			{{else}}
+				<td class="Unavailable">
+					<div class="center">
+						{{:levelValue.name}}
+					</div>
+				</td>
+			{{/if}}
+		{{/for}}
+		</tr>
+	{{/for}}
+</table>

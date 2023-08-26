@@ -10,7 +10,7 @@
 	base_type = /obj/machinery/magnetic_accelerator
 	construct_state = /decl/machine_construction/default/panel_closed
 
-	var/use_power = 20000
+	use_power = 20000
 	var/modifier = 1.2
 	var/cooldown = 80
 	var/next_throw = 0

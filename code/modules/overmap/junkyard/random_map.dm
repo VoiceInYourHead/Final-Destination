@@ -1,4 +1,3 @@
-#define  COAST_VALUE  cell_range + 1
 /datum/random_map/noise/junkyard
 	descriptor = "junkyard"
 	smoothing_iterations = 1

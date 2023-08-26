@@ -47,7 +47,7 @@
 	playsound(user.loc, 'sound/effects/coin_flip.ogg', 75, 1)
 	user.visible_message(SPAN_NOTICE("\The [user] flips \the [src] into the air and catches it, revealing that it landed on [pick("tails", "heads")]!"))
 
-/obj/item/material/coin/throw_at()
+/obj/item/material/coin/throw_at(spin)
 	playsound(src.loc, 'sound/effects/coin_flip.ogg', 75, 1)
 	..()
 

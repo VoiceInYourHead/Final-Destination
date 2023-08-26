@@ -124,8 +124,6 @@
 		src.transform = M
 
 /datum/ai_holder/smart_animal/proc/setup_temper()
-	. = ..()
-
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = holder
 
 	sympathy = rand(1,100)
@@ -458,7 +456,8 @@
 					break
 
 			for(var/obj/item/organ/external/E in oview(src, range))
-				if(isturf(E.loc) && E.get_contents_recursive().len)
+				var/list/organs_in_limb = E.get_contents_recursive()
+				if(isturf(E.loc) && organs_in_limb.len)
 					movement_target = E
 					break
 

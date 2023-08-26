@@ -43,28 +43,29 @@
 	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	camera = /obj/machinery/camera/network/command
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL) //no available icons for aliens
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC) //no available icons for aliens
 
 /obj/item/clothing/suit/space/rig/command
 	icon = 'maps/torch/icons/obj/obj_suit_solgov.dmi'
 	item_icons = list(slot_wear_suit_str = 'maps/torch/icons/mob/onmob_suit_solgov.dmi')
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/shoes/magboots/rig/command
 	icon = 'maps/torch/icons/obj/obj_feet_solgov.dmi'
 	item_icons = list(slot_shoes_str = 'maps/torch/icons/mob/onmob_feet_solgov.dmi')
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/gloves/rig/command
 	icon = 'maps/torch/icons/obj/obj_hands_solgov.dmi'
 	item_icons = list(slot_gloves_str = 'maps/torch/icons/mob/onmob_hands_solgov.dmi')
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 
 /obj/item/rig/command/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit
 		)
 
@@ -106,6 +107,7 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash/advanced,
 		/obj/item/rig_module/grenade_launcher/smoke,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /*
@@ -147,6 +149,7 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash/advanced,
 		/obj/item/rig_module/grenade_launcher/smoke,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /*
@@ -235,6 +238,7 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/vision/sechud,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /*
@@ -356,6 +360,7 @@
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/device/anomaly_scanner,
 		/obj/item/rig_module/grenade_launcher/light,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)
 
 /obj/item/rig/hazard/research_guard
@@ -412,4 +417,5 @@
 		/obj/item/rig_module/vision/medhud,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit)

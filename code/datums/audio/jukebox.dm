@@ -170,7 +170,7 @@ GLOBAL_LIST_INIT(jukebox_tracks, list(
 	/decl/audio/track/Codebrain,
 	/decl/audio/track/GetSet,
 	/decl/audio/track/Gneiss,
-	/decl/audio/track/O.W.L,
+	/decl/audio/track/OWL,
 	/decl/audio/track/Oxygen_Facility,
 	/decl/audio/track/Quantum,
 // Bay12 tracks,

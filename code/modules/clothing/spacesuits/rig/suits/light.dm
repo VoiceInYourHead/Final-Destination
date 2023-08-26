@@ -21,6 +21,8 @@
 	max_pressure_protection = LIGHT_RIG_MAX_PRESSURE
 	min_pressure_protection = 0
 
+	slot_flags = SLOT_BACK | SLOT_BELT
+
 	chest_type = /obj/item/clothing/suit/space/rig/light
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/light
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/light
@@ -32,15 +34,15 @@
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_suit_resomi.dmi')
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL,SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_feet_resomi.dmi'
@@ -48,7 +50,7 @@
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL, SPECIES_RESOMI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_RESOMI)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_head_resomi.dmi'
@@ -133,6 +135,7 @@
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/datajack,
 		/obj/item/rig_module/self_destruct,
+		/obj/item/rig_module/actuators,
 		/obj/item/rig_module/cooling_unit
 		)
 
@@ -172,13 +175,13 @@
 /obj/item/clothing/gloves/rig/light/ninja
 	name = "insulated gloves"
 	siemens_coefficient = 0
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/onmob_hands_resomi.dmi')
 
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_SHELL)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/rig/light/stealth
 	name = "stealth suit control module"

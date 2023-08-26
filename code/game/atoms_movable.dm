@@ -143,6 +143,14 @@
 	if(istype(hit_atom,/mob/living))
 		var/mob/living/M = hit_atom
 		M.hitby(src,TT)
+		var/obj/item/rig/rig = get_rig()
+		var/mob/living/carbon/human/lunger = src
+		var/mob/living/carbon/human/victim = M
+		if (ishuman(src) && ishuman(M) && istype(rig)) //Post-collision combat grab check. Independent of jumping.
+			for (var/obj/item/rig_module/actuators/R in rig.installed_modules)
+				if (R.active && R.combatType)
+					visible_message(SPAN_WARNING("[lunger] latches onto \the [victim]!"), SPAN_WARNING("You latch onto \the [victim] at the end of your lunge!"))
+					lunger.species.attempt_grab(lunger, victim)
 
 	else if(isobj(hit_atom))
 		var/obj/O = hit_atom

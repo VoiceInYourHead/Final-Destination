@@ -54,7 +54,7 @@
 	P.set_enter_zs(TRUE)
 	close_hatch()
 
-/obj/item/missile_equipment/passenger/on_touch_map_edge(var/obj/effect/overmap/visitable/projectile/P)
+/obj/item/missile_equipment/passenger/on_touch_map_edge()
 	var/obj/structure/missile/M = loc
 	if(!istype(M))
 		return

@@ -65,6 +65,10 @@
 	power_use = 10
 	desc = "As flexible as they are fragile, these Vey-Med manipulators can follow a pilot's movements in close to real time."
 
+/obj/item/mech_component/manipulators/light/oni
+	icon_state = "light_arms_oni"
+	melee_damage = 10
+	max_damage = 55
 
 /obj/item/mech_component/manipulators/heavy
 	name = "heavy arms"

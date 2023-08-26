@@ -241,7 +241,7 @@
 		return FALSE
 
 	for (var/mob/M in GLOB.player_list)
-		if (M && M.z in map_z)
+		if (M && (M.z in map_z))
 			to_chat(M, SPAN_WARNING("The storm clouds are brewing."))
 
 	for (var/mob/living/simple_animal/hostile/smart_beast/rain_world/M in GLOB.living_mob_list_)

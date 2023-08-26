@@ -65,7 +65,7 @@
 	var/last_recharge = 0
 	var/charging_rate = 7500 * CELLRATE
 	var/cooldown = 3.5 SECONDS //Time until we can recharge again after a blocked impact
-	restricted_hardpoints = list(HARDPOINT_BACK)
+	restricted_hardpoints = list(HARDPOINT_BACK,HARDPOINT_RIGHT_SHOULDER,HARDPOINT_LEFT_SHOULDER)
 	restricted_software = list(MECH_SOFTWARE_WEAPONS)
 
 /obj/item/mech_equipment/shields/installed(var/mob/living/exosuit/_owner)

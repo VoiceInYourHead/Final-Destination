@@ -146,5 +146,5 @@
 /atom/movable/lighting_overlay/Move()
 	return 0
 
-/atom/movable/lighting_overlay/throw_at()
+/atom/movable/lighting_overlay/throw_at(spin)
 	return 0
