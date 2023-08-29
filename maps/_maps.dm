@@ -41,6 +41,7 @@
 #include "random_ruins\exoplanet_ruins\trash_heap\trash_heap.dm"
 #include "random_ruins\exoplanet_ruins\pollux\station.dm"
 #include "random_ruins\exoplanet_ruins\shelters\shelters.dm"
+#include "random_ruins\exoplanet_ruins\shelters\shelters_alt.dm"
 #include "random_ruins\space_ruins\space_ruins.dm"
 #include "random_ruins\junkyard_ruins\junkyard_ruins.dm"
 #include "random_ruins\junkyard_ruins\ruins\main.dm"

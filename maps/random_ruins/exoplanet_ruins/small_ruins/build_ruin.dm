@@ -50,6 +50,13 @@
 	suffixes = list("small_ruins/build_ruin8.dmm")
 	ruin_tags = RUIN_HUMAN
 
+/datum/map_template/ruin/exoplanet/build/build9
+	name = "Mech Combat Arena 8"
+	id = "build9"
+	spawn_cost = 1
+	suffixes = list("small_ruins/build_ruin9.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_WRECK
+
 
 
 
@@ -74,6 +81,8 @@
 	name = "\improper Monolithic Ring"
 /area/map_template/build/build8
 	name = "Long-distance Communication Module"
+/area/map_template/build/build9
+	name = "Mech Combat Arena"
 
 
 // Other Code????    //
