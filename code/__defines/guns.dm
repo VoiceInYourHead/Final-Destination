@@ -7,6 +7,7 @@
 
 #define CALIBER_RIFLE			"5mmR"
 #define CALIBER_RIFLE_MILITARY  "7mmR"
+#define CALIBER_RIFLE_RUSSIA 	"12.7x55mm"
 #define CALIBER_ANTIMATERIAL    "15mmR"
 
 #define CALIBER_SHOTGUN			"12g"

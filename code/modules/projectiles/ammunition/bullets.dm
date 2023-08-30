@@ -141,6 +141,13 @@
 	icon_state = "riflecasing"
 	spent_icon = "riflecasing-spent"
 
+/obj/item/ammo_casing/rifle/russia
+	desc = "A rifle 12.7x55mm bullet casing."
+	caliber = CALIBER_RIFLE_RUSSIA
+	projectile_type = /obj/item/projectile/bullet/rifle/revolver
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
 /obj/item/ammo_casing/shell
 	name = "shell casing"
 	desc = "An antimaterial shell casing."
