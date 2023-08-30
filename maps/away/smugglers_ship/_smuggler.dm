@@ -4,7 +4,7 @@
 
 // Map template data.
 /datum/map_template/ruin/away_site/smuggler
-	name = "FTV Miss Fortune"
+	name = "ITV Miss Fortune"
 	id = "awaysite_smuggler"
 	description = "."
 	suffixes = list("smugglers_ship/smuggler.dmm")
@@ -20,7 +20,7 @@
 	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 
 /obj/effect/submap_landmark/joinable_submap/smuggler
-	name = "FTV Miss Fortune"
+	name = "ITV Miss Fortune"
 	archetype = /decl/submap_archetype/smuggler
 
 /turf/simulated/wall/secret_passage

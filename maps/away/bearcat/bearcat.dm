@@ -4,7 +4,7 @@
 #include "bearcat_radio.dm"
 
 /obj/effect/submap_landmark/joinable_submap/bearcat
-	name = "FTV Bearcat"
+	name = "FTU-TV Bearcat"
 	archetype = /decl/submap_archetype/derelict/bearcat
 
 /decl/submap_archetype/derelict/bearcat
@@ -16,7 +16,7 @@
 	)
 
 /obj/effect/overmap/visitable/ship/bearcat
-	name = "light freighter"
+	name = "FTU-TV Bearcat"
 	color = "#00ffff"
 	vessel_mass = 20000
 	integrity_failure_cap = 150
@@ -26,7 +26,6 @@
 	burn_delay = 10 SECONDS
 
 /obj/effect/overmap/visitable/ship/bearcat/New()
-	name = "[pick("FTV","ITV","IEV")] [pick("Bearcat", "Firebug", "Defiant", "Unsinkable","Horizon","Vagrant")]"
 	for(var/area/ship/scrap/A)
 		A.name = "\improper [name] - [A.name]"
 		GLOB.using_map.area_purity_test_exempt_areas += A.type
