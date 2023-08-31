@@ -185,6 +185,12 @@
 
 	for(var/obj/machinery/computer/ship/helm/H in SSmachines.machinery)
 		H.add_known_sector(R)
+	add_starter_trader()
+
+/obj/effect/overmap/visitable/ship/torch/proc/add_starter_trader()
+	var/trader_type = /datum/trader/trading_beacon/starter
+	GLOB.traders[trader_type] = new trader_type
+	GLOB.trader_types += trader_type
 
 /obj/effect/overmap/visitable/sector/residue
 	name = "Bluespace Residue"

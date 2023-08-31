@@ -7,7 +7,7 @@
 		arms = new /obj/item/mech_component/manipulators/light/oni(src)
 	if(!legs)
 		legs = new /obj/item/mech_component/propulsion/light(src)
-		body.color = COLOR_GUNMETAL
+		legs.color = COLOR_GUNMETAL
 	if(!head)
 		head = new /obj/item/mech_component/sensors/light/combat/oni(src)
 	if(!body)

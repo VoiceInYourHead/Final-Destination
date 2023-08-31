@@ -52,28 +52,41 @@
 
 // Map definitions.
 /obj/item/ore/uranium/New(var/newloc)
+	name = "pitchblende ore"
 	..(newloc, MATERIAL_PITCHBLENDE)
 /obj/item/ore/iron/New(var/newloc)
+	name = "hematite ore"
 	..(newloc, MATERIAL_HEMATITE)
 /obj/item/ore/coal/New(var/newloc)
+	name = "graphite ore"
 	..(newloc, MATERIAL_GRAPHITE)
 /obj/item/ore/glass/New(var/newloc)
+	name = "sand"
 	..(newloc, MATERIAL_SAND)
 /obj/item/ore/silver/New(var/newloc)
+	name = "silver ore"
 	..(newloc, MATERIAL_SILVER)
 /obj/item/ore/gold/New(var/newloc)
+	name = "gold ore"
 	..(newloc, MATERIAL_GOLD)
 /obj/item/ore/diamond/New(var/newloc)
+	name = "diamond"
 	..(newloc, MATERIAL_DIAMOND)
 /obj/item/ore/osmium/New(var/newloc)
+	name = "platinum ore"
 	..(newloc, MATERIAL_PLATINUM)
 /obj/item/ore/hydrogen/New(var/newloc)
+	name = "metallic hydrogen"
 	..(newloc, MATERIAL_HYDROGEN)
 /obj/item/ore/slag/New(var/newloc)
+	name = "slag"
 	..(newloc, MATERIAL_WASTE)
 /obj/item/ore/phoron/New(var/newloc)
+	name = "phoron crystal"
 	..(newloc, MATERIAL_PHORON)
 /obj/item/ore/aluminium/New(var/newloc)
+	name = "bauxite ore"
 	..(newloc, MATERIAL_BAUXITE)
 /obj/item/ore/rutile/New(var/newloc)
+	name = "rutile ore"
 	..(newloc, MATERIAL_RUTILE)

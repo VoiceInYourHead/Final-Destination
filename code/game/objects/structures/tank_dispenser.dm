@@ -13,9 +13,11 @@
 
 
 /obj/structure/dispenser/oxygen
+	name = "tank storage unit (OXYGEN)"
 	phorontanks = 0
 
 /obj/structure/dispenser/phoron
+	name = "tank storage unit (PHORON)"
 	oxygentanks = 0
 
 /obj/structure/dispenser/Initialize()

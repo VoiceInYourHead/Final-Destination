@@ -54,6 +54,14 @@
 		to_chat(user, "<span class='notice'>You put [P] in [src].</span>")
 		flick("[initial(icon_state)]-open",src)
 		updateUsrDialog()
+	if(isWrench(P))
+		if(!anchored)
+			anchored = TRUE
+			to_chat(user, "<span class='notice'>You secure [src] to the floor.</span>")
+		else
+			to_chat(user, "<span class='notice'>You unsecure [src] from the floor.</span>")
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			anchored = FALSE
 	else
 		..()
 

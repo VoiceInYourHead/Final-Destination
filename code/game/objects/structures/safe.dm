@@ -150,6 +150,14 @@ FLOOR SAFES
 		else
 			to_chat(user, "<span class='notice'>[I] won't fit in [src].</span>")
 			return
+	if(isWrench(I))
+		if(!anchored)
+			anchored = TRUE
+			to_chat(user, "<span class='notice'>You secure safe to the floor.</span>")
+		else
+			to_chat(user, "<span class='notice'>You unsecure safe from the floor.</span>")
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			anchored = FALSE
 	else
 		if(istype(I, /obj/item/clothing/accessory/stethoscope))
 			to_chat(user, "Hold [I] in one of your hands while you manipulate the dial.")
