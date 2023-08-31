@@ -178,3 +178,30 @@ They sell generic supplies and ask for generic supplies.
 								/obj/structure/plushie                        = TRADER_SUBTYPES_ONLY,
 								/obj/item/contraband/poster                   = TRADER_THIS_TYPE
 								)
+
+/datum/trader/trading_beacon/starter/select_spawn_location()
+	var/turf/torch = get_turf(locate(/obj/effect/overmap/visitable/ship/torch))
+	if(!torch)
+		stack_trace("Cringe! Torch not found in trading_beacon/starter/select_spawn_location()")
+		return ..()
+
+	var/list/turfs = orange(2, torch)
+	for(var/turf/T in shuffle(turfs))
+		var/valid = TRUE
+		for(var/obj/effect/overmap/event/E in T)
+			if(E)
+				valid = FALSE
+				break
+		for(var/obj/effect/overmap/trading/M in T)
+			if(M)
+				valid = FALSE
+				break
+		for(var/obj/effect/overmap/visitable/V in T)
+			if(V)
+				valid = FALSE
+				break
+		if(valid)
+			return T
+
+	stack_trace("Cringe! No room for /datum/trader/trading_beacon/starter, it'll be placed in default location")
+	return ..()

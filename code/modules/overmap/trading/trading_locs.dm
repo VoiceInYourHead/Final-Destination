@@ -8,7 +8,6 @@
 
 	var/datum/trader/trader_merchant_datum
 
-
 /obj/effect/overmap/trading/on_update_icon()
 	return
 
