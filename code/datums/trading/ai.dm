@@ -10,7 +10,7 @@ They sell generic supplies and ask for generic supplies.
 	name = "Омега"
 	origin = "Торговый Маяк"
 	name_language = LANGUAGE_EAL
-	trade_flags = TRADER_MONEY|TRADER_GOODS
+	trade_flags = TRADER_MONEY|TRADER_GOODS|TRADER_WANTED_ONLY
 	speech = list(TRADER_HAIL_GENERIC    = "Приветствую, Я MERCHANT, ИскИн на борту ORIGIN, основной задачей которого является покупка и продажа вещей за CURRENCY и другие припасы.",
 				TRADER_HAIL_DENY         = "Приношу свои извинения, ваша линия была добавлена в чёрный список. Хорошего дня.",
 
