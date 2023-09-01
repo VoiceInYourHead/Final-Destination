@@ -227,13 +227,22 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	return
 
 /datum/wires/proc/examine(index, mob/user)
+	var/checked = FALSE
 	. = "You aren't sure what this wire does."
 
 	var/datum/wire_description/wd = get_description(index)
 	if(!wd)
 		return
 	if(wd.skill_level && !user.skill_check(SKILL_ELECTRICAL, wd.skill_level))
-		return
+		if(prob(10) && !checked)
+			. = "Hmm...I think i remember this one!"
+			checked = TRUE
+			return wd.description
+		if(checked == TRUE)
+			. = "You aren't sure what this wire does or sadly forgot it's purpose in process."
+			return
+		else
+			return
 	return wd.description
 
 /datum/wires/proc/CanUse(var/mob/living/L)
