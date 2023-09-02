@@ -148,11 +148,16 @@
 #define RELIGION_VOX_FORCE     "Kritika, The Unrelenting Force"
 
 // IPC cultures.
-#define CULTURE_POSITRONICS    "Union Member"
 
-#define HOME_SYSTEM_ROOT       "Root"
+#define HOME_SYSTEM_ERIDANI       "Themis"
 
-#define FACTION_POSITRONICS    "Positronic Union"
+#define FACTION_POSITRONICS_FIRSTGEN			"First Gen - Owned"
+#define FACTION_POSITRONICS_SECONDGEN_OWNED		"Second Gen - Owned"
+#define FACTION_POSITRONICS_SECONDGEN_FREE		"Second Gen - Free Resident"
+#define FACTION_POSITRONICS_SECONDGEN_UNION		"Second Gen - Union Citizen"
+#define FACTION_POSITRONICS_THIRDGEN_PRIVATELY	"Third Gen - Privately Owned"
+#define FACTION_POSITRONICS_THIRDGEN_CORPORATE	"Third Gen - Corporate Owned"
+#define FACTION_POSITRONICS_THIRDGEN_STATE		"Third Gen - State Owned"
 
 // Diona cultures.
 #define CULTURE_DIONA          "Diona Chorus"
