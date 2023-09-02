@@ -660,6 +660,7 @@
 	if(client.holder)
 		if(statpanel("MC"))
 			stat("CPU:","[world.cpu]")
+			stat("Map CPU, MPC, Usage%:", "[world.map_cpu] [world.map_cpu / GLOB.clients.len] [round((world.map_cpu / (TICK_LIMIT_RMAX - TICK_LIMIT_RMIN)) * 100)]%")
 			stat("Instances:","[world.contents.len]")
 			stat(null)
 			if(Master)
