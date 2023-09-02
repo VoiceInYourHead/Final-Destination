@@ -1,4 +1,4 @@
-#define TICK_LIMIT_RMAX 80
+#define TICK_LIMIT_RMAX 90
 #define TICK_LIMIT_RMIN 60
 #define TICK_LIMIT_RUNNING max(TICK_LIMIT_RMIN, TICK_LIMIT_RMAX - world.map_cpu)
 
