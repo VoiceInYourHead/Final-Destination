@@ -1498,3 +1498,142 @@
 		/obj/item/reagent_containers/food/snacks/spider
 	)
 	result = /obj/item/reagent_containers/food/snacks/spider/cooked
+
+
+/datum/recipe/fruitsalad
+
+	fruit = list(
+		"apple" = 1,
+		"lemon" = 1,
+		"orange" = 1,
+		"watermelonslice" = 2
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/fruitsalad
+
+
+/datum/recipe/junglesalad
+
+	fruit = list(
+		"apple" = 2,
+		"lemon" = 2,
+		"banana" = 2,
+		"watermelonslice" = 2
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/junglesalad
+
+
+/datum/recipe/citrusdelight
+
+	fruit = list(
+
+		"lime" = 1,
+		"lemon" = 1,
+		"orange" = 1
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/citrusdelight
+
+
+
+/datum/recipe/kale_salad
+
+	reagents = list(
+		/datum/reagent/nutriment/cornoil = 5
+	)
+
+	fruit = list(
+
+		"carrot" = 1,
+		"onion" = 2,
+		"cabbage" = 2
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/kale_salad
+
+/datum/recipe/greek_salad
+
+	reagents = list(
+		/datum/reagent/nutriment/cornoil = 5
+	)
+
+	items = list(
+		/obj/item/reagent_containers/food/snacks/cheesewedge
+	)
+
+	fruit = list(
+
+		"olives" = 1,
+		"tomato" = 1,
+		"onion" = 2,
+		"mushroom" = 2
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/greek_salad
+
+
+/datum/recipe/caesar_salad
+
+	reagents = list(
+		/datum/reagent/nutriment/cornoil = 5
+	)
+
+	items = list(
+		/obj/item/reagent_containers/food/snacks/cheesewedge,
+		/obj/item/reagent_containers/food/snacks/slice/bread
+	)
+
+	fruit = list(
+		"olives" = 2,
+		"cabbage" = 2,
+		"onion" = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/caesar_salad
+
+
+/datum/recipe/spring_salad
+
+	reagents = list(
+		/datum/reagent/nutriment/cornoil = 5
+	)
+
+	fruit = list(
+
+		"cabbage" = 2,
+		"carrot" = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/spring_salad
+
+
+/datum/recipe/potato_salad
+
+	reagents = list(
+		/datum/reagent/nutriment/mayo = 5
+	)
+
+	items = list(
+		/obj/item/reagent_containers/food/snacks/boiledegg,
+		/obj/item/reagent_containers/food/snacks/boiledegg
+	)
+
+	fruit = list(
+		"potato" = 2,
+		"onion" = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/potato_salad
+
+
+/datum/recipe/food/antipasto_salad
+
+	items = list(
+		/obj/item/reagent_containers/food/snacks/cutlet,
+		/obj/item/reagent_containers/food/snacks/cheesewedge
+	)
+
+	fruit = list(
+		"cabbage" = 2,
+		"olives" = 1,
+		"tomato" = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/antipasto_salad
