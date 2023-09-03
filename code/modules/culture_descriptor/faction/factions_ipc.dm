@@ -8,14 +8,11 @@
 		LANGUAGE_HUMAN_ARABIC,
 		LANGUAGE_HUMAN_INDIAN,
 		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_SELENIAN,
 		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_SPACER,
 		LANGUAGE_SIGN,
-		LANGUAGE_RESOMI
 	)
-
-/decl/cultural_info/faction/positronic/sanitize_name(var/new_name)
-	return sanitizeName(new_name, allow_numbers = 1)
 
 //FIRST
 /decl/cultural_info/faction/positronic/first
@@ -34,7 +31,7 @@
 	valid_jobs = list(/datum/job/sea,
 		/datum/job/bridgeofficer, /datum/job/engineer, /datum/job/engineer_trainee, /datum/job/nt_pilot,
 		/datum/job/explorer, /datum/job/expmed, /datum/job/expeng,
-		/datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee,
+		/datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/psychiatrist,
 		/datum/job/scientist, /datum/job/scientist_assistant, /datum/job/senior_scientist, /datum/job/detective, /datum/job/officer,
 		/datum/job/janitor, /datum/job/chef, /datum/job/crew,
 		/datum/job/cargo_tech, /datum/job/mining, /datum/job/submap/pod, /datum/job/submap/citydweller, /datum/job/submap/colonist, /datum/job/submap/colonist2,
@@ -64,7 +61,7 @@
 	valid_jobs = list(/datum/job/sea, /datum/job/chief_steward, /datum/job/qm,
 		/datum/job/bridgeofficer, /datum/job/engineer, /datum/job/senior_engineer, /datum/job/engineer_trainee, /datum/job/nt_pilot,
 		/datum/job/explorer, /datum/job/expmed, /datum/job/expeng, /datum/job/pathfinder,
-		/datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/senior_doctor,
+		/datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/senior_doctor, /datum/job/chemist, /datum/job/psychiatrist,
 		/datum/job/scientist, /datum/job/scientist_assistant, /datum/job/senior_scientist, /datum/job/detective, /datum/job/officer, /datum/job/warden,
 		/datum/job/janitor, /datum/job/chef, /datum/job/crew,
 		/datum/job/cargo_tech, /datum/job/mining, /datum/job/submap/pod, /datum/job/submap/citydweller, /datum/job/submap/colonist, /datum/job/submap/colonist2,

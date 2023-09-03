@@ -156,7 +156,7 @@ ARMCHAIR(yellow)
 
 /datum/stack_recipe/furniture/mag_tables
 	title = "magnetic table"
-	result_type = /obj/structure/table/mag
+	result_type = /obj/structure/table/mag_unfinished
 	req_amount = 20
 	time = 50
 

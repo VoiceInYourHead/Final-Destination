@@ -1,13 +1,52 @@
+/obj/structure/table/mag_unfinished
+	name = "Magnetic Table Frame"
+	desc = "It is unfinished magnetic table. Good for merchants."
+	icon_state = "magnetic_table"
+	can_plate = 0
+	can_reinforce = 0
+	flipped = -1
+
+/obj/structure/table/mag_unfinished/attackby(obj/item/W, mob/user, click_params)
+	..()
+	if(istype(W, /obj/item/stock_parts/circuitboard/mag_table))
+		if(do_after(user, 50))
+			new /obj/structure/table/mag(get_turf(src))
+			qdel(src)
+			qdel(W)
+	if(isWrench(W) && user.a_intent == I_HURT)
+		dismantle(W, user)
+		return 1
+
+/obj/structure/table/mag_unfinished/dismantle(obj/item/wrench/W, mob/user)
+	reset_mobs_offset()
+	if(manipulating) return
+	manipulating = 1
+	user.visible_message("<span class='notice'>\The [user] begins dismantling \the [src].</span>",
+	                              "<span class='notice'>You begin dismantling \the [src].</span>")
+	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	if(!do_after(user, 20, src))
+		manipulating = 0
+		return
+	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
+	                              "<span class='notice'>You dismantle \the [src].</span>")
+	new /obj/item/stack/material/plasteel/ten(src.loc)
+	qdel(src)
+	return
+
+/obj/structure/table/mag_unfinished/can_connect()
+	return FALSE
+
 /obj/structure/table/mag
 	name = "Magnetic Table"
 	desc = "It is simple magnetic table. Good for merchants."
 	icon_state = "magnetic_table_disabled"
 	var/icon_state_open = "magnetic_table_disabled"
 	var/icon_state_closed = "magnetic_table_enabled"
-	req_access = list(access_cargo)
+	req_access = list()
 	can_plate = 0
 	can_reinforce = 0
 	flipped = -1
+	var/owned = 0
 	var/locked = 0
 
 /obj/structure/table/mag/Initialize()
@@ -57,16 +96,45 @@
 	if(isrobot(user))
 		return
 	if(istype(W, /obj/item/card/id) || istype(W, /obj/item/modular_computer))
-		if(allowed(usr))
-			toggle_lock()
-			visible_message(SPAN_NOTICE("[usr] [locked ? "" : "un"]locked [src]!"))
-			return
+		var/obj/item/card/id/id_card = /obj/item/card/id
+		if(owned)
+			if(allowed(usr))
+				toggle_lock()
+				visible_message(SPAN_NOTICE("[usr] [locked ? "" : "un"]locked [src]!"))
+				return
+		else if(!owned)
+			id_card = istype(id_card) ? id_card : user.GetIdCard()
+			var/access_type = input(user, "Choose access you need.") as null | anything in id_card.access
+			if (!access_type)
+				return
+			req_access = list(access_type)
+			owned = TRUE
+	if(isWrench(W) && user.a_intent == I_HURT)
+		dismantle(W, user)
+		return 1
 	if(isitem(W))
 		if(user.drop_from_inventory(W, src.loc))
 			auto_align(W, click_params)
 			W.anchored = locked
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	..()
+
+/obj/structure/table/mag/dismantle(obj/item/wrench/W, mob/user)
+	reset_mobs_offset()
+	if(manipulating) return
+	manipulating = 1
+	user.visible_message("<span class='notice'>\The [user] begins dismantling \the [src].</span>",
+	                              "<span class='notice'>You begin dismantling \the [src].</span>")
+	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	if(!do_after(user, 20, src))
+		manipulating = 0
+		return
+	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
+	                              "<span class='notice'>You dismantle \the [src].</span>")
+	new /obj/item/stack/material/plasteel/ten(src.loc)
+	new /obj/item/stock_parts/circuitboard/mag_table(src.loc)
+	qdel(src)
+	return
 
 /obj/structure/table/mag/CtrlClick()
 	return
