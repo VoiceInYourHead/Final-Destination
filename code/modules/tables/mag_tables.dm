@@ -13,6 +13,25 @@
 			new /obj/structure/table/mag(get_turf(src))
 			qdel(src)
 			qdel(W)
+	if(isWrench(W) && user.a_intent == I_HURT)
+		dismantle(W, user)
+		return 1
+
+/obj/structure/table/mag_unfinished/dismantle(obj/item/wrench/W, mob/user)
+	reset_mobs_offset()
+	if(manipulating) return
+	manipulating = 1
+	user.visible_message("<span class='notice'>\The [user] begins dismantling \the [src].</span>",
+	                              "<span class='notice'>You begin dismantling \the [src].</span>")
+	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	if(!do_after(user, 20, src))
+		manipulating = 0
+		return
+	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
+	                              "<span class='notice'>You dismantle \the [src].</span>")
+	new /obj/item/stack/material/plasteel/ten(src.loc)
+	qdel(src)
+	return
 
 /obj/structure/table/mag_unfinished/can_connect()
 	return FALSE
@@ -90,12 +109,32 @@
 				return
 			req_access = list(access_type)
 			owned = TRUE
+	if(isWrench(W) && user.a_intent == I_HURT)
+		dismantle(W, user)
+		return 1
 	if(isitem(W))
 		if(user.drop_from_inventory(W, src.loc))
 			auto_align(W, click_params)
 			W.anchored = locked
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	..()
+
+/obj/structure/table/mag/dismantle(obj/item/wrench/W, mob/user)
+	reset_mobs_offset()
+	if(manipulating) return
+	manipulating = 1
+	user.visible_message("<span class='notice'>\The [user] begins dismantling \the [src].</span>",
+	                              "<span class='notice'>You begin dismantling \the [src].</span>")
+	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	if(!do_after(user, 20, src))
+		manipulating = 0
+		return
+	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
+	                              "<span class='notice'>You dismantle \the [src].</span>")
+	new /obj/item/stack/material/plasteel/ten(src.loc)
+	new /obj/item/stock_parts/circuitboard/mag_table(src.loc)
+	qdel(src)
+	return
 
 /obj/structure/table/mag/CtrlClick()
 	return
