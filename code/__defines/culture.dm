@@ -159,6 +159,20 @@
 #define FACTION_POSITRONICS_THIRDGEN_CORPORATE	"Third Gen - Corporate Owned"
 #define FACTION_POSITRONICS_THIRDGEN_STATE		"Third Gen - State Owned"
 
+#define CULTURE_POSITRONICS_MARTIAN  "Martian, Surfacer"
+#define CULTURE_POSITRONICS_MARSTUN  "Martian, Tunneller"
+#define CULTURE_POSITRONICS_LUNAPOOR "Luna, Lower Class"
+#define CULTURE_POSITRONICS_LUNARICH "Luna, Upper Class"
+#define CULTURE_POSITRONICS_VENUSIAN "Venusian, Zoner"
+#define CULTURE_POSITRONICS_VENUSLOW "Venusian, Surfacer"
+#define CULTURE_POSITRONICS_BELTER   "Belter, Ceres"
+#define CULTURE_POSITRONICS_PLUTO    "Plutonian"
+#define CULTURE_POSITRONICS_EARTH    "Earther"
+#define CULTURE_POSITRONICS_CETI     "Cetite"
+#define CULTURE_POSITRONICS_SPACER   "Spacer, Core Systems"
+#define CULTURE_POSITRONICS_SPAFRO   "Spacer, Frontier Systems"
+#define CULTURE_POSITRONICS_OTHER    "Other, Humanity"
+
 // Diona cultures.
 #define CULTURE_DIONA          "Diona Chorus"
 
