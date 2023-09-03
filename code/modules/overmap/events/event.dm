@@ -443,7 +443,7 @@
 
 /datum/overmap_event/carp
 	name = "carp shoal"
-	count = 6
+	count = 3
 	radius = 2
 	opacity = 0
 	continuous = FALSE
@@ -452,7 +452,7 @@
 /datum/overmap_event/carp/major
 	name = "carp school"
 	count = 2
-	radius = 3
+	radius = 2
 	hazards = /obj/effect/overmap/event/carp/major
 
 /datum/overmap_event/gravity

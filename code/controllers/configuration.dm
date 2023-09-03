@@ -10,6 +10,7 @@
 	/// for topic status requests
 	var/static/game_version = "Baystation12"
 
+	var/static/clientfps = 65					// Default fps for clients with "0" in prefs. -1 for synced with server.
 
 	/// log OOC channel
 	var/static/log_ooc = FALSE
@@ -682,6 +683,8 @@
 					fps = 10 / ticklag
 			if ("fps")
 				fps = text2num(value)
+			if("clientfps")
+				clientfps = text2num(value)
 			if ("tick_limit_mc_init")
 				tick_limit_mc_init = text2num(value)
 			if ("allow_antag_hud")

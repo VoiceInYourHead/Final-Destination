@@ -75,6 +75,9 @@
 				/datum/mil_rank/fleet/e5,
 				/datum/mil_rank/fleet/e6,
 				/datum/mil_rank/fleet/e7,
+				/datum/mil_rank/fleet/e8,
+				/datum/mil_rank/fleet/e9_alt1,
+				/datum/mil_rank/fleet/e9,
 				/datum/mil_rank/fleet/o1
 			),
 			/datum/mil_branch/army = list(

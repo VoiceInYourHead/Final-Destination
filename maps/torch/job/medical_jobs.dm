@@ -146,8 +146,8 @@
 	title = "Trainee Medical Technician"
 	department = "Medical"
 	department_flag = MED
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "medical personnel and the Chief Medical Officer"
 	selection_color = "#013d3b"
 	minimum_character_age = list(SPECIES_HUMAN = 18)

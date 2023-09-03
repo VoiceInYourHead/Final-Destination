@@ -90,22 +90,28 @@
 		disposition += possible_trading_visitables
 		disposition[possible_trading_visitables] = 0
 
-/datum/trader/proc/generate_overmap_representation()
+/datum/trader/proc/select_spawn_location()
 	var/list/map_turfs = block(locate(2,2,GLOB.using_map.overmap_z),locate(GLOB.using_map.overmap_size-2,GLOB.using_map.overmap_size-2,GLOB.using_map.overmap_z))
-	var/turf/spawn_location
 
 	for(var/turf/T in shuffle(map_turfs))
 		var/valid = TRUE
 		for(var/obj/effect/overmap/event/E in T)
-			if(E) valid = FALSE
+			if(E)
+				valid = FALSE
+				break
 		for(var/obj/effect/overmap/trading/M in T)
-			if(M) valid = FALSE
+			if(M)
+				valid = FALSE
+				break
 		for(var/obj/effect/overmap/visitable/V)
-			if(T in view(7,V)) valid = FALSE
+			if(T in view(7, V))
+				valid = FALSE
+				break
 		if(valid)
-			spawn_location = T
-			break
-		else continue
+			return T
+
+/datum/trader/proc/generate_overmap_representation()
+	var/turf/spawn_location = select_spawn_location()
 
 	if(!spawn_location)
 		log_and_message_admins("КРИНЖАНУЛ, НЕГДЕ СПАВНИТЬ ТОРГОВЦА!!!")

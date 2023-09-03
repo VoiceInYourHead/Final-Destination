@@ -18,7 +18,7 @@ They sell generic supplies and ask for generic supplies.
 				TRADER_NOT_ENOUGH  = "Прошу прощения, но ваше предложение не удовлетворяет реальную стоимость этого товара.",
 				TRADER_NO_BLACKLISTED = "Предлагаемый вами товар запрещён на территории большинства известных государств. Мои законы не позволяют принять его в качестве оплаты.",
 				TRADER_HOW_MUCH          = "ITEM будет стоить для вас VALUE CURRENCY, или объекта аналогичной ценности.",
-				TRADER_WHAT_WANT         = "Я регестрирую потребность в",
+				TRADER_WHAT_WANT         = "Я регистрирую потребность в",
 
 				TRADER_COMPLEMENT_FAILURE   = "Прошу прощения, но я не могу позволить своим вне-рабочим отношениям как-то повлиять на торги.",
 				TRADER_COMPLEMENT_SUCCESS = "Благодарю, но я не могу позволить своим вне-рабочим отношениям как-то повлиять на торги.",
@@ -55,6 +55,7 @@ They sell generic supplies and ask for generic supplies.
 								/obj/item/storage/toolbox                     = TRADER_ALL,
 								/obj/item/storage/wallet                      = TRADER_THIS_TYPE,
 								/obj/item/storage/photo_album                 = TRADER_THIS_TYPE,
+								/obj/item/stock_parts/circuitboard/mag_table  = TRADER_THIS_TYPE,
 								/obj/item/clothing/glasses                           = TRADER_SUBTYPES_ONLY,
 								/obj/item/clothing/glasses/hud                       = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/glasses/blindfold/tape = TRADER_BLACKLIST,
@@ -140,6 +141,7 @@ They sell generic supplies and ask for generic supplies.
 								/obj/item/storage/toolbox                     = TRADER_ALL,
 								/obj/item/storage/wallet                      = TRADER_THIS_TYPE,
 								/obj/item/storage/photo_album                 = TRADER_THIS_TYPE,
+								/obj/item/stock_parts/circuitboard/mag_table  = TRADER_THIS_TYPE,
 								/obj/item/clothing/glasses                    = TRADER_SUBTYPES_ONLY,
 								/obj/item/clothing/glasses/hud                = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/glasses/blindfold/tape     = TRADER_BLACKLIST,
@@ -178,3 +180,30 @@ They sell generic supplies and ask for generic supplies.
 								/obj/structure/plushie                        = TRADER_SUBTYPES_ONLY,
 								/obj/item/contraband/poster                   = TRADER_THIS_TYPE
 								)
+
+/datum/trader/trading_beacon/starter/select_spawn_location()
+	var/turf/torch = get_turf(locate(/obj/effect/overmap/visitable/ship/torch))
+	if(!torch)
+		stack_trace("Cringe! Torch not found in trading_beacon/starter/select_spawn_location()")
+		return ..()
+
+	var/list/turfs = orange(2, torch)
+	for(var/turf/T in shuffle(turfs))
+		var/valid = TRUE
+		for(var/obj/effect/overmap/event/E in T)
+			if(E)
+				valid = FALSE
+				break
+		for(var/obj/effect/overmap/trading/M in T)
+			if(M)
+				valid = FALSE
+				break
+		for(var/obj/effect/overmap/visitable/V in T)
+			if(V)
+				valid = FALSE
+				break
+		if(valid)
+			return T
+
+	stack_trace("Cringe! No room for /datum/trader/trading_beacon/starter, it'll be placed in default location")
+	return ..()

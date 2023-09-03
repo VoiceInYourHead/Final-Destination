@@ -1,7 +1,7 @@
 /datum/wire_description
 	var/index
 	var/description
-	var/skill_level = SKILL_MASTER
+	var/skill_level = SKILL_TRAINED
 
 /datum/wire_description/New(index, description, skill_level)
 	src.index = index

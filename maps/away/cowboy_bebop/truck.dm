@@ -56,7 +56,7 @@
 	id = "awaysite_truck"
 	description = "aye."
 	suffixes = list("cowboy_bebop/space_truck.dmm")
-	spawn_cost = 2
+	spawn_cost = 1000
 	area_usage_test_exempted_root_areas = list(/area/ship/truck)
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/space_truck)
 
