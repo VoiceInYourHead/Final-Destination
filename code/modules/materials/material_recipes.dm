@@ -102,6 +102,7 @@
 	. += new/datum/stack_recipe/furniture/crate(src)
 	. += new/datum/stack_recipe/grip(src)
 	. += new/datum/stack_recipe/missile_casing(src)
+	. += new/datum/stack_recipe/furniture/mag_tables(src)
 
 /material/stone/generate_recipes(var/reinforce_material)
 	. = ..()

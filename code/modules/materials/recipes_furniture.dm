@@ -154,6 +154,13 @@ ARMCHAIR(yellow)
 	result_type = /obj/structure/table
 	time = 10
 
+/datum/stack_recipe/furniture/mag_tables
+	title = "magnetic table"
+	result_type = /obj/structure/table/mag
+	req_amount = 20
+	time = 50
+
+
 /datum/stack_recipe/furniture/rack
 	title = "rack"
 	result_type = /obj/structure/table/rack
