@@ -475,15 +475,6 @@ badges
 	var/religion = culture ? culture.name : "Unset"
 	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])\nReligion: [religion]\nBlood type: [H.b_type]"
 
-/obj/item/clothing/accessory/badge/solgov/synthetic
-	name = "\improper synthetic's badge"
-	desc = "A red leather-backed gold badge with silver 'SYNTH' letters written on it, displaying advanced EXO Corporative Shell IPC."
-	icon = 'maps/torch/icons/obj/obj_accessories_solgov.dmi'
-	icon_state = "solbadge"
-	slot_flags = SLOT_BELT | SLOT_TIE | ACCESSORY_REMOVABLE | ACCESSORY_HIGH_VISIBILITY
-	slot = ACCESSORY_SLOT_RANK
-
-
 /obj/item/clothing/accessory/badge/solgov/representative
 	name = "representative's badge"
 	desc = "A leather-backed plastic badge with a variety of information printed on it. Belongs to a representative of the Sol Central Government."
