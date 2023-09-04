@@ -15,6 +15,9 @@
 			new /obj/structure/table/mag(src.loc)
 			qdel(W)
 			qdel(src)
+	if(isWrench(W) && user.a_intent == I_HURT)
+		new /obj/item/stack/material/plasteel/ten(src.loc)
+		qdel(src)
 
 /obj/structure/table/mag
 	name = "Magnetic Table"
