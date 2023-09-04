@@ -13,7 +13,3 @@
 		/obj/item/stock_parts/smes_coil/weak = 1,
 		/obj/item/stock_parts/capacitor = 1
 	)
-
-/obj/item/stock_parts/circuitboard/mag_table
-	name = T_BOARD("magnetic table")
-	icon_state = "mainboard"

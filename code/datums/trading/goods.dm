@@ -88,7 +88,7 @@
 								/obj/item/cell/high                               = TRADER_THIS_TYPE,
 								/obj/item/cell/super                              = TRADER_THIS_TYPE,
 								/obj/item/cell/hyper                              = TRADER_THIS_TYPE,
-								/obj/item/stock_parts/circuitboard/mag_table      = TRADER_THIS_TYPE,
+								/obj/item/mag_table_plate      = TRADER_THIS_TYPE,
 								/obj/item/module                                  = TRADER_SUBTYPES_ONLY,
 								/obj/item/tracker_electronics                     = TRADER_THIS_TYPE,
 								/obj/item/device/flashlight              = TRADER_ALL,

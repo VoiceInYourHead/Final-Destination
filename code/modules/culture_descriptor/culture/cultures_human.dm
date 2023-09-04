@@ -16,6 +16,9 @@
 		LANGUAGE_SIGN
 	)
 
+/decl/cultural_info/culture/human/sanitize_name(var/new_name)
+	return sanitizeName(new_name, allow_numbers = 1)
+
 /decl/cultural_info/culture/human/martian_surfacer
 	name = CULTURE_HUMAN_MARTIAN
 	description = "You are from the surface of Mars. Raised in one of the many farming communities or one of the great cities such as Olympus. Most of the surfacers \
