@@ -1,40 +1,23 @@
-/obj/structure/table/mag_unfinished
+/obj/item/mag_table_plate
+	name = "magnetic table circuitboard"
+	icon_state = "mainboard"
+	icon = 'icons/obj/module.dmi'
+
+/obj/structure/mag_unfinished
 	name = "Magnetic Table Frame"
 	desc = "It is unfinished magnetic table. Good for merchants."
+	icon = 'icons/obj/tables.dmi'
 	icon_state = "magnetic_table"
-	can_plate = 0
-	can_reinforce = 0
-	flipped = -1
 
-/obj/structure/table/mag_unfinished/attackby(obj/item/W, mob/user, click_params)
-	..()
-	if(istype(W, /obj/item/stock_parts/circuitboard/mag_table))
+/obj/structure/mag_unfinished/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/mag_table_plate))
 		if(do_after(user, 50))
-			new /obj/structure/table/mag(get_turf(src))
-			qdel(src)
+			new /obj/structure/table/mag(src.loc)
 			qdel(W)
+			qdel(src)
 	if(isWrench(W) && user.a_intent == I_HURT)
-		dismantle(W, user)
-		return 1
-
-/obj/structure/table/mag_unfinished/dismantle(obj/item/wrench/W, mob/user)
-	reset_mobs_offset()
-	if(manipulating) return
-	manipulating = 1
-	user.visible_message("<span class='notice'>\The [user] begins dismantling \the [src].</span>",
-	                              "<span class='notice'>You begin dismantling \the [src].</span>")
-	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-	if(!do_after(user, 20, src))
-		manipulating = 0
-		return
-	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
-	                              "<span class='notice'>You dismantle \the [src].</span>")
-	new /obj/item/stack/material/plasteel/ten(src.loc)
-	qdel(src)
-	return
-
-/obj/structure/table/mag_unfinished/can_connect()
-	return FALSE
+		new /obj/item/stack/material/plasteel/ten(src.loc)
+		qdel(src)
 
 /obj/structure/table/mag
 	name = "Magnetic Table"
@@ -109,9 +92,6 @@
 				return
 			req_access = list(access_type)
 			owned = TRUE
-	if(isWrench(W) && user.a_intent == I_HURT)
-		dismantle(W, user)
-		return 1
 	if(isitem(W))
 		if(user.drop_from_inventory(W, src.loc))
 			auto_align(W, click_params)
@@ -132,7 +112,7 @@
 	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
 	                              "<span class='notice'>You dismantle \the [src].</span>")
 	new /obj/item/stack/material/plasteel/ten(src.loc)
-	new /obj/item/stock_parts/circuitboard/mag_table(src.loc)
+	new /obj/item/mag_table_plate(src.loc)
 	qdel(src)
 	return
 

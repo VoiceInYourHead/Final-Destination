@@ -223,8 +223,3 @@
 	icon_state = "par_headset_alt"
 	item_state = "par_headset_alt"
 
-/obj/item/device/radio/headset/heads/torchexec/synth
-	name = "Synth's headset"
-	desc = "A headset issued to abroad's EXO Synth Unit."
-	icon_state = "nt_headset"
-	item_state = "headset"

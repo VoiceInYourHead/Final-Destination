@@ -27,6 +27,13 @@
 	build_path = /obj/item/stock_parts/circuitboard/arcade/battle
 	sort_string = "MAAAA"
 
+/datum/design/circuit/magtable
+	name = "magnetic table"
+	id = "magtable"
+	req_tech = list(TECH_DATA = 1)
+	build_path = /obj/item/mag_table_plate
+	sort_string = "MAAAB"
+
 /datum/design/circuit/oriontrail
 	name = "orion trail arcade machine"
 	id = "oriontrail"
