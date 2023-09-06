@@ -40,9 +40,47 @@
 	if(!question || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
 		return FALSE
 
+	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
 	var/started_mindread = world.time
 	to_chat(user, SPAN_NOTICE("<b>You dip your mentality into the surface layer of \the [target]'s mind, seeking an answer: <i>[question]</i></b>"))
-	to_chat(target, SPAN_NOTICE("<b>Your mind is compelled to answer: <i>[question]</i></b>"))
+	var/option = alert(target, "Someone trying to access your memories, will you accept this?", "Choose something!", "Yes", "No")
+	if (!option)
+		if(target.psi)
+			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+			if(con_rank_target > con_rank_user)
+				to_chat(user, SPAN_NOTICE("<b>[target] blocks your psionic attack without any problem!</b>"))
+				to_chat(target, SPAN_NOTICE("<b>You easily protected your memories!</b>"))
+				return
+			else
+				target.adjustBrainLoss(25)
+				to_chat(user, SPAN_NOTICE("<b>[target] manages to prevent your attack, but with a big cost!</b>"))
+				to_chat(target, SPAN_NOTICE("<b>You managed to protect your memories, but it's affected your brain very much!</b>"))
+				return
+		else if(!target.psi)
+			target.adjustBrainLoss(25)
+			to_chat(user, SPAN_NOTICE("<b>[target] manages to prevent your attack, but with a big cost!</b>"))
+			to_chat(target, SPAN_NOTICE("<b>You managed to protect your memories, but it's affected your brain very much!</b>"))
+			return
+	if(option == "Yes")
+		to_chat(target, SPAN_NOTICE("<b>Your mind is compelled to answer: <i>[question]</i></b>"))
+	if(option == "No")
+		if(target.psi)
+			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+			if(con_rank_target > con_rank_user)
+				to_chat(user, SPAN_NOTICE("<b>[target] blocks your psionic attack without any problem!</b>"))
+				to_chat(target, SPAN_NOTICE("<b>You easily protected your memories!</b>"))
+				return
+			else
+				target.adjustBrainLoss(25)
+				to_chat(user, SPAN_NOTICE("<b>[target] manages to prevent your attack, but with a big cost!</b>"))
+				to_chat(target, SPAN_NOTICE("<b>You managed to protect your memories, but it's affected your brain very much!</b>"))
+				return
+		else if(!target.psi)
+			target.adjustBrainLoss(25)
+			to_chat(user, SPAN_NOTICE("<b>[target] manages to prevent your attack, but with a big cost!</b>"))
+			to_chat(target, SPAN_NOTICE("<b>You managed to protect your memories, but it's affected your brain very much!</b>"))
+			return
+
 
 	var/answer =  input(target, question, "Read Mind") as null|text
 	if(!answer || world.time > started_mindread + 60 SECONDS || user.stat != CONSCIOUS || target.stat == DEAD)

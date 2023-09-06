@@ -3,8 +3,8 @@ GLOBAL_LIST_INIT(text2psistatus, list("C" = 1, "B" = 2, "A" = 3, "S" = 4))
 
 /datum/preferences
 	var/psi_threat_level = 0
-	var/psi_status       = 1
-	var/psi_openness     = TRUE
+	var/psi_status       = 4
+	var/psi_openness     = FALSE
 
 /datum/category_item/player_setup_item/physical/psionics
 	name = "psionics"
