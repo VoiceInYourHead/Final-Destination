@@ -1540,7 +1540,7 @@
 /datum/recipe/kale_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	fruit = list(
@@ -1555,7 +1555,7 @@
 /datum/recipe/greek_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	items = list(
@@ -1576,7 +1576,7 @@
 /datum/recipe/caesar_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	items = list(
@@ -1595,7 +1595,7 @@
 /datum/recipe/spring_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	fruit = list(
