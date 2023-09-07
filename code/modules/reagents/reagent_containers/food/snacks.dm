@@ -3781,7 +3781,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 9)
 	reagents.add_reagent(/datum/reagent/oliveoil, 5)
 	reagents.add_reagent(/datum/reagent/drink/juice/onion, 6)
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 1)
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
 	reagents.add_reagent(/datum/reagent/nutriment/batter, 2)
 
 

@@ -1581,7 +1581,8 @@
 
 	items = list(
 		/obj/item/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/reagent_containers/food/snacks/slice/bread
+		/obj/item/reagent_containers/food/snacks/slice/bread,
+		/obj/item/reagent_containers/food/snacks/meat/chicken
 	)
 
 	fruit = list(
