@@ -99,6 +99,14 @@
 	result = /obj/item/reagent_containers/food/snacks/meatburger
 
 
+/datum/recipe/chickenburger
+	items = list(
+		/obj/item/reagent_containers/food/snacks/bun,
+		/obj/item/reagent_containers/food/snacks/meat/chicken
+	)
+	result = /obj/item/reagent_containers/food/snacks/chickenburger
+
+
 /datum/recipe/brainburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bun,

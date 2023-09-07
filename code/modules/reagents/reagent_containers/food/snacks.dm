@@ -641,6 +641,19 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 3)
 
+/obj/item/reagent_containers/food/snacks/chickenburger
+	name = "chickenburger"
+	desc = "For those, who appreciate bird flavour."
+	icon_state = "hburger"
+	filling_color = "#d63c3c"
+	center_of_mass = "x=16;y=11"
+	nutriment_desc = list("bun" = 2)
+	nutriment_amt = 3
+	bitesize = 2
+/obj/item/reagent_containers/food/snacks/chickenburger/Initialize()
+	.=..()
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 3)
+
 /obj/item/reagent_containers/food/snacks/plainburger
 	name = "burger"
 	desc = "The cornerstone of every nutritious breakfast."
