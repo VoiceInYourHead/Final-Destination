@@ -3693,7 +3693,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#8c0046"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("watermelon" = 4, "apple" = 2, "orange" = 2)
-	nutriment_amt = 7
+	nutriment_amt = 6
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/fruitsalad/Initialize()
 	.=..()
@@ -3710,7 +3710,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#468c00"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("banana" = 3, "lemon" = 2, "apple" = 2)
-	nutriment_amt = 9
+	nutriment_amt = 7
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/junglesalad/Initialize()
 	.=..()
@@ -3727,7 +3727,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#e6ffcc"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("orange" = 3, "sour" = 2, "lime" = 2)
-	nutriment_amt = 8
+	nutriment_amt = 6
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/citrusdelight/Initialize()
 	reagents.add_reagent(/datum/reagent/drink/juice/lemon, 6)
@@ -3758,7 +3758,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#5ebb00"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("tomato" = 2, "cheese" = 1, "olive oil" = 1)
-	nutriment_amt = 10
+	nutriment_amt = 8
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/greek_salad/Initialize()
 	reagents.add_reagent(/datum/reagent/psilocybin, 3)
@@ -3775,7 +3775,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#b3ff66"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("freshness" = 2, "cabbage" = 1)
-	nutriment_amt = 12
+	nutriment_amt = 8
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/caesar_salad/Initialize()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 9)
@@ -3792,7 +3792,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#b3ff66"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("cabbage" = 3, "carrots" = 2)
-	nutriment_amt = 11
+	nutriment_amt = 6
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/spring_salad/Initialize()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 10)
@@ -3807,7 +3807,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#808c00"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("potato" = 4, "salt" = 2)
-	nutriment_amt = 12
+	nutriment_amt = 10
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/potato_salad/Initialize()
 	reagents.add_reagent(/datum/reagent/drink/juice/potato, 9)
@@ -3823,7 +3823,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	filling_color = "#c07272"
 	center_of_mass = "x=15;y=9"
 	nutriment_desc = list("meat" = 4, "tomato" = 2, "salt" = 2)
-	nutriment_amt = 12
+	nutriment_amt = 10
 	bitesize = 2
 /obj/item/reagent_containers/food/snacks/antipasto_salad/Initialize()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 10)
