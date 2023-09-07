@@ -51,7 +51,7 @@
 	ruin_tags = RUIN_HUMAN
 
 /datum/map_template/ruin/exoplanet/build/build9
-	name = "Mech Combat Arena 8"
+	name = "Mech Combat Arena 9"
 	id = "build9"
 	spawn_cost = 1
 	suffixes = list("small_ruins/build_ruin9.dmm")
