@@ -37,7 +37,7 @@
 	cooldown =        40
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_OPERANT
-	use_description = "Choose the left hand and target a door on harm intent to open it. You also can bolt it, by choosing right hand."
+	use_description = "Choose the left hand and target a door on harm intent to open it. You also can bolt it(if you strong enough), by choosing right hand."
 
 /decl/psionic_power/electronics/sneaky/invoke(var/mob/living/user, var/mob/living/target)
 	if(isnull(target) || istype(target)) return FALSE
