@@ -10,7 +10,6 @@ Thumbs.db
 data/
 dmdoc/
 cfg/
-maps/torch/torch_define.dm
 build_log.txt
 use_map
 stopserver
