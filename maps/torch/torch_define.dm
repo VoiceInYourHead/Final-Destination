@@ -57,7 +57,8 @@
 //	num_exoplanets = 3
 //	away_site_budget = 8
 
-	num_exoplanets = 1
-	away_site_budget = 0
+	num_exoplanets = 3
+	away_site_budget = 5
+	num_junkyards = 1
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'

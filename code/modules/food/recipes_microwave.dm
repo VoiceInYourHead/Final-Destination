@@ -99,6 +99,14 @@
 	result = /obj/item/reagent_containers/food/snacks/meatburger
 
 
+/datum/recipe/chickenburger
+	items = list(
+		/obj/item/reagent_containers/food/snacks/bun,
+		/obj/item/reagent_containers/food/snacks/meat/chicken
+	)
+	result = /obj/item/reagent_containers/food/snacks/chickenburger
+
+
 /datum/recipe/brainburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bun,
@@ -1540,7 +1548,7 @@
 /datum/recipe/kale_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	fruit = list(
@@ -1555,7 +1563,7 @@
 /datum/recipe/greek_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	items = list(
@@ -1576,12 +1584,13 @@
 /datum/recipe/caesar_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	items = list(
 		/obj/item/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/reagent_containers/food/snacks/slice/bread
+		/obj/item/reagent_containers/food/snacks/slice/bread,
+		/obj/item/reagent_containers/food/snacks/meat/chicken
 	)
 
 	fruit = list(
@@ -1595,7 +1604,7 @@
 /datum/recipe/spring_salad
 
 	reagents = list(
-		/datum/reagent/nutriment/cornoil = 5
+		/datum/reagent/oliveoil = 5
 	)
 
 	fruit = list(
