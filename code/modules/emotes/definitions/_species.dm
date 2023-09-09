@@ -101,4 +101,9 @@
 		/decl/emote/audible/cough/resomi,
 		/decl/emote/audible/laugh/resomi,
 		/decl/emote/audible/scream/resomi,
+		/decl/emote/audible/peep/resomi,
+		/decl/emote/audible/rustle/resomi,
+		/decl/emote/audible/trill/resomi,
+		/decl/emote/audible/warble/resomi,
+		/decl/emote/audible/wurble/resomi
 		)

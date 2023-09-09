@@ -315,3 +315,33 @@
 		'sound/voice/emotes/pain_monkey_3.ogg'
 		)
 	sounded_species = null
+
+/decl/emote/audible/peep/resomi
+	key = "peep"
+	emote_message_3p = "USER пищит"
+	emote_sound = 'sound/voice/peep.ogg'
+	sounded_species = null
+
+/decl/emote/audible/rustle/resomi
+	key = "rustle"
+	emote_message_3p = "USER шелестит крыльями"
+	emote_sound = 'sound/voice/rustle.ogg'
+	sounded_species = null
+
+/decl/emote/audible/trill/resomi
+	key = "trill"
+	emote_message_3p = "USER издаёт трель"
+	emote_sound = 'sound/voice/trill.ogg'
+	sounded_species = null
+
+/decl/emote/audible/warble/resomi
+	key = "warble"
+	emote_message_3p = "USER издаёт трель"
+	emote_sound = 'sound/voice/warble.ogg'
+	sounded_species = null
+
+/decl/emote/audible/wurble/resomi
+	key = "wurble"
+	emote_message_3p = "USER урчит"
+	emote_sound = 'sound/voice/wurble.ogg'
+	sounded_species = null
