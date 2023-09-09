@@ -16,6 +16,52 @@
 	if(. && target.deflect_psionic_attack(user))
 		return FALSE
 
+/decl/psionic_power/consciousness/telepathy
+	name =            "Telepathy"
+	cost =            2
+	cooldown =        50
+	use_ranged =       TRUE
+	min_rank =        PSI_RANK_APPRENTICE
+	suppress_parent_proc = TRUE
+	use_description = "Target the mouth on disarm intent at any range to attempt to connect with victim's mind."
+
+/decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
+	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH)
+		return FALSE
+	. = ..()
+	if(!.)
+		return
+
+	if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
+		to_chat(user, SPAN_WARNING("\The [target] is in no state for a mind-ream."))
+		return FALSE
+
+	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
+	if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
+		return FALSE
+
+	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+	to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
+	if(target.psi)
+		var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+		if(con_rank_target >= con_rank_user)
+			to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
+			if(con_rank_target > con_rank_user)
+				var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
+				if(!option)
+					return
+				if("Нет")
+					return
+				if("Да")
+					var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+					to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
+		else
+			to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
+	else if(!target.psi)
+		to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
+	return TRUE
+
+
 /decl/psionic_power/consciousness/mindread
 	name =            "Read Mind"
 	cost =            6
