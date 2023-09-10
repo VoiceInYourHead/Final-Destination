@@ -44,3 +44,7 @@
 	req_components = list (
 		/obj/item/stock_parts/capacitor/super = 5
 	)
+
+/obj/item/stock_parts/circuitboard/disruptor/tele
+	name = T_BOARD("disruptor control telescreen")
+	build_path = /obj/machinery/computer/ship/ship_weapon/disruptor/telescreen
