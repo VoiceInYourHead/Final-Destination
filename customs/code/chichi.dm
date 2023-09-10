@@ -1,7 +1,7 @@
 /obj/item/material/twohanded/spear/chichi
 	icon_state = "spearresomi0"
 	base_icon = "spearresomi"
-	name = "wooden spear"
+	name = "spear"
 	desc = "A deadly weapon, shaped and engraved with unic style of resomi culture in it."
 	default_material = MATERIAL_ALUMINIUM
 
