@@ -1,17 +1,17 @@
 /obj/machinery/ship_weapon/front_part/autocannon
-	name = "M2410 autocannon muzzle"
+	name = "AA-24 autocannon muzzle"
 	desc = "An old-fashion autocannon muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
 
 /obj/machinery/ship_weapon/middle_part/autocannon
-	name = "M2410 autocannon barrel"
+	name = "AA-24 autocannon barrel"
 	desc = "An old-fashion gas tube that propels munitions to the autocannon muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
-	icon_state = "magazine"
+	icon_state = "autocannon"
 
 /obj/machinery/ship_weapon/back_part/autocannon
-	name = "M2410 autocannon breech end"
+	name = "AA-24 autocannon breech end"
 	desc = "An old-fashion ammo reciever. Munition then goes to autocannon barrel."
 	icon_state = "ammo_loader"
 

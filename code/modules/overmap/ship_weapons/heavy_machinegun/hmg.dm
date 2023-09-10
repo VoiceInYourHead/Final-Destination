@@ -1,17 +1,17 @@
 /obj/machinery/ship_weapon/front_part/hmg
-	name = "HMG muzzle"
+	name = "IW-12 HMG muzzle"
 	desc = "An old-fashion heavy machinegun muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
 
 /obj/machinery/ship_weapon/middle_part/hmg
-	name = "HMG barrel"
+	name = "IW-12 HMG barrel"
 	desc = "An old-fashion gas tube that propels munitions to HMG muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
-	icon_state = "magazine"
+	icon_state = "hmg"
 
 /obj/machinery/ship_weapon/back_part/hmg
-	name = "HMG breech end"
+	name = "IW-12 HMG breech end"
 	desc = "An old-fashion ammo reciever. Munition then goes to HMG barrel."
 	icon_state = "ammo_loader"
 
