@@ -1,17 +1,17 @@
 /obj/machinery/ship_weapon/front_part/disruptor
-	name = "disruptor muzzle"
+	name = "EWW-01 disruptor muzzle"
 	desc = "A disruptor muzzle.\
 		<br>A sign on it reads: <i>STAY CLEAR! DO NOT BLOCK!</i>"
 	icon_state = "gun"
 
 /obj/machinery/ship_weapon/middle_part/disruptor
-	name = "disruptor barrel"
+	name = "EWW-01 disruptor barrel"
 	desc = "A gas tube that propels munitions to the disruptor muzzle. \
 		<br>A sign on it reads: <i>EXPLOSIVE! DO NOT OVERHEAT!</i>"
-	icon_state = "magazine"
+	icon_state = "disruptor"
 
 /obj/machinery/ship_weapon/back_part/disruptor
-	name = "disruptor breech end"
+	name = "EWW-01 disruptor breech end"
 	desc = "An ammo reciever. Munition then goes to disruptor barrel."
 	icon_state = "ammo_loader"
 
