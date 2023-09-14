@@ -49,3 +49,7 @@
 		/obj/item/stock_parts/capacitor/super = 3,
 		/obj/item/stock_parts/manipulator/pico = 3
 	)
+
+/obj/item/stock_parts/circuitboard/harpoon/tele
+	name = T_BOARD("harpoon control telescreen")
+	build_path = /obj/machinery/computer/ship/ship_weapon/harpoon_gun/telescreen

@@ -24,6 +24,10 @@
 	build_path = /obj/machinery/computer/ship/ship_weapon/minigun
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2)
 
+/obj/item/stock_parts/circuitboard/minigun/tele
+	name = T_BOARD("rotary railgun cannon control telescreen")
+	build_path = /obj/machinery/computer/ship/ship_weapon/minigun/telescreen
+
 /obj/item/stock_parts/circuitboard/minigun_front
 	name = T_BOARD("rotary railgun cannon muzzle")
 	build_path = /obj/machinery/ship_weapon/front_part/minigun
