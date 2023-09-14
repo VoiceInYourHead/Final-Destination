@@ -124,7 +124,7 @@
 		if(!CanInteract(user,state))
 			return TOPIC_NOACTION
 		if (input)
-			linked.set_target(TARGET_POINT, null, clamp(input, 1, 34), linked.get_target(TARGET_POINT)[2])
+			linked.set_target(TARGET_POINT, null, clamp(input, 1, 55), linked.get_target(TARGET_POINT)[2])
 		return TOPIC_REFRESH
 
 	if (href_list["set_pointy"])
@@ -132,5 +132,5 @@
 		if(!CanInteract(user,state))
 			return TOPIC_NOACTION
 		if (input)
-			linked.set_target(TARGET_POINT, null, linked.get_target(TARGET_POINT)[1], clamp(input, 1, 34))
+			linked.set_target(TARGET_POINT, null, linked.get_target(TARGET_POINT)[1], clamp(input, 1, 55))
 		return TOPIC_REFRESH
