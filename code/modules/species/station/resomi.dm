@@ -1,13 +1,13 @@
 /datum/species/resomi
 	name = SPECIES_RESOMI
 	name_plural = "Resomii"
-	description = "A race of feathered raptors who developed on a cold world. \
+	description = "A race of feathered raptors who developed in a cold world. \
 	Extremely fragile, they developed hunting skills that emphasized taking \
-	out their prey without themselves getting hit. They are an pretty new species, \
-	opened by humans."
+	out their prey without themselves getting hit. They are pretty new species, \
+	discovered by humans."
 
 	min_age = 15
-	max_age = 45
+	max_age = 65
 	hidden_from_codex = FALSE
 	health_hud_intensity = 3
 
@@ -32,7 +32,7 @@
 
 	slowdown = -0.8 //speed fix?
 
-	darksight_range = 2
+	darksight_range = 6
 	darksight_tint = DARKTINT_GOOD
 	flash_mod = 2
 	total_health = 150
@@ -115,8 +115,11 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
-			CULTURE_RESOMI_TRIBE,
-			CULTURE_RESOMI_CONCORD,
+			CULTURE_RESOMI_TEMALI,
+			CULTURE_RESOMI_SHAYAMI,
+			CULTURE_RESOMI_SHOSHONI,
+			CULTURE_RESOMI_ATARI,
+			CULTURE_RESOMI_OTHER,
 			CULTURE_RESOMI_SPACER,
 			CULTURE_OTHER
 		),
@@ -125,9 +128,9 @@
 			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
-			FACTION_RESOMI_URI,
+			FACTION_RESOMI_URE,
 			FACTION_RESOMI_CONCORD,
-			FACTION_RESOMI_REFUGEE,
+			FACTION_RESOMI_INDEPENDENT,
 			FACTION_EXPEDITIONARY,
 			FACTION_OTHER
 		),

@@ -793,6 +793,11 @@
 	desc = "A plushie of a cute kitten! Watch as it purrs it's way right into your heart."
 	icon_state = "kittenplushie"
 
+/obj/item/toy/plushie/soundable/resomi
+	name = "resomi plush"
+	desc = "This is a plush resomi. Very soft, with a pompom on the tail. The toy is made well, as if alive. Looks like she is sleeping. Shhh!"
+	icon_state = "resomiplushie"
+	sounds = list('sound/voice/peep.ogg')
 
 /obj/item/toy/plushie/soundable/pig
 	name = "piggy plush"
