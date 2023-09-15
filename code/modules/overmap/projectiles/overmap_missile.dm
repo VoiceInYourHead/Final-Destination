@@ -87,7 +87,7 @@
 			if(prob(10))
 				Destroy()
 
-		if(istype(E, /obj/effect/overmap/event/gravity_danger))
+		if(istype(E, /obj/effect/overmap/event/gravity/danger))
 			if(prob(50))
 				Destroy()
 

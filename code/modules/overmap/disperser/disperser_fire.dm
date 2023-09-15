@@ -109,7 +109,7 @@
 			N.name = "temporary bluespace nebula"
 			QDEL_IN(N, rand(1 MINUTES, 3 MINUTES))
 		if(chargetype == OVERMAP_WEAKNESS_WORM)
-			var/obj/effect/overmap/event/gravity_danger/S = new /obj/effect/overmap/event/gravity_danger(targetrange)
+			var/obj/effect/overmap/event/gravity/danger/S = new /obj/effect/overmap/event/gravity/danger(targetrange)
 			S.name = "unstable wormhole"
 			QDEL_IN(S, rand(1 MINUTES, 2 MINUTES))
 		return TRUE
