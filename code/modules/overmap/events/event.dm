@@ -399,6 +399,30 @@
 	opacity = 0
 	color = "#321945"
 
+/obj/effect/overmap/event/gravity/danger
+	name = "unstable wormhole"
+	weaknesses = OVERMAP_WEAKNESS_BLUESPACE | OVERMAP_WEAKNESS_WORM
+	event_icon_states = list("wormhole")
+	opacity = 0
+	color = "#321945"
+	var/grav_pull = 3 //How many tiles out do we pull?
+
+/obj/effect/overmap/event/gravity/danger/Initialize()
+	spawn(4)
+		eat()
+
+/obj/effect/overmap/event/gravity/danger/proc/eat()
+	while(src)
+
+		for(var/obj/effect/overmap/visitable/X in orange(grav_pull, src))
+			var/dist = get_dist(X, src)
+			if(dist < 1)
+				return
+			if(dist >= 1 && prob(30))
+				step_towards(X, src)
+				sleep(70)
+
+
 //These now are basically only used to spawn hazards. Will be useful when we need to spawn group of moving hazards
 /datum/overmap_event
 	var/name = "map event"

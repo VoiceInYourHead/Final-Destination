@@ -87,6 +87,10 @@
 			if(prob(10))
 				Destroy()
 
+		if(istype(E, /obj/effect/overmap/event/gravity/danger))
+			if(prob(50))
+				Destroy()
+
 		if(istype(E, /obj/effect/overmap/event/electric))
 			if(prob(33))
 				for(var/obj/item/missile_equipment/thruster/T in actual_missile.equipment)
