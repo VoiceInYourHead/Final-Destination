@@ -221,13 +221,16 @@
 
 // Resomi cultures.
 
-#define CULTURE_RESOMI_TRIBE     		"Alish, Tribe Comonner"
-#define CULTURE_RESOMI_CONCORD    		"Alish, Child of Concord"
-#define CULTURE_RESOMI_SPACER 			"Spacer, Imperial Refugee"
+#define CULTURE_RESOMI_TEMALI     		"Alish, Temali Tribes"
+#define CULTURE_RESOMI_SHAYAMI    		"Alish, Shayami Tribes"
+#define CULTURE_RESOMI_SHOSHONI    		"Alish, Shoshoni Tribes"
+#define CULTURE_RESOMI_ATARI    		"Alish, Atari Tribes"
+#define CULTURE_RESOMI_OTHER    		"Alish, Other Tribes"
+#define CULTURE_RESOMI_SPACER 			"Spacer, Independent"
 
 #define FACTION_RESOMI_CONCORD			"Concord"
 #define FACTION_RESOMI_EXPEDITIONARY 	"Expeditionary Corps"
-#define FACTION_RESOMI_URI				"United Resomi Empire"
-#define FACTION_RESOMI_REFUGEE			"Independent"
+#define FACTION_RESOMI_URE				"United Resomi Empire"
+#define FACTION_RESOMI_INDEPENDENT		"Independent"
 
 #define HOME_SYSTEM_RESOMI_ALISH      	"Alish"
