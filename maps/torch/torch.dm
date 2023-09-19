@@ -198,6 +198,9 @@
 	#include "../away/junk_planet/jplanet.dm"
 	#include "../away/ecoffice/ecoffice.dm"
 
+//alternative future stuff
+	#include "../away/airfield/airfield.dm"
+
 	#define using_map_DATUM /datum/map/torch
 
 #elif !defined(MAP_OVERRIDE)

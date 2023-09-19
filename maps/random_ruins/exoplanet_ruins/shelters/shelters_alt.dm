@@ -18,7 +18,7 @@
 	name = "Ancient crashsite"
 	id = "shelter2"
 	description = "A shelter for those who live on local ruined ecumenopolis."
-	suffixes = list("shelters/shelter_1.dmm")
+	suffixes = list("shelters/shelter_2.dmm")
 	spawn_cost = 0.6
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS|TEMPLATE_FLAG_NO_RUINS
 	ruin_tags = RUIN_WRECK
