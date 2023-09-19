@@ -486,7 +486,6 @@
 	landmark_transition = "nav_transit_scarab"
 	dock_target = "scarab_shuttle_dock_airlock"
 	range = 0 //range = 2
-	fuel_consumption = 1
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/merc
 	flags = SHUTTLE_FLAGS_PROCESS
 	defer_initialisation = TRUE
