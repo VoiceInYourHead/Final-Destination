@@ -29,6 +29,7 @@
 	solcivilian["Expeditionary Medal"] = /obj/item/storage/medalbox/sol/expeditionary
 	solcivilian["Sapientarian Peace Award"] = /obj/item/storage/medalbox/sol/sapientarian
 	solcivilian["Distinguished Service Medal"] = /obj/item/storage/medalbox/sol/service
+	solcivilian["Combat Medical Award"] = /obj/item/storage/medalbox/sol/medical
 	gear_tweaks += new/datum/gear_tweak/path(solcivilian)
 
 /datum/gear/accessory/solgov_award_ribbons
