@@ -237,8 +237,8 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 /obj/effect/overmap/visitable/ship/proc/go_boom_overmap()
 	adjust_speed(-speed[1], -speed[2])
 	halted = 1
-	icon_state = "ship_exploding"
-	spawn(45) icon_state = "ship_exploded"
+	icon_state = "[icon_state]_exploding"
+	spawn(45) icon_state = "[icon_state]_exploded"
 
 /obj/effect/overmap/visitable/ship/proc/go_boom()
 	set waitfor = 0
