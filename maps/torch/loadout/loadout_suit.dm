@@ -98,7 +98,7 @@
 	path = /obj/item/clothing/suit/armor/pcarrier
 	cost = 1
 	slot = slot_wear_suit
-	allowed_roles = ARMORED_ROLES
+	allowed_roles = list(ARMORED_ROLES, /datum/job/submap/airfield/command/instructor, /datum/job/submap/airfield/command/assistant)
 
 /datum/gear/tactical/pcarrier/navy
 	display_name = "navy blue plate carrier"

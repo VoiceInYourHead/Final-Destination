@@ -180,6 +180,7 @@
 		/datum/mil_rank/fleet/e9_alt2,
 		/datum/mil_rank/fleet/e9_alt3,
 		/datum/mil_rank/fleet/e9_alt4,
+		/datum/mil_rank/fleet/o0,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
 		/datum/mil_rank/fleet/o3,
@@ -203,6 +204,7 @@
 		/datum/mil_rank/fleet/e8,
 		/datum/mil_rank/fleet/e9,
 		/datum/mil_rank/fleet/e9_alt1,
+		/datum/mil_rank/fleet/o0,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
 		/datum/mil_rank/fleet/o3,
@@ -411,6 +413,11 @@
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt4, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 9
 
+/datum/mil_rank/fleet/o0
+	name = "Cadet"
+	name_short = "CAD"
+	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/cadet)
+	sort_order = 11
 /datum/mil_rank/fleet/o1
 	name = "Ensign"
 	name_short = "ENS"

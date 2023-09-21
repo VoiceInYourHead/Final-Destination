@@ -1,5 +1,5 @@
 #include "airfield_areas.dm"
-//#include "airfield_jobs.dm"
+#include "airfield_job.dm"
 #include "airfield_shuttles.dm"
 
 /obj/effect/submap_landmark/joinable_submap/airfield
@@ -10,6 +10,10 @@
 	descriptor = "Rubicon 3 Airfield"
 	map = "Rubicon 3 Airfield"
 	crew_jobs = list(
+		/datum/job/submap/airfield/command/instructor,
+		/datum/job/submap/airfield/command/assistant,
+		/datum/job/submap/airfield/engineer,
+		/datum/job/submap/airfield/cadet,
 	)
 
 /obj/effect/overmap/visitable/ship/airfield
@@ -73,6 +77,7 @@
 	apc_test_exempt_areas = list(
 		/area/ship/airfield/outdoors = NO_SCRUBBER|NO_VENT|NO_APC
 	)
+
 
 //elevator
 
