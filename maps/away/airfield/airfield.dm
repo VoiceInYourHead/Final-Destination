@@ -70,8 +70,83 @@
 		/datum/shuttle/autodock/overmap/airfield8,
 		/datum/shuttle/autodock/overmap/airfield9,
 		/datum/shuttle/autodock/overmap/airfield10,
-		/datum/shuttle/autodock/overmap/airfield11
+		/datum/shuttle/autodock/overmap/airfield11,
+		/datum/shuttle/autodock/ferry/airfield1,
+		/datum/shuttle/autodock/ferry/airfield2
 	)
 	apc_test_exempt_areas = list(
 		/area/ship/airfield/outdoors = NO_SCRUBBER|NO_VENT|NO_APC
 	)
+
+
+//elevator
+
+/obj/machinery/computer/shuttle_control/lift/airfield1
+	name = "ODT 1 controls"
+	shuttle_tag = "ODT 1 lift"
+	ui_template = "shuttle_control_console_lift.tmpl"
+	icon_state = "tiny"
+	icon_keyboard = "tiny_keyboard"
+	icon_screen = "lift"
+	density = FALSE
+
+/datum/shuttle/autodock/ferry/airfield1
+	name = "ODT 1 lift"
+	shuttle_area = /area/ship/airfield/lift1
+	warmup_time = 3
+	waypoint_station = "nav_airfield_adt1_lift_top"
+	waypoint_offsite = "nav_airfield_adt1_lift_bottom"
+	sound_takeoff = 'sound/effects/lift_heavy_start.ogg'
+	sound_landing = 'sound/effects/lift_heavy_stop.ogg'
+	ceiling_type = null
+	knockdown = 0
+	defer_initialisation = TRUE
+
+/obj/effect/shuttle_landmark/lift/airfield/top1
+	name = "Top Deck"
+	landmark_tag = "nav_airfield_adt1_lift_top"
+	base_area = /area/ship/airfield/adt1/upper
+	base_turf = /turf/simulated/open
+
+/obj/effect/shuttle_landmark/lift/airfield/bottom1
+	name = "Lower Deck"
+	landmark_tag = "nav_airfield_adt1_lift_bottom"
+	flags = SLANDMARK_FLAG_AUTOSET
+	base_area = /area/ship/airfield/adt1
+	base_turf = /turf/simulated/floor/plating
+
+
+
+/obj/machinery/computer/shuttle_control/lift/airfield2
+	name = "ODT 2 controls"
+	shuttle_tag = "ODT 2 lift"
+	ui_template = "shuttle_control_console_lift.tmpl"
+	icon_state = "tiny"
+	icon_keyboard = "tiny_keyboard"
+	icon_screen = "lift"
+	density = FALSE
+
+/datum/shuttle/autodock/ferry/airfield2
+	name = "ODT 2 lift"
+	shuttle_area = /area/ship/airfield/lift2
+	warmup_time = 3
+	waypoint_station = "nav_airfield_adt2_lift_top"
+	waypoint_offsite = "nav_airfield_adt2_lift_bottom"
+	sound_takeoff = 'sound/effects/lift_heavy_start.ogg'
+	sound_landing = 'sound/effects/lift_heavy_stop.ogg'
+	ceiling_type = null
+	knockdown = 0
+	defer_initialisation = TRUE
+
+/obj/effect/shuttle_landmark/lift/airfield/top2
+	name = "Top Deck"
+	landmark_tag = "nav_airfield_adt2_lift_top"
+	base_area = /area/ship/airfield/adt2/upper
+	base_turf = /turf/simulated/open
+
+/obj/effect/shuttle_landmark/lift/airfield/bottom2
+	name = "Lower Deck"
+	landmark_tag = "nav_airfield_adt2_lift_bottom"
+	flags = SLANDMARK_FLAG_AUTOSET
+	base_area = /area/ship/airfield/adt2
+	base_turf = /turf/simulated/floor/plating

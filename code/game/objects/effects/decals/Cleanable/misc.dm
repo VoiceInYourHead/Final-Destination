@@ -32,6 +32,31 @@
 	mouse_opacity = 0
 	persistent = TRUE
 
+/obj/effect/decal/cleanable/snow
+	name = "snow"
+	desc = "A thin layer of snow."
+	gender = PLURAL
+	alpha = 50
+	icon = 'icons/turf/flooring/misc.dmi'
+	icon_state = "snow_tile"
+	mouse_opacity = 0
+	persistent = FALSE
+
+/obj/effect/decal/cleanable/snow/monotile
+	icon_state = "snow"
+	alpha = 100
+
+/obj/effect/decal/cleanable/snow/hexagonal
+	icon_state = "snow_hex"
+	alpha = 100
+
+/obj/effect/decal/cleanable/snow/side
+	icon_state = "snow_side"
+	alpha = 100
+
+/obj/effect/decal/cleanable/snow/side/corner
+	icon_state = "snow_corner"
+
 /obj/effect/decal/cleanable/flour
 	name = "flour"
 	desc = "It's still good. Four second rule!"

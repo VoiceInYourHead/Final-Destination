@@ -6,6 +6,8 @@
 	desc = "An small Sol fighter, designed for double-piloting, broadcasting SCGSV codes and the callsign \"Hitman #1\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-star"
+	moving_state = "sfv-star_moving"
 	integrity_failure_cap = 40
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
@@ -52,6 +54,8 @@
 	desc = "An small Sol fighter, designed for double-piloting, broadcasting SCGSV codes and the callsign \"Hitman #2\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-star"
+	moving_state = "sfv-star_moving"
 	integrity_failure_cap = 40
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
@@ -98,6 +102,8 @@
 	desc = "An small Sol fighter, designed for double-piloting, broadcasting SCGSV codes and the callsign \"Hitman #3\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-star"
+	moving_state = "sfv-star_moving"
 	integrity_failure_cap = 40
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
@@ -144,6 +150,8 @@
 	desc = "An small Sol fighter, designed for double-piloting, broadcasting SCGSV codes and the callsign \"Hitman #4\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-star"
+	moving_state = "sfv-star_moving"
 	integrity_failure_cap = 40
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
@@ -190,6 +198,8 @@
 	desc = "Sol light-weighted interceptor, designed to take down enemy rockets and heavy armored ships, broadcasting SCGSV codes and the callsign \"Diplomat #1\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-bull"
+	moving_state = "sfv-bull_moving"
 	integrity_failure_cap = 60
 	skill_needed = SKILL_BASIC
 	vessel_mass = 4500
@@ -236,6 +246,8 @@
 	desc = "Sol light-weighted interceptor, designed to take down enemy rockets and heavy armored ships, broadcasting SCGSV codes and the callsign \"Diplomat #2\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-bull"
+	moving_state = "sfv-bull_moving"
 	integrity_failure_cap = 60
 	skill_needed = SKILL_BASIC
 	vessel_mass = 4500
@@ -374,6 +386,8 @@
 	desc = "An small Sol fighter, designed for close-space combat and armed with massive boarding harpoon, broadcasting SCGSV codes and the callsign \"Wasp #1\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-spear"
+	moving_state = "sfv-spear_moving"
 	integrity_failure_cap = 20
 	skill_needed = SKILL_BASIC
 	vessel_mass = 3500
@@ -420,6 +434,8 @@
 	desc = "An small Sol fighter, designed for close-space combat and armed with massive boarding harpoon, broadcasting SCGSV codes and the callsign \"Wasp #2\"."
 	fore_dir = NORTH
 	color = "#0751f3"
+	icon_state = "sfv-spear"
+	moving_state = "sfv-spear_moving"
 	integrity_failure_cap = 20
 	skill_needed = SKILL_BASIC
 	vessel_mass = 3500
@@ -486,7 +502,6 @@
 	landmark_transition = "nav_transit_scarab"
 	dock_target = "scarab_shuttle_dock_airlock"
 	range = 0 //range = 2
-	fuel_consumption = 1
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/merc
 	flags = SHUTTLE_FLAGS_PROCESS
 	defer_initialisation = TRUE

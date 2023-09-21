@@ -113,6 +113,7 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner
 	icon_state = "corner_white"
 	alpha = 229
+	layer = 2.02
 
 /obj/effect/floor_decal/corner/black
 	name = "black corner"
@@ -1251,6 +1252,7 @@ var/list/floor_decals = list()
 	name = "border floor"
 	icon_state = "borderfloor_white"
 	color = COLOR_GUNMETAL
+	layer = 2.01
 
 /obj/effect/floor_decal/borderfloor/corner
 	icon_state = "borderfloorcorner_white"
@@ -1268,6 +1270,7 @@ var/list/floor_decals = list()
 	name = "border floor"
 	icon_state = "borderfloor_white"
 	color = COLOR_DARK_GRAY
+	layer = 2.01
 
 /obj/effect/floor_decal/borderfloorblack/corner
 	icon_state = "borderfloorcorner_white"
@@ -1284,6 +1287,7 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/borderfloorwhite
 	name = "border floor"
 	icon_state = "borderfloor_white"
+	layer = 2.01
 
 /obj/effect/floor_decal/borderfloorwhite/corner
 	icon_state = "borderfloorcorner_white"

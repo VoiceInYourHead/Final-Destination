@@ -20,6 +20,10 @@
 /area/ship/airfield/power_station
 	name = "Airfield Power-source"
 
+/area/ship/airfield/lift1
+
+/area/ship/airfield/lift2
+
 /area/ship/airfield/adt1
 	name = "Airfield ODT #1"
 
