@@ -50,9 +50,12 @@
 	icon_state = "snow_hex"
 	alpha = 100
 
-/obj/effect/decal/cleanable/snow/corner
-	icon_state = "snow_corner"
+/obj/effect/decal/cleanable/snow/side
+	icon_state = "snow_side"
 	alpha = 100
+
+/obj/effect/decal/cleanable/snow/side/corner
+	icon_state = "snow_corner"
 
 /obj/effect/decal/cleanable/flour
 	name = "flour"
