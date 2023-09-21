@@ -866,6 +866,12 @@ ranks - fleet
 	desc = "Insignia denoting the rank of Master Chief Petty Officer of the Fleet."
 	icon_state = "e9_patch"
 
+/obj/item/clothing/accessory/solgov/rank/fleet/cadet
+	name = "ranks (O-0 cadet)"
+	desc = "Shoulderboards denoting the rank of Cadet of Officer Academy."
+	icon_state = "fleetrank_o0"
+	overlay_state = "fleetrank_o"
+
 /obj/item/clothing/accessory/solgov/rank/fleet/officer
 	name = "ranks (O-1 ensign)"
 	desc = "Shoulderboards denoting the rank of Ensign."
