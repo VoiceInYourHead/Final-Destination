@@ -1483,15 +1483,25 @@
 	glass_name = "lonestar mule"
 	glass_desc = "A blend of whiskey, ginger beer, and lime juice."
 
-/datum/reagent/ethanol/lordaniawine
-	name = "Lordanian Wine"
-	description = "An earthy type of wine distilled from grapes on Lordania."
+/datum/reagent/ethanol/tadmorwine
+	name = "Tadmoran Wine"
+	description = "An earthy type of wine distilled from grapes on Tadmor."
 	taste_description = "an acquired taste and elitism"
 	color = "#362f22"
 	strength = 10
 
-	glass_name = "Lordanian wine"
-	glass_desc = "An earthy type of wine distilled from grapes on Lordania."
+	glass_name = "Tadmoran wine"
+	glass_desc = "An earthy type of wine distilled from grapes on Tadmor."
+
+/datum/reagent/ethanol/pinebrew
+	name = "Pinebrew"
+	description = "An alcohol from Meotourne, made from refined conifern. Harmless despite the color."
+	taste_description = "strong national spirit and mustardish pine"
+	color = "#b39424"
+	strength = 15
+
+	glass_name = "Pinebrew"
+	glass_desc = "An alcohol from Meotourne, made from refined conifern. Smells like pine."
 
 /datum/reagent/ethanol/lunabrandy
 	name = "Lunar Brandy"

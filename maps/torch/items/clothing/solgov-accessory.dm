@@ -134,6 +134,12 @@ medals
 	/obj/item/clothing/accessory/ribbon/solgov/medal/service
 	)
 
+/obj/item/storage/medalbox/sol/medical
+	startswith = list(
+	/obj/item/clothing/accessory/medal/solgov/medical,
+	/obj/item/clothing/accessory/ribbon/solgov/medal/medical
+	)
+
 
 /obj/item/clothing/accessory/solgov
 	var/check_codex_val = FACTION_FLEET

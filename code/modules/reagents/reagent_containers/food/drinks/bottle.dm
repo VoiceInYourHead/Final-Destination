@@ -446,16 +446,28 @@
 	reagents.add_reagent(/datum/reagent/ethanol/sake, 100)
 
 
-/obj/item/reagent_containers/food/drinks/bottle/lordaniawine
-	name = "New Aresian Vintage 2230"
+/obj/item/reagent_containers/food/drinks/bottle/tadmorwine
+	name = "Palmyran Vintage 2230"
 	desc = "The kind of wine that just demands attention, and a big wallet."
-	icon_state = "lordaniawine"
+	icon_state = "tadmorwine"
 	center_of_mass = "x=16;y=4"
 
 
-/obj/item/reagent_containers/food/drinks/bottle/lordaniawine/Initialize()
+/obj/item/reagent_containers/food/drinks/bottle/tadmorwine/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/ethanol/lordaniawine, 100)
+	reagents.add_reagent(/datum/reagent/ethanol/tadmorwine, 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/pinebrew
+	name = "Republican Diplomat's Standard"
+	desc = "Straight from Treone with an original seal, carefully distilled and clean of poisons. Probably costs less than you'd imagined."
+	icon_state = "pinebrew"
+	center_of_mass = "x=16;y=4"
+
+
+/obj/item/reagent_containers/food/drinks/bottle/pinebrew/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/ethanol/pinebrew, 100)
+
 
 
 /obj/item/reagent_containers/food/drinks/bottle/champagne
