@@ -121,6 +121,11 @@
 		/decl/emote/exertion/biological/pant
 	)
 
+	species_bonus = 6
+
+/datum/species/mantid/skills_from_age(age)
+	. = 0
+
 /datum/species/mantid/handle_sleeping(var/mob/living/carbon/human/H)
 	return
 
@@ -179,6 +184,11 @@
 		TAG_FACTION =   FACTION_ASCENT_GYNE,
 		TAG_RELIGION =  RELIGION_KHARMAANI
 	)
+
+	species_bonus = 8
+
+/datum/species/mantid/gyne/skills_from_age(age)
+	. = 0
 
 /datum/species/mantid/gyne/attempt_grab(var/mob/living/carbon/human/grabber, var/mob/living/target)
 	if(grabber != target)

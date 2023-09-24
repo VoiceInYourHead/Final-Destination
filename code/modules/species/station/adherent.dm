@@ -108,6 +108,8 @@
 		"Jet"         = "_black"
 	)
 
+	species_bonus = 16
+
 /datum/species/adherent/New()
 	equip_adjust = list(
 		"[slot_l_hand_str]" = list("[NORTH]" = list("x" = 0, "y" = 14), "[EAST]" = list("x" = 0, "y" = 14), "[SOUTH]" = list("x" = 0, "y" = 14), "[WEST]" = list("x" = 0,  "y" = 14)),
@@ -156,11 +158,7 @@
 	return "coolant"
 
 /datum/species/adherent/skills_from_age(age)
-	switch(age)
-		if(0 to 1000)    . = -4
-		if(1000 to 2000) . =  0
-		if(2000 to 8000) . =  4
-		else             . =  8
+	. = 0
 
 /datum/species/adherent/get_additional_examine_text(var/mob/living/carbon/human/H)
 	if(can_overcome_gravity(H)) return "\nThey are floating on a cloud of shimmering distortion."

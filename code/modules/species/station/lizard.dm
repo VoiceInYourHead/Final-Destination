@@ -152,6 +152,17 @@
 		/decl/emote/exertion/biological/pant
 	)
 
+	species_bonus = 4
+
+/datum/species/unathi/skills_from_age(age)
+	switch(age)
+		if(0 to 22) 	. = 0
+		if(23 to 60) 	. = 2
+		if(61 to 80)	. = 4
+		if(81 to 120)	. = 6
+		if(121 to 200)	. = 3
+		else			. = -2
+
 /datum/species/unathi/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H),slot_shoes)

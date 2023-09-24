@@ -101,6 +101,11 @@
 		/decl/emote/exertion/synthetic/creak
 	)
 
+	species_bonus = 12
+
+/datum/species/machine/skills_from_age(age)
+	. = 0
+
 /datum/species/machine/check_background(var/datum/job/job, var/datum/preferences/prefs)
 	var/decl/cultural_info/faction/positronic/gen = SSculture.get_culture(prefs.cultural_info[TAG_FACTION])
 	. = istype(gen) ? (job.type in gen.valid_jobs) : ..()

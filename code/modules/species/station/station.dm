@@ -240,6 +240,14 @@
 		/decl/emote/exertion/synthetic/creak
 	)
 
+	species_bonus = 10
+
+/datum/species/skrell/skills_from_age(age)
+	switch(age)
+		if(0 to 22)		. = 0
+		if(23 to 34)	. = 2
+		if(35 to 60)	. = 4
+		else			. = 0
 
 /datum/species/skrell/proc/handle_protein(mob/living/carbon/human/M, datum/reagent/protein)
 	var/effective_dose = M.chem_doses[protein.type] * protein.protein_amount
@@ -286,7 +294,7 @@
 	thirst_factor = 0.01
 
 	min_age = 1
-	max_age = 300
+	max_age = 2000
 
 	description = "Commonly referred to (erroneously) as 'plant people', the Dionaea are a strange space-dwelling collective \
 	species hailing from Epsilon Ursae Minoris. Each 'diona' is a cluster of numerous cat-sized organisms called nymphs; \
@@ -359,6 +367,8 @@
 		TAG_RELIGION =  list(RELIGION_OTHER)
 	)
 
+	species_bonus = 2
+
 /proc/spawn_diona_nymph(turf/target)
 	if (!istype(target))
 		return
@@ -399,9 +409,9 @@
 
 /datum/species/diona/skills_from_age(age)
 	switch(age)
-		if(101 to 200)	. = 12 // age bracket before this is 46 to 100 . = 8 making this +4
-		if(201 to 300)	. = 16 // + 8
-		else			. = ..()
+		if(300 to 1000)	. = 12
+		if(1001 to 2000)	. = 16
+		else			. = 0
 
 // Dionaea spawned by hand or by joining will not have any
 // nymphs passed to them. This should take care of that.

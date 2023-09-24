@@ -139,6 +139,8 @@
 		)
 	)
 
+	species_bonus = 2
+
 /datum/species/resomi/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/lenses(H), slot_glasses)
@@ -148,7 +150,7 @@
 
 /datum/species/resomi/skills_from_age(age)
 	switch(age)
-		if(0 to 17)		. = -4
+		if(0 to 17)		. = -2
 		if(18 to 25)	. = 0
 		if(26 to 35)	. = 4
-		else			. = 8
+		else			. = 0

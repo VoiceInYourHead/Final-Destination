@@ -45,6 +45,7 @@
 		BP_HEAD =   /obj/item/organ/external/head/yeosa
 	)
 
+	species_bonus = 6
 
 /datum/species/unathi/yeosa/can_float(mob/living/carbon/human/H)
 	if(!H.is_physically_disabled())

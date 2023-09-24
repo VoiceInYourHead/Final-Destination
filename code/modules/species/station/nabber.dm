@@ -154,6 +154,8 @@
 		/decl/emote/exertion/biological/pant
 	)
 
+	species_bonus = 2
+
 /datum/species/nabber/New()
 	equip_adjust = list(
 		slot_head_str =    list("[NORTH]" = list("x" = 0, "y" = 7),  "[EAST]" = list("x" = 0, "y" = 8),  "[SOUTH]" = list("x" = 0, "y" = 8),  "[WEST]" = list("x" = 0, "y" = 8)),
@@ -433,6 +435,11 @@
 		TAG_RELIGION =  RELIGION_KHARMAANI
 	)
 
+	species_bonus = 8
+
+/datum/species/nabber/monarch_worker/skills_from_age(age)
+	. = 0
+
 /datum/species/nabber/monarch_worker/get_bodytype(mob/living/carbon/human/H)
 	return SPECIES_NABBER
 
@@ -516,6 +523,11 @@
 		)
 	)
 	..()
+
+	species_bonus = 8
+
+/datum/species/nabber/monarch_queen/skills_from_age(age)
+	. = 0
 
 /datum/species/nabber/monarch_queen/equip_survival_gear(mob/living/carbon/human/H)
 	return

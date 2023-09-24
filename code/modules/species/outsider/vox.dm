@@ -42,7 +42,7 @@
 	cold_level_3 = -1
 
 	min_age = 1
-	max_age = 100
+	max_age = 500
 
 	gluttonous = GLUT_TINY|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
@@ -127,6 +127,8 @@
 		/decl/emote/exertion/synthetic/creak
 	)
 
+	species_bonus = 4
+
 /datum/species/vox/equip_survival_gear(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/vox(H), slot_wear_mask)
 
@@ -144,7 +146,11 @@
 	return "<span class='danger'>[T.His] beak-segments are cracked and chipped! [T.He] [T.is] not even recognizable.</span>\n"
 
 /datum/species/vox/skills_from_age(age)
-	. = 8
+	switch(age)
+		if(0 to 100) 	. = 0
+		if(101 to 250) 	. = 8
+		if(251 to 400)	. = 4
+		if(401 to 500)	. = -2
 
 /datum/species/vox/armalis
 	name = SPECIES_VOX_ARMALIS
