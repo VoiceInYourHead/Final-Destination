@@ -146,7 +146,6 @@
 	#include "torch6_bridge.dmm"
 	#include "z1_admin.dmm"
 	#include "z2_transit.dmm"
-	#include "z3_helper.dmm"
 
 	#include "../away/empty.dmm"
 	#include "../away/shade/_mining.dm"
