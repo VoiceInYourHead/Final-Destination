@@ -1,83 +1,97 @@
-/obj/structure/ship_munition/ammobox/crystal/ex_act()
+#define CALIBER_SHIP_CRYSTAL    "Crystal"
+
+/obj/item/ammo_magazine/ammobox/crystal/ex_act()
 	return
 
-/obj/structure/ship_munition/ammobox/crystal/New()
+/obj/item/ammo_magazine/ammobox/crystal/New()
 	..()
-	max_ammo = ammo_count
+	ammo_count = max_ammo
 
-/obj/structure/ship_munition/ammobox/crystal/Initialize()
+/obj/item/ammo_magazine/ammobox/crystal/Initialize()
 	..()
 	START_PROCESSING(SSobj, src)
 
-/obj/structure/ship_munition/ammobox/crystal/Destroy()
+/obj/item/ammo_magazine/ammobox/crystal/Destroy()
 	..()
 	STOP_PROCESSING(SSobj, src)
 
-/obj/structure/ship_munition/ammobox/crystal/Process()
-	if(regenerate_ammo && ammo_count < max_ammo)
+/obj/item/ammo_magazine/ammobox/crystal/Process()
+	if(regenerate_ammo && max_ammo < ammo_count)
 		regen++
 		if(regen >= regenerate_delay)
 			regen = 0
-			ammo_count++
+			max_ammo++
 	..()
 
 ///////////////////////////AMMOBOX///////////////////////////
 
-/obj/structure/ship_munition/ammobox/crystal
+/obj/item/ammo_magazine/ammobox/crystal
 	name = "Mobile crystal growth chamber"
 	desc = "A box where the crystals growth. (PLACEHOLDER)"
-	ammo_count = 48
-	ammo_type = /obj/item/projectile/bullet/crystal
 
-	var/max_ammo = 0
+	caliber = CALIBER_SHIP_CRYSTAL
+	max_ammo = 48
+	ammo_type = /obj/item/ammo_casing/huge_caliber/crystal
+
+	var/ammo_count = 0
 
 	var/regenerate_ammo = TRUE
 	var/regenerate_delay = 10
 	var/regen = 0
 
-/obj/structure/ship_munition/ammobox/crystal/high_explosive
+/obj/item/ammo_magazine/ammobox/crystal/high_explosive
 	name = "Mobile B-type crystal growth chamber"
 	icon_state = "ammocrate_autocannon_he"
-	ammo_count = 24
-	ammo_type = /obj/item/projectile/bullet/crystal/high_explosive
+	max_ammo = 24
+	ammo_type = /obj/item/ammo_casing/huge_caliber/crystal/high_explosive
 
-/obj/structure/ship_munition/ammobox/crystal/shrapnel
+/obj/item/ammo_magazine/ammobox/crystal/shrapnel
 	name = "Mobile X-type crystal growth chamber"
 	icon_state = "ammocrate_autocannon_ap"
-	ammo_count = 24
-	ammo_type = /obj/item/projectile/bullet/crystal/shrapnel
+	max_ammo = 24
+	ammo_type = /obj/item/ammo_casing/huge_caliber/crystal/shrapnel
+
+///////////////////////////CASING///////////////////////////
+
+/obj/item/ammo_casing/huge_caliber/crystal
+	name = "crystal shard"
+	desc = "A strange, regenerative crystal."
+	caliber = CALIBER_SHIP_CRYSTAL
+	projectile_type = /obj/item/projectile/bullet/huge_caliber/crystal
+
+/obj/item/ammo_casing/huge_caliber/crystal/high_explosive
+	projectile_type = /obj/item/projectile/bullet/huge_caliber/crystal/high_explosive
+
+/obj/item/ammo_casing/huge_caliber/crystal/shrapnel
+	projectile_type = /obj/item/projectile/bullet/huge_caliber/crystal/shrapnel
 
 ///////////////////////////BULLETS///////////////////////////
 
-/obj/item/projectile/bullet/crystal
+/obj/item/projectile/bullet/huge_caliber/crystal
 	name ="crystal shard"
 	icon_state= "Needler Shot"
 	damage = 350
-	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
+	pew_spread = 10
 	armor_penetration = 100
 	penetration_modifier = 1.1
 	muzzle_type = null
 	fire_sound = null
-	distance_falloff = 0.1
-	life_span = 250
-	var/explosion_radius = 6
-	var/explosion_max_power = EX_ACT_DEVASTATING
+	explosion_radius = 6
+	explosion_max_power = EX_ACT_DEVASTATING
 
-	var/exploded = FALSE
-
-/obj/item/projectile/bullet/crystal/Bump(atom/A as mob|obj|turf|area, forced=0)
+/obj/item/projectile/bullet/huge_caliber/crystal/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(!exploded)
 		exploded = TRUE
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
 	..()
 
-/obj/item/projectile/bullet/crystal/Destroy()
+/obj/item/projectile/bullet/huge_caliber/crystal/Destroy()
 	if(src)
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL))
 	..()
 
 
-/obj/item/projectile/bullet/crystal/high_explosive/Bump(atom/A as mob|obj|turf|area, forced=0)
+/obj/item/projectile/bullet/huge_caliber/crystal/high_explosive/Bump(atom/A as mob|obj|turf|area, forced=0)
 	var/backwards = turn(dir, 180)
 	if(!exploded)
 		exploded = TRUE
@@ -86,10 +100,10 @@
 		qdel(src)
 
 
-/obj/item/projectile/bullet/crystal/shrapnel
+/obj/item/projectile/bullet/huge_caliber/crystal/shrapnel
 	armor_penetration = 50
 
-/obj/item/projectile/bullet/crystal/shrapnel/Bump(atom/A as mob|obj|turf|area, forced=0)
+/obj/item/projectile/bullet/huge_caliber/crystal/shrapnel/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(!exploded)
 		exploded = TRUE
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
@@ -97,7 +111,7 @@
 		qdel(src)
 	..()
 
-/obj/item/projectile/bullet/crystal/shrapnel/Destroy()
+/obj/item/projectile/bullet/huge_caliber/crystal/shrapnel/Destroy()
 	if(src && !exploded)
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
 		src.fragmentate(get_turf(src), rand(40,60), 7, list(/obj/item/projectile/bullet/pellet/fragment/crystal))
