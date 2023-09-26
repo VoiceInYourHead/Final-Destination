@@ -248,8 +248,7 @@
 
 /obj/effect/meteor/medium/meteor_effect()
 	..()
-	explosion(src.loc, 3, EX_ACT_HEAVY, 0, turf_breaker = TRUE, effective = FALSE)
-//	cell_explosion(loc, 600, 150, falloff_shape = EXPLOSION_FALLOFF_SHAPE_LINEAR, direction, shrapnel = TRUE, z_transfer = UP|DOWN, original = TRUE)
+	cell_explosion(loc, 600, 150)
 
 //Large-sized
 /obj/effect/meteor/big
@@ -261,7 +260,7 @@
 
 /obj/effect/meteor/big/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
+	cell_explosion(loc, 1200, 150)
 
 //Flaming meteor
 /obj/effect/meteor/flaming
@@ -273,7 +272,7 @@
 
 /obj/effect/meteor/flaming/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, z_transfer = 0, shaped = 5, turf_breaker = TRUE)
+	cell_explosion(loc, 300, 50, z_transfer = 0)
 
 //Radiation meteor
 /obj/effect/meteor/irradiated
@@ -284,7 +283,7 @@
 
 /obj/effect/meteor/irradiated/meteor_effect()
 	..()
-	explosion(src.loc, 4, EX_ACT_LIGHT, 0, turf_breaker = TRUE, effective = FALSE)
+	cell_explosion(loc, 800, 100)
 	new /obj/effect/decal/cleanable/greenglow(get_turf(src))
 	SSradiation.radiate(src, 50)
 

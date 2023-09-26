@@ -103,7 +103,7 @@
 			stat &= ~EMPED
 
 /obj/machinery/power/port_gen/proc/explode()
-	explosion(src.loc, 8, EX_ACT_HEAVY)
+	cell_explosion(loc, 400, 75)
 	qdel(src)
 
 #define TEMPERATURE_DIVISOR 40

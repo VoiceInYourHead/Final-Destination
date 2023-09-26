@@ -243,7 +243,7 @@ as having entered the turf.
 	if(!epicenter)
 		return
 
-	falloff = max(falloff, power/100)
+	falloff = max(falloff, round(power * 0.001))
 	if(original)
 		msg_admin_attack("Explosion with Power: [power], Falloff: [falloff], Shape: [falloff_shape] in [epicenter.loc.name] ([epicenter.x],[epicenter.y],[epicenter.z]).", epicenter.x, epicenter.y, epicenter.z)
 

@@ -24,12 +24,12 @@
 	if(should_explode)
 		if(severity < 3 && stored_ammo.len > max_ammo/3)
 			should_explode = FALSE
-			explosion(get_turf(src), 6, EX_ACT_DEVASTATING)
+			cell_explosion(get_turf(src), 1200, 200)
 			if(src)
 				qdel(src)
 		else if(severity < 3 && stored_ammo.len > 0)
 			should_explode = FALSE
-			explosion(get_turf(src), 3, EX_ACT_DEVASTATING)
+			cell_explosion(get_turf(src), 600, 200)
 			if(src)
 				qdel(src)
 	return

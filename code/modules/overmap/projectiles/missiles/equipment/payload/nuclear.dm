@@ -49,11 +49,11 @@
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 300, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		cell_explosion(get_turf(src), 10000, 10)
 		empulse(get_turf(src), rand(50,75), rand(75,100))
 	else
 		SSradiation.radiate(get_turf(triggerer), 400)
-		explosion(get_turf(triggerer), 300, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		cell_explosion(get_turf(triggerer), 10000, 10)
 		empulse(get_turf(triggerer), rand(50,75), rand(75,100))
 
 	..()

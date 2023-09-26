@@ -298,13 +298,12 @@
 	damage_health(rand(75, 125) / severity, DAMAGE_EMP, severity = severity)
 
 
-/atom/ex_act(severity, turf_breaker)
+/atom/ex_act(severity, direction)
 	..()
 	// No hitsound here to avoid noise spam.
 	// Damage is based on severity and maximum health, with DEVASTATING being guaranteed death without any resistances.
-	var/damage_flags = turf_breaker ? DAMAGE_FLAG_TURF_BREAKER : EMPTY_BITFIELD
 	if(severity && can_damage_health(severity, DAMAGE_EXPLODE))
-		damage_health(severity, DAMAGE_EXPLODE, damage_flags, severity)
+		damage_health(severity, DAMAGE_EXPLODE, EMPTY_BITFIELD, severity)
 
 /atom/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()

@@ -43,7 +43,7 @@
 						C.apply_damage(rand(10,20), def_zone=zone)
 				else
 					visible_message("<span class='danger'>[src] explodes!</span>")
-				explosion(get_turf(src), 1, EX_ACT_LIGHT)
+				cell_explosion(get_turf(src), 50, 50)
 				qdel(src)
 				return FALSE
 	return ..()

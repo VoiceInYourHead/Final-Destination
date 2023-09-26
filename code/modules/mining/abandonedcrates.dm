@@ -159,7 +159,7 @@
 		if (attempts == 0)
 			to_chat(user, "<span class='danger'>The crate's anti-tamper system activates!</span>")
 			var/turf/T = get_turf(src.loc)
-			explosion(T, 1, EX_ACT_LIGHT)
+			cell_explosion(T, 50, 50)
 			qdel(src)
 
 /obj/structure/closet/crate/secure/loot/emag_act(var/remaining_charges, var/mob/user)

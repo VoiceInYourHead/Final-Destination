@@ -103,9 +103,12 @@
 			if(do_after(G, 6 SECONDS))
 				var/health_holder = G.health
 				G.visible_message(SPAN_MFAUNA("\The [G] raises its fore-hooves and stomps them into the ground with incredible force!"))
-				explosion(get_step(G,pick(GLOB.cardinal)), 4, EX_ACT_HEAVY)
-				explosion(get_step(G,pick(GLOB.cardinal)), 5, EX_ACT_HEAVY)
-				explosion(get_step(G,pick(GLOB.cardinal)), 7, EX_ACT_HEAVY)
+				var/exp_dir = pick(GLOB.cardinal)
+				cell_explosion(get_step(G, exp_dir), 400, 100, direction = exp_dir)
+				exp_dir = pick(GLOB.cardinal)
+				cell_explosion(get_step(G, exp_dir), 500, 100, direction = exp_dir)
+				exp_dir = pick(GLOB.cardinal)
+				cell_explosion(get_step(G, exp_dir), 700, 100, direction = exp_dir)
 				set_busy(FALSE)
 				G.spellscast += 2
 				if(!G.health < health_holder)

@@ -228,7 +228,7 @@
 	if(gun_unreliable && prob(gun_unreliable))
 		spawn(3) // So that it will still fire - considered modifying Fire() to return a value but burst fire makes that annoying.
 			visible_message("<span class='danger'>\The [src] explodes with the force of the shot!</span>")
-			explosion(get_turf(src), 2, EX_ACT_LIGHT)
+			cell_explosion(get_turf(src), 100, 50)
 			qdel(src)
 
 	return new projectile_type(src)

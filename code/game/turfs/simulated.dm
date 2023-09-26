@@ -169,8 +169,3 @@
 	if(GAME_STATE >= RUNLEVEL_GAME)
 		fluid_update()
 	. = ..()
-
-/turf/simulated/damage_health(damage, damage_type, damage_flags, severity)
-	if (HAS_FLAGS(damage_flags, DAMAGE_FLAG_TURF_BREAKER))
-		damage *= 4
-	. = ..()

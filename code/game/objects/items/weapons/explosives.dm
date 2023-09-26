@@ -72,7 +72,7 @@
 	if(!target)
 		target = src
 	if(location)
-		explosion(location, 2, EX_ACT_LIGHT)
+		cell_explosion(location, 150, 75)
 
 	if(target)
 		if (istype(target, /turf/simulated/wall))

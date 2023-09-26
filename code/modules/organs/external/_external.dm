@@ -1282,7 +1282,7 @@ obj/item/organ/external/proc/remove_clamps()
 			"<span class='danger'>\The [victim]'s [src.name] explodes violently!</span>",\
 			"<span class='danger'>Your [src.name] explodes!</span>",\
 			"<span class='danger'>You hear an explosion!</span>")
-		explosion(get_turf(owner), 2, EX_ACT_LIGHT)
+		cell_explosion(get_turf(owner), 200, 100)
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, victim)
 		spark_system.attach(owner)
