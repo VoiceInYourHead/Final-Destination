@@ -1,5 +1,5 @@
 /obj/effect/overmap/event
-	var/pixel_step_size = 2 // looks alot smoother :P
+	pixel_step_size = 2 // looks alot smoother :P
 	var/wander_around = FALSE
 	var/wander_timer_min = 50
 	var/wander_timer_max = 100
