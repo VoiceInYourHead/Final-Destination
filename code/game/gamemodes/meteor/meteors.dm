@@ -249,6 +249,7 @@
 /obj/effect/meteor/medium/meteor_effect()
 	..()
 	explosion(src.loc, 3, EX_ACT_HEAVY, 0, turf_breaker = TRUE, effective = FALSE)
+//	cell_explosion(loc, 600, 150, falloff_shape = EXPLOSION_FALLOFF_SHAPE_LINEAR, direction, shrapnel = TRUE, z_transfer = UP|DOWN, original = TRUE)
 
 //Large-sized
 /obj/effect/meteor/big
