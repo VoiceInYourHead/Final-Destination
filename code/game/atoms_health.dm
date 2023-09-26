@@ -303,16 +303,8 @@
 	// No hitsound here to avoid noise spam.
 	// Damage is based on severity and maximum health, with DEVASTATING being guaranteed death without any resistances.
 	var/damage_flags = turf_breaker ? DAMAGE_FLAG_TURF_BREAKER : EMPTY_BITFIELD
-	var/damage = 0
-	switch (severity)
-		if (EX_ACT_DEVASTATING)
-			damage = health_max
-		if (EX_ACT_HEAVY)
-			damage = round(health_max / rand(2, 3))
-		if (EX_ACT_LIGHT)
-			damage = round(health_max / rand(10, 15))
-	if (damage && can_damage_health(damage, DAMAGE_EXPLODE))
-		damage_health(damage, DAMAGE_EXPLODE, damage_flags, severity)
+	if(severity && can_damage_health(severity, DAMAGE_EXPLODE))
+		damage_health(severity, DAMAGE_EXPLODE, damage_flags, severity)
 
 /atom/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()

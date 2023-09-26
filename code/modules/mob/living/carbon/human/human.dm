@@ -1907,3 +1907,14 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	"a blade", "an ocean", "right behind you", "standing above you",
 	"someone near by", "a place forgotten"
 ))
+
+/mob/living/carbon/human/damage_health(damage, damage_type = null, damage_flags, severity)
+	if(damage_type == DAMAGE_EXPLODE && damage >= health && severity >= EXPLOSION_THRESHOLD_GIB)
+		var/oldloc = loc
+		gib()
+//		create_shrapnel(oldloc, rand(5, 9), direction, 45, /datum/ammo/bullet/shrapnel/light/human)
+//		create_shrapnel(oldloc, rand(5, 9), direction, 30, /datum/ammo/bullet/shrapnel/light/human/var1)
+//		create_shrapnel(oldloc, rand(5, 9), direction, 45, /datum/ammo/bullet/shrapnel/light/human/var2)
+		return
+
+	. = ..()

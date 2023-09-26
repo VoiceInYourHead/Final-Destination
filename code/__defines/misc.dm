@@ -297,13 +297,6 @@
 #define SOULSTONE_OWNER_WIZARD "wizard" /// The soulstone is owned by a wizard.
 #define SOULSTONE_OWNER_PURE   "pure"   /// The soulstone has been purified.
 
-// Severities for ex_act()
-#define EX_ACT_DEVASTATING 1 // Within devastation range - Destructive/deadly, unlikely to survive.
-#define EX_ACT_HEAVY 2 // Within heavy range - Heavy damage, very dangerous
-#define EX_ACT_LIGHT 3 // Within light range - Minor damage.
-
-#define EX_ACT_TO_STRING(X) (X == EX_ACT_DEVASTATING ? "Devastating" : X == EX_ACT_HEAVY ? "Heavy" : "Light")
-
 // What kind of function to use for Explosions falling off.
 
 #define EXPLOSION_FALLOFF_SHAPE_LINEAR				0
@@ -311,3 +304,13 @@
 #define EXPLOSION_FALLOFF_SHAPE_EXPONENTIAL_HALF	2
 
 #define EXPLOSION_MAX_POWER 5000
+
+//Explosion level thresholds. Upper bounds
+#define EXPLOSION_THRESHOLD_VLOW 50
+#define EXPLOSION_THRESHOLD_LOW 100
+#define EXPLOSION_THRESHOLD_MLOW 150
+#define EXPLOSION_THRESHOLD_MEDIUM 200
+#define EXPLOSION_THRESHOLD_HIGH 300
+
+/// how much it takes to gib a mob
+#define EXPLOSION_THRESHOLD_GIB 200

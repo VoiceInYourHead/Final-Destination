@@ -374,3 +374,8 @@
 	else
 		visible_message(SPAN_NOTICE("\The [user] is interrupted."))
 		set_AI_busy(FALSE)
+
+/mob/living/simple_animal/damage_health(damage, damage_type = null, damage_flags, severity)
+	. = ..()
+	if(damage_type == DAMAGE_EXPLODE && damage >= health && severity >= EXPLOSION_THRESHOLD_GIB)
+		gib()
