@@ -48,13 +48,12 @@
 			to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
 			if(con_rank_target > con_rank_user)
 				var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
-				if(!option)
-					return
-				if("Нет")
-					return
-				if("Да")
-					var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
-					to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
+				switch(option)
+					if("Да")
+						var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+						to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
+					else
+						return
 		else
 			to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
 	else if(!target.psi)
