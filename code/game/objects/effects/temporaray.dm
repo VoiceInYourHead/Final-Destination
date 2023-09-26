@@ -40,3 +40,21 @@
 	if(set_dir & WEST)
 		target_pixel_x = -16
 	animate(src, pixel_x = target_pixel_x, pixel_y = target_pixel_y, alpha = 0, time = duration)
+
+/obj/effect/temp_visual/cig_smoke
+	name = "smoke"
+	icon_state = "smallsmoke"
+	icon = 'icons/fd/smoke.dmi'
+	opacity = FALSE
+	anchored = TRUE
+	mouse_opacity = FALSE
+	layer = ABOVE_HUMAN_LAYER
+
+	duration = 3 SECONDS
+
+/obj/effect/temp_visual/cig_smoke/Initialize()
+	. = ..()
+	set_dir(pick(GLOB.cardinal))
+	pixel_x = rand(-12, 12)
+	pixel_y = rand(0, 16)
+	animate(src, alpha = 0, pixel_x = pixel_x + rand(-6, 6), pixel_y = pixel_y + 12, duration, easing = EASE_IN)

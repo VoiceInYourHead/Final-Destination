@@ -19,6 +19,10 @@
 	var/brand
 	var/gas_consumption = 0.04
 
+	// Visual effect variables
+	var/smoke_effect = 0
+	var/smoke_amount = 1
+
 	z_flags = ZMM_MANGLE_PLANES
 
 /obj/item/clothing/mask/smokable/New()
@@ -34,16 +38,24 @@
 /obj/item/clothing/mask/smokable/fire_act()
 	light(0)
 
-/obj/item/clothing/mask/smokable/proc/smoke(amount)
+/obj/item/clothing/mask/smokable/proc/smoke(amount, manual)
 	smoketime -= amount
 	if(reagents && reagents.total_volume) // check if it has any reagents at all
+		var/smoke_loc = loc
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
-			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
-				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
+			smoke_loc = C.loc
+			if((src == C.wear_mask || manual) && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
+				reagents.trans_to_mob(C, smoke_amount * amount, CHEM_INGEST, 0.2)
 				add_trace_DNA(C)
 		else // else just remove some of the reagents
-			reagents.remove_any(REM)
+			reagents.remove_any(smoke_amount * amount)
+
+		smoke_effect++
+
+		if(smoke_effect >= 4 || manual)
+			smoke_effect = 0
+			new /obj/effect/temp_visual/cig_smoke(smoke_loc)
 	var/turf/T = get_turf(src)
 	if(T)
 		var/datum/gas_mixture/environment = T.return_air()
@@ -121,6 +133,7 @@
 		if(flavor_text)
 			var/turf/T = get_turf(src)
 			T.visible_message(flavor_text)
+		smoke_amount = reagents.total_volume / smoketime
 		START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/mask/smokable/proc/extinguish(var/mob/user, var/no_message)
@@ -322,9 +335,16 @@
 		if(blocked)
 			to_chat(H, "<span class='warning'>\The [blocked] is in the way!</span>")
 			return 1
-		to_chat(H, "<span class='notice'>You take a drag on your [name].</span>")
-		smoke(5)
+		user.visible_message(\
+			"[user] takes a [pick("drag","puff","pull")] on \his [name].", \
+			"You take a [pick("drag","puff","pull")] on your [name].")
+		smoke(12, TRUE)
 		add_trace_DNA(H)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		return 1
+	if(!lit && istype(H) && H.on_fire)
+		user.do_attack_animation(H)
+		light(H, user)
 		return 1
 	return ..()
 
