@@ -318,7 +318,7 @@
 	throwforce = 10
 	armor_penetration = 0
 	w_class = ITEM_SIZE_NORMAL
-	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 5, TECH_ENERGY = 5)
+	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 5, TECH_POWER = 5)
 	active_attack_verb = list("attacked", "slash", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/blade1.ogg'
 	slot_flags = SLOT_BELT
