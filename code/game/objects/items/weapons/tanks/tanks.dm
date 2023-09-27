@@ -465,24 +465,11 @@ var/list/global/tank_gauge_cache = list()
 
 			// Determine max power and range for the explosion
 			var/range = mult * strength
-			var/devst = round(range * 0.15)
-			var/heavy = round(range * 0.35)
-			var/max_power
-			if (devst)
-				max_power = EX_ACT_DEVASTATING
-			else if (heavy)
-				max_power = EX_ACT_HEAVY
-			else
-				max_power = EX_ACT_LIGHT
 
-			explosion(
-				get_turf(loc),
-				round(min(BOMBCAP_RADIUS, range * 1.3)),
-				max_power
-				)
+			cell_explosion(get_turf(loc), round(min(BOMBCAP_RADIUS, range * 1.3)) * 50, 50)
 
 			var/num_fragments = round(rand(8,10) * sqrt(strength * mult))
-			fragmentate(T, num_fragments, 7, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 7,/obj/item/projectile/bullet/pellet/fragment/tank = 2,/obj/item/projectile/bullet/pellet/fragment/strong = 1))
+			fragmentate(T, num_fragments, 7, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 7,/obj/item/projectile/bullet/pellet/fragment/tank = 2,/obj/item/projectile/bullet/pellet/fragment/strong = 1), name)
 
 			if(istype(loc, /obj/item/device/transfer_valve))
 				var/obj/item/device/transfer_valve/TTV = loc
@@ -512,7 +499,7 @@ var/list/global/tank_gauge_cache = list()
 			var/mult = (air_contents.total_moles**2/3)/((29*0.64) **2/3) //tanks appear to be experiencing a reduction on scale of about 0.64 total moles
 
 			var/num_fragments = round(rand(6,8) * sqrt(strength * mult)) //Less chunks, but bigger
-			fragmentate(T, num_fragments, 7, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4))
+			fragmentate(T, num_fragments, 7, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4), name)
 
 			if(istype(loc, /obj/item/device/transfer_valve))
 				var/obj/item/device/transfer_valve/TTV = loc

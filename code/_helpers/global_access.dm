@@ -393,10 +393,6 @@
 			return global.event_last_fired;
 		if("eventchance")
 			return global.eventchance;
-		if("explosion_in_progress")
-			return global.explosion_in_progress;
-		if("explosion_turfs")
-			return global.explosion_turfs;
 		if("failed_db_connections")
 			return global.failed_db_connections;
 		if("failed_old_db_connections")
@@ -1232,10 +1228,6 @@
 			global.event_last_fired=newval;
 		if("eventchance")
 			global.eventchance=newval;
-		if("explosion_in_progress")
-			global.explosion_in_progress=newval;
-		if("explosion_turfs")
-			global.explosion_turfs=newval;
 		if("failed_db_connections")
 			global.failed_db_connections=newval;
 		if("failed_old_db_connections")

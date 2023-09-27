@@ -179,7 +179,7 @@
 	log_ability_use(user, "machine overload", M)
 	M.visible_message("<span class='notice'>BZZZZZZZT</span>")
 	spawn(5 SECONDS)
-		explosion(get_turf(M), round(explosion_intensity * 1.75))
+		cell_explosion(get_turf(M), round(explosion_intensity * 1.75) * 50, 50)
 		if(M)
 			qdel(M)
 

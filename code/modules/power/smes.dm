@@ -345,13 +345,7 @@
 	if(damage > maxdamage)
 		visible_message("<span class='danger'>\The [src] explodes in large rain of sparks and smoke!</span>")
 		// Depending on stored charge percentage cause damage.
-		switch(Percentage())
-			if(75 to INFINITY)
-				explosion(get_turf(src), 7)
-			if(40 to 74)
-				explosion(get_turf(src), 5, EX_ACT_HEAVY)
-			if(5 to 39)
-				explosion(get_turf(src), 3, EX_ACT_HEAVY)
+		cell_explosion(get_turf(src), 7 * Percentage(), 100)
 		qdel(src) // Either way we want to ensure the SMES is deleted.
 
 /obj/machinery/power/smes/emp_act(severity)

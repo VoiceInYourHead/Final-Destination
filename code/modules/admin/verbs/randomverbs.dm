@@ -604,39 +604,40 @@ Ccomp's first proc.
 	set category = "Special Verbs"
 	set name = "Explosion"
 
-	if(!check_rights(R_DEBUG|R_FUN))	return
-
-	var/range = input("Explosion radius (in tiles):") as num|null
-	if (isnull(range) || range <= 0)
+	if(!check_rights(R_DEBUG|R_FUN))
 		return
-	var/max_power_input = input("Maximum explosion power:") as null|anything in list("Devastating", "Heavy", "Light")
-	if (isnull(max_power_input))
-		return
-	var/max_power
-	switch (max_power_input)
-		if ("Devastating")
-			max_power = EX_ACT_DEVASTATING
-		if ("Heavy")
-			max_power = EX_ACT_HEAVY
-		if ("Light")
-			max_power = EX_ACT_LIGHT
-	var/shaped = 0
-	if(alert(src, "Shaped explosion?", "Shape", "Yes", "No") == "Yes")
-		shaped = input("Shaped where to?", "Input")  as anything in list("NORTH","SOUTH","EAST","WEST")
-		shaped = text2dir(shaped)
-	if (range > 20)
-		if (alert(src, "Are you sure you want to do this? It may lag.", "Confirmation", "Yes", "No") == "No")
-			return
 
-	explosion(O, range, max_power, shaped=shaped)
-	log_admin("[key_name(usr)] created an explosion ([range], [max_power_input]) at ([O.x],[O.y],[O.z])")
-	message_admins("[key_name_admin(usr)] created an explosion ([range], [max_power_input]) at ([O.x],[O.y],[O.z])", 1)
+	var/custom_limit = 10000
+	var/list/falloff_shape_choices = list("CANCEL", "Linear", "Exponential")
+	var/power = input("Power:") as num|null
+	if(!power)
+		return
+
+	var/falloff = input("Falloff:") as num|null
+	if(!falloff)
+		return
+
+	var/shape_choice = input("Select falloff shape:") as null|anything in falloff_shape_choices
+	var/explosion_shape = EXPLOSION_FALLOFF_SHAPE_LINEAR
+	switch(shape_choice)
+		if("CANCEL")
+			return 0
+		if("Exponential")
+			explosion_shape = EXPLOSION_FALLOFF_SHAPE_EXPONENTIAL
+
+	if(power > custom_limit)
+		return
+
+	cell_explosion(O, power, falloff, explosion_shape)
+	log_admin("[key_name(usr)] dropped a custom cell bomb with power [power], falloff [falloff] and falloff_shape [shape_choice]")
+	message_admins("[key_name(src, TRUE)] dropped a custom cell bomb with power [power], falloff [falloff] and falloff_shape [shape_choice]!")
 
 /client/proc/cmd_admin_emp(atom/O as obj|mob|turf in range(world.view))
 	set category = "Special Verbs"
 	set name = "EM Pulse"
 
-	if(!check_rights(R_DEBUG|R_FUN))	return
+	if(!check_rights(R_DEBUG|R_FUN))
+		return
 
 	var/heavy = input("Range of heavy pulse.", text("Input"))  as num|null
 	if(heavy == null) return

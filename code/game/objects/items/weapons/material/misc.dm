@@ -34,7 +34,7 @@
 	audible_message(SPAN_DANGER("\The [src] detonates!")) //an actual sound will be handled by explosion()
 	var/turf/T = get_turf(src)
 	cell_explosion(T, 200, 100)
-	fragmentate(T, 4, 2)
+	fragmentate(T, 4, 2, shoot_from = name)
 	handle_afterbomb()
 
 /obj/item/material/harpoon/bomb/proc/handle_afterbomb()

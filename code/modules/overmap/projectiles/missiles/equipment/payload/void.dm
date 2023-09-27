@@ -19,10 +19,10 @@
 			sound_to(M, sound('sound/effects/heavy_cannon_blast.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 25, EX_ACT_DEVASTATING, turf_breaker = TRUE, effective = /datum/effect/effect/system/explosion/warp)
+		cell_explosion(get_turf(src), 2500, 100, effective = /datum/effect/effect/system/explosion/warp)
 		empulse(get_turf(src), rand(1,2), rand(3,4))
 	else
-		explosion(get_turf(triggerer), 25, EX_ACT_DEVASTATING, turf_breaker = TRUE, effective = /datum/effect/effect/system/explosion/warp)
+		cell_explosion(get_turf(triggerer), 2500, 100, effective = /datum/effect/effect/system/explosion/warp)
 		empulse(get_turf(triggerer), rand(6,8), rand(8,12))
 
 	..()

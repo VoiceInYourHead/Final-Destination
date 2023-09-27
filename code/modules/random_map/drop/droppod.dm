@@ -18,8 +18,8 @@
 	var/drop_type = /mob/living/simple_animal/hostile/retaliate/parrot
 	var/auto_open_doors
 
-	var/explosion_radius = 9
-	var/explosion_max_power = EX_ACT_HEAVY
+	var/explosion_power = 400
+	var/explosion_falloff = 100
 
 /datum/random_map/droppod/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/supplied_drop, var/list/supplied_drops, var/automated)
 
@@ -77,10 +77,10 @@
 	return 1
 
 /datum/random_map/droppod/apply_to_map()
-	if (explosion_radius)
+	if(explosion_power)
 		var/turf/T = locate((origin_x + Ceil(limit_x / 2)-1), (origin_y + Ceil(limit_y / 2)-1), origin_z)
 		if(istype(T))
-			explosion(T, explosion_radius, explosion_max_power)
+			cell_explosion(T, explosion_power, explosion_falloff)
 			sleep(15) // Let the explosion finish proccing before we ChangeTurf(), otherwise it might destroy our spawned objects.
 	return ..()
 

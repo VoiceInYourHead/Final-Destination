@@ -62,8 +62,7 @@
 	chargedesc = "INDARRA"
 
 /obj/structure/ship_munition/disperser_charge/explosive/fire(turf/target, strength, range)
-	var/explosion_range = max(1, strength * 3)
-	explosion(target, explosion_range)
+	cell_explosion(target, max(1, strength * 3) * 75, 75)
 
 /obj/structure/ship_munition/disperser_charge/bluespace
 	name = "BS5-RAZLOM charge"

@@ -291,7 +291,7 @@
 	empulse(get_turf(src), Ceil(plasma_temperature/1000), Ceil(plasma_temperature/300))
 	sleep(5)
 	RadiateAll()
-	explosion(get_turf(owned_core),-1,-1,8,10) // Blow out all the windows.
+	cell_explosion(get_turf(owned_core), 100, 10) // Blow out all the windows.
 	return
 
 /obj/effect/fusion_em_field/proc/ChangeFieldStrength(var/new_strength)

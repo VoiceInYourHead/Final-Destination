@@ -519,7 +519,7 @@ var/bomb_set
 					range = rand(9, 16)
 					time_to_explosion = world.time + 5 SECONDS
 				var/turf/T = pick_area_and_turf(GLOB.is_station_but_not_space_or_shuttle_area)
-				explosion(T, range)
+				cell_explosion(T, range * 100, 75)
 
 /obj/machinery/nuclearbomb/station/secure_device()
 	..()

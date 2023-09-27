@@ -325,7 +325,7 @@
 
 /obj/effect/meteor/tunguska/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
+	cell_explosion(loc, 400, 100,effective = FALSE)
 
 // This is the final solution against shields - a single impact can bring down most shield generators.
 /obj/effect/meteor/supermatter
@@ -336,7 +336,7 @@
 
 /obj/effect/meteor/supermatter/meteor_effect()
 	..()
-	explosion(src.loc, 6, adminlog = 0, turf_breaker = TRUE, effective = FALSE)
+	cell_explosion(loc, 400, 100, effective = FALSE)
 	for(var/obj/machinery/power/apc/A in range(rand(12, 20), src))
 		A.energy_fail(round(10 * rand(8, 12)))
 

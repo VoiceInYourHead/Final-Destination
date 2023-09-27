@@ -6,8 +6,8 @@
 
 /obj/item/missile_equipment/payload/explosive/on_trigger(var/atom/triggerer)
 	if(istype(triggerer, /obj/effect/shield))
-		explosion(get_turf(src), 16, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		cell_explosion(get_turf(src), 1600, 100)
 	else
-		explosion(get_turf(triggerer), 16, EX_ACT_DEVASTATING, turf_breaker = TRUE)
+		cell_explosion(get_turf(triggerer), 1600, 100)
 
 	..()

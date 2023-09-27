@@ -236,7 +236,7 @@ as having entered the turf.
 // I'll admit most of the code from here on out is basically just copypasta from DOREC
 
 // Spawns a cellular automaton of an explosion
-/proc/cell_explosion(turf/epicenter, power, falloff, falloff_shape = EXPLOSION_FALLOFF_SHAPE_LINEAR, direction, shrapnel = TRUE, z_transfer = UP|DOWN, original = TRUE)
+/proc/cell_explosion(turf/epicenter, power, falloff, falloff_shape = EXPLOSION_FALLOFF_SHAPE_LINEAR, direction, shrapnel = TRUE, z_transfer = UP|DOWN, original = TRUE, datum/effect/effect/system/effective = /datum/effect/effect/system/explosion)
 	if(!istype(epicenter))
 		epicenter = get_turf(epicenter)
 
@@ -263,27 +263,31 @@ as having entered the turf.
 	E.power_falloff = falloff
 	E.falloff_shape = falloff_shape
 	E.direction = direction
-/*
+
 	var/explosion_range = round(power / falloff)
 
 	// Make explosion effect
-	new /obj/effect/temp_visual/shockwave(epicenter, explosion_range)
-	new /obj/effect/temp_visual/explosion(epicenter, explosion_range, LIGHT_COLOR_HOLY_MAGIC, power)
+//	new /obj/effect/temp_visual/shockwave(epicenter, explosion_range)
+//	new /obj/effect/temp_visual/explosion(epicenter, explosion_range, LIGHT_COLOR_HOLY_MAGIC, power)
+
+	if(effective)
+		var/datum/effect/effect/system/E = new effective()
+		E.set_up(epicenter)
+		E.start(explosion_range)
 
 	if(shrapnel) // powerful explosions send out some special effects
-		create_shrapnel(epicenter, rand(explosion_range, explosion_range*2), , ,/datum/ammo/bullet/shrapnel/light/effect/ver1)
-		create_shrapnel(epicenter, rand(explosion_range, explosion_range*2), , ,/datum/ammo/bullet/shrapnel/light/effect/ver2)
-*/
+		fragmentate(epicenter, rand(explosion_range, explosion_range*2)*2, rand(explosion_range, explosion_range*2)/2, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4), "explosion")
+
 	var/z_level_scaled = power * 0.35
 	if(z_level_scaled > 0)
 		if(z_transfer & UP)
 			var/turf/above_epicenter = GetAbove(epicenter)
 			if(above_epicenter)
-				explosion(above_epicenter, z_level_scaled, falloff, falloff_shape, direction, shrapnel, UP, FALSE)
+				cell_explosion(above_epicenter, z_level_scaled, falloff, falloff_shape, direction, shrapnel, UP, FALSE)
 		if(z_transfer & DOWN)
 			var/turf/below_epicenter = GetBelow(epicenter)
 			if(below_epicenter)
-				explosion(below_epicenter, z_level_scaled, falloff, falloff_shape, direction, shrapnel, DOWN, FALSE)
+				cell_explosion(below_epicenter, z_level_scaled, falloff, falloff_shape, direction, shrapnel, DOWN, FALSE)
 
 /proc/log_explosion(atom/A, datum/automata_cell/explosion/E)
 	if(isliving(A))

@@ -1912,9 +1912,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	if(damage_type == DAMAGE_EXPLODE && damage >= health && severity >= EXPLOSION_THRESHOLD_GIB)
 		var/oldloc = loc
 		gib()
-//		create_shrapnel(oldloc, rand(5, 9), direction, 45, /datum/ammo/bullet/shrapnel/light/human)
-//		create_shrapnel(oldloc, rand(5, 9), direction, 30, /datum/ammo/bullet/shrapnel/light/human/var1)
-//		create_shrapnel(oldloc, rand(5, 9), direction, 45, /datum/ammo/bullet/shrapnel/light/human/var2)
+		fragmentate(oldloc, rand(severity, severity*2)*2, rand(severity, severity*2)/2, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4), name)
 		return
 
 	. = ..()

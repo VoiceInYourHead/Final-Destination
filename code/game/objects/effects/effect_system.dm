@@ -495,31 +495,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 				M.Weaken(rand(1,5))
 		return
 	else
-		var/devst = -1
-		var/heavy = -1
-		var/light = -1
-
-		// Clamp all values to fractions of config.max_explosion_range, following the same pattern as for tank transfer bombs
-		if (round(amount/12) > 0)
-			devst = devst + amount/12
-
-		if (round(amount/6) > 0)
-			heavy = heavy + amount/6
-
-		if (round(amount/3) > 0)
-			light = light + amount/3
-
-		var/range = min(devst + heavy + light, BOMBCAP_RADIUS)
-
-		var/max_power
-		if (devst)
-			max_power = EX_ACT_DEVASTATING
-		else if (heavy)
-			max_power = EX_ACT_HEAVY
-		else
-			max_power = EX_ACT_LIGHT
-
 		for(var/mob/M in viewers(8, location))
 			to_chat(M, SPAN_WARNING("The solution violently explodes."))
 
-		explosion(location, range, max_power)
+		cell_explosion(location, amount * 50, amount * 1.8)

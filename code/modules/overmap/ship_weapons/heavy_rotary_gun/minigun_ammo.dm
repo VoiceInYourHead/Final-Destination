@@ -29,5 +29,5 @@
 
 /obj/item/projectile/bullet/huge_caliber/minigun/high_explosive
 	damage = 150
-	explosion_radius = 5
-	explosion_max_power = EX_ACT_HEAVY
+	explosion_power = 300
+	explosion_falloff = 50

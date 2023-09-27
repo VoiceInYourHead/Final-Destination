@@ -73,8 +73,9 @@
 	distance_falloff = 0.1
 	life_span = 250
 
-	var/explosion_radius = null
-	var/explosion_max_power = EX_ACT_DEVASTATING
+	var/explosion_power = 100
+	var/explosion_falloff = 100
+
 	var/proximity_detonation = TRUE //should we explode near our target, and not inside of it?
 	var/exploded = FALSE
 
@@ -204,7 +205,7 @@
 		if(istype(target_vessel))
 			target_vessel.damage_hull(hull_damage)
 
-	if(!explosion_radius)
+	if(!explosion_power)
 		..()
 		return
 
@@ -212,9 +213,9 @@
 		exploded = TRUE
 		if(proximity_detonation)
 			var/backwards = turn(dir, 180)
-			explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power)
+			cell_explosion(get_step(get_turf(A), backwards), explosion_power, explosion_falloff, direction = dir)
 		else
-			explosion(get_turf(A), explosion_radius, explosion_max_power)
+			cell_explosion(get_turf(A), explosion_power, explosion_falloff)
 		qdel(src)
 
 ///////////////////////////MUZZLE///////////////////////////

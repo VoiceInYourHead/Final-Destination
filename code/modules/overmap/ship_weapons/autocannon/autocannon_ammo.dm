@@ -62,13 +62,11 @@
 	pew_spread = 10
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/high_explosive
-	explosion_radius = 8
-	explosion_max_power = EX_ACT_DEVASTATING
+	explosion_power = 800
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/anti_hull
 	armor_penetration = 60
-	explosion_radius = 7
-	explosion_max_power = EX_ACT_DEVASTATING
+	explosion_power = 700
 	proximity_detonation = FALSE
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/armour_piercing
@@ -83,6 +81,7 @@
 	penetrating = 2
 	penetration_modifier = 1.1
 	proximity_detonation = FALSE
+	explosion_power = 700
 	var/exploded_inwall = FALSE
 	var/delay = 4
 
@@ -92,23 +91,20 @@
 		return
 
 	exploded = TRUE
-	explosion_radius = 7
-	explosion_max_power = EX_ACT_HEAVY
-
 	if(istype(A,/obj/effect/shield))
-		explosion(get_turf(A), explosion_radius, explosion_max_power)
+		cell_explosion(get_turf(A), explosion_power, explosion_falloff)
 		qdel(src)
 		return
 
 	sleep(delay)
 
 	if(src && !exploded_inwall)
-		explosion(get_turf(src), explosion_radius, explosion_max_power)
+		cell_explosion(get_turf(src), explosion_power, explosion_falloff)
 		qdel(src)
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/aphe/Destroy()
 	if(src && !exploded_inwall && !istype(loc,/atom/movable))
 		exploded = TRUE
 		exploded_inwall = TRUE
-		explosion(get_turf(src), explosion_radius, explosion_max_power)
+		cell_explosion(get_turf(src), explosion_power, explosion_falloff)
 	..()
