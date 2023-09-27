@@ -100,10 +100,10 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/id_hud_icons = 'icons/mob/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
 
+	var/num_traders = 0
 	var/num_exoplanets = 0
 	var/num_junkyards = 0
 	var/list/banned_exoplanet_types = list(/obj/effect/overmap/visitable/sector/exoplanet/urban)
-//	var/num_junkyards = 0
 	var/list/planet_size  //dimensions of planet zlevel, defaults to world size. Due to how maps are generated, must be (2^n+1) e.g. 17,33,65,129 etc. Map will just round up to those if set to anything other.
 	var/list/junkyard_size
 	var/away_site_budget = 0
@@ -267,6 +267,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		if ("overmap_z") overmap_z = text2num_or_default(value, overmap_z)
 		if ("overmap_size") overmap_size = text2num_or_default(value, overmap_size)
 		if ("overmap_event_areas") overmap_event_areas = text2num_or_default(value, overmap_event_areas)
+		if ("num_traders") num_traders = text2num_or_default(value, num_traders)
 		if ("num_exoplanets") num_exoplanets = text2num_or_default(value, num_exoplanets)
 		if ("num_junkyards") num_junkyards = text2num_or_default(value, num_junkyards)
 		if ("away_site_budget") away_site_budget = text2num_or_default(value, away_site_budget)
