@@ -1,6 +1,7 @@
 /datum/trader
 	var/name = "unsuspicious trader"                            //The name of the trader in question
 	var/origin = "some place"                                   //The place that they are trading from
+	var/skill_req                                               //Skill related insults/compliment
 	var/list/possible_origins                                   //Possible names of the trader origin
 	var/list/disposition = list()                               //The current disposition of them to us.
 	var/trade_flags = TRADER_MONEY                              //Flags
@@ -270,19 +271,23 @@
 		return FALSE
 	return TRUE
 
-/datum/trader/proc/insult(ship_z)
-	disposition[map_sectors["[ship_z]"]] -= rand(insult_drop, insult_drop * 2)
-	if(disposition[map_sectors["[ship_z]"]] > 50)
+/datum/trader/proc/insult(ship_z, mob/user)
+	var/randed = rand(insult_drop * max(0.1, user.get_skill_value(skill_req) * 0.2), insult_drop * max(1, user.get_skill_value(skill_req) * 1.5))
+	disposition[map_sectors["[ship_z]"]] -= randed
+	if(randed > insult_drop * 2)
 		return make_response(TRADER_INSULT_GOOD,"What? I thought we were cool!", 0, TRUE)
 	else
+		disposition[map_sectors["[ship_z]"]] -= randed * 0.5
 		return make_response(TRADER_INSULT_BAD, "Right back at you asshole!", 0, FALSE)
 
-/datum/trader/proc/compliment(ship_z)
-	if(prob(-disposition[map_sectors["[ship_z]"]]))
+/datum/trader/proc/compliment(ship_z, mob/user)
+	var/randed = rand(compliment_increase * max(0.1, user.get_skill_value(skill_req) * 0.2), compliment_increase * max(1, user.get_skill_value(skill_req) * 1.5))
+	if(randed < compliment_increase * 2)
+		disposition[map_sectors["[ship_z]"]] -= randed * 0.5
 		return make_response(TRADER_COMPLEMENT_FAILURE, "Fuck you!", 0, FALSE)
-	if(prob(100-disposition[map_sectors["[ship_z]"]]))
-		disposition[map_sectors["[ship_z]"]] += rand(compliment_increase, compliment_increase * 2)
-	return make_response(TRADER_COMPLEMENT_SUCCESS, "Thank you!", 0, TRUE)
+	else
+		disposition[map_sectors["[ship_z]"]] += randed
+		return make_response(TRADER_COMPLEMENT_SUCCESS, "Thank you!", 0, TRUE)
 
 /datum/trader/proc/trade_quantity(quantity, list/offers, num, turf/location)
 	for(var/offer in offers)
