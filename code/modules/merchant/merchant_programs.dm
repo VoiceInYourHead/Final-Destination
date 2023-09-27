@@ -223,7 +223,7 @@
 					hailed_merchant = get_response(T.hail(user))
 					show_trades = FALSE
 				else
-					temp = "Cannot find this trader within sensors reach."
+					temp = "Cannot find this trader within sensors reach. Traider located in X[T.overmap_representation.x] Y[T.overmap_representation.y]"
 			. = TOPIC_HANDLED
 		else
 			if(href_list["PRG_show_trades"])
