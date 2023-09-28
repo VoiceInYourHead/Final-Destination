@@ -100,3 +100,12 @@
 	materials = list(MATERIAL_STEEL = 6000, MATERIAL_GLASS = 6000, MATERIAL_ALUMINIUM = 4000, MATERIAL_PHORON = 4000)
 	build_path = /obj/item/weldingtool/electric
 	sort_string = "VAGAK"
+
+/datum/design/item/tool/searcher
+	name = "Intel searching device"
+	desc = "A device that used to scan location for valuable intel or other odd things"
+	id = "searcher"
+	req_tech = list(TECH_ENGINEERING = 5, TECH_MAGNET = 3)
+	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 3000)
+	build_path = /obj/item/device/fd/searcher
+	sort_string = "VAGAL"

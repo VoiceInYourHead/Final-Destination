@@ -3,6 +3,13 @@
 //stuff like that.
 
 var/list/worths = list(
+//INTEL
+					/obj/item/fd/data = 50,
+					/obj/item/fd/data/weapons = 200,
+					/obj/item/fd/data/weapons/lvl2 = 400,
+					/obj/item/fd/data/weapons/lvl3 = 800,
+					/obj/item/fd/data/weapons/lvl4 = 1000,
+
 //ROBOT ASSEMBLIES,
 					/obj/item/device/bot_kit = 300,
 //REAGENT CONTAINERS,

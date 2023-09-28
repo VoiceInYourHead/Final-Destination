@@ -55,9 +55,9 @@
 	if(state == 3 && istype(I, /obj/item/stack/material/glass/))
 		var/obj/item/stack/material/glass/guass = I
 		if(guass.amount <= 5)
-			to_chat(user, "<span class='warning'>You don't have enough materials! You need atleast 5 in a stack!</span>")
+			to_chat(user, "<span class='warning'>У вас недостаточно материалов! Для починки экрана понадобится минимум 5 единиц стекла!</span>")
 			return
-		to_chat(user, "<span class='notice'>You started to repair terminal screen, it will take some time...</span>")
+		to_chat(user, "<span class='notice'>Вы начинаете заменять разбитый экран...</span>")
 		if(do_after(user, 30) && guass.amount >= 5)
 			guass.amount -= 5
 			state = 2
@@ -68,130 +68,52 @@
 		var/obj/item/weldingtool/welder = I
 		if(do_after(user, 50) && welder.remove_fuel(0, user))
 			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
-			to_chat(user, "<span class='notice'>You started to repair terminal input controller, it will take some time...</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете сваривать детали и приводить кейпад в божеский вид...</span>")
 			state = 1
 			update_icon()
 	if(state == 1)
 		if(powerless == TRUE && istype(I, /obj/item/cell/))
 			if(do_after(user, 30))
 				powerless = FALSE
-				to_chat(user, "<span class='notice'>You carefully inserted the battery inside...</span>")
+				to_chat(user, "<span class='notice'>Вы аккуратно вставляете внутрь батарею...</span>")
 				qdel(I)
 				update_icon()
 	if(state == 1 && powerless == FALSE)
 		if(data == 1)
-			to_chat(user, "<span class='notice'>This terminal don't have any other designs to extract...but still, you can use it to find something!</span>")
+			to_chat(user, "<span class='notice'>Похоже, что полезных чертежей в терминале не осталось...впрочем, вы всё ещё можете найти что-либо в округе с его помощью.</span>")
 		if(data == 0)
-			to_chat(user, "<span class='warning'>This terminal don't have any more useful data to extract...</span>")
+			to_chat(user, "<span class='warning'>В терминале не осталось полезной информации...</span>")
 		if(data > 1)
 			if(do_after(user, 80) && isMultitool(I))
-				to_chat(user, "<span class='notice'>You started to extract terminal data!</span>")
+				to_chat(user, "<span class='notice'>Вы начали извлечение информации из терминала!</span>")
 				var/obj/item/datamine = pickweight(disk)
 				datamine = new datamine(loc)
 				data -= 2
-				to_chat(user, "<span class='notice'>You found [datamine]!</span>")
+				to_chat(user, "<span class='notice'>Вы нашли [datamine]!</span>")
 
 	else
-		to_chat(user, "<span class='warning'>[I] will not help here, probably...</span>")
+		to_chat(user, "<span class='warning'>На вряд ли [I] может здесь чем-то помочь...</span>")
 		return
 
 /obj/structure/fd/intel_console/attack_hand(mob/user)
 	if(state == 1 && powerless == FALSE)
 		if(data > 0)
 			if(do_after(user, 80))
-				var/option =  alert(user, "What exactly you want to find?", "Terminal searching", "Crates", "Cryopods")
+				var/option =  alert(user, "Что вы хотите отследить?", "Реестр терминала", "Хранилища", "Крио-капсулы")
 				switch(option)
-					if("Cryopods")
+					if("Крио-капсулы")
 						var/obj/structure/abandoned_cryo/C = locate() in orange(30)
 						if(C)
-							to_chat(user, "<span class='notice'>Nearest cryopod coordinates is: [C.x], [C.y]</span>")
+							to_chat(user, "<span class='notice'>Ближайшая капсула гибернации находится на координатах: [C.x], [C.y]</span>")
 							data -= 1
 						else
-							to_chat(user, "<span class='notice'>Seems like there is nothing like this in range of that terminal!</span>")
-					if("Crates")
+							to_chat(user, "<span class='notice'>Похоже, что в памяти данного терминала подобной информации нет!</span>")
+					if("Хранилища")
 						var/obj/structure/closet/crate/CR = locate() in orange(30)
 						if(CR)
-							to_chat(user, "<span class='notice'>Nearest loot-crate coordinates is: [CR.x], [CR.y]</span>")
+							to_chat(user, "<span class='notice'>Ближайшее хранилище снаряжения находится на координатах: [CR.x], [CR.y]</span>")
 							data -= 1
 						else
-							to_chat(user, "<span class='notice'>Seems like there is nothing like this in range of that terminal!</span>")
+							to_chat(user, "<span class='notice'>Похоже, что в памяти данного терминала подобной информации нет!</span>")
 		else
-			to_chat(user, "<span class='notice'>Seems like all the data were already extracted from this one!</span>")
-
-
-/obj/item/fd/data
-	name = "old datamine disk (TIER 0 - ENGINEERING)"
-	desc = "Disk that holds various info - from old-state tech blueprints to astronomical maps."
-	icon = 'icons/fd/marines/disk.dmi'
-	icon_state = "datadisk0"
-	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
-
-/obj/item/fd/data/New()
-	..()
-	icon_state = "datadisk[rand(0, 22)]"
-
-/obj/item/fd/data/weapons
-	name = "old datamine disk (TIER 1 - WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_POWER = 1, TECH_MAGNET = 1)
-
-//TIER 2
-
-/obj/item/fd/data/weapons/lvl2/kinetic
-	name = "old datamine disk (TIER 2 - KINETIC WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 6)
-
-/obj/item/fd/data/weapons/lvl2/energy
-	name = "old datamine disk (TIER 2 - ENERGY WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4, TECH_POWER = 5)
-
-/obj/item/fd/data/weapons/lvl2/magnetic
-	name = "old datamine disk (TIER 2 - MAGNETIC WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4, TECH_MAGNET = 5)
-
-/obj/item/fd/data/weapons/lvl2/special
-	name = "old datamine disk (TIER 2 - EXPERIMENTAL WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4, TECH_ESOTERIC = 5, TECH_BIO = 5)
-
-//TIER 3
-
-/obj/item/fd/data/weapons/lvl3/kinetic
-	name = "old datamine disk (TIER 3 - KINETIC WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 9)
-
-/obj/item/fd/data/weapons/lvl3/energy
-	name = "old datamine disk (TIER 3 - ENERGY WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 7)
-
-/obj/item/fd/data/weapons/lvl3/magnetic
-	name = "old datamine disk (TIER 3 - MAGNETIC WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_MAGNET = 7)
-
-/obj/item/fd/data/weapons/lvl3/special
-	name = "old datamine disk (TIER 3 - EXPERIMENTAL WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_ESOTERIC = 8, TECH_BIO = 7)
-
-/obj/item/fd/data/weapons/lvl3/secret
-	name = "old datamine disk (TIER 3 - SECRET WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_PHORON = 5)
-
-//TIER 4
-
-/obj/item/fd/data/weapons/lvl4/kinetic
-	name = "old datamine disk (TIER 4 - KINETIC WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 12, TECH_MATERIAL = 10)
-
-/obj/item/fd/data/weapons/lvl4/energy
-	name = "old datamine disk (TIER 4 - ENERGY WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 7, TECH_POWER = 9)
-
-/obj/item/fd/data/weapons/lvl4/magnetic
-	name = "old datamine disk (TIER 4 - MAGNETIC WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 7, TECH_MAGNET = 7)
-
-/obj/item/fd/data/weapons/lvl4/special
-	name = "old datamine disk (TIER 4 - EXPERIMENTAL WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 7, TECH_ESOTERIC = 10, TECH_BIO = 9)
-
-/obj/item/fd/data/weapons/lvl4/secret
-	name = "old datamine disk (TIER 4 - SECRET WEAPONRY)"
-	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 7, TECH_BLUESPACE = 8, TECH_PHORON = 7)
+			to_chat(user, "<span class='notice'>В терминале не осталось полезной информации...</span>")
