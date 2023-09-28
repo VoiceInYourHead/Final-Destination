@@ -259,7 +259,7 @@
 						src.ping("Magnetic containment stabilised.")
 						return
 					src.ping("DANGER! Magnetic containment field failure in 3 ... 2 ... 1 ...")
-					cell_explosion(loc, 300, 50)
+					cell_explosion(loc, 200, 50)
 					// Not sure if this is necessary, but just in case the SMES *somehow* survived..
 					qdel(src)
 

@@ -76,7 +76,7 @@
 	penetration_modifier = 1.1
 	muzzle_type = null
 	fire_sound = null
-	explosion_power = 600
+	explosion_power = 100
 
 /obj/item/projectile/bullet/huge_caliber/crystal/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(!exploded)

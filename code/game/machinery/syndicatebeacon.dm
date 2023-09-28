@@ -74,7 +74,7 @@
 
 /obj/machinery/syndicate_beacon/proc/selfdestruct()
 	selfdestructing = 1
-	cell_explosion(src.loc, rand(500, 1200), 100)
+	cell_explosion(src.loc, rand(300, 800), 50)
 
 ////////////////////////////////////////
 //Singularity beacon

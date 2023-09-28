@@ -552,5 +552,5 @@
 
 /obj/machinery/power/port_gen/pacman/mrs/explode()
 	//no special effects, but the explosion is pretty big (same as a supermatter shard).
-	cell_explosion(loc, 800, 50)
+	cell_explosion(loc, 400, 50)
 	qdel(src)

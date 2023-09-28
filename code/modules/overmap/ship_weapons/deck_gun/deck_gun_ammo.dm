@@ -32,4 +32,4 @@
 	pew_spread = 20
 
 /obj/item/projectile/bullet/huge_caliber/deck_gun/high_explosive
-	explosion_power = 900
+	explosion_power = 400

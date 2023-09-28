@@ -155,5 +155,5 @@
 	qdel(src)
 	new /obj/item/stack/material/rods(T, rand(1, 4))
 	new /obj/item/stack/material/steel(T, rand(1, 4))
-	cell_explosion(T, 200, 50)
+	cell_explosion(T, 100, 10)
 	sparks(3, 1, T)

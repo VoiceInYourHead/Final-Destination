@@ -62,11 +62,11 @@
 	pew_spread = 10
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/high_explosive
-	explosion_power = 800
+	explosion_power = 300
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/anti_hull
 	armor_penetration = 60
-	explosion_power = 700
+	explosion_power = 200
 	proximity_detonation = FALSE
 
 /obj/item/projectile/bullet/huge_caliber/autocannon/armour_piercing
@@ -81,7 +81,7 @@
 	penetrating = 2
 	penetration_modifier = 1.1
 	proximity_detonation = FALSE
-	explosion_power = 700
+	explosion_power = 200
 	var/exploded_inwall = FALSE
 	var/delay = 4
 

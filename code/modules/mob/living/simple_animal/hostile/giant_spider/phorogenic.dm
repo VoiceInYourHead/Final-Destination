@@ -23,7 +23,7 @@
 	poison_type = /datum/reagent/toxin/phoron
 
 	var/exploded = FALSE
-	var/explosion_power = 700
+	var/explosion_power = 200
 	var/explosion_falloff = 100
 
 	/// Lower bound for explosion delay.

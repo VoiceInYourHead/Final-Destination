@@ -21,8 +21,8 @@
 	amt_dam_brute = 20
 	amt_dam_fire = 25
 
-	var/explosion_power = 300
-	var/explosion_falloff = 75
+	var/explosion_power = 150
+	var/explosion_falloff = 50
 
 	hud_state = "wiz_fireball"
 	cast_sound = 'sound/magic/fireball.ogg'

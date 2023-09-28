@@ -299,7 +299,7 @@
 	playsound(src, 'sound/prime_soul/Pinos_death_scream.ogg', 100, 0, extrarange = 13, falloff = 4)
 	set_light(1, 20, 25, 2, l_color = "#f2feff")
 	sleep(55)
-	cell_explosion(get_turf(src), 800, 100)
+	cell_explosion(get_turf(src), 500, 100)
 	..(gibbed, deathmessage, show_dead_message)
 	set_light(0)
 	qdel(src)

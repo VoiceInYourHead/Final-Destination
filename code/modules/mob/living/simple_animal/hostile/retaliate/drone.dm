@@ -164,7 +164,7 @@
 		walk(src,0)
 		spawn(rand(50,150))
 			if(!disabled && exploding)
-				cell_explosion(get_turf(src), 500, 100)
+				cell_explosion(get_turf(src), 100, 50)
 				death()
 	..()
 

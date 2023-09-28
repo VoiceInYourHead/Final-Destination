@@ -256,7 +256,7 @@
 /obj/item/projectile/bullet/gyro
 	name = "minirocket"
 	fire_sound = 'sound/effects/Explosion1.ogg'
-	var/explosion_power = 200
+	var/explosion_power = 100
 	var/explosion_falloff = 50
 
 /obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)

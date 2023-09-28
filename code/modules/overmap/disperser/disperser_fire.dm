@@ -25,14 +25,14 @@
 		distance++
 		if(T.density)
 			if(distance < 7)
-				cell_explosion(T, 400, 50)
+				cell_explosion(T, 200, 50)
 				continue
 			else
 				T.ex_act(1)
 		for(var/atom/A in T)
 			if(A.density)
 				if(distance < 7)
-					cell_explosion(T, 400, 50)
+					cell_explosion(T, 200, 50)
 					if(A)
 						A.Destroy()
 					continue
@@ -75,7 +75,7 @@
 
 	//Some moron disregarded the cooldown warning. Let's blow in their face.
 	if(prob(cool_failchance()))
-		cell_explosion(middle, rand(400, 700), 75)
+		cell_explosion(middle, rand(200, 400), 75)
 	next_shot = coolinterval + world.time
 
 	var/turf/targetrange = get_turf(linked)

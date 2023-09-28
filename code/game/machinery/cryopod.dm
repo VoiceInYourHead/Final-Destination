@@ -233,7 +233,7 @@
 		newz = pick(possible_locations)
 	var/turf/nloc = locate(rand(TRANSITIONEDGE, world.maxx-TRANSITIONEDGE), rand(TRANSITIONEDGE, world.maxy-TRANSITIONEDGE),newz)
 	if(!istype(nloc, /turf/space))
-		cell_explosion(nloc, 400, 100)
+		cell_explosion(nloc, 200, 10)
 	playsound(loc,'sound/effects/rocket.ogg',100)
 	forceMove(nloc)
 
