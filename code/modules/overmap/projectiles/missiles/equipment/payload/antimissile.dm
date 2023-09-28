@@ -29,6 +29,6 @@
 
 // Small explosion when triggered
 /obj/item/missile_equipment/payload/antimissile/on_trigger(var/atom/triggerer)
-	cell_explosion(get_turf(src), 300, 50)
+	cell_explosion(get_turf(src), 100, 15)
 
 	..()

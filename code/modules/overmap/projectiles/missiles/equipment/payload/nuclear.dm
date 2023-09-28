@@ -19,11 +19,11 @@
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		cell_explosion(get_turf(src), 6400, 100)
+		cell_explosion(get_turf(src), 1000, 40)
 		empulse(get_turf(src), rand(20,40), rand(50,80))
 	else
 		SSradiation.radiate(get_turf(triggerer), 40)
-		cell_explosion(get_turf(triggerer), 6400, 100)
+		cell_explosion(get_turf(triggerer), 1000, 40)
 		empulse(get_turf(triggerer), rand(20,40), rand(50,80))
 
 	..()
@@ -49,11 +49,11 @@
 			sound_to(M, sound('sound/effects/explosionfar.ogg'))
 
 	if(istype(triggerer, /obj/effect/shield))
-		cell_explosion(get_turf(src), 10000, 10)
+		cell_explosion(get_turf(src), 3000, 10)
 		empulse(get_turf(src), rand(50,75), rand(75,100))
 	else
 		SSradiation.radiate(get_turf(triggerer), 400)
-		cell_explosion(get_turf(triggerer), 10000, 10)
+		cell_explosion(get_turf(triggerer), 3000, 10)
 		empulse(get_turf(triggerer), rand(50,75), rand(75,100))
 
 	..()
