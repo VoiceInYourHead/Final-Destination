@@ -517,3 +517,8 @@
 		to_chat(src, "<span class='warning'>You are no longer running on internals.</span>")
 	if(internals)
 		internals.icon_state = "internal[!!internal]"
+
+/mob/living/carbon/damage_health(damage, damage_type = null, damage_flags, severity)
+	. = ..()
+	if(damage_type == DAMAGE_EXPLODE && damage >= health && severity >= EXPLOSION_THRESHOLD_GIB)
+		gib()

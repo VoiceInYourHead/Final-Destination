@@ -19,8 +19,9 @@
 	icon_state = "frggrenade"
 
 	var/list/fragment_types = list(/obj/item/projectile/bullet/pellet/fragment = 1)
-	var/num_fragments = 90  //total number of fragments produced by the grenade
-	var/explosion_size = 2   //size of the center explosion
+	var/num_fragments = 90 //total number of fragments produced by the grenade
+	var/explosion_power = 200
+	var/explosion_falloff = 50
 
 	//The radius of the circle used to launch projectiles. Lower values mean less projectiles are used but if set too low gaps may appear in the spread pattern
 	var/spread_range = 7 //leave as is, for some reason setting this higher makes the spread pattern have gaps close to the epicenter
@@ -31,15 +32,15 @@
 	var/turf/O = get_turf(src)
 	if(!O) return
 
-	if(explosion_size)
+	if(explosion_power)
 		on_explosion(O)
 
-	src.fragmentate(O, num_fragments, spread_range, fragment_types)
+	fragmentate(O, num_fragments, spread_range, fragment_types, name)
 
 	qdel(src)
 
 
-/obj/proc/fragmentate(turf/T=get_turf(src), fragment_number = 30, spreading_range = 5, list/fragtypes=list(/obj/item/projectile/bullet/pellet/fragment))
+/proc/fragmentate(turf/T, fragment_number = 30, spreading_range = 5, list/fragtypes=list(/obj/item/projectile/bullet/pellet/fragment), shoot_from)
 	set waitfor = 0
 	var/list/target_turfs = getcircle(T, spreading_range)
 	var/fragments_per_projectile = round(fragment_number/length(target_turfs))
@@ -49,13 +50,13 @@
 		var/fragment_type = pickweight(fragtypes)
 		var/obj/item/projectile/bullet/pellet/fragment/P = new fragment_type(T)
 		P.pellets = fragments_per_projectile
-		P.shot_from = src.name
+		P.shot_from = shoot_from
 		P.hitchance_mod = 50
 
 		P.launch(O)
-
+/* shit mess, removed because I want make that proc global
 		// Handle damaging whatever the grenade's inside. Currently only checks for mobs.
-		if (loc != get_turf(src))
+		if(loc != get_turf(src))
 			var/recursion_limit = 3 // Prevent infinite loops
 			var/atom/current_check = src
 			while (recursion_limit)
@@ -65,21 +66,20 @@
 				if (ismob(current_check))
 					P.attack_mob(current_check, 0, 25)
 				recursion_limit--
-
+*/
 		//Make sure to hit any mobs in the source turf
 		for(var/mob/living/M in T)
 			//lying on a frag grenade while the grenade is on the ground causes you to absorb most of the shrapnel.
 			//you will most likely be dead, but others nearby will be spared the fragments that hit you instead.
-			if(M.lying && isturf(src.loc))
+			if(M.lying)
 				P.attack_mob(M, 0, 5)
 			else
 				P.attack_mob(M, 0, 50)
 
 
-
 /obj/item/grenade/frag/proc/on_explosion(var/turf/O)
-	if(explosion_size)
-		explosion(O, explosion_size, EX_ACT_LIGHT, 0)
+	if(explosion_power)
+		cell_explosion(O, explosion_power, explosion_falloff)
 
 /obj/item/grenade/frag/shell
 	name = "fragmentation grenade"
@@ -99,11 +99,11 @@
 
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1,/obj/item/projectile/bullet/pellet/fragment/strong=4)
 	num_fragments = 200  //total number of fragments produced by the grenade
-	explosion_size = 3
+	explosion_power = 300
 
 /obj/item/grenade/frag/high_yield/on_explosion(var/turf/O)
-	if(explosion_size)
-		explosion(O, round(explosion_size * 1.5), EX_ACT_HEAVY, 0) //has a chance to blow a hole in the floor
+	if(explosion_power)
+		cell_explosion(O, round(explosion_power * 1.5), explosion_falloff) //has a chance to blow a hole in the floor
 
 /obj/item/grenade/frag/high_explosive
 	name = "HE grenade"
@@ -111,8 +111,8 @@
 	icon_state = "frggrenade"
 
 	num_fragments = 4
-	explosion_size = 4
+	explosion_power = 400
 
 /obj/item/grenade/frag/high_explosive/on_explosion(var/turf/O)
-	if(explosion_size)
-		explosion(O, round(explosion_size * 1.5), EX_ACT_LIGHT, 0) //has a chance to blow a hole in the floor
+	if(explosion_power)
+		cell_explosion(O, round(explosion_power * 1.5), explosion_falloff) //has a chance to blow a hole in the floor

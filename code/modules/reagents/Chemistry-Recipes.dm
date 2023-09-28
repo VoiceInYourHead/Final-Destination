@@ -1210,7 +1210,7 @@
 	set waitfor = 0
 	..()
 	sleep(50)
-	explosion(get_turf(holder.my_atom), 10)
+	cell_explosion(get_turf(holder.my_atom), 500, 50)
 
 //Light Pink
 /datum/chemical_reaction/slime/potion2

@@ -169,8 +169,8 @@
 
 	interface_name = "dead man's switch"
 	interface_desc = "An integrated automatic self-destruct module. When the wearer dies, so does the surrounding area. Can be triggered manually."
-	var/explosion_radius = 7
-	var/explosion_max_power = EX_ACT_DEVASTATING
+	var/explosion_power = 700
+	var/explosion_falloff = 100
 	var/blinking = 0
 	var/blink_mode = 0
 	var/blink_delay = 10
@@ -181,8 +181,8 @@
 	var/self_destructing = 0 //used to prevent toggling the switch, then dying and having it toggled again
 
 /obj/item/rig_module/self_destruct/small
-	explosion_radius = 3
-	explosion_max_power = EX_ACT_LIGHT
+	explosion_power = 300
+	explosion_falloff = 100
 
 
 /obj/item/rig_module/self_destruct/activate()
@@ -222,7 +222,7 @@
 	src.blink_mode = 0
 	src.holder.set_light(0, 0, 0, 2, "#000000")
 
-	explosion(get_turf(src), explosion_radius, explosion_max_power)
+	cell_explosion(get_turf(src), explosion_power, explosion_falloff)
 	if(holder && holder.wearer)
 		holder.wearer.gib()
 		qdel(holder)

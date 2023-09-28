@@ -43,6 +43,9 @@
 	/// Reference to the turf fire on the turf
 	var/obj/effect/turf_fire/turf_fire
 
+	/// Autocells in turf
+	var/list/datum/automata_cell/autocells
+
 	var/has_dense_atom
 	var/has_opaque_atom
 
@@ -199,6 +202,10 @@ var/const/enterloopsanity = 100
 	if(!istype(atom, /atom/movable))
 		return
 
+	// Let explosions know that the atom entered
+	for(var/datum/automata_cell/explosion/E in autocells)
+		E.on_turf_entered(atom)
+
 	var/atom/movable/A = atom
 
 	if(ismob(A))
@@ -223,6 +230,12 @@ var/const/enterloopsanity = 100
 					if ((thing && A) && (thing.movable_flags & MOVABLE_FLAG_PROXMOVE))
 						thing.HasProximity(A, 1)
 	return
+
+/turf/proc/get_cellauto(type)
+	for(var/datum/automata_cell/C in autocells)
+		if(istype(C, type))
+			return C
+	return null
 
 /turf/proc/adjacent_fire_act(turf/simulated/floor/source, exposed_temperature, exposed_volume)
 	return

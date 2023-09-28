@@ -41,7 +41,7 @@
 		if(!user || !user.bombing_core)
 			return
 		to_chat(user, "** [timer] **")
-	explosion(user.loc, 21)
+	cell_explosion(user.loc, 2100, 100)
 	qdel(user)
 
 
@@ -139,5 +139,3 @@
 		timer--
 
 	SetUniversalState(/datum/universal_state/nuclear_explosion/malf, arguments=list(user)) //TODO: find the station nuclear device and use that
-
-

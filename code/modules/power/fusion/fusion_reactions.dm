@@ -145,13 +145,13 @@ proc/get_fusion_reaction(var/p_react, var/s_react, var/m_energy)
 
 	for(var/obj/machinery/fusion_fuel_injector/I in range(world.view, origin))
 		if(I.cur_assembly && I.cur_assembly.fuel_type == MATERIAL_SUPERMATTER)
-			explosion(get_turf(I), 6)
+			cell_explosion(get_turf(I), 200, 50)
 			spawn(5)
 				if(I && I.loc)
 					qdel(I)
 
 	sleep(5)
-	explosion(origin, 8)
+	cell_explosion(origin, 400, 75)
 
 	return 1
 

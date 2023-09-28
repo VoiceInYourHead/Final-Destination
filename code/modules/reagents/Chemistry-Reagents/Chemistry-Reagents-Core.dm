@@ -237,12 +237,7 @@
 	var/gas_moles = 3 * volume
 	products.adjust_multi(GAS_NO, 0.1 * gas_moles, GAS_NO2, 0.1 * gas_moles, GAS_NITROGEN, 0.6 * gas_moles, GAS_HYDROGEN, 0.02 * gas_moles)
 	T.assume_air(products)
-	if(volume > 500)
-		explosion(T, 7)
-	else if(volume > 100)
-		explosion(T, 4, EX_ACT_HEAVY)
-	else if(volume > 50)
-		explosion(T, 3, EX_ACT_HEAVY)
+	cell_explosion(T, volume, volume * 0.01)
 	remove_self(volume)
 
 /datum/reagent/coagulated_blood

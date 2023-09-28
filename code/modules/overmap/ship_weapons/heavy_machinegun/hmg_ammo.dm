@@ -31,5 +31,5 @@
 	pew_spread = 20
 
 /obj/item/projectile/bullet/huge_caliber/hmg_ship/high_explosive
-	explosion_radius = 5
-	explosion_max_power = EX_ACT_HEAVY
+	explosion_power = 500
+	explosion_falloff = 50

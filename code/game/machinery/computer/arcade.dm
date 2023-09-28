@@ -248,7 +248,7 @@
 	src.blocked = 0
 
 /obj/machinery/computer/arcade/proc/explode()
-	explosion(loc, 3, EX_ACT_HEAVY)
+	cell_explosion(loc, 200, 50)
 	qdel(src)
 
 /obj/machinery/computer/arcade/battle/emag_act(var/charges, var/mob/user)

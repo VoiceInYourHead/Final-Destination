@@ -76,8 +76,7 @@
 	penetration_modifier = 1.1
 	muzzle_type = null
 	fire_sound = null
-	explosion_radius = 6
-	explosion_max_power = EX_ACT_DEVASTATING
+	explosion_power = 600
 
 /obj/item/projectile/bullet/huge_caliber/crystal/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(!exploded)
@@ -96,7 +95,7 @@
 	if(!exploded)
 		exploded = TRUE
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
-		explosion(get_step(get_turf(A), backwards), explosion_radius, explosion_max_power)
+		cell_explosion(get_step(get_turf(A), backwards), explosion_power, explosion_falloff, direction = dir)
 		qdel(src)
 
 
@@ -107,14 +106,14 @@
 	if(!exploded)
 		exploded = TRUE
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
-		src.fragmentate(get_turf(src), rand(40,60), 7, list(/obj/item/projectile/bullet/pellet/fragment/crystal))
+		fragmentate(get_turf(src), rand(40,60), 7, list(/obj/item/projectile/bullet/pellet/fragment/crystal), name)
 		qdel(src)
 	..()
 
 /obj/item/projectile/bullet/huge_caliber/crystal/shrapnel/Destroy()
 	if(src && !exploded)
 		playsound(get_turf(src),pick(SOUNDS_CRYSTAL_METAL),150)
-		src.fragmentate(get_turf(src), rand(40,60), 7, list(/obj/item/projectile/bullet/pellet/fragment/crystal))
+		fragmentate(get_turf(src), rand(40,60), 7, list(/obj/item/projectile/bullet/pellet/fragment/crystal), name)
 	..()
 
 /obj/item/projectile/bullet/pellet/fragment/crystal

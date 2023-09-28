@@ -55,12 +55,11 @@
 			src.updateUsrDialog()
 			return
 		charges -= 1
-		switch(rand(1,2))
-			if(1)
-				temptext = "<font color=red><i><b>Double-crosser. You planned to betray us from the start. Allow us to repay the favor in kind.</b></i></font>"
-				src.updateUsrDialog()
-				spawn(rand(50,200)) selfdestruct()
-				return
+		if(rand(1, 2) > 1)
+			temptext = "<font color=red><i><b>Double-crosser. You planned to betray us from the start. Allow us to repay the favor in kind.</b></i></font>"
+			src.updateUsrDialog()
+			spawn(rand(50,200)) selfdestruct()
+			return
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/N = M
 			to_chat(M, "<B>You have joined the ranks of the Syndicate and become a traitor to the station!</B>")
@@ -75,8 +74,7 @@
 
 /obj/machinery/syndicate_beacon/proc/selfdestruct()
 	selfdestructing = 1
-	var/range = rand(5, 12)
-	spawn() explosion(src.loc, range)
+	cell_explosion(src.loc, rand(500, 1200), 100)
 
 ////////////////////////////////////////
 //Singularity beacon

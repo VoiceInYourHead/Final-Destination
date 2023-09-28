@@ -256,12 +256,12 @@
 /obj/item/projectile/bullet/gyro
 	name = "minirocket"
 	fire_sound = 'sound/effects/Explosion1.ogg'
-	var/explosion_radius = 2
-	var/explosion_max_power = EX_ACT_LIGHT
+	var/explosion_power = 200
+	var/explosion_falloff = 50
 
 /obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
 	if(isturf(target))
-		explosion(target, explosion_radius, explosion_max_power)
+		cell_explosion(target, explosion_power, explosion_falloff)
 	..()
 
 /obj/item/projectile/bullet/blank

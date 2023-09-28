@@ -25,7 +25,7 @@
 		if(T.welding & prob(50))
 			log_and_message_admins("triggered a fueltank explosion.", user)
 			to_chat(user, "<span class='danger'>That was stupid of you.</span>")
-			explosion(get_turf(src), 4, EX_ACT_HEAVY)
+			cell_explosion(get_turf(src), 400, 100)
 			if(src)
 				qdel(src)
 			return

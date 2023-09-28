@@ -29,7 +29,7 @@
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 
 	on_hit(var/atom/target, var/blocked = 0)
-		explosion(target, 2, EX_ACT_LIGHT)
+		cell_explosion(target, 100, 50)
 		return 1
 
 /obj/item/projectile/meteor
@@ -204,7 +204,7 @@
 	throwforce = 15
 
 /obj/item/projectile/missile/on_impact(var/atom/target, var/blocked = 0)
-	explosion(target, 3, EX_ACT_HEAVY)
+	cell_explosion(target, 300, 100)
 
 /obj/item/projectile/missile/on_hit(atom/target, blocked, def_zone) // Oh no, someone got hit by the RPG.
 	. = ..()

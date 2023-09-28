@@ -9,7 +9,7 @@
 	back_type = /obj/machinery/ship_weapon/back_part/deck_gun
 	munition_type = /obj/item/ammo_magazine/ammobox/deck_gun
 
-	burst_size = 1		//сколько раз пиу
+	burst_size = 1		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ
 
 	shake_camera_force = 16
 
@@ -111,8 +111,8 @@
 		if(atomcharge_ammo < ammo_per_shot)
 			return TOPIC_REFRESH
 		if(prob(cool_failchance())) //Some moron disregarded the cooldown warning. Let's blow in their face.
-			log_and_message_admins("[gun_name] смешно подорвалась", location=get_turf(middle))
-			explosion(middle, rand(7, 12))
+			log_and_message_admins("[gun_name] пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", location=get_turf(middle))
+			cell_explosion(middle, rand(700, 1200), 100)
 
 			next_shot = coolinterval + world.time
 			return TOPIC_REFRESH

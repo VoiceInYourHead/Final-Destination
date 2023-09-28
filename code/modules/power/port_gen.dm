@@ -103,7 +103,7 @@
 			stat &= ~EMPED
 
 /obj/machinery/power/port_gen/proc/explode()
-	explosion(src.loc, 8, EX_ACT_HEAVY)
+	cell_explosion(loc, 400, 75)
 	qdel(src)
 
 #define TEMPERATURE_DIVISOR 40
@@ -456,7 +456,7 @@
 	var/rads = rad_power*25 + (sheets + sheet_left)*1.5
 	SSradiation.radiate(src, (max(40, rads)))
 
-	explosion(src.loc, rad_power * 4)
+	cell_explosion(src.loc, rad_power * 4 * 75, 75)
 	qdel(src)
 
 /obj/machinery/power/port_gen/pacman/super/potato
@@ -552,5 +552,5 @@
 
 /obj/machinery/power/port_gen/pacman/mrs/explode()
 	//no special effects, but the explosion is pretty big (same as a supermatter shard).
-	explosion(src.loc, 21)
+	cell_explosion(loc, 800, 50)
 	qdel(src)

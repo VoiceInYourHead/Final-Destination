@@ -1907,3 +1907,12 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 	"a blade", "an ocean", "right behind you", "standing above you",
 	"someone near by", "a place forgotten"
 ))
+
+/mob/living/carbon/human/damage_health(damage, damage_type = null, damage_flags, severity)
+	if(damage_type == DAMAGE_EXPLODE && damage >= health && severity >= EXPLOSION_THRESHOLD_GIB)
+		var/oldloc = loc
+		gib()
+		fragmentate(oldloc, rand(severity, severity*2)*2, rand(severity, severity*2)/2, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4), name)
+		return
+
+	. = ..()

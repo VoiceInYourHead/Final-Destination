@@ -140,7 +140,7 @@
 	playsound(src, pick('sound/prime_soul/Mp_die.ogg', 'sound/prime_soul/Mp_die2.ogg'), 80, 0, extrarange = 13, falloff = 4)
 	ISay("DIE!")
 	sleep(4)
-	explosion(get_turf(src), 3, EX_ACT_LIGHT)
+	cell_explosion(get_turf(src), 150, 50)
 	density = 1
 	sleep(10)
 	ai_holder.forget_path()
@@ -155,7 +155,7 @@
 	playsound(src, 'sound/prime_soul/Mp_crush.ogg', 80, 0, extrarange = 17, falloff = 4)
 	ISay("CRUSH!")
 	sleep(4)
-	explosion(get_turf(src), 3, EX_ACT_LIGHT)
+	cell_explosion(get_turf(src), 150, 50)
 	density = 1
 	sleep(10)
 	ai_holder.forget_path()
@@ -191,7 +191,7 @@
 	face_atom(target)
 	sleep(6)
 	anchored = 1
-	explosion(get_step(src,dir), 3, EX_ACT_LIGHT)
+	cell_explosion(get_step(src, dir), 150, 50)
 	anchored = 0
 	sleep(2)
 	dropckick = matrix(transform).Update(rotation = -rotation_angle)
@@ -299,7 +299,7 @@
 	playsound(src, 'sound/prime_soul/Pinos_death_scream.ogg', 100, 0, extrarange = 13, falloff = 4)
 	set_light(1, 20, 25, 2, l_color = "#f2feff")
 	sleep(55)
-	explosion(get_turf(src), 8, EX_ACT_HEAVY)
+	cell_explosion(get_turf(src), 800, 100)
 	..(gibbed, deathmessage, show_dead_message)
 	set_light(0)
 	qdel(src)

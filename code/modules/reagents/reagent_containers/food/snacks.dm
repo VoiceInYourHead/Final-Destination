@@ -3708,6 +3708,7 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("watermelon" = 4, "apple" = 2, "orange" = 2)
 	nutriment_amt = 6
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/fruitsalad/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/drink/juice/watermelon, 12)
@@ -3725,8 +3726,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("banana" = 3, "lemon" = 2, "apple" = 2)
 	nutriment_amt = 7
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/junglesalad/Initialize()
-	.=..()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/banana, 8)
 	reagents.add_reagent(/datum/reagent/drink/juice/lemon, 9)
 	reagents.add_reagent(/datum/reagent/drink/juice/apple, 8)
@@ -3742,7 +3744,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("orange" = 3, "sour" = 2, "lime" = 2)
 	nutriment_amt = 6
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/citrusdelight/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/lemon, 6)
 	reagents.add_reagent(/datum/reagent/drink/juice/orange, 6)
 	reagents.add_reagent(/datum/reagent/drink/juice/lime, 6)
@@ -3757,7 +3761,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("cabbage" = 3, "crunchy" = 2, "freshness" = 1)
 	nutriment_amt = 8
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/kale_salad/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 9)
 	reagents.add_reagent(/datum/reagent/oliveoil, 5)
 	reagents.add_reagent(/datum/reagent/drink/juice/onion, 6)
@@ -3773,7 +3779,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("tomato" = 2, "cheese" = 1, "olive oil" = 1)
 	nutriment_amt = 8
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/greek_salad/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/psilocybin, 3)
 	reagents.add_reagent(/datum/reagent/drink/juice/onion, 6)
 	reagents.add_reagent(/datum/reagent/drink/juice/tomato, 7)
@@ -3790,7 +3798,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("freshness" = 2, "cabbage" = 1)
 	nutriment_amt = 8
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/caesar_salad/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 9)
 	reagents.add_reagent(/datum/reagent/oliveoil, 5)
 	reagents.add_reagent(/datum/reagent/drink/juice/onion, 6)
@@ -3807,7 +3817,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("cabbage" = 3, "carrots" = 2)
 	nutriment_amt = 6
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/spring_salad/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 10)
 	reagents.add_reagent(/datum/reagent/drink/juice/carrot, 7)
 	reagents.add_reagent(/datum/reagent/oliveoil, 5)
@@ -3822,7 +3834,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("potato" = 4, "salt" = 2)
 	nutriment_amt = 10
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/potato_salad/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/potato, 9)
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
 	reagents.add_reagent(/datum/reagent/drink/juice/onion, 4)
@@ -3838,7 +3852,9 @@ obj/item/reagent_containers/food/snacks/jupiter
 	nutriment_desc = list("meat" = 4, "tomato" = 2, "salt" = 2)
 	nutriment_amt = 10
 	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/antipasto_salad/Initialize()
+	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/juice/cabbage, 10)
 	reagents.add_reagent(/datum/reagent/drink/juice/tomato, 8)
 	reagents.add_reagent(/datum/reagent/oliveoil, 5)

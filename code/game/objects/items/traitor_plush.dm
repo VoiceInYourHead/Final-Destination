@@ -81,7 +81,7 @@
 	return replace_characters(phrase, replacechars)
 
 /obj/item/plushbomb/proc/activate()
-	explosion(src.loc, 3, EX_ACT_LIGHT)
+	cell_explosion(loc, 150, 50)
 	qdel(src)
 
 /obj/item/plushbomb/get_antag_info()

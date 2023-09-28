@@ -34,11 +34,11 @@
 	damage = 15
 	icon_state = "plasma_bolt"
 	color = "#c40eed"
-	var/explosion_radius = 2
-	var/explosion_max_power = EX_ACT_LIGHT
+	var/explosion_power = 150
+	var/explosion_falloff = 50
 
 /obj/item/projectile/psi/strong/on_hit(var/atom/target, var/blocked = 0)
-	explosion(get_turf(target), explosion_radius, explosion_max_power)
+	cell_explosion(get_turf(target), explosion_power, explosion_falloff)
 	..()
 
 /decl/psionic_power/psychoballistics/spit/invoke(var/mob/living/user, var/mob/living/target)
@@ -109,16 +109,16 @@
 		var/turf/O = get_turf(src)
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
-				user.fragmentate(O, 40, 7, list(/obj/item/projectile/psi = 1))
+				fragmentate_mob(O, 40, 7, list(/obj/item/projectile/psi = 1), name)
 			if(PSI_RANK_MASTER)
-				user.fragmentate(O, 30, 6, list(/obj/item/projectile/psi = 1))
+				fragmentate_mob(O, 30, 6, list(/obj/item/projectile/psi = 1), name)
 			if(PSI_RANK_OPERANT)
-				user.fragmentate(O, 20, 5, list(/obj/item/projectile/psi = 1))
+				fragmentate_mob(O, 20, 5, list(/obj/item/projectile/psi = 1), name)
 			if(PSI_RANK_APPRENTICE)
-				user.fragmentate(O, 10, 4, list(/obj/item/projectile/psi = 1))
+				fragmentate_mob(O, 10, 4, list(/obj/item/projectile/psi = 1), name)
 		return TRUE
 
-/mob/proc/fragmentate(var/turf/T=get_turf(src), var/fragment_number = 30, var/spreading_range = 5, var/list/fragtypes=list(/obj/item/projectile/))
+/proc/fragmentate_mob(turf/T, fragment_number = 30, spreading_range = 5, list/fragtypes=list(/obj/item/projectile/), source_name)
 	set waitfor = 0
 	var/list/target_turfs = getcircle(T, spreading_range)
 
@@ -126,6 +126,6 @@
 		sleep(0)
 		var/fragment_type = pickweight(fragtypes)
 		var/obj/item/projectile/P = new fragment_type(T)
-		P.shot_from = src.name
+		P.shot_from = source_name
 
 		P.launch(O)
