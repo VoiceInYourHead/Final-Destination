@@ -223,7 +223,7 @@
 					hailed_merchant = get_response(T.hail(user))
 					show_trades = FALSE
 				else
-					temp = "Cannot find this trader within sensors reach."
+					temp = "Cannot find this trader within sensors reach. Trader located in X[T.overmap_representation.x] Y[T.overmap_representation.y]"
 			. = TOPIC_HANDLED
 		else
 			if(href_list["PRG_show_trades"])
@@ -231,10 +231,10 @@
 				show_trades = !show_trades
 			if(href_list["PRG_insult"])
 				. = TOPIC_HANDLED
-				get_response(T.insult(holder.loc.z))
+				get_response(T.insult(holder.loc.z), user)
 			if(href_list["PRG_compliment"])
 				. = TOPIC_HANDLED
-				get_response(T.compliment(holder.loc.z))
+				get_response(T.compliment(holder.loc.z), user)
 			if(href_list["PRG_offer_item"])
 				. = TOPIC_HANDLED
 				offer_item(T,text2num(href_list["PRG_offer_item"]) + 1, user.get_skill_value(SKILL_FINANCE))
