@@ -20,7 +20,7 @@
 		regen++
 		if(regen >= regenerate_delay)
 			regen = 0
-			max_ammo++
+			ammo_count++
 	..()
 
 ///////////////////////////AMMOBOX///////////////////////////
