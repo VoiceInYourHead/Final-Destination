@@ -252,9 +252,6 @@
 	SHOULD_CALL_PARENT(TRUE)
 	. = list()
 
-/atom/proc/ex_act()
-	return
-
 /atom/proc/emag_act(var/remaining_charges, var/mob/user, var/emag_source)
 	return NO_EMAG_ACT
 

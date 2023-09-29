@@ -239,7 +239,7 @@
 
 /obj/structure/reagent_dispensers/fueltank/proc/explode()
 	for(var/datum/reagent/R in reagents.reagent_list)
-		R.ex_act(src, 1)
+		R.ex_act(1, null, get_turf(src))
 	qdel(src)
 
 /obj/structure/reagent_dispensers/fueltank/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)

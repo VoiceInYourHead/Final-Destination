@@ -5,39 +5,84 @@
  * Retrieves the atom's explosion resistance. Generally, this is `explosion_resistance` for simulated atoms.
  */
 /atom/proc/get_explosion_resistance()
-	if(simulated)
-		return explosion_resistance
-	return explosion_resistance
+	return 0
 
-/turf/get_explosion_resistance()
-	. = ..()
-	for(var/obj/O in src)
-		. += O.get_explosion_resistance()
+/mob/living/get_explosion_resistance()
+	if(density)
+		return 20
+	return 0
 
-/turf/space/explosion_resistance = 2
+/obj/proc/explosion_throw(severity, direction, scatter_multiplier = 1)
+	if(anchored)
+		return
 
-/turf/simulated/floor/get_explosion_resistance()
-	. = ..()
-	if(is_below_sound_pressure(src))
-		. *= 1.5
+	if(!istype(src.loc, /turf))
+		return
 
-/turf/simulated/wall/get_explosion_resistance()
-	return 5 // Standardized health results in explosion_resistance being used to reduce overall damage taken, instead of changing explosion severity. 5 was the original default, so 5 is always returned here.
+	if(!direction)
+		direction = pick(GLOB.alldirs)
+	var/range = min(round(severity * 0.2, 1), 14)
+	if(!direction)
+		range = round( range/2 ,1)
 
-/turf/simulated/explosion_resistance = 1
+	if(range < 1)
+		return
 
-/turf/simulated/floor/explosion_resistance = 1
 
-/turf/simulated/mineral/explosion_resistance = 2
+	var/speed = max(range*2.5, 4)
+	var/atom/target = get_ranged_target_turf(src, direction, range)
 
-/turf/simulated/shuttle/wall/explosion_resistance = 10
+	if(range >= 2)
+		var/scatter = range/4 * scatter_multiplier
+		var/scatter_x = rand(-scatter,scatter)
+		var/scatter_y = rand(-scatter,scatter)
+		target = locate(target.x + round( scatter_x , 1),target.y + round( scatter_y , 1),target.z) //Locate an adjacent turf.
 
-/turf/simulated/wall/explosion_resistance = 10
+	//time for the explosion to destroy windows, walls, etc which might be in the way
+	INVOKE_ASYNC(src, /atom/movable.proc/throw_at, target, range, speed, null, TRUE)
 
-/turf/unsimulated/floor/explosion_resistance = 1
+	return
 
-/obj/machinery/door/get_explosion_resistance()
-	if(!density)
-		return 0
+/mob/proc/explosion_throw(severity, direction)
+	if(anchored)
+		return
+
+	if(!istype(src.loc, /turf))
+		return
+
+	var/weight = 1
+	var/range = round( severity/weight * 0.02 ,1)
+	if(!direction)
+		range = round( 2*range/3 ,1)
+		direction = pick(NORTH,SOUTH,EAST,WEST,NORTHEAST,NORTHWEST,SOUTHEAST,SOUTHWEST)
+
+	if(range <= 0)
+		return
+
+	var/speed = max(range*1.5, 4)
+	var/atom/target = get_ranged_target_turf(src, direction, range)
+
+	var/spin = 0
+
+	if(range > 1)
+		spin = 1
+
+	if(range >= 2)
+		var/scatter = range/4
+		var/scatter_x = rand(-scatter,scatter)
+		var/scatter_y = rand(-scatter,scatter)
+		target = locate(target.x + round( scatter_x , 1),target.y + round( scatter_y , 1),target.z) //Locate an adjacent turf.
+
+	//time for the explosion to destroy windows, walls, etc which might be in the way
+	INVOKE_ASYNC(src, /atom/movable.proc/throw_at, target, range, speed, null, spin)
+
+	return
+
+/obj/machinery/door/airlock/get_explosion_resistance()
+	if(density)
+		return get_damage_resistance(DAMAGE_EXPLODE)
 	else
-		return ..()
+		return FALSE
+
+/turf/simulated/get_explosion_resistance()
+	return get_max_health() - health_current
