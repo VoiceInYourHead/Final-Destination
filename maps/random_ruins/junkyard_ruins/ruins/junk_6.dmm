@@ -1,4 +1,5 @@
 "a" = (/turf/template_noop,/area/template_noop)
+"b" = (/obj/structure/closet/crate/secure/loot,/turf/template_noop,/area/template_noop)
 "c" = (/turf/simulated/wall/r_wall/prepainted,/area/template_noop)
 "d" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "g" = (/turf/simulated/floor/plating,/area/template_noop)
@@ -29,7 +30,7 @@ wwopaaaTMa
 aaFVzacKcw
 LawwaarFca
 aawaaawgMM
-kaaanpaadM
+kaabnpaadM
 aaaapZaWgc
 asLwwwqMcc
 aAcaahakaa

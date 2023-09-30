@@ -1854,6 +1854,7 @@
 #include "code\modules\fd\intel\ancient_items.dm"
 #include "code\modules\fd\intel\base.dm"
 #include "code\modules\fd\intel\disks.dm"
+#include "code\modules\fd\intel\landmarks.dm"
 #include "code\modules\fd\intel\searcher.dm"
 #include "code\modules\flufftext\TextFilters.dm"
 #include "code\modules\food\recipes_microwave.dm"

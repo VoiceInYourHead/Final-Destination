@@ -25,7 +25,7 @@
 	icon_state = "tnc"
 	density = TRUE
 	anchored = TRUE
-	bound_x = 64
+	bound_width = 64
 
 /obj/structure/fd/bluespace_drive_unfinished
 	name = "Unfinished bluespace-drive"
@@ -103,3 +103,77 @@
 	density = TRUE
 	anchored = TRUE
 	pixel_x = -8
+
+/obj/structure/fd/scorched/orgy
+	name = "pile of scorshed bodies"
+	desc = "Very strange black thing"
+	icon = 'icons/fd/structures/Disposed.dmi'
+	icon_state = "Orgy"
+	density = TRUE
+	anchored = TRUE
+	bound_width = 64
+
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/fd/skull
+	name = "big animal skull"
+	desc = "This thing probably was pretty big"
+	icon = 'icons/fd/structures/Skulls_and_bones2.dmi'
+	icon_state = "Fullskullv1"
+	density = TRUE
+	anchored = TRUE
+	bound_width = 64
+	bound_height = 64
+
+/obj/structure/fd/skull/New()
+	..()
+	icon_state = "Fullskullv[rand(1, 2)]"
+
+/obj/structure/fd/skull2
+	name = "big animal skull"
+	desc = "This thing probably was pretty big"
+	icon = 'icons/fd/structures/Skulls_and_bones2.dmi'
+	icon_state = "HoleHead"
+	density = TRUE
+	anchored = TRUE
+	bound_width = 64
+
+	layer = ABOVE_HUMAN_LAYER
+
+
+/obj/structure/fd/skull3
+	name = "big animal skull"
+	desc = "This thing probably was pretty big"
+	icon = 'icons/fd/structures/Skulls_and_bones2.dmi'
+	icon_state = "Gv3"
+	density = TRUE
+	anchored = TRUE
+	bound_width = 64
+
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/fd/ribs
+	name = "big animal ribs"
+	desc = "This thing probably was pretty big"
+	icon = 'icons/fd/structures/Skulls_and_bones2.dmi'
+	icon_state = "Ribs"
+	density = TRUE
+	anchored = TRUE
+	bound_width = 64
+
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/fd/bone
+	name = "big animal bone"
+	desc = "This thing probably was pretty big"
+	icon = 'icons/fd/structures/Skulls_and_bones2.dmi'
+	icon_state = "Bone"
+	density = TRUE
+	anchored = TRUE
+
+/obj/structure/fd/body
+	name = "dead body"
+	desc = "Seems like he/she died a very long ago."
+	icon = 'icons/fd/structures/TNC_Corpses.dmi'
+	icon_state = "CaptainDead"
+	anchored = TRUE

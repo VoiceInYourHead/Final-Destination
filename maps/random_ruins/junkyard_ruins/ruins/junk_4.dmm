@@ -1,7 +1,10 @@
 "a" = (/turf/template_noop,/area/template_noop)
 "b" = (/obj/random/junkyard/hostile,/turf/simulated/floor/plating,/area/template_noop)
 "c" = (/obj/structure/lattice,/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"d" = (/obj/structure/lattice,/obj/random/relic,/turf/template_noop,/area/template_noop)
 "e" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/template_noop)
+"f" = (/obj/effect/decal/cleanable/dirt,/obj/random/intel_console,/turf/simulated/floor/plating,/area/template_noop)
+"g" = (/obj/effect/decal/cleanable/dirt,/obj/structure/closet/crate/secure/loot,/turf/simulated/floor/plating,/area/template_noop)
 "j" = (/obj/structure/grille/broken,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "l" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "m" = (/obj/random/trash,/obj/random/junkyard/loot,/turf/template_noop,/area/template_noop)
@@ -24,14 +27,14 @@
 "Y" = (/obj/random/junkyard/obstruction,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
-amzooaYvva
+amzooaYvda
 YavzaaaJlv
 aavHaNLNMb
-aaaavlNNDa
+aaaavfNNDa
 azvsaMLNOa
 voxaaavaaa
 aacvaavava
 TJevvaaYoz
-llTvaaYozj
+lgTvaaYozj
 aGTaaaCvKM
 "}
