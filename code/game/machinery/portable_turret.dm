@@ -72,6 +72,44 @@
 	check_anomalies = 1
 	req_access = list(access_cent_specops)
 
+/obj/machinery/porta_turret/ballistic
+	name = "automatic turret"
+	icon_state = "syndie_off"
+	raised = 1
+	enabled = 1
+	installation = /obj/item/gun/projectile/automatic/assault_rifle
+	ailock = 1
+	lethal = 0
+	check_synth	 = 0
+	check_access = 1
+	check_arrest = 1
+	check_records = 1
+	check_weapons = 1
+	check_anomalies = 1
+	density = TRUE
+	shot_delay = 10
+	maxhealth = 130
+	health = 130
+	reqpower = 100
+	idle_power_usage = 20
+	active_power_usage = 80
+
+/obj/machinery/porta_turret/ballistic/sniper
+	installation = /obj/item/gun/projectile/heavysniper
+	shot_delay = 20
+
+/obj/machinery/porta_turret/ballistic/shotgun
+	installation = /obj/item/gun/projectile/automatic/shotgun
+
+/obj/machinery/porta_turret/ballistic/rocket // no way bro, what the fuck are you doing
+	installation = /obj/item/gun/projectile/rocket
+	maxhealth = 60
+	health = 60
+	shot_delay = 25
+
+/obj/machinery/porta_turret/ballistic/railgun
+	installation = /obj/item/gun/magnetic/railgun/automatic/mmi
+
 /obj/machinery/porta_turret/stationary
 	ailock = 1
 	lethal = 1
@@ -158,6 +196,97 @@
 			eprojectile = /obj/item/projectile/beam/particle
 			shot_sound = 'sound/weapons/Laser3.ogg'
 			shot_sound = 'sound/weapons/Laser3.ogg'
+
+		if(/obj/item/gun/projectile/automatic/assault_rifle)
+			projectile = /obj/item/projectile/bullet/rifle/military
+			eprojectile = /obj/item/projectile/bullet/rifle/military
+			shot_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+
+		if(/obj/item/gun/projectile/heavysniper)
+			projectile = /obj/item/projectile/bullet/rifle/shell
+			eprojectile = /obj/item/projectile/bullet/rifle/shell
+			shot_sound = 'sound/weapons/gunshot/sniper.ogg'
+
+		if(/obj/item/gun/projectile/automatic/shotgun)
+			projectile = /obj/item/projectile/bullet/shotgun
+			eprojectile = /obj/item/projectile/bullet/shotgun
+			shot_sound = 'sound/weapons/gunshot/shotgun.ogg'
+
+		if(/obj/item/gun/projectile/rocket)
+			projectile = /obj/item/projectile/missile
+			eprojectile = /obj/item/projectile/missile
+			shot_sound = 'sound/weapons/gunshot/rpg_fire.ogg'
+
+		if(/obj/item/gun/magnetic/railgun/automatic/mmi)
+			projectile = /obj/item/projectile/bullet/magnetic/slug
+			eprojectile = /obj/item/projectile/bullet/magnetic/slug
+			shot_sound = 'sound/weapons/gunshot/railgun.ogg'
+
+
+
+
+/obj/machinery/porta_turret/ballistic/attackby(obj/item/I, mob/user)
+	if(stat & BROKEN)
+		if(isCrowbar(I))
+			//If the turret is destroyed, you can remove it with a crowbar to
+			//try and salvage its components
+			to_chat(user, "<span class='notice'>You begin prying the metal coverings off.</span>")
+			if(do_after(user, 20, src))
+				if(prob(100))
+					to_chat(user, "<span class='notice'>You remove the turret but did not manage to salvage anything.</span>")
+				qdel(src) // qdel
+
+/obj/machinery/porta_turret/ballistic/emag_act(var/remaining_charges, var/mob/user)
+	to_chat(user, "<span class='notice'>You try to emag ballistic turret. So sad for you that I don't want that.</span>")
+	return
+
+/obj/machinery/porta_turret/ballistic/on_update_icon()
+	if(stat & BROKEN)
+		icon_state = "syndie_broken"
+	else
+		icon_state = "syndie_off"
+
+/obj/machinery/porta_turret/ballistic/take_damage(var/force)
+	if(!raised && !raising)
+		force = force / 3
+		if(force < 15)
+			return
+
+	health -= force
+	if (force > 15 && prob(45))
+		spark_system.start()
+	if(health <= 0)
+		die()	//the death process :(
+
+/obj/machinery/porta_turret/ballistic/popUp()	//pops the turret up
+	if(disabled)
+		return
+	if(raising || raised)
+		return
+	if(stat & BROKEN)
+		return
+	set_raised_raising(raised, 1)
+	update_icon()
+	set_raised_raising(1, 0)
+	update_icon()
+
+/obj/machinery/porta_turret/ballistic/popDown()	//pops the turret down // fuck you
+	set waitfor = FALSE
+	last_target = null
+	if(disabled)
+		return
+	if(raising || !raised)
+		return
+	if(stat & BROKEN)
+		return
+	return
+	//set_raised_raising(raised, 1)
+	//update_icon()
+	//set_raised_raising(1, 0)
+	//update_icon()
+
+
+
 
 var/list/turret_icons
 

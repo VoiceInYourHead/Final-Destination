@@ -27,6 +27,13 @@
 	icon_state = "bridge"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
+/area/map_template/wreck/wreck7
+	name = "\improper Abandoned Container"
+
+/area/map_template/wreck/wreck8
+	name = "\improper Meteor Stash"
+	requires_power = FALSE
+
 //////////    D A T U M S     /////////////
 
 /datum/map_template/ruin/junkyard/wreck
@@ -70,6 +77,17 @@
 	area_usage_test_exempted_root_areas = /area/ship/stomper
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/stomper)
 
+/datum/map_template/ruin/junkyard/wreck/wreck7container
+	name = "Abandoned Container"
+	id = "wreck7"
+	suffixes = list("ruins/ruin_7.dmm")
+	spawn_cost = 0.1
+
+/datum/map_template/ruin/junkyard/wreck/wreck8meteor
+	name = "Stash Meteor"
+	id = "wreck8"
+	suffixes = list("ruins/ruin_8.dmm")
+	spawn_cost = 0.2
 
 /*
 					Additional Things for wrecks

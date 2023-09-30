@@ -1,0 +1,79 @@
+"ax" = (/obj/random/ore,/obj/random/ore_smug,/obj/random/ore_smug,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"aL" = (/turf/simulated/mineral/random/high_chance,/area/map_template/wreck/wreck8)
+"aN" = (/obj/effect/decal/cleanable/dirt,/obj/random/voidsuit,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"bS" = (/obj/structure/girder,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"ds" = (/turf/simulated/wall/concrete,/area/map_template/wreck/wreck8)
+"dD" = (/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"dK" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"eo" = (/obj/random/ore,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"ey" = (/obj/random/ore,/obj/random/ore,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"gO" = (/obj/structure/sign/warning/airlock{dir = 4; pixel_x = -34},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"hq" = (/obj/item/melee/baton/cattleprod,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"iH" = (/turf/simulated/mineral,/area/template_noop)
+"iM" = (/obj/structure/table/rack,/obj/random/voidhelmet,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"nj" = (/obj/random/trash,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"qO" = (/turf/simulated/mineral/random,/area/template_noop)
+"qP" = (/obj/random/junkyard/obstruction,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"sz" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"tt" = (/turf/simulated/floor/asteroid,/area/template_noop)
+"vT" = (/obj/random/junkyard/obstruction,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"xx" = (/obj/item/crowbar/brace_jack,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"xN" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid,/area/template_noop)
+"yu" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"zA" = (/obj/item/stack/material/phoron,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"zL" = (/obj/structure/table/standard,/obj/random/junkyard/smokes,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"zR" = (/obj/item/stack/material/phoron/ten,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"Ap" = (/obj/random/ore_smug,/obj/random/ore_smug,/obj/random/ore_smug,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"AN" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/recharger/wallcharger{pixel_y = 22},/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"DD" = (/obj/structure/girder,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"EV" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/reinforced,/area/map_template/wreck/wreck8)
+"FV" = (/obj/random/trash,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Gi" = (/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Go" = (/turf/simulated/mineral/random,/area/map_template/wreck/wreck8)
+"Il" = (/obj/random/junkyard/obstruction,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Iy" = (/obj/effect/paint/black,/turf/simulated/wall/concrete,/area/map_template/wreck/wreck8)
+"JG" = (/obj/effect/floor_decal/industrial/hatch/red,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"Ku" = (/turf/simulated/mineral,/area/map_template/wreck/wreck8)
+"Lj" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"LG" = (/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Mn" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Na" = (/obj/item/stack/material/rods,/turf/simulated/floor/asteroid,/area/template_noop)
+"NV" = (/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/corpse/miner,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Pf" = (/obj/item/pickaxe/drill,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Su" = (/obj/structure/girder,/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small/red{dir = 4},/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"SB" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 8; icon_state = "bulb1"},/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Tn" = (/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"To" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"TH" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Uc" = (/obj/machinery/door/airlock/phoron,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"Ud" = (/obj/structure/ore_box,/obj/random/ore,/obj/random/ore,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"VJ" = (/turf/unsimulated/mineral,/area/map_template/wreck/wreck8)
+"Wd" = (/obj/item/tank/phoron,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"Wz" = (/obj/random/ore_smug,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
+"WW" = (/obj/structure/droppod_door,/obj/effect/paint/red/dark,/turf/simulated/wall/iron,/area/map_template/wreck/wreck8)
+"YO" = (/obj/item/stack/material/rods,/turf/template_noop,/area/template_noop)
+"Zy" = (/turf/template_noop,/area/template_noop)
+"ZT" = (/turf/simulated/mineral/random/high_chance,/area/template_noop)
+
+(1,1,1) = {"
+ZyZyZyZyZyYOZyZyiHiHiHiHiHiHiHZyZyZyZyZy
+ZyZyttttttttiHiHiHqOqOqOqOqOiHiHiHZyYOZy
+ZyNattttiHiHiHqOqOqOqOqOqOqOqOqOiHiHiHZy
+ZyttiHiHqOqOqOqOqOZTaLVJVJVJVJVJVJGoiHZy
+ZyiHiHqOqOqOqOqOGoaLVJIyIyIyIyIyIyVJiHZy
+iHiHqOqOqOqOGoGoGoGoaLIyLjTnWdLjIyVJiHiH
+iHqOZTZTqOGoGoGoGoLGDDIyzALjTnLjIyVJqOiH
+iHqOZTZTGoGoGoGoPfaxSuIyzRLjLjWdIyVJqOiH
+iHqOqOqOGoGodseoszWzbSIyxxJGJGzRIyVJqOiH
+iHiHiHqOGoFVUcMnApiMKuIyIyWWWWIyIyVJiHiH
+ZyZyttxNdsgOdsSBszKuKuKuKuEVEVGoaLGoiHZy
+ZyiHqOxNUcMndseynjKuKuKuKuTHToGoaLGoiHZy
+YOiHqOqOdsdsdsdDMndsKuKudsMnMnGoGoGoiHtt
+ZyiHqOqOaLqPnjaNMnANNVMnvTMnMnGoGoGoiHtt
+iHiHqOZTaLGodshqIlGizLdKyuFVszUdGoGoiHtt
+iHqOqOZTGoGoaLaLaLdsGoGodsszszaLGoGoiHtt
+iHqOqOZTqOaLaLGoGoGoGoGoGoaLaLaLaLqOqOiH
+ZyiHqOZTZTZTqOqOiHiHiHiHiHqOqOZTZTqOiHtt
+ZyiHiHiHqOiHiHiHiHttttttiHiHiHiHqOiHiHZy
+ZyZyZyiHiHiHZyZyZyZyZyttttttttiHiHZyZyYO
+"}
