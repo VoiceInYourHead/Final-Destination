@@ -12,7 +12,7 @@
 		return 20
 	return 0
 
-/obj/proc/explosion_throw(severity, direction, scatter_multiplier = 1)
+/obj/explosion_throw(severity, direction, scatter_multiplier = 1)
 	if(anchored)
 		return
 
@@ -43,7 +43,7 @@
 
 	return
 
-/mob/proc/explosion_throw(severity, direction)
+/mob/explosion_throw(severity, direction, scatter_multiplier)
 	if(anchored)
 		return
 

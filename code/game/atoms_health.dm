@@ -304,6 +304,11 @@
 		damage_health(severity, DAMAGE_EXPLODE, EMPTY_BITFIELD, severity)
 		contents_explosion(severity, direction)
 
+	explosion_throw(severity, direction)
+
+/atom/proc/explosion_throw(severity, direction, scatter_multiplier = 1)
+	return
+
 /atom/proc/contents_explosion(severity, direction)
 	for(var/atom/A in contents)
 		A.ex_act(severity, direction)
