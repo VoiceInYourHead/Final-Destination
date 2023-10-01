@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(trader_uniques, subtypesof(/datum/trader/ship/unique))
 		else
 			candidates = GLOB.trader_ships.Copy() - GLOB.trader_types
 		for(var/i = (generate_stations || 1) to 1 step -1)
-			if(!GLOB.using_map || GLOB.trader_types >= GLOB.using_map.num_traders)
+			if(!GLOB.using_map || length(GLOB.trader_types) >= GLOB.using_map.num_traders)
 				break
 			trader_type = pick(candidates)
 			candidates -= trader_type
