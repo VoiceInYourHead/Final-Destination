@@ -75,6 +75,7 @@
 	name = "old datamine disk (TIER 4 - SECRET WEAPONRY)"
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 7, TECH_BLUESPACE = 8, TECH_PHORON = 7)
 
+///
 
 /obj/item/fd/data/engineering
 	name = "old datamine disk (TIER 1 - ENGINEERING)"
@@ -97,3 +98,27 @@
 /obj/item/fd/data/engineering/lvl4
 	name = "old datamine disk (TIER 4 - ENGINEERING)"
 	origin_tech = list(TECH_MATERIAL = 14, TECH_ENGINEERING = 12, TECH_POWER = 12, TECH_PHORON = 9)
+
+///
+
+/obj/item/fd/data/science
+	name = "old datamine disk (TIER 1 - SCIENCE)"
+	origin_tech = list(TECH_BLUESPACE = 2, TECH_DATA = 2, TECH_BIO = 2)
+
+//TIER 2
+
+/obj/item/fd/data/science/lvl2
+	name = "old datamine disk (TIER 2 - SCIENCE)"
+	origin_tech = list(TECH_BLUESPACE = 7, TECH_DATA = 5, TECH_BIO = 7)
+
+//TIER 3
+
+/obj/item/fd/data/science/lvl3
+	name = "old datamine disk (TIER 3 - SCIENCE)"
+	origin_tech = list(TECH_BLUESPACE = 10, TECH_DATA = 8, TECH_BIO = 10, TECH_ESOTERIC = 6)
+
+//TIER 4
+
+/obj/item/fd/data/science/lvl4
+	name = "old datamine disk (TIER 4 - SCIENCE)"
+	origin_tech = list(TECH_BLUESPACE = 14, TECH_DATA = 12, TECH_BIO = 14, TECH_ESOTERIC = 10)

@@ -29,6 +29,11 @@ var/list/worths = list(
 					/obj/item/fd/data/engineering/lvl2 = 700,
 					/obj/item/fd/data/engineering/lvl3 = 1000,
 					/obj/item/fd/data/engineering/lvl4 = 1400,
+
+					/obj/item/fd/data/science = 500,
+					/obj/item/fd/data/science/lvl2 = 700,
+					/obj/item/fd/data/science/lvl3 = 1000,
+					/obj/item/fd/data/science/lvl4 = 1400,
 //RELICS
 					/obj/item/fd/ancient_items = 50,
 					/obj/item/fd/ancient_items/psionic = 500,
