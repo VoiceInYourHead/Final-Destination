@@ -217,6 +217,7 @@
 "vj" = (/obj/effect/decal/cleanable/dirt,/obj/effect/paint/silver,/turf/simulated/wall/titanium,/area/map_template/wreck/wreckone/second)
 "Df" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/ocean,/turf/simulated/floor/plating,/area/map_template/wreck/wreckone)
 "Fx" = (/obj/effect/paint/silver,/turf/simulated/wall/titanium,/area/map_template/wreck/wreckone/second)
+"Rp" = (/obj/item/stock_parts/circuitboard/autocannon_middle,/turf/template_noop,/area/template_noop)
 "Sc" = (/obj/machinery/hologram/holopad/longrange,/turf/simulated/floor/tiled/steel_grid,/area/map_template/wreck/wreckone)
 "TP" = (/obj/effect/paint_stripe/blue,/turf/simulated/wall/titanium,/area/map_template/wreck/wreckone)
 "Uq" = (/obj/effect/decal/cleanable/dirt,/obj/effect/paint_stripe/blue,/turf/simulated/wall/titanium,/area/map_template/wreck/wreckone)
@@ -238,7 +239,7 @@ aKaKaKaKaKaKaKaKaKaKbBaWbPbQbRbSbTbUbVbWbXbYbZcahxcbccFxaKaK
 aKaKaKaKaKaKaKaKaKaKhxTPcdceakcfbHbucgchakcicjTPWPckclFxaKaK
 aKaKaKaKaKdQaKaKaKaKaKTPbPcmakaqcnbucoakakcpcqTPcrcsctFxaKaK
 aKaKaKaKaKdRaKaKaKaKdScucucvcwcxcycycyczcwcAcBUqcCcDFxFxaKaK
-aKaKaKdSaKaKaKaKaKaKaKTPbCcEcFcGcHcIcJcKcFcLcMUqcCcNFxaKaKaK
+aKaKaKdSaKaKaKaKaKaKRpTPbCcEcFcGcHcIcJcKcFcLcMUqcCcNFxaKaKaK
 aKaKdSdSaKaKaKaKaKaKaKTPTPcOcPcQcRcScTcUcVcWTPTPcXcYFxaKaKaK
 aKaKdRdTdUaKaKaKaKaKaKaKTPTPcZdaTPUqUqdbdcTPTPdddeFxFxaKaKaK
 aKaKdVdWdAaKaKaKaKaKaKaKbpdfdgdhdidjdkdldmdndodpdqvjaKaKaKaK

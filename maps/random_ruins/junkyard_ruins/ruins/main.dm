@@ -34,6 +34,9 @@
 	name = "\improper Meteor Stash"
 	requires_power = FALSE
 
+/area/map_template/wreck/wrecknine
+	name = "\improper Station fragment #3"
+
 //////////    D A T U M S     /////////////
 
 /datum/map_template/ruin/junkyard/wreck
@@ -88,6 +91,12 @@
 	id = "wreck8"
 	suffixes = list("ruins/ruin_8.dmm")
 	spawn_cost = 0.2
+
+/datum/map_template/ruin/junkyard/wreck/wreck9
+	name = "Station fragment #3"
+	id = "wreck9"
+	suffixes = list("ruins/ruin_9.dmm")
+	spawn_cost = 1
 
 /*
 					Additional Things for wrecks

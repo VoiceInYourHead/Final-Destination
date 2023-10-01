@@ -1,3 +1,5 @@
+"aa" = (/obj/item/tank/phoron,/obj/effect/decal/cleanable/dirt,/obj/random/relic,/turf/simulated/floor/reinforced/phoron{initial_gas = list("phoron" = 250)},/area/map_template/wreck/wreck8)
+"ab" = (/obj/random/ore,/obj/random/intel_console,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
 "ax" = (/obj/random/ore,/obj/random/ore_smug,/obj/random/ore_smug,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
 "aL" = (/turf/simulated/mineral/random/high_chance,/area/map_template/wreck/wreck8)
 "aN" = (/obj/effect/decal/cleanable/dirt,/obj/random/voidsuit,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
@@ -5,7 +7,6 @@
 "ds" = (/turf/simulated/wall/concrete,/area/map_template/wreck/wreck8)
 "dD" = (/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
 "dK" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
-"eo" = (/obj/random/ore,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
 "ey" = (/obj/random/ore,/obj/random/ore,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
 "gO" = (/obj/structure/sign/warning/airlock{dir = 4; pixel_x = -34},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
 "hq" = (/obj/item/melee/baton/cattleprod,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid{initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)},/area/map_template/wreck/wreck8)
@@ -61,10 +62,10 @@ ZyZyttttttttiHiHiHqOqOqOqOqOiHiHiHZyYOZy
 ZyNattttiHiHiHqOqOqOqOqOqOqOqOqOiHiHiHZy
 ZyttiHiHqOqOqOqOqOZTaLVJVJVJVJVJVJGoiHZy
 ZyiHiHqOqOqOqOqOGoaLVJIyIyIyIyIyIyVJiHZy
-iHiHqOqOqOqOGoGoGoGoaLIyLjTnWdLjIyVJiHiH
+iHiHqOqOqOqOGoGoGoGoaLIyLjTnaaLjIyVJiHiH
 iHqOZTZTqOGoGoGoGoLGDDIyzALjTnLjIyVJqOiH
 iHqOZTZTGoGoGoGoPfaxSuIyzRLjLjWdIyVJqOiH
-iHqOqOqOGoGodseoszWzbSIyxxJGJGzRIyVJqOiH
+iHqOqOqOGoGodsabszWzbSIyxxJGJGzRIyVJqOiH
 iHiHiHqOGoFVUcMnApiMKuIyIyWWWWIyIyVJiHiH
 ZyZyttxNdsgOdsSBszKuKuKuKuEVEVGoaLGoiHZy
 ZyiHqOxNUcMndseynjKuKuKuKuTHToGoaLGoiHZy
