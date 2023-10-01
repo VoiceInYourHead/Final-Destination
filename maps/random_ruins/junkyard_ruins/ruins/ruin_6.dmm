@@ -4,7 +4,7 @@
 "ad" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/light/small,/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
 "ae" = (/obj/effect/paint/iccg_hull,/obj/effect/landmark/damager,/turf/simulated/wall/r_titanium,/area/ship/stomper)
 "af" = (/obj/machinery/computer/ship/sensors{dir = 4},/obj/effect/floor_decal/techfloor/orange/corner,/obj/effect/floor_decal/techfloor{pixel_y = 16},/obj/item/clothing/glasses/aviators_black{pixel_y = 10},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
-"ag" = (/obj/structure/closet/emcloset,/obj/item/clothing/head/radiation,/obj/item/clothing/suit/radiation,/obj/random/tool,/obj/random/tool,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating,/area/ship/stomper)
+"ag" = (/obj/structure/closet/emcloset,/obj/item/clothing/head/radiation,/obj/item/clothing/suit/radiation,/obj/random/tool,/obj/random/tool,/obj/machinery/light/small{dir = 1},/obj/machinery/door/window/brigdoor/northright{dir = 4},/turf/simulated/floor/plating,/area/ship/stomper)
 "ah" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/turf/simulated/floor/reinforced,/area/ship/stomper)
 "ai" = (/obj/structure/window/reinforced,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/reinforced,/area/ship/stomper)
 "aj" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/effect/floor_decal/corner/black{dir = 10},/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
@@ -22,12 +22,12 @@
 "av" = (/obj/item/stack/material/rods,/turf/simulated/floor/airless,/area/template_noop)
 "aw" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/catwalk,/turf/template_noop,/area/template_noop)
 "ax" = (/obj/machinery/atmospherics/pipe/simple/hidden/green{dir = 6},/obj/effect/paint/iccg_hull,/turf/simulated/wall/r_titanium,/area/ship/stomper)
-"ay" = (/obj/machinery/computer/ship/helm{dir = 4},/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; level = 2},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
+"ay" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; level = 2},/obj/machinery/constructable_frame/computerframe/deconstruct{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "az" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/structure/bed/chair/comfy/blue{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
 "aA" = (/obj/machinery/computer/ship/ship_weapon/autocannon{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "aB" = (/obj/structure/lattice,/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 "aC" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
-"aD" = (/obj/machinery/power/port_gen/pacman/super/potato/reactor{rad_power = 1; max_overheat = 200; sheets = 40; time_per_sheet = 500},/obj/machinery/door/window/brigdoor/northleft,/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 4},/turf/simulated/floor/plating,/area/ship/stomper)
+"aD" = (/obj/machinery/power/port_gen/pacman/super/potato/reactor{max_overheat = 200; rad_power = 1; sheets = 40; time_per_sheet = 500},/obj/machinery/door/window/brigdoor/northleft,/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 4},/turf/simulated/floor/plating,/area/ship/stomper)
 "aE" = (/turf/simulated/mineral/random,/area/template_noop)
 "aF" = (/obj/effect/floor_decal/techfloor,/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "aG" = (/obj/structure/window/reinforced,/obj/effect/floor_decal/industrial/outline/yellow,/obj/item/ammo_magazine/ammobox/disruptor,/turf/simulated/floor/reinforced,/area/ship/stomper)
@@ -36,7 +36,7 @@
 "aJ" = (/obj/effect/paint/iccg_hull,/turf/simulated/wall/r_titanium,/area/ship/stomper)
 "aK" = (/obj/structure/window/reinforced,/obj/effect/floor_decal/techfloor/orange{dir = 6},/obj/machinery/computer/shuttle_control/explore/stomper{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "aL" = (/obj/machinery/door/window/brigdoor/southleft,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/overmap/visitable/ship/landable/stomper,/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
-"aM" = (/obj/structure/window/reinforced,/obj/machinery/computer/ship/engines{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 10},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
+"aM" = (/obj/structure/window/reinforced,/obj/effect/floor_decal/techfloor/orange{dir = 10},/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/item/stock_parts/circuitboard/engine,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "aN" = (/obj/effect/landmark/damager,/obj/effect/paint/iccg_hull,/turf/simulated/wall/titanium,/area/ship/stomper)
 "aO" = (/obj/structure/window/reinforced,/obj/structure/closet,/obj/effect/floor_decal/techfloor/orange,/obj/effect/floor_decal/techfloor/hole,/obj/random/shoes,/obj/random/shoes,/obj/random/solgov,/obj/random/clothing,/obj/random/clothing,/obj/random/cash/junkyard,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "aP" = (/obj/structure/window/reinforced,/obj/structure/closet,/obj/effect/floor_decal/techfloor/orange{dir = 6},/obj/random/shoes,/obj/random/shoes,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/obj/random/glasses,/obj/random/clothing,/obj/random/clothing,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
@@ -98,8 +98,8 @@
 "bT" = (/obj/machinery/atmospherics/unary/tank/oxygen{dir = 1; start_pressure = 15533.13},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "bU" = (/obj/machinery/atmospherics/unary/tank/air{dir = 1; start_pressure = 12533.13},/obj/effect/floor_decal/industrial/outline,/obj/machinery/light/small,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "bV" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/air{maximum_pressure = 12119.25; start_pressure = 7559.63},/obj/structure/window/reinforced{dir = 4},/obj/effect/floor_decal/industrial/outline,/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
-"bW" = (/turf/simulated/floor/wood/ebony,/area/ship/stomper)
-"bX" = (/obj/machinery/power/apc/inactive{pixel_y = -25; cell_type = /obj/item/cell/super},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/wood/ebony,/area/ship/stomper)
+"bW" = (/turf/simulated/floor/airless,/area/ship/stomper)
+"bX" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/apc/derelict{pixel_y = -18},/turf/simulated/floor/wood/ebony,/area/ship/stomper)
 "bY" = (/obj/machinery/alarm/noaccess{dir = 1; pixel_y = -23},/obj/random/junk,/turf/simulated/floor/wood/ebony,/area/ship/stomper)
 "bZ" = (/obj/structure/bed/sofa/black,/obj/effect/floor_decal/spline/fancy/black{dir = 1},/turf/simulated/floor/wood/ebony,/area/ship/stomper)
 "ca" = (/obj/effect/floor_decal/spline/fancy/black{dir = 4},/turf/simulated/floor/wood/ebony,/area/ship/stomper)
@@ -114,7 +114,7 @@
 "cj" = (/obj/item/reagent_containers/food/snacks/grilledcheese,/turf/simulated/floor/airless,/area/template_noop)
 "ck" = (/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/canister/nitrogen/prechilled{maximum_pressure = 15119.25; start_pressure = 8559.63},/turf/simulated/floor/plating,/area/ship/stomper)
 "cl" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/item/device/geiger,/turf/simulated/floor/plating,/area/ship/stomper)
-"cm" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/machinery/power/terminal{dir = 4},/obj/structure/closet/crate/uranium,/obj/item/stack/material/uranium{amount = 30},/obj/item/stack/material/uranium{amount = 30},/obj/item/tank/hydrogen,/turf/simulated/floor/plating,/area/ship/stomper)
+"cm" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/machinery/power/terminal{dir = 4},/obj/structure/closet/crate/uranium,/obj/item/stack/material/uranium{amount = 30},/obj/item/stack/material/uranium{amount = 30},/obj/item/tank/hydrogen,/obj/machinery/door/window/brigdoor/northleft{dir = 8},/turf/simulated/floor/plating,/area/ship/stomper)
 "cn" = (/obj/structure/table/steel,/obj/item/reagent_containers/food/drinks/glass2/coffeecup/teacup{pixel_x = 6},/obj/random/coin,/obj/random/coin,/obj/random/coin,/turf/simulated/floor/wood/ebony,/area/ship/stomper)
 "co" = (/obj/machinery/atmospherics/portables_connector{dir = 4},/obj/machinery/portable_atmospherics/canister/carbon_dioxide{start_pressure = 7559.63},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "cp" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{dir = 10},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/ship/stomper)
@@ -177,24 +177,25 @@
 "zq" = (/obj/machinery/embedded_controller/radio/airlock/airlock_controller{id_tag = "stomper_airlock"; pixel_y = 20; tag_airpump = "stomper_airlock_pump"; tag_chamber_sensor = "stomper_airlock_sensor"; tag_exterior_door = "stomper_airlock_outer"; tag_interior_door = "stomper_airlock_inner"},/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{id_tag = "stomper_airlock_pump"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "zD" = (/obj/machinery/ship_weapon/front_part/autocannon{dir = 1},/obj/machinery/door/blast/regular{id_tag = "stomper_ac1"; name = "Autocannon Blast Door"},/turf/simulated/floor/reinforced/airless,/area/ship/stomper)
 "AN" = (/obj/machinery/ship_weapon/middle_part/disruptor{dir = 1},/turf/simulated/floor/reinforced/airless,/area/ship/stomper)
-"Be" = (/obj/machinery/ship_weapon/middle_part/autocannon{dir = 1},/turf/simulated/floor/reinforced/airless,/area/ship/stomper)
+"Be" = (/obj/machinery/constructable_frame/machine_frame/deconstruct,/turf/simulated/floor/reinforced/airless,/area/ship/stomper)
 "Bt" = (/obj/machinery/sleeper,/obj/effect/floor_decal/techfloor,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "BA" = (/obj/effect/floor_decal/techfloor{dir = 6},/obj/random/vendor,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "Dg" = (/obj/machinery/atmospherics/pipe/simple/visible/cyan{dir = 10},/obj/structure/window/reinforced{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/plating,/area/ship/stomper)
 "DI" = (/obj/machinery/door/airlock/external{frequency = 1379; icon_state = "closed"; id_tag = "stomper_airlock_inner"; locked = 1; name = "EVA Internal Access"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "GY" = (/obj/structure/barricade/spike{dir = 4},/turf/template_noop,/area/template_noop)
-"IG" = (/obj/machinery/door/airlock/hatch,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating,/area/ship/stomper)
+"IG" = (/obj/machinery/door/airlock/hatch,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/window/brigdoor/northright{dir = 2},/turf/simulated/floor/plating,/area/ship/stomper)
 "IH" = (/obj/machinery/door/window/brigdoor/eastright,/obj/effect/floor_decal/industrial/warning,/obj/effect/floor_decal/techfloor{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "Lg" = (/obj/effect/landmark/damager,/turf/simulated/wall,/area/template_noop)
 "LG" = (/obj/machinery/door/airlock/external{frequency = 1379; icon_state = "closed"; id_tag = "stomper_airlock_outer"; locked = 1; name = "EVA External Access"},/obj/machinery/atmospherics/pipe/manifold/hidden,/obj/effect/floor_decal/techfloor,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/stomper)
 "OJ" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 "QF" = (/obj/structure/barricade,/turf/simulated/floor/airless,/area/template_noop)
-"Sk" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/wood/ebony,/area/ship/stomper)
+"Sk" = (/obj/item/stack/cable_coil{amount = 1},/turf/simulated/floor/airless,/area/ship/stomper)
 "Sy" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{dir = 4},/obj/machinery/meter,/obj/structure/catwalk,/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/plating,/area/ship/stomper)
 "Tv" = (/obj/effect/paint/iccg_hull,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/wall/r_titanium,/area/ship/stomper)
 "Vf" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/floor_decal/techfloor{pixel_y = 16},/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
 "Ww" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/floor_decal/corner/black{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
 "Xs" = (/obj/structure/hygiene/drain,/obj/structure/hygiene/sink{dir = 4; pixel_x = 11; pixel_y = 5},/obj/item/storage/mirror{pixel_x = 25; pixel_y = 6},/turf/simulated/floor/tiled/white,/area/ship/stomper)
+"XB" = (/turf/template_noop,/area/ship/stomper)
 "Ya" = (/obj/structure/curtain/open/shower,/obj/structure/hygiene/shower{dir = 8},/turf/simulated/floor/tiled/white/monotile,/area/ship/stomper)
 "Ze" = (/obj/effect/floor_decal/corner/black{dir = 9},/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/turf/simulated/floor/tiled/techfloor,/area/ship/stomper)
 "ZV" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/reinforced/airless,/area/ship/stomper)
@@ -204,10 +205,10 @@ uQuQOJOJOJOJuQuQuQtftfuQuQcruQOJrvuQOJuQuQuQuQcscscscscsuQuQ
 uQcvcvvBLgcvLgxRxsuQuQuQuQaJuQuQxRjnaBOJuQcscscscsaEaEcsuQuQ
 uQbCcJcJcJcJLgcFcFcFOJuQcraJaJuQuQOJxstfcscsaEaEbAbAaEcscsuQ
 OJcvcJcJcEcJLguQuQuQuQuQcraJcruQuQuQOJcscscsaEbAbAbAbAaEcscs
-OJcvcJcJcjamcvuQuQuQuQaJaJaJaJcruQuQOJcsaEaEaEbAbAbAbAbAaEcs
+OJcvcJcJcjamcvuQuQuQuQXBaJaJaJcruQuQOJcsaEaEaEbAbAbAbAbAaEcs
 OJLgQFcEcJcJcvuQuQuQzDaJaJaJaJaJncuQuQcscsaEaEbAbAbAbAbAaEcs
-OJcFcFOJcvLgcvuQuQaJBeaJaJaJaJaJANaJuQuQcscsaEaEbAbAbAaEcsuQ
-OJuQuQOJOJcFOJOJuQaJcybenVcdqiIHaIaecAuQuQuQcscsaEaEaEaEcsuQ
+OJcFcFOJcvLgcvuQuQXBBeaJaJaJaJaJANaJuQuQcscsaEaEbAbAbAaEcsuQ
+OJuQuQOJOJcFOJOJuQXBcybenVcdqiIHaIaecAuQuQuQcscsaEaEaEaEcsuQ
 uQuQnKuQuQcFawuQuQaJaJaRkpkSmFahaeaeuQcAuQuQuQuQcscsaEcscsuQ
 uQuQtfuQsicFawuQuQaJaJczczbOaiaGaeaeuQuQuQcAuQuQsicscscsuQuQ
 uQtftfcHuQOJawuQuQaJrqirabVfuNaFaeaeuQuQuQuQuQcHuQuQcFuQuQuQ
@@ -219,8 +220,8 @@ uQbQbQcruQuQuQaJaJaJaKaLaMaNaOaPaQaJaJaJuQuQuQaJbbbQuQuQuQOJ
 uQbQbEaJaJaJaJaJaUaVBAaXaYaZbaaWbcbdBtaJaJbDbDaJoXbQuQuQuQuQ
 uQbQaoDIzqmGDIcCbgbhbiajbkrPbmbnboblWwbqbrbsbttuXsbbuQOJuQuQ
 uQbQunTvLGoUaxhFbubvbwbjbxbyakdJbZbpZeaJaJbDbDaJYabbuQmYcJuQ
-uQbQbQaJuQuQbFaJmwbHbIbJDgnebWbLcnbMbNaJbPuQuQaJbQbbsiOJcJbf
-uQuQbQuQuQuQaSaJbRbSbTbUbVSkbXbYefcaanaJZVuQuQuQbQuQuQLgcEcB
+uQbQbQaJuQuQbFaemwbHbIbJDgnebWbLcnbMbNaJbPuQuQaJbQbbsiOJcJbf
+uQuQbQuQuQuQaSaebRbSbTbUbVSkbXbYefcaanaJZVuQuQuQbQuQuQLgcEcB
 cAuQbbuQuQuQaJaJcgcecececeIGcececececgaJaJuQuQuQbQuQuQcvcJcB
 GYuQbQbbuQuQaJlMbGciceckagclcmcccecocpcqcruQuQbbbbuQuQcvavOJ
 tfuQuQcHuQuQaJarSyaJaJctcuaDcwcxaJaJkwchaJuQuQcHuQuQcJcvcJOJ

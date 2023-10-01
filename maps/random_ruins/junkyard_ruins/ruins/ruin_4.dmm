@@ -20,10 +20,10 @@
 "at" = (/obj/effect/floor_decal/borderfloor{dir = 10},/obj/effect/floor_decal/spline/fancy/wood{dir = 10; icon_state = "spline_fancy"},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "au" = (/obj/effect/floor_decal/borderfloor/corner{dir = 8},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/obj/machinery/atm{pixel_y = 29},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "av" = (/obj/effect/floor_decal/borderfloor/corner,/obj/effect/floor_decal/spline/fancy/wood/corner,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
-"aw" = (/obj/machinery/beehive,/turf/unsimulated/floor/exoplanet/grass,/area/map_template/wreck/wreckfour)
+"aw" = (/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
 "ax" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/machinery/light/invisible,/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
-"ay" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/turf/unsimulated/floor/exoplanet/barren,/area/map_template/wreck/wreckfour)
-"az" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/turf/unsimulated/floor/exoplanet/grass,/area/map_template/wreck/wreckfour)
+"ay" = (/obj/machinery/beehive,/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
+"az" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
 "aA" = (/obj/effect/floor_decal/borderfloor/corner{dir = 8},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "aB" = (/obj/effect/floor_decal/borderfloor/corner,/obj/effect/floor_decal/spline/fancy/wood/corner,/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "aC" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 9; icon_state = "spline_fancy"},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
@@ -31,10 +31,10 @@
 "aE" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 5; icon_state = "spline_fancy"},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "aF" = (/obj/effect/floor_decal/borderfloor/corner{dir = 8},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "aG" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
-"aH" = (/obj/machinery/beehive,/turf/unsimulated/floor/exoplanet/barren,/area/map_template/wreck/wreckfour)
+"aH" = (/obj/effect/floor_decal/spline/fancy/wood,/obj/structure/railing/mapped,/obj/random/intel_console,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aI" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 9; icon_state = "spline_fancy"},/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aJ" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood,/obj/structure/railing/mapped,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
-"aK" = (/obj/effect/floor_decal/spline/fancy/wood,/obj/structure/railing/mapped,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
+"aK" = (/obj/machinery/light/invisible{dir = 4},/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
 "aL" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/effect/floor_decal/spline/fancy/wood,/obj/structure/railing/mapped,/obj/machinery/space_heater,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aM" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 5; icon_state = "spline_fancy"},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aN" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
@@ -44,13 +44,13 @@
 "aR" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aS" = (/obj/effect/floor_decal/corner/b_green/border{dir = 4},/obj/structure/closet/crate/hydroponics/beekeeping,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aT" = (/obj/effect/floor_decal/corner/b_green/border{dir = 8},/obj/structure/table/woodentable/walnut,/obj/random/junkyard/smokes,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
-"aU" = (/obj/machinery/light/invisible{dir = 4},/turf/unsimulated/floor/exoplanet/barren,/area/map_template/wreck/wreckfour)
+"aU" = (/obj/machinery/light/invisible{dir = 8},/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
 "aV" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/structure/flora/pottedplant/minitree,/obj/machinery/light/invisible{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aW" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aX" = (/obj/structure/flora/tree/pine/xmas,/turf/unsimulated/floor/exoplanet/grass,/area/map_template/wreck/wreckfour)
 "aY" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/machinery/portable_atmospherics/powered/pump,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "aZ" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/structure/flora/pottedplant/minitree,/obj/machinery/light/invisible{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
-"ba" = (/obj/machinery/light/invisible{dir = 8},/turf/unsimulated/floor/exoplanet/barren,/area/map_template/wreck/wreckfour)
+"ba" = (/obj/machinery/beehive,/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
 "bb" = (/obj/effect/floor_decal/corner/b_green/border{dir = 4},/obj/machinery/seed_storage/garden{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "bc" = (/obj/effect/floor_decal/corner/b_green/border{dir = 8},/obj/structure/bed/chair/padded/green{dir = 1},/obj/machinery/light/invisible{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/wreck/wreckfour)
 "bd" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
@@ -81,12 +81,12 @@
 "bC" = (/obj/effect/floor_decal/borderfloor/corner{dir = 1},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/machinery/light,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "bD" = (/obj/effect/floor_decal/borderfloor/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/structure/closet/crate/plastic,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "bE" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/effect/floor_decal/spline/fancy/wood{dir = 5; icon_state = "spline_fancy"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
-"bF" = (/obj/machinery/beehive,/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/unsimulated/floor/exoplanet/grass,/area/map_template/wreck/wreckfour)
-"bG" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/obj/item/clothing/head/helmet/space/void/engineering/salvage,/turf/unsimulated/floor/exoplanet/grass,/area/map_template/wreck/wreckfour)
+"bF" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/obj/item/clothing/head/helmet/space/void/engineering/salvage,/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
+"bG" = (/obj/machinery/power/port_gen/pacman{anchored = 0; sheets = 25},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/grass,/area/map_template/wreck/wreckfour)
 "bH" = (/obj/effect/floor_decal/borderfloor/corner{dir = 1},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/machinery/firealarm{dir = 4; pixel_x = 24},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "bI" = (/obj/effect/floor_decal/borderfloor/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/structure/cable{d2 = 4; icon_state = "0-4"},/obj/machinery/power/apc/derelict{dir = 8; pixel_x = -20},/obj/machinery/light,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/structure/cable/green,/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "bJ" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/effect/floor_decal/spline/fancy/wood{dir = 5; icon_state = "spline_fancy"},/obj/structure/cable{d1 = 2; d2 = 8; desc = "A flexible superconducting cable for heavy-duty power transfer. It's been labeled 'chaos reigns'."; icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
-"bK" = (/obj/machinery/power/port_gen/pacman{anchored = 0; sheets = 25},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/unsimulated/floor/exoplanet/grass,/area/map_template/wreck/wreckfour)
+"bK" = (/obj/structure/closet/crate/secure/loot,/turf/simulated/floor/plating,/area/template_noop)
 "bL" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/structure/disposalpipe/segment,/obj/item/clothing/suit/space/void/engineering/salvage,/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "bM" = (/obj/effect/floor_decal/borderfloor/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/light,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
 "bN" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/spline/fancy/wood{dir = 1; icon_state = "spline_fancy"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/alarm{dir = 1; pixel_y = -25},/turf/simulated/floor/tiled/dark,/area/map_template/wreck/wreckfour)
@@ -135,22 +135,22 @@ FUFUFUFUFUFUFUFUFUFUFUEOFUFUFUFUFUFUFUFUFUFUFUFUFUZOKBFUFUFU
 FUFUFUFUFUKOKOFUFUFUFUaaabababababababaaFUFUKpfEKpqVKBKBqVKp
 FUFUFUFUPtKOKOFUFUFUaaaaacadaeafagahaiaaaaFUFUKpZOFiKBBWFUFU
 FUFUFUFUFUFUFUFUFUaaaaajakakakalakamakanaaaaFUFUFUKBKBKpFUFU
-FUFUFUFUFUFUFUFUaaaaaoapaqaqaqarasasaqatauaaaaFUFUFUKpKpFUFU
-FUFUFUFUFUFUFUababavapaqawawaqaxasayazaqataAababFUFUFUFUFUFU
-FUFUFUFUFUFUFUabaBapaqaqasasaCaDaEasaqaqaqataFabFUFUFUFUFUFU
-FUFUEOFUFUFUababaGaqawaHasaIaJaKaLaMaqazazasaNababFUFUFUFUFU
-FUFUFUFUFUFUabaOaGasasaqaCaPaQaqaQaRaEaqasasaNaSabFUFUSFFUKO
-FUFUFUFUFUFUabaTaGawaHaUaVaWasaXaqaYaZbaayayaNbbabFUFUKpKpKO
-FUFUFUFUFUFUabbcbdasaqaqbebfaQaQasbgbhasasaqbibjabFUFUFUKpKp
-FUFUFUFUFUFUabbkblaqawawasbnbobpbqbrasayazaqbsaSabFUFUKBJdFU
-FUFUFUFUFUFUababbtaqasasaqaqbebubhaqaqaqasaqbsababFUFUKBKBKB
-FUFUFUFUFUFUFUabbvbwaqasaHawaqbxaqazazaqasbybzabFUFUFUFUFUFU
-FUFUFUFUFUFUFUababbAbwaqaqaqaqbBaqaqaqaqbybCababFUFUFUFUFUFU
-FUFUFUKpFUFUFUFUaaaabDbEbFawaqbBasbGazbybHaaaaFUFUFUFUFUFUFU
-FUFUFUKpbmFUFUFUFUaaaabIbJbKaqbLasasbybCaaaaFUFUFUFUFUFUFUFU
+FUFUFUFUFUFUFUFUaaaaaoapawawawarawawawatauaaaaFUFUFUKpKpFUFU
+FUFUFUFUFUFUFUababavapawayayawaxawazazawataAababFUFUFUFUFUFU
+FUFUFUFUFUFUFUabaBapawawawawaCaDaEawawawawataFabFUFUFUFUFUFU
+FUFUEOFUFUFUababaGawayayawaIaJaHaLaMawazazawaNababFUFUFUFUFU
+FUFUFUFUFUFUabaOaGawawawaCaPaQaqaQaRaEawawawaNaSabFUFUSFFUKO
+FUFUFUFUFUFUabaTaGayayaKaVaWasaXaqaYaZaUazazaNbbabFUFUKpKpKO
+FUFUFUFUFUFUabbcbdawawawbebfaQaQasbgbhawawawbibjabFUFUFUKpKp
+FUFUFUFUFUFUabbkblawayayawbnbobpbqbrawazazawbsaSabFUFUKBJdFU
+FUFUFUFUFUFUababbtawawawawawbebubhawawawawawbsababFUFUKBKBKB
+FUFUFUFUFUFUFUabbvbwawawayayawbxawazazawawbybzabFUFUFUFUFUFU
+FUFUFUFUFUFUFUababbAbwawawawawbBawawawawbybCababFUFUFUFUFUFU
+FUFUFUKpFUFUFUFUaaaabDbEbaayawbBawbFazbybHaaaaFUFUFUFUFUFUFU
+FUFUFUKpbmFUFUFUFUaaaabIbJbGawbLawawbybCaaaaFUFUFUFUFUFUFUFU
 FUFUKOpzKOFUFUFUFUFUaaaabMbNbObPbQbRbCaaaaFUFUFUFUFUFUPtFUFU
 FUFUKOuHKOKOKOFUFUFUFUaaaaaaaabSaaaaaaaaFUFUFUFUFUFUFUFUFUFU
-FUFUKOuHqVKpKOFUFUFUFUFUFUaabTbUbVaaFUFUFUFUFUFUFUFUFUFUFUFU
+FUFUKOuHbKKpKOFUFUFUFUFUFUaabTbUbVaaFUFUFUFUFUFUFUFUFUFUFUFU
 FUFUKOKOKOKpWUKpFUFUFUFUFUaabWbXFUbTFUFUFUFUFUFUFUKBKBKBKBFU
 FUFUFUFUKOuHbmFUFUFUFUFUFUFUFUCMFUKpFUFUFUFUFUFUJdKBNFNFKBFU
 FUFUFUFUKpuHKOFUFUFUFUFUFUbmFUruKBFUFUFUFUFUFUFUFUFUKpqVKBFU

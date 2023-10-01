@@ -5,10 +5,44 @@
 var/list/worths = list(
 //INTEL
 					/obj/item/fd/data = 50,
+
 					/obj/item/fd/data/weapons = 200,
-					/obj/item/fd/data/weapons/lvl2 = 400,
-					/obj/item/fd/data/weapons/lvl3 = 800,
-					/obj/item/fd/data/weapons/lvl4 = 1000,
+
+					/obj/item/fd/data/weapons/lvl2/kinetic = 500,
+					/obj/item/fd/data/weapons/lvl2/energy = 400,
+					/obj/item/fd/data/weapons/lvl2/magnetic = 400,
+					/obj/item/fd/data/weapons/lvl2/special = 600,
+
+					/obj/item/fd/data/weapons/lvl3/kinetic = 800,
+					/obj/item/fd/data/weapons/lvl3/energy = 700,
+					/obj/item/fd/data/weapons/lvl3/magnetic = 700,
+					/obj/item/fd/data/weapons/lvl3/special = 1000,
+					/obj/item/fd/data/weapons/lvl3/secret = 1200,
+
+					/obj/item/fd/data/weapons/lvl4/kinetic = 1100,
+					/obj/item/fd/data/weapons/lvl4/energy = 1000,
+					/obj/item/fd/data/weapons/lvl4/magnetic = 1000,
+					/obj/item/fd/data/weapons/lvl4/special = 1400,
+					/obj/item/fd/data/weapons/lvl4/secret = 1800,
+
+					/obj/item/fd/data/engineering = 500,
+					/obj/item/fd/data/engineering/lvl2 = 700,
+					/obj/item/fd/data/engineering/lvl3 = 1000,
+					/obj/item/fd/data/engineering/lvl4 = 1400,
+//RELICS
+					/obj/item/fd/ancient_items = 50,
+					/obj/item/fd/ancient_items/psionic = 500,
+					/obj/item/fd/ancient_items/zippo = 300,
+					/obj/item/fd/ancient_items/bs_shard = 2000,
+					/obj/item/fd/ancient_items/corrupted_radio = 500,
+					/obj/item/fd/ancient_items/energy_container = 200,
+					/obj/item/fd/ancient_items/teddy_bear = 100,
+					/obj/item/fd/ancient_items/jap_neko = 1000,
+					/obj/item/fd/ancient_items/gold_necklace = 500,
+					/obj/item/fd/ancient_items/strange_photo = 100,
+					/obj/item/fd/ancient_items/starmap = 1000,
+					/obj/item/fd/ancient_items/phone = 500,
+					/obj/item/fd/ancient_items/skull = 500,
 
 //ROBOT ASSEMBLIES,
 					/obj/item/device/bot_kit = 300,
@@ -157,6 +191,7 @@ var/list/worths = list(
 					/obj/item/cell/infinite = 50000,
 					/obj/item/cell/potato = 1,
 					/obj/item/cell/slime = 160,
+					/obj/item/cell/bluespace_ancient = 2500,
 //SMES COILS,
 					/obj/item/stock_parts/smes_coil/weak = 1000,
 					/obj/item/stock_parts/smes_coil/super_capacity = 5000,
@@ -343,6 +378,7 @@ var/list/worths = list(
 					/obj/item/clothing/glasses/thermal = 1990,
 					/obj/item/clothing/glasses = 150,
 					/obj/item/clothing/glasses/tacgoggles = 1200,
+					/obj/item/clothing/glasses/psionic = 3000,
 //GLOVES,
 					/obj/item/clothing/gloves/boxing = 60,
 					/obj/item/clothing/gloves/color/white = 20,

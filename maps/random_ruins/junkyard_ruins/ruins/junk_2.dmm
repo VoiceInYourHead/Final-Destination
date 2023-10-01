@@ -1,7 +1,9 @@
 "aa" = (/obj/effect/decal/cleanable/dirt,/obj/random/junkyard/hostile,/turf/simulated/floor/tiled/dark,/area/template_noop)
 "ab" = (/obj/random/junkyard/hostile,/turf/simulated/floor/plating,/area/template_noop)
+"ac" = (/obj/random/trash,/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/random/intel_console,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
+"ad" = (/obj/structure/closet/crate/secure/hydrosec,/obj/random/junkyard/medical,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/advdevice,/obj/random/relic,/turf/simulated/floor/plating,/area/template_noop)
+"ae" = (/obj/structure/closet/crate/large,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/relic,/turf/template_noop,/area/template_noop)
 "aj" = (/obj/structure/handrail,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
-"cO" = (/obj/structure/closet/crate/secure/hydrosec,/obj/random/junkyard/medical,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/advdevice,/turf/simulated/floor/plating,/area/template_noop)
 "fC" = (/obj/random/trash,/obj/random/trash,/turf/template_noop,/area/template_noop)
 "fM" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/template_noop)
 "fQ" = (/obj/random/junkyard/tech_supply,/turf/template_noop,/area/template_noop)
@@ -21,7 +23,6 @@
 "tO" = (/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/template_noop)
 "uX" = (/turf/simulated/floor/tiled/dark,/area/template_noop)
 "vj" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/template_noop)
-"vo" = (/obj/random/trash,/obj/random/trash,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "vQ" = (/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "wN" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 "xB" = (/obj/structure/railing/mapped{dir = 4},/turf/template_noop,/area/template_noop)
@@ -55,13 +56,12 @@
 "VJ" = (/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "Wh" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "Wm" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
-"WT" = (/obj/structure/closet/crate/large,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/turf/template_noop,/area/template_noop)
 "Xr" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/template_noop)
 "Zk" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall,/area/template_noop)
 
 (1,1,1) = {"
 RzjVFqsysyGRRzRzMARzRzRzRzRzRzRzFqsyRzRz
-RzRzsyajvoTPVJpnsoRzRzRzRzEDRzRzRzFqsyTP
+RzRzsyajacTPVJpnsoRzRzRzRzEDRzRzRzFqsyTP
 wNGGFqVJVJVJwNwNRzRzRzjVhAhARzRzwNsyXrwN
 RzRzsywNxDWhRzRzRzRzwNEpvQfMwNwNwNsyXraa
 RzRzRzRzfMfQRzRzRzRzmshVieMKCDRzsysysyTP
@@ -71,10 +71,10 @@ RzRzRzFMZkRzRzrgRzRzRzmMRzRzCDRzRzRzwNRz
 RzRzRzRzRzRzRzRzRzRzRzwNRzRzRzRzRzRzwNRz
 RzwNRzRzRzRzRzRzRzxBUwTPRzRzRzRzRzRzRzRz
 RzwNRzabRzRzRzRzRzRzFMykRzFMRzRzRzRzRzRz
-RzcOwNXrIqRzRzRzRzFMZkZkRzRzRzRzwNjVRzRz
+RzadwNXrIqRzRzRzRzFMZkZkRzRzRzRzwNjVRzRz
 wNIqTPXrIqRzRzRzwNxNRzRzRzfCwNsoZkFMZkRz
 RzJRtOuXRzRzRzRzRzwNRzRzRzRzRzRzPbWmFMRz
-RzJRTPuXsowNRzRzRzRzRzwNRzRzRzWTrcZkFMRz
+RzJRTPuXsowNRzRzRzRzRzwNRzRzRzaercZkFMRz
 RzIqwNwNpnRzRzRzRzRzRzwNRzwNRzRzRzRzRzRz
 RzRzwNTPTPyEZkRzjVjVsysyRzFRECRzRzRzRzRz
 RzRzxNFMhVBLFMRzRzwNvjsyRzVJHRECECECRzRz

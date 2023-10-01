@@ -9,6 +9,10 @@
 	var/powerless = TRUE //do we have cell installed? No cell by default
 	var/data = 5 //Do we have any data that we can extract?
 	var/list/disk = list(/obj/item/fd/data,
+						/obj/item/fd/data/engineering,
+						/obj/item/fd/data/engineering/lvl2,
+						/obj/item/fd/data/engineering/lvl3,
+						/obj/item/fd/data/engineering/lvl4,
 						/obj/item/fd/data/weapons,
 						/obj/item/fd/data/weapons/lvl2/kinetic,
 						/obj/item/fd/data/weapons/lvl2/energy,

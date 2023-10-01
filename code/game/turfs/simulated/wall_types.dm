@@ -19,6 +19,35 @@
 	initial_gas = list("nitrogen" = 101.38)
 	color = COLOR_GREEN_GRAY
 
+/turf/simulated/wall/r_wall/invincible //invincible
+	icon_state = "r_generic"
+	floor_type = /turf/simulated/floor/reinforced
+
+/turf/simulated/wall/r_wall/invincible/prepainted
+	paint_color = COLOR_GUNMETAL
+
+/turf/simulated/wall/r_wall/invincible/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL,MATERIAL_TITANIUM)
+
+/turf/simulated/wall/r_wall/invincible/bullet_act()
+	return
+
+/obj/structure/window/reinforced/crescent/can_damage_health()
+	SHOULD_CALL_PARENT(FALSE)
+	return FALSE
+
+/obj/structure/window/reinforced/crescent/attack_hand()
+	return
+
+/obj/structure/window/reinforced/crescent/attackby()
+	return
+
+/obj/structure/window/reinforced/crescent/ex_act()
+	return
+
+/obj/structure/window/reinforced/crescent/hitby()
+	return
+
 /turf/simulated/wall/prepainted
 	paint_color = COLOR_WALL_GUNMETAL
 /turf/simulated/wall/r_wall/prepainted

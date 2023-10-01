@@ -1,4 +1,6 @@
 "a" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"b" = (/obj/effect/decal/cleanable/dirt,/obj/random/intel_console,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
+"c" = (/obj/structure/closet/crate/secure/loot,/turf/template_noop,/area/template_noop)
 "d" = (/obj/random/junkyard/toolbox,/obj/random/junkyard/bomb_supply,/turf/template_noop,/area/template_noop)
 "e" = (/obj/structure/lattice,/obj/structure/girder,/turf/template_noop,/area/template_noop)
 "f" = (/obj/structure/grille,/turf/simulated/floor/plating,/area/template_noop)
@@ -31,7 +33,7 @@
 
 (1,1,1) = {"
 iCixriiaii
-NrazBxaaLD
+NrabBxaaLD
 irIEarxiXi
 ixiiaEioXa
 iDiiGGfiii
@@ -39,5 +41,5 @@ azQiixiidT
 aEsEaiiiii
 OOOPiihiii
 AmOiiiYXDi
-aipiieHtti
+aipcieHtti
 "}

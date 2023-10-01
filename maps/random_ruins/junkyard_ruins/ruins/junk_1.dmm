@@ -7,7 +7,7 @@
 "g" = (/obj/structure/lattice,/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
 "h" = (/obj/random/junkyard/hostile,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
 "i" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
-"j" = (/obj/random/junkyard/loot,/turf/simulated/floor/plating,/area/template_noop)
+"j" = (/obj/random/junkyard/loot,/obj/random/relic,/turf/simulated/floor/plating,/area/template_noop)
 "k" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/template_noop)
 "l" = (/obj/random/trash,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
 "m" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
