@@ -229,15 +229,14 @@
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 10) // Splashing people with welding fuel to make them easy to ignite!
 
-/datum/reagent/fuel/ex_act(obj/item/reagent_containers/holder, severity)
-	if(volume <= 50)
+/datum/reagent/fuel/ex_act(severity, direction, turf/starting_loc)
+	if(volume <= 50 || !starting_loc)
 		return
-	var/turf/T = get_turf(holder)
 	var/datum/gas_mixture/products = new(_temperature = 5 * PHORON_FLASHPOINT)
 	var/gas_moles = 3 * volume
 	products.adjust_multi(GAS_NO, 0.1 * gas_moles, GAS_NO2, 0.1 * gas_moles, GAS_NITROGEN, 0.6 * gas_moles, GAS_HYDROGEN, 0.02 * gas_moles)
-	T.assume_air(products)
-	cell_explosion(T, volume, volume * 0.01)
+	starting_loc.assume_air(products)
+	cell_explosion(starting_loc, volume, volume * 0.1)
 	remove_self(volume)
 
 /datum/reagent/coagulated_blood

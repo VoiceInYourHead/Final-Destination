@@ -276,7 +276,7 @@ as having entered the turf.
 		E.start(explosion_range)
 
 	if(shrapnel) // powerful explosions send out some special effects
-		fragmentate(epicenter, rand(explosion_range, explosion_range*2)*2, rand(explosion_range, explosion_range*2)/2, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4), "explosion")
+		fragmentate(epicenter, rand(explosion_range * 0.5, explosion_range * 2), rand(explosion_range * 0.5, explosion_range * 2) / 2, list(/obj/item/projectile/bullet/pellet/fragment/tank/small = 1,/obj/item/projectile/bullet/pellet/fragment/tank = 5,/obj/item/projectile/bullet/pellet/fragment/strong = 4), "explosion")
 
 	var/z_level_scaled = power * 0.35
 	if(z_level_scaled > 0)

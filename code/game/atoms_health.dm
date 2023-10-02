@@ -297,13 +297,21 @@
 	// Generalized - 75-125 damage at max, 38-63 at medium, 25-42 at minimum severities.
 	damage_health(rand(75, 125) / severity, DAMAGE_EMP, severity = severity)
 
-
-/atom/ex_act(severity, direction)
-	..()
+/atom/proc/ex_act(severity, direction)
 	// No hitsound here to avoid noise spam.
 	// Damage is based on severity and maximum health, with DEVASTATING being guaranteed death without any resistances.
 	if(severity && can_damage_health(severity, DAMAGE_EXPLODE))
 		damage_health(severity, DAMAGE_EXPLODE, EMPTY_BITFIELD, severity)
+		contents_explosion(severity, direction)
+
+	explosion_throw(severity, direction)
+
+/atom/proc/explosion_throw(severity, direction, scatter_multiplier = 1)
+	return
+
+/atom/proc/contents_explosion(severity, direction)
+	for(var/atom/A in contents)
+		A.ex_act(severity, direction)
 
 /atom/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()
