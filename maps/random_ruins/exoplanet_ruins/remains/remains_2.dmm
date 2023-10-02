@@ -1,0 +1,24 @@
+"a" = (/turf/template_noop,/area/space)
+"f" = (/obj/effect/quicksand{layer = 2.22},/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"h" = (/obj/structure/rubble,/turf/template_noop,/area/space)
+"q" = (/turf/simulated/mineral,/area/space)
+"C" = (/obj/effect/quicksand,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"F" = (/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"G" = (/obj/structure/fd/skull,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"J" = (/obj/structure/rubble,/obj/structure/rubble,/obj/effect/quicksand{layer = 2.22},/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"N" = (/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/template_noop,/area/space)
+"O" = (/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"V" = (/obj/structure/fd/bone,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+
+(1,1,1) = {"
+aaaqaahaaF
+aqqqaahOFa
+aqqFCChNJF
+aqaFCFahaF
+aaFVFFCFqa
+aFCCGfFFaa
+aaFFCCCFaa
+aaahCCFaaa
+aCaaaOFaaa
+aaaaahaaaa
+"}

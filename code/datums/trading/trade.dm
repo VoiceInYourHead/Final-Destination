@@ -1,7 +1,7 @@
 /datum/trader
 	var/name = "unsuspicious trader"                            //The name of the trader in question
 	var/origin = "some place"                                   //The place that they are trading from
-	var/skill_req = SKILL_BUREAUCRACY                           //Skill related insults/compliment
+	var/skill_req = SKILL_FINANCE                           //Skill related insults/compliment
 	var/list/possible_origins                                   //Possible names of the trader origin
 	var/list/disposition = list()                               //The current disposition of them to us.
 	var/trade_flags = TRADER_MONEY                              //Flags

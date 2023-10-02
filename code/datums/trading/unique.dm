@@ -38,6 +38,7 @@
 /datum/trader/ship/unique/severance
 	name = "Unknown"
 	origin = "SGS Severance"
+	skill_req = SKILL_COOKING
 
 	possible_wanted_items = list(
 							/obj/item/reagent_containers/food/snacks/human                      = TRADER_SUBTYPES_ONLY,

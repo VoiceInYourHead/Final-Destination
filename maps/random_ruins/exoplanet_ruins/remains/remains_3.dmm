@@ -1,0 +1,25 @@
+"a" = (/turf/template_noop,/area/space)
+"c" = (/obj/structure/rubble,/turf/template_noop,/area/space)
+"k" = (/obj/structure/rubble,/obj/structure/rubble,/turf/template_noop,/area/space)
+"s" = (/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"x" = (/turf/simulated/mineral,/area/space)
+"z" = (/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"D" = (/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"G" = (/obj/structure/fd/skull2,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"H" = (/obj/structure/rubble,/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"I" = (/obj/effect/decal/cleanable/ash,/turf/template_noop,/area/space)
+"M" = (/obj/effect/decal/cleanable/ash,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"P" = (/obj/structure/fd/ribs,/turf/unsimulated/floor/exoplanet/desert,/area/space)
+
+(1,1,1) = {"
+assxxassaa
+ssaxxasGsa
+ssassaaMsa
+aacssassaa
+aHDsaaaaca
+acsDssaacc
+Iaaasssaxs
+asaPssscka
+ssassaazHc
+asaaaaasDa
+"}

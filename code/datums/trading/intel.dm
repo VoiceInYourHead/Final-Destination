@@ -1,5 +1,5 @@
 /datum/trader/ship/intel_collector
-	name = "Загадочная личность"
+	name = "Загадочный Фиксер"
 	origin = "Странствующий в Тени"
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY|TRADER_WANTED_ALL
 	want_multiplier = 1.5
@@ -29,7 +29,7 @@
 	possible_wanted_items = list(/obj/item/fd/data = TRADER_SUBTYPES_ONLY)
 
 /datum/trader/collector
-	name = "Коллекционер"
+	name = "Загадочный коллекционер"
 	origin = "Музей"
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY|TRADER_WANTED_ALL
 	want_multiplier = 1.5

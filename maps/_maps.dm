@@ -28,6 +28,7 @@
 #include "random_ruins\exoplanet_ruins\marooned\marooned.dm"
 #include "random_ruins\exoplanet_ruins\monoliths\monoliths.dm"
 #include "random_ruins\exoplanet_ruins\oasis\oasis.dm"
+#include "random_ruins\exoplanet_ruins\remains\remains.dm"
 #include "random_ruins\exoplanet_ruins\oldlab\oldlab.dm"
 #include "random_ruins\exoplanet_ruins\oldlab2\oldlab2.dm"
 #include "random_ruins\exoplanet_ruins\oldpod\oldpod.dm"

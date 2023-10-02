@@ -1,6 +1,7 @@
 /datum/trader/pizzaria
 	name = "Работник Пиццерии"
 	name_language = TRADER_DEFAULT_NAME
+	skill_req = SKILL_COOKING
 	origin = "Пиццерия"
 	possible_origins = list("Папа Джо", "Летающая Пицца", "Пицца-Доминатор", "Маленькая Ки", "Планета Пиццы", "Сырная Луис", "Вкус Нео-Италии", "Пицца Гестапо")
 	trade_flags = TRADER_MONEY
@@ -37,6 +38,7 @@
 /datum/trader/ship/chinese
 	name = "Капитан Панда Бистро"
 	name_language = TRADER_DEFAULT_NAME
+	skill_req = SKILL_COOKING
 	origin = "Китайский Ресторан"
 	possible_origins = list("888 Шанхайская кухня", "Маленький Гонконг мр. Ли", "Дом полковника Ву", "Счастливый Дракон")
 	trade_flags = TRADER_MONEY
@@ -95,6 +97,7 @@
 /datum/trader/grocery
 	name = "Бакалейщик"
 	name_language = TRADER_DEFAULT_NAME
+	skill_req = SKILL_COOKING
 	possible_origins = list("Хайгвей", "Спейсвей", "Марка Будущего")
 	trade_flags = TRADER_MONEY
 
@@ -134,6 +137,7 @@
 
 /datum/trader/bakery
 	name = "Шеф-кондитер"
+	skill_req = SKILL_COOKING
 	name_language = TRADER_DEFAULT_NAME
 	origin = "Пекарня"
 	possible_origins = list("Дизайнерские торты Хью", "Пекарня у дома", "Кондитерское кафе", "Пекарня Мамы Джо", "Кремпай", "Тортострофа")

@@ -2,6 +2,7 @@
 	name = "Gun Shop Employee"
 	name_language = TRADER_DEFAULT_NAME
 	origin = "Gun Shop"
+	skill_req = SKILL_WEAPONS
 	possible_origins = list("Rooty Tootie's Point-n-Shooties", "Bang-Bang Shop", "Wild Wild West Shop", "Keleshnikov", "Hunting Depot", "Big Game Hunters")
 	speech = list(TRADER_HAIL_GENERIC    = "Hello, hello! I hope you have your permit. Oh, who are we kidding, you're welcome anyway!",
 				TRADER_HAIL_DENY         = "Store policy dictates that you can fuck off.",
@@ -42,6 +43,7 @@
 	name = "Energy Gun Shop Employee"
 	name_language = TRADER_DEFAULT_NAME
 	origin = "EGun Shop"
+	skill_req = SKILL_WEAPONS
 	possible_origins = list("The Emperor's Lasgun Shop", "Future Guns", "Solar Army", "Kiefer's Dependable Electric Arms", "Olympus Kingsport")
 	speech = list(TRADER_HAIL_GENERIC    = "Welcome to the future of warfare! ORIGIN, your one-stop shop for energy weaponry!",
 				TRADER_HAIL_DENY         = "I'm sorry, your communication channel has been blacklisted.",
@@ -73,6 +75,7 @@
 /datum/trader/dogan
 	name = "Dogan"
 	origin = "Dogan's Gun Beacon"
+	skill_req = SKILL_WEAPONS
 	speech = list(TRADER_HAIL_GENERIC    = "Hello! This is an automatic recording of me, Mr. Dogan! I hope you like the... GUNS... I've got in store for you today.",
 				TRADER_HAIL_DENY         = "I formally welcome you to... NOT... visit our store!",
 

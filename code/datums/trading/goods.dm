@@ -48,6 +48,7 @@
 /datum/trader/ship/electronics
 	name = "Продавец магазина электроники"
 	name_language = TRADER_DEFAULT_NAME
+	skill_req = SKILL_COMPUTER
 	origin = "Магазин Электроники"
 	possible_origins = list("Лучшее по Скидке", "Перегрузка", "Старое Яйцо", "Цитадель Плат", "Синтетическая Деревня", "Позитронное Решение", "Корпорация Санволт.")
 
@@ -231,6 +232,7 @@ Sells devices, odds and ends, and medical stuff
 	name = "Наркодиллер"
 	name_language = TRADER_DEFAULT_NAME
 	origin = "Наркопритон"
+	skill_req = SKILL_CHEMISTRY
 	possible_origins = list("Карнавал чувств", "CBT", "Отвал башки", "Доктор Стоун", "Страна развлечений МакМаффина")
 	possible_trading_items = list(/obj/item/device/kit/paint                 = TRADER_SUBTYPES_ONLY,
 
@@ -273,6 +275,7 @@ Sells devices, odds and ends, and medical stuff
 /datum/trader/ship/robots
 	name = "Роботехник"
 	name_language = TRADER_DEFAULT_NAME
+	skill_req = SKILL_DEVICES
 	origin = "Магазин Роботов"
 	possible_origins = list("ИскИн здорового человека", "Механические Друзья", "Бот-Чоп-Шоп", "Производственная баржа ОМНИ")
 	possible_trading_items = list(
@@ -307,6 +310,7 @@ Sells devices, odds and ends, and medical stuff
 /datum/trader/xeno_shop
 	name = "Коллекционер Ксенофауны"
 	origin = "СТС 'Не браконьер'"
+	skill_req = SKILL_SCIENCE
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY|TRADER_WANTED_ALL
 	possible_origins = list("Ксено-обнимашки", "Сборщик образцов корпорации 'Xynergy'", "Реселлер животных", "Отдел восстановления 'NanoTrasen '", "Пет-шоп одинокого Пита","Магазин Кузины Вей")
 	speech = list(TRADER_HAIL_GENERIC    = "Добро пожаловать! У вас есть что предложить нам?.",
@@ -342,6 +346,7 @@ Sells devices, odds and ends, and medical stuff
 /datum/trader/medical
 	name = "Поставщик Медицины"
 	origin = "Лазарет СТС 'Неподчинённый'"
+	skill_req = SKILL_MEDICAL
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY
 	want_multiplier = 1.2
 	margin = 2
@@ -398,6 +403,7 @@ Sells devices, odds and ends, and medical stuff
 
 /datum/trader/medical/chem
 	name = "Поставщик Химикатов"
+	skill_req = SKILL_CHEMISTRY
 	origin = "Абсолютно легальная медицина (Возврату не подлежит)"
 	possible_origins = list("Корпорация Ток-Хем", "PH International", "Группа Вагнера", "Абсолютно легальная медицина (Возврату не подлежит)")
 
