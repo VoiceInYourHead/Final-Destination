@@ -84,7 +84,7 @@
 /datum/design/circuit/cryo_cell
 	name = "cryo cell"
 	id = "cryo_cell"
-	req_tech = list(TECH_ENGINEERING = 3, TECH_BIO = 5, TECH_DATA = 3)
+	req_tech = list(TECH_ENGINEERING = 5, TECH_BIO = 7, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/cryo_cell
 	sort_string = "FACAF"
 
@@ -105,14 +105,14 @@
 /datum/design/circuit/bioprinter
 	name = "bioprinter"
 	id = "bioprinter"
-	req_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 3, TECH_DATA = 3)
+	req_tech = list(TECH_ENGINEERING = 2, TECH_BIO = 8, TECH_DATA = 5)
 	build_path = /obj/item/stock_parts/circuitboard/bioprinter
 	sort_string = "FAGAK"
 
 /datum/design/circuit/roboprinter
 	name = "prosthetic organ fabricator"
 	id = "roboprinter"
-	req_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 3)
+	req_tech = list(TECH_ENGINEERING = 4, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/roboprinter
 	sort_string = "FAGAM"
 
@@ -229,21 +229,21 @@
 /datum/design/circuit/autolathe
 	name = "autolathe board"
 	id = "autolathe"
-	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	req_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 4)
 	build_path = /obj/item/stock_parts/circuitboard/autolathe
 	sort_string = "HABAD"
 
 /datum/design/circuit/replicator
 	name = "replicator board"
 	id = "replicator"
-	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 3, TECH_BIO = 3)
+	req_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 3, TECH_BIO = 5)
 	build_path = /obj/item/stock_parts/circuitboard/replicator
 	sort_string = "HABAE"
 
 /datum/design/circuit/microlathe
 	name = "microlathe board"
 	id = "microlathe"
-	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/autolathe/micro
 	sort_string = "HABAF"
 
@@ -285,14 +285,14 @@
 /datum/design/circuit/rdservercontrol
 	name = "R&D server control console"
 	id = "rdservercontrol"
-	req_tech = list(TECH_DATA = 3)
+	req_tech = list(TECH_DATA = 6)
 	build_path = /obj/item/stock_parts/circuitboard/rdservercontrol
 	sort_string = "HABBA"
 
 /datum/design/circuit/rdserver
 	name = "R&D server"
 	id = "rdserver"
-	req_tech = list(TECH_DATA = 3)
+	req_tech = list(TECH_DATA = 6)
 	build_path = /obj/item/stock_parts/circuitboard/rdserver
 	sort_string = "HABBB"
 
@@ -572,7 +572,7 @@
 /datum/design/circuit/biogenerator
 	name = "biogenerator"
 	id = "biogenerator"
-	req_tech = list(TECH_DATA = 2)
+	req_tech = list(TECH_DATA = 7, TECH_BIO = 8)
 	build_path = /obj/item/stock_parts/circuitboard/biogenerator
 	sort_string = "KBAAA"
 
@@ -791,14 +791,14 @@
 /datum/design/circuit/aicore
 	name = "AI core"
 	id = "aicore"
-	req_tech = list(TECH_DATA = 4, TECH_BIO = 3)
+	req_tech = list(TECH_DATA = 6, TECH_ENGINEERING = 8)
 	build_path = /obj/item/stock_parts/circuitboard/aicore
 	sort_string = "XAAAA"
 
 /datum/design/circuit/ionengine
 	name = "ion propulsion system"
 	id = "ionengine"
-	req_tech = list(TECH_BLUESPACE = 4, TECH_MATERIAL = 6)
+	req_tech = list(TECH_BLUESPACE = 10, TECH_ENGINEERING = 8)
 	materials = list(MATERIAL_GOLD = 250, MATERIAL_DIAMOND = 250, MATERIAL_URANIUM = 250, MATERIAL_PLASTIC = 1000, MATERIAL_ALUMINIUM = 1000)
 	build_path = /obj/item/stock_parts/circuitboard/engine/ion
 	sort_string = "XAAAB"
@@ -836,6 +836,6 @@
 /datum/design/circuit/bluespacedrive
 	name = "Naophoros-pattern bluespace puncturer"
 	id = "bluespacedrive"
-	req_tech = list(TECH_BLUESPACE = 12, TECH_POWER = 12, TECH_ENGINEERING = 12) // You are not supposed to get this
+	req_tech = list(TECH_BLUESPACE = 16, TECH_POWER = 16, TECH_ENGINEERING = 16) // You are not supposed to get this
 	build_path = /obj/item/stock_parts/circuitboard/bluespacedrive
 	sort_string = "XAAAG"

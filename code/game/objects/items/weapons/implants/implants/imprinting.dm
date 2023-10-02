@@ -1,7 +1,7 @@
 /obj/item/implant/imprinting
 	name = "imprinting implant"
 	desc = "Latest word in training your peons."
-	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2, TECH_DATA = 3)
+	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 10, TECH_DATA = 6)
 	hidden = 1
 	var/list/instructions = list("Do your job.", "Respect your superiors.", "Wash you hands after using the toilet.")
 	var/brainwashing = 0
@@ -103,7 +103,7 @@
 	. = ..()
 
 /obj/item/implant/imprinting/can_implant(mob/M, mob/user, target_zone)
-	var/mob/living/carbon/human/H = M	
+	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		var/obj/item/organ/internal/B = H.internal_organs_by_name[BP_BRAIN]
 		if(!B || H.isSynthetic())

@@ -6,7 +6,7 @@
 	name = "binary"
 	desc = "Allows for deciphering the binary channel on-the-fly."
 	id = "binaryencrypt"
-	req_tech = list(TECH_ESOTERIC = 2)
+	req_tech = list(TECH_ESOTERIC = 2, TECH_DATA = 2)
 	materials = list(MATERIAL_STEEL = 300, MATERIAL_GLASS = 300)
 	build_path = /obj/item/device/encryptionkey/binary
 	sort_string = "VASAA"
@@ -19,7 +19,7 @@
 	name = "holographic equipment kit"
 	desc = "A kit of dangerous, high-tech equipment with changeable looks."
 	id = "chameleon"
-	req_tech = list(TECH_ESOTERIC = 2)
+	req_tech = list(TECH_ESOTERIC = 4, TECH_MAGNET = 4)
 	materials = list(MATERIAL_STEEL = 500, MATERIAL_ALUMINIUM = 500, MATERIAL_PLASTIC = 500)
 	build_path = /obj/item/storage/backpack/chameleon/sydie_kit
 	sort_string = "VASBA"
@@ -44,7 +44,7 @@
 	name = "Trashbag of Holding"
 	desc = "An advanced trash bag with bluespace properties; capable of holding a plethora of garbage."
 	id = "blutrash"
-	req_tech = list(TECH_BLUESPACE = 5, TECH_MATERIAL = 6)
+	req_tech = list(TECH_BLUESPACE = 6, TECH_MATERIAL = 6)
 	materials = list(MATERIAL_PLASTIC = 5000, MATERIAL_GOLD = 1500, MATERIAL_URANIUM = 250, MATERIAL_PHORON = 1500)
 	build_path = /obj/item/storage/bag/trash/bluespace
 
@@ -52,7 +52,7 @@
 	name = "Holographic Sign Projector"
 	desc = "A holograpic projector used to project various warning signs."
 	id = "holosign"
-	req_tech = list(TECH_ENGINEERING = 5, TECH_BLUESPACE = 4, TECH_POWER = 4)
+	req_tech = list(TECH_ENGINEERING = 4, TECH_BLUESPACE = 2, TECH_POWER = 2)
 	materials = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 1000)
 	build_path = /obj/item/holosign_creator
 

@@ -15,7 +15,7 @@
 	name = "Improved Laser Scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field. This one looks somewhat advanced."
 	id = "scalpel_laser2"
-	req_tech = list(TECH_BIO = 3, TECH_MATERIAL = 4, TECH_MAGNET = 4)
+	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 2, TECH_MAGNET = 4)
 	materials = list(MATERIAL_STEEL = 12500, MATERIAL_GLASS = 7500, MATERIAL_SILVER = 2500)
 	build_path = /obj/item/scalpel/laser2
 	sort_string = "MBEAB"
@@ -24,7 +24,7 @@
 	name = "Advanced Laser Scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field. This one looks to be the pinnacle of precision energy cutlery!"
 	id = "scalpel_laser3"
-	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 6, TECH_MAGNET = 5)
+	req_tech = list(TECH_BIO = 6, TECH_MATERIAL = 4, TECH_MAGNET = 7)
 	materials = list(MATERIAL_STEEL = 12500, MATERIAL_GLASS = 7500, MATERIAL_SILVER = 2000, MATERIAL_GOLD = 1500)
 	build_path = /obj/item/scalpel/laser3
 	sort_string = "MBEAC"
@@ -33,7 +33,7 @@
 	name = "Incision Management System"
 	desc = "A true extension of the surgeon's body, this marvel instantly and completely prepares an incision allowing for the immediate commencement of therapeutic steps."
 	id = "scalpel_manager"
-	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 7, TECH_MAGNET = 5, TECH_DATA = 4)
+	req_tech = list(TECH_BIO = 8, TECH_MATERIAL = 5, TECH_MAGNET = 8, TECH_DATA = 6)
 	materials = list (MATERIAL_STEEL = 12500, MATERIAL_GLASS = 7500, MATERIAL_SILVER = 1500, MATERIAL_GOLD = 1500, MATERIAL_DIAMOND = 750)
 	build_path = /obj/item/scalpel/manager
 	sort_string = "MBEAD"

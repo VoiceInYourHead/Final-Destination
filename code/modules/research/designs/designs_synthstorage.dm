@@ -23,7 +23,7 @@
 /datum/design/item/synthstorage/posibrain
 	name = "Positronic brain"
 	id = "posibrain"
-	req_tech = list(TECH_ENGINEERING = 5, TECH_MATERIAL = 6, TECH_BLUESPACE = 2, TECH_DATA = 7)
+	req_tech = list(TECH_ENGINEERING = 8, TECH_MATERIAL = 6, TECH_BLUESPACE = 4, TECH_DATA = 7)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 1000, MATERIAL_SILVER = 1000, MATERIAL_GOLD = 500, MATERIAL_PHORON = 500, MATERIAL_DIAMOND = 100)
 	build_path = /obj/item/organ/internal/posibrain

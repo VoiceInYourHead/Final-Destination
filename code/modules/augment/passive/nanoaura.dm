@@ -4,6 +4,7 @@
 	icon_state = "armor-chest"
 	desc = "Nanomachines, son."
 	action_button_name = "Toggle Nanomachines"
+	origin_tech = list(TECH_COMBAT = 10, TECH_BIO = 10)
 	var/obj/aura/nanoaura/aura
 	var/charges = 4
 

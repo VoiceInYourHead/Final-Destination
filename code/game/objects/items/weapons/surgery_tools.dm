@@ -108,12 +108,14 @@
 	icon_state = "scalpel_laser3_on"
 	damtype = "fire"
 	force = 15.0
+	origin_tech = list(TECH_MAGNET = 5, TECH_BIO = 5)
 
 /obj/item/scalpel/manager
 	name = "incision management system"
 	desc = "A true extension of the surgeon's body, this marvel instantly and completely prepares an incision allowing for the immediate commencement of therapeutic steps."
 	icon_state = "scalpel_manager_on"
 	force = 7.5
+	origin_tech = list(TECH_MAGNET = 8, TECH_BIO = 8)
 
 /*
  * Circular Saw

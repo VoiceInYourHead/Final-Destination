@@ -4,7 +4,7 @@
 	icon_state = "adaptive_binoculars"
 	desc = "Digital glass 'screens' can be deployed over the eyes. At the user's control, their image can be greatly enhanced, providing a view of distant areas."
 	action_button_name = "Deploy lenses"
-	origin_tech = list(TECH_DATA = 3, TECH_BIO = 2)
+	origin_tech = list(TECH_ENGINEERING = 7, TECH_COMBAT = 3)
 	item = /obj/item/clothing/glasses/augment_binoculars
 
 

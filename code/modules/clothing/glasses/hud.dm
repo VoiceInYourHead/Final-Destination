@@ -31,6 +31,7 @@
 	off_state = "healthhud_off"
 	hud_type = HUD_MEDICAL
 	body_parts_covered = 0
+	origin_tech = list(TECH_BIO = 5)
 	req_access = list(access_medical)
 
 /obj/item/clothing/glasses/hud/health/process_hud(var/mob/M)
@@ -63,6 +64,7 @@
 	off_state = "securityhud_off"
 	hud_type = HUD_SECURITY
 	body_parts_covered = 0
+	origin_tech = list(TECH_COMBAT = 5)
 	var/global/list/jobs[0]
 	req_access = list(access_security)
 
@@ -94,6 +96,7 @@
 	icon_state = "janihud"
 	off_state = "janihud_off"
 	body_parts_covered = 0
+	origin_tech = list(TECH_BIO = 3)
 	hud_type = HUD_JANITOR
 
 /obj/item/clothing/glasses/hud/janitor/prescription

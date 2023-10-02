@@ -50,7 +50,7 @@
 	name = "price scanner"
 	desc = "Using an up-to-date database of various costs and prices, this device estimates the market price of an item up to 0.001% accuracy."
 	id = "price_scanner"
-	req_tech = list(TECH_MATERIAL = 6, TECH_MAGNET = 4)
+	req_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 4, TECH_DATA = 2)
 	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 3000, MATERIAL_SILVER = 250)
 	build_path = /obj/item/device/scanner/price
 	sort_string = "VAGAF"
@@ -68,7 +68,7 @@
 	name = "portable shield diffuser"
 	desc = "A small handheld device designed to disrupt energy barriers."
 	id = "portable_shield_diffuser"
-	req_tech = list(TECH_MAGNET = 5, TECH_POWER = 5, TECH_ESOTERIC = 2)
+	req_tech = list(TECH_MAGNET = 5, TECH_POWER = 6, TECH_ESOTERIC = 3)
 	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_GOLD = 2000, MATERIAL_SILVER = 2000)
 	build_path = /obj/item/shield_diffuser
 	sort_string = "VAGAH"

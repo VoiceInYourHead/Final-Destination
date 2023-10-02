@@ -22,12 +22,12 @@
 	name = T_BOARD_MECH("medical systems")
 	contains_software = list(MECH_SOFTWARE_MEDICAL)
 	icon_state = "mcontroller"
-	origin_tech = list(TECH_DATA = 3,TECH_BIO = 2)
+	origin_tech = list(TECH_DATA = 2,TECH_BIO = 4)
 
 /obj/item/circuitboard/exosystem/weapons
 	name = T_BOARD_MECH("basic weapon systems")
 	contains_software = list(MECH_SOFTWARE_WEAPONS)
 	icon_state = "mainboard"
-	origin_tech = list(TECH_DATA = 4, TECH_COMBAT = 3)
+	origin_tech = list(TECH_DATA = 4, TECH_COMBAT = 8)
 
 #undef T_BOARD_MECH

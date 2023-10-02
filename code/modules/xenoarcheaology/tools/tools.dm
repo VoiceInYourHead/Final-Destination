@@ -4,7 +4,7 @@
 	icon = 'icons/obj/locator.dmi'
 	icon_state = "locator"
 	item_state = "locator"
-	origin_tech = list(TECH_MATERIAL = 2, TECH_DATA = 2, TECH_BLUESPACE = 2)
+	origin_tech = list(TECH_MATERIAL = 3, TECH_DATA = 4, TECH_BLUESPACE = 5)
 	matter = list(MATERIAL_ALUMINIUM = 250, MATERIAL_STEEL = 250, MATERIAL_GLASS = 50)
 	w_class = ITEM_SIZE_SMALL
 
@@ -71,7 +71,7 @@
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "flashgun"
 	item_state = "lampgreen"
-	origin_tech = list(TECH_BLUESPACE = 3, TECH_MAGNET = 3)
+	origin_tech = list(TECH_BLUESPACE = 6, TECH_MAGNET = 5)
 	matter = list(MATERIAL_STEEL = 5000, MATERIAL_ALUMINIUM = 5000, MATERIAL_GLASS = 5000)
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT

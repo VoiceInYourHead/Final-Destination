@@ -197,7 +197,7 @@
 /obj/item/cell/hyper
 	name = "superior power cell"
 	desc = "Pinnacle of power storage technology, this very expensive power cell provides the best energy density reachable with conventional electrochemical cells."
-	origin_tech = list(TECH_POWER = 6)
+	origin_tech = list(TECH_POWER = 7)
 	icon_state = "hpcell"
 	maxcharge = 3000
 	matter = list(MATERIAL_STEEL = 700, MATERIAL_GLASS = 80, MATERIAL_ALUMINIUM = 20)

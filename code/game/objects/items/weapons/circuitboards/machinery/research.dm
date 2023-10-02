@@ -2,7 +2,7 @@
 	name = T_BOARD("R&D server")
 	build_path = /obj/machinery/r_n_d/server
 	board_type = "machine"
-	origin_tech = list(TECH_DATA = 3)
+	origin_tech = list(TECH_DATA = 8)
 	req_components = list(
 							/obj/item/stack/cable_coil = 2,
 							/obj/item/stock_parts/scanning_module = 1)
@@ -27,7 +27,7 @@
 	name = T_BOARD("autolathe")
 	build_path = /obj/machinery/fabricator
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2)
+	origin_tech = list(TECH_ENGINEERING = 6, TECH_DATA = 7)
 	req_components = list(
 							/obj/item/stock_parts/matter_bin = 3,
 							/obj/item/stock_parts/manipulator = 1)
@@ -40,7 +40,7 @@
 /obj/item/stock_parts/circuitboard/autolathe/micro
 	name = T_BOARD("microlathe")
 	build_path = /obj/machinery/fabricator/micro
-	origin_tech = list(TECH_ENGINEERING = 1, TECH_DATA = 1)
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 2)
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 1,
 		/obj/item/stock_parts/manipulator = 1
@@ -49,7 +49,7 @@
 	name = T_BOARD("replicator")
 	build_path = /obj/machinery/fabricator/replicator
 	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 2, TECH_BIO = 2)
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 5, TECH_BIO = 7)
 	req_components = list(
 							/obj/item/stock_parts/matter_bin = 3,
 							/obj/item/stock_parts/manipulator = 1)

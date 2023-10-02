@@ -5,7 +5,7 @@
 	desc = "These stimulators augment the immune system and promote the growth of hunter-killer cells in the presence of a foreign invader, effectively boosting the body's immunity to parasites and disease."
 	action_button_name = "Toggle leukocyte breeder"
 	augment_flags = AUGMENT_BIOLOGICAL
-	origin_tech = list(TECH_DATA = 2, TECH_BIO = 4)
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 9)
 	var/active = FALSE
 
 	/// How many processing ticks the augment has been enabled for

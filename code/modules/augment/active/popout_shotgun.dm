@@ -5,7 +5,7 @@
 	icon_state = "popout_shotgun"
 	augment_slots = AUGMENT_ARM
 	item = /obj/item/gun/projectile/shotgun/popout
-	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 3, TECH_ESOTERIC = 4)
+	origin_tech = list(TECH_MATERIAL = 4, TECH_COMBAT = 7, TECH_ESOTERIC = 5)
 	deploy_sound = 'sound/weapons/guns/interaction/rifle_boltback.ogg'
 	retract_sound = 'sound/weapons/guns/interaction/rifle_boltforward.ogg'
 	augment_flags = AUGMENT_MECHANICAL | AUGMENT_BIOLOGICAL | AUGMENT_SCANNABLE | AUGMENT_INSPECTABLE

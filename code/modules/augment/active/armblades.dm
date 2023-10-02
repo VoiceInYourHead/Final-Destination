@@ -19,6 +19,7 @@
 	desc = "A sturdy housing for a steel utility blade."
 	action_button_name = "Deploy blade"
 	icon_state = "armblade"
+	origin_tech = list(TECH_COMBAT = 3)
 	augment_slots = AUGMENT_ARM
 	item = /obj/item/material/armblade
 	augment_flags = AUGMENT_MECHANICAL | AUGMENT_SCANNABLE
@@ -38,6 +39,7 @@
 	action_button_name = "Deploy claws"
 	icon_state = "wolverine"
 	augment_slots = AUGMENT_HAND
+	origin_tech = list(TECH_COMBAT = 3)
 	item = /obj/item/material/armblade/claws
 	augment_flags = AUGMENT_MECHANICAL | AUGMENT_SCANNABLE
 
@@ -50,7 +52,7 @@
 	icon_state = "armblade"
 	augment_slots = AUGMENT_ARM
 	item = /obj/item/material/armblade/wrist
-	origin_tech = list(TECH_COMBAT = 3, TECH_ESOTERIC = 4)
+	origin_tech = list(TECH_COMBAT = 6, TECH_ESOTERIC = 6)
 	deploy_sound = 'sound/effects/holster/sheathout.ogg'
 	retract_sound = 'sound/effects/holster/sheathin.ogg'
 	augment_flags = AUGMENT_MECHANICAL | AUGMENT_BIOLOGICAL

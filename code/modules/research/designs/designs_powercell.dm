@@ -43,7 +43,7 @@
 /datum/design/item/powercell/hyper
 	name = "hyper-capacity"
 	id = "hyper_cell"
-	req_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
+	req_tech = list(TECH_POWER = 6, TECH_MATERIAL = 5)
 	materials = list(MATERIAL_STEEL = 400, MATERIAL_GOLD = 150, MATERIAL_SILVER = 150, MATERIAL_GLASS = 70, MATERIAL_ALUMINIUM = 25)
 	build_path = /obj/item/cell/hyper
 	sort_string = "DAAAD"
@@ -60,7 +60,7 @@
 	name = "high-capacity"
 	build_type = PROTOLATHE | MECHFAB
 	id = "device_cell_high"
-	req_tech = list(TECH_POWER = 2)
+	req_tech = list(TECH_POWER = 3)
 	materials = list(MATERIAL_STEEL = 70, MATERIAL_GLASS = 6)
 	build_path = /obj/item/cell/device/high
 	sort_string = "DAAAF"

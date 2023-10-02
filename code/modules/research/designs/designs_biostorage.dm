@@ -5,7 +5,7 @@
 /datum/design/item/biostorage/mmi
 	name = "man-machine interface"
 	id = "mmi"
-	req_tech = list(TECH_DATA = 2, TECH_BIO = 3)
+	req_tech = list(TECH_DATA = 4, TECH_BIO = 7)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MATERIAL_STEEL = 1000, MATERIAL_GLASS = 500)
 	build_path = /obj/item/device/mmi
@@ -15,7 +15,7 @@
 /datum/design/item/biostorage/mmi_radio
 	name = "radio-enabled man-machine interface"
 	id = "mmi_radio"
-	req_tech = list(TECH_DATA = 2, TECH_BIO = 4)
+	req_tech = list(TECH_DATA = 5, TECH_BIO = 7)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MATERIAL_ALUMINIUM = 1200, MATERIAL_GLASS = 500)
 	build_path = /obj/item/device/mmi/radio_enabled

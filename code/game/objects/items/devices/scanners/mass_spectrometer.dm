@@ -6,7 +6,7 @@
 	item_state = "analyzer"
 
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER
-	origin_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
+	origin_tech = list(TECH_MAGNET = 3, TECH_BIO = 3)
 	window_width = 550
 	window_height = 300
 	scan_sound = 'sound/effects/scanbeep.ogg'
@@ -85,4 +85,4 @@
 	icon = 'icons/obj/spectrometer_advanced.dmi'
 	icon_state = "adv_spectrometer"
 	details = 1
-	origin_tech = list(TECH_MAGNET = 4, TECH_BIO = 2)
+	origin_tech = list(TECH_MAGNET = 5, TECH_BIO = 4)
