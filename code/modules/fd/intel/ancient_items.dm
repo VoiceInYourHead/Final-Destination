@@ -393,8 +393,8 @@
 	canremove = TRUE
 	operating = FALSE
 
-	verbs -= /obj/item/clothing/head/helmet/space/psi_amp/proc/deintegrate
-	verbs |= /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate
+	verbs -= /obj/item/clothing/glasses/psionic/proc/deintegrate
+	verbs |= /obj/item/clothing/glasses/psionic/proc/integrate
 
 	action_button_name = "Accept Psi"
 	H.update_action_buttons()
@@ -448,10 +448,123 @@
 		H.psi.update(force = TRUE)
 
 	to_chat(H, SPAN_NOTICE("You experience a brief but powerful wave of deja vu as \the [src] finishes modifying your brain."))
-	verbs |= /obj/item/clothing/head/helmet/space/psi_amp/proc/deintegrate
-	verbs -= /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate
+	verbs |= /obj/item/clothing/glasses/psionic/proc/deintegrate
+	verbs -= /obj/item/clothing/glasses/psionic/proc/integrate
 	operating = FALSE
 	action_button_name = "Remove Psi"
 	H.update_action_buttons()
 
 	set_light(0.5, 0.1, 3, 2, l_color = "#880000")
+
+/obj/item/fd/ancient_items/emerald
+	name = "green cell"
+	desc = "Shiny green thing with dead-eye in center. Can we somehow revive it?"
+	icon = 'icons/fd/items/artefacts.dmi'
+	icon_state = "emerald"
+	var/list/item_copied = list()
+	var/last_used = 0 //last world.time it was used.
+	var/chance_to_break = 50
+	var/broken = FALSE
+
+/obj/item/fd/ancient_items/emerald/Process()
+	. = ..()
+	update_icon()
+
+/obj/item/fd/ancient_items/emerald/on_update_icon()
+	if(chance_to_break >= 100)
+		icon_state = "emerald_off"
+	if(broken)
+		icon_state = "emerald_broken"
+	else
+		icon_state = "emerald"
+	return
+
+/obj/item/fd/ancient_items/emerald/proc/delay(mob/user as mob)
+	//capacitor recharges over time
+	for(var/i=0, i<3, i++)
+		if(last_used+600 > world.time)
+			to_chat(user, "<span class='notice'>You can't use [src] again yet!</span>")
+			return
+		last_used += 600
+	last_used = world.time
+
+/obj/item/fd/ancient_items/emerald/verb/verb_wipe()
+	set src in usr
+	set category = "Object"
+	set name = "Delete data"
+
+	var/option = input(usr, "What do you want to remove?") as null | anything in item_copied
+	if(!option)
+		return
+	else
+		item_copied -= option
+
+/obj/item/fd/ancient_items/emerald/afterattack(atom/A, mob/user as mob, proximity)
+	if(broken)
+		to_chat(user, "<span class='warning'>You can't use [src] anymore, it's broken!</span>")
+		return
+	if(istype(A, /obj/effect))
+		to_chat(user, "<span class='warning'>You can't copy this!</span>")
+		return
+	if(istype(A, /obj/structure/closet))
+		to_chat(user, "<span class='warning'>You can't copy this!</span>")
+		return
+	if(istype(A, /obj/item/storage))
+		to_chat(user, "<span class='warning'>Why do you even need to copy the box? You wanna be a box knight?</span>")
+		return
+	if(istype(A, /mob/living/carbon))
+		to_chat(user, "<span class='warning'>You can't copy this!</span>")
+		return
+	if(istype(A, /obj/item/fd/ancient_items) && do_after(user, 80))
+		to_chat(user, "<span class='warning'>[src] falling apart in desperate attempt to copy [A]!</span>")
+		qdel(src)
+		return
+	var/option =  alert(user, "Do you want to add [A] as a new design?", "Waiting", "Yes", "No")
+	switch(option)
+		if("Yes")
+			if(do_after(user, 50))
+				to_chat(user, "<span class='notice'>You added [A] blueprint as a new design to use!</span>")
+				item_copied += A
+		else
+			return
+
+/obj/item/fd/ancient_items/emerald/attackby(obj/item/I, mob/user, params)
+	if(broken)
+		to_chat(user, "<span class='warning'>You can't use [src] anymore, it's broken!</span>")
+		return
+	if(chance_to_break <= 0 && istype(I, /obj/item/fd/ancient_items/bs_shard))
+		to_chat(user, "<span class='notice'>[src] is already fully charged!</span>")
+		return
+	if(istype(I, /obj/item/fd/ancient_items/bs_shard))
+		if(do_after(user, 40))
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			if(chance_to_break < 20)
+				chance_to_break -= chance_to_break
+				qdel(I)
+			else
+				chance_to_break -= 20
+				qdel(I)
+
+/obj/item/fd/ancient_items/emerald/attack_self(mob/living/carbon/user)
+
+	if(broken)
+		to_chat(user, "<span class='warning'>You can't use [src] anymore, it's broken!</span>")
+		return
+
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	var/atom/make_copy = input("What you want to make?", "Choose something") as null|anything in item_copied
+	if(!make_copy)
+		return
+	if(chance_to_break == 100)
+		to_chat(user, "<span class='warning'>[src] don't have enough energy to copy [make_copy]!</span>")
+		return
+	if(prob(chance_to_break) && do_after(user, 50))
+		to_chat(user, "<span class='warning'>[src] falling apart in desperate try to recreate [make_copy]!</span>")
+		broken = TRUE
+		update_icon()
+		return
+	if(do_after(user, 50))
+		delay()
+		new make_copy.type(get_turf(src))
+		chance_to_break += 5
+		update_icon()

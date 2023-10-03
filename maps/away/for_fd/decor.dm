@@ -171,9 +171,28 @@
 	density = TRUE
 	anchored = TRUE
 
+/obj/structure/fd/bs_crystal
+	name = "bluespace crystal"
+	desc = "The really rare, non-fluid state of bluespace."
+	icon = 'icons/fd/structures/bluespace_crystal_structure.dmi'
+	icon_state = "crystal"
+	anchored = TRUE
+	density = TRUE
+
+/obj/structure/fd/bs_crystal/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/pickaxe))
+		if(do_after(user, 80))
+			new /obj/item/fd/ancient_items/bs_shard(src.loc)
+				qdel(src)
+
 /obj/structure/fd/body
 	name = "dead body"
 	desc = "Seems like he/she died a very long ago."
 	icon = 'icons/fd/structures/TNC_Corpses.dmi'
 	icon_state = "CaptainDead"
 	anchored = TRUE
+
+/obj/structure/fd/body/bluespace_infected
+	name = "corrupted body"
+	desc = "This body most likely were affected by bluespace distortion. It's better not to touch it even."
+	icon_state = "TNCDead8_infected"

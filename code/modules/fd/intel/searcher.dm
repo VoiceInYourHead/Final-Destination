@@ -23,7 +23,7 @@
 		last_used += 600
 	last_used = world.time
 
-/obj/item/device/fd/searcher/afterattack(atom/A, mob/user as mob)
+/obj/item/device/fd/searcher/afterattack(atom/A, mob/user as mob, proximity)
 	var/option =  alert(user, "Вы хотите добавить [A] в доступные варианты поиска?", "Сканирование", "Да", "Нет")
 	switch(option)
 		if("Да")
@@ -47,13 +47,15 @@
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+
 	var/searching_object = input("Что вы хотите найти?", "Поиск...") as null|anything in scanning
 	if(!searching_object)
 		return
 	else
 		var/atom/located_item_in_range = locate(searching_object) in orange(30)
 		if(located_item_in_range)
-			to_chat(user, "<span class='notice'>Ближайшее местоположение [located_item_in_range] находится по координатам: [located_item_in_range.x], [located_item_in_range.y]</span>")
 			searcher_recharge()
+			to_chat(user, "<span class='notice'>Ближайшее местоположение [located_item_in_range] находится по координатам: [located_item_in_range.x], [located_item_in_range.y]</span>")
 		else
+			searcher_recharge()
 			to_chat(user, "<span class='notice'>Похоже, что в текущем радиусе не было найдено никаких совпадений с [located_item_in_range]!</span>")
