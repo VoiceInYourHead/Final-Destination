@@ -295,18 +295,21 @@
 	desc = "It's looking like something from pre-modern era of technologies."
 	icon = 'icons/fd/items/oddities2.dmi'
 	icon_state = "starscope"
+	origin_tech = list(TECH_ESOTERIC = 8, TECH_BLUESPACE = 8)
 
 /obj/item/fd/ancient_items/phone
 	name = "old phone"
 	desc = "Really old telephone."
 	icon = 'icons/fd/items/oddities2.dmi'
 	icon_state = "phone_off"
+	origin_tech = list(TECH_ESOTERIC = 5)
 
 /obj/item/fd/ancient_items/skull
 	name = "cybernetic skull"
 	desc = "Only gods know, to who it belongs"
 	icon = 'icons/fd/items/surgery.dmi'
 	icon_state = "metal_skull"
+	origin_tech = list(TECH_ESOTERIC = 5, TECH_BIO = 8)
 
 /obj/item/clothing/glasses/psionic
 	name = "old-looking glasses"
@@ -315,6 +318,7 @@
 	item_state = "binoclard_lenses"
 	body_parts_covered = EMPTY_BITFIELD
 	prescription = 7
+	origin_tech = list(TECH_ESOTERIC = 10, TECH_BLUESPACE = 8)
 
 	var/operating = FALSE
 	var/list/boosted_faculties
@@ -465,6 +469,7 @@
 	var/last_used = 0 //last world.time it was used.
 	var/chance_to_break = 50
 	var/broken = FALSE
+	origin_tech = list(TECH_ESOTERIC = 8, TECH_MATERIAL = 8, TECH_BLUESPACE = 8)
 
 /obj/item/fd/ancient_items/emerald/Process()
 	. = ..()
