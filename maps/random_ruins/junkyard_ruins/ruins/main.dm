@@ -37,6 +37,11 @@
 /area/map_template/wreck/wrecknine
 	name = "\improper Station fragment #3"
 
+/area/map_template/wreck/wreckten
+	name = "\improper Station fragment #4"
+/area/map_template/wreck/wreckten/two
+/area/map_template/wreck/wreckten/three
+
 //////////    D A T U M S     /////////////
 
 /datum/map_template/ruin/junkyard/wreck
@@ -97,6 +102,12 @@
 	id = "wreck9"
 	suffixes = list("ruins/ruin_9.dmm")
 	spawn_cost = 1
+
+/datum/map_template/ruin/junkyard/wreck/wreck10
+	name = "Station fragment #4"
+	id = "wreck10"
+	suffixes = list("ruins/ruin_10.dmm")
+	spawn_cost = 3
 
 /*
 					Additional Things for wrecks

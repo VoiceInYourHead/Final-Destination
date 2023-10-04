@@ -3,7 +3,7 @@ obj/random/intel_console //Large objects to block things off in maintenance
 	desc = "This is a terminal spawn."
 	icon = 'icons/fd/overmap_eris.dmi'
 	icon_state = "field"
-	spawn_nothing_percentage = 50
+	spawn_nothing_percentage = 30
 
 obj/random/junkyard/obstruction/spawn_choices()
 	return list(/obj/structure/fd/intel_console)
@@ -13,7 +13,7 @@ obj/random/relic //Large objects to block things off in maintenance
 	desc = "This is a random relique spawn."
 	icon = 'icons/fd/overmap_eris.dmi'
 	icon_state = "relic"
-	spawn_nothing_percentage = 70
+	spawn_nothing_percentage = 40
 
 obj/random/junkyard/obstruction/spawn_choices()
 	return list(/obj/item/fd/ancient_items/psionic,
@@ -26,4 +26,5 @@ obj/random/junkyard/obstruction/spawn_choices()
 				/obj/item/fd/ancient_items/starmap,
 				/obj/item/fd/ancient_items/phone,
 				/obj/item/fd/ancient_items/skull,
-				/obj/item/clothing/glasses/psionic)
+				/obj/item/clothing/glasses/psionic,
+				/obj/item/fd/ancient_items/emerald)

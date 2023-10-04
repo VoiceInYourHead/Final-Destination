@@ -156,3 +156,9 @@
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "snowfall_heavy_old"
 	alpha = 25
+
+/obj/screen/fullscreen/bluespace_affection
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "malf-scanline"
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	alpha = 25

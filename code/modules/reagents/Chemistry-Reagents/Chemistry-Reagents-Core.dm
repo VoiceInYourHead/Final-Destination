@@ -236,7 +236,7 @@
 	var/gas_moles = 3 * volume
 	products.adjust_multi(GAS_NO, 0.1 * gas_moles, GAS_NO2, 0.1 * gas_moles, GAS_NITROGEN, 0.6 * gas_moles, GAS_HYDROGEN, 0.02 * gas_moles)
 	starting_loc.assume_air(products)
-	cell_explosion(starting_loc, volume, volume * 0.1)
+	cell_explosion(starting_loc, volume, volume * 0.05)
 	remove_self(volume)
 
 /datum/reagent/coagulated_blood

@@ -26,6 +26,17 @@
 	density = TRUE
 	anchored = TRUE
 	bound_width = 64
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/fd/nav_console_broken
+	name = "navigation console"
+	desc = "Console for managing some navigation routes through space and bluespace. Now almost useless."
+	icon = 'icons/fd/structures/trinetcore.dmi'
+	icon_state = "tncb"
+	density = TRUE
+	anchored = TRUE
+	bound_width = 64
+	layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/fd/bluespace_drive_unfinished
 	name = "Unfinished bluespace-drive"
@@ -34,8 +45,6 @@
 	icon_state = "placeholder1"
 	density = TRUE
 	anchored = TRUE
-//	bound_x = 64
-//	bound_y = 64
 
 /obj/structure/fd/sputnik
 	name = "crashed satellite"
@@ -178,6 +187,47 @@
 	icon_state = "crystal"
 	anchored = TRUE
 	density = TRUE
+	var/ticks = 0
+
+/obj/structure/fd/bs_crystal/Initialize()
+	START_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/structure/fd/bs_crystal/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/structure/fd/bs_crystal/Process()
+
+	++ticks
+
+	// find a victim in case the last one is gone
+	var/mob/living/carbon/human/affecting = null
+	for(var/mob/living/carbon/human/H in shuffle(view(10, src)))
+		if(can_affect(H))
+			affecting = H
+			break
+
+	// we're done here
+	if(!affecting)
+		return
+
+	// do fun stuff
+	if(affecting in view(5, src))
+		affecting.overlay_fullscreen("malf-scanline", /obj/screen/fullscreen/bluespace_affection)
+
+		// once every 20 seconds
+		if(!(ticks % 20))
+			affecting.visible_message("<span class='danger'><em>[affecting] starts to cough very loudly!</em></span>")
+			to_chat(affecting, "<span class='danger'>You feeling something very sharp in your throat!</span>")
+			affecting.adjustOxyLoss(70)
+			affecting.adjustBruteLoss(30)
+/obj/structure/fd/bs_crystal/proc/can_affect(mob/living/carbon/human/H)
+	if(H.wear_mask)
+		return FALSE
+	if(H.head && (H.head.body_parts_covered & FACE))
+		return FALSE
+	return TRUE
 
 /obj/structure/fd/bs_crystal/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pickaxe))
