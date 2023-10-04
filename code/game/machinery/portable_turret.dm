@@ -96,7 +96,7 @@
 
 /obj/machinery/porta_turret/ballistic/sniper
 	installation = /obj/item/gun/projectile/heavysniper
-	shot_delay = 20
+	shot_delay = 30
 
 /obj/machinery/porta_turret/ballistic/shotgun
 	installation = /obj/item/gun/projectile/automatic/shotgun
@@ -105,7 +105,7 @@
 	installation = /obj/item/gun/projectile/rocket
 	maxhealth = 60
 	health = 60
-	shot_delay = 25
+	shot_delay = 45
 
 /obj/machinery/porta_turret/ballistic/railgun
 	installation = /obj/item/gun/magnetic/railgun/automatic/mmi
