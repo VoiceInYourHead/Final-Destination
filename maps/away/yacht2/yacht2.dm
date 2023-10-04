@@ -149,8 +149,8 @@
 	name = OUTFIT_JOB_NAME("Yacht Owner")
 	id_types = list(/obj/item/card/id/gold)
 	gloves = /obj/item/clothing/gloves/white
-	uniform = /obj/item/clothing/under/captainformal
-	suit = /obj/item/clothing/suit/captunic
+	uniform = /obj/item/clothing/under/gentlesuit
+	suit = /obj/item/clothing/suit/greatcoat
 	back = /obj/item/storage/backpack/satchel/pocketbook/gray
 	shoes = /obj/item/clothing/shoes/dress
 	glasses = /obj/item/clothing/glasses/aviators_gold
