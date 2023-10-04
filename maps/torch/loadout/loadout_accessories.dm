@@ -148,7 +148,7 @@
 	allowed_roles = STERILE_ROLES
 
 /datum/gear/tactical/holster
-	allowed_roles = list(ARMORED_ROLES, /datum/job/submap/airfield/command/instructor, /datum/job/submap/airfield/command/assistant)
+	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/holster/New()
 	..()
@@ -167,7 +167,7 @@
 /datum/gear/tactical/bloodpatch
 	display_name = "blood patch selection"
 	path = /obj/item/clothing/accessory/armor_tag
-	allowed_roles = list(ARMORED_ROLES, /datum/job/submap/airfield/command/instructor, /datum/job/submap/airfield/command/assistant)
+	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/bloodpatch/New()
 	..()
@@ -185,7 +185,7 @@
 /datum/gear/tactical/armor_deco
 	display_name = "armor tags selection"
 	path = /obj/item/clothing/accessory/armor_tag
-	allowed_roles = list(ARMORED_ROLES, /datum/job/submap/airfield/command/instructor, /datum/job/submap/airfield/command/assistant)
+	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/armor_deco/New()
 	..()
@@ -315,7 +315,7 @@
 	display_name = "black large armor pouches"
 	path = /obj/item/clothing/accessory/storage/pouches/large
 	cost = 5
-	allowed_roles = list(ARMORED_ROLES, /datum/job/submap/airfield/command/instructor, /datum/job/submap/airfield/command/assistant)
+	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/large_pouches/navy
 	display_name = "navy large armor pouches"
