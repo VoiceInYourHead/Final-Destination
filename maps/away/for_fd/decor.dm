@@ -187,6 +187,7 @@
 	icon_state = "crystal"
 	anchored = TRUE
 	density = TRUE
+	var/range_to_remove = TRUE
 	var/ticks = 0
 
 /obj/structure/fd/bs_crystal/Initialize()
@@ -222,6 +223,10 @@
 			to_chat(affecting, "<span class='danger'>You feeling something very sharp in your throat!</span>")
 			affecting.adjustOxyLoss(70)
 			affecting.adjustBruteLoss(30)
+	else
+		affecting.clear_fullscreen("malf-scanline")
+
+
 /obj/structure/fd/bs_crystal/proc/can_affect(mob/living/carbon/human/H)
 	if(H.wear_mask)
 		return FALSE
