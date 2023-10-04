@@ -189,6 +189,7 @@
 	density = TRUE
 	var/range_to_remove = TRUE
 	var/ticks = 0
+	var/list/affected_mobs = list()
 
 /obj/structure/fd/bs_crystal/Initialize()
 	START_PROCESSING(SSobj, src)
@@ -196,36 +197,42 @@
 
 /obj/structure/fd/bs_crystal/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	for(var/mob/living/carbon/human/affecting as anything in affected_mobs)
+		affected_mobs -= affecting
+		affecting.clear_fullscreen("malf-scanline")
 	return ..()
 
 /obj/structure/fd/bs_crystal/Process()
 
 	++ticks
+	var/mob/living/carbon/human/affecting
 
 	// find a victim in case the last one is gone
-	var/mob/living/carbon/human/affecting = null
-	for(var/mob/living/carbon/human/H in shuffle(view(10, src)))
-		if(can_affect(H))
-			affecting = H
-			break
+	var/list/targets_in_range = list()
+	for(affecting in view(5, src) - affected_mobs)
+		if(!can_affect(affecting))
+			continue
+		targets_in_range += affecting
 
-	// we're done here
-	if(!affecting)
-		return
-
-	// do fun stuff
-	if(affecting in view(5, src))
+	if(length(targets_in_range))
+		affecting = pick(targets_in_range)
+		affected_mobs += affecting
 		affecting.overlay_fullscreen("malf-scanline", /obj/screen/fullscreen/bluespace_affection)
 
-		// once every 20 seconds
+	for(affecting as anything in affected_mobs)
+		if(!in_range(src, affecting))
+			affected_mobs -= affecting
+			affecting.clear_fullscreen("malf-scanline")
+
+	if(length(affected_mobs))
+		affecting = pick(affected_mobs)
+
+	// once every 20 seconds
 		if(!(ticks % 20))
 			affecting.visible_message("<span class='danger'><em>[affecting] starts to cough very loudly!</em></span>")
 			to_chat(affecting, "<span class='danger'>You feeling something very sharp in your throat!</span>")
 			affecting.adjustOxyLoss(70)
 			affecting.adjustBruteLoss(30)
-	else
-		affecting.clear_fullscreen("malf-scanline")
-
 
 /obj/structure/fd/bs_crystal/proc/can_affect(mob/living/carbon/human/H)
 	if(H.wear_mask)
