@@ -163,9 +163,9 @@
  */
 /atom/proc/damage_health(damage, damage_type = null, damage_flags, severity)
 	SHOULD_CALL_PARENT(TRUE)
-	if (!health_max)
+	if(!health_max)
 		return
-	if (!can_damage_health(damage, damage_type))
+	if(!can_damage_health(damage, damage_type))
 		return FALSE
 
 	// Apply resistance/weakness modifiers

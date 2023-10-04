@@ -79,14 +79,17 @@
 	return
 
 /obj/machinery/door/airlock/get_explosion_resistance()
+	if(get_damage_resistance(DAMAGE_EXPLODE) == 0)
+		return 1000000
 	if(density)
-		return get_damage_resistance(DAMAGE_EXPLODE)
+		return health_current / get_damage_resistance(DAMAGE_EXPLODE)
 	else
-		return FALSE
-
+		return 20
 
 /turf/unsimulated/get_explosion_resistance()
 	return 1000000
 
 /turf/simulated/get_explosion_resistance()
-	return get_max_health() - health_current / get_damage_resistance(DAMAGE_EXPLODE)
+	if(get_damage_resistance(DAMAGE_EXPLODE) == 0)
+		return 1000000
+	return health_current / get_damage_resistance(DAMAGE_EXPLODE)
