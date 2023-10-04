@@ -155,7 +155,7 @@
 			if(!istype(A, /obj/item/projectile) && (!istype(A, /obj/effect) || istype(A, /obj/effect/shield)))
 				A.ex_act(1)
 		if(T.density)
-			cell_explosion(T, 100, 10)
+			cell_explosion(T, 50, 10)
 			new harpoon_wall_type(T)
 			new harpoon_wall_type(get_step(T,heading))
 			new harpoon_wall_type(get_step(T,turn(heading,180)))
