@@ -5,12 +5,12 @@
  * Retrieves the atom's explosion resistance. Generally, this is `explosion_resistance` for simulated atoms.
  */
 /atom/proc/get_explosion_resistance()
-	return 0
+	return explosion_resistance
 
 /mob/living/get_explosion_resistance()
 	if(density)
-		return 20
-	return 0
+		return 40
+	return 20
 
 /obj/explosion_throw(severity, direction, scatter_multiplier = 1)
 	if(anchored)
@@ -84,5 +84,9 @@
 	else
 		return FALSE
 
+
+/turf/unsimulated/get_explosion_resistance()
+	return 1000000
+
 /turf/simulated/get_explosion_resistance()
-	return get_max_health() - health_current
+	return get_max_health() - health_current / get_damage_resistance(DAMAGE_EXPLODE)
