@@ -46,10 +46,10 @@
 
 /obj/structure/catwalk/ex_act(severity)
 	switch(severity)
-		if(1)
+		if(600 to INFINITY)
 			new /obj/item/stack/material/rods(src.loc)
 			qdel(src)
-		if(2)
+		if(300 to 600)
 			new /obj/item/stack/material/rods(src.loc)
 			qdel(src)
 

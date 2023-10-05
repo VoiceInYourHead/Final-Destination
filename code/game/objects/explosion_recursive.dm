@@ -89,6 +89,9 @@
 /turf/unsimulated/get_explosion_resistance()
 	return 1000000
 
+/turf/unsimulated/floor/get_explosion_resistance()
+	return 0
+
 /turf/simulated/get_explosion_resistance()
 	if(get_damage_resistance(DAMAGE_EXPLODE) == 0)
 		return 1000000

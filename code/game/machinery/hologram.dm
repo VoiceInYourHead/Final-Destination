@@ -472,12 +472,12 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 //Destruction procs.
 /obj/machinery/hologram/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(600 to INFINITY)
 			qdel(src)
-		if(2.0)
+		if(300 to 600)
 			if (prob(50))
 				qdel(src)
-		if(3.0)
+		if(150 to 300)
 			if (prob(5))
 				qdel(src)
 	return

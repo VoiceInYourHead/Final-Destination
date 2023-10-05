@@ -547,14 +547,14 @@ var/list/turret_icons
 
 /obj/machinery/porta_turret/ex_act(severity)
 	switch (severity)
-		if (1)
+		if(600 to INFINITY)
 			qdel(src)
-		if (2)
+		if(300 to 600)
 			if (prob(25))
 				qdel(src)
 			else
 				take_damage(initial(health) * 8) //should instakill most turrets
-		if (3)
+		if(150 to 300)
 			take_damage(initial(health) * 8 / 3)
 
 /obj/machinery/porta_turret/proc/die()	//called when the turret dies, ie, health <= 0

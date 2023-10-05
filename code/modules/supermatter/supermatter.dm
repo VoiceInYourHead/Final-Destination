@@ -583,13 +583,7 @@
 
 /obj/machinery/power/supermatter/ex_act(var/severity)
 	..()
-	switch(severity)
-		if(1.0)
-			power *= 4
-		if(2.0)
-			power *= 3
-		if(3.0)
-			power *= 2
+	power += severity
 	log_and_message_admins("WARN: Explosion near the Supermatter! New EER: [power].")
 
 /obj/machinery/power/supermatter/shard //Small subtype, less efficient and more sensitive, but less boom.

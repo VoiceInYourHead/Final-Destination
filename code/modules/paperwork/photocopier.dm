@@ -130,9 +130,9 @@
 
 /obj/machinery/photocopier/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(600 to INFINITY)
 			qdel(src)
-		if(2.0)
+		if(300 to 600)
 			if(prob(50))
 				qdel(src)
 			else

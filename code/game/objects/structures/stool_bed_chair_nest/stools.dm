@@ -97,18 +97,10 @@ var/global/list/stool_cache = list() //haha stool
 	return ..()
 
 /obj/item/stool/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			qdel(src)
-			return
-		if(2.0)
-			if (prob(50))
-				qdel(src)
-				return
-		if(3.0)
-			if (prob(5))
-				qdel(src)
-				return
+	if(!severity)
+		return
+	if(prob(severity/100))
+		qdel(src)
 
 /obj/item/stool/proc/dismantle()
 	if(material)

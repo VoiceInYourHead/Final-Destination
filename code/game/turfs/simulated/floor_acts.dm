@@ -1,8 +1,9 @@
 /turf/simulated/floor/ex_act(severity, derection)
-	//set src in oview(1)
 	switch(severity)
 		if(150 to 300)
-			src.ChangeTurf(get_base_turf_by_area(src))
+			if (prob(50))
+				src.break_tile()
+				src.hotspot_expose(1000,CELL_VOLUME)
 		if(300 to 600)
 			switch(pick(40;1,40;2,3))
 				if (1)
@@ -18,9 +19,7 @@
 						src.break_tile()
 					src.hotspot_expose(1000,CELL_VOLUME)
 		if(600 to INFINITY)
-			if (prob(50))
-				src.break_tile()
-				src.hotspot_expose(1000,CELL_VOLUME)
+			src.ChangeTurf(get_base_turf_by_area(src))
 	return
 
 /turf/simulated/floor/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)

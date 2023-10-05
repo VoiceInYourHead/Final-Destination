@@ -91,27 +91,11 @@
 		detonate(loc)
 		return
 
-	if(severity == 1)
-		if(prob(80))
-			playsound(loc, activation_sound, 100)
-			active = TRUE
-			if(prob(95))
-				detonate(loc)
-		return
-
-	if(severity == 2)
-		if(prob(40))
-			playsound(loc, activation_sound, 100)
-			active = TRUE
-			if(prob(75))
-				detonate(loc)
-		return
-
-	if(severity == 3)
-		if(prob(20))
-			playsound(loc, activation_sound, 100)
-			active = TRUE
-		return
+	if(prob(severity/25))
+		playsound(loc, activation_sound, 100)
+		active = TRUE
+		if(prob(severity/50))
+			detonate(loc)
 
 /obj/structure/missile/proc/expire()
 	Destroy()

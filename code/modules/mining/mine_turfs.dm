@@ -95,11 +95,11 @@ var/global/list/mining_floors = list()
 
 /turf/simulated/mineral/ex_act(severity)
 	switch(severity)
-		if(2.0)
+		if(300 to 600)
 			if (prob(70))
 				mined_ore = 1 //some of the stuff gets blown up
 				GetDrilled()
-		if(1.0)
+		if(600 to INFINITY)
 			mined_ore = 2 //some of the stuff gets blown up
 			GetDrilled()
 
@@ -442,12 +442,12 @@ var/global/list/mining_floors = list()
 
 /turf/simulated/floor/asteroid/ex_act(severity)
 	switch(severity)
-		if(3.0)
+		if(150 to 300)
 			return
-		if(2.0)
+		if(300 to 600)
 			if (prob(70))
 				gets_dug()
-		if(1.0)
+		if(600 to INFINITY)
 			gets_dug()
 	return
 

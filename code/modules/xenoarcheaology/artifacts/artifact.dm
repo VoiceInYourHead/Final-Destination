@@ -116,12 +116,8 @@
 /obj/machinery/artifact/ex_act(severity)
 	if(check_triggers(/datum/artifact_trigger/proc/on_explosion, severity))
 		return
-	switch(severity)
-		if(1)
-			qdel(src)
-		if(2)
-			if (prob(50))
-				qdel(src)
+	if(prob(severity/100))
+		qdel(src)
 
 /obj/machinery/artifact/Move()
 	..()

@@ -194,7 +194,7 @@
 	qdel(src)
 
 /obj/structure/window/ex_act(severity)
-	if (severity == 1)
+	if(severity > 600)
 		qdel(src)
 		return
 	..()

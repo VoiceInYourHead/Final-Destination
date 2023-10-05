@@ -1,15 +1,6 @@
 /mob/living/exosuit/ex_act(severity)
-	var/b_loss = 0
-	var/f_loss = 0
-	switch (severity)
-		if (1)
-			b_loss = 200
-			f_loss = 200
-		if (2)
-			b_loss = 90
-			f_loss = 90
-		if(3)
-			b_loss = 45
+	var/b_loss = severity/10
+	var/f_loss = severity/10
 
 	// spread damage overall
 	apply_damage(b_loss, BRUTE, null, DAM_EXPLODE | DAM_DISPERSED, used_weapon = "Explosive blast")

@@ -87,12 +87,12 @@
 
 /obj/machinery/self_destruct/ex_act(severity)
 	switch(severity)
-		if(1)
+		if(600 to INFINITY)
 			set_damaged()
-		if(2)
+		if(300 to 600)
 			if(prob(50))
 				set_damaged()
-		if(3)
+		if(150 to 300)
 			if(prob(25))
 				set_damaged()
 

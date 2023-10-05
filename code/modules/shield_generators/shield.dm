@@ -214,7 +214,7 @@
 // Explosions
 /obj/effect/shield/ex_act(var/severity)
 	if(!disabled_for)
-		take_damage(rand(5250,10200) / severity, SHIELD_DAMTYPE_PHYSICAL)
+		take_damage(severity * 300, SHIELD_DAMTYPE_PHYSICAL)
 
 
 // EMP. It may seem weak but keep in mind that multiple shield segments are likely to be affected.
