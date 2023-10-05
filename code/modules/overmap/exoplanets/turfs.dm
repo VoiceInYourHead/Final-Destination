@@ -70,15 +70,8 @@
 		..()
 
 /turf/unsimulated/floor/exoplanet/ex_act(severity)
-	switch(severity)
-		if(1)
-			melt()
-		if(2)
-			if(prob(40))
-				melt()
-		if(3)
-			if(prob(10))
-				melt()
+	if(prob(severity/50))
+		melt()
 
 /turf/unsimulated/floor/exoplanet/Initialize()
 	. = ..()

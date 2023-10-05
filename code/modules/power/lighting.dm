@@ -593,13 +593,13 @@
 // destroy the whole light fixture or just shatter it
 /obj/machinery/light/ex_act(severity)
 	switch(severity)
-		if(1)
+		if(600 to INFINITY)
 			qdel(src)
 			return
-		if(2)
+		if(300 to 600)
 			if (prob(75))
 				broken()
-		if(3)
+		if(150 to 300)
 			if (prob(50))
 				broken()
 

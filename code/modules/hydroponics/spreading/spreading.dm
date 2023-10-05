@@ -264,20 +264,10 @@
 		adjust_health(-aggression*5)
 
 /obj/effect/vine/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			die_off()
-			return
-		if(2.0)
-			if (prob(50))
-				die_off()
-				return
-		if(3.0)
-			if (prob(5))
-				die_off()
-				return
-		else
-	return
+	if(!severity)
+		return
+	if(prob(severity/100))
+		die_off()
 
 /obj/effect/vine/proc/adjust_health(value)
 	health = clamp(health + value, 0, max_health)

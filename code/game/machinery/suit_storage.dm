@@ -92,11 +92,11 @@
 
 /obj/machinery/suit_storage_unit/ex_act(severity)
 	switch(severity)
-		if(1)
+		if(600 to INFINITY)
 			if(prob(50))
 				dump_everything()
 			qdel(src)
-		if(2)
+		if(300 to 600)
 			if(prob(35))
 				dump_everything()
 				qdel(src)

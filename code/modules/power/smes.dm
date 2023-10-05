@@ -374,7 +374,7 @@
 /obj/machinery/power/smes/ex_act(var/severity)
 	// Two strong explosions will destroy a SMES.
 	// Given the SMES creates another explosion on it's destruction it sounds fairly reasonable.
-	take_damage(250 / severity)
+	take_damage(severity / 50)
 
 /obj/machinery/power/smes/examine(mob/user)
 	. = ..()

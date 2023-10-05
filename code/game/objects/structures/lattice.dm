@@ -46,7 +46,7 @@
 			L.update_icon()
 
 /obj/structure/lattice/ex_act(severity)
-	if(severity <= 2)
+	if(severity > 300)
 		qdel(src)
 
 /obj/structure/lattice/proc/deconstruct(var/mob/user)

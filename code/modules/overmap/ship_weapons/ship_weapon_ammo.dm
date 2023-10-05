@@ -21,13 +21,13 @@
 	var/should_explode = TRUE
 
 /obj/item/ammo_magazine/ammobox/ex_act(severity)
-	if(should_explode)
-		if(severity < 3 && stored_ammo.len > max_ammo/3)
+	if(should_explode && severity > 100)
+		if(stored_ammo.len > max_ammo/3)
 			should_explode = FALSE
 			cell_explosion(get_turf(src), 400, 100)
 			if(src)
 				qdel(src)
-		else if(severity < 3 && stored_ammo.len > 0)
+		else if(stored_ammo.len > 0)
 			should_explode = FALSE
 			cell_explosion(get_turf(src), 200, 100)
 			if(src)

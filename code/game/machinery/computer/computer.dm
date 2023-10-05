@@ -39,10 +39,10 @@
 
 /obj/machinery/computer/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(600 to INFINITY)
 			qdel(src)
 			return
-		if(2.0)
+		if(300 to 600)
 			if (prob(25))
 				qdel(src)
 				return
@@ -50,7 +50,7 @@
 				for(var/x in verbs)
 					verbs -= x
 				take_damage(max_health)
-		if(3.0)
+		if(150 to 300)
 			if (prob(25))
 				for(var/x in verbs)
 					verbs -= x

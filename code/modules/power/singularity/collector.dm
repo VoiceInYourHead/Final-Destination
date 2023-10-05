@@ -144,7 +144,7 @@ var/global/list/rad_collectors = list()
 
 /obj/machinery/power/rad_collector/ex_act(severity)
 	switch(severity)
-		if(2, 3)
+		if(300 to INFINITY)
 			eject()
 	return ..()
 

@@ -132,9 +132,7 @@
 		return PROJECTILE_CONTINUE
 
 /obj/structure/inflatable/ex_act(severity)
-	if (severity == 1)
-		qdel(src)
-		return
+	qdel(src)
 	..()
 
 /obj/structure/inflatable/attack_hand(mob/user as mob)

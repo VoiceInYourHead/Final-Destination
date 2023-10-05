@@ -127,10 +127,11 @@
 /obj/machinery/barrier/ex_act(severity)
 	if (QDELETED(src))
 		return
-	if (severity == 1)
-		explode()
-	else if (severity == 2)
-		modify_health(-25)
+	switch(severity)
+		if(150 to 600)
+			modify_health(-severity)
+		if(600 to INFINITY)
+			explode()
 
 /obj/machinery/barrier/emp_act(severity)
 	if (severity > 2)

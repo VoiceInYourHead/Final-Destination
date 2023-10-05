@@ -218,13 +218,6 @@
 		to_chat(user, "<span class='notice'>It won't budge!</span>")
 		update_icon()
 
-/obj/structure/closet/ex_act(severity)
-	// Damage everything inside the closet.
-	if (severity < 3)
-		for (var/atom/A as anything in src)
-			A.ex_act(severity + 1)
-	..()
-
 /obj/structure/closet/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	// Damage everything inside the closet. These things aren't fire proof.
 	for (var/atom/A as anything in src)

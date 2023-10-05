@@ -51,12 +51,12 @@
 
 /obj/structure/plasticflaps/ex_act(severity)
 	switch(severity)
-		if (1)
+		if(600 to INFINITY)
 			qdel(src)
-		if (2)
+		if(300 to 600)
 			if (prob(50))
 				qdel(src)
-		if (3)
+		if(150 to 300)
 			if (prob(5))
 				qdel(src)
 
