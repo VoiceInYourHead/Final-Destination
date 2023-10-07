@@ -1,0 +1,66 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/obj/structure/lattice,/obj/structure/closet/crate/large,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/smokes,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/obj/random/junkyard/tech_supply,/turf/simulated/floor/plating,/area/template_noop)
+"c" = (/obj/random/junkyard/advdevice,/turf/template_noop,/area/template_noop)
+"d" = (/obj/structure/lattice,/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"e" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
+"f" = (/obj/structure/fd/bs_vines,/turf/simulated/floor/asteroid,/area/template_noop)
+"g" = (/obj/structure/fd/bs_spikes,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"h" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall/hull,/area/template_noop)
+"i" = (/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
+"j" = (/obj/structure/girder,/turf/simulated/floor/plating,/area/template_noop)
+"k" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall/prepainted,/area/template_noop)
+"l" = (/obj/structure/handrail{dir = 1},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/template_noop)
+"m" = (/obj/structure/fd/bs_vines,/obj/structure/fd/bs_crystal,/turf/simulated/floor/asteroid,/area/template_noop)
+"n" = (/turf/simulated/mineral/volcanic,/area/template_noop)
+"o" = (/obj/structure/lattice,/obj/structure/grille/broken,/turf/template_noop,/area/template_noop)
+"p" = (/obj/structure/closet/crate,/obj/random/junkyard/loot,/obj/random/junkyard/loot,/obj/random/relic,/obj/random/junkyard/loot,/turf/template_noop,/area/template_noop)
+"q" = (/obj/structure/railing/mapped,/turf/template_noop,/area/template_noop)
+"r" = (/obj/random/junkyard/toolbox,/turf/template_noop,/area/template_noop)
+"s" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"t" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/template_noop)
+"u" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"w" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall,/area/template_noop)
+"x" = (/obj/random/junkyard/bomb_supply,/turf/template_noop,/area/template_noop)
+"z" = (/obj/structure/lattice,/obj/structure/railing/mapped{dir = 1},/turf/template_noop,/area/template_noop)
+"A" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/template_noop)
+"B" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/fd/bs_vines,/obj/structure/fd/bs_spikes,/turf/simulated/floor/plating,/area/template_noop)
+"C" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall/hull,/area/template_noop)
+"D" = (/obj/structure/lattice,/obj/structure/fd/bs_spikes,/turf/simulated/floor/plating,/area/template_noop)
+"F" = (/turf/simulated/wall,/area/template_noop)
+"G" = (/obj/structure/handrail,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"H" = (/obj/structure/girder/displaced,/turf/template_noop,/area/template_noop)
+"I" = (/obj/random/junkyard/material,/turf/template_noop,/area/template_noop)
+"J" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"K" = (/obj/random/junkyard/obstruction,/turf/template_noop,/area/template_noop)
+"L" = (/obj/structure/lattice,/obj/structure/grille,/turf/template_noop,/area/template_noop)
+"M" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"N" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"O" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"P" = (/turf/simulated/wall/r_wall/hull,/area/template_noop)
+"Q" = (/obj/structure/railing/mapped{dir = 4},/turf/template_noop,/area/template_noop)
+"R" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
+"T" = (/obj/structure/fd/bs_vines,/obj/structure/handrail{dir = 8; icon_state = "handrail"},/obj/structure/fd/bs_spikes,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"U" = (/turf/simulated/wall/r_wall/prepainted,/area/template_noop)
+"V" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"W" = (/turf/simulated/mineral/random/volcanic,/area/template_noop)
+"X" = (/obj/structure/lattice,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"Y" = (/obj/structure/fd/bs_vines,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"Z" = (/obj/structure/lattice,/turf/simulated/floor/plating,/area/template_noop)
+
+(1,1,1) = {"
+KqhhjaaaaaaaKaa
+sACGaiaaaancaaa
+alhRNZaaHaaaaas
+PhPPhKaaaaaojUk
+MMOPaxanWaagYUk
+FFzbsaanWnaQVTU
+aBassaWnfnnQXau
+aansanffffWasaa
+aWaaaanfmfnnaaa
+anIananfWnaaaaa
+aaanWaannaaLdaa
+aHaWnnaaaaFwsKa
+aaaWaaKaDewFFaa
+KaaaaataaJwFssa
+aaraaaaaaaawpaa
+"}

@@ -30,7 +30,7 @@
 	//Flags deciding what features to pick
 	var/ruin_tags_whitelist
 	var/ruin_tags_blacklist = RUIN_RAINWORLD
-	var/features_budget = 20
+	var/features_budget = 30
 	var/list/possible_features = list()
 	var/list/spawned_features
 

@@ -11,11 +11,11 @@
 	window_y = 570
 	descriptions = list(
 		new /datum/wire_description(AIRLOCK_WIRE_IDSCAN, "This wire is connected to the ID scanning panel.", SKILL_EXPERIENCED),
-		new /datum/wire_description(AIRLOCK_WIRE_MAIN_POWER1, "This wire seems to be carrying a heavy current."),
-		new /datum/wire_description(AIRLOCK_WIRE_MAIN_POWER2, "This wire seems to be carrying a heavy current."),
+		new /datum/wire_description(AIRLOCK_WIRE_MAIN_POWER1, "This wire is connected to the main power source."),
+		new /datum/wire_description(AIRLOCK_WIRE_MAIN_POWER2, "This wire is connected to the secondary power source."),
 		new /datum/wire_description(AIRLOCK_WIRE_DOOR_BOLTS, "This wire runs down to the very base of the airlock."),
-		new /datum/wire_description(AIRLOCK_WIRE_BACKUP_POWER1, "This wire seems to be carrying a heavy current."),
-		new /datum/wire_description(AIRLOCK_WIRE_BACKUP_POWER2, "This wire seems to be carrying a heavy current."),
+		new /datum/wire_description(AIRLOCK_WIRE_BACKUP_POWER1, "This wire is connected to the backup power battery."),
+		new /datum/wire_description(AIRLOCK_WIRE_BACKUP_POWER2, "This wire is connected to the backup power battery."),
 		new /datum/wire_description(AIRLOCK_WIRE_OPEN_DOOR, "This wire connects to the door motors."),
 		new /datum/wire_description(AIRLOCK_WIRE_AI_CONTROL, "This wire connects to automated control systems.", SKILL_EXPERIENCED),
 		new /datum/wire_description(AIRLOCK_WIRE_ELECTRIFY, "This wire seems to be carrying a heavy current."),

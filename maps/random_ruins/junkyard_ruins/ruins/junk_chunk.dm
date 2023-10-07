@@ -43,6 +43,12 @@
 	suffixes = list("ruins/junk_7.dmm")
 	spawn_cost = 0.2
 
+/datum/map_template/ruin/junkyard/junk_chunk/eight
+	name = "Random trash #8"
+	id = "chunk8"
+	suffixes = list("ruins/junk_8.dmm")
+	spawn_cost = 1.5
+
 // Random spawns for junkyard with not-guaranteed chances, literally a copypaste of original ones made for easy access
 
 /obj/random/junkyard/tool
@@ -444,7 +450,7 @@ obj/random/junkyard/pod/spawn_choices()
 	desc = "This is a random hostile mob."
 	icon = 'icons/mob/crow.dmi'
 	icon_state = "crow"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 50
 
 obj/random/junkyard/hostile/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/viscerator,

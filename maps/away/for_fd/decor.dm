@@ -26,7 +26,6 @@
 	density = TRUE
 	anchored = TRUE
 	bound_width = 64
-	layer = ABOVE_HUMAN_LAYER
 
 /obj/structure/fd/nav_console_broken
 	name = "navigation console"
@@ -36,7 +35,12 @@
 	density = TRUE
 	anchored = TRUE
 	bound_width = 64
-	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/fd/nav_console/for_junkyard_or_planet
+	bound_width = 32
+
+/obj/structure/fd/nav_console_broken/for_junkyard_or_planet
+	bound_width = 32
 
 /obj/structure/fd/bluespace_drive_unfinished
 	name = "Unfinished bluespace-drive"
@@ -180,6 +184,85 @@
 	density = TRUE
 	anchored = TRUE
 
+/obj/structure/fd/bs_spikes
+	name = "bluespace corruption spikes"
+	desc = "The really rare, non-fluid state of bluespace."
+	icon = 'icons/fd/structures/bluespace_crystal_structure.dmi'
+	icon_state = "corruption"
+	anchored = TRUE
+	density = FALSE
+
+/obj/structure/fd/bs_vines
+	name = "bluespace corrupted vines"
+	desc = "Bluespace corruptive flora"
+	icon = 'icons/fd/structures/bluespace_crystal_structure.dmi'
+	icon_state = "wires-1"
+	anchored = TRUE
+	var/busy
+
+/obj/structure/fd/bs_vines/New()
+	..()
+	icon_state = "wires-[rand(1, 6)]"
+
+/obj/structure/fd/bs_vines/Initialize()
+	. = ..()
+	set_light(0.3, 1, 2, 1, COLOR_CYAN)
+
+/obj/structure/fd/bs_vines/user_unbuckle_mob(mob/user)
+	if(buckled_mob && !user.stat && !user.restrained())
+		if(busy)
+			to_chat(user, SPAN_NOTICE("\The [buckled_mob] is already getting out, be patient."))
+			return
+		var/delay = 60
+		if(user == buckled_mob)
+			delay *=2
+			user.visible_message(
+				SPAN_NOTICE("\The [user] tries to chop off \the [src]."),
+				SPAN_NOTICE("You begin to pull yourself out of \the [src]."),
+				SPAN_NOTICE("You hear water sloshing.")
+				)
+		else
+			user.visible_message(
+				SPAN_NOTICE("\The [user] begins pulling \the [buckled_mob] out of \the [src]."),
+				SPAN_NOTICE("You begin to pull \the [buckled_mob] out of \the [src]."),
+				SPAN_NOTICE("You hear something strange...")
+				)
+		busy = TRUE
+		if(do_after(user, delay, src))
+			busy = FALSE
+			if(user == buckled_mob)
+				if(prob(80))
+					to_chat(user, SPAN_WARNING("You slip and fail to get out!"))
+					return
+				user.visible_message(SPAN_NOTICE("\The [buckled_mob] successfully chopped down \the [src]."))
+				qdel(src)
+			else
+				user.visible_message(SPAN_NOTICE("\The [buckled_mob] has been freed from \the [src] by \the [user]."))
+			unbuckle_mob()
+		else
+			busy = FALSE
+			to_chat(user, SPAN_WARNING("You slip and fail to get out!"))
+			return
+
+/obj/structure/fd/bs_vines/unbuckle_mob()
+	..()
+
+/obj/structure/fd/bs_vines/buckle_mob(var/mob/living/carbon/L)
+	..()
+
+/obj/structure/fd/bs_vines/Crossed(var/atom/movable/AM)
+	if(isliving(AM))
+		var/mob/living/carbon/L = AM
+		if(L.throwing || L.can_overcome_gravity())
+			return
+		buckle_mob(L)
+		to_chat(L, SPAN_DANGER("You're tangled in \the [src]!"))
+
+/obj/structure/fd/bs_crystal/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/material/hatchet))
+		if(do_after(user, 80))
+			qdel(src)
+
 /obj/structure/fd/bs_crystal
 	name = "bluespace crystal"
 	desc = "The really rare, non-fluid state of bluespace."
@@ -245,7 +328,7 @@
 	if(istype(I, /obj/item/pickaxe))
 		if(do_after(user, 80))
 			new /obj/item/fd/ancient_items/bs_shard(src.loc)
-				qdel(src)
+			qdel(src)
 
 /obj/structure/fd/body
 	name = "dead body"

@@ -137,10 +137,11 @@
 "cG" = (/obj/effect/floor_decal/techfloor,/obj/structure/railing/mapped,/obj/structure/closet/crate,/obj/random/junkyard/biggun,/obj/random/junkyard/ammo,/obj/random/junkyard/ammo,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wreckfive)
 "cH" = (/obj/effect/floor_decal/techfloor,/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wreckfive)
 "cI" = (/obj/effect/floor_decal/techfloor{dir = 6; icon_state = "techfloor_edges"},/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techmaint,/area/map_template/wreck/wreckfive)
-"cJ" = (/obj/machinery/ion_engine/big,/turf/template_noop,/area/map_template/wreck/wreckfive)
+"cJ" = (/turf/simulated/mineral/volcanic,/area/template_noop)
 "ir" = (/obj/random/junkyard/hostile,/turf/template_noop,/area/template_noop)
 "kw" = (/obj/structure/girder/displaced,/turf/template_noop,/area/template_noop)
 "kS" = (/obj/structure/closet/crate/solar,/turf/template_noop,/area/template_noop)
+"mP" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/ion_engine{dir = 1},/turf/simulated/floor/plating,/area/map_template/wreck/wreckfive)
 "mY" = (/turf/simulated/mineral/random/volcanic,/area/template_noop)
 "uQ" = (/turf/template_noop,/area/template_noop)
 "Lg" = (/obj/structure/lattice,/obj/machinery/shipsensors/weak,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
@@ -155,26 +156,26 @@ uQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQ
 uQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQ
 uQuQuQuQuQuQuQmYmYmYuQuQuQuQuQuQuQuQuQuQmYmYmYuQuQuQuQuQuQuQ
 uQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQ
-uQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQ
-uQuQuQuQuQmYmYmYmYmYmYuQuQuQuQuQuQuQmYmYmYmYmYmYmYuQmYmYuQuQ
-uQuQuQmYmYmYmYmYmYuQOJiruQuQuQuQuQuQmYmYmYmYmYmYmYmYmYmYmYuQ
-uQuQuQuQmYmYmYmYuQuQaaaaabacacadacaeaeOJmYmYmYmYmYmYmYmYmYuQ
-uQuQuQmYmYmYOJOJOJOJafagahaiajakalamanLguQmYmYmYmYmYmYmYmYuQ
+uQuQuQuQuQmYcJcJcJmYmYuQuQuQuQuQuQuQuQmYmYmYcJmYmYuQuQuQuQuQ
+uQuQuQuQuQcJcJcJmYmYmYuQuQuQuQuQuQuQmYmYmYcJmYmYmYuQmYmYuQuQ
+uQuQuQmYmYcJcJmYmYuQOJiruQuQuQuQuQuQmYmYmYcJcJmYmYmYmYmYmYuQ
+uQuQuQuQcJcJmYmYuQuQaaaaabacacadacaeaeOJmYmYmYcJmYmYmYmYmYuQ
+uQuQuQmYmYmYOJOJOJOJafagahaiajakalamanLguQmYmYmYcJcJmYmYmYuQ
 uQuQuQmYmYmYuQuQuQaoafapaqarasatauavaaafuQuQuQmYmYmYmYmYmYmY
 uQuQmYmYmYmYmYaoawaxayazaAaBaCaCaDaEaFafaGaHOJOJmYmYmYmYmYmY
 uQuQmYmYmYmYmYaoaIaJaKaLaMaNaOaPaQaRapaSaTaGuQuQuQuQmYmYmYmY
-uQuQmYmYmYOJuQaoaUaVaWaXaYaZbabbbcbdapbebfaHuQuQuQuQmYmYmYmY
-uQmYmYmYOJaoaoaxbgbhbibjbkblbmbnbobpapbqbrbsbtbtOJmYmYmYmYmY
-uQmYmYmYaoaxaxaobubvbwbjbxbybzasbybpbAbBbCbDbtbtbtmYmYmYmYmY
-uQuQmYmYaobEbFbGbzbHbIbJbKbxbzbLasbMbNbObPbQbEbEbtuQmYmYuQuQ
+uQuQmYmYmYOJuQaoaUaVaWaXaYaZbabbbcbdapbebfaHuQuQuQuQmYcJcJcJ
+uQmYcJcJOJaoaoaxbgbhbibjbkblbmbnbobpapbqbrbsbtbtOJmYmYcJcJmY
+uQcJmYcJaoaxaxaobubvbwbjbxbybzasbybpbAbBbCbDbtbtbtmYcJcJmYmY
+uQuQmYcJaobEbFbGbzbHbIbJbKbxbzbLasbMbNbObPbQbEbEbtuQcJmYuQuQ
 uQuQuQuQOJuQOJbGbRbSbTbUbVbWbXbYbZcaancbaeaeuQuQOJuQmYmYuQuQ
 uQuQuQuQOJuQOJuQbGcccdbjcecfaeaeanaecgchcianuQuQOJuQuQuQuQuQ
-uQmYmYmYmYuQOJmYbGbGcjckaeclcmaecncocpcqcrcsuQuQOJuQuQuQuQuQ
-uQmYmYmYOJOJOJOJOJbzbzctcucvcwcxbzchchchcyczuQuQmYmYmYuQuQuQ
-mYmYmYmYmYuQuQuQuQcvbzaaafcAcvafcBcCcCcDcEcFOJOJmYmYmYmYuQuQ
-mYmYmYmYuQuQuQuQkwafafafaaafcvcfcGcHcHbzcIOJuQmYmYmYmYmYuQuQ
-mYmYuQuQuQuQmYOJOJaabKbzbzafuQuQuQuQuQuQuQOJmYmYmYmYmYuQuQuQ
-uQuQuQuQuQmYmYmYuQuQcvcvcvuQuQuQkwuQuQkSuQuQmYmYuQmYmYuQuQuQ
-uQuQuQuQuQmYmYmYuQuQcJcvcvuQuQuQuQuQuQuQuQuQmYuQuQuQuQuQuQuQ
+uQmYcJmYmYuQOJmYbGbGcjckaeclcmaecncocpcqcrcsuQuQOJuQuQuQuQuQ
+uQmYcJmYOJOJOJOJOJbzbzctcucvcwcxbzchchchcyczuQuQmYmYmYuQuQuQ
+mYcJcJmYmYuQuQuQuQcvbzaaafcAcvafcBcCcCcDcEcFOJOJmYcJcJmYuQuQ
+mYcJcJmYuQuQuQuQkwafafafaaafcvcfcGcHcHbzcIOJuQmYmYcJcJmYuQuQ
+mYmYuQuQuQuQmYOJOJaamPbEbEafuQuQuQuQuQuQuQOJmYmYcJmYmYuQuQuQ
+uQuQuQuQuQmYmYcJuQuQuQuQuQuQuQuQkwuQuQkSuQuQcJcJuQmYmYuQuQuQ
+uQuQuQuQuQcJcJmYuQuQuQuQuQuQuQuQuQuQuQuQuQuQmYuQuQuQuQuQuQuQ
 uQuQuQmYuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQuQ
 "}

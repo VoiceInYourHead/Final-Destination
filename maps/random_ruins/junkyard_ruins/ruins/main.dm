@@ -42,6 +42,10 @@
 /area/map_template/wreck/wreckten/two
 /area/map_template/wreck/wreckten/three
 
+/area/map_template/wreck/wreckeleven
+	name = "\improper Station fragment #5"
+/area/map_template/wreck/wreckeleven/two
+
 //////////    D A T U M S     /////////////
 
 /datum/map_template/ruin/junkyard/wreck
@@ -49,7 +53,7 @@
 	id = "wreck1"
 	description = "Just small ruins."
 	suffixes = list("ruins/ruin_1.dmm")
-	spawn_cost = 1
+	spawn_cost = 2
 	template_flags = TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_CLEAR_CONTENTS// | TEMPLATE_FLAG_ALLOW_DUPLICATES
 	ruin_tags = RUIN_WRECK
 
@@ -81,7 +85,7 @@
 	name = "Stomper"
 	id = "wreck6"
 	suffixes = list("ruins/ruin_6.dmm")
-	spawn_cost = 2
+	spawn_cost = 3
 	area_usage_test_exempted_root_areas = /area/ship/stomper
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/stomper)
 
@@ -89,7 +93,7 @@
 	name = "Abandoned Container"
 	id = "wreck7"
 	suffixes = list("ruins/ruin_7.dmm")
-	spawn_cost = 0.1
+	spawn_cost = 0.5
 
 /datum/map_template/ruin/junkyard/wreck/wreck8meteor
 	name = "Stash Meteor"
@@ -108,6 +112,12 @@
 	id = "wreck10"
 	suffixes = list("ruins/ruin_10.dmm")
 	spawn_cost = 3
+
+/datum/map_template/ruin/junkyard/wreck/wreck11
+	name = "Station fragment #5"
+	id = "wreck11"
+	suffixes = list("ruins/ruin_11.dmm")
+	spawn_cost = 2
 
 /*
 					Additional Things for wrecks
