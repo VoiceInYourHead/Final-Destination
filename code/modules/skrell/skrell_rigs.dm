@@ -77,7 +77,8 @@
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/device/clustertool/skrell
+		/obj/item/rig_module/device/clustertool/skrell,
+		/obj/item/rig_module/storage
 	)
 	req_access = list("ACCESS_SKRELLSCOUT")
 
@@ -94,7 +95,8 @@
 		/obj/item/rig_module/device/cable_coil/skrell,
 		/obj/item/rig_module/device/multitool/skrell,
 		/obj/item/rig_module/device/welder/skrell,
-		/obj/item/rig_module/device/rcd
+		/obj/item/rig_module/device/rcd,
+		/obj/item/rig_module/storage
 	)
 
 //Skrell Medical Suit

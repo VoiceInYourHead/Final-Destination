@@ -30,7 +30,8 @@
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/power_sink,
-		/obj/item/rig_module/cooling_unit
+		/obj/item/rig_module/cooling_unit,
+		/obj/item/rig_module/storage
 		)
 
 /obj/item/clothing/head/helmet/space/rig/vox_rig

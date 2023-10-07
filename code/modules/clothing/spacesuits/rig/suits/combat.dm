@@ -61,7 +61,8 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/actuators,
-		/obj/item/rig_module/cooling_unit
+		/obj/item/rig_module/cooling_unit,
+		/obj/item/rig_module/storage
 		)
 
 //Extremely OP, hardly standard issue equipment
