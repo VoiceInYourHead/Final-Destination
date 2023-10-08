@@ -155,6 +155,7 @@
 	#include "../away/ascent/ascent.dm"
 	#include "../away/ares/_ares.dm"
 	#include "../away/aegis/aegis.dm"
+	#include "../away/aaaa_event/aegis_alt/aegis_alt.dm"
 	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/ascent_corvette/_corvette.dm"
 	#include "../away/ascent_auto/auto.dm"
