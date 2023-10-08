@@ -45,7 +45,7 @@
 /datum/map_template/ruin/away_site/aegis_alt
 	name = "B-CV-12 Aegis"
 	id = "awaysite_aegis_alt"
-	description = "Private Military Force high-armored medium ship, with ton of guns and combat equipment."
+	description = "B-CV-12 Aegis"
 	suffixes = list("aaaa_event/aegis_alt/aegis_alt1.dmm", "aaaa_event/aegis_alt/aegis_alt2.dmm")
 	spawn_cost = 10 // dont do it man
 	area_usage_test_exempted_root_areas = list(/area/aegis)
@@ -70,7 +70,7 @@
 //		ROLES		//
 
 /decl/submap_archetype/aegis_alt
-	descriptor = "Private Multi-purpose combat heavily armored Vessel"
+	descriptor = "B-CV-12 Aegis"
 	map = "B-CV-12 Aegis"
 	blacklisted_species = null
 	whitelisted_species = null
