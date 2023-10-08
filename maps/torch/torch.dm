@@ -199,6 +199,7 @@
 	#include "../away/drone_carrier/carrier.dm"
 	#include "../away/junk_planet/jplanet.dm"
 	#include "../away/ecoffice/ecoffice.dm"
+	#include "../away/aaaa_event/headquarters/head.dm"
 
 //alternative future stuff
 	#include "../away/airfield/airfield.dm"

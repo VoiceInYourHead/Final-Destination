@@ -99,7 +99,7 @@
 
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1,/obj/item/projectile/bullet/pellet/fragment/strong=4)
 	num_fragments = 200  //total number of fragments produced by the grenade
-	explosion_power = 300
+	explosion_power = 250
 
 /obj/item/grenade/frag/high_yield/on_explosion(var/turf/O)
 	if(explosion_power)
@@ -111,7 +111,7 @@
 	icon_state = "frggrenade"
 
 	num_fragments = 4
-	explosion_power = 400
+	explosion_power = 300
 
 /obj/item/grenade/frag/high_explosive/on_explosion(var/turf/O)
 	if(explosion_power)
