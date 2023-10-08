@@ -12,7 +12,7 @@
 	archetype = /decl/submap_archetype/aaaa_head
 
 /decl/submap_archetype/aaaa_head
-	descriptor = "One of the Agency working facilities"
+	descriptor = "Bureau 12 Headquarters"
 	map = "Bureau 12 Headquarters"
 	crew_jobs = list(
 		/datum/job/submap/aaaa_head/agent,
@@ -27,7 +27,7 @@
 /datum/map_template/ruin/away_site/aaaa_head
 	name = "Bureau 12 Headquarters"
 	id = "awaysite_aaaa_head"
-	description = "One of the Agency working facilities"
+	description = "Bureau 12 Headquarters"
 	suffixes = list("/aaaa_event/headquarters/head-1.dmm", "/aaaa_event/headquarters/head-2.dmm")
 	spawn_cost = 999
 	player_cost = 6
@@ -97,7 +97,7 @@
 	required_language = LANGUAGE_HUMAN_EURO
 
 	max_skill = list(
-		SKILL_EVA     = SKILL_MAX,
+		SKILL_EVA     = SKILL_MAX
 		SKILL_WEAPONS = SKILL_MAX,
 		SKILL_COMBAT = SKILL_MAX,
 		SKILL_PILOT   = SKILL_MAX,
@@ -129,7 +129,7 @@
 	skill_points = 35
 
 /decl/hierarchy/outfit/job/aaaa/agent
-	name = "Bureau 12 Agent"
+	title = "Bureau 12 Agent"
 
 	uniform = /obj/item/clothing/under/lawyer/infil
 	glasses = /obj/item/clothing/glasses/aviators_black
@@ -142,7 +142,7 @@
 	name = "Bureau 12 Supporting Droid"
 
 /datum/job/submap/aaaa_head/robot
-	title = "Bureau 12 Supporting Droid"
+	name = "Bureau 12 Supporting Droid"
 	info = "You are the part of the Agency"
 	outfit_type = /decl/hierarchy/outfit/job/aaaa/robot
 	total_positions = 1
@@ -169,7 +169,7 @@
 		SKILL_SCIENCE = SKILL_TRAINED)
 
 	max_skill = list(
-		SKILL_EVA     = SKILL_MAX,
+		SKILL_EVA     = SKILL_MAX
 		SKILL_WEAPONS = SKILL_MAX,
 		SKILL_COMBAT = SKILL_MAX,
 		SKILL_PILOT   = SKILL_MAX,

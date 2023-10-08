@@ -78,7 +78,7 @@
 
 /obj/effect/submap_landmark/joinable_submap/aegis_alt
 	name = "B-CV-12 Aegis"
-	archetype = /decl/submap_archetype/aegis
+	archetype = /decl/submap_archetype/aegis_alt
 
 /obj/effect/submap_landmark/spawnpoint/aegis_alt
 	name = "Merc"
