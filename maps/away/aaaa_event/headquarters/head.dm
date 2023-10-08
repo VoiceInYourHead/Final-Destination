@@ -97,7 +97,7 @@
 	required_language = LANGUAGE_HUMAN_EURO
 
 	max_skill = list(
-		SKILL_EVA     = SKILL_MAX
+		SKILL_EVA     = SKILL_MAX,
 		SKILL_WEAPONS = SKILL_MAX,
 		SKILL_COMBAT = SKILL_MAX,
 		SKILL_PILOT   = SKILL_MAX,
@@ -129,7 +129,7 @@
 	skill_points = 35
 
 /decl/hierarchy/outfit/job/aaaa/agent
-	title = "Bureau 12 Agent"
+	name = "Bureau 12 Agent"
 
 	uniform = /obj/item/clothing/under/lawyer/infil
 	glasses = /obj/item/clothing/glasses/aviators_black
@@ -142,7 +142,7 @@
 	name = "Bureau 12 Supporting Droid"
 
 /datum/job/submap/aaaa_head/robot
-	name = "Bureau 12 Supporting Droid"
+	title = "Bureau 12 Supporting Droid"
 	info = "You are the part of the Agency"
 	outfit_type = /decl/hierarchy/outfit/job/aaaa/robot
 	total_positions = 1
