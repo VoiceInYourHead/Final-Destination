@@ -489,6 +489,21 @@ var/const/NO_EMAG_ACT = -50
 	..()
 	access |= get_all_station_access()
 
+/obj/item/card/id/bureua
+	name = "\improper Bureua 12 warrant card"
+	desc = "A warrant card in a handsome leather case."
+	icon_state = "warrantcard"
+	job_access_type = /datum/job/submap/aaaa_head/agent/aegis
+
+/obj/item/card/id/bureua/on_update_icon()
+	return
+
+/obj/item/card/id/bureua/leader
+	name = "\improper Bureua 12 warrant card"
+	desc = "A warrant card in a handsome leather case."
+	icon_state = "warrantcard"
+	job_access_type = /datum/job/submap/aaaa_head/agent/leader/aegis
+
 /obj/item/card/id/all_access
 	name = "\improper Administrator's spare ID"
 	desc = "The spare ID of the Lord of Lords himself."
