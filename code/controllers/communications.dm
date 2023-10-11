@@ -129,13 +129,15 @@ var/const/EXP_FREQ = 1361
 
 //away?
 var/const/SCHOOL_FREQ = 1491
+var/const/BUREAU_FREQ = 1492
+var/const/MERC_FREQ = 1495 // Aegis shit.
 
 // internal department channels
 var/const/MED_I_FREQ = 1485
 var/const/SEC_I_FREQ = 1475
 
 // Away Site Channels
-var/list/AWAY_FREQS_UNASSIGNED = list(1491, 1493, 1495, 1497, 1499, 1501, 1503, 1505, 1507, 1509)
+var/list/AWAY_FREQS_UNASSIGNED = list(1491, 1493, 1497, 1499, 1501, 1503, 1505, 1507, 1509)
 var/list/AWAY_FREQS_ASSIGNED = list("Hailing" = HAIL_FREQ)
 
 // Device signal frequencies
@@ -155,6 +157,8 @@ var/list/radiochannels = list(
 	"Common"		= PUB_FREQ,
 	"Hailing"		= HAIL_FREQ,
 	"School"		= SCHOOL_FREQ,
+	"Mercenaries"	= MERC_FREQ,
+	"Bureau 12"		= BUREAU_FREQ,
 	"Science"		= SCI_FREQ,
 	"Command"		= COMM_FREQ,
 	"Medical"		= MED_FREQ,
@@ -245,6 +249,10 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI
 		return "hailradio"
 	if (frequency == SCHOOL_FREQ) // PSY School frequency
 		return "schoolradio"
+	if (frequency == MERC_FREQ) // Aegis_ALT Freq
+		return "mercenariesradio"
+	if (frequency == BUREAU_FREQ) // Bureau 12 freq
+		return "bureauradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
 

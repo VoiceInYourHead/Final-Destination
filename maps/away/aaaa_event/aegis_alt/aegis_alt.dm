@@ -1,24 +1,24 @@
 #include "aegis_alt_areas.dm"
 #include "aegis_alt_radio.dm"
+#include "aegis_alt_agents.dm"
 
 /obj/effect/overmap/visitable/ship/aegis_alt
 	name = "B-CV-12 Aegis"
 	desc = "Sen#ors det3cTed a m3d-ium war5hIp 7ran5mit-tIng the c0des 'B-CV-12 Aegis 89-671'. The-re a9e m-Any t6pes 0f w3Ap0n5 0n b0aRd. RadiAti0n f50m energ4 5Hi3lds is present. RadIati8n of unkno@n energy is &r%s#3^. The shape is similar to a bud with many petals, merges with the background."
-	//Sensors detected a medium warship transmitting the codes 'PV AEGIS 89-671'. There are many types of weapons on board. Radiation from energy shields is present. Radiation of unknown energy is present. The shape is similar to a bud with many petals, merges with the background.
+	//Sensors detected a medium warship transmitting the codes 'B-CV-12 Aegis 89-671'. There are many types of weapons on board. Radiation from energy shields is present. Radiation of unknown energy is present. The shape is similar to a bud with many petals, merges with the background.
 	color = "#272f31"
 	fore_dir = WEST
 	dir = WEST
-
 	integrity_failure_cap = 500
 	do_repair_hull = TRUE
 	repair_speed = 0.1
 	vessel_mass = 50000
 	max_speed = 1/(2 SECONDS)
 	initial_generic_waypoints = list(
-		"nav_aegis_1",
-		"nav_aegis_2",
-		"nav_aegis_3",
-		"nav_aegis_antag"
+		"nav_aegis_alt_1",
+		"nav_aegis_alt_2",
+		"nav_aegis_alt_3",
+		"nav_aegis_alt_antag"
 	)
 	initial_restricted_waypoints = list("Leaper" = list("nav_hangar_leaper"))
 
@@ -26,21 +26,21 @@
 	name = "B-CV-12 Aegis"
 	..()
 
-/obj/effect/shuttle_landmark/nav_aegis/nav1
-	name = "PV Aegis Navpoint #1"
-	landmark_tag = "nav_aegis_1"
+/obj/effect/shuttle_landmark/nav_aegis_alt/nav1
+	name = "B-CV-12 Aegis Navpoint #1"
+	landmark_tag = "nav_aegis_alt_1"
 
-/obj/effect/shuttle_landmark/nav_aegis/nav2
-	name = "PV Aegis Navpoint #2"
-	landmark_tag = "nav_aegis_2"
+/obj/effect/shuttle_landmark/nav_aegis_alt/nav2
+	name = "B-CV-12 Aegis Navpoint #2"
+	landmark_tag = "nav_aegis_alt_2"
 
-/obj/effect/shuttle_landmark/nav_aegis/nav3
-	name = "PV Aegis Navpoint #3"
-	landmark_tag = "nav_aegis_3"
+/obj/effect/shuttle_landmark/nav_aegis_alt/nav3
+	name = "B-CV-12 Aegis Navpoint #3"
+	landmark_tag = "nav_aegis_alt_3"
 
-/obj/effect/shuttle_landmark/nav_aegis/nav4
-	name = "PV Aegis Navpoint #4"
-	landmark_tag = "nav_aegis_antag"
+/obj/effect/shuttle_landmark/nav_aegis_alt/nav4
+	name = "B-CV-12 Aegis Navpoint #4"
+	landmark_tag = "nav_aegis_alt_antag"
 
 /datum/map_template/ruin/away_site/aegis_alt
 	name = "B-CV-12 Aegis"
@@ -74,7 +74,15 @@
 	map = "B-CV-12 Aegis"
 	blacklisted_species = null
 	whitelisted_species = null
-	crew_jobs = list(/datum/job/submap/aegis_alt/leader, /datum/job/submap/aegis_alt/merc, /datum/job/submap/aegis_alt/merc_spec, /datum/job/submap/aegis_alt/merc_pilot, /datum/job/submap/aegis_alt/engineer, /datum/job/submap/aegis_alt/surgeon)
+	crew_jobs = list(/datum/job/submap/aegis_alt/leader,
+	 /datum/job/submap/aegis_alt/merc,
+	 /datum/job/submap/aegis_alt/merc_spec,
+	 /datum/job/submap/aegis_alt/merc_pilot,
+	 /datum/job/submap/aegis_alt/engineer,
+	 /datum/job/submap/aegis_alt/surgeon,
+	 /datum/job/submap/aaaa_head/agent/leader/aegis,
+	 /datum/job/submap/aaaa_head/agent/aegis,
+	 /datum/job/submap/aaaa_head/robot/aegis)
 
 /obj/effect/submap_landmark/joinable_submap/aegis_alt
 	name = "B-CV-12 Aegis"
@@ -268,7 +276,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/helmet/solgov/pilot
 	r_pocket = /obj/item/device/radio/map_preset/aegis
-	l_ear = /obj/item/device/radio/headset/map_preset/aegis
+	l_ear = /obj/item/device/radio/headset/map_preset/aegis_alt
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
 
@@ -282,7 +290,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/soft/grey
 	r_pocket = /obj/item/device/radio/map_preset/aegis
-	l_ear = /obj/item/device/radio/headset/map_preset/aegis
+	l_ear = /obj/item/device/radio/headset/map_preset/aegis_alt
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
 
@@ -296,7 +304,7 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	shoes = /obj/item/clothing/shoes/dutyboots
 	r_pocket = /obj/item/device/radio/map_preset/aegis
-	l_ear = /obj/item/device/radio/headset/map_preset/aegis
+	l_ear = /obj/item/device/radio/headset/map_preset/aegis_alt
 	id_types = list(/obj/item/card/id/aegis)
 	id = /obj/item/card/id/aegis
 
@@ -311,7 +319,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/soft/grey
 	r_pocket = /obj/item/device/radio/map_preset/aegis
-	l_ear = /obj/item/device/radio/headset/map_preset/aegis
+	l_ear = /obj/item/device/radio/headset/map_preset/aegis_alt
 	id_types = list(/obj/item/card/id/aegis_captain)
 	id = /obj/item/card/id/aegis_captain
 
@@ -360,7 +368,7 @@
 	defer_initialisation = TRUE
 
 /obj/effect/shuttle_landmark/leaper
-	name = "leaper Hangar"
+	name = "Leaper Hangar"
 	landmark_tag = "nav_hangar_leaper"
 	base_area = /area/aegis/engineering/hangar
 	base_turf = /turf/simulated/floor/plating
