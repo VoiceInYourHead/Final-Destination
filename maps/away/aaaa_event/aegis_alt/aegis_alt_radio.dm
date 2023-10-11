@@ -61,3 +61,6 @@
 	ks1type = /obj/item/device/encryptionkey/map_preset/aaaa_head
 	ks2type = /obj/item/device/encryptionkey/map_preset/aegis_alt
 	use_common = 1
+
+/obj/item/device/radio/map_preset/aaaa_head
+	preset_name = "Bureau 12"
