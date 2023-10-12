@@ -104,6 +104,10 @@
 	name = "reinforced wall frame window spawner (no grille)"
 	grille_path = null
 
+/obj/effect/wallframe_spawn/reinforced/crescent
+	name = "reinforced wall frame crescent window spawner"
+	win_path = /obj/structure/window/reinforced/crescent
+
 /obj/effect/wallframe_spawn/reinforced/titanium
 	name = "reinforced titanium wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/titanium

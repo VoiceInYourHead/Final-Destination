@@ -20,7 +20,7 @@
 	color = COLOR_GREEN_GRAY
 
 /turf/simulated/wall/r_wall/invincible //invincible
-	icon_state = "r_generic"
+	icon_state = "r_invinsible"
 	floor_type = /turf/simulated/floor/reinforced
 
 /turf/simulated/wall/r_wall/invincible/prepainted
