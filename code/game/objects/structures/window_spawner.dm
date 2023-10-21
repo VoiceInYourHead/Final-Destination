@@ -99,7 +99,7 @@
 
 /obj/effect/wingrille_spawn/reinforced/crescent
 	name = "Crescent window grille spawner"
-	win_path = /obj/structure/window/reinforced/crescent
+	win_path = /obj/structure/window/reinforced/crescent/full
 
 /obj/effect/wingrille_spawn/phoron
 	name = "phoron window grille spawner"

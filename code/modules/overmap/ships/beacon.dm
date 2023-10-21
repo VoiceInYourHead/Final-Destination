@@ -193,3 +193,6 @@
 	for(var/obj/machinery/computer/ship/helm/H in SSmachines.machinery)
 		H.visible_message(SPAN_WARNING("\the [H] pings uneasily as it detects a distress signal."))
 		playsound(H, 'sound/machines/sensors/newcontact.ogg', 50, 3, 3)
+
+/obj/machinery/radio_beacon/distress_active/New()
+	activate_distress()

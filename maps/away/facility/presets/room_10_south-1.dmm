@@ -1,0 +1,28 @@
+"a" = (/turf/simulated/wall/r_wall/invincible/prepainted,/area/template_noop)
+"c" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/filth,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"d" = (/obj/effect/floor_decal/corner/blue/half{dir = 4},/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
+"f" = (/obj/effect/floor_decal/corner/blue/half{dir = 8},/obj/effect/decal/cleanable/filth,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
+"i" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
+"k" = (/obj/effect/floor_decal/corner/blue{dir = 6},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"l" = (/turf/unsimulated/mineral{color = "#000000"; name = "void"},/area/template_noop)
+"r" = (/turf/unsimulated/mineral,/area/template_noop)
+"v" = (/obj/effect/floor_decal/corner/blue{dir = 6},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/turf/simulated/floor/tiled,/area/template_noop)
+"w" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"B" = (/obj/effect/floor_decal/corner/blue{dir = 6},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"D" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"H" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled,/area/template_noop)
+"J" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"M" = (/obj/machinery/door/airlock/hatch/maintenance,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
+
+(1,1,1) = {"
+aaafidaaaa
+llaJwvalll
+llaHckalll
+llaDwBalll
+llaJrralll
+llarrralll
+llarrralll
+llarrralll
+llarrralll
+llaaMaalll
+"}

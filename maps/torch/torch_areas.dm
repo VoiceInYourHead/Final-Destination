@@ -1349,25 +1349,103 @@
 // CentCom
 
 /area/centcom/control
-	name = "\improper Centcom Control"
+	name = "\improper Observatory Control"
+
+/area/centcom/control/command
+	name = "Observatory Command"
+
+/area/centcom/control/hallways
+	name = "Observatory Command Hallways"
+
+/area/centcom/control/meeting
+	name = "Observatory Command Meeting Room"
+
+/area/centcom/control/conference
+	name = "Observatory Command Conference Room"
+
+/area/centcom/control/lounge
+	name = "Observatory Command Lounge"
 
 /area/centcom/creed
 	name = "Creed's Office"
 
+/area/centcom/hallway
+	name = "Observatory Hallway"
+
+/area/centcom/hallway/adherent
+	name = "Observatory Adherent Maint"
+
+/area/centcom/engineering
+	name = "Observatory Engineering"
+
+/area/centcom/engineering/reactor
+	name = "Observatory Reactor"
+
+/area/centcom/engineering/control
+	name = "Observatory Reactor Control"
+
+/area/centcom/engineering/equipment
+	name = "Observatory Engineering Equipment"
+
+/area/centcom/arrivals
+	name = "Observatory Arrivals"
+
+/area/centcom/arrivals/docks
+	name = "Observatory Docks"
+
+/area/centcom/mess
+	name = "Observatory Mess Hall"
+
+/area/centcom/mess/kitchen
+	name = "Observatory Kitchen"
+
+/area/centcom/office
+	name = "Observatory Office"
+
+/area/centcom/office/iccgn
+	name = "Observatory ICCGN Representative"
+
+/area/centcom/office/hephaestus
+	name = "Observatory Hephaestus Representative"
+
+/area/centcom/office/screll
+	name = "Observatory Scrells Representative"
+
+/area/centcom/office/dais
+	name = "Observatory DAIS Representative"
+
+/area/centcom/office/takahashi
+	name = "Observatory Ward-Takahashi Representative"
+
+/area/centcom/office/nanotrasen
+	name = "Observatory Nanotrasen Representative"
+
+/area/centcom/office/ftu
+	name = "Observatory FTU Representative"
+
+/area/centcom/office/zeng
+	name = "Observatory Zeng-Hu Representative"
+
+/area/centcom/office/grayson
+	name = "Observatory GML Representative"
+
+/area/centcom/beauro
+	name = "Beauro 12"
+
 /area/centcom/evac
-	name = "\improper Centcom Emergency Shuttle"
+	name = "\improper Observatory Emergency Shuttle"
 
 /area/centcom/ferry
-	name = "\improper Centcom Transport Shuttle"
+	name = "\improper Observatory Transport Shuttle"
 
 /area/centcom/living
-	name = "\improper Centcom Living Quarters"
+	name = "\improper Observatory Living Quarters"
 
 /area/centcom/suppy
-	name = "\improper Centcom Supply Shuttle"
+	name = "\improper Observatory Supply Shuttle"
 
 /area/centcom/test
-	name = "\improper Centcom Testing Facility"
+	name = "\improper Observatory Testing Facility"
 
 // Solars
 /area/maintenance/auxsolarport

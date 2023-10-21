@@ -1,0 +1,54 @@
+"a" = (/turf/simulated/wall/r_wall/invincible/prepainted,/area/template_noop)
+"b" = (/obj/effect/floor_decal/corner/red/half{dir = 8},/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"c" = (/obj/effect/floor_decal/corner/red{dir = 9},/obj/random/obstruction,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"d" = (/obj/effect/floor_decal/corner/blue{dir = 1},/obj/effect/floor_decal/corner/red{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"e" = (/obj/effect/floor_decal/corner/red/half{dir = 4},/obj/structure/table/rack,/obj/random/junkyard/medical/lite,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"f" = (/obj/effect/floor_decal/corner/red/half{dir = 4},/obj/structure/closet{name = "Evidence Closet"},/obj/random/facility/gun,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"g" = (/obj/effect/floor_decal/corner/red{dir = 9},/obj/structure/extinguisher_cabinet{pixel_x = -32},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"i" = (/obj/effect/floor_decal/corner/red/half,/obj/structure/bed/chair/comfy/red{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"j" = (/obj/structure/bed/chair/comfy/red{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"k" = (/obj/effect/floor_decal/corner/red{dir = 10},/obj/random/obstruction,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"l" = (/obj/effect/floor_decal/corner/red/half{dir = 4},/obj/structure/table/rack,/obj/random/maintenance,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"n" = (/obj/effect/floor_decal/corner/red{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"o" = (/obj/effect/floor_decal/corner/red{dir = 8},/obj/effect/floor_decal/corner/blue,/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"p" = (/obj/effect/floor_decal/corner/red{dir = 1},/obj/effect/floor_decal/corner/blue{dir = 4},/obj/random/obstruction,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"q" = (/obj/machinery/computer/modular/preset/cardslot/command,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"r" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/template_noop)
+"s" = (/obj/effect/floor_decal/corner/red,/obj/effect/floor_decal/corner/blue{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"u" = (/obj/effect/floor_decal/corner/red{dir = 9},/obj/machinery/light/small/red{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"v" = (/obj/effect/floor_decal/corner/blue{dir = 5},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"y" = (/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"z" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"A" = (/obj/effect/floor_decal/corner/red{dir = 4},/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"B" = (/obj/effect/floor_decal/corner/red{dir = 6},/obj/random/trash,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"C" = (/obj/effect/floor_decal/corner/blue{dir = 4},/obj/effect/floor_decal/corner/red,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"D" = (/obj/machinery/door/airlock/civilian,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"G" = (/turf/simulated/floor/tiled/dark,/area/template_noop)
+"H" = (/obj/effect/floor_decal/corner/red{dir = 5},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"I" = (/obj/effect/floor_decal/corner/red/mono,/obj/structure/table/steel_reinforced,/obj/random/maintenance,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"J" = (/obj/effect/floor_decal/corner/red/half{dir = 8},/obj/structure/table/steel_reinforced,/obj/random/facility/ammo,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"K" = (/obj/effect/floor_decal/corner/red/half,/obj/random/trash,/obj/structure/holoplant,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"L" = (/obj/effect/floor_decal/corner/red/three_quarters{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"M" = (/obj/machinery/door/airlock/security{stripe_color = "#AB0000"; name = "Security Checkpoint"},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"O" = (/obj/effect/floor_decal/corner/blue{dir = 6},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"P" = (/obj/effect/floor_decal/corner/red/half{dir = 8},/obj/structure/table/steel_reinforced,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Q" = (/obj/effect/floor_decal/corner/blue{dir = 8},/obj/effect/floor_decal/corner/red{dir = 1},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"R" = (/obj/effect/floor_decal/corner/blue{dir = 1},/obj/effect/floor_decal/corner/red{dir = 6},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"T" = (/obj/effect/floor_decal/corner/red{dir = 9},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"U" = (/obj/effect/floor_decal/corner/red/half,/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"V" = (/obj/effect/floor_decal/corner/blue{dir = 9},/obj/random/facility/mercenary/low,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Y" = (/obj/effect/floor_decal/corner/red/three_quarters,/obj/random/trash,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Z" = (/obj/effect/floor_decal/corner/blue{dir = 10},/turf/simulated/floor/tiled/dark,/area/template_noop)
+
+(1,1,1) = {"
+aaaaDaaaaa
+azHpvRMTla
+agaaraauea
+aTrPqaHnfa
+aQrJjaMaaa
+DVrbGAHaOD
+adrIUKiaCa
+acarrrraBa
+aYyoZsykLa
+aaaaDaaaaa
+"}

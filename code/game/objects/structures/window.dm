@@ -782,6 +782,9 @@
 /obj/structure/window/reinforced/crescent/shatter()
 	return
 
+/obj/structure/window/reinforced/crescent/full
+	dir = 5
+	icon_state = "rwindow_full"
 /proc/place_window(mob/user, loc, dir_to_set, obj/item/stack/material/ST)
 	var/required_amount = (dir_to_set & (dir_to_set - 1)) ? 4 : 1
 	if (!ST.can_use(required_amount))

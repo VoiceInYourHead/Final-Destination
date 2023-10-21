@@ -1,0 +1,69 @@
+"bI" = (/turf/simulated/wall/r_wall/invincible/prepainted,/area/template_noop)
+"cX" = (/obj/effect/floor_decal/floordetail/edgedrain,/obj/structure/hygiene/shower{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"eN" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/machinery/light/small{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"eS" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"fN" = (/obj/structure/hygiene/toilet{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"ir" = (/obj/structure/hygiene/drain/bath,/turf/simulated/floor/pool,/area/template_noop)
+"kw" = (/obj/structure/hygiene/faucet{pixel_y = 11},/turf/simulated/floor/pool,/area/template_noop)
+"kL" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"lZ" = (/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/obj/item/storage/mirror{pixel_y = 26},/obj/structure/hygiene/sink{dir = 1; pixel_y = 16},/obj/effect/floor_decal/corner/grey/half,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/monotile,/area/template_noop)
+"mw" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"mI" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"nZ" = (/obj/structure/hygiene/toilet{dir = 4},/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"ou" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/random/facility/mercenary/medium,/turf/simulated/floor/tiled,/area/template_noop)
+"pC" = (/obj/machinery/door/unpowered/simple/iron{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"qP" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/item/towel/random,/obj/structure/table/rack,/obj/item/haircomb/random,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"rI" = (/turf/unsimulated/mineral{color = "#000000"; name = "void"},/area/template_noop)
+"sA" = (/obj/machinery/light/small{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"sO" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"sP" = (/obj/effect/floor_decal/industrial/outline,/obj/structure/closet/secure_closet/personal/empty,/obj/item/towel/random,/obj/random/maintenance,/obj/random/maintenance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/monotile,/area/template_noop)
+"tD" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"tH" = (/obj/effect/floor_decal/corner/grey{dir = 6},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"tR" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/machinery/light/small,/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"uv" = (/obj/effect/floor_decal/corner/grey{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"vS" = (/obj/effect/catwalk_plated,/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"wX" = (/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/obj/item/storage/mirror{pixel_y = 26},/obj/structure/hygiene/sink{dir = 1; pixel_y = 16},/obj/effect/floor_decal/corner/grey/half,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/monotile,/area/template_noop)
+"xd" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/machinery/light,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"xQ" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"xY" = (/obj/structure/hygiene/toilet{dir = 4},/turf/simulated/floor/tiled,/area/template_noop)
+"yl" = (/obj/effect/floor_decal/industrial/outline,/obj/structure/closet/secure_closet/personal/empty,/obj/item/towel/random,/obj/random/maintenance,/obj/random/maintenance,/turf/simulated/floor/tiled/monotile,/area/template_noop)
+"zo" = (/obj/machinery/door/unpowered/simple/iron{dir = 4},/obj/effect/floor_decal/floordetail/tiled,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"BL" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"CJ" = (/obj/effect/floor_decal/floordetail/edgedrain,/obj/structure/hygiene/shower{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"Dy" = (/obj/effect/floor_decal/corner/grey{dir = 6},/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"DJ" = (/obj/effect/catwalk_plated,/turf/simulated/floor/plating,/area/template_noop)
+"FR" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"Hj" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb{dir = 4},/turf/simulated/floor/tiled,/area/template_noop)
+"IH" = (/obj/effect/floor_decal/industrial/outline,/obj/structure/closet/secure_closet/personal/empty,/obj/item/towel/random,/obj/item/reagent_containers/spray/cleaner,/obj/random/maintenance,/obj/random/maintenance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/monotile,/area/template_noop)
+"JW" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"Nb" = (/obj/structure/hygiene/toilet{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/tiled,/area/template_noop)
+"No" = (/obj/machinery/door/airlock/civilian{autoset_access = 0; name = "Head"},/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
+"PE" = (/obj/effect/floor_decal/corner/grey{dir = 10},/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"Qi" = (/obj/effect/floor_decal/corner/grey{dir = 6},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"Qu" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"QE" = (/obj/machinery/light/small{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"Rw" = (/obj/structure/hygiene/drain,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"RH" = (/obj/effect/floor_decal/corner/grey{dir = 9},/obj/machinery/light{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/template_noop)
+"UD" = (/obj/effect/floor_decal/corner/green/half{dir = 1},/turf/simulated/floor/tiled/monotile,/area/template_noop)
+"Wa" = (/obj/machinery/door/unpowered/simple/iron{dir = 4},/obj/effect/floor_decal/floordetail/tiled,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"Xb" = (/turf/simulated/wall/prepainted,/area/template_noop)
+"Yg" = (/obj/machinery/light/small{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
+"Yo" = (/turf/simulated/floor/pool,/area/template_noop)
+"YH" = (/obj/effect/catwalk_plated,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+
+(1,1,1) = {"
+rIrIrIbIbIbIbIbIbIbI
+rIrIrIbIqPtHYokwkwbI
+bIbIbIbIRHQiYoirYobI
+bIQERwpCxQDyYoYoYobI
+bICJcXXbBLQiYoYoYobI
+bIXbXbXbeNuvXbXbXbbI
+bIxYsAWaouDJzoYgNbbI
+bIXbXbXbJWvSXbXbXbbI
+bInZYgzotDYHWasAfNbI
+bIXbXbXbQuFRXbXbXbbI
+bIwXwXlZmIsOIHsPylbI
+bIHjtRmweSPExdkLeSbI
+bIbIbIbINobIbIbIbIbI
+bIbIbIUDUDUDbIbIbIbI
+"}

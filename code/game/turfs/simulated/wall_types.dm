@@ -22,6 +22,7 @@
 /turf/simulated/wall/r_wall/invincible //invincible
 	icon_state = "r_invinsible"
 	floor_type = /turf/simulated/floor/reinforced
+	desc = "A huge chunk of metal used to separate rooms. This one looks very durable."
 
 /turf/simulated/wall/r_wall/invincible/prepainted
 	paint_color = COLOR_GUNMETAL
@@ -32,20 +33,20 @@
 /turf/simulated/wall/r_wall/invincible/bullet_act()
 	return
 
-/obj/structure/window/reinforced/crescent/can_damage_health()
+/turf/simulated/wall/r_wall/invincible/can_damage_health()
 	SHOULD_CALL_PARENT(FALSE)
 	return FALSE
 
-/obj/structure/window/reinforced/crescent/attack_hand()
+/turf/simulated/wall/r_wall/invincible/attack_hand()
 	return
 
-/obj/structure/window/reinforced/crescent/attackby()
+/turf/simulated/wall/r_wall/invincible/attackby()
 	return
 
-/obj/structure/window/reinforced/crescent/ex_act()
+/turf/simulated/wall/r_wall/invincible/ex_act()
 	return
 
-/obj/structure/window/reinforced/crescent/hitby()
+/turf/simulated/wall/r_wall/invincible/hitby()
 	return
 
 /turf/simulated/wall/prepainted
