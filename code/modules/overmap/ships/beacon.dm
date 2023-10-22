@@ -195,4 +195,5 @@
 		playsound(H, 'sound/machines/sensors/newcontact.ogg', 50, 3, 3)
 
 /obj/machinery/radio_beacon/distress_active/New()
+	sleep(25 SECONDS)
 	activate_distress()
