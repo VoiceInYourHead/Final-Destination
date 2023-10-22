@@ -129,7 +129,7 @@
 //		ROLES		//
 
 /decl/submap_archetype/aegis
-	descriptor = "Private Multi-purpose combat heavily armored Vessel"
+	descriptor = "PV Aegis"
 	map = "PV Aegis"
 	blacklisted_species = null
 	whitelisted_species = null
