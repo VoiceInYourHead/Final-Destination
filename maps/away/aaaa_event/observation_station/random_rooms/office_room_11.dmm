@@ -1,0 +1,63 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/obj/structure/window/reinforced{dir = 1},/obj/effect/floor_decal/industrial/hatch/red{color = "#940004"},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"c" = (/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"d" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"e" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"f" = (/obj/effect/floor_decal/corner/black/border{dir = 6},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"g" = (/obj/effect/floor_decal/corner/black/border{dir = 6},/obj/machinery/light/small,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"h" = (/obj/effect/floor_decal/corner/black/bordercorner,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"i" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"j" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"l" = (/obj/structure/window/reinforced,/obj/effect/floor_decal/industrial/hatch/red{color = "#940004"},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"o" = (/obj/structure/window/reinforced{dir = 4},/obj/effect/floor_decal/industrial/hatch/red{color = "#940004"},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"p" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/black/border,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"r" = (/obj/structure/window/reinforced{dir = 8},/obj/effect/floor_decal/industrial/hatch/red{color = "#940004"},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"s" = (/obj/effect/floor_decal/corner/black/border{dir = 9},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"t" = (/obj/effect/floor_decal/borderfloor/corner,/obj/effect/floor_decal/corner/black/bordercorner,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"u" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"v" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"w" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/black/border,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"x" = (/obj/effect/floor_decal/borderfloor/corner{dir = 4},/obj/effect/floor_decal/corner/black/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"y" = (/obj/effect/floor_decal/corner/black/border{dir = 10},/obj/machinery/light/small,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"z" = (/obj/effect/floor_decal/corner/black/border{dir = 5},/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"B" = (/obj/structure/table/marble{color = "gray"},/obj/item/card/id/obs/two,/obj/effect/floor_decal/industrial/outline/red/iccg,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"D" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"E" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/black/border,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"G" = (/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/template_noop)
+"H" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"I" = (/obj/effect/floor_decal/corner/black/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"J" = (/obj/effect/floor_decal/corner/black/bordercorner{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"K" = (/obj/effect/floor_decal/corner/black/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"L" = (/obj/effect/floor_decal/corner/black/border{dir = 9},/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"M" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"N" = (/obj/effect/floor_decal/corner/black/border{dir = 10},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"O" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/black/border{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"P" = (/obj/effect/floor_decal/corner/black/border{dir = 5},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Q" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"R" = (/obj/effect/floor_decal/borderfloor/corner{dir = 1},/obj/effect/floor_decal/corner/black/bordercorner{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"S" = (/obj/effect/floor_decal/borderfloor/corner{dir = 8},/obj/effect/floor_decal/corner/black/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"T" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"U" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"V" = (/turf/simulated/wall/r_wall/invincible,/area/template_noop)
+"W" = (/obj/structure/railing/mapped,/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"X" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/unsimulated/floor/bluespace{color = "red"},/area/template_noop)
+"Y" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Z" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaa
+accccViGjVcccca
+acccceDGvUcccca
+accccVDGvVcccca
+acccuLDGvzHccca
+aVWVsJDGvIPVWVa
+aTOOOORlxOOOOQa
+aGGGGGoBrGGGGGa
+awEEEESbtEEEEpa
+aVMVNKDGvhfVMVa
+acccdyDGvgXccca
+accccVDGvVcccca
+acccceDGvUcccca
+accccVYGZVcccca
+aaaaaaaaaaaaaaa
+"}

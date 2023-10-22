@@ -101,6 +101,10 @@
 			A.y = teleport_y
 			A.z = teleport_z
 
+		else
+			A.x = teleport_x
+			A.y = teleport_y
+
 /* Random teleporter, teleports atoms to locations ranging from teleport_x - teleport_x_offset, etc */
 
 /obj/effect/step_trigger/teleporter/random

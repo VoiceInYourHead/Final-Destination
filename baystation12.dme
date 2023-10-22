@@ -3381,6 +3381,7 @@
 #include "interface\skin.dmf"
 #include "maps\_maps.dm"
 #include "maps\away\aaaa_event\objects\logo.dm"
+#include "maps\away\aaaa_event\objects\observation_stuff.dm"
 #include "maps\away\for_fd\corpses.dm"
 #include "maps\away\for_fd\decor.dm"
 #include "maps\away\for_fd\items.dm"

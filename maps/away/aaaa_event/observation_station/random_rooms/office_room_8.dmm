@@ -1,0 +1,98 @@
+"al" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"aS" = (/obj/effect/floor_decal/corner/black/mono,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"bm" = (/obj/effect/floor_decal/corner/black/mono,/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"bB" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/structure/filingcabinet{pixel_x = -5},/obj/structure/filingcabinet{pixel_x = 5},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"bI" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"dC" = (/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/template_noop)
+"dU" = (/obj/structure/bed/chair/office/dark{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"dW" = (/obj/effect/floor_decal/corner/black/border,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"fk" = (/obj/structure/noticeboard{dir = 4; pixel_x = -26},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"fI" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"fL" = (/obj/effect/floor_decal/corner/black/border,/obj/structure/noticeboard/anomaly{pixel_y = 25},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"gS" = (/obj/machinery/photocopier{pixel_x = 11},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"gZ" = (/obj/effect/floor_decal/corner/black/mono,/obj/machinery/papershredder{pixel_y = 10},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"hH" = (/obj/effect/floor_decal/corner/black/border{dir = 10},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"hV" = (/obj/effect/floor_decal/corner/black/border,/obj/structure/bed/chair/padded/black,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"jb" = (/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"jc" = (/obj/machinery/light{dir = 8},/obj/structure/reagent_dispensers/water_cooler{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"jE" = (/obj/effect/catwalk_plated/dark,/obj/structure/bed/chair/office/dark{dir = 1},/turf/simulated/floor/plating,/area/template_noop)
+"jL" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"kW" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"lt" = (/obj/effect/floor_decal/corner/black/mono,/obj/structure/table/standard,/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"ma" = (/obj/effect/wallframe_spawn/no_grille,/turf/simulated/floor/plating,/area/template_noop)
+"nz" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"oJ" = (/obj/structure/flora/pottedplant/orientaltree,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"oU" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"qn" = (/obj/effect/floor_decal/corner/black/border{dir = 9},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"ra" = (/obj/effect/catwalk_plated/dark,/obj/structure/bed/chair/office/dark,/turf/simulated/floor/plating,/area/template_noop)
+"rc" = (/obj/structure/filingcabinet/filingcabinet{pixel_x = 12},/obj/machinery/papershredder{pixel_x = -3; pixel_y = 2},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"ro" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"sP" = (/obj/effect/floor_decal/corner/black/border{dir = 10},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"tS" = (/obj/effect/floor_decal/corner/black/mono,/obj/machinery/photocopier,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"vm" = (/obj/effect/floor_decal/corner/black/border{dir = 6},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"vS" = (/obj/effect/catwalk_plated/dark,/obj/structure/table/standard,/obj/item/modular_computer/laptop/preset/custom_loadout/advanced{pixel_y = 9},/turf/simulated/floor/plating,/area/template_noop)
+"xj" = (/obj/effect/floor_decal/corner/black/border,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"xL" = (/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"ye" = (/turf/template_noop,/area/template_noop)
+"yF" = (/obj/structure/table/glass,/obj/item/paper_bin,/obj/item/pen/multi,/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"AT" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Cb" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/structure/filingcabinet{pixel_x = -5},/obj/structure/filingcabinet{pixel_x = 5},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"CG" = (/obj/effect/floor_decal/corner/black/border{dir = 5},/obj/structure/filingcabinet/chestdrawer,/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Dg" = (/obj/effect/floor_decal/corner/black/border{dir = 9},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Dh" = (/obj/structure/table/standard,/obj/random/junkyard/smokes,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Ef" = (/obj/effect/floor_decal/corner/black/border,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"ER" = (/obj/effect/floor_decal/corner/black/bordercorner{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Fb" = (/obj/effect/floor_decal/corner/black/mono,/obj/structure/table/standard,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"FC" = (/obj/effect/floor_decal/corner/black/border{dir = 5},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"He" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Hj" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Iv" = (/obj/effect/catwalk_plated/dark,/obj/structure/table/standard,/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,/turf/simulated/floor/plating,/area/template_noop)
+"IC" = (/obj/effect/floor_decal/corner/black/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"JF" = (/obj/effect/floor_decal/corner/black/border{dir = 5},/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"JO" = (/obj/effect/floor_decal/corner/black/border,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Kb" = (/obj/effect/floor_decal/corner/black/border,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Ky" = (/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Lt" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/structure/table/standard,/obj/machinery/photocopier/faxmachine,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"LA" = (/turf/simulated/wall/r_wall/invincible,/area/template_noop)
+"Mk" = (/obj/effect/floor_decal/corner/black/border{dir = 9},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Mn" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/structure/bed/chair/office/dark{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Mu" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/machinery/light/small{dir = 1},/obj/machinery/vending/cola{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Nd" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Ni" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen/multi,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"NI" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/structure/noticeboard{dir = 8; pixel_x = 26},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Ox" = (/obj/effect/floor_decal/corner/black/border,/obj/structure/extinguisher_cabinet{pixel_y = 29},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"OY" = (/obj/machinery/disposal,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"PD" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/structure/table/standard,/obj/random/junkyard/cash{pixel_x = 2; pixel_y = 7},/obj/random/junkyard/cash,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"PM" = (/obj/effect/floor_decal/corner/black/border,/obj/structure/extinguisher_cabinet{pixel_y = 29},/obj/structure/bed/chair/padded/black,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Qd" = (/obj/effect/floor_decal/corner/black/border{dir = 6},/obj/structure/bed/chair/office/dark{dir = 4},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"TA" = (/obj/effect/floor_decal/corner/black/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"TM" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/machinery/vending/snack{dir = 8},/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Um" = (/obj/structure/table/standard,/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"UO" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/structure/extinguisher_cabinet{pixel_y = -29},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"VM" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/machinery/light/small,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"VU" = (/obj/machinery/door/airlock/glass/command,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"VV" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/machinery/vending/coffee{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Wh" = (/obj/effect/floor_decal/corner/black/border,/obj/structure/table/glass,/obj/item/material/ashtray/plastic,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Xj" = (/obj/effect/floor_decal/corner/black/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"XD" = (/obj/machinery/light{dir = 8},/obj/machinery/libraryscanner,/obj/structure/holoplant{pixel_y = 12},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"XI" = (/obj/effect/floor_decal/corner/black/border{dir = 6},/turf/simulated/floor/tiled/dark,/area/template_noop)
+"YG" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"ZX" = (/obj/effect/floor_decal/corner/black/border{dir = 4},/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+
+(1,1,1) = {"
+yeyeyeyeyeyeyeyeyeyeyeyeyeyeye
+yeaSbIfLOxJOEfJOXjaSxLNigSkWye
+yenzJFFbKyDhjbtSMknzxLalraNIye
+yedWQdltKydUUmgZTAJOxLalIvXjye
+yeaSCbYGnzbBHjnzXjbmxLTAJOJOye
+yeLAmamamamaLAVULALALAXDxLoJye
+yeZXhVhVWhhVPMJOJOMumaDgnzFCye
+yeNddCdCaSaSaSdCdCVVmaoUdCjLye
+yeNdnznzVMnznznznzTMmahHJOXIye
+yexLxLLALAmamamamaLALAjcxLoJye
+yenzHeLAKbvmJOJOsPxjICMknznzye
+yeKyKyVUKyATFbaSXjmaroLtvSXjye
+yeJOJOLAfkMnltaSXjmaroPDjENIye
+yeOYyFLAUOCGYGnzqnfIERNircKyye
+yeyeyeyeyeyeyeyeyeyeyeyeyeyeye
+"}
