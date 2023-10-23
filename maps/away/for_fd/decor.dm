@@ -258,7 +258,7 @@
 		buckle_mob(L)
 		to_chat(L, SPAN_DANGER("You're tangled in \the [src]!"))
 
-/obj/structure/fd/bs_crystal/attackby(obj/item/I, mob/user, params)
+/obj/structure/fd/bs_vines/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/material/hatchet))
 		if(do_after(user, 80))
 			qdel(src)
