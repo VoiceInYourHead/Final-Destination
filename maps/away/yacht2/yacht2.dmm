@@ -669,7 +669,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine1)
 "bq" = (
 /obj/item/storage/secure/safe{
 	pixel_y = -24
@@ -904,7 +904,7 @@
 	},
 /obj/structure/cable/orange,
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine2)
 "bS" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -1065,7 +1065,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine2)
 "ck" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/green{
 	dir = 1
@@ -1161,7 +1161,7 @@
 	icon_state = "1-6"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine1)
 "cu" = (
 /obj/machinery/computer/ship/sensors,
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
@@ -1471,7 +1471,7 @@
 "dr" = (
 /obj/effect/paint/black,
 /turf/simulated/wall/titanium,
-/area/yacht2)
+/area/yacht2/engine2)
 "dt" = (
 /obj/machinery/power/solar/improved{
 	efficiency = 3;
@@ -1484,7 +1484,7 @@
 	icon_state = "2-9"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine1)
 "du" = (
 /obj/machinery/power/solar/improved{
 	efficiency = 3;
@@ -1497,7 +1497,7 @@
 	icon_state = "2-5"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine2)
 "dv" = (
 /obj/machinery/pointdefense_control{
 	id_tag = "pd_yacht2";
@@ -1656,7 +1656,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/yacht2/bridge)
+/area/yacht2/engine1)
 "eF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 5
@@ -2256,6 +2256,11 @@
 /obj/item/towel/random,
 /turf/simulated/floor/wood/walnut,
 /area/yacht2/pool)
+"ot" = (
+/obj/structure/wall_frame/titanium,
+/obj/effect/paint/black,
+/turf/simulated/floor/reinforced/airless,
+/area/yacht2/engine2)
 "oF" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -2371,11 +2376,15 @@
 "qI" = (
 /obj/effect/paint/black,
 /turf/simulated/wall/r_titanium,
-/area/yacht2)
+/area/yacht2/engine2)
 "qX" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood/yew,
 /area/yacht2/living2)
+"qZ" = (
+/obj/effect/paint/black,
+/turf/simulated/wall/titanium,
+/area/yacht2/engine1)
 "rd" = (
 /turf/simulated/floor/pool,
 /area/yacht2/pool)
@@ -2454,7 +2463,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/yacht2/bridge)
+/area/yacht2/engine2)
 "sh" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2554,7 +2563,7 @@
 /area/yacht2/engine2)
 "tL" = (
 /turf/simulated/floor/reinforced/airless,
-/area/yacht2)
+/area/yacht2/engine2)
 "tS" = (
 /obj/effect/paint/black,
 /turf/simulated/wall/titanium,
@@ -2614,7 +2623,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine1)
 "vv" = (
 /obj/structure/holoplant{
 	pixel_y = 15
@@ -2637,6 +2646,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/yacht2/hallway)
+"vE" = (
+/obj/structure/catwalk,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/yacht2/engine1)
 "vO" = (
 /obj/machinery/power/apc{
 	req_access = list();
@@ -2867,7 +2883,7 @@
 /obj/structure/wall_frame/titanium,
 /obj/effect/paint/black,
 /turf/simulated/floor/reinforced/airless,
-/area/yacht2)
+/area/yacht2/engine1)
 "zG" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -3012,7 +3028,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/yacht2)
+/area/yacht2/engine2)
 "Cy" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8"
@@ -3041,6 +3057,10 @@
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager,
 /turf/simulated/floor/carpet,
 /area/yacht2/library)
+"CJ" = (
+/obj/effect/paint/black,
+/turf/simulated/wall/r_titanium,
+/area/yacht2/engine1)
 "CO" = (
 /obj/item/storage/secure/safe{
 	pixel_y = -24
@@ -3499,7 +3519,7 @@
 	icon_state = "1-10"
 	},
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine2)
 "LQ" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -3726,6 +3746,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/yacht2/hallway)
+"QT" = (
+/obj/machinery/power/solar/improved{
+	efficiency = 3;
+	health = 50
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/airless,
+/area/yacht2/engine2)
 "Rk" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on,
 /turf/simulated/floor/reinforced/carbon_dioxide{
@@ -3996,7 +4026,7 @@
 /obj/structure/cable/orange,
 /obj/machinery/power/tracker,
 /turf/simulated/floor/airless,
-/area/yacht2)
+/area/yacht2/engine1)
 "Xj" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
@@ -4084,6 +4114,9 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/yacht2/hallway)
+"Yu" = (
+/turf/simulated/floor/reinforced/airless,
+/area/yacht2/engine1)
 "YJ" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 1
@@ -7750,9 +7783,9 @@ aa
 aa
 aa
 aa
-dr
-dr
-dr
+qZ
+qZ
+qZ
 aa
 aa
 aa
@@ -7851,14 +7884,14 @@ aa
 aa
 aa
 zu
-dr
-qI
+qZ
+CJ
 br
 aa
 aa
-dr
-dr
-dr
+qZ
+qZ
+qZ
 aa
 aa
 aa
@@ -7947,18 +7980,18 @@ aa
 aa
 aa
 aa
-dr
-dr
-dr
+qZ
+qZ
+qZ
 aa
 aa
 aa
 aa
-Cq
+vE
 aa
 zu
-dr
-qI
+qZ
+CJ
 br
 aa
 aa
@@ -8048,19 +8081,19 @@ aa
 aa
 aa
 zu
-dr
-qI
+qZ
+CJ
 eD
 aa
 aa
 aa
 aa
 aa
-Cq
+vE
 aa
 aa
 aa
-Cq
+vE
 aa
 aa
 aa
@@ -8151,8 +8184,8 @@ aa
 aa
 aa
 aa
-dr
-dr
+qZ
+qZ
 aa
 aa
 eG
@@ -8162,7 +8195,7 @@ eG
 eG
 eG
 aa
-Cq
+vE
 aa
 aa
 aa
@@ -8186,7 +8219,7 @@ aV
 eb
 au
 Tr
-tL
+Yu
 aa
 aa
 aa
@@ -8288,7 +8321,7 @@ ae
 jX
 bU
 Tr
-tL
+Yu
 aa
 aa
 aa
@@ -9680,7 +9713,7 @@ aa
 aa
 aa
 aa
-zu
+ot
 oO
 oO
 cN
@@ -10087,7 +10120,7 @@ aa
 aa
 aa
 aa
-zu
+ot
 dr
 qI
 sg
@@ -10200,7 +10233,7 @@ aa
 aa
 Cq
 aa
-zu
+ot
 dr
 qI
 pd
@@ -10298,7 +10331,7 @@ aa
 aa
 aa
 aa
-zu
+ot
 dr
 qI
 pd
@@ -10625,7 +10658,7 @@ rI
 tD
 tD
 tD
-vg
+QT
 LM
 aa
 aa

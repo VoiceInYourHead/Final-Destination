@@ -2,8 +2,8 @@
 #include "facility_presets.dm"
 
 /obj/effect/overmap/visitable/sector/facility
-	name = "facility"
-	desc = "This looks like under-(space?)-ground base."
+	name = "Research Facility"
+	desc = "This looks like under-(space?)-ground base. Station-wide distress beacon transmitting their codes."
 	icon_state = "station"
 	known = 1
 
@@ -87,13 +87,12 @@
 	if(isnull(loc))
 		return
 
-	var/build_path = pickweight(spawn_choices())
-	while(how_many >= 0)
+	for(how_many, how_many >= 0, how_many--)
+		var/build_path = pickweight(spawn_choices())
 		var/atom/A = new build_path(src.loc)
 		if(pixel_x || pixel_y)
 			A.pixel_x = pixel_x
 			A.pixel_y = pixel_y
-		how_many--
 		return A
 /*
 	for(how_many, how_many >= 0, how_many--)
@@ -149,9 +148,11 @@
 	spawn_nothing_percentage = 50
 
 /obj/random/facility/mercenary/spawn_choices()
-	return list(/mob/living/simple_animal/hostile/syndicate/facility/melee,
-				/mob/living/simple_animal/hostile/syndicate/facility/ranged1,
-				/mob/living/simple_animal/hostile/syndicate/facility/ranged2)
+	return list(/mob/living/simple_animal/hostile/syndicate/facility/melee = 5,
+				/mob/living/simple_animal/hostile/syndicate/facility/ranged1 = 3,
+				/mob/living/simple_animal/hostile/syndicate/facility/ranged2 = 2,
+				/mob/living/simple_animal/hostile/syndicate/facility/ranged3 = 4,
+				/mob/living/simple_animal/hostile/syndicate/facility/ranged4 = 5)
 
 
 //	G U N S
@@ -263,8 +264,8 @@
 	response_harm = "hits"
 	speed = 0
 	grab_resist = 80
-	maxHealth = 150
-	health = 150
+	maxHealth = 100
+	health = 100
 	flash_vulnerability = 0
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/punch
@@ -310,8 +311,9 @@
 	weapon1 = /obj/item/material/hatchet/machete
 	maxHealth = 200
 	health = 200
-	speed = -3
-	move_speed = 2
+	speed = -5
+	move_speed = 1
+	taser_kill = 0
 	status_flags = 0
 
 /mob/living/simple_animal/hostile/syndicate/facility/melee/attackby(var/obj/item/O as obj, var/mob/user as mob)
@@ -340,37 +342,86 @@
 
 /mob/living/simple_animal/hostile/syndicate/facility/ranged1
 	ranged = 1
-	rapid = 0
-	health = 100
-	maxHealth = 100
+	health = 85
+	maxHealth = 85
+	taser_kill = 0
 	icon_state = "mercenary_ranged1"
 	icon_living = "mercenary_ranged1"
 	casingtype = /obj/item/ammo_casing/pistol/used
 	projectilesound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol
+	needs_reload = TRUE
+	reload_max = 15
+	reload_count = 0
+	reload_time = 3 SECONDS
 
 	weapon1 = /obj/item/gun/projectile/pistol/military/broken
 
 /mob/living/simple_animal/hostile/syndicate/facility/ranged2
 	ranged = 1
-	rapid = 0
-	health = 100
-	maxHealth = 100
+	health = 70
+	maxHealth = 70
+	taser_kill = 0
 	icon_state = "mercenary_ranged2"
 	icon_living = "mercenary_ranged2"
 	casingtype = /obj/item/ammo_casing/pistol/used
 	projectilesound = 'sound/weapons/gunshot/gunshot8.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol/strong
+	needs_reload = TRUE
+	reload_max = 25
+	reload_count = 0
+	reload_time = 4 SECONDS
 
 	weapon1 = /obj/item/gun/projectile/automatic/sec_smg/broken
+
+/mob/living/simple_animal/hostile/syndicate/facility/ranged3
+	ranged = 1
+	rapid = 1
+	icon_state = "mercenary_ranged3"
+	icon_living = "mercenary_ranged3"
+	casingtype = null
+	projectilesound = 'sound/weapons/Laser.ogg'
+	projectiletype = /obj/item/projectile/beam
+
+	weapon1 = /obj/item/gun/energy/retro/broken
+
+/mob/living/simple_animal/hostile/syndicate/facility/ranged4
+	ranged = 1
+	rapid = 1
+	icon_state = "mercenary_ranged4"
+	icon_living = "mercenary_ranged4"
+	casingtype = null
+	projectilesound = 'sound/weapons/Laser.ogg'
+	projectiletype = /obj/item/projectile/beam/midlaser
+
+	weapon1 = /obj/item/gun/energy/laser/broken
 
 /obj/item/material/hatchet/machete/facility
 	name = "mercenary machete"
 	force = 20
+	force_multiplier = 1
+	max_force = 20
 	armor_penetration = 80
 
 /obj/item/gun/projectile/pistol/military/broken
 	jam_chance = 100
+	desc = "Its broken."
 
 /obj/item/gun/projectile/automatic/sec_smg/broken
 	jam_chance = 100
+	desc = "Its broken."
+
+/obj/item/gun/energy/gun/broken
+	desc = "Its broken."
+	charge_cost = 190
+	max_shots = 0
+
+/obj/item/gun/energy/retro/broken
+	desc = "Its broken."
+	charge_cost = 190
+	max_shots = 0
+
+/obj/item/gun/energy/laser/broken
+	desc = "Its broken."
+	charge_cost = 190
+	max_shots = 0
