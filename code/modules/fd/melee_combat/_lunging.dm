@@ -33,6 +33,18 @@
 		user.visible_message("<span class = 'danger'>[user] lunges forward, [src] in hand, ready to strike!</span>")
 		var/image/user_image = image(user)
 		user_image.dir = user.dir
+		for(var/i = 0 to get_dist(user,target))
+			var/obj/after_image = new /obj/effect/esword_path
+			if(i == 0)
+				after_image.loc = user.loc
+			else
+				after_image.loc = get_step(user,get_dir(user,target))
+				if(!user.Move(after_image.loc))
+					break
+			after_image.dir = user.dir
+			after_image.overlays += user_image
+			spawn(5)
+				qdel(after_image)
 		if(user.Adjacent(target) && ismob(target))
 			attack(target,user)
 		var/mob/living/carbon/human/h = user
@@ -54,3 +66,10 @@
 		melee_strike.do_pre_strike(user,target,src,click_params)
 	else
 		do_lunge(target,user,is_adjacent,click_params)
+
+//похоже, что без этой хуйни остальное просто не будет работать! вот так прикол!
+
+/obj/effect/esword_path
+	name = "displaced air"
+	icon = null
+	icon_state = null
