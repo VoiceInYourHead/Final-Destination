@@ -32,7 +32,7 @@
 "ki" = (/obj/structure/bed/sofa/black{dir = 9},/turf/simulated/floor/tiled/monotile,/area/template_noop)
 "kB" = (/obj/effect/floor_decal/corner/red{dir = 5},/obj/machinery/computer/modular/preset/security,/turf/simulated/floor/tiled/dark,/area/map_template/facility/room20/exit)
 "kC" = (/obj/random/trash,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
-"kL" = (/obj/effect/bump_teleporter{name = "bump-teleporter to ending"; id_target = "facility_hangar_ending"},/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/reinforced,/area/map_template/facility/room20/exit)
+"kL" = (/obj/effect/bump_teleporter{name = "bump-teleporter to ending"; id_target = "facility_hangar_ending"},/obj/effect/floor_decal/industrial/warning/fulltile,/obj/machinery/tele_pad{density = 0; icon_state = "pad_active"; use_power = 0},/turf/simulated/floor/reinforced,/area/map_template/facility/room20/exit)
 "kV" = (/obj/structure/bed/chair/office/comfy/red{dir = 8},/turf/simulated/floor/tiled/dark,/area/map_template/facility/room20/exit)
 "lr" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/beige{dir = 6},/obj/random/trash,/turf/simulated/floor/tiled,/area/template_noop)
 "ls" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/red{dir = 6},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark,/area/map_template/facility/room20/exit)
