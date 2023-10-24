@@ -35,7 +35,7 @@
 
 	return melee_strike
 
-/obj/item/verb/verb_swap_stances()
+/obj/item/proc/verb_swap_stances()
 	set name = "Поменять стойку"
 	set category = "Object"
 	var/mob/living/carbon/human/user = usr
@@ -46,7 +46,7 @@
 
 /obj/item/proc/swap_stances(var/mob/user)
 	if(!melee_strikes || melee_strikes.len == 1)
-		verbs -= /obj/item/verb/verb_swap_stances
+		verbs -= /obj/item/proc/verb_swap_stances
 		return
 	var/datum/melee_strike/stance_curr = melee_strikes[1]
 	melee_strikes -= stance_curr
@@ -61,16 +61,16 @@
 /obj/item/equipped(var/mob/living/carbon/human/user)
 	. = ..()
 	if(src in list(user.l_hand,user.r_hand) && has_melee_strike(user))
-		verbs |= /obj/item/verb/verb_swap_stances
+		verbs |= /obj/item/proc/verb_swap_stances
 	else
-		verbs -= /obj/item/verb/verb_swap_stances
+		verbs -= /obj/item/proc/verb_swap_stances
 
 /obj/item/dropped(mob/user as mob)
 	. = ..()
 	if(src in list(user.l_hand,user.r_hand) && has_melee_strike(user))
-		verbs |= /obj/item/verb/verb_swap_stances
+		verbs |= /obj/item/proc/verb_swap_stances
 	else
-		verbs -= /obj/item/verb/verb_swap_stances
+		verbs -= /obj/item/proc/verb_swap_stances
 
 /////////////////////////////////////////////////////////////////
 
