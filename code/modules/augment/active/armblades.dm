@@ -11,6 +11,8 @@
 	force_multiplier = 0.2
 	sharp = TRUE
 	edge = TRUE
+	lunge_dist = 4
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	attack_verb = list("stabbed", "sliced", "cut")
 
 
@@ -30,6 +32,7 @@
 	name = "combat claws"
 	desc = "These do not grow back."
 	base_parry_chance = 40
+	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks)
 	force_multiplier = 0.3
 
 
@@ -66,6 +69,7 @@
 	base_parry_chance = 0
 	force_multiplier = 0.2
 	attack_cooldown_modifier = -1
+	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks,/datum/melee_strike/swipe_strike/harrying_strike)
 	default_material = MATERIAL_PLASTEEL
 
 	/// SMALL prevents dismembering limbs - only hands & feet

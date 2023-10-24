@@ -1858,6 +1858,8 @@
 #include "code\modules\fd\intel\disks.dm"
 #include "code\modules\fd\intel\landmarks.dm"
 #include "code\modules\fd\intel\searcher.dm"
+#include "code\modules\fd\melee_combat\_lunging.dm"
+#include "code\modules\fd\melee_combat\base.dm"
 #include "code\modules\flufftext\TextFilters.dm"
 #include "code\modules\food\recipes_microwave.dm"
 #include "code\modules\games\boardgame.dm"

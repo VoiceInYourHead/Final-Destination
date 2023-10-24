@@ -11,6 +11,8 @@
 	throwforce = 10
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	lunge_dist = 3
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 
 /obj/item/melee/cultblade/attack(mob/living/M, mob/living/user, var/target_zone)
 	if(iscultist(user))

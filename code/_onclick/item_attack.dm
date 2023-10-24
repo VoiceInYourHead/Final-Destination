@@ -27,6 +27,8 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /obj/item/proc/resolve_attackby(atom/A, mob/user, var/click_params)
 	if(!(item_flags & ITEM_FLAG_NO_PRINT))
 		add_fingerprint(user)
+	if(has_melee_strike(user))
+		return melee_strike.do_pre_strike(user,A,src,click_params)
 	return A.attackby(src, user, click_params)
 
 // No comment

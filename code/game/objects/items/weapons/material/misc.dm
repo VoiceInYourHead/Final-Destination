@@ -15,7 +15,7 @@
 	throw_speed = 6
 	var/spent
 	worth_multiplier = 15
-
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed)
 
 /obj/item/material/harpoon/bomb
 	name = "explosive harpoon"
@@ -63,6 +63,8 @@
 	attack_verb = list("chopped", "torn", "cut")
 	applies_material_colour = 0
 	hitsound = "chop"
+	lunge_dist = 2
+	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks)
 
 /obj/item/material/hatchet/unbreakable
 	unbreakable = TRUE
@@ -79,6 +81,8 @@
 	attack_cooldown_modifier = 1
 	max_force = 20
 	force_multiplier = 0.2
+	lunge_dist = 4
+	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks,/datum/melee_strike/swipe_strike/mixed_combo)
 
 /obj/item/material/hatchet/machete/unbreakable
 	unbreakable = TRUE
@@ -134,6 +138,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 2)
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	worth_multiplier = 20
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash)
 
 
 /obj/item/material/cross

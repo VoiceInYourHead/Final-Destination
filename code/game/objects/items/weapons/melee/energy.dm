@@ -137,6 +137,16 @@
 	hitsound = 'sound/weapons/blade1.ogg'
 	var/blade_color
 
+/obj/item/melee/energy/sword/activate(mob/living/user)
+	. = ..()
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
+	lunge_dist = 4
+
+/obj/item/melee/energy/sword/deactivate(mob/living/user)
+	. = ..()
+	melee_strikes = list()
+	lunge_dist = 0
+
 /obj/item/melee/energy/sword/Initialize()
 	if(!blade_color)
 		blade_color = pick("red","blue","green","purple")
@@ -209,6 +219,8 @@
 	active_throwforce = 1  //Throwing or dropping the item deletes it.
 	throw_speed = 1
 	throw_range = 1
+	lunge_dist = 4
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	w_class = ITEM_SIZE_TINY //technically it's just energy or something, I dunno
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_BLOOD
 	active_attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -288,12 +300,14 @@
 	active_force = 40
 	active_throwforce = 15
 	lighting_color = COLOR_ORANGE
-	force = 5
+	force = 15
 	throwforce = 2
+	lunge_dist = 3
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_MAGNET = 3)
 	active_attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/blade1.ogg'
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 
 /obj/item/melee/energy/minuano
 	name = "high-frequency katana"
@@ -317,11 +331,13 @@
 	force = 20
 	throwforce = 10
 	armor_penetration = 0
+	lunge_dist = 4
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 5, TECH_POWER = 5)
 	active_attack_verb = list("attacked", "slash", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/blade1.ogg'
 	slot_flags = SLOT_BELT
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	base_parry_chance = 0
 
 /obj/item/melee/energy/minuano/proc/active()

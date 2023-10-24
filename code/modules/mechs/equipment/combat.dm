@@ -243,6 +243,8 @@
 	force_multiplier = 0.75 // Equals 20 AP with 25 force
 	unbreakable = TRUE //Else we need a whole system for replacement blades
 	attack_cooldown_modifier = 10
+	lunge_dist = 0
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_slash,/datum/melee_strike/swipe_strike/mixed_combo)
 
 /obj/item/material/hatchet/machete/mech/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()

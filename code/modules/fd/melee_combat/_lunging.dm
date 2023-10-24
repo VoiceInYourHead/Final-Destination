@@ -1,0 +1,56 @@
+
+/obj/item
+	var/parry_slice_objects = 0 //Does this melee weapon, when parried, slice through the object?
+
+	var/lunge_dist = 0
+	var/lunge_delay = 5 SECONDS
+	var/next_leapwhen = 0
+
+/obj/item/proc/get_lunge_dist(var/mob/user)
+	return lunge_dist
+
+/obj/item/proc/do_lunge(var/atom/target,var/mob/user,var/is_adjacent,var/click_params)
+	if(get_lunge_dist(user) == 0 || is_adjacent)
+		return
+	if(world.time < next_leapwhen)
+		to_chat(user,"<span class = 'notice'>You're still recovering from the last lunge!</span>")
+		return
+	if(!istype(target,/mob))
+		if(istype(target,/turf))
+			var/turf/targ_turf = target
+			var/list/turf_mobs = list()
+			for(var/mob/m in targ_turf.contents)
+				turf_mobs += m
+			if(turf_mobs.len > 0)
+				target = pick(turf_mobs)
+			else
+				to_chat(user,"<span class = 'notice'>You can't leap at non-mobs!</span>")
+				return
+		else
+			to_chat(user,"<span class = 'notice'>You can't leap at non-mobs!</span>")
+			return
+	if(get_dist(user,target) <= get_lunge_dist(user))
+		user.visible_message("<span class = 'danger'>[user] lunges forward, [src] in hand, ready to strike!</span>")
+		var/image/user_image = image(user)
+		user_image.dir = user.dir
+		if(user.Adjacent(target) && ismob(target))
+			attack(target,user)
+		var/mob/living/carbon/human/h = user
+		if(h)
+			var/obj/item/lefthand = h.r_hand
+			var/obj/item/righthand = h.l_hand
+			if(istype(lefthand) && lefthand.lunge_dist)
+				lefthand.next_leapwhen = world.time + lunge_delay
+			if(istype(righthand) && righthand.lunge_dist)
+				righthand.next_leapwhen = world.time + lunge_delay
+
+		else
+			next_leapwhen = world.time + lunge_delay
+
+
+/obj/item/afterattack(var/atom/target,var/mob/user,var/is_adjacent,var/click_params)
+	. = ..()
+	if(has_melee_strike() && (is_adjacent || (melee_strike.strike_range >= get_dist( get_turf(user),target))))
+		melee_strike.do_pre_strike(user,target,src,click_params)
+	else
+		do_lunge(target,user,is_adjacent,click_params)

@@ -84,6 +84,7 @@
 	applies_material_colour = 0
 	worth_multiplier = 31
 	base_parry_chance = 15
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_slash)
 
 /obj/item/material/twohanded/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
@@ -121,6 +122,9 @@
 	does_spin = FALSE
 	worth_multiplier = 7
 	base_parry_chance = 30
+	lunge_dist = 2
+	lunge_delay = 10 SECONDS
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash)
 
 /obj/item/material/twohanded/spear/shatter(var/consumed)
 	if(!consumed)

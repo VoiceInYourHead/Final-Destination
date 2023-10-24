@@ -233,20 +233,20 @@ This saves us from having to call add_fingerprint() any time something is put in
 	if(!has_organ_for_slot(slot)) return
 	if(!species || !species.hud || !(slot in species.hud.equip_slots)) return
 	W.forceMove(src)
-
+	var/call_equipped = 0
 	var/obj/item/old_item = get_equipped_item(slot)
 
 	switch(slot)
 		if(slot_back)
 			src.back = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_back(redraw_mob)
 		if(slot_wear_mask)
 			src.wear_mask = W
 			if(wear_mask.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR))
 				update_hair(redraw_mob)	//rebuild hair
 				update_inv_ears(0)
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_wear_mask(redraw_mob)
 		if(slot_handcuffed)
 			src.handcuffed = W
@@ -256,45 +256,45 @@ This saves us from having to call add_fingerprint() any time something is put in
 			update_inv_handcuffed(redraw_mob)
 		if(slot_l_hand)
 			src.l_hand = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			W.screen_loc = ui_lhand
 			update_inv_l_hand(redraw_mob)
 			if(hand)
 				W.on_active_hand(src)
 		if(slot_r_hand)
 			src.r_hand = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			W.screen_loc = ui_rhand
 			update_inv_r_hand(redraw_mob)
 			if(!hand)
 				W.on_active_hand(src)
 		if(slot_belt)
 			src.belt = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_belt(redraw_mob)
 		if(slot_wear_id)
 			src.wear_id = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_wear_id(redraw_mob)
 		if(slot_l_ear)
 			src.l_ear = W
 			if(l_ear.slot_flags & SLOT_TWOEARS)
 				src.r_ear = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_ears(redraw_mob)
 		if(slot_r_ear)
 			src.r_ear = W
 			if(r_ear.slot_flags & SLOT_TWOEARS)
 				src.l_ear = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_ears(redraw_mob)
 		if(slot_glasses)
 			src.glasses = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_glasses(redraw_mob)
 		if(slot_gloves)
 			src.gloves = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_gloves(redraw_mob)
 		if(slot_head)
 			src.head = W
@@ -304,11 +304,11 @@ This saves us from having to call add_fingerprint() any time something is put in
 				update_inv_wear_mask(0)
 			if(istype(W,/obj/item/clothing/head/kitty))
 				W.update_icon(src)
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_head(redraw_mob)
 		if(slot_shoes)
 			src.shoes = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_shoes(redraw_mob)
 		if(slot_wear_suit)
 			src.wear_suit = W
@@ -318,30 +318,30 @@ This saves us from having to call add_fingerprint() any time something is put in
 				update_inv_gloves(0)
 			if(wear_suit.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform(0)
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_wear_suit(redraw_mob)
 		if(slot_w_uniform)
 			src.w_uniform = W
 			if(w_uniform.flags_inv & HIDESHOES)
 				update_inv_shoes(0)
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_w_uniform(redraw_mob)
 		if(slot_l_store)
 			src.l_store = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_pockets(redraw_mob)
 		if(slot_r_store)
 			src.r_store = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_pockets(redraw_mob)
 		if(slot_s_store)
 			src.s_store = W
-			W.equipped(src, slot)
+			call_equipped = 1
 			update_inv_s_store(redraw_mob)
 		if(slot_in_backpack)
 			if(src.get_active_hand() == W)
 				src.remove_from_mob(W)
-			W.forceMove(src.back)
+			call_equipped = 1
 		if(slot_tie)
 			var/obj/item/clothing/under/uniform = w_uniform
 			if (uniform)
@@ -360,6 +360,9 @@ This saves us from having to call add_fingerprint() any time something is put in
 		update_inv_r_hand()
 		if(l_hand)
 			l_hand.update_twohanding()
+
+	if(call_equipped)
+		W.equipped(src, slot)
 
 	W.hud_layerise()
 	for(var/s in species.hud.gear)

@@ -16,6 +16,8 @@
 	base_parry_chance = 50
 	melee_accuracy_bonus = 10
 	worth_multiplier = 30
+	lunge_dist = 3
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 
 /obj/item/material/sword/can_embed()
 	return FALSE
