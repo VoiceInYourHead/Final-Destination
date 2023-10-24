@@ -11,6 +11,7 @@
 #define STRIKE_MULT_SPEED_SUPERSLOW 1.5
 
 /obj/item
+	var/have_stances = FALSE
 	var/list/melee_strikes = null //лист всех датумов ударов у предмета
 	var/datum/melee_strike/melee_strike = null
 
@@ -35,18 +36,22 @@
 
 	return melee_strike
 
-/obj/item/proc/verb_swap_stances()
+/obj/item/attack_self(mob/living/carbon/user)
+	. = ..()
+
+	if(have_stances)
+		swap_stances(user)
+
+/*/obj/item/proc/verb_swap_stances()
 	set name = "Поменять стойку"
 	set category = "Object"
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user)) return
-	if(user.stat) return
-
-	swap_stances(user)
+	if(user.stat) return*/
 
 /obj/item/proc/swap_stances(var/mob/user)
 	if(!melee_strikes || melee_strikes.len == 1)
-		verbs -= /obj/item/proc/verb_swap_stances
+//		verbs -= /obj/item/proc/verb_swap_stances
 		return
 	var/datum/melee_strike/stance_curr = melee_strikes[1]
 	melee_strikes -= stance_curr
@@ -58,7 +63,7 @@
 		return
 	stance_curr.strike_active(user)
 
-/obj/item/equipped(var/mob/living/carbon/human/user)
+/*/obj/item/equipped(var/mob/living/carbon/human/user)
 	. = ..()
 	if(src in list(user.l_hand,user.r_hand) && has_melee_strike(user))
 		verbs |= /obj/item/proc/verb_swap_stances
@@ -70,7 +75,7 @@
 	if(src in list(user.l_hand,user.r_hand) && has_melee_strike(user))
 		verbs |= /obj/item/proc/verb_swap_stances
 	else
-		verbs -= /obj/item/proc/verb_swap_stances
+		verbs -= /obj/item/proc/verb_swap_stances*/
 
 /////////////////////////////////////////////////////////////////
 
