@@ -11,6 +11,7 @@
 	force_multiplier = 0.2
 	sharp = TRUE
 	edge = TRUE
+	have_stances = TRUE
 	lunge_dist = 4
 	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	attack_verb = list("stabbed", "sliced", "cut")

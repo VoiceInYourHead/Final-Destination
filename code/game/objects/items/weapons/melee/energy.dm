@@ -147,6 +147,12 @@
 	melee_strikes = list()
 	lunge_dist = 0
 
+/obj/item/melee/energy/sword/AltClick(mob/user)
+	if(have_stances)
+		swap_stances(user)
+
+	..()
+
 /obj/item/melee/energy/sword/Initialize()
 	if(!blade_color)
 		blade_color = pick("red","blue","green","purple")
@@ -219,6 +225,7 @@
 	active_throwforce = 1  //Throwing or dropping the item deletes it.
 	throw_speed = 1
 	throw_range = 1
+	have_stances = TRUE
 	lunge_dist = 4
 	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	w_class = ITEM_SIZE_TINY //technically it's just energy or something, I dunno
@@ -227,6 +234,12 @@
 	hitsound = 'sound/weapons/blade1.ogg'
 	var/mob/living/creator
 	var/datum/effect/effect/system/spark_spread/spark_system
+
+/obj/item/melee/energy/blade/AltClick(mob/user)
+	if(have_stances)
+		swap_stances(user)
+
+	..()
 
 /obj/item/melee/energy/blade/New()
 	..()
@@ -307,7 +320,14 @@
 	origin_tech = list(TECH_MAGNET = 3)
 	active_attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/blade1.ogg'
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
+
+/obj/item/melee/energy/machete/sundowner/AltClick(mob/user)
+	if(have_stances)
+		swap_stances(user)
+
+	..()
 
 /obj/item/melee/energy/minuano
 	name = "high-frequency katana"
@@ -337,8 +357,15 @@
 	active_attack_verb = list("attacked", "slash", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/blade1.ogg'
 	slot_flags = SLOT_BELT
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	base_parry_chance = 0
+
+/obj/item/melee/energy/minuano/AltClick(mob/user)
+	if(have_stances)
+		swap_stances(user)
+
+	..()
 
 /obj/item/melee/energy/minuano/proc/active()
 	if(active)

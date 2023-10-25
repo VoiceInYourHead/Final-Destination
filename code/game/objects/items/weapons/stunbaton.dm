@@ -256,6 +256,7 @@
 	hitcost = 25
 	attack_verb = list("poked")
 	slot_flags = null
+	have_stances = TRUE
 	lunge_dist = 2
 	lunge_delay = 10 SECONDS
 	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed)

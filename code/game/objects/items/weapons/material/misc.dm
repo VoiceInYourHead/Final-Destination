@@ -15,6 +15,7 @@
 	throw_speed = 6
 	var/spent
 	worth_multiplier = 15
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed)
 
 /obj/item/material/harpoon/bomb
@@ -63,6 +64,7 @@
 	attack_verb = list("chopped", "torn", "cut")
 	applies_material_colour = 0
 	hitsound = "chop"
+	have_stances = TRUE
 	lunge_dist = 2
 	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks)
 
@@ -138,6 +140,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 2)
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	worth_multiplier = 20
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash)
 
 

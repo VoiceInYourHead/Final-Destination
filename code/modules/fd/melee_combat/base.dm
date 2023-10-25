@@ -36,18 +36,19 @@
 
 	return melee_strike
 
-/obj/item/attack_self(mob/living/carbon/user)
+/obj/item/melee/attack_self(mob/living/carbon/user)
+	. = ..()
+
+	var/obj/item/melee/I
+
+	if(have_stances && !istype(I, /obj/item/melee/energy/))
+		swap_stances(user)
+
+/obj/item/material/attack_self(mob/living/carbon/user)
 	. = ..()
 
 	if(have_stances)
 		swap_stances(user)
-
-/*/obj/item/proc/verb_swap_stances()
-	set name = "Поменять стойку"
-	set category = "Object"
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user)) return
-	if(user.stat) return*/
 
 /obj/item/proc/swap_stances(var/mob/user)
 	if(!melee_strikes || melee_strikes.len == 1)
@@ -62,20 +63,6 @@
 		to_chat(user,"<span class = 'danger'>Вы приняли стандартную стойку для вашего оружия</span>")
 		return
 	stance_curr.strike_active(user)
-
-/*/obj/item/equipped(var/mob/living/carbon/human/user)
-	. = ..()
-	if(src in list(user.l_hand,user.r_hand) && has_melee_strike(user))
-		verbs |= /obj/item/proc/verb_swap_stances
-	else
-		verbs -= /obj/item/proc/verb_swap_stances
-
-/obj/item/dropped(mob/user as mob)
-	. = ..()
-	if(src in list(user.l_hand,user.r_hand) && has_melee_strike(user))
-		verbs |= /obj/item/proc/verb_swap_stances
-	else
-		verbs -= /obj/item/proc/verb_swap_stances*/
 
 /////////////////////////////////////////////////////////////////
 
@@ -122,7 +109,6 @@
 		striker.force *= strike_dmg
 	if(strike_speed != 1)
 		striker.attack_cooldown *= strike_speed
-
 
 	if(!strike_use.do_strike(user,target,striker,click_params))
 		strike_invalid_target(user,striker)
@@ -189,6 +175,26 @@
 		return 0
 
 	return 1
+
+/datum/melee_strike/blunt_strike/do_strike(var/mob/user,var/turf/target,var/obj/item/striker,var/click_params)
+	if(istype(target))
+		var/list/turf_mobs = list()
+		for(var/mob/living/m in target.contents)
+			turf_mobs += m
+		if(turf_mobs.len != 0)
+			target = pick(turf_mobs)
+		else
+			return 0
+
+	if(ismob(target) && target != user)
+		do_strike_targ(user,target,striker,click_params)
+
+	return 1
+
+/datum/melee_strike/blunt_strike/do_strike_targ(var/mob/user,var/mob/living/m,var/obj/item/striker,var/click_params)
+	var/throw_dir = get_dir(user,m)
+	m.attackby(striker, user, click_params)
+	m.throw_at(get_edge_target_turf(m, throw_dir),2,4,user)
 
 //НОЖИ И ДРУГОЕ КОРОТКОЕ РЕЖУЩЕЕ
 
@@ -356,6 +362,25 @@
 	strike_verbs = list("smashed","crushed","whacked")
 	next_strike = /datum/melee_strike/swipe_strike/polearm_slash/hammer
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_slash/hammer
+
+//ДУБИНЫ
+
+//Запускаем мяч на орбиту
+
+/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
+	strike_dmg = STRIKE_MULT_DMG_LIGHT
+	strike_speed = STRIKE_MULT_SPEED_MEDIUM
+	strike_verbs = list("smashed","crushed","whacked")
+	strike_switch_text = "Вы разминаетесь, готовясь к 'отбиванию мяча'..."
+	next_strike = /datum/melee_strike/blunt_strike/mixed_combo
+	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
+
+/datum/melee_strike/blunt_strike/mixed_combo
+	strike_dmg = STRIKE_MULT_DMG_HEAVY
+	strike_speed = STRIKE_MULT_SPEED_SLOW
+	strike_verbs = list("smashed","crushed","whacked")
+	next_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
+	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
 
 #undef STRIKE_MULT_DMG_LIGHT
 #undef STRIKE_MULT_DMG_MEDIUM

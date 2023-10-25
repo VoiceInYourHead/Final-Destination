@@ -55,6 +55,9 @@
 	applies_material_name = FALSE
 	applies_material_colour = FALSE
 	w_class = ITEM_SIZE_NORMAL
+	lunge_dist = 2
+	have_stances = TRUE
+	melee_strikes = list(/datum/melee_strike/swipe_strike/harrying_strike,/datum/melee_strike/swipe_strike/mixed_combo)
 
 //kitchen knives
 /obj/item/material/knife/kitchen
@@ -87,6 +90,7 @@
 	force_multiplier = 0.2
 	base_parry_chance = 30
 	lunge_dist = 2
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks,/datum/melee_strike/swipe_strike/harrying_strike)
 	w_class = ITEM_SIZE_SMALL
 
@@ -104,7 +108,8 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	base_parry_chance = 30
-	lunge_dist = 1
+	lunge_dist = 2
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/harrying_strike,/datum/melee_strike/swipe_strike/mixed_combo)
 	applies_material_colour = FALSE
 	applies_material_name = FALSE

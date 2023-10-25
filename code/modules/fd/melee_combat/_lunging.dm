@@ -10,6 +10,8 @@
 	return lunge_dist
 
 /obj/item/proc/do_lunge(var/atom/target,var/mob/user,var/is_adjacent,var/click_params)
+	if(!user.skill_check(SKILL_HAULING, SKILL_TRAINED))
+		return
 	if(get_lunge_dist(user) == 0 || is_adjacent)
 		return
 	if(world.time < next_leapwhen)
