@@ -56,6 +56,7 @@
 	applies_material_colour = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	lunge_dist = 2
+	fail_chance = 60
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/harrying_strike,/datum/melee_strike/swipe_strike/mixed_combo)
 
@@ -73,6 +74,8 @@
 	armor_penetration = 5
 	force_multiplier = 0.18
 	lunge_dist = 1
+	fail_chance = 30
+	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/harrying_strike,/datum/melee_strike/swipe_strike/mixed_combo)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
@@ -90,6 +93,7 @@
 	force_multiplier = 0.2
 	base_parry_chance = 30
 	lunge_dist = 2
+	fail_chance = 40
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks,/datum/melee_strike/swipe_strike/harrying_strike)
 	w_class = ITEM_SIZE_SMALL
@@ -109,6 +113,7 @@
 	icon_state = "render"
 	base_parry_chance = 30
 	lunge_dist = 2
+	fail_chance = 60
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/harrying_strike,/datum/melee_strike/swipe_strike/mixed_combo)
 	applies_material_colour = FALSE

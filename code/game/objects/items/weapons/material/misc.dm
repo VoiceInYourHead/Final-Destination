@@ -65,6 +65,7 @@
 	applies_material_colour = 0
 	hitsound = "chop"
 	have_stances = TRUE
+	fail_chance = 20
 	lunge_dist = 2
 	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks)
 
@@ -84,6 +85,7 @@
 	max_force = 20
 	force_multiplier = 0.2
 	lunge_dist = 4
+	fail_chance = 40
 	melee_strikes = list(/datum/melee_strike/precise_strike/fast_attacks,/datum/melee_strike/swipe_strike/mixed_combo)
 
 /obj/item/material/hatchet/machete/unbreakable
@@ -140,6 +142,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 2)
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	worth_multiplier = 20
+	fail_chance = 70
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash)
 

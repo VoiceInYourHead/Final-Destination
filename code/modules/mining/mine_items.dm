@@ -154,6 +154,15 @@
 	matter = list(MATERIAL_STEEL = 50)
 	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
 	edge = TRUE
+	fail_chance = 30
+	have_stances = TRUE
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo)
+
+/obj/item/shovel/attack_self(mob/living/carbon/user)
+	. = ..()
+
+	if(have_stances)
+		swap_stances(user)
 
 /obj/item/shovel/spade
 	name = "spade"

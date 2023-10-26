@@ -12,6 +12,7 @@
 
 /obj/item
 	var/have_stances = FALSE
+	var/fail_chance = 50
 	var/list/melee_strikes = null //лист всех датумов ударов у предмета
 	var/datum/melee_strike/melee_strike = null
 
@@ -79,6 +80,7 @@
 	var/chain_timeframe = 2 SECONDS
 	var/chain_expire_at = 0
 	var/chain_base_strike = null
+	var/stamina_cost = 0
 
 /datum/melee_strike/proc/strike_active(var/mob/user)
 	if(strike_switch_text)
@@ -120,7 +122,13 @@
 	return 1
 
 /datum/melee_strike/proc/do_strike_targ(var/mob/user,var/mob/living/m,var/obj/item/striker,var/click_params)
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
+		return FALSE
+
 	m.attackby(striker, user, click_params)
+	if(stamina_cost)
+		user.adjust_stamina(stamina_cost)
 
 /datum/melee_strike/proc/do_strike(var/mob/user,var/atom/target,var/obj/item/striker,var/click_params)
 
@@ -193,8 +201,15 @@
 
 /datum/melee_strike/blunt_strike/do_strike_targ(var/mob/user,var/mob/living/m,var/obj/item/striker,var/click_params)
 	var/throw_dir = get_dir(user,m)
+
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
+		return FALSE
+
 	m.attackby(striker, user, click_params)
 	m.throw_at(get_edge_target_turf(m, throw_dir),2,4,user)
+	if(stamina_cost)
+		user.adjust_stamina(stamina_cost)
 
 //НОЖИ И ДРУГОЕ КОРОТКОЕ РЕЖУЩЕЕ
 
@@ -206,6 +221,7 @@
 	strike_verbs = list("slashed","sliced","cut")
 	next_strike = /datum/melee_strike/precise_strike/fast_attacks/c1
 	chain_base_strike = /datum/melee_strike/precise_strike/fast_attacks
+	stamina_cost = 5
 
 /datum/melee_strike/precise_strike/fast_attacks/c1
 	strike_switch_text = null
@@ -223,6 +239,7 @@
 	strike_switch_text = "Вы готовитесь проткнуть вашу цель!"
 	//Позволяет повторять данное комбо до бесконечности, если хватит сноровки. 28 УДАРОВ НОЖОМ, ТЫ ДЕЙСТВОВАЛ НАВЕРНЯКА?
 	next_strike = /datum/melee_strike/precise_strike/fast_attacks
+	stamina_cost = 10
 
 //Один взмах
 
@@ -231,6 +248,7 @@
 	strike_speed = STRIKE_MULT_SPEED_MEDIUM
 	strike_verbs = list("shallowly cut","lacerated")
 	strike_switch_text = "Вы подготовились для совершения одного широкого взмаха..."
+	stamina_cost = 5
 
 //МЕЧИ И ДРУГОЕ ДЛИННОЕ РЕЖУЩЕЕ
 
@@ -242,6 +260,7 @@
 	strike_switch_text = "Вы собираетесь с духом, готовясь совершить серию из плавных рубящих ударов..."
 	next_strike = /datum/melee_strike/precise_strike/mixed_combo
 	chain_base_strike = /datum/melee_strike/swipe_strike/mixed_combo
+	stamina_cost = 15
 
 /datum/melee_strike/precise_strike/mixed_combo
 	strike_dmg = STRIKE_MULT_DMG_STANDARD
@@ -250,6 +269,7 @@
 	strike_switch_text = null
 	next_strike = /datum/melee_strike/precise_strike/mixed_combo/c1
 	chain_base_strike = /datum/melee_strike/swipe_strike/mixed_combo
+	stamina_cost = 10
 
 /datum/melee_strike/precise_strike/mixed_combo/c1
 	next_strike = /datum/melee_strike/swipe_strike/mixed_combo
@@ -258,18 +278,21 @@
 
 /datum/melee_strike/swipe_strike/sword_slashes
 	strike_dmg = STRIKE_MULT_DMG_MEDIUM
+	strike_speed = STRIKE_MULT_SPEED_SLOW
 	strike_verbs = list("shallowly slashed","shallowly cut")
 	strike_switch_text = "Вы готовитесь совершить несколько последовательных тяжёлых замахов..."
 	next_strike = /datum/melee_strike/swipe_strike/sword_slashes/slow
 	chain_base_strike = /datum/melee_strike/swipe_strike/sword_slashes
+	stamina_cost = 15
 
 /datum/melee_strike/swipe_strike/sword_slashes/slow
 	strike_dmg = STRIKE_MULT_DMG_STANDARD
-	strike_speed = STRIKE_MULT_SPEED_SLOW
+	strike_speed = STRIKE_MULT_SPEED_SUPERSLOW
 	strike_verbs = list("shallowly slashed","shallowly cut")
 	strike_switch_text = null
 	next_strike = /datum/melee_strike/swipe_strike/sword_slashes
 	chain_base_strike = /datum/melee_strike/swipe_strike/sword_slashes
+	stamina_cost = 15
 
 //ДРЕВКОВОЕ ОРУЖИЕ
 
@@ -282,6 +305,7 @@
 	strike_switch_text = "Ты хватаешься за своё оружие поудобнее, готовясь к совершению нескольких рубящих и колющих атак..."
 	next_strike = /datum/melee_strike/precise_strike/polearm_mixed
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_mixed
+	stamina_cost = 15
 
 /datum/melee_strike/precise_strike/polearm_mixed
 	strike_dmg = STRIKE_MULT_DMG_STANDARD
@@ -291,6 +315,7 @@
 	strike_switch_text = null
 	next_strike = /datum/melee_strike/precise_strike/polearm_mixed/c1
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_mixed
+	stamina_cost = 10
 
 /datum/melee_strike/precise_strike/polearm_mixed/c1
 	strike_dmg = STRIKE_MULT_DMG_LIGHT
@@ -307,6 +332,7 @@
 	strike_switch_text = null
 	next_strike = /datum/melee_strike/swipe_strike/polearm_mixed
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_mixed
+	stamina_cost = 20
 
 //Круговые замахи
 
@@ -318,6 +344,7 @@
 	strike_switch_text = "Вы приготовились к совершению медленной круговой атаки..."
 	next_strike = /datum/melee_strike/swipe_strike/polearm_slash/slow
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_slash
+	stamina_cost = 15
 
 /datum/melee_strike/swipe_strike/polearm_slash/slow
 	strike_dmg = STRIKE_MULT_DMG_STANDARD
@@ -326,6 +353,7 @@
 	strike_switch_text = null
 	next_strike = /datum/melee_strike/swipe_strike/polearm_slash
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_slash
+	stamina_cost = 15
 
 //МОЛОТЫ
 
@@ -374,6 +402,7 @@
 	strike_switch_text = "Вы разминаетесь, готовясь к 'отбиванию мяча'..."
 	next_strike = /datum/melee_strike/blunt_strike/mixed_combo
 	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
+	stamina_cost = 5
 
 /datum/melee_strike/blunt_strike/mixed_combo
 	strike_dmg = STRIKE_MULT_DMG_HEAVY
@@ -381,6 +410,7 @@
 	strike_verbs = list("smashed","crushed","whacked")
 	next_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
 	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
+	stamina_cost = 20
 
 #undef STRIKE_MULT_DMG_LIGHT
 #undef STRIKE_MULT_DMG_MEDIUM

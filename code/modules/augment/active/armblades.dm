@@ -16,6 +16,12 @@
 	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
 	attack_verb = list("stabbed", "sliced", "cut")
 
+/obj/item/material/armblade/attack(mob/living/M, mob/living/user, target_zone, animate = TRUE)
+	if(!isnull(melee_strike) && !user.skill_check(SKILL_COMBAT, SKILL_EXPERIENCED) && prob(src.fail_chance))
+		return 1
+
+	. = ..()
+
 
 /obj/item/organ/internal/augment/active/item/armblade
 	name = "embedded blade"

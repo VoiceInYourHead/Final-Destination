@@ -90,7 +90,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		return 1
 	if(hit_zone)
 		apply_hit_effect(M, user, hit_zone)
-	if(!isnull(melee_strike) && !user.skill_check(SKILL_COMBAT, SKILL_EXPERIENCED) && prob(50))
+	if(!isnull(melee_strike) && !user.skill_check(SKILL_COMBAT, SKILL_EXPERIENCED) && prob(src.fail_chance))
 		user.drop_from_inventory(src)
 		to_chat(user,"<span class = 'danger'>[user] пытается провернуть особую атаку, но [src] неуклюже валится из рук!</span>")
 	return 1

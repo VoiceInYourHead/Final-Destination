@@ -84,6 +84,7 @@
 	applies_material_colour = 0
 	worth_multiplier = 31
 	base_parry_chance = 15
+	fail_chance = 60
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_slash)
 
@@ -125,6 +126,7 @@
 	base_parry_chance = 30
 	lunge_dist = 3
 	lunge_delay = 10 SECONDS
+	fail_chance = 60
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash)
 
@@ -154,6 +156,7 @@
 	base_parry_chance = 30
 	lunge_dist = 2
 	lunge_delay = 10 SECONDS
+	fail_chance = 40
 	have_stances = TRUE
 	melee_strikes = list(/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo)
 

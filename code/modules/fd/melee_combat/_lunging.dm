@@ -5,6 +5,7 @@
 	var/lunge_dist = 0
 	var/lunge_delay = 5 SECONDS
 	var/next_leapwhen = 0
+	var/stamina_cost = 10
 
 /obj/item/proc/get_lunge_dist(var/mob/user)
 	return lunge_dist
@@ -14,6 +15,9 @@
 		return
 	if(get_lunge_dist(user) == 0 || is_adjacent)
 		return
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("You are too exhausted to maneuver right now."))
+		return FALSE
 	if(world.time < next_leapwhen)
 		to_chat(user,"<span class = 'notice'>You're still recovering from the last lunge!</span>")
 		return
@@ -32,6 +36,8 @@
 			to_chat(user,"<span class = 'notice'>You can't leap at non-mobs!</span>")
 			return
 	if(get_dist(user,target) <= get_lunge_dist(user))
+		if(stamina_cost)
+			user.adjust_stamina(stamina_cost)
 		user.visible_message("<span class = 'danger'>[user] lunges forward, [src] in hand, ready to strike!</span>")
 		var/image/user_image = image(user)
 		user_image.dir = user.dir
