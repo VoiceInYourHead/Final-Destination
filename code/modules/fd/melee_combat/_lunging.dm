@@ -5,7 +5,7 @@
 	var/lunge_dist = 0
 	var/lunge_delay = 5 SECONDS
 	var/next_leapwhen = 0
-	var/stamina_cost = 10
+	var/stamina_cost = 20
 
 /obj/item/proc/get_lunge_dist(var/mob/user)
 	return lunge_dist
@@ -37,7 +37,7 @@
 			return
 	if(get_dist(user,target) <= get_lunge_dist(user))
 		if(stamina_cost)
-			user.adjust_stamina(stamina_cost)
+			user.adjust_stamina(-stamina_cost)
 		user.visible_message("<span class = 'danger'>[user] lunges forward, [src] in hand, ready to strike!</span>")
 		var/image/user_image = image(user)
 		user_image.dir = user.dir

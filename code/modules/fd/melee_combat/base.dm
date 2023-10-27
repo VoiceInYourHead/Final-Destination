@@ -122,13 +122,9 @@
 	return 1
 
 /datum/melee_strike/proc/do_strike_targ(var/mob/user,var/mob/living/m,var/obj/item/striker,var/click_params)
-	if(user.get_stamina() < stamina_cost)
-		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
-		return FALSE
-
 	m.attackby(striker, user, click_params)
 	if(stamina_cost)
-		user.adjust_stamina(stamina_cost)
+		user.adjust_stamina(-stamina_cost)
 
 /datum/melee_strike/proc/do_strike(var/mob/user,var/atom/target,var/obj/item/striker,var/click_params)
 
@@ -149,6 +145,9 @@
 //БАЗОВАЯ АТАКА//
 
 /datum/melee_strike/precise_strike/do_strike(var/mob/user,var/turf/target,var/obj/item/striker,var/click_params)
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
+		return FALSE
 	if(istype(target))
 		var/list/turf_mobs = list()
 		for(var/mob/living/m in target.contents)
@@ -164,6 +163,9 @@
 	return 1
 
 /datum/melee_strike/swipe_strike/do_strike(var/mob/user,var/turf/target,var/obj/item/striker,var/click_params)
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
+		return FALSE
 	var/list/targets = list()
 	var/turf/targ_turf = get_turf(target)
 	if(istype(targ_turf))
@@ -184,7 +186,43 @@
 
 	return 1
 
+/datum/melee_strike/circle_strike/do_strike(var/mob/user,var/turf/target,var/obj/item/striker,var/click_params)
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
+		return FALSE
+	var/list/targets = list()
+	for(var/turf/search in orange(1, user))
+		for(var/mob/living/M in search.contents)
+			targets += M
+
+	if(targets.len != 0)
+		for(var/mob in targets)
+			if(user == mob)
+				continue
+			do_strike_targ(user,mob,striker,click_params)
+	else
+		return 0
+
+	return 1
+
+/datum/melee_strike/circle_strike/do_strike_targ(var/mob/user,var/mob/living/m,var/obj/item/striker,var/click_params)
+	m.attackby(striker, user, click_params)
+	user.dir = turn(SOUTH,0)
+	sleep(1)
+	user.dir = turn(WEST, 0)
+	sleep(1)
+	user.dir = turn(NORTH, 0)
+	sleep(1)
+	user.dir = turn(EAST, 0)
+	sleep(1)
+	user.dir = turn(SOUTH,0)
+	if(stamina_cost)
+		user.adjust_stamina(-stamina_cost)
+
 /datum/melee_strike/blunt_strike/do_strike(var/mob/user,var/turf/target,var/obj/item/striker,var/click_params)
+	if(user.get_stamina() < stamina_cost)
+		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
+		return FALSE
 	if(istype(target))
 		var/list/turf_mobs = list()
 		for(var/mob/living/m in target.contents)
@@ -202,14 +240,10 @@
 /datum/melee_strike/blunt_strike/do_strike_targ(var/mob/user,var/mob/living/m,var/obj/item/striker,var/click_params)
 	var/throw_dir = get_dir(user,m)
 
-	if(user.get_stamina() < stamina_cost)
-		to_chat(user, SPAN_WARNING("Вы слишком сильно устали!"))
-		return FALSE
-
 	m.attackby(striker, user, click_params)
 	m.throw_at(get_edge_target_turf(m, throw_dir),2,4,user)
 	if(stamina_cost)
-		user.adjust_stamina(stamina_cost)
+		user.adjust_stamina(-stamina_cost)
 
 //НОЖИ И ДРУГОЕ КОРОТКОЕ РЕЖУЩЕЕ
 
@@ -341,7 +375,7 @@
 	strike_speed = STRIKE_MULT_SPEED_SLOW
 	strike_range = 2
 	strike_verbs = list("slashed","cut","lacerated")
-	strike_switch_text = "Вы приготовились к совершению медленной круговой атаки..."
+	strike_switch_text = "Вы приготовились к совершению двух тяжёлых замахов..."
 	next_strike = /datum/melee_strike/swipe_strike/polearm_slash/slow
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_slash
 	stamina_cost = 15
@@ -354,6 +388,26 @@
 	next_strike = /datum/melee_strike/swipe_strike/polearm_slash
 	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_slash
 	stamina_cost = 15
+
+//Разносим всё вокруг
+
+/datum/melee_strike/swipe_strike/polearm_wide
+	strike_dmg = STRIKE_MULT_DMG_STANDARD
+	strike_speed = STRIKE_MULT_SPEED_SUPERSLOW
+	strike_verbs = list("slashed","cut","lacerated")
+	strike_switch_text = "Вы приготовились к совершению медленной круговой атаки..."
+	next_strike = /datum/melee_strike/circle_strike/polearm
+	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_wide
+	stamina_cost = 10
+
+/datum/melee_strike/circle_strike/polearm
+	strike_dmg = STRIKE_MULT_DMG_SUPERHEAVY
+	strike_speed = STRIKE_MULT_SPEED_SLOW
+	strike_verbs = list("smashed","crushed","whacked")
+	strike_switch_text = "Вы размахиваете своим оружием во все стороны!"
+	stamina_cost = 30
+	next_strike = /datum/melee_strike/swipe_strike/polearm_wide
+	chain_base_strike = /datum/melee_strike/swipe_strike/polearm_wide
 
 //МОЛОТЫ
 
@@ -410,7 +464,27 @@
 	strike_verbs = list("smashed","crushed","whacked")
 	next_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
 	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/mixed_combo
-	stamina_cost = 20
+	stamina_cost = 25
+
+//Разносим всё вокруг
+
+/datum/melee_strike/swipe_strike/blunt_swing/wide
+	strike_dmg = STRIKE_MULT_DMG_STANDARD
+	strike_speed = STRIKE_MULT_SPEED_SUPERSLOW
+	strike_verbs = list("smashed","crushed","whacked")
+	strike_switch_text = "Вы размахиваете своим оружием, готовясь к тяжёлой круговой атаке..."
+	next_strike = /datum/melee_strike/circle_strike/blunt
+	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/wide
+	stamina_cost = 10
+
+/datum/melee_strike/circle_strike/blunt
+	strike_dmg = STRIKE_MULT_DMG_STANDARD
+	strike_speed = STRIKE_MULT_SPEED_SLOW
+	strike_verbs = list("smashed","crushed","whacked")
+	strike_switch_text = "Вы размахиваете своим оружием во все стороны!"
+	stamina_cost = 30
+	next_strike = /datum/melee_strike/swipe_strike/blunt_swing/wide
+	chain_base_strike = /datum/melee_strike/swipe_strike/blunt_swing/wide
 
 #undef STRIKE_MULT_DMG_LIGHT
 #undef STRIKE_MULT_DMG_MEDIUM

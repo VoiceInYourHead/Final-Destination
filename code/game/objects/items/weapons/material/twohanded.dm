@@ -86,7 +86,7 @@
 	base_parry_chance = 15
 	fail_chance = 60
 	have_stances = TRUE
-	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_slash)
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_slash, /datum/melee_strike/swipe_strike/polearm_wide)
 
 /obj/item/material/twohanded/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
@@ -128,7 +128,7 @@
 	lunge_delay = 10 SECONDS
 	fail_chance = 60
 	have_stances = TRUE
-	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash)
+	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/polearm_slash, /datum/melee_strike/swipe_strike/polearm_wide)
 
 /obj/item/material/twohanded/spear/shatter(var/consumed)
 	if(!consumed)
@@ -158,7 +158,7 @@
 	lunge_delay = 10 SECONDS
 	fail_chance = 40
 	have_stances = TRUE
-	melee_strikes = list(/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo)
+	melee_strikes = list(/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo,/datum/melee_strike/swipe_strike/blunt_swing/wide)
 
 //Predefined materials go here.
 /obj/item/material/twohanded/baseballbat/metal/New(var/newloc)

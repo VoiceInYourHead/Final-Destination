@@ -156,7 +156,7 @@
 	edge = TRUE
 	fail_chance = 30
 	have_stances = TRUE
-	melee_strikes = list(/datum/melee_strike/swipe_strike/polearm_mixed,/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo)
+	melee_strikes = list(/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo, /datum/melee_strike/swipe_strike/blunt_swing/wide)
 
 /obj/item/shovel/attack_self(mob/living/carbon/user)
 	. = ..()

@@ -8,7 +8,15 @@
 	force = 17.5 //It has a hammer head, should probably do some more damage. - Cirra
 	attack_cooldown = 2.5*DEFAULT_WEAPON_COOLDOWN
 	melee_accuracy_bonus = -25
+	fail_chance = 30
+	have_stances = TRUE
+	melee_strikes = list(/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo, /datum/melee_strike/swipe_strike/polearm_slash/hammer, /datum/melee_strike/circle_strike/blunt)
 
+/obj/item/crowbar/brace_jack/attack_self(mob/living/carbon/user)
+	. = ..()
+
+	if(have_stances)
+		swap_stances(user)
 
 
 
