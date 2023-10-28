@@ -107,6 +107,7 @@
 /obj/effect/wallframe_spawn/reinforced/crescent
 	name = "reinforced wall frame crescent window spawner"
 	win_path = /obj/structure/window/reinforced/crescent/full
+	frame_path = /obj/structure/wall_frame/invincible
 
 /obj/effect/wallframe_spawn/reinforced/titanium
 	name = "reinforced titanium wall frame window spawner"

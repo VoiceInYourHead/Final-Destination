@@ -1347,6 +1347,9 @@
 	req_access = list(access_external_airlocks, access_maint_tunnels)
 
 // CentCom
+/area/centcom
+	name = "\improper SCG Observatory"
+	base_turf = /turf/unsimulated/floor/plating
 
 /area/centcom/control
 	name = "\improper Observatory Control"

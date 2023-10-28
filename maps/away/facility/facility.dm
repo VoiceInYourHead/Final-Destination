@@ -264,8 +264,8 @@
 	response_harm = "hits"
 	speed = 0
 	grab_resist = 80
-	maxHealth = 100
-	health = 100
+	maxHealth = 70
+	health = 70
 	flash_vulnerability = 0
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/punch
@@ -279,13 +279,13 @@
 	faction = "mercenary"
 	status_flags = CANPUSH
 	armor = list(			// Values for normal getarmor() checks
-				"melee" = 30,
-				"bullet" = 60,
-				"laser" = 50,
-				"energy" = 50,
-				"bomb" = 30,
+				"melee" = 10,
+				"bullet" = 30,
+				"laser" = 20,
+				"energy" = 20,
+				"bomb" = 10,
 				"bio" = 100,
-				"rad" = 100
+				"rad" = 20
 				)
 	heat_resist = 0.6
 	cold_resist = 0.6
@@ -309,10 +309,10 @@
 	icon_living = "mercenary_melee"
 	natural_weapon = /obj/item/material/hatchet/machete/facility
 	weapon1 = /obj/item/material/hatchet/machete
-	maxHealth = 200
-	health = 200
-	speed = -5
-	move_speed = 1
+	maxHealth = 160
+	health = 160
+	speed = -6
+	move_speed = 0.5
 	taser_kill = 0
 	status_flags = 0
 
@@ -342,8 +342,8 @@
 
 /mob/living/simple_animal/hostile/syndicate/facility/ranged1
 	ranged = 1
-	health = 85
-	maxHealth = 85
+	health = 70
+	maxHealth = 70
 	taser_kill = 0
 	icon_state = "mercenary_ranged1"
 	icon_living = "mercenary_ranged1"
@@ -359,8 +359,8 @@
 
 /mob/living/simple_animal/hostile/syndicate/facility/ranged2
 	ranged = 1
-	health = 70
-	maxHealth = 70
+	health = 65
+	maxHealth = 65
 	taser_kill = 0
 	icon_state = "mercenary_ranged2"
 	icon_living = "mercenary_ranged2"
@@ -370,9 +370,9 @@
 	needs_reload = TRUE
 	reload_max = 25
 	reload_count = 0
-	reload_time = 4 SECONDS
+	reload_time = 5 SECONDS
 
-	weapon1 = /obj/item/gun/projectile/automatic/sec_smg/broken
+	weapon1 = /obj/item/gun/projectile/automatic/sec_smg/lethal/broken
 
 /mob/living/simple_animal/hostile/syndicate/facility/ranged3
 	ranged = 1
@@ -407,21 +407,27 @@
 	jam_chance = 100
 	desc = "Its broken."
 
-/obj/item/gun/projectile/automatic/sec_smg/broken
+/obj/item/gun/projectile/automatic/sec_smg/lethal
+	magazine_type = /obj/item/ammo_magazine/smg_top
+
+/obj/item/gun/projectile/automatic/sec_smg/lethal/broken
 	jam_chance = 100
 	desc = "Its broken."
 
 /obj/item/gun/energy/gun/broken
 	desc = "Its broken."
-	charge_cost = 190
-	max_shots = 0
+	charge_cost = 120
+	max_shots = 2
+	recharge_time = 30
 
 /obj/item/gun/energy/retro/broken
 	desc = "Its broken."
-	charge_cost = 190
-	max_shots = 0
+	charge_cost = 120
+	max_shots = 2
+	recharge_time = 30
 
 /obj/item/gun/energy/laser/broken
 	desc = "Its broken."
-	charge_cost = 190
-	max_shots = 0
+	charge_cost = 120
+	max_shots = 2
+	recharge_time = 30
