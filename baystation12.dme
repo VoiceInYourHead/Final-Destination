@@ -1852,6 +1852,7 @@
 #include "code\modules\fabrication\designs\micro\designs_cutlery.dm"
 #include "code\modules\fabrication\designs\micro\designs_glasses.dm"
 #include "code\modules\fabrication\designs\replicator\designs_food.dm"
+#include "code\modules\fd\mapping.dm"
 #include "code\modules\fd\gunnery\structures.dm"
 #include "code\modules\fd\intel\ancient_items.dm"
 #include "code\modules\fd\intel\base.dm"
