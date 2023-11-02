@@ -3,7 +3,7 @@
 	id = "chunk1"
 	description = "Just small ruins."
 	suffixes = list("ruins/junk_1.dmm")
-	spawn_cost = 0.5
+	spawn_cost = 0.3
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_ALLOW_DUPLICATES
 	ruin_tags = RUIN_WRECK
 
@@ -11,43 +11,43 @@
 	name = "Random trash #2"
 	id = "chunk2"
 	suffixes = list("ruins/junk_2.dmm")
-	spawn_cost = 0.8
+	spawn_cost = 0.5
 
 /datum/map_template/ruin/junkyard/junk_chunk/third
 	name = "Random trash #3"
 	id = "chunk3"
 	suffixes = list("ruins/junk_3.dmm")
-	spawn_cost = 0.2
+	spawn_cost = 0.1
 
 /datum/map_template/ruin/junkyard/junk_chunk/fourth
 	name = "Random trash #4"
 	id = "chunk4"
 	suffixes = list("ruins/junk_4.dmm")
-	spawn_cost = 0.2
+	spawn_cost = 0.1
 
 /datum/map_template/ruin/junkyard/junk_chunk/fifth
 	name = "Random trash #5"
 	id = "chunk5"
 	suffixes = list("ruins/junk_5.dmm")
-	spawn_cost = 1
+	spawn_cost = 0.7
 
 /datum/map_template/ruin/junkyard/junk_chunk/sixth
 	name = "Random trash #6"
 	id = "chunk6"
 	suffixes = list("ruins/junk_6.dmm")
-	spawn_cost = 0.2
+	spawn_cost = 0.1
 
 /datum/map_template/ruin/junkyard/junk_chunk/seventh
 	name = "Random trash #7"
 	id = "chunk7"
 	suffixes = list("ruins/junk_7.dmm")
-	spawn_cost = 0.2
+	spawn_cost = 0.1
 
 /datum/map_template/ruin/junkyard/junk_chunk/eight
 	name = "Random trash #8"
 	id = "chunk8"
 	suffixes = list("ruins/junk_8.dmm")
-	spawn_cost = 1.5
+	spawn_cost = 1
 
 // Random spawns for junkyard with not-guaranteed chances, literally a copypaste of original ones made for easy access
 
