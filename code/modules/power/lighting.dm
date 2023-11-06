@@ -202,6 +202,14 @@
 	lightbulb.set_color(color)
 	queue_icon_update()
 
+/obj/machinery/light/blue
+	color = "#4f7fad"
+	light_type = /obj/item/light/tube/blue
+
+/obj/machinery/light/golden
+	color = "#f1d57f"
+	light_type = /obj/item/light/tube/golden
+
 // the smaller bulb light fixture
 /obj/machinery/light/small
 	icon_state = "bulb_map"
@@ -725,6 +733,18 @@
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = LIGHT_COLOUR_E_RED),
 	)
 	sound_on = 'sound/machines/lightson.ogg'
+
+/obj/item/light/tube/blue
+	name = "light tube (blue)"
+	color = COLOR_BLUE_GRAY
+	b_colour = COLOR_BLUE_GRAY
+	random_tone = FALSE
+
+/obj/item/light/tube/golden
+	name = "light tube (golden)"
+	color = COLOR_YELLOW_GRAY
+	b_colour = COLOR_YELLOW_GRAY
+	random_tone = FALSE
 
 /obj/item/light/tube/warm
 	name = "light tube (warm)"

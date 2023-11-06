@@ -92,7 +92,7 @@
 	name = "IPV Fluffy Biscuit"
 	warmup_time = 3
 	range = 0 //range = 1
-	shuttle_area = list(/area/ship/smuggler/generator, /area/ship/smuggler/kitchen, /area/ship/smuggler/eng, /area/ship/smuggler/engine, /area/ship/smuggler/rw, /area/ship/smuggler/lw, /area/ship/smuggler/bar, /area/ship/smuggler/bridge, /area/ship/smuggler/container, /area/ship/smuggler/living, /area/ship/smuggler/med)
+	shuttle_area = list(/area/ship/foodcart/bridge,/area/ship/foodcart/kitchen,/area/ship/foodcart/bedroom,/area/ship/foodcart/shower,/area/ship/foodcart/vip_hall,/area/ship/foodcart/main_hall,/area/ship/foodcart/engineering)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_BASIC
