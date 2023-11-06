@@ -156,6 +156,7 @@
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/ascent/ascent.dm"
 	#include "../away/ares/_ares.dm"
+	#include "../away/foodcart/_foodcart.dm"
 	#include "../away/aegis/aegis.dm"
 	#include "../away/aaaa_event/aegis_alt/aegis_alt.dm"
 	#include "../away/aaaa_event/observation_station/station.dm"
