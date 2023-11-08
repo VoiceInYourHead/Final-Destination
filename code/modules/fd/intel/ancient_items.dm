@@ -1,3 +1,5 @@
+
+
 /obj/item/fd/ancient_items
 	name = "ancient thing"
 	desc = "some ancient stuff, idk"
@@ -8,11 +10,13 @@
 	name = "strange old folder"
 	desc = "An old folder, which contains various research data about psionic powers. You also can see some mentions of 'NEMESIS' here. What could it mean?"
 	icon_state = "folder-psi"
+	quota_worth = 5
 
 /obj/item/fd/ancient_items/zippo
 	name = "broken syndicate zippo"
 	desc = "Rusted zippo with three-headed 'S'-shaped snake on it. This one probably belongs to 'Syndicate', terrorist group, that existed in the time of corporate wars."
 	icon_state = "syndicate_lighter"
+	quota_worth = 5
 
 /obj/item/fd/ancient_items/bs_shard
 	name = "bluespace shard"
@@ -20,12 +24,14 @@
 	icon = 'icons/fd/structures/bluespace_crystal_structure.dmi'
 	icon_state = "shard"
 	origin_tech = list(TECH_BLUESPACE = 10)
+	quota_worth = 20
 
 /obj/item/fd/ancient_items/corrupted_radio
 	name = "corrupted radio"
 	desc = "Really old-looking radio, corrupted by some kind of blue, pulsing vines. God knows where it been."
 	icon_state = "warped_radio"
 	origin_tech = list(TECH_ESOTERIC = 10, TECH_BIO = 5, TECH_BLUESPACE = 5)
+	quota_worth = 10
 
 /obj/item/fd/ancient_items/corrupted_radio/attack_self(mob/living/carbon/user)
 	var/option =  alert(user, "Do you really wanna touch it?", "Wait!", "Yes", "No")
@@ -76,6 +82,7 @@
 	maxcharge = 2000
 	w_class = ITEM_SIZE_NORMAL
 	var/recharge_amount = 8
+	quota_worth = 30
 	origin_tech = list(TECH_MAGNET = 5, TECH_BIO = 5, TECH_POWER = 10)
 
 /obj/item/cell/bluespace_ancient/Initialize()
@@ -95,6 +102,7 @@
 	desc = "Hm...what if i try to place something inside?"
 	icon = 'icons/fd/items/items.dmi'
 	icon_state = "container_emptyclosed"
+	quota_worth = 5
 
 	var/closed = TRUE
 
@@ -122,6 +130,7 @@
 	name = "old bear plushie"
 	desc = "We can't sell it, but...still, it's something."
 	icon_state = "teddy"
+	quota_worth = 5
 
 	var/ripped = FALSE
 	var/known = FALSE
@@ -157,6 +166,7 @@
 	name = "old necklace"
 	desc = "Old, golden necklace...it probably cost something."
 	icon_state = "golden_necklace"
+	quota_worth = 10
 
 #define STAGE_WAIT		0
 #define STAGE_MESSAGE	1
@@ -167,6 +177,7 @@
 	name = "very strange photo"
 	desc = "You got chills just from looking on that picture..."
 	icon_state = "photo_eyes"
+	quota_worth = 0
 	var/global/list/mob/living/carbon/victims = list()
 	var/global/list/mob/living/carbon/next_braindamage_stage = list()
 	var/global/list/mob/living/carbon/braindamage_stage = list()
@@ -273,6 +284,7 @@
 	desc = "An old souvenir, used to be very popular in the past. Today it's very rare and expensive, maintaining an relique status for many collectors."
 	icon = 'icons/fd/items/faction_item.dmi'
 	icon_state = "maneki_neko"
+	quota_worth = 30
 
 	var/luck_used = FALSE
 	var/have_something = 40
@@ -295,6 +307,7 @@
 	desc = "It's looking like something from pre-modern era of technologies."
 	icon = 'icons/fd/items/oddities2.dmi'
 	icon_state = "starscope"
+	quota_worth = 30
 	origin_tech = list(TECH_ESOTERIC = 8, TECH_BLUESPACE = 8)
 
 /obj/item/fd/ancient_items/phone
@@ -302,6 +315,7 @@
 	desc = "Really old telephone."
 	icon = 'icons/fd/items/oddities2.dmi'
 	icon_state = "phone_off"
+	quota_worth = 10
 	origin_tech = list(TECH_ESOTERIC = 5)
 
 /obj/item/fd/ancient_items/skull
@@ -309,6 +323,7 @@
 	desc = "Only gods know, to who it belongs"
 	icon = 'icons/fd/items/surgery.dmi'
 	icon_state = "metal_skull"
+	quota_worth = 10
 	origin_tech = list(TECH_ESOTERIC = 5, TECH_BIO = 8)
 
 /obj/item/clothing/glasses/psionic
@@ -318,6 +333,7 @@
 	item_state = "binoclard_lenses"
 	body_parts_covered = EMPTY_BITFIELD
 	prescription = 7
+	quota_worth = 30
 	origin_tech = list(TECH_ESOTERIC = 10, TECH_BLUESPACE = 8)
 
 	var/operating = FALSE
@@ -469,6 +485,7 @@
 	var/last_used = 0 //last world.time it was used.
 	var/chance_to_break = 50
 	var/broken = FALSE
+	quota_worth = 30
 	origin_tech = list(TECH_ESOTERIC = 8, TECH_MATERIAL = 8, TECH_BLUESPACE = 8)
 
 /obj/item/fd/ancient_items/emerald/Process()
@@ -573,3 +590,156 @@
 		new make_copy.type(get_turf(src))
 		chance_to_break += 5
 		update_icon()
+
+/obj/item/fd/ancient_items/corrupted_crowbar
+	name = "glowing crowbar"
+	desc = "I probably wouldn't try to hit something with this thing..."
+	icon = 'icons/fd/items/artefacts.dmi'
+	icon_state = "anocrowbar"
+	force = 10
+	quota_worth = 10
+	origin_tech = list(TECH_BLUESPACE = 8)
+
+/obj/item/fd/ancient_items/corrupted_crowbar/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+	..()
+
+	var/mob/living/carbon/victim = A
+
+	if(prob(5))
+		to_chat(user, "<span class='warning'>You hitted [A] with [src], and it starts to disappear!</span>")
+		A.alpha = 200
+		sleep(1)
+		A.alpha = 100
+		sleep(1)
+		A.alpha = 50
+		sleep(1)
+		A.alpha = 0
+		sleep(1)
+		if(istype(victim))
+			to_chat(user, "<span class='danger'>You hear how [victim] screams right before dissapearing from this reality!</span>")
+		qdel(A)
+
+/obj/item/fd/ancient_items/bio_implant
+	name = "weird tendril"
+	desc = "Whatever knows what this thing for!"
+	icon = 'icons/fd/items/device_eris.dmi'
+	icon_state = "implant_uplink"
+	origin_tech = list(TECH_ESOTERIC = 8, TECH_BIO = 12)
+
+//копипаст из аугмент имплантера
+
+	var/obj/item/organ/internal/augment/augment
+	var/instant
+	var/working
+
+/obj/item/fd/ancient_items/bio_implant/Initialize()
+	. = ..()
+	if (ispath(augment))
+		augment = new augment (src)
+
+/obj/item/fd/ancient_items/bio_implant/attack_self(mob/living/carbon/human/user)
+	if (working)
+		return
+	if (!istype(user))
+		return
+	if (!ishuman(user))
+		to_chat(user, SPAN_WARNING("\The [src] don't seems to accept you."))
+		return
+	var/target_zone = user.zone_sel.selecting
+	if (!target_zone)
+		return
+	var/obj/item/organ/external/parent = user.get_organ(target_zone)
+	if (!parent)
+		to_chat(user, SPAN_WARNING("You don't have \a [target_zone]!"))
+		return
+	var/flavor = (parent.status & ORGAN_ROBOTIC) ? 1 : (parent.status & ORGAN_CRYSTAL) ? 2 : 0
+	if (flavor == 0 && !(augment.augment_flags & AUGMENT_BIOLOGICAL))
+		to_chat(user, SPAN_WARNING("\The [augment] cannot be installed in biological organs."))
+		return
+	if (flavor == 1 && !(augment.augment_flags & AUGMENT_MECHANICAL))
+		to_chat(user, SPAN_WARNING("\The [augment] cannot be installed in mechanical organs."))
+		return
+	if (flavor == 2 && !(augment.augment_flags & AUGMENT_CRYSTALINE))
+		to_chat(user, SPAN_WARNING("\The [augment] cannot be installed in crystaline organs."))
+		return
+	var/surgery_step = decls_repository.get_decl(/decl/surgery_step/internal/replace_organ)
+	if (augment.surgery_configure(user, user, parent, src, surgery_step))
+		return
+	var/occupied = user.internal_organs_by_name[augment.organ_tag]
+	if (occupied)
+		to_chat(user, SPAN_WARNING("You already have \an [occupied] installed there."))
+		return
+	if (flavor != -1)
+		var/old_loc = loc
+		var/proceed = alert(user, "This is probably going to hurt. Are you prepared?", "Woah there!", "I am!", "Wait...")
+		if (proceed != "I am!")
+			return
+		if (loc != old_loc)
+			return
+	var/success = instant
+	if (!instant)
+		working = TRUE
+		to_chat(user, SPAN_WARNING("\icon[src] will now enter your body. " + SPAN_DANGER("Please remain calm.")))
+		user.visible_message(SPAN_WARNING("\The [user] places \his [parent.name] against \the [src]."))
+		if (!do_after(user, 2 SECONDS, src))
+			goto FailedAugmentImplant
+		user.visible_message(SPAN_DANGER("\The [src] starts to move, piercing your skin!"))
+		if (flavor != 1)
+			user.custom_pain("Your [parent.name] feels like it's being pierced by thousands knives!", 160)
+		else
+			to_chat(user, SPAN_ITALIC("The access panel on your [parent.name] is torn open."))
+			playsound(user, 'sound/items/electronic_assembly_emptying.ogg', 50, TRUE)
+		parent.createwound(CUT, parent.min_broken_damage / 2, 1)
+		parent.clamp_organ()
+		parent.open_incision()
+		parent.fracture()
+		if (!do_after(user, 8 SECONDS, src))
+			goto FailedAugmentImplant
+		user.visible_message(SPAN_DANGER("\The [src] almost fully entered [user]'s [parent.name]!"))
+		if (flavor != 1)
+			user.custom_pain("You feel something rooting around violently inside your [parent.name]!", 160)
+		else
+			to_chat(user, SPAN_ITALIC("Your [parent.name] shifts and twitches as \the [src] works."))
+		if (!flavor)
+			playsound(user, 'sound/effects/squelch1.ogg', 25, TRUE)
+		else
+			playsound(user, 'sound/items/jaws_pry.ogg', 50, TRUE)
+		if (!do_after(user, 8 SECONDS, src))
+			goto FailedAugmentImplant
+		if (!do_after(user, 2 SECONDS, src))
+			goto FailedAugmentImplant
+		parent.status &= ~ORGAN_BROKEN
+		parent.stage = 0
+		parent.update_wounds()
+		var/datum/wound/wound = parent.get_incision()
+		if (istype(wound))
+			wound.close()
+		if (parent.clamped())
+			parent.remove_clamps()
+		parent.update_wounds()
+		success = TRUE
+	FailedAugmentImplant:
+	working = FALSE
+	if (!success)
+		user.visible_message(SPAN_DANGER("\The [src] falls away from \the [user], leaving \his [parent.name] a mangled mess!"))
+		parent.take_general_damage(25)
+		augment = null
+		return
+	to_chat(user, SPAN_WARNING("\icon[src] Procedure complete. ") + SPAN_NOTICE("Have a nice day."))
+	playsound(user, 'sound/machines/ping.ogg', 50, FALSE)
+	augment.forceMove(user)
+	augment.replaced(user, parent)
+	augment = null
+	qdel(src)
+
+/obj/item/fd/ancient_items/bio_implant/health
+	icon_state = "implant_health"
+	augment = /obj/item/organ/internal/augment/armor/bionic
+
+/obj/item/fd/ancient_items/bio_implant/reflexes
+	icon_state = "implant_freedom"
+	augment = /obj/item/organ/internal/augment/boost/reflex/bionic
+
+/obj/item/fd/ancient_items/bio_implant/accuracy
+	icon_state = "implant_excel"
+	augment = /obj/item/organ/internal/augment/boost/shooting/bionic

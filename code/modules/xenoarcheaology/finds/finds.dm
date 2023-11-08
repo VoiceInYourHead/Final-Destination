@@ -19,6 +19,7 @@
 	desc = "Seems to have some unusal strata evident throughout it."
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "strange"
+	quota_worth = 20
 	origin_tech = list(TECH_MATERIAL = 5)
 
 /obj/item/ore/strangerock/New(loc, var/inside_item_type = 0)
