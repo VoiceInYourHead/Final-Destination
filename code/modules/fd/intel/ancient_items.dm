@@ -10,13 +10,13 @@
 	name = "strange old folder"
 	desc = "An old folder, which contains various research data about psionic powers. You also can see some mentions of 'NEMESIS' here. What could it mean?"
 	icon_state = "folder-psi"
-	quota_worth = 5
+	quota_worth = 10
 
 /obj/item/fd/ancient_items/zippo
 	name = "broken syndicate zippo"
 	desc = "Rusted zippo with three-headed 'S'-shaped snake on it. This one probably belongs to 'Syndicate', terrorist group, that existed in the time of corporate wars."
 	icon_state = "syndicate_lighter"
-	quota_worth = 5
+	quota_worth = 10
 
 /obj/item/fd/ancient_items/bs_shard
 	name = "bluespace shard"
@@ -24,14 +24,14 @@
 	icon = 'icons/fd/structures/bluespace_crystal_structure.dmi'
 	icon_state = "shard"
 	origin_tech = list(TECH_BLUESPACE = 10)
-	quota_worth = 20
+	quota_worth = 30
 
 /obj/item/fd/ancient_items/corrupted_radio
 	name = "corrupted radio"
 	desc = "Really old-looking radio, corrupted by some kind of blue, pulsing vines. God knows where it been."
 	icon_state = "warped_radio"
 	origin_tech = list(TECH_ESOTERIC = 10, TECH_BIO = 5, TECH_BLUESPACE = 5)
-	quota_worth = 10
+	quota_worth = 20
 
 /obj/item/fd/ancient_items/corrupted_radio/attack_self(mob/living/carbon/user)
 	var/option =  alert(user, "Do you really wanna touch it?", "Wait!", "Yes", "No")
@@ -82,7 +82,7 @@
 	maxcharge = 2000
 	w_class = ITEM_SIZE_NORMAL
 	var/recharge_amount = 8
-	quota_worth = 30
+	quota_worth = 40
 	origin_tech = list(TECH_MAGNET = 5, TECH_BIO = 5, TECH_POWER = 10)
 
 /obj/item/cell/bluespace_ancient/Initialize()
@@ -102,7 +102,7 @@
 	desc = "Hm...what if i try to place something inside?"
 	icon = 'icons/fd/items/items.dmi'
 	icon_state = "container_emptyclosed"
-	quota_worth = 5
+	quota_worth = 10
 
 	var/closed = TRUE
 
@@ -130,7 +130,7 @@
 	name = "old bear plushie"
 	desc = "We can't sell it, but...still, it's something."
 	icon_state = "teddy"
-	quota_worth = 5
+	quota_worth = 10
 
 	var/ripped = FALSE
 	var/known = FALSE
@@ -166,7 +166,7 @@
 	name = "old necklace"
 	desc = "Old, golden necklace...it probably cost something."
 	icon_state = "golden_necklace"
-	quota_worth = 10
+	quota_worth = 20
 
 #define STAGE_WAIT		0
 #define STAGE_MESSAGE	1
@@ -177,7 +177,6 @@
 	name = "very strange photo"
 	desc = "You got chills just from looking on that picture..."
 	icon_state = "photo_eyes"
-	quota_worth = 0
 	var/global/list/mob/living/carbon/victims = list()
 	var/global/list/mob/living/carbon/next_braindamage_stage = list()
 	var/global/list/mob/living/carbon/braindamage_stage = list()
@@ -284,7 +283,7 @@
 	desc = "An old souvenir, used to be very popular in the past. Today it's very rare and expensive, maintaining an relique status for many collectors."
 	icon = 'icons/fd/items/faction_item.dmi'
 	icon_state = "maneki_neko"
-	quota_worth = 30
+	quota_worth = 40
 
 	var/luck_used = FALSE
 	var/have_something = 40
@@ -315,7 +314,7 @@
 	desc = "Really old telephone."
 	icon = 'icons/fd/items/oddities2.dmi'
 	icon_state = "phone_off"
-	quota_worth = 10
+	quota_worth = 20
 	origin_tech = list(TECH_ESOTERIC = 5)
 
 /obj/item/fd/ancient_items/skull
@@ -323,7 +322,7 @@
 	desc = "Only gods know, to who it belongs"
 	icon = 'icons/fd/items/surgery.dmi'
 	icon_state = "metal_skull"
-	quota_worth = 10
+	quota_worth = 20
 	origin_tech = list(TECH_ESOTERIC = 5, TECH_BIO = 8)
 
 /obj/item/clothing/glasses/psionic
@@ -333,7 +332,7 @@
 	item_state = "binoclard_lenses"
 	body_parts_covered = EMPTY_BITFIELD
 	prescription = 7
-	quota_worth = 30
+	quota_worth = 40
 	origin_tech = list(TECH_ESOTERIC = 10, TECH_BLUESPACE = 8)
 
 	var/operating = FALSE
@@ -485,7 +484,7 @@
 	var/last_used = 0 //last world.time it was used.
 	var/chance_to_break = 50
 	var/broken = FALSE
-	quota_worth = 30
+	quota_worth = 40
 	origin_tech = list(TECH_ESOTERIC = 8, TECH_MATERIAL = 8, TECH_BLUESPACE = 8)
 
 /obj/item/fd/ancient_items/emerald/Process()
@@ -597,7 +596,7 @@
 	icon = 'icons/fd/items/artefacts.dmi'
 	icon_state = "anocrowbar"
 	force = 10
-	quota_worth = 10
+	quota_worth = 20
 	origin_tech = list(TECH_BLUESPACE = 8)
 
 /obj/item/fd/ancient_items/corrupted_crowbar/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
@@ -743,3 +742,74 @@
 /obj/item/fd/ancient_items/bio_implant/accuracy
 	icon_state = "implant_excel"
 	augment = /obj/item/organ/internal/augment/boost/shooting/bionic
+
+/obj/item/fd/ancient_items/lighting_staff
+	name = "strange staff"
+	desc = "I probably wouldn't try to hit something with this thing..."
+	icon = 'icons/fd/items/device.dmi'
+	icon_state = "hacktool"
+	force = 10
+	quota_worth = 30
+	var/charges = 0
+	origin_tech = list(TECH_ESOTERIC = 10, TECH_POWER = 10)
+
+/obj/item/fd/ancient_items/lighting_staff/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+	if(istype(A, /obj/machinery/light))
+		var/obj/machinery/light/lighting = A
+		if(!lighting.on)
+			to_chat(user, "<span class='warning'>[lighting] not working, i can't get any light from it!</span>")
+			return
+		if(do_after(user, 20))
+			user.visible_message("\The [user] starts to suck the light from \the [lighting].")
+			charges += 1
+			lighting.broken(TRUE)
+	else
+		if(charges >= 1)
+			var/option =  alert(user, "Do you want to create a light sphere?", "Wait!", "Yes", "No")
+			switch(option)
+				if("Yes")
+					if(do_after(user, 40))
+						user.visible_message("\The [user] starts to create the orb of light!.")
+						new /obj/structure/fd/light_sphere(A.loc)
+						charges -= 1
+				else
+					return
+		if(charges < 1)
+			to_chat(user, "<span class='warning'>You don't have enough light for this!</span>")
+			return
+
+
+/obj/structure/fd/light_sphere
+	name = "Strange light"
+	desc = "It's a very strange, levitating light sphere"
+	icon = 'icons/fd/structures/anomalies.dmi'
+	icon_state = "vaflya_trig"
+
+	var/timer = 150
+
+	anchored = FALSE
+	density = FALSE
+
+/obj/structure/fd/light_sphere/New()
+	set_light(0.5, 3, 7, l_color = "#c2e2d5")
+	src.run_timer()
+
+/obj/structure/fd/light_sphere/proc/run_timer()
+	set waitfor = 0
+	var/T = timer
+	while(T > 0)
+		sleep(1 SECOND)
+		playsound(loc, 'sound/items/timer.ogg', 50)
+		T--
+	src.visible_message("\The [src] starts to dissapear!")
+	src.alpha = 200
+	sleep(2)
+	src.alpha = 150
+	sleep(2)
+	src.alpha = 100
+	sleep(2)
+	src.alpha = 50
+	sleep(2)
+	src.alpha = 0
+	sleep(3)
+	qdel(src)

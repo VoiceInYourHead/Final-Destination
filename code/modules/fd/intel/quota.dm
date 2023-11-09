@@ -23,7 +23,7 @@
 		sleep(1 SECOND)
 		playsound(loc, 'sound/items/timer.ogg', 50)
 		T--
-	src.audible_message("<b>\The [src]</b> says, 'Sorry, but your time has ended'")
+	src.audible_message("<b>\The [src]</b> says, 'Quota was not reached in time, <span class='danger'>license termination in progress</span>'")
 	sleep(3)
 	cell_explosion(src, 200, 90)
 	qdel(src)
@@ -105,7 +105,7 @@
 				qdel(junk_rare)
 				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
 				sleep(10)
-				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: [current_quota]/[needed]'")
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
 		if(istype(I, /obj/item/clothing/glasses/psionic))
 			if(do_after(user, 10))
 				var/obj/item/clothing/glasses/psionic/junk_rare = I
@@ -113,7 +113,7 @@
 				qdel(junk_rare)
 				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
 				sleep(10)
-				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: [current_quota]/[needed]'")
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
 		if(istype(I, /obj/item/cell/bluespace_ancient))
 			if(do_after(user, 10))
 				var/obj/item/cell/bluespace_ancient/junk_rare = I
@@ -121,7 +121,15 @@
 				qdel(junk_rare)
 				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
 				sleep(10)
-				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: [current_quota]/[needed]'")
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
+		if(istype(I, /obj/item/trash))
+			if(do_after(user, 10))
+				var/obj/item/trash/just_junk = I
+				current_quota += just_junk.quota_worth
+				qdel(just_junk)
+				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
+				sleep(10)
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
 		else
 			to_chat(user, "<span class='notice'>[src] do not need this!</span>")
 			return
@@ -134,7 +142,12 @@
 				qdel(materials)
 				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
 				sleep(10)
-				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: [current_quota]/[needed]'")
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
 		else
 			to_chat(user, "<span class='notice'>[src] do not need this!</span>")
 			return
+
+/obj/structure/fd/lethal_company/mining
+	name = "mineral quota harvester"
+	junk = FALSE
+	minerals = TRUE

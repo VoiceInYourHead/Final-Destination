@@ -7,6 +7,7 @@
 	w_class = ITEM_SIZE_SMALL
 	desc = "This is rubbish."
 	var/age = 0
+	quota_worth = 2
 
 /obj/item/trash/New(var/newloc, var/_age)
 	..(newloc)

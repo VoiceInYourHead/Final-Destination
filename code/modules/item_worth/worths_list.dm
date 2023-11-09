@@ -50,6 +50,7 @@ var/list/worths = list(
 					/obj/item/fd/ancient_items/skull = 1600,
 					/obj/item/fd/ancient_items/emerald = 5500,
 					/obj/item/fd/ancient_items/bio_implant = 2000,
+					/obj/item/fd/ancient_items/lighting_staff = 2000,
 
 //ROBOT ASSEMBLIES,
 					/obj/item/device/bot_kit = 300,
