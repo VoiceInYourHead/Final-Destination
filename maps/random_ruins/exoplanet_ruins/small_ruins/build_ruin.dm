@@ -57,6 +57,19 @@
 	suffixes = list("small_ruins/build_ruin9.dmm")
 	ruin_tags = RUIN_HUMAN | RUIN_WRECK
 
+/datum/map_template/ruin/exoplanet/build/build10
+	name = "Miner Quota Post 10"
+	id = "build10"
+	spawn_cost = 1
+	suffixes = list("small_ruins/build_ruin10.dmm")
+	ruin_tags = RUIN_HUMAN
+
+/datum/map_template/ruin/exoplanet/build/build11
+	name = "Salvage Drone 11"
+	id = "build11"
+	spawn_cost = 1
+	suffixes = list("small_ruins/build_ruin11.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_WRECK
 
 
 

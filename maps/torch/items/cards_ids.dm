@@ -187,10 +187,10 @@
 
 /obj/item/card/id/torch/crew/research/scientist
 	job_access_type = /datum/job/scientist
-/*
+
 /obj/item/card/id/torch/crew/research/research_guard
 	job_access_type = /datum/job/research_guard
-*/
+
 //NanoTrasen and Passengers
 
 /obj/item/card/id/torch/passenger

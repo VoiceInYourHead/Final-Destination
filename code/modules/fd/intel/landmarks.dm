@@ -27,4 +27,10 @@ obj/random/relic/spawn_choices()
 				/obj/item/fd/ancient_items/phone,
 				/obj/item/fd/ancient_items/skull,
 				/obj/item/clothing/glasses/psionic,
-				/obj/item/fd/ancient_items/emerald)
+				/obj/item/fd/ancient_items/emerald,
+				/obj/item/fd/ancient_items/corrupted_crowbar,
+				/obj/item/fd/ancient_items/bio_implant/health,
+				/obj/item/fd/ancient_items/bio_implant/reflexes,
+				/obj/item/fd/ancient_items/bio_implant/accuracy,
+				/obj/item/fd/ancient_items/lighting_staff
+				)

@@ -60,7 +60,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	//Flags deciding what features to pick
 	var/ruin_tags_whitelist
 	var/ruin_tags_blacklist = RUIN_RAINWORLD
-	var/features_budget = 6
+	var/features_budget = 8
 	var/list/possible_features = list()
 	var/list/spawned_features
 

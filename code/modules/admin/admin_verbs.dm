@@ -69,6 +69,8 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/show_player_info,
 	/client/proc/free_slot_submap,
 	/client/proc/free_slot_crew,			//frees slot for chosen job,
+	/client/proc/remove_slot_crew,
+	/client/proc/remove_slot_crew_full,
 	/client/proc/cmd_admin_change_custom_event,
 	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
@@ -841,6 +843,42 @@ var/list/admin_verbs_xeno = list(
 		if(job && !job.is_position_available())
 			job.make_position_available()
 			message_admins("A job slot for [job_title] has been opened by [key_name_admin(usr)]")
+			return
+
+/client/proc/remove_slot_crew() // remove ONE avaible slot
+	set name = "Remove Job Slot (Crew)"
+	set category = "Admin"
+	if(holder)
+		var/list/jobs = list()
+		for (var/datum/job/J in SSjobs.primary_job_datums)
+			if(J.is_position_available())
+				jobs[J.title] = J
+		if (!jobs.len)
+			to_chat(usr, "There are no avaible jobs.")
+			return
+		var/job_title = input("Please select job slot to close", "Close job slot")  as null|anything in jobs
+		var/datum/job/job = jobs[job_title]
+		if(job && job.is_position_available())
+			job.make_position_unavailable()
+			message_admins("A job slot for [job_title] has been closed by [key_name_admin(usr)]")
+			return
+
+/client/proc/remove_slot_crew_full() // fully close job slot
+	set name = "Remove Fully Job Slot (Crew)"
+	set category = "Admin"
+	if(holder)
+		var/list/jobs = list()
+		for (var/datum/job/J in SSjobs.primary_job_datums)
+			if(J.is_position_available())
+				jobs[J.title] = J
+		if (!jobs.len)
+			to_chat(usr, "There are no avaible jobs.")
+			return
+		var/job_title = input("Please select job slot to close", "Close job slot")  as null|anything in jobs
+		var/datum/job/job = jobs[job_title]
+		if(job && job.is_position_available())
+			job.make_position_unavailable_full()
+			message_admins("A job slot for [job_title] has been closed by [key_name_admin(usr)]")
 			return
 
 /client/proc/toggleghostwriters()

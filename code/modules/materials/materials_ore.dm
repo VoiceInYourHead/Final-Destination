@@ -53,40 +53,52 @@
 // Map definitions.
 /obj/item/ore/uranium/New(var/newloc)
 	name = "pitchblende ore"
+	quota_worth = 10
 	..(newloc, MATERIAL_PITCHBLENDE)
 /obj/item/ore/iron/New(var/newloc)
 	name = "hematite ore"
+	quota_worth = 5
 	..(newloc, MATERIAL_HEMATITE)
 /obj/item/ore/coal/New(var/newloc)
 	name = "graphite ore"
+	quota_worth = 2
 	..(newloc, MATERIAL_GRAPHITE)
 /obj/item/ore/glass/New(var/newloc)
 	name = "sand"
+	quota_worth = 2
 	..(newloc, MATERIAL_SAND)
 /obj/item/ore/silver/New(var/newloc)
 	name = "silver ore"
+	quota_worth = 10
 	..(newloc, MATERIAL_SILVER)
 /obj/item/ore/gold/New(var/newloc)
 	name = "gold ore"
+	quota_worth = 10
 	..(newloc, MATERIAL_GOLD)
 /obj/item/ore/diamond/New(var/newloc)
 	name = "diamond"
 	..(newloc, MATERIAL_DIAMOND)
+	quota_worth = 10
 /obj/item/ore/osmium/New(var/newloc)
 	name = "platinum ore"
+	quota_worth = 5
 	..(newloc, MATERIAL_PLATINUM)
 /obj/item/ore/hydrogen/New(var/newloc)
 	name = "metallic hydrogen"
+	quota_worth = 5
 	..(newloc, MATERIAL_HYDROGEN)
 /obj/item/ore/slag/New(var/newloc)
 	name = "slag"
 	..(newloc, MATERIAL_WASTE)
 /obj/item/ore/phoron/New(var/newloc)
 	name = "phoron crystal"
+	quota_worth = 20
 	..(newloc, MATERIAL_PHORON)
 /obj/item/ore/aluminium/New(var/newloc)
 	name = "bauxite ore"
+	quota_worth = 5
 	..(newloc, MATERIAL_BAUXITE)
 /obj/item/ore/rutile/New(var/newloc)
 	name = "rutile ore"
+	quota_worth = 5
 	..(newloc, MATERIAL_RUTILE)
