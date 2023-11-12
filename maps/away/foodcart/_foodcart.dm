@@ -19,17 +19,10 @@
 	name = "IPV Fluffy Biscuit"
 	archetype = /decl/submap_archetype/foodcart
 
-//Job data
-#define WEBHOOK_SUBMAP_LOADED_FOODCART "webhook_submap_foodcart"
-
-/decl/webhook/submap_loaded/foodcart
-	id = WEBHOOK_SUBMAP_LOADED_FOODCART
-
 /decl/submap_archetype/foodcart
 	descriptor = "IPV Fluffy Biscuit"
-	map = "Foodcart"
+	map = "IPV Fluffy Biscuit"
 	crew_jobs = list(/datum/job/submap/foodcart)
-	call_webhook = WEBHOOK_SUBMAP_LOADED_FOODCART
 
 /datum/job/submap/foodcart
 	title = "Foodcart Personnel"
@@ -62,7 +55,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/foodcart
 	name = "IPV Fluffy Biscuit"
-	shuttle = "Foodcart"
+	shuttle = "IPV Fluffy Biscuit"
 	desc = "Sensor array is detecting a small private vessel, broadcasting registration codes \"IPV-2356-L-229\"."
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
@@ -80,7 +73,7 @@
 
 /obj/machinery/computer/shuttle_control/explore/foodcart
 	name = "vessel control console"
-	shuttle_tag = "Foodcart"
+	shuttle_tag = "IPV Fluffy Biscuit"
 
 /obj/effect/shuttle_landmark/foodcart
 	name = "Foodcart Landing Zone"
