@@ -1,31 +1,32 @@
-"a" = (/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"c" = (/obj/structure/fd/skull3,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"g" = (/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"i" = (/turf/template_noop,/area/space)
-"k" = (/obj/effect/quicksand{layer = 2.22},/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"l" = (/obj/structure/fd/ribs,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"v" = (/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/template_noop,/area/space)
-"z" = (/obj/structure/fd/bone,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"C" = (/obj/structure/rubble,/turf/template_noop,/area/space)
-"K" = (/obj/structure/rubble,/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"L" = (/obj/structure/closet/crate/secure/loot,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"Q" = (/obj/effect/decal/cleanable/ash,/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"R" = (/turf/simulated/mineral,/area/space)
-"U" = (/obj/structure/rubble,/obj/effect/quicksand{layer = 2.22},/turf/unsimulated/floor/exoplanet/desert,/area/space)
-"V" = (/obj/structure/rubble,/obj/structure/rubble,/turf/template_noop,/area/space)
-"W" = (/obj/structure/fd/body{icon_state = "IntenSecDead1"; pixel_x = 10; pixel_y = 19},/turf/unsimulated/floor/exoplanet/desert,/area/space)
+"a" = (/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"c" = (/obj/structure/fd/skull3,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"g" = (/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"i" = (/turf/template_noop,/area/template_noop)
+"k" = (/obj/effect/quicksand{layer = 2.22},/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"l" = (/obj/structure/fd/ribs,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"o" = (/turf/simulated/mineral/random/volcanic,/area/template_noop)
+"v" = (/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/template_noop,/area/template_noop)
+"z" = (/obj/structure/fd/bone,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"C" = (/obj/structure/rubble,/turf/template_noop,/area/template_noop)
+"K" = (/obj/structure/rubble,/obj/structure/rubble,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"L" = (/obj/structure/closet/crate/secure/loot,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"Q" = (/obj/effect/decal/cleanable/ash,/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"R" = (/turf/simulated/mineral/volcanic,/area/template_noop)
+"U" = (/obj/structure/rubble,/obj/effect/quicksand{layer = 2.22},/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
+"V" = (/obj/structure/rubble,/obj/structure/rubble,/turf/template_noop,/area/template_noop)
+"W" = (/obj/structure/fd/body{icon_state = "IntenSecDead1"; pixel_x = 10; pixel_y = 19},/turf/unsimulated/floor/exoplanet/desert,/area/template_noop)
 
 (1,1,1) = {"
 iiiaiiCiiiiiRRi
 iiaaaiCiaQaRRRR
 iaaiiiiCaaaRRia
-iaaiigaKgaaaRRa
+iaaiigaKgaaaRoa
 iiiiaaKkkaaaRRi
 iiiaakkUkaaaaii
-QaazkkRRkkaiCii
+QaazkkRokkaiCii
 iackkkRRRkkaCCa
-iiaaakWRRkaaCCV
-iCiikkLRkkaaQCi
+iiaaakWoRkaaCCV
+iCiikkLokkaaQCi
 iiCikkkkkaaaaii
 aaKCikkkkaalaii
 iagviikaaaaQaii
