@@ -149,7 +149,7 @@
 
 /datum/gear/head/surgical/custom
 	display_name = "surgical cap, colour select"
-	flags = GEAR_HAS_COLOR_SELECTION
+	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/head/welding
 	display_name = "welding mask selection"
@@ -176,6 +176,7 @@
 /datum/gear/head/corporateberet
 	display_name = "corporate beret selection"
 	path = /obj/item/clothing/head/beret
+	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/head/corporateberet/New()
 	..()
