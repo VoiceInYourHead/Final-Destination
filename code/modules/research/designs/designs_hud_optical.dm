@@ -56,3 +56,10 @@
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 50, MATERIAL_GOLD = 50)
 	build_path = /obj/item/clothing/glasses/tacgoggles
 	sort_string = "GAAAC"
+
+/datum/design/item/optical/thermal
+	id = "thermal_goggles"
+	req_tech = list(TECH_MAGNET = 5, TECH_COMBAT = 9, TECH_ESOTERIC = 4)
+	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 100, MATERIAL_SILVER = 100, MATERIAL_URANIUM = 100, MATERIAL_DIAMOND = 50)
+	build_path = /obj/item/clothing/glasses/thermal
+	sort_string = "GAAAD"

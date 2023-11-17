@@ -13,7 +13,7 @@
 	desc = "An advanced chem spraying device."
 	id = "chemsprayer"
 	req_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 2, TECH_BIO = 1)
-	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 1000)
+	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 500)
 	build_path = /obj/item/reagent_containers/spray/chemsprayer
 	sort_string = "TAAAA"
 
@@ -34,7 +34,7 @@
 /datum/design/item/weapon/anti_photon
 	id = "anti_photon"
 	req_tech = list(TECH_BLUESPACE = 6, TECH_MATERIAL = 4)
-	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 1000, MATERIAL_DIAMOND = 1000)
+	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 1000, MATERIAL_URANIUM = 500)
 	build_path = /obj/item/grenade/anti_photon
 	sort_string = "TABAB"
 
@@ -55,21 +55,21 @@
 /datum/design/item/weapon/stunrevolver
 	id = "stunrevolver"
 	req_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 2)
-	materials = list(MATERIAL_STEEL = 4000)
+	materials = list(MATERIAL_STEEL = 4000, MATERIAL_ALUMINIUM = 500)
 	build_path = /obj/item/gun/energy/stunrevolver
 	sort_string = "TADAB"
 
 /datum/design/item/weapon/stunrifle
 	id = "stun_rifle"
 	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3, TECH_POWER = 4)
-	materials = list(MATERIAL_STEEL = 4000, MATERIAL_GLASS = 1000, MATERIAL_SILVER = 500)
+	materials = list(MATERIAL_STEEL = 4000, MATERIAL_GLASS = 1000, MATERIAL_SILVER = 500, MATERIAL_ALUMINIUM = 500)
 	build_path = /obj/item/gun/energy/stunrevolver/rifle
 	sort_string = "TADAC"
 
 /datum/design/item/weapon/confuseray
 	id = "confuseray"
 	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
-	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 1000)
+	materials = list(MATERIAL_STEEL = 1000, MATERIAL_GLASS = 500, MATERIAL_ALUMINIUM = 500)
 	build_path = /obj/item/gun/energy/confuseray
 	sort_string = "TADAD"
 
@@ -94,6 +94,34 @@
 	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 1000, MATERIAL_URANIUM = 1000)
 	build_path = /obj/item/gun/energy/xray
 	sort_string = "TAFAB"
+
+/datum/design/item/weapon/laser
+	id = "laser"
+	req_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 3, TECH_POWER = 3)
+	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 1000, MATERIAL_URANIUM = 500, MATERIAL_ALUMINIUM = 500)
+	build_path = /obj/item/gun/energy/laser
+	sort_string = "TAFAC"
+
+/datum/design/item/weapon/laser_gun
+	id = "laser_gun"
+	req_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2, TECH_POWER = 3)
+	materials = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 500, MATERIAL_URANIUM = 200, MATERIAL_ALUMINIUM = 400)
+	build_path = /obj/item/gun/energy/gun
+	sort_string = "TAFAD"
+
+/datum/design/item/weapon/laser_nuclear
+	id = "laser_nuclear"
+	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 6, TECH_POWER = 6)
+	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 1000, MATERIAL_URANIUM = 3000, MATERIAL_ALUMINIUM = 2000, MATERIAL_SILVER = 3000)
+	build_path = /obj/item/gun/energy/gun/nuclear
+	sort_string = "TAFAD"
+
+/datum/design/item/weapon/laser_sniper
+	id = "laser_sniper"
+	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 4)
+	materials = list(MATERIAL_STEEL = 8000, MATERIAL_URANIUM = 1000, MATERIAL_ALUMINIUM = 1000, MATERIAL_SILVER = 2000, MATERIAL_DIAMOND = 500)
+	build_path = /obj/item/gun/energy/sniperrifle
+	sort_string = "TAFAE"
 
 /datum/design/item/weapon/grenadelauncher
 	id = "grenadelauncher"
@@ -143,14 +171,21 @@
 	req_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_SILVER = 5000, MATERIAL_DIAMOND = 3000)
 	build_path = /obj/item/gun/projectile/automatic/bullpup_rifle
-	sort_string = "TARAA"
+	sort_string = "TAPAC"
+
+/datum/design/item/weapon/rsh21
+	id = "rsh21"
+	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
+	materials = list(MATERIAL_STEEL = 6000, MATERIAL_ALUMINIUM = 4000, MATERIAL_SILVER = 500)
+	build_path = /obj/item/gun/projectile/revolver/rsh21
+	sort_string = "TAPAD"
 
 /datum/design/item/weapon/minuano
 	id = "minuano"
 	req_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4, TECH_POWER = 7)
-	materials = list(MATERIAL_STEEL = 9000,MATERIAL_GLASS = 3000, MATERIAL_GOLD = 500, MATERIAL_URANIUM = 1000)
+	materials = list(MATERIAL_STEEL = 9000, MATERIAL_GLASS = 3000, MATERIAL_GOLD = 500, MATERIAL_URANIUM = 1000)
 	build_path = /obj/item/melee/energy/minuano
-	sort_string = "TAPAC"
+	sort_string = "TARAD"
 
 /datum/design/item/weapon/sundowner
 	id = "sundowner"
@@ -165,6 +200,13 @@
 	materials = list(MATERIAL_STEEL = 2500, MATERIAL_GLASS = 3000, MATERIAL_URANIUM = 550)
 	build_path = /obj/item/material/sword/katana/raiden
 	sort_string = "TARAC"
+
+/datum/design/item/weapon/shield
+	id = "shield"
+	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
+	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 500)
+	build_path = /obj/item/shield/riot/metal
+	sort_string = "TARAD"
 
 /datum/design/item/weapon/ammunition/AssembleDesignName()
 	..()
@@ -190,7 +232,7 @@
 	desc = "A stunning shell for a shotgun."
 	id = "stunshell"
 	req_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
-	materials = list(MATERIAL_STEEL = 4000)
+	materials = list(MATERIAL_STEEL = 2000, MATERIAL_ALUMINIUM = 500)
 	build_path = /obj/item/ammo_casing/shotgun/stunshell
 	sort_string = "TBAAC"
 
@@ -215,7 +257,7 @@
 /datum/design/item/weapon/ammunition/ammo_emp_slug
 	id = "ammo_emp_slug"
 	desc = "A shotgun slug with an integrated EMP charge."
-	materials = list(MATERIAL_STEEL = 3000, MATERIAL_URANIUM = 1000)
+	materials = list(MATERIAL_STEEL = 2000, MATERIAL_URANIUM = 900)
 	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_POWER = 4)
 	build_path = /obj/item/ammo_casing/shotgun/emp
 	sort_string = "TBAAG"

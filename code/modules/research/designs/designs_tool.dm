@@ -103,9 +103,33 @@
 
 /datum/design/item/tool/searcher
 	name = "Intel searching device"
-	desc = "A device that used to scan location for valuable intel or other odd things"
+	desc = "A device that used to scan location for valuable intel or other odd things."
 	id = "searcher"
 	req_tech = list(TECH_ENGINEERING = 5, TECH_MAGNET = 3)
 	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 3000)
 	build_path = /obj/item/device/fd/searcher
 	sort_string = "VAGAL"
+
+/datum/design/item/tool/flashlight
+	desc = "An energy efficient flashlight."
+	id = "flashlight"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_MAGNET = 3, TECH_POWER = 2)
+	materials = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 200)
+	build_path = /obj/item/device/flashlight/upgraded
+	sort_string = "VAGAM"
+
+/datum/design/item/tool/paint
+	desc = "A slender and none-too-sophisticated device capable of applying paint on floors, walls, exosuits and certain airlocks."
+	id = "paint"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_MAGNET = 3)
+	materials = list(MATERIAL_STEEL = 800, MATERIAL_ALUMINIUM = 1000)
+	build_path = /obj/item/device/paint_sprayer
+	sort_string = "VAGAN"
+
+/datum/design/item/tool/solar
+	desc = "A solar panel assembly kit, allows constructions of a solar panel, or with a tracking circuit board, a solar tracker."
+	id = "solar"
+	req_tech = list(TECH_ENGINEERING = 5, TECH_POWER = 5)
+	materials = list(MATERIAL_STEEL = 4000, MATERIAL_ALUMINIUM = 3000)
+	build_path = /obj/item/solar_assembly
+	sort_string = "VAGAO"
