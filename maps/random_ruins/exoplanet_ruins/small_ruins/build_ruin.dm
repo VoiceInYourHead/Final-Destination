@@ -96,7 +96,8 @@
 	name = "Long-distance Communication Module"
 /area/map_template/build/build9
 	name = "Mech Combat Arena"
-
+/area/map_template/build/build10
+	name = "Salvage Drone 11"
 
 // Other Code????    //
 
