@@ -33,8 +33,8 @@
 	name = "bag of holding"
 	desc = "Using localized pockets of bluespace this bag prototype offers incredible storage capacity with the contents weighting nothing. It's a shame the bag itself is pretty heavy."
 	id = "bag_holding"
-	req_tech = list(TECH_BLUESPACE = 8, TECH_MATERIAL = 6)
-	materials = list(MATERIAL_GOLD = 3000, MATERIAL_DIAMOND = 1500, MATERIAL_URANIUM = 250, MATERIAL_PLASTIC = 250)
+	req_tech = list(TECH_BLUESPACE = 8, TECH_MATERIAL = 7)
+	materials = list(MATERIAL_GOLD = 3000, MATERIAL_DIAMOND = 1500, MATERIAL_URANIUM = 750, MATERIAL_PLASTIC = 550)
 	build_path = /obj/item/storage/backpack/holding
 	sort_string = "VAFAA"
 
@@ -42,7 +42,7 @@
 	name = "dufflebag of holding"
 	desc = "A variation of the popular Bag of Holding, the dufflebag of holding is, functionally, identical to the bag of holding, but comes in an easier to carry form."
 	id = "dufflebag_holding"
-	req_tech = list(TECH_BLUESPACE = 8, TECH_MATERIAL = 6)
-	materials = list(MATERIAL_GOLD = 3000, MATERIAL_DIAMOND = 1500, MATERIAL_URANIUM = 250, MATERIAL_PLASTIC = 250)
+	req_tech = list(TECH_BLUESPACE = 8, TECH_MATERIAL = 7)
+	materials = list(MATERIAL_GOLD = 3000, MATERIAL_DIAMOND = 1500, MATERIAL_URANIUM = 750, MATERIAL_PLASTIC = 550)
 	build_path = /obj/item/storage/backpack/holding/duffle
 	sort_string = "VAFAB"

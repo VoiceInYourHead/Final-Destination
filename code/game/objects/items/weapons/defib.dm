@@ -185,6 +185,7 @@
 	name = "combat defibrillator"
 	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
 	paddles = /obj/item/shockpaddles/linked/combat
+	origin_tech = list(TECH_BIO = 7, TECH_POWER = 6, TECH_COMBAT = 5)
 
 /obj/item/defibrillator/compact/combat/loaded
 	bcell = /obj/item/cell/high

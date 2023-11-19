@@ -98,3 +98,4 @@
 	recoil_buildup = 12
 	one_hand_penalty = 4
 	max_shells = 6 //original rsh12 have only 5
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)

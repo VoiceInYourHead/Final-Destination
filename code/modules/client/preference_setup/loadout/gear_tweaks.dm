@@ -199,6 +199,54 @@
 	call(item, custom_setup_proc)(user)
 
 /*
+* Custom Name
+*/
+
+/datum/gear_tweak/custom_name
+	var/list/valid_custom_names
+
+/datum/gear_tweak/custom_name/New(list/valid_custom_names)
+	src.valid_custom_names = valid_custom_names
+	..()
+
+/datum/gear_tweak/custom_name/get_contents(metadata)
+	return "Name: [metadata]"
+
+/datum/gear_tweak/custom_name/get_metadata(user, metadata, title)
+	if(valid_custom_names)
+		return input(user, "Choose an item name.", "Character Preference", metadata) as null|anything in valid_custom_names
+	return sanitize(input(user, "Choose the item's name. Leave it blank to use the default name.", "Item Name", metadata) as text|null, MAX_LNAME_LEN, extra = FALSE)
+
+/datum/gear_tweak/custom_name/tweak_item(user, obj/item/I, metadata)
+	if(!metadata)
+		return I.name
+	return I.name = metadata
+
+/*
+Custom Description
+*/
+
+/datum/gear_tweak/custom_desc
+	var/list/valid_custom_desc
+
+/datum/gear_tweak/custom_desc/New(list/valid_custom_desc)
+	src.valid_custom_desc = valid_custom_desc
+	..()
+
+/datum/gear_tweak/custom_desc/get_contents(metadata)
+	return "Description: [metadata]"
+
+/datum/gear_tweak/custom_desc/get_metadata(user, metadata, title)
+	if(valid_custom_desc)
+		return input(user, "Choose an item description.", "Character Preference", metadata) as null|anything in valid_custom_desc
+	return sanitize(input(user, "Choose the item's description. Leave it blank to use the default description.", "Item Description", metadata) as message|null, MAX_DESC_LEN, extra = FALSE)
+
+/datum/gear_tweak/custom_desc/tweak_item(user, obj/item/I, metadata)
+	if(!metadata)
+		return I.desc
+	return I.desc = metadata
+
+/*
 * Tablet Stuff
 */
 
