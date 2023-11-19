@@ -113,7 +113,7 @@
 			points_by_job[job] += S.skills_from_age(age)				//Applies the species-appropriate age modifier.
 			points_by_job[job] += S.species_bonus				//Applies the species-appropriate age modifier.
 			points_by_job[job] += S.job_skill_buffs[job.type]			//Applies the per-job species modifier, if any.
-			if(ckey("swift"))
+			if(ckey("swift0"))
 				points_by_job[job] += 2
 
 
