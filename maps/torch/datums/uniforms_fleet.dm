@@ -21,6 +21,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -34,6 +35,8 @@
 	min_rank = 15
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/command
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/command)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/command
 
 /decl/hierarchy/mil_uniform/fleet/com/flagofficer
@@ -41,6 +44,8 @@
 	min_rank = 17
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/flag
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/flag)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/flag
 
 /decl/hierarchy/mil_uniform/fleet/eng
@@ -70,6 +75,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 
@@ -79,6 +85,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -109,6 +116,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -126,6 +134,8 @@
 	min_rank = 15
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/command
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/command)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/command
 
 /decl/hierarchy/mil_uniform/fleet/eng/officer/com/flagofficer
@@ -133,6 +143,8 @@
 	min_rank = 17
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/flag
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/flag)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/flag
 
 /decl/hierarchy/mil_uniform/fleet/sec
@@ -163,6 +175,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 	dress_extra = list(
@@ -176,6 +189,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -206,6 +220,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -220,6 +235,8 @@
 	min_rank = 15
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/command
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/command)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/command
 
 /decl/hierarchy/mil_uniform/fleet/sec/officer/com/flagofficer
@@ -227,6 +244,8 @@
 	min_rank = 17
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/flag
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/flag)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/flag
 
 /decl/hierarchy/mil_uniform/fleet/med
@@ -256,6 +275,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 	dress_extra = /obj/item/clothing/head/beret/solgov/fleet/dress
@@ -266,6 +286,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -293,6 +314,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -307,6 +329,8 @@
 	min_rank = 15
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/command
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/command)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/command
 
 /decl/hierarchy/mil_uniform/fleet/med/officer/com/flagofficer
@@ -314,6 +338,8 @@
 	min_rank = 17
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/flag
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/flag)
+
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/flag
 
 /decl/hierarchy/mil_uniform/fleet/sup
@@ -343,6 +369,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 	dress_extra = /obj/item/clothing/head/beret/solgov/fleet/dress
@@ -353,6 +380,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -380,6 +408,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -391,6 +420,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/command
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/command)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -402,6 +432,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/flag
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/flag)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/flag
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -434,6 +465,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 	dress_extra = /obj/item/clothing/head/beret/solgov/fleet/dress
@@ -445,6 +477,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -472,6 +505,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -503,6 +537,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 	dress_extra = /obj/item/clothing/head/beret/solgov/fleet/dress
@@ -514,6 +549,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -541,6 +577,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -572,6 +609,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet
 	dress_extra = /obj/item/clothing/head/beret/solgov/fleet/dress
@@ -583,6 +621,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/snco
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/snco
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
@@ -610,6 +649,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/officer
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/officer)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/officer
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
@@ -621,6 +661,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/command
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/command)
 
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/command
@@ -633,6 +674,7 @@
 
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	service_over = /obj/item/clothing/suit/storage/solgov/service/fleet/flag
+	service_extra = list(/obj/item/clothing/suit/solgov/fleet_sweater/flag)
 
 	dress_over = /obj/item/clothing/suit/storage/solgov/dress/fleet/flag
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
