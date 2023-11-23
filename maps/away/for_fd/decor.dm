@@ -9,6 +9,23 @@
 /obj/structure/fd/placeholder/better
 	opacity = 1
 
+/obj/item/storage/cargo_containers
+	name = "cargo container"
+	desc = "Probably used for transporting something!"
+	icon = 'icons/fd/structures/cm/contain.dmi'
+	icon_state = "grant_l"
+	density = TRUE
+	anchored = TRUE
+
+	layer = ABOVE_HUMAN_LAYER
+
+	max_w_class = ITEM_SIZE_LARGE
+	max_storage_space = 80
+	storage_slots = 30
+
+/obj/item/storage/cargo_containers/attack_hand(mob/user)
+	return attack_self(user)
+
 /obj/structure/fd/gateway
 	name = "gateway"
 	desc = "The pretty old trchnology, used in the past to transport people from place to place in few seconds."

@@ -27,6 +27,14 @@
 	icon_state = "bridge"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
+/area/ship/coffin
+	name = "\improper IPV Turtle"
+	icon_state = "bridge"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/ship/coffin/cargo
+/area/ship/coffin/back
+
 /area/map_template/wreck/wreck7
 	name = "\improper Abandoned Container"
 
@@ -119,6 +127,14 @@
 	suffixes = list("ruins/ruin_11.dmm")
 	spawn_cost = 2
 
+/datum/map_template/ruin/junkyard/wreck/wreck12
+	name = "IPV Turtle"
+	id = "wreck12"
+	suffixes = list("ruins/ruin_12.dmm")
+	spawn_cost = 3
+	area_usage_test_exempted_root_areas = /area/ship/coffin
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/coffin)
+
 /*
 					Additional Things for wrecks
 */
@@ -159,3 +175,59 @@
 	skill_needed = SKILL_BASIC
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	current_location = "nav_stomper"
+
+
+
+/obj/effect/overmap/visitable/ship/landable/coffin
+	name = "IPV Turtle"
+	shuttle = "Turtle"
+	desc = "Sensor array is detecting a small private vessel, broadcasting registration codes \"IPV-7442-S-135\"."
+	max_speed = 1/(2 SECONDS)
+	burn_delay = 0.5 SECONDS
+	vessel_mass = 900
+	integrity_failure_cap = 70
+	skill_needed = SKILL_BASIC
+	vessel_size = SHIP_SIZE_TINY
+	fore_dir = NORTH
+	dir = NORTH
+	color = "#51ff00"
+	hide_from_reports = TRUE
+	known = 0
+
+/obj/machinery/computer/shuttle_control/explore/coffin
+	name = "vessel control console"
+	shuttle_tag = "Turtle"
+
+/obj/effect/shuttle_landmark/coffin
+	name = "IPV Turtle Landing Zone"
+	landmark_tag = "nav_coffin"
+	docking_controller = "coffin_dock"
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE
+
+/datum/shuttle/autodock/overmap/coffin
+	name = "IPV Turtle"
+	range = 0 //range = 1
+	shuttle_area = list(/area/ship/coffin/cargo,/area/ship/coffin/back)
+	defer_initialisation = TRUE
+	flags = SHUTTLE_FLAGS_PROCESS
+	skill_needed = SKILL_BASIC
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	current_location = "nav_coffin"
+
+/decl/submap_archetype/playablecoffin
+	descriptor = "IPV Turtle"
+	crew_jobs = list(/datum/job/submap/coffinprisoner)
+
+/datum/job/submap/coffinprisoner
+	title = "Corporation Borrower"
+	info = "You are a prisoner of your own ambitions. Now, your main objective - is filling quota for survival."
+	total_positions = 2
+	loadout_allowed = FALSE
+	outfit_type = /decl/hierarchy/outfit/survivor
+
+/obj/effect/submap_landmark/spawnpoint/coffinprisoner_spawn
+	name = "Corporation Borrower"
+
+/obj/effect/submap_landmark/joinable_submap/coffin
+	name = "IPV Turtle"
+	archetype = /decl/submap_archetype/playablecoffin
