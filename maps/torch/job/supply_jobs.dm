@@ -84,7 +84,7 @@
 						SKILL_PILOT       = SKILL_MAX)
 
 	access = list(
-		access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
+		access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm, access_eva,
 		access_cargo_bot, access_mailsorting, access_solgov_crew, access_expedition_shuttle,
 		access_guppy, access_hangar, access_commissary, access_radio_sup
 	)
