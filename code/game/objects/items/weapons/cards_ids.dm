@@ -157,6 +157,8 @@ var/const/NO_EMAG_ACT = -50
 	var/fingerprint_hash = "\[UNSET\]"
 	var/sex = "\[UNSET\]"
 	var/ipc_gen = null
+	var/psi_status
+	var/psi_level
 	var/icon/front
 	var/icon/side
 
@@ -222,7 +224,7 @@ var/const/NO_EMAG_ACT = -50
 	if(front && side)
 		send_rsc(user, front, "front.png")
 		send_rsc(user, side, "side.png")
-	var/datum/browser/popup = new(user, "idcard", name, 600, 250)
+	var/datum/browser/popup = new(user, "idcard", name, 600, 300)
 	popup.set_content(dat())
 	popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
@@ -246,12 +248,15 @@ var/const/NO_EMAG_ACT = -50
 
 	id_card.formal_name_prefix = initial(id_card.formal_name_prefix)
 	id_card.formal_name_suffix = initial(id_card.formal_name_suffix)
-	if(client && client.prefs)
+	if(client?.prefs)
 		for(var/culturetag in client.prefs.cultural_info)
 			var/decl/cultural_info/culture = SSculture.get_culture(client.prefs.cultural_info[culturetag])
 			if(culture)
 				id_card.formal_name_prefix = "[culture.get_formal_name_prefix()][id_card.formal_name_prefix]"
 				id_card.formal_name_suffix = "[id_card.formal_name_suffix][culture.get_formal_name_suffix()]"
+		if(client.prefs.psi_threat_level && client.prefs.psi_openness)
+			id_card.psi_level = client.prefs.psi_threat_level
+			id_card.psi_status = GLOB.psistatus2text[client.prefs.psi_status]
 
 	id_card.registered_name = real_name
 
@@ -293,9 +298,15 @@ var/const/NO_EMAG_ACT = -50
 	dat += text("Assignment: []</A><BR>\n", assignment)
 	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
 	dat += text("Blood Type: []<BR>\n", blood_type)
-	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
+	dat += text("DNA Hash: []<BR>\n", dna_hash)
+	if(psi_status)
+		dat += "Psionics status: [psi_status]<BR>\n"
+		dat += "Psionics threat level: [psi_level]<BR>\n"
 	if(front && side)
-		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
+		dat += "<td align = center valign = top>Photo:<br>"
+		dat += "<img style='image-rendering: pixelated;' src=front.png height=80 width=80 border=4>"
+		dat += "<img style='image-rendering: pixelated;' src=side.png height=80 width=80 border=4>"
+		dat += "</td>"
 	dat += "</tr></table>"
 	return jointext(dat,null)
 

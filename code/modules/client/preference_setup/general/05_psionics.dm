@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(text2psistatus, list("C" = 1, "B" = 2, "A" = 3, "S" = 4))
 	. += "<hr><b>Psionics:</b><br>"
 	. += "Threat level: <a href='?src=\ref[src];select_psi_threat_level=1'><b>[pref.psi_threat_level]</b></a><br>"
 	if(pref.psi_threat_level)
-		. += "psionic status: <a href='?src=\ref[src];select_psi_status=1'><b>[GLOB.psistatus2text[pref.psi_status]]</b></a><br>"
+		. += "Psionic status: <a href='?src=\ref[src];select_psi_status=1'><b>[GLOB.psistatus2text[pref.psi_status]]</b></a><br>"
 		. += "Openness: <a href='?src=\ref[src];select_psi_openness=1'><b>[pref.psi_openness ? "Yes" : "No"]</b></a><br>"
 	. = jointext(.,null)
 
