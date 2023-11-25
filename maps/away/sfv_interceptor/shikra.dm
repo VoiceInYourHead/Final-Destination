@@ -47,7 +47,7 @@
 /obj/effect/overmap/visitable/ship/landable/shikra
 	name = "PM-55 Shikra Interceptor"
 	shuttle = "PM-55 Shikra Interceptor"
-	desc = "Wake signature indicates a small armed vessel."
+	desc = "Wake signature indicates a small armed vessel, broadcasting registration codes \"SCGFV-3471-S-463\"."
 	fore_dir = NORTH
 	color = "#0751f3"
 	alpha = 30

@@ -4,7 +4,7 @@
 
 // Map template data.
 /datum/map_template/ruin/away_site/providence
-	name = "ITV Providence"
+	name = "IPV Providence"
 	id = "awaysite_trucker"
 	description = "."
 	suffixes = list("itv_providence/providence.dmm")

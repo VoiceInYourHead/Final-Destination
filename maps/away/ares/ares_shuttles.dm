@@ -1,7 +1,7 @@
 /obj/effect/overmap/visitable/ship/landable/ares
 	name = "GMMV Ares"
 	shuttle = "Ares"
-	desc = "Sensor array is detecting a small mining vessel, property of Grayson Manufactories Ltd."
+	desc = "Sensor array is detecting a small mining vessel, property of Grayson Manufactories Ltd, broadcasting registration codes \"GMMV-3274-L-228\"."
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
