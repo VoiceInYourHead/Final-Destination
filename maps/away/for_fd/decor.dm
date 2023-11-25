@@ -280,6 +280,22 @@
 		if(do_after(user, 80))
 			qdel(src)
 
+/obj/structure/fd/bs_vines/alien
+	icon = 'icons/fd/animals/Effects.dmi'
+	icon_state = "weeds1"
+
+/obj/structure/fd/bs_vines/alien/New()
+	..()
+	icon_state = "weeds[rand(1, 3)]"
+
+/obj/structure/fd/bs_vines/alien/Crossed(var/atom/movable/AM)
+	if(ishuman(AM) && prob(30))
+		var/mob/living/carbon/L = AM
+		if(L.throwing || L.can_overcome_gravity())
+			return
+		buckle_mob(L)
+		to_chat(L, SPAN_DANGER("You're tangled in \the [src]!"))
+
 /obj/structure/fd/bs_crystal
 	name = "bluespace crystal"
 	desc = "The really rare, non-fluid state of bluespace."

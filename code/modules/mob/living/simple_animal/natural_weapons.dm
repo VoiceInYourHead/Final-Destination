@@ -92,6 +92,9 @@
 /obj/item/natural_weapon/giant
 	force = 30
 
+/obj/item/natural_weapon/giant/special
+	lunge_dist = 6
+
 ///////////////////////* PRIME SOUL *///////////////////////
 
 /obj/item/natural_weapon/punch/minos
