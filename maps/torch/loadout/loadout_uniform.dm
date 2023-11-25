@@ -47,6 +47,9 @@
 /datum/gear/uniform/formal_pants
 	allowed_roles = SEMIANDFORMAL_ROLES
 
+/datum/gear/uniform/thermal
+	allowed_branches = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/civilian)
+
 //from infinity
 /datum/gear/uniform/formal_shirt_and_pants
 	display_name = "formal shirts with pants"

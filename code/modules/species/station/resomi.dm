@@ -42,9 +42,9 @@
 	mob_size = MOB_SMALL
 	holder_type = /obj/item/holder/human
 	light_sensitive = 6
-	gluttonous = GLUT_TINY
 	blood_volume = 280
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
+	thirst_factor = DEFAULT_THIRST_FACTOR * 1.3
 	taste_sensitivity = TASTE_SENSITIVE
 	pulse_rate_mod = 1.5
 	body_temperature = 314.15
@@ -105,7 +105,8 @@
 
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/resomi_sonar_ping,
-		/mob/living/proc/toggle_pass_table
+		/mob/living/proc/toggle_pass_table,
+		/mob/proc/switch_tail_layer
 		)
 
 	descriptors = list(
