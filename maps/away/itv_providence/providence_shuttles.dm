@@ -1,7 +1,7 @@
 /obj/effect/overmap/visitable/ship/landable/providence
-	name = "ITV Providence"
+	name = "IPV Providence"
 	shuttle = "Providence"
-	desc = "Sensor array is detecting a small cargo vessel."
+	desc = "Sensor array is detecting a small cargo vessel, broadcasting registration codes \"IPV-3466-L-112\"."
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 9000
