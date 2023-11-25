@@ -47,7 +47,7 @@
 /obj/effect/overmap/visitable/ship/landable/comet
 	name = "PM-07-L Comet Bomber"
 	shuttle = "PM-07-L Comet Bomber"
-	desc = "Wake signature indicates a small armed vessel."
+	desc = "Wake signature indicates a small armed vessel, broadcasting registration codes \"SCGFV-3563-S-371\"."
 	fore_dir = NORTH
 	color = "#0751f3"
 	integrity_failure_cap = 30
