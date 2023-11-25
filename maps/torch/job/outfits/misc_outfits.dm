@@ -46,3 +46,10 @@
 	name = OUTFIT_JOB_NAME("ERT Leader - Torch")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/command
 	head = /obj/item/clothing/head/beret/solgov/fleet/command
+
+/decl/hierarchy/outfit/job/torch/ert/suit
+	name = OUTFIT_JOB_NAME("ERT Heavy - Torch")
+	back = /obj/item/rig/ert/fleet
+	flags = OUTFIT_RESET_EQUIPMENT | OUTFIT_ADJUSTMENT_SKIP_BACKPACK
+	head = null
+	gloves = null
