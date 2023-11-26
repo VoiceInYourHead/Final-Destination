@@ -110,7 +110,7 @@
 		if(psi_leech)
 			if(stamina > 10)
 				stamina = max(0, stamina - rand(15,20))
-				to_chat(owner, SPAN_DANGER("You feel your psi-power leeched away by \the [psi_leech]..."))
+				//to_chat(owner, SPAN_DANGER("You feel your psi-power leeched away by \the [psi_leech]..."))
 			else
 				stamina++
 		else if(stamina < max_stamina)
