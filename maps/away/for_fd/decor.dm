@@ -17,6 +17,7 @@
 	density = TRUE
 	anchored = TRUE
 
+	randpixel = 0
 	layer = ABOVE_HUMAN_LAYER
 
 	max_w_class = ITEM_SIZE_LARGE

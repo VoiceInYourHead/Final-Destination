@@ -13,7 +13,7 @@
 	cost =            10
 	cooldown =        15
 	use_ranged =      TRUE
-	min_rank =        PSI_RANK_OPERANT
+	min_rank =        PSI_RANK_APPRENTICE
 	use_description = "Click on a distant target while on grab intent to manifest a psychokinetic grip. Use it manipulate objects at a distance."
 	admin_log = FALSE
 	use_sound = 'sound/effects/psi/power_used.ogg'
@@ -59,7 +59,7 @@
 	cooldown =       150
 	use_ranged =     TRUE
 	use_melee =      TRUE
-	min_rank =       PSI_RANK_APPRENTICE
+	min_rank =       PSI_RANK_OPERANT
 	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone away from you."
 
 /decl/psionic_power/psychokinesis/gravigeddon/invoke(var/mob/living/user, var/mob/living/target)

@@ -132,7 +132,7 @@
 	id = "wreck12"
 	suffixes = list("ruins/ruin_12.dmm")
 	spawn_cost = 3
-	area_usage_test_exempted_root_areas = /area/ship/coffin
+	area_usage_test_exempted_root_areas = /area/ship/coffin/
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/coffin)
 
 /*
@@ -180,7 +180,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/coffin
 	name = "IPV Turtle"
-	shuttle = "Turtle"
+	shuttle = "IPV Turtle"
 	desc = "Sensor array is detecting a small private vessel, broadcasting registration codes \"IPV-7442-S-135\"."
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 0.5 SECONDS
@@ -196,7 +196,7 @@
 
 /obj/machinery/computer/shuttle_control/explore/coffin
 	name = "vessel control console"
-	shuttle_tag = "Turtle"
+	shuttle_tag = "IPV Turtle"
 
 /obj/effect/shuttle_landmark/coffin
 	name = "IPV Turtle Landing Zone"
@@ -207,7 +207,7 @@
 /datum/shuttle/autodock/overmap/coffin
 	name = "IPV Turtle"
 	range = 0 //range = 1
-	shuttle_area = list(/area/ship/coffin/cargo,/area/ship/coffin/back)
+	shuttle_area = list(/area/ship/coffin/cargo, /area/ship/coffin/back)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_BASIC
