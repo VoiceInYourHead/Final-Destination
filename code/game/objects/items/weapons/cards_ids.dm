@@ -287,6 +287,9 @@ var/const/NO_EMAG_ACT = -50
 	dat += text("Name: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
 	dat += text("Sex: []</A><BR>\n", sex)
 	dat += text("Age: []</A><BR>\n", age)
+	if(psi_status)
+		dat += "Psionics status: [psi_status]<BR>\n"
+		dat += "Psionics threat level: [psi_level]<BR>\n"
 
 	if(ipc_gen)
 		dat += text("Registration: []</A><BR>\n", ipc_gen)
@@ -299,9 +302,6 @@ var/const/NO_EMAG_ACT = -50
 	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
 	dat += text("Blood Type: []<BR>\n", blood_type)
 	dat += text("DNA Hash: []<BR>\n", dna_hash)
-	if(psi_status)
-		dat += "Psionics status: [psi_status]<BR>\n"
-		dat += "Psionics threat level: [psi_level]<BR>\n"
 	if(front && side)
 		dat += "<td align = center valign = top>Photo:<br>"
 		dat += "<img style='image-rendering: pixelated;' src=front.png height=80 width=80 border=4>"

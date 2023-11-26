@@ -19,7 +19,12 @@
 		fingerprint = md5(H.dna.uni_identity)
 	else
 		fingerprint = "N/A"
-	info = "\icon[src] [src]:\nName: [H.real_name]\nSpecies: [H.get_species()]\nGender: [gender2text(H.gender)]\nAge: [H.age]\nPlace of Birth: [pob]\nFingerprint: [fingerprint]"
+
+	var/psi
+	if(H.client?.prefs?.psi_threat_level && H.client.prefs.psi_openness)
+		psi  = "Psionics status: [GLOB.psistatus2text[H.client.prefs.psi_status]]\n"
+		psi += "Psionics threat level: [H.client.prefs.psi_threat_level]\n"
+	info = "\icon[src] [src]:\nName: [H.real_name]\nSpecies: [H.get_species()]\nGender: [gender2text(H.gender)]\nAge: [H.age]\n[psi]Place of Birth: [pob]\nFingerprint: [fingerprint]"
 
 /obj/item/passport/attack_self(mob/user as mob)
 	user.visible_message(
