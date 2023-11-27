@@ -268,12 +268,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/yacht2/engine1)
 "aw" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine1)
 "ax" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/green{
@@ -1992,11 +1989,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/yacht2/living1)
 "jh" = (
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine2)
 "jk" = (
 /turf/simulated/floor/wood/yew,
@@ -2482,11 +2476,8 @@
 /turf/simulated/floor/tiled,
 /area/yacht2/hallway/aft)
 "sx" = (
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine1)
 "sA" = (
 /obj/structure/table/marble,
@@ -3439,12 +3430,9 @@
 /turf/simulated/floor/carpet/blue,
 /area/yacht2/hallway)
 "Kh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine2)
 "Kw" = (
 /obj/machinery/power/apc{
@@ -8111,7 +8099,7 @@ aa
 Dh
 Dh
 sx
-Dh
+sx
 aj
 aJ
 cr
@@ -10151,7 +10139,7 @@ aa
 tD
 tD
 jh
-tD
+jh
 hN
 SU
 co
