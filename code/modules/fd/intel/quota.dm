@@ -63,7 +63,7 @@
 		leaving = TRUE
 		update_icon()
 
-		addtimer(CALLBACK(src, .proc/leave_animation_cancel, user), 15)
+		addtimer(CALLBACK(src, .proc/leave_animation_cancel, user), 5)
 
 /obj/structure/fd/lethal_company/proc/fly_away()
 	pixel_y = 5
@@ -84,6 +84,9 @@
 	qdel(src)
 
 /obj/structure/fd/lethal_company/attack_hand(mob/user)
+	if(active)
+		to_chat(user, "<span class='notice'>[src] already activated!</span>")
+		return
 	if(!active)
 		activated = TRUE
 		update_icon()
@@ -92,12 +95,9 @@
 		active = TRUE
 		run_timer()
 		update_icon()
-	if(active)
-		to_chat(user, "<span class='notice'>[src] already activated!</span>")
-		return
 
 /obj/structure/fd/lethal_company/attackby(var/obj/item/I, var/mob/user)
-	if(junk)
+	if(junk && active)
 		if(istype(I, /obj/item/fd/ancient_items/))
 			if(do_after(user, 10))
 				var/obj/item/fd/ancient_items/junk_rare = I
@@ -134,7 +134,7 @@
 			to_chat(user, "<span class='notice'>[src] do not need this!</span>")
 			return
 
-	if(minerals)
+	if(minerals && active)
 		if(istype(I, /obj/item/ore))
 			if(do_after(user, 10))
 				var/obj/item/ore/materials = I
@@ -151,3 +151,23 @@
 	name = "mineral quota harvester"
 	junk = FALSE
 	minerals = TRUE
+
+/obj/structure/fd/lethal_company/zone_trigger
+	timer = 2000
+
+/obj/structure/fd/lethal_company/New()
+	. = ..()
+	needed = pick(100,200,250)
+
+/obj/structure/fd/lethal_company/zone_trigger/Process(mob/user)
+
+	if(!active && (locate(/mob/living/carbon/human) in orange(6, src)))
+		activated = TRUE
+		update_icon()
+
+		addtimer(CALLBACK(src, .proc/activating, user), 5)
+		active = TRUE
+		run_timer()
+		update_icon()
+
+	. = ..()

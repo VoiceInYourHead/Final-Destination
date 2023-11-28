@@ -9,6 +9,23 @@
 /obj/structure/fd/placeholder/better
 	opacity = 1
 
+/obj/item/storage/cargo_containers
+	name = "cargo container"
+	desc = "Probably used for transporting something!"
+	icon = 'icons/fd/structures/cm/contain.dmi'
+	icon_state = "grant_l"
+	density = TRUE
+	anchored = TRUE
+
+	layer = ABOVE_HUMAN_LAYER
+
+	max_w_class = ITEM_SIZE_LARGE
+	max_storage_space = 80
+	storage_slots = 30
+
+/obj/item/storage/cargo_containers/attack_hand(mob/user)
+	return attack_self(user)
+
 /obj/structure/fd/gateway
 	name = "gateway"
 	desc = "The pretty old trchnology, used in the past to transport people from place to place in few seconds."
@@ -262,6 +279,22 @@
 	if(istype(I, /obj/item/material/hatchet))
 		if(do_after(user, 80))
 			qdel(src)
+
+/obj/structure/fd/bs_vines/alien
+	icon = 'icons/fd/animals/Effects.dmi'
+	icon_state = "weeds1"
+
+/obj/structure/fd/bs_vines/alien/New()
+	..()
+	icon_state = "weeds[rand(1, 3)]"
+
+/obj/structure/fd/bs_vines/alien/Crossed(var/atom/movable/AM)
+	if(ishuman(AM) && prob(30))
+		var/mob/living/carbon/L = AM
+		if(L.throwing || L.can_overcome_gravity())
+			return
+		buckle_mob(L)
+		to_chat(L, SPAN_DANGER("You're tangled in \the [src]!"))
 
 /obj/structure/fd/bs_crystal
 	name = "bluespace crystal"

@@ -3,7 +3,7 @@
 /obj/effect/overmap/visitable/ship/landable/yacht2
 	name = "Yacht"
 	shuttle = "Yacht"
-	desc = "Sensor array is detecting a small vessel.<br>   Armament:   Unknown."
+	desc = "Sensor array is detecting a small vessel, broadcasting registration codes \"IPV-9384-L-166\". <br>   Armament:   Unknown."
 	color = "#ffc966"
 	icon_state = "ship"
 	moving_state = "ship_moving"
