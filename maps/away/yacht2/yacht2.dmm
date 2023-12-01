@@ -2572,8 +2572,8 @@
 	pixel_x = 28;
 	pixel_y = 28
 	},
-/obj/machinery/cryopod/lifepod,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/cryopod,
 /turf/simulated/floor/tiled/steel_grid,
 /area/yacht2/hallway/aft)
 "ue" = (
@@ -3745,7 +3745,7 @@
 /turf/simulated/floor/airless,
 /area/yacht2/engine2)
 "Rk" = (
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on,
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank,
 /turf/simulated/floor/reinforced/carbon_dioxide{
 	temperature = 993.15
 	},
@@ -4077,7 +4077,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/yacht2/engineering/power)
 "XY" = (
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on,
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank,
 /turf/simulated/floor/reinforced/carbon_dioxide{
 	temperature = 993.15
 	},
