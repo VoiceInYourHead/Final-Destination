@@ -24,20 +24,16 @@
 	stock = 2
 	room_type = "cart_horizont"
 	id = "cart_horizont_1"
-	prefix = "maps/exoplanet_ruins/railway/random_carts/"
+	prefix = "maps/random_ruins/exoplanet_ruins/railway/random_carts/"
 	suffixes = list("cart_1.dmm")
 
 /datum/map_template/ruin/random_room/traincrash/horizontal/cracked
 	name = "Train Cart 2"
-	stock = 1
-	weight = 4
 	id = "cart_horizont_2"
 	suffixes = list("cart_2.dmm")
 
 /datum/map_template/ruin/random_room/traincrash/horizontal/gunrich
 	name = "Train Cart 3"
-	stock = 2
-	weight = 8
 	id = "cart_horizont_3"
 	suffixes = list("cart_3.dmm")
 
@@ -50,16 +46,13 @@
 	name = "Train Cart 2-1"
 	template_width = 5
 	template_height = 11
-	weight = 4
 	stock = 1
 	room_type = "cart_vertical"
 	id = "cart_vertical_1"
-	prefix = "maps/exoplanet_ruins/railway/random_carts/"
+	prefix = "maps/random_ruins/exoplanet_ruins/railway/random_carts/"
 	suffixes = list("cart_vert_1.dmm")
 
 /datum/map_template/ruin/random_room/traincrash/vertical/cracked
 	name = "Train Cart 2-2"
-	stock = 1
-	weight = 10
 	id = "cart_vertical_2"
 	suffixes = list("cart_vert_2.dmm")
