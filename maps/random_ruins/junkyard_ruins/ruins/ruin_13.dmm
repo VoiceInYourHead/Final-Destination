@@ -1,0 +1,40 @@
+"a" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "5 light"; name = "light static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"f" = (/obj/structure/lattice,/obj/random/facility/gun/rare,/turf/template_noop,/area/template_noop)
+"g" = (/turf/simulated/wall/cult,/area/map_template/wreck/wreck13)
+"j" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "9 moderate"; name = "moderate static 2"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"k" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "1 very light"; name = "very light static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"m" = (/obj/structure/catwalk,/obj/random/junkyard/advdevice,/turf/template_noop,/area/template_noop)
+"n" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"o" = (/turf/template_noop,/area/template_noop)
+"r" = (/turf/simulated/wall/cult/reinf,/area/map_template/wreck/wreck13)
+"y" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "5 light"; name = "light static"},/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "1 very light"; name = "very light static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"B" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "9 moderate"; name = "moderate static 2"},/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "1 very light"; name = "very light static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"D" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "9 moderate"; name = "moderate static 2"},/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "1 very light"; name = "very light static"},/mob/living/simple_animal/hostile/faithless/strong{unsuitable_atmos_damage = 0},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"E" = (/obj/random/junkyard/loot,/turf/template_noop,/area/template_noop)
+"I" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "2 moderate"; name = "moderate static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"L" = (/obj/structure/catwalk,/turf/template_noop,/area/template_noop)
+"O" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "2 moderate"; name = "moderate static"},/obj/random/junkyard/loot,/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"Q" = (/obj/structure/cult/pylon,/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "2 moderate"; name = "moderate static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"R" = (/obj/structure/lattice,/obj/random/junkyard/bomb_supply,/turf/template_noop,/area/template_noop)
+"S" = (/obj/effect/golemrune{icon = 'icons/effects/static.dmi'; icon_state = "1 heavy"; desc = "Strange static."; name = "Strange static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"T" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "9 moderate"; name = "moderate static 2"},/obj/random/junkyard/cash,/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"X" = (/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "1 very light"; name = "very light static"},/obj/effect/decal/cleanable/dirt{icon = 'icons/effects/static.dmi'; icon_state = "1 very light"; name = "very light static"},/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+"Y" = (/turf/simulated/floor/cult{initial_gas = null},/area/map_template/wreck/wreck13)
+
+(1,1,1) = {"
+RLLnoronnrLLmno
+nnrnrrkkkrrorno
+orrkaaaaaaakrrn
+nnkXgygggygXknn
+oraggIIQIIggYro
+rrayIQBDBQOyarr
+okagIBjjTBIgakL
+okagQDjSjDQgakn
+okagIBjjjBIgako
+rrayIQBDBQIyarr
+EraggIIQIIggarn
+ookXgygggygXkon
+nrrkaaaaaaakrrn
+nnrorrkkkrrorno
+onLLoronnroonfo
+"}
