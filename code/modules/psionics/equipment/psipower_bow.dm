@@ -41,25 +41,28 @@
 	bolt = new/obj/item/psyarrow
 	var/maintain_cost = 2
 	var/mob/living/owner
-	draw_time = 10
+	draw_time = 40
 
 /obj/item/gun/launcher/crossbow/psibow/master
 	bolt = new/obj/item/psyarrow/master
 	used_bolt = /obj/item/psyarrow/master
 	draw_time = 8
 	maintain_cost = 3
+	draw_time = 30
 
 /obj/item/gun/launcher/crossbow/psibow/master/grand
 	bolt = new/obj/item/psyarrow/master/grand
 	used_bolt = /obj/item/psyarrow/master/grand
 	draw_time = 6
 	maintain_cost = 4
+	draw_time = 20
 
 /obj/item/gun/launcher/crossbow/psibow/master/grand/paramount
 	bolt = new/obj/item/psyarrow/master/grand/paramount
 	used_bolt = /obj/item/psyarrow/master/grand/paramount
 	draw_time = 4
 	maintain_cost = 5
+	draw_time = 10
 
 /obj/item/gun/launcher/crossbow/psibow/New(var/mob/living/_owner)
 	owner = _owner
@@ -71,10 +74,9 @@
 
 /obj/item/gun/launcher/crossbow/psibow/attack_self(mob/living/user as mob)
 	if(!bolt)
-		if(do_after(src,30))
-			user.visible_message("[user] starts to reconstruct arrow inside the [src].","You starting to create new arrow for the [src].")
-			bolt = used_bolt
-			update_icon()
+		user.visible_message("[user] starts to reconstruct arrow inside the [src].","You starting to create new arrow for the [src].")
+		bolt = new used_bolt
+		update_icon()
 	if(tension)
 		if(bolt)
 			user.visible_message("[user] relaxes the tension on [src]'s string and removes [bolt].","You relax the tension on [src]'s string and remove [bolt].")
@@ -131,9 +133,3 @@
 			host.drop_from_inventory(src)
 		else
 			STOP_PROCESSING(SSprocessing, src)
-
-/obj/item/gun/launcher/crossbow/psibow/handle_post_fire(mob/user, atom/target)
-	bolt = null
-	tension = 0
-	update_icon()
-	..()
