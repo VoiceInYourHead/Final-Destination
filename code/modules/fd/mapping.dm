@@ -30,3 +30,9 @@
 /obj/effect/landmark/light/junk_planet/water
 	light_brightness = 0.5
 	colored = "#6fb45c"
+
+/obj/effect/landmark/light/undersea/lighthouse
+	light_brightness = 0.4
+	light_inrange = 15
+	light_outrange = 20
+	colored = "#f3f544"

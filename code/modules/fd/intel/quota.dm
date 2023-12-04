@@ -25,7 +25,7 @@
 		T--
 	src.audible_message("<b>\The [src]</b> says, 'Quota was not reached in time, <span class='danger'>license termination in progress</span>'")
 	sleep(3)
-	cell_explosion(src, 200, 90)
+	cell_explosion(get_turf(src), 500, 30)
 	qdel(src)
 
 /obj/structure/fd/lethal_company/Initialize()
@@ -153,7 +153,7 @@
 	minerals = TRUE
 
 /obj/structure/fd/lethal_company/zone_trigger
-	timer = 2000
+	timer = 6000
 
 /obj/structure/fd/lethal_company/New()
 	. = ..()
