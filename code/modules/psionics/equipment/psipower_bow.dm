@@ -34,7 +34,7 @@
 	item_state = "crossbow-solid"
 	atom_flags = 0
 	color = "#0095ff"
-	alpha = 100
+	alpha = 110
 	anchored = TRUE
 	release_speed = 6
 	var/used_bolt = /obj/item/psyarrow
