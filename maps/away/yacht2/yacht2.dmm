@@ -1765,7 +1765,9 @@
 	thrown_force_multiplier = 2;
 	max_force = 40;
 	worth_multiplier = 10;
-	attack_cooldown_modifier = 0.1
+	attack_cooldown_modifier = 0.1;
+	force = 15;
+	throwforce = 15
 	},
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/teacup{
 	pixel_x = 6
@@ -2109,6 +2111,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/yacht2/engineering/power)
 "lF" = (
@@ -2321,6 +2326,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/yacht2/engineering/power)
@@ -3331,6 +3341,9 @@
 	req_access = list();
 	pixel_y = -24
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/yacht2/engineering/power)
 "Iv" = (
@@ -3608,6 +3621,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/yacht2/engineering/power)

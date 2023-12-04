@@ -54,6 +54,15 @@
 	name = "\improper Station fragment #5"
 /area/map_template/wreck/wreckeleven/two
 
+/area/map_template/wreck/wreck13
+	name = "\improper Unknown Location"
+
+/area/map_template/wreck/wreck14
+	name = "\improper Colony Ship"
+
+/area/map_template/wreck/wreck15
+	name = "\improper Station fragment #6"
+
 //////////    D A T U M S     /////////////
 
 /datum/map_template/ruin/junkyard/wreck
@@ -134,6 +143,24 @@
 	spawn_cost = 3
 	area_usage_test_exempted_root_areas = /area/ship/coffin/
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/coffin)
+
+/datum/map_template/ruin/junkyard/wreck/wreck13
+	name = "Cult Ruin"
+	id = "wreck13"
+	suffixes = list("ruins/ruin_13.dmm")
+	spawn_cost = 0.5
+
+/datum/map_template/ruin/junkyard/wreck/wreck14
+	name = "Wrecked Colony Ship"
+	id = "wreck14"
+	suffixes = list("ruins/ruin_14.dmm")
+	spawn_cost = 1
+
+/datum/map_template/ruin/junkyard/wreck/wreck15
+	name = "Station fragment #6 (Supermatter)"
+	id = "wreck15"
+	suffixes = list("ruins/ruin_15.dmm")
+	spawn_cost = 5
 
 /*
 					Additional Things for wrecks
