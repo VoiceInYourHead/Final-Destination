@@ -18,7 +18,7 @@
 	admin_log = FALSE
 
 
-//I know, there is a lot of better ways
+//I know, there is a lot of better ways to do this
 /decl/psionic_power/manifestation/psiblade/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HURT)
 		return FALSE
@@ -79,7 +79,7 @@
 	cost =            5
 	cooldown =        10
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest a psychokinetic tool. Use it in-hand to switch between tool types."
+	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest one of many helpful tools."
 	admin_log = FALSE
 
 /decl/psionic_power/manifestation/tinker/invoke(var/mob/living/user, var/mob/living/target)
@@ -87,24 +87,38 @@
 		return FALSE
 	. = ..()
 	if(.)
-		var/option = alert(target, "What tookit you need?", "Choose something!", "Medical", "Engineering")
+
+		var/option = alert(target, "What toolkit you need?", "Choose something!", "Medical", "Engineering", "Gloves")
 		if (!option)
 			return
+		if(option == "Gloves")
+			var/con_rank_user = user.psi.get_rank(PSI_MANIFESTATION)
+			if(con_rank_user < PSI_RANK_MASTER)
+				to_chat(user, SPAN_OCCULT("<b>You don't have enough experience to do something like this yet!</b>"))
+				return FALSE
+			else
+				var/option_second = alert(target, "What exactly do you want?", "Choose something!", "Insulated", "Latex")
+				if (!option_second)
+					return
+				if(option_second == "Insulated")
+					return new /obj/item/clothing/gloves/insulated/psi(user)
+				if(option_second == "Latex")
+					return new /obj/item/clothing/gloves/latex/psi(user)
 		if(option == "Engineering")
 			return new /obj/item/psychic_power/tinker(user)
 		if(option == "Medical")
-			var/option_second = input(target, "What exactly do you want?", "Choose something!") in list("Saw", "Scalpel", "Bone Setter", "Retractor", "Hemostat", "Drill")
-			if (!option_second)
+			var/option_third = input(target, "What exactly do you want?", "Choose something!") in list("Saw", "Scalpel", "Bone Setter", "Retractor", "Hemostat", "Drill")
+			if (!option_third)
 				return
-			if(option_second == "Scalpel")
+			if(option_third == "Scalpel")
 				return new /obj/item/scalpel/psi(user)
-			if(option_second == "Saw")
+			if(option_third == "Saw")
 				return new /obj/item/circular_saw/psi(user)
-			if(option_second == "Bone Setter")
+			if(option_third == "Bone Setter")
 				return new /obj/item/bonesetter/psi(user)
-			if(option_second == "Retractor")
+			if(option_third == "Retractor")
 				return new /obj/item/retractor/psi(user)
-			if(option_second == "Hemostat")
+			if(option_third == "Hemostat")
 				return new /obj/item/hemostat/psi(user)
-			if(option_second == "Drill")
+			if(option_third == "Drill")
 				return new /obj/item/surgicaldrill/psi(user)

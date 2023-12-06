@@ -39,7 +39,7 @@
 	release_speed = 6
 	var/used_bolt = /obj/item/psyarrow
 	bolt = new/obj/item/psyarrow
-	var/maintain_cost = 2
+	var/maintain_cost = 8
 	var/mob/living/owner
 	draw_time = 40
 
@@ -47,7 +47,7 @@
 	bolt = new/obj/item/psyarrow/master
 	used_bolt = /obj/item/psyarrow/master
 	draw_time = 8
-	maintain_cost = 3
+	maintain_cost = 6
 	draw_time = 30
 
 /obj/item/gun/launcher/crossbow/psibow/master/grand
@@ -61,7 +61,7 @@
 	bolt = new/obj/item/psyarrow/master/grand/paramount
 	used_bolt = /obj/item/psyarrow/master/grand/paramount
 	draw_time = 4
-	maintain_cost = 5
+	maintain_cost = 2
 	draw_time = 10
 
 /obj/item/gun/launcher/crossbow/psibow/New(var/mob/living/_owner)
