@@ -19,12 +19,13 @@
 "iL" = (/obj/structure/showcase{desc = "An very interesting piece of the old civilization"; icon = 'icons/fd/structures/pulsar_machinery.dmi'; icon_state = "pulsar_tank_burst"; name = "Strange machinery"; pixel_x = 1; pixel_y = 13},/turf/simulated/floor/ascent{name = "plating"},/area/space)
 "jP" = (/turf/unsimulated/floor/exoplanet/barren{color = "#555555"},/area/space)
 "kL" = (/obj/effect/landmark/light/undersea/lighthouse,/turf/simulated/open,/area/space)
-"lu" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/space)
+"lu" = (/obj/structure/catwalk,/obj/structure/fd/bs_lamp,/turf/simulated/floor/plating,/area/space)
 "mW" = (/turf/simulated/floor/shuttle_ceiling/ascent{base_color = "grey"; color = "grey"},/area/space)
 "on" = (/obj/structure/lattice,/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/open,/area/space)
 "pf" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/floor_decal/spline/plain/black{dir = 1; icon_state = "spline_plain"},/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/open,/area/space)
 "qd" = (/obj/structure/fd/placeholder/better{opacity = 0},/obj/effect/floor_decal/spline/plain/black,/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/open,/area/space)
 "qn" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/open,/area/space)
+"qR" = (/obj/structure/fd/bs_lamp,/turf/unsimulated/floor/exoplanet/barren{color = "grey"},/area/space)
 "rr" = (/obj/effect/floor_decal/spline/plain/black{dir = 8; icon_state = "spline_plain"},/obj/effect/floor_decal/spline/plain/black{dir = 1; icon_state = "spline_plain"},/turf/simulated/open,/area/space)
 "rx" = (/obj/structure/lattice,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/open,/area/space)
 "sn" = (/obj/effect/floor_decal/spline/plain/black{dir = 1; icon_state = "spline_plain"},/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/open,/area/space)
@@ -71,7 +72,7 @@
 "Wa" = (/obj/effect/floor_decal/spline/plain/black{dir = 8; icon_state = "spline_plain"},/obj/effect/floor_decal/spline/plain/black,/turf/simulated/floor/shuttle_ceiling/ascent{base_color = "grey"; color = "grey"},/area/space)
 "WM" = (/obj/structure/lattice,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/open,/area/space)
 "WR" = (/obj/effect/floor_decal/spline/plain/black{dir = 1; icon_state = "spline_plain"},/turf/simulated/open,/area/space)
-"XA" = (/turf/unsimulated/mineral{color = "grey"},/area/space)
+"XA" = (/turf/unsimulated/mineral{color = "#33446b"},/area/space)
 
 (1,1,1) = {"
 KOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKO
@@ -97,17 +98,17 @@ KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyby
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyhyhGGqGqGqGqGqGqQpwiQpQpQpQpQpQpQpQpGqGqGqGqXAXAGqXAGqGqGqGqKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyUBGqGqGqGqGqwiwiQpQpGqQpQpQpGqGqGqGqwiGqGqXAXAXAXAXAXAGqGqKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyhyhGGqGqQpGqGqQpQpGqGqGqQpQpGqGqGqwiwiGqXAXAXAXAXAXAGqGqGqKO
-KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAbybybybybybybyUBGqGqwiwiGqGqwiQpGqGqGqGqGqGqwiQpGqGqGqGqXAXAGqXAGqGqGqKO
+KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAbybybybybybybyUBGqGqwiwiGqqRwiQpGqGqGqGqGqGqwiQpGqGqGqGqXAXAGqXAGqGqGqKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAbybybybybyUBGqGqGqQpGqGqGqGqGqGqGqGqGqGqGqwiGqGqGqGqGqXAGqGqGqGqGqKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAbybyhyqdGqGqGqGqGqQpGqGqQpQpGqGqwiGqGqGqGqGqGqGqGqGqGqGqGqGqGqKO
-KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAXAbyUBGqGqGqGqGqGqGqwiGqQpwiQpwiwiwiGqGqGqXAGqGqGqGqGqGqGqGqGqKO
+KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAXAbyUBGqGqGqGqGqGqGqwiGqQpwiQpwiwiwiGqqRGqXAGqGqGqGqGqGqGqGqGqKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAbyXAXAGqGqGqGqGqGqGqGqwiQpQpQpwiwiwiGqGqXAXAGqGqGqGqGqGqGqGqKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAXAXAXAGqGqGqGqGqGqXAXAwiwiGqGqQpwiGqGqGqXAGqGqGqGqGqGqGqXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAXAXAvAGqGqGqGqGqXAXAGqGqQpGqGqGqGqXAXAGqGqGqGqGqGqGqXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAbybyXAKojPvAGqGqGqGqXAGqGqGqGqQpGqGqGqGqXAXAGqGqXAGqGqGqXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAbybyKoKoKojPjPuxvAGqGqGqGqwiQpGqGqGqGqGqGqXAXAXAGqXAXAGqGqXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAbybybyKobyjPjPjPvAwiGqQpQpGqGqQpGqGqGqGqGqGqXAXAXAXAGqGqXAKO
-KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAbyjPbybybybyjPjPbXQpwiQpQpGqwiwiGqGqGqGqGqGqXAXAXAGqGqXAXAKO
+KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAbyjPbybybybyjPjPbXQpwiQpQpqRwiwiGqGqGqGqGqGqXAXAXAGqGqXAXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAjPKobyjPjPXAbXwiQpwiwiQpwiwiXAwiGqGqGqXAXAXAXAXAGqXAXAXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAXAjPXAXAXAXAQprrpfQpwiwiwiQpGqGqGqGqXAXAXAXAXAXAXAXAXAKO
 KObybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybybyXAXAXAXAXAXAXAXAXAXAbyioHFyGwiQpGqGqGqGqGqGqXAXAXAXAXAXAXAXAKO

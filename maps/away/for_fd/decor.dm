@@ -210,6 +210,17 @@
 	anchored = TRUE
 	density = FALSE
 
+/obj/structure/fd/bs_lamp
+	name = "strange pulsating statue"
+	desc = "This one probably made by aliens"
+	icon = 'icons/fd/hivemind_machines.dmi'
+	icon_state = "antenna"
+	anchored = TRUE
+
+/obj/structure/fd/bs_lamp/Initialize()
+	. = ..()
+	set_light(0.2, 1, 2, 1, COLOR_CYAN)
+
 /obj/structure/fd/bs_vines
 	name = "bluespace corrupted vines"
 	desc = "Bluespace corruptive flora"
