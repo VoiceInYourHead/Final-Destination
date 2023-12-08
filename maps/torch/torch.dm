@@ -203,6 +203,7 @@
 	#include "../away/itv_providence/providence.dm"
 	#include "../away/drone_carrier/carrier.dm"
 	#include "../away/junk_planet/jplanet.dm"
+	#include "../away/undersea/code_stuff.dm"
 	#include "../away/ecoffice/ecoffice.dm"
 
 //alternative future stuff

@@ -36,3 +36,9 @@
 	light_inrange = 15
 	light_outrange = 20
 	colored = "#f3f544"
+
+/obj/effect/landmark/light/undersea/naturallight
+	light_brightness = 0.4
+	light_inrange = 5
+	light_outrange = 10
+	colored = "#1e4679"
