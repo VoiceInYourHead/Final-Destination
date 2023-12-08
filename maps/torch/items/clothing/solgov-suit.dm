@@ -133,7 +133,7 @@
 
 /obj/item/clothing/suit/storage/solgov/service/army/command
 	name = "officer green army coat"
-	desc = "An olive green coat, part of SCG Army 'Greens' service uniform, complete with a touch of gold and optional garnish. Most would say it looks way too ancient."
+	desc = "An olive green coat, part of SCG Army 'Greens' service uniform, complete with a touch of gold. Most would say it looks way too ancient."
 	icon_state = "greenservice_com"
 	item_state = "greenservice_com"
 
@@ -289,13 +289,13 @@
 	icon_state = "sailordress"
 	item_state = "sailordress"
 
-/obj/item/clothing/suit/dress/solgov/army
+/obj/item/clothing/suit/storage/dress/solgov/army
 	name = "army dress jacket"
 	desc = "A tailored black SCG Army dress jacket with red trim and a fancy stark-white belt. Pretty sharp at the collar."
 	icon_state = "blackdress"
 	item_state = "blackdress"
 
-/obj/item/clothing/suit/dress/solgov/army/command
+/obj/item/clothing/suit/storage/dress/solgov/army/command
 	name = "army officer's dress jacket"
 	desc = "A tailored black SCG Army dress jacket with red trim, golden cuffs and ceremonial aiguilettes. Smells like a parade."
 	icon_state = "blackdress_com"

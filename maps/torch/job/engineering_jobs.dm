@@ -201,6 +201,8 @@
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
 		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/army/e4,
+		/datum/mil_rank/army/e5,
 		/datum/mil_rank/civ/contractor
 	)
 	min_skill = list(   SKILL_COMPUTER		= SKILL_TRAINED,
