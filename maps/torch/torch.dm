@@ -147,7 +147,7 @@
 	#include "z1_admin.dmm"
 	#include "z2_transit.dmm"
 
-	#include "300x300_placeholder.dmm"
+//	#include "300x300_placeholder.dmm"
 
 	#include "../away/empty.dmm"
 	#include "../away/shade/_mining.dm"
