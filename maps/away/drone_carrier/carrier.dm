@@ -22,7 +22,7 @@
 
 /obj/effect/overmap/visitable/ship/carrier
 	name = "FTU-SV Bigsby"
-	desc = "Sensor array detects a large vessel, identifying itself as 'FTU-SV Bigsby'"
+	desc = "Sensor array detects a large vessel, identifying itself as 'FTU-SV Bigsby'. It's broadcasting next registration codes \"FTUSV-1986-M-331\"."
 	vessel_mass = 20000
 	integrity_failure_cap = 200
 	color = "#00ffff"

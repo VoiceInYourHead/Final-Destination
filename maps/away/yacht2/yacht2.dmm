@@ -268,12 +268,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/yacht2/engine1)
 "aw" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine1)
 "ax" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/green{
@@ -1768,7 +1765,9 @@
 	thrown_force_multiplier = 2;
 	max_force = 40;
 	worth_multiplier = 10;
-	attack_cooldown_modifier = 0.1
+	attack_cooldown_modifier = 0.1;
+	force = 15;
+	throwforce = 15
 	},
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/teacup{
 	pixel_x = 6
@@ -1992,11 +1991,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/yacht2/living1)
 "jh" = (
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine2)
 "jk" = (
 /turf/simulated/floor/wood/yew,
@@ -2114,6 +2110,9 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/yacht2/engineering/power)
@@ -2328,6 +2327,11 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/yacht2/engineering/power)
 "pp" = (
@@ -2482,11 +2486,8 @@
 /turf/simulated/floor/tiled,
 /area/yacht2/hallway/aft)
 "sx" = (
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine1)
 "sA" = (
 /obj/structure/table/marble,
@@ -2581,8 +2582,8 @@
 	pixel_x = 28;
 	pixel_y = 28
 	},
-/obj/machinery/cryopod/lifepod,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/cryopod,
 /turf/simulated/floor/tiled/steel_grid,
 /area/yacht2/hallway/aft)
 "ue" = (
@@ -3340,6 +3341,9 @@
 	req_access = list();
 	pixel_y = -24
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/yacht2/engineering/power)
 "Iv" = (
@@ -3439,12 +3443,9 @@
 /turf/simulated/floor/carpet/blue,
 /area/yacht2/hallway)
 "Kh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/structure/wall_frame/titanium,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/effect/paint/merc,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/wall/titanium,
 /area/yacht2/engine2)
 "Kw" = (
 /obj/machinery/power/apc{
@@ -3621,6 +3622,11 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/yacht2/engineering/power)
 "Nj" = (
@@ -3757,7 +3763,7 @@
 /turf/simulated/floor/airless,
 /area/yacht2/engine2)
 "Rk" = (
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on,
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank,
 /turf/simulated/floor/reinforced/carbon_dioxide{
 	temperature = 993.15
 	},
@@ -4089,7 +4095,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/yacht2/engineering/power)
 "XY" = (
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on,
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos/tank,
 /turf/simulated/floor/reinforced/carbon_dioxide{
 	temperature = 993.15
 	},
@@ -8111,7 +8117,7 @@ aa
 Dh
 Dh
 sx
-Dh
+sx
 aj
 aJ
 cr
@@ -10151,7 +10157,7 @@ aa
 tD
 tD
 jh
-tD
+jh
 hN
 SU
 co

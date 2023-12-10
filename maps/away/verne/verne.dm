@@ -19,7 +19,7 @@
 
 /obj/effect/overmap/visitable/ship/verne
 	name = "SRV Verne"
-	desc = "Sensor array detects a large vessel, identifying itself as 'SRV Verne'"
+	desc = "Sensor array detects a large vessel, identifying itself as 'SRV Verne', broadcasting registration codes \"ISRV-3758-M-238\"."
 	vessel_mass = 10000
 	max_speed = 1/(3 SECONDS)
 	burn_delay = 2 SECONDS

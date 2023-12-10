@@ -736,11 +736,11 @@ Ccomp's first proc.
 	set desc = "switches between 1x and custom views"
 
 	if(view == world.view)
-		view = input("Select view range:", "FUCK YE", 7) in list(1,2,3,4,5,6,7,8,9,10,11,12,13,14,128)
+		view = input("Select view range:", "FUCK YE", 7) in list(1,2,4,6,7,8,10,12,13,14,18,24,30,128)
 	else
 		view = world.view
 
-	log_and_message_admins("changed their view range to [view].")
+	log_and_message_admins("changed their beautiful view range to [view].")
 
 /client/proc/admin_call_shuttle()
 

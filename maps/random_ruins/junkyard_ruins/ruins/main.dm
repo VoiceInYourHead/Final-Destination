@@ -54,6 +54,15 @@
 	name = "\improper Station fragment #5"
 /area/map_template/wreck/wreckeleven/two
 
+/area/map_template/wreck/wreck13
+	name = "\improper Unknown Location"
+
+/area/map_template/wreck/wreck14
+	name = "\improper Colony Ship"
+
+/area/map_template/wreck/wreck15
+	name = "\improper Station fragment #6"
+
 //////////    D A T U M S     /////////////
 
 /datum/map_template/ruin/junkyard/wreck
@@ -132,8 +141,26 @@
 	id = "wreck12"
 	suffixes = list("ruins/ruin_12.dmm")
 	spawn_cost = 3
-	area_usage_test_exempted_root_areas = /area/ship/coffin
+	area_usage_test_exempted_root_areas = /area/ship/coffin/
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/coffin)
+
+/datum/map_template/ruin/junkyard/wreck/wreck13
+	name = "Cult Ruin"
+	id = "wreck13"
+	suffixes = list("ruins/ruin_13.dmm")
+	spawn_cost = 0.5
+
+/datum/map_template/ruin/junkyard/wreck/wreck14
+	name = "Wrecked Colony Ship"
+	id = "wreck14"
+	suffixes = list("ruins/ruin_14.dmm")
+	spawn_cost = 1
+
+/datum/map_template/ruin/junkyard/wreck/wreck15
+	name = "Station fragment #6 (Supermatter)"
+	id = "wreck15"
+	suffixes = list("ruins/ruin_15.dmm")
+	spawn_cost = 5
 
 /*
 					Additional Things for wrecks
@@ -180,7 +207,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/coffin
 	name = "IPV Turtle"
-	shuttle = "Turtle"
+	shuttle = "IPV Turtle"
 	desc = "Sensor array is detecting a small private vessel, broadcasting registration codes \"IPV-7442-S-135\"."
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 0.5 SECONDS
@@ -196,7 +223,7 @@
 
 /obj/machinery/computer/shuttle_control/explore/coffin
 	name = "vessel control console"
-	shuttle_tag = "Turtle"
+	shuttle_tag = "IPV Turtle"
 
 /obj/effect/shuttle_landmark/coffin
 	name = "IPV Turtle Landing Zone"
@@ -207,7 +234,7 @@
 /datum/shuttle/autodock/overmap/coffin
 	name = "IPV Turtle"
 	range = 0 //range = 1
-	shuttle_area = list(/area/ship/coffin/cargo,/area/ship/coffin/back)
+	shuttle_area = list(/area/ship/coffin/cargo, /area/ship/coffin/back)
 	defer_initialisation = TRUE
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_BASIC

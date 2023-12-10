@@ -47,7 +47,7 @@
 /obj/effect/overmap/visitable/ship/landable/saboteur
 	name = "PM-14 Saboteur EW Interceptor"
 	shuttle = "PM-14 Saboteur EW Interceptor"
-	desc = "Wake signature indicates a small armed vessel."
+	desc = "Wake signature indicates a small armed vessel, broadcasting registration codes \"SCGFV-7392-S-171\"."
 	fore_dir = NORTH
 	color = "#0751f3"
 	integrity_failure_cap = 30

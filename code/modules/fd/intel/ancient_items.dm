@@ -764,19 +764,19 @@
 			charges += 1
 			lighting.broken(TRUE)
 	else
+		if(charges < 1)
+			to_chat(user, "<span class='warning'>You don't have enough light for this!</span>")
+			return
 		if(charges >= 1)
 			var/option =  alert(user, "Do you want to create a light sphere?", "Wait!", "Yes", "No")
 			switch(option)
 				if("Yes")
 					if(do_after(user, 40))
 						user.visible_message("\The [user] starts to create the orb of light!.")
-						new /obj/structure/fd/light_sphere(A.loc)
+						new /obj/structure/fd/light_sphere(user.loc)
 						charges -= 1
 				else
 					return
-		if(charges < 1)
-			to_chat(user, "<span class='warning'>You don't have enough light for this!</span>")
-			return
 
 
 /obj/structure/fd/light_sphere

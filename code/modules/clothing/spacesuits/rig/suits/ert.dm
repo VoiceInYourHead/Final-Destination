@@ -147,3 +147,27 @@
 
 /obj/item/clothing/gloves/rig/ert/assetprotection
 	siemens_coefficient = 0
+
+/obj/item/rig/ert/fleet
+	name = "emergency response hardsuit control module"
+	desc = "A hardsuit utilised especially by Fleet combat teams. Has navy blue highlights and Sol-patterned crests on the shoulders."
+	suit_type = "emergency response fleet"
+	icon_state = "ert_fleet_rig"
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_SHIELDED
+		)
+
+	initial_modules = list(
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/grenade_launcher,
+		/obj/item/rig_module/mounted/egun,
+		/obj/item/rig_module/cooling_unit,
+		/obj/item/rig_module/datajack
+		)

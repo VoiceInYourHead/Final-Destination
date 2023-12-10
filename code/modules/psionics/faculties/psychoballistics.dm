@@ -109,23 +109,21 @@
 		var/turf/O = get_turf(src)
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
-				fragmentate_mob(O, 40, 7, list(/obj/item/projectile/psi = 1), name)
+				user.fragmentate(O, 40, 7, list(/obj/item/projectile/psi = 1))
 			if(PSI_RANK_MASTER)
-				fragmentate_mob(O, 30, 6, list(/obj/item/projectile/psi = 1), name)
+				user.fragmentate(O, 30, 6, list(/obj/item/projectile/psi = 1))
 			if(PSI_RANK_OPERANT)
-				fragmentate_mob(O, 20, 5, list(/obj/item/projectile/psi = 1), name)
+				user.fragmentate(O, 20, 5, list(/obj/item/projectile/psi = 1))
 			if(PSI_RANK_APPRENTICE)
-				fragmentate_mob(O, 10, 4, list(/obj/item/projectile/psi = 1), name)
+				user.fragmentate(O, 10, 4, list(/obj/item/projectile/psi = 1))
 		return TRUE
 
-/proc/fragmentate_mob(turf/T, fragment_number = 30, spreading_range = 5, list/fragtypes=list(/obj/item/projectile/), source_name)
+/mob/proc/fragmentate(var/turf/T=get_turf(src), var/fragment_number = 30, var/spreading_range = 5, var/list/fragtypes=list(/obj/item/projectile/))
 	set waitfor = 0
 	var/list/target_turfs = getcircle(T, spreading_range)
-
 	for(var/turf/O in target_turfs)
 		sleep(0)
 		var/fragment_type = pickweight(fragtypes)
 		var/obj/item/projectile/P = new fragment_type(T)
-		P.shot_from = source_name
-
+		P.shot_from = src.name
 		P.launch(O)

@@ -40,6 +40,7 @@
 	path = /obj/item/clothing/accessory/ribbon/solgov
 	cost = 2
 	allowed_branches = SOLGOV_BRANCHES
+	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/solgov_award_ribbons/New()
 	..()
@@ -75,9 +76,8 @@
 	display_name = "Expeditionary Corps patch"
 	path = /obj/item/clothing/accessory/solgov/ec_patch
 	description = "A shoulder patch representing the Expeditionary Corps."
-	flags = GEAR_HAS_TYPE_SELECTION
+	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_NO_CUSTOMIZATION
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/torch_patch
 	display_name = "Torch mission patch"
@@ -92,6 +92,7 @@
 		/datum/mil_branch/fleet,
 		/datum/mil_branch/expeditionary_corps
 	)
+	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/fleetpatch
 	display_name = "fleet patch"

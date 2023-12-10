@@ -147,7 +147,7 @@
 	#include "z1_admin.dmm"
 	#include "z2_transit.dmm"
 
-	#include "300x300_placeholder.dmm"
+//	#include "300x300_placeholder.dmm"
 
 	#include "../away/empty.dmm"
 	#include "../away/shade/_mining.dm"
@@ -203,6 +203,7 @@
 	#include "../away/itv_providence/providence.dm"
 	#include "../away/drone_carrier/carrier.dm"
 	#include "../away/junk_planet/jplanet.dm"
+	#include "../away/undersea/code_stuff.dm"
 	#include "../away/ecoffice/ecoffice.dm"
 
 //alternative future stuff

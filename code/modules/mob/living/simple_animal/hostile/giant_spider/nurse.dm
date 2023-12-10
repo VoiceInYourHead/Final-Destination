@@ -100,7 +100,7 @@
 	for(var/mob/living/L in C.contents)
 		if(istype(L, /mob/living/simple_animal/hostile/giant_spider)) // Cannibalism is bad.
 			continue
-		fed++
+		fed += 2
 		visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [L], and sucks a viscous substance out."))
 		large_cocoon = TRUE
 		break

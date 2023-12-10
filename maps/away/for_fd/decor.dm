@@ -17,6 +17,7 @@
 	density = TRUE
 	anchored = TRUE
 
+	randpixel = 0
 	layer = ABOVE_HUMAN_LAYER
 
 	max_w_class = ITEM_SIZE_LARGE
@@ -209,6 +210,17 @@
 	anchored = TRUE
 	density = FALSE
 
+/obj/structure/fd/bs_lamp
+	name = "strange pulsating statue"
+	desc = "This one probably made by aliens"
+	icon = 'icons/fd/hivemind_machines.dmi'
+	icon_state = "antenna"
+	anchored = TRUE
+
+/obj/structure/fd/bs_lamp/Initialize()
+	. = ..()
+	set_light(0.2, 1, 2, 1, COLOR_CYAN)
+
 /obj/structure/fd/bs_vines
 	name = "bluespace corrupted vines"
 	desc = "Bluespace corruptive flora"
@@ -279,6 +291,22 @@
 	if(istype(I, /obj/item/material/hatchet))
 		if(do_after(user, 80))
 			qdel(src)
+
+/obj/structure/fd/bs_vines/alien
+	icon = 'icons/fd/animals/Effects.dmi'
+	icon_state = "weeds1"
+
+/obj/structure/fd/bs_vines/alien/New()
+	..()
+	icon_state = "weeds[rand(1, 3)]"
+
+/obj/structure/fd/bs_vines/alien/Crossed(var/atom/movable/AM)
+	if(ishuman(AM) && prob(30))
+		var/mob/living/carbon/L = AM
+		if(L.throwing || L.can_overcome_gravity())
+			return
+		buckle_mob(L)
+		to_chat(L, SPAN_DANGER("You're tangled in \the [src]!"))
 
 /obj/structure/fd/bs_crystal
 	name = "bluespace crystal"

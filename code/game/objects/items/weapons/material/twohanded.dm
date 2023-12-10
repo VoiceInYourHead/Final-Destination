@@ -208,7 +208,7 @@
 	does_spin = FALSE
 	worth_multiplier = 7
 	base_parry_chance = 30
-	lunge_dist = 3
+	lunge_dist = 4
 	lunge_delay = 10 SECONDS
 	fail_chance = 60
 	have_stances = TRUE
