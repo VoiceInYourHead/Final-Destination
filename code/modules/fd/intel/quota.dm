@@ -155,7 +155,7 @@
 /obj/structure/fd/lethal_company/zone_trigger
 	timer = 6000
 
-/obj/structure/fd/lethal_company/New()
+/obj/structure/fd/lethal_company/zone_trigger/New()
 	. = ..()
 	needed = pick(100,200,250)
 

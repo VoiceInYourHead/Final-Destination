@@ -162,3 +162,9 @@
 	icon_state = "malf-scanline"
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	alpha = 25
+
+/obj/screen/fullscreen/underwater
+	icon = 'icons/effects/water.dmi'
+	icon_state = "underwater"
+	screen_loc = ui_entire_screen
+	layer = FULLSCREEN_LAYER

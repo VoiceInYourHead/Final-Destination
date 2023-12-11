@@ -33,6 +33,10 @@
 /turf/unsimulated/floor/exoplanet/barren/darker
 	color = "#2e2e2e"
 
+/turf/unsimulated/floor/exoplanet/barren/darker_flooded
+	flooded = TRUE
+	color = "#25283d"
+
 /area/undersea/outdoors
 	name = "'Liris' sea"
 	icon_state = "centcom"
@@ -62,3 +66,15 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	base_turf = /turf/unsimulated/floor/exoplanet/barren/darker
+
+/area/undersea/indoors_caves/flooded
+
+/area/undersea/indoors_caves/flooded/Entered(mob/living/L)
+	..()
+	if(istype(L))
+		L.overlay_fullscreen("underwater", /obj/screen/fullscreen/underwater)
+
+/area/undersea/indoors_caves/flooded/Exited(mob/living/L)
+	..()
+	if(istype(L))
+		L.clear_fullscreen("underwater")
