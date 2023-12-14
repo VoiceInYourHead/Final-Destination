@@ -75,6 +75,7 @@
 	var/wiresexposed = FALSE // If it's been screwdrivered open.
 	var/aidisabled = 0
 	var/shorted = 0
+	var/autoset_access = FALSE
 
 	wires = /datum/wires/alarm
 
@@ -128,6 +129,13 @@
 	report_danger_level = 0
 	breach_pressure = -1
 
+/obj/machinery/alarm/auto_access
+	autoset_access = TRUE
+	req_access = list()
+
+/obj/machinery/alarm/auto_access/unlocked
+	locked = 0
+
 /obj/machinery/alarm/server/New()
 	..()
 	req_access = list(access_rd, access_atmospherics, access_engine_equip)
@@ -174,6 +182,34 @@
 
 	set_frequency(frequency)
 	update_icon()
+
+	if(autoset_access)
+#ifdef UNIT_TEST
+		if(length(req_access))
+			crash_with("A APC with mapped access restrictions was set to autoinitialize access.")
+#endif
+		return INITIALIZE_HINT_LATELOAD
+
+	if(autoset_access)
+		inherit_access_from_area()
+/obj/machinery/alarm/proc/access_area_by_dir()
+	var/turf/T = get_turf(src)
+	if (T && !T.density)
+		return get_area(T)
+
+/obj/machinery/alarm/proc/inherit_access_from_area()
+	var/area/fore = access_area_by_dir(dir)
+	var/area/aft = access_area_by_dir(GLOB.reverse_dir[dir])
+	fore = fore || aft
+	aft = aft || fore
+
+	if (!fore && !aft)
+		req_access = list()
+	else if (fore.secure || aft.secure)
+		req_access = req_access_union(fore, aft)
+	else
+		req_access = req_access_diff(fore, aft)
+
 
 /obj/machinery/alarm/get_req_access()
 	if(!locked)

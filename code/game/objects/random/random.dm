@@ -1473,3 +1473,226 @@ var/list/random_useful_
 				/obj/structure/flora/ausbushes/sunnybush,
 				/obj/structure/flora/tropic/rock,
 				/obj/structure/flora/jungle/bush)
+
+//				W			There are too much			==============
+//					O					CIRCUITBOARDS	==============
+//						W			INCREDIBLE			==============
+
+/obj/random/circuitboard
+	name = "random circuitboard"
+	desc = "This is a random circuitboard."
+	icon = 'icons/fd/landmarks.dmi'
+	icon_state = "tech-green"
+
+/obj/random/maintenance/spawn_choices()
+	return list(/obj/random/circuitboard/ship_guns,
+				/obj/random/circuitboard/research,
+				/obj/random/circuitboard/cooking,
+				/obj/random/circuitboard/mining,
+				/obj/random/circuitboard/shuttle,
+				/obj/random/circuitboard/telecomms,
+				/obj/random/circuitboard/engineering,
+				/obj/random/circuitboard/medical,
+				/obj/random/circuitboard/other)
+
+/obj/random/circuitboard/ship_guns
+	name = "random ship guns circuitboard"
+	icon_state = "tech-red"
+
+/obj/random/circuitboard/ship_guns/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/autocannon,
+				/obj/item/stock_parts/circuitboard/autocannon_back,
+				/obj/item/stock_parts/circuitboard/autocannon_middle,
+				/obj/item/stock_parts/circuitboard/autocannon_front,
+				/obj/item/stock_parts/circuitboard/beamcannon,
+				/obj/item/stock_parts/circuitboard/beamcannon_back,
+				/obj/item/stock_parts/circuitboard/beamcannon_middle,
+				/obj/item/stock_parts/circuitboard/beamcannon_front,
+				/obj/item/stock_parts/circuitboard/deck_gun,
+				/obj/item/stock_parts/circuitboard/deck_gun_back,
+				/obj/item/stock_parts/circuitboard/deck_gun_front,
+				/obj/item/stock_parts/circuitboard/deck_gun_middle,
+				/obj/item/stock_parts/circuitboard/disperser,
+				/obj/item/stock_parts/circuitboard/disperserback,
+				/obj/item/stock_parts/circuitboard/disperserfront,
+				/obj/item/stock_parts/circuitboard/dispersermiddle,
+				/obj/item/stock_parts/circuitboard/disruptor,
+				/obj/item/stock_parts/circuitboard/disruptor_back,
+				/obj/item/stock_parts/circuitboard/disruptor_front,
+				/obj/item/stock_parts/circuitboard/disruptor_middle,
+				/obj/item/stock_parts/circuitboard/harpoon,
+				/obj/item/stock_parts/circuitboard/harpoonfront,
+				/obj/item/stock_parts/circuitboard/harpoonmiddle,
+				/obj/item/stock_parts/circuitboard/harpoonback,
+				/obj/item/stock_parts/circuitboard/heavymg,
+				/obj/item/stock_parts/circuitboard/heavymg_back,
+				/obj/item/stock_parts/circuitboard/heavymg_front,
+				/obj/item/stock_parts/circuitboard/heavymg_middle,
+				/obj/item/stock_parts/circuitboard/minigun,
+				/obj/item/stock_parts/circuitboard/minigun_back,
+				/obj/item/stock_parts/circuitboard/minigun_front,
+				/obj/item/stock_parts/circuitboard/minigun_middle,
+				/obj/item/stock_parts/circuitboard/missiles)
+
+/obj/random/circuitboard/research
+	name = "random RnD circuitboard"
+	icon_state = "tech-blue"
+
+/obj/random/circuitboard/research/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/rdconsole,
+				/obj/item/stock_parts/circuitboard/protolathe,
+				/obj/item/stock_parts/circuitboard/mechfab,
+				/obj/item/stock_parts/circuitboard/mech_recharger,
+				/obj/item/stock_parts/circuitboard/kinetic_harvester,
+				/obj/item/stock_parts/circuitboard/circuit_imprinter,
+				/obj/item/stock_parts/circuitboard/autolathe,
+				/obj/item/stock_parts/circuitboard/destructive_analyzer)
+
+/obj/random/circuitboard/cooking
+	name = "random cooking circuitboard"
+	icon_state = "tech-grey"
+
+/obj/random/circuitboard/cooking/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/biogenerator,
+				/obj/item/stock_parts/circuitboard/bioprinter,
+				/obj/item/stock_parts/circuitboard/cooker,
+				/obj/item/stock_parts/circuitboard/gibber,
+				/obj/item/stock_parts/circuitboard/honey,
+				/obj/item/stock_parts/circuitboard/juicer,
+				/obj/item/stock_parts/circuitboard/microwave,
+				/obj/item/stock_parts/circuitboard/reagentgrinder,
+				/obj/item/stock_parts/circuitboard/replicator,
+				/obj/item/stock_parts/circuitboard/vending,
+				/obj/item/stock_parts/circuitboard/tray)
+
+/obj/random/circuitboard/mining
+	name = "random mining circuitboard"
+	icon_state = "tech-orange"
+
+/obj/random/circuitboard/mining/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/miningdrillbrace,
+				/obj/item/stock_parts/circuitboard/miningdrill,
+				/obj/item/stock_parts/circuitboard/mining_unloader,
+				/obj/item/stock_parts/circuitboard/mining_stacker,
+				/obj/item/stock_parts/circuitboard/mining_processor,
+				/obj/item/stock_parts/circuitboard/mineral_processing)
+
+/obj/random/circuitboard/shuttle
+	name = "random shuttle circuitboard"
+	icon_state = "tech-black"
+
+/obj/random/circuitboard/shuttle/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/engine,
+				/obj/item/stock_parts/circuitboard/engine/ion,
+				/obj/item/stock_parts/circuitboard/helm,
+				/obj/item/stock_parts/circuitboard/jammer,
+				/obj/item/stock_parts/circuitboard/nav,
+				/obj/item/stock_parts/circuitboard/sensors,
+				/obj/item/stock_parts/circuitboard/shield_diffuser,
+				/obj/item/stock_parts/circuitboard/shield_generator,
+				/obj/item/stock_parts/circuitboard/shuttle_console/explore,
+				/obj/item/stock_parts/circuitboard/unary_atmos/engine,
+				/obj/item/stock_parts/circuitboard/pointdefense,
+				/obj/item/stock_parts/circuitboard/pointdefense_control)
+
+/obj/random/circuitboard/telecomms
+	name = "random telecomms circuitboard"
+	icon_state = "ai-blue"
+
+/obj/random/circuitboard/telecomms/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/telecomms/server,
+				/obj/item/stock_parts/circuitboard/telecomms/broadcaster,
+				/obj/item/stock_parts/circuitboard/telecomms/bus,
+				/obj/item/stock_parts/circuitboard/telecomms/hub,
+				/obj/item/stock_parts/circuitboard/telecomms/processor,
+				/obj/item/stock_parts/circuitboard/telecomms/receiver,
+				/obj/item/stock_parts/circuitboard/radio_beacon,
+				/obj/item/stock_parts/circuitboard/message_monitor,
+				/obj/item/stock_parts/circuitboard/comm_server,
+				/obj/item/stock_parts/circuitboard/comm_monitor)
+
+/obj/random/circuitboard/medical
+	name = "random medical circuitboard"
+	icon_state = "tech-blue"
+
+/obj/random/circuitboard/medical/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/sleeper,
+				/obj/item/stock_parts/circuitboard/cryo_cell,
+				/obj/item/stock_parts/circuitboard/body_scanconsole,
+				/obj/item/stock_parts/circuitboard/bodyscanner,
+				/obj/item/stock_parts/circuitboard/crew,
+				/obj/item/stock_parts/circuitboard/optable,
+				/obj/item/stock_parts/circuitboard/roboprinter,
+				/obj/item/stock_parts/circuitboard/vitals_monitor)
+
+/obj/random/circuitboard/engineering
+	name = "random engineering circuitboard"
+	icon_state = "tech-blue"
+
+/obj/random/circuitboard/engineering/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/aicore,
+				/obj/item/stock_parts/circuitboard/air_management,
+				/obj/item/stock_parts/circuitboard/area_atmos,
+				/obj/item/stock_parts/circuitboard/atmos_alert,
+				/obj/item/stock_parts/circuitboard/atmoscontrol,
+				/obj/item/stock_parts/circuitboard/autolathe,
+				/obj/item/stock_parts/circuitboard/floodlight,
+				/obj/item/stock_parts/circuitboard/fusion/core_control,
+				/obj/item/stock_parts/circuitboard/fusion_core,
+				/obj/item/stock_parts/circuitboard/fusion_fuel_compressor,
+				/obj/item/stock_parts/circuitboard/fusion_fuel_control,
+				/obj/item/stock_parts/circuitboard/fusion_injector,
+				/obj/item/stock_parts/circuitboard/guestpass,
+				/obj/item/stock_parts/circuitboard/gyrotron,
+				/obj/item/stock_parts/circuitboard/gyrotron_control,
+				/obj/item/stock_parts/circuitboard/kinetic_harvester,
+				/obj/item/stock_parts/circuitboard/magnetic_accelerator,
+				/obj/item/stock_parts/circuitboard/mech_recharger,
+				/obj/item/stock_parts/circuitboard/oxyregenerator,
+				/obj/item/stock_parts/circuitboard/pacman,
+				/obj/item/stock_parts/circuitboard/pacman/mrs,
+				/obj/item/stock_parts/circuitboard/pacman/super,
+				/obj/item/stock_parts/circuitboard/pacman/super/potato/reactor,
+				/obj/item/stock_parts/circuitboard/pipedispensor,
+				/obj/item/stock_parts/circuitboard/pipedispensor/disposal,
+				/obj/item/stock_parts/circuitboard/portable_scrubber,
+				/obj/item/stock_parts/circuitboard/portable_scrubber/pump,
+				/obj/item/stock_parts/circuitboard/powermonitor,
+				/obj/item/stock_parts/circuitboard/rcon_console,
+				/obj/item/stock_parts/circuitboard/recharge_station,
+				/obj/item/stock_parts/circuitboard/shield_diffuser,
+				/obj/item/stock_parts/circuitboard/smes,
+				/obj/item/stock_parts/circuitboard/batteryrack,
+				/obj/item/stock_parts/circuitboard/solar_control,
+				/obj/item/stock_parts/circuitboard/stationalert,
+				/obj/item/stock_parts/circuitboard/sublimator,
+				/obj/item/stock_parts/circuitboard/suspension_gen,
+				/obj/item/stock_parts/circuitboard/tele_beacon,
+				/obj/item/stock_parts/circuitboard/teleporter,
+				/obj/item/stock_parts/circuitboard/turbine_control,
+				/obj/item/stock_parts/circuitboard/unary_atmos/cooler,
+				/obj/item/stock_parts/circuitboard/unary_atmos/heater,
+				)
+
+/obj/random/circuitboard/other
+	name = "random other circuitboard"
+	icon_state = "tech-grey-low"
+
+/obj/random/circuitboard/other/spawn_choices()
+	return list(/obj/item/stock_parts/circuitboard/arcade,
+				/obj/item/stock_parts/circuitboard/washer,
+				/obj/item/stock_parts/circuitboard/vending,
+				/obj/item/stock_parts/circuitboard/tray,
+				/obj/item/stock_parts/circuitboard/prisoner,
+				/obj/item/stock_parts/circuitboard/drone_control,
+				)
+
+/obj/random/explosion
+	name = "exlosion chance"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "smoke"
+	spawn_nothing_percentage = 50
+	var/explosion_type = /obj/effect/landmark/explosion
+
+/obj/random/explosion/spawn_choices()
+	return list(explosion_type)

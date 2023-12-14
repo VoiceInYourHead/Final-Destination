@@ -57,7 +57,14 @@ var/solar_gen_rate = 1500
 		S.anchored = TRUE
 	S.forceMove(src)
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
-		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
+		health *= 2
+		efficiency = 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
+	if(S.glass_type == /obj/item/stack/material/glass/phoronglass)
+		health *= 3
+		efficiency = 3
+	if(S.glass_type == /obj/item/stack/material/glass/phoronrglass)
+		health *= 4
+		efficiency = 4
 	update_icon()
 
 
@@ -245,7 +252,7 @@ var/solar_gen_rate = 1500
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 			return 1
 
-		if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS)
+		if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS || MATERIAL_PHORON_GLASS)
 			var/obj/item/stack/material/S = W
 			if(S.use(2))
 				glass_type = W.type
@@ -495,6 +502,13 @@ var/solar_gen_rate = 1500
 /obj/machinery/power/solar_control/autostart/Initialize()
 	search_for_connected()
 	if(connected_tracker && track == 2)
+		connected_tracker.set_angle(GLOB.sun_angle)
+		set_panels(cdir)
+	. = ..()
+
+/obj/machinery/power/solar_control/autostart/LateInitialize()
+	search_for_connected()
+	if(connected_tracker)
 		connected_tracker.set_angle(GLOB.sun_angle)
 		set_panels(cdir)
 	. = ..()

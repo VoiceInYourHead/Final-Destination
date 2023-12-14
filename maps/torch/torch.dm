@@ -150,6 +150,7 @@
 //	#include "300x300_placeholder.dmm"
 
 	#include "../away/empty.dmm"
+	#include "../away/small_away/small_away.dm"
 	#include "../away/shade/_mining.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
@@ -175,6 +176,7 @@
 	#include "../away/casino/casino.dm"
 	#include "../away/yacht/yacht.dm"
 	#include "../away/yacht2/yacht2.dm"
+	#include "../away/tradership/tradership.dm"
 	#include "../away/venera/venera.dm"
 	#include "../away/venera_a/venera_a.dm"
 	#include "../away/blueriver/blueriver.dm"

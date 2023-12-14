@@ -48,6 +48,21 @@
 		T.fire_act(exposed_temperature = temp)
 	. = ..()
 
+/obj/effect/landmark/explosion
+	name = "explosion"
+	icon_state = "x"
+	var/severity = 3
+
+/obj/effect/landmark/explosion/medium
+	severity = 7
+
+/obj/effect/landmark/explosion/large
+	severity = 11
+
+/obj/effect/landmark/explosion/New(var/turf/T)
+	T.ex_act(severity)
+	qdel(src)
+
 /obj/effect/landmark/damager
 	name = "damager"
 	icon_state = "fire"
