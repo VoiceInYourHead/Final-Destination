@@ -813,3 +813,63 @@
 	src.alpha = 0
 	sleep(3)
 	qdel(src)
+
+/obj/item/fd/ancient_items/eye_of_the_maw
+	name = "eye medalion"
+	desc = "Eldritch medalion with moving eye."
+	icon = 'icons/fd/items/eldritch.dmi'
+	icon_state = "eye_medalion"
+	var/souls = 0
+	var/broken = FALSE
+	quota_worth = 40
+	origin_tech = list(TECH_ESOTERIC = 10, TECH_BLUESPACE = 12)
+
+/obj/item/fd/ancient_items/eye_of_the_maw/New()
+	. = ..()
+	souls = rand(1,3)
+
+/obj/item/fd/ancient_items/eye_of_the_maw/update_icon()
+	if(broken)
+		icon_state = "rusty_medalion"
+
+/obj/item/fd/ancient_items/eye_of_the_maw/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+	if(istype(A, /mob/living/carbon) && !broken)
+		var/mob/living/carbon/L = A
+		if(L.stat != DEAD && !(L.status_flags & FAKEDEATH))
+			to_chat(L, "<span class='occult'>You feel like someone absorbing your mind!</span>")
+			if(do_after(user, 20))
+				playsound(src.loc, 'sound/effects/ghost2.ogg', 50, 1)
+				if(prob(20))
+					souls += 1
+					L.eye_blind += 4
+					L.adjust_hallucination(10,10)
+					L.adjustBrainLoss(100)
+					to_chat(L, "<span class='occult'>You feel like your soul leaving your body, bringing all the emotions and empathy with it!</span>")
+				else
+					souls += 1
+					L.adjustBrainLoss(200)
+					to_chat(L, "<span class='occult'>In a moment, you feel like you lost yourself...</span>")
+		else
+			to_chat(user, "<span class='warning'>[L] is already soulless!</span>")
+			return
+	else
+		to_chat(user, "<span class='warning'>[src] is either broken or don't accept such sacrifice!</span>")
+		return
+
+/obj/item/fd/ancient_items/eye_of_the_maw/attack_self(var/mob/living/user as mob)
+
+	if(souls <= 0)
+		user.adjustBrainLoss(200)
+		broken = TRUE
+		update_icon()
+		visible_message("<span class='occult'>[user] screams, as [src] consumes their mind!</span>")
+
+		return
+
+	to_chat(user, "<span class='info'>You can see... everything!</span>") // This never actually happens.
+	visible_message("<span class='danger'>[user] stares into [src], their eyes glazing over.</span>")
+	souls -= 1
+
+	user.teleop = user.ghostize(1)
+	announce_ghost_joinleave(user.teleop, 1, "You feel that they used a powerful artifact to [pick("invade","disturb","disrupt","infest","taint","spoil","blight")] this place with their presence.")
+	return

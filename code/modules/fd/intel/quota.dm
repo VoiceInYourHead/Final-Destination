@@ -1,4 +1,8 @@
 
+/obj/item
+	var/quota_worth = 0
+	var/quota_type = 1 // 1 - junk; 2 - minerals
+
 /obj/structure/fd/lethal_company
 	name = "Old quota harvester"
 	desc = "Hm, is it still working?"
@@ -12,9 +16,9 @@
 	var/current_quota = 0
 	var/needed = 0
 	var/leaving = FALSE
-	var/junk = TRUE
-	var/minerals = FALSE
-	var/timer = 500
+//	var/junk = TRUE
+//	var/minerals = FALSE
+	var/timer = 1000
 
 /obj/structure/fd/lethal_company/proc/run_timer()
 	set waitfor = 0
@@ -97,6 +101,23 @@
 		update_icon()
 
 /obj/structure/fd/lethal_company/attackby(var/obj/item/I, var/mob/user)
+
+	if(active)
+		if(I.quota_worth <= 0 && I.quota_type == 1)
+			src.audible_message("<b>\The [src]</b> says, 'This object are <span class='danger'>not worthy</span> for the company'")
+		if(I.quota_worth > 0 && I.quota_type == 1)
+			if(do_after(user, 10))
+				var/obj/item/junk_rare = I
+				current_quota += junk_rare.quota_worth
+				qdel(junk_rare)
+				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
+				sleep(10)
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
+		else
+			src.audible_message("<b>\The [src]</b> says, 'Company are <span class='danger'>not interested</span> in such things'")
+			return
+
+/*
 	if(junk && active)
 		if(istype(I, /obj/item/fd/ancient_items/))
 			if(do_after(user, 10))
@@ -130,10 +151,8 @@
 				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
 				sleep(10)
 				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
-		else
-			to_chat(user, "<span class='notice'>[src] do not need this!</span>")
-			return
-
+*/
+/*
 	if(minerals && active)
 		if(istype(I, /obj/item/ore))
 			if(do_after(user, 10))
@@ -146,11 +165,29 @@
 		else
 			to_chat(user, "<span class='notice'>[src] do not need this!</span>")
 			return
+*/
 
 /obj/structure/fd/lethal_company/mining
 	name = "mineral quota harvester"
-	junk = FALSE
-	minerals = TRUE
+//	junk = FALSE
+//	minerals = TRUE
+
+/obj/structure/fd/lethal_company/mining/attackby(var/obj/item/I, var/mob/user)
+
+	if(active)
+		if(I.quota_worth <= 0 && I.quota_type == 2)
+			src.audible_message("<b>\The [src]</b> says, 'This object are <span class='danger'>not worthy</span> for the company'")
+		if(I.quota_worth > 0 && I.quota_type == 2)
+			if(do_after(user, 10))
+				var/obj/item/mineral_rare = I
+				current_quota += mineral_rare.quota_worth
+				qdel(mineral_rare)
+				src.audible_message("<b>\The [src]</b> says, 'Your share is valuable for the company'")
+				sleep(10)
+				src.audible_message("<b>\The [src]</b> says, 'Your current quota status is: <span class='danger'>[current_quota]/[needed]</span>'")
+		else
+			src.audible_message("<b>\The [src]</b> says, 'Company are <span class='danger'>not interested</span> in such things'")
+			return
 
 /obj/structure/fd/lethal_company/zone_trigger
 	timer = 6000
