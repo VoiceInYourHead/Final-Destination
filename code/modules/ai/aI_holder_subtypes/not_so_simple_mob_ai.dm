@@ -41,7 +41,7 @@
 
 	intelligence_level = AI_SMART
 	retaliate = TRUE				// The majority of smart mobs will fight back.
-	use_astar = TRUE
+	use_astar = FALSE //TRUE
 	hostile = FALSE
 	destructive = FALSE
 	mauling = FALSE
