@@ -503,7 +503,7 @@
 "zn" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/obj/effect/floor_decal/techfloor/orange{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/ship/carrier/deck2/engines)
 "zu" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/paint/brown,/turf/simulated/wall/r_wall,/area/ship/carrier/deck2/substation)
 "zx" = (/obj/machinery/atmospherics/pipe/simple/visible/supply{dir = 6},/obj/structure/catwalk,/obj/machinery/light_switch{pixel_x = -23; pixel_y = -5},/turf/simulated/floor/plating,/area/ship/carrier/deck2/reactor)
-"zy" = (/obj/structure/table/reinforced,/obj/machinery/photocopier/faxmachine{name = "Big Bob - Bridge"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/carrier/deck2/bridge)
+"zy" = (/obj/structure/table/reinforced,/obj/machinery/photocopier/faxmachine{name = "Bigsby - Bridge"},/turf/simulated/floor/tiled/techfloor/grid,/area/ship/carrier/deck2/bridge)
 "zB" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/structure/bed/chair/wood/maple{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/ship/carrier/deck2/living5)
 "zD" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/item/trash/chips,/obj/effect/floor_decal/techfloor/orange{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/ship/carrier/deck2/bridge)
 "zF" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/anomaly_container,/obj/machinery/alarm{dir = 4; pixel_x = -22; req_access = newlist()},/turf/simulated/floor/tiled/steel_ridged,/area/ship/carrier/deck2/living3)
