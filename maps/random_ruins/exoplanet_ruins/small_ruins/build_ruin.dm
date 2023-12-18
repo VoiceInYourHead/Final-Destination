@@ -71,6 +71,41 @@
 	suffixes = list("small_ruins/build_ruin11.dmm")
 	ruin_tags = RUIN_HUMAN | RUIN_WRECK
 
+/datum/map_template/ruin/exoplanet/build/build12
+	name = "The WALL"
+	id = "build12"
+	spawn_cost = 0.1
+	suffixes = list("small_ruins/build_ruin12.dmm")
+	ruin_tags = RUIN_ALIEN
+
+/datum/map_template/ruin/exoplanet/build/build13
+	name = "Bazar"
+	id = "build13"
+	spawn_cost = 0.3
+	suffixes = list("small_ruins/build_ruin13.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
+
+/datum/map_template/ruin/exoplanet/build/build14
+	name = "Old Road"
+	id = "build14"
+	spawn_cost = 0.1
+	suffixes = list("small_ruins/build_ruin14.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
+
+/datum/map_template/ruin/exoplanet/build/build15
+	name = "Crashed Pods"
+	id = "build15"
+	spawn_cost = 0.3
+	suffixes = list("small_ruins/build_ruin15.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_WRECK
+
+/datum/map_template/ruin/exoplanet/build/build16
+	name = "Ruined Railgun"
+	id = "build16"
+	spawn_cost = 0.3
+	suffixes = list("small_ruins/build_ruin16.dmm")
+	ruin_tags = RUIN_ALIEN
+
 
 
 
@@ -98,6 +133,10 @@
 	name = "Mech Combat Arena"
 /area/map_template/build/build10
 	name = "Salvage Drone 11"
+/area/map_template/build/build13
+	name = "Abandoned Store"
+/area/map_template/build/build16
+	name = "Ruined Railgun"
 
 // Other Code????    //
 
