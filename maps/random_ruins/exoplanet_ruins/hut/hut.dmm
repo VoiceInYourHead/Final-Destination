@@ -1,170 +1,894 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/template_noop,
+"ad" = (
+/obj/structure/largecrate,
+/obj/random/snack,
+/obj/random/snack,
+/obj/random/snack,
+/turf/simulated/floor/plating,
 /area/template_noop)
-"b" = (
-/turf/simulated/wall/silver,
+"af" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood,
 /area/template_noop)
-"c" = (
+"aA" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/random/powercell,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"aJ" = (
+/obj/machinery/door/unpowered/simple/sandstone,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"bJ" = (
+/obj/random/trash,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
-"d" = (
+"bR" = (
+/turf/simulated/wall/wood,
+/area/template_noop)
+"cr" = (
+/turf/simulated/wall/sandstone,
+/area/template_noop)
+"cE" = (
+/obj/random/snack,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"dc" = (
+/obj/structure/bookcase/manuals/xenoarchaeology,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"ds" = (
+/obj/item/stack/material/rods,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"dC" = (
+/obj/effect/landmark/damager,
+/obj/effect/landmark/damager,
+/obj/effect/landmark/damager,
+/turf/simulated/wall/sandstone,
+/area/template_noop)
+"et" = (
+/obj/random/toy,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"ft" = (
+/obj/random/obstruction,
+/turf/template_noop,
+/area/template_noop)
+"gK" = (
+/obj/random/tool,
+/obj/random/tool,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/template_noop)
+"gS" = (
+/obj/machinery/r_n_d/server,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"hO" = (
+/obj/effect/rune/convert,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"ic" = (
+/obj/item/pen/multi,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"ip" = (
+/obj/structure/table/rack,
+/obj/random/circuitboard/ship_guns,
+/obj/random/circuitboard/ship_guns,
+/obj/random/circuitboard/ship_guns,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"jm" = (
+/turf/simulated/wall/silver,
+/area/template_noop)
+"lG" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"lT" = (
+/obj/machinery/artifact_scanpad,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"mW" = (
+/obj/effect/landmark/damager,
+/obj/effect/landmark/damager,
+/obj/effect/landmark/damager,
+/obj/effect/landmark/damager,
+/turf/simulated/wall/sandstone,
+/area/template_noop)
+"ne" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/template_noop)
+"nx" = (
+/obj/effect/landmark/clear,
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"oe" = (
+/obj/structure/closet/crate/freezer/rations,
+/obj/effect/decal/cleanable/cobweb2,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"pu" = (
+/obj/effect/landmark/clear,
+/turf/template_noop,
+/area/template_noop)
+"pS" = (
+/obj/structure/largecrate,
+/obj/random/storage,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"qp" = (
+/obj/structure/filingcabinet,
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"qy" = (
+/obj/random/trash,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"qF" = (
+/obj/structure/bed/padded{
+	icon_state = "wbed"
+	},
+/obj/structure/curtain/open/bed,
+/turf/simulated/floor/carpet,
+/area/template_noop)
+"rx" = (
+/obj/random/tech_supply,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"rS" = (
+/obj/item/stack/material/rods,
+/turf/template_noop,
+/area/template_noop)
+"tB" = (
+/obj/structure/table/rack,
+/obj/random/junk,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"tW" = (
+/obj/structure/inflatable/door,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"uH" = (
+/turf/simulated/wall/iron,
+/area/template_noop)
+"vd" = (
+/obj/structure/grille/broken,
+/turf/template_noop,
+/area/template_noop)
+"wW" = (
+/obj/structure/table/standard,
+/obj/random/loot,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"xo" = (
+/obj/random/obstruction,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"xI" = (
+/turf/simulated/floor/plating,
+/area/template_noop)
+"zJ" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/template_noop)
+"Am" = (
+/obj/random/tool,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"AE" = (
+/obj/structure/curtain/black,
+/turf/simulated/floor/carpet,
+/area/template_noop)
+"Bb" = (
+/obj/effect/wallframe_spawn/no_grille,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"Bz" = (
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"BF" = (
+/obj/structure/table/standard,
+/obj/random/relic,
+/obj/random/junk,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"BV" = (
+/obj/machinery/door/unpowered/simple/iron,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"BW" = (
+/obj/structure/table/rack,
+/obj/random/junk,
+/obj/random/shoes,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"CQ" = (
+/obj/structure/largecrate,
+/obj/random/loot,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"CR" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"Eq" = (
+/obj/random/trash,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"FC" = (
+/obj/effect/landmark/damager,
+/obj/effect/landmark/damager,
+/turf/simulated/wall/sandstone,
+/area/template_noop)
+"FS" = (
+/obj/random/junk,
+/obj/random/loot,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"GP" = (
+/obj/structure/grille,
+/turf/template_noop,
+/area/template_noop)
+"HD" = (
+/obj/structure/closet,
+/obj/random/circuitboard/telecomms,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"Iv" = (
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"Js" = (
+/mob/living/bot/medbot,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"JG" = (
+/obj/structure/closet,
+/obj/random/loot,
+/obj/random/loot,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"Kv" = (
+/turf/simulated/floor/carpet,
+/area/template_noop)
+"KM" = (
+/obj/random/tool,
+/turf/template_noop,
+/area/template_noop)
+"MS" = (
+/obj/structure/bed/chair/wheelchair,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"Nq" = (
+/turf/simulated/floor/wood,
+/area/template_noop)
+"Nt" = (
+/obj/effect/landmark/damager,
+/turf/simulated/wall/sandstone,
+/area/template_noop)
+"NI" = (
+/turf/simulated/wall/rutile,
+/area/template_noop)
+"NV" = (
+/obj/effect/landmark/damager,
+/turf/simulated/wall/rutile,
+/area/template_noop)
+"NW" = (
+/obj/effect/landmark/damager,
+/turf/simulated/wall/silver,
+/area/template_noop)
+"Oi" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/template_noop)
+"OT" = (
+/obj/structure/table/standard,
+/obj/random/junk,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"OU" = (
+/obj/random/circuitboard/research,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"PB" = (
+/obj/structure/bed/padded{
+	icon_state = "wbed"
+	},
+/obj/random/plushie,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"PO" = (
+/obj/item/bedsheet/rainbow,
+/obj/random/drinkbottle,
+/obj/random/trash,
+/obj/structure/bed/padded{
+	icon_state = "wbed"
+	},
+/turf/simulated/floor/carpet,
+/area/template_noop)
+"PY" = (
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"QT" = (
+/obj/random/trash,
+/obj/effect/decal/cleanable/cobweb2,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"RE" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/circuitboard/cooking,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"RO" = (
 /obj/random/trash,
 /obj/structure/inflatable/door,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
-"e" = (
-/obj/machinery/artifact_scanpad,
-/turf/simulated/floor/tiled/dark,
+"RX" = (
+/obj/structure/bed/sofa/sauna_bench,
+/turf/simulated/floor/wood,
 /area/template_noop)
-"f" = (
-/obj/machinery/r_n_d/server,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"g" = (
-/obj/structure/curtain/black,
-/turf/simulated/floor/carpet,
-/area/template_noop)
-"h" = (
-/obj/structure/inflatable/door,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"i" = (
-/obj/structure/filingcabinet,
-/obj/effect/decal/cleanable/cobweb,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"j" = (
-/obj/structure/closet/crate/freezer/rations,
-/obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"k" = (
-/obj/structure/bed/chair/wheelchair,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"l" = (
+"RY" = (
 /obj/structure/table/marble,
 /obj/item/device/flashlight/lamp,
 /obj/structure/sign/monkey_painting{
 	pixel_y = -32
 	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"Sd" = (
+/obj/structure/inflatable/door,
+/turf/simulated/floor/wood,
+/area/template_noop)
+"Sf" = (
+/obj/random/gloves,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	},
+/area/template_noop)
+"SZ" = (
+/obj/random/obstruction,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"TX" = (
+/obj/structure/sign/science_1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
-"m" = (
+"UE" = (
+/obj/random/tank,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"Vr" = (
+/obj/structure/largecrate,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"VF" = (
 /obj/structure/table/marble,
 /obj/item/paper_bin,
 /obj/random/voidhelmet,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/template_noop)
-"n" = (
-/obj/structure/gravemarker/random,
-/turf/template_noop,
-/area/template_noop)
-"o" = (
-/obj/structure/bookcase/manuals/xenoarchaeology,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"p" = (
-/obj/random/junk,
-/obj/random/loot,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"q" = (
-/obj/item/pen/multi,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"r" = (
-/mob/living/bot/medbot,
-/turf/simulated/floor/tiled/dark,
-/area/template_noop)
-"t" = (
-/obj/structure/bed,
-/obj/item/bedsheet/rainbow,
-/obj/random/drinkbottle,
-/obj/random/trash,
-/turf/simulated/floor/carpet,
-/area/template_noop)
-"u" = (
+"VP" = (
 /obj/structure/table/rack,
 /obj/item/clothing/glasses/eyepatch/hud/medical,
 /obj/random/loot,
 /obj/random/loot,
 /obj/random/hat,
 /obj/random/voidsuit,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/template_noop)
-"G" = (
-/obj/structure/sign/science_1{
-	pixel_y = 32
+"VQ" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/snack,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"WB" = (
+/obj/effect/landmark/damager,
+/turf/simulated/wall/wood,
+/area/template_noop)
+"Xh" = (
+/obj/effect/landmark/damager,
+/turf/simulated/wall/iron,
+/area/template_noop)
+"Xo" = (
+/obj/structure/table/rack,
+/obj/random/junk,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"XN" = (
+/turf/template_noop,
+/area/template_noop)
+"XQ" = (
+/obj/random/obstruction,
+/turf/simulated/floor/asteroid{
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
 	},
-/turf/simulated/floor/tiled/dark,
 /area/template_noop)
-"K" = (
-/obj/effect/wallframe_spawn/reinforced,
+"Yp" = (
+/obj/structure/gravemarker/random,
+/turf/template_noop,
+/area/template_noop)
+"YC" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/cash,
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/template_noop)
+"Zn" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/machinery/power/port_gen/pacman,
 /turf/simulated/floor/plating,
 /area/template_noop)
 
 (1,1,1) = {"
-b
-b
-b
-K
-b
-b
-b
+XN
+XN
+XN
+Nt
+cr
+rS
+FC
+mW
+Nt
+XN
+rS
+XN
+XN
+NW
+NW
+jm
+CR
+jm
+jm
+NW
 "}
 (2,1,1) = {"
-b
-i
-p
-u
-e
-f
-b
+XN
+XN
+cr
+cr
+Iv
+Bz
+Vr
+Bz
+FC
+GP
+vd
+GP
+GP
+NW
+qp
+FS
+VP
+lT
+gS
+NW
 "}
 (3,1,1) = {"
-b
-o
-c
-c
-q
-l
-b
+XN
+cr
+cr
+Sf
+Bz
+hO
+Bz
+ds
+FC
+XN
+pu
+pu
+XN
+jm
+dc
+PY
+PY
+ic
+RY
+jm
 "}
 (4,1,1) = {"
-b
-j
-c
-r
-k
-m
-b
+XN
+Nt
+xI
+Bz
+ds
+et
+Bz
+Eq
+Nt
+zJ
+Am
+pu
+XN
+jm
+oe
+OU
+Js
+MS
+VF
+jm
 "}
 (5,1,1) = {"
-b
-b
-b
-G
-b
-b
-b
+XN
+FC
+Bz
+Bz
+Iv
+xI
+Bz
+UE
+Nt
+Bz
+Eq
+Bz
+XN
+jm
+jm
+jm
+TX
+jm
+jm
+jm
 "}
 (6,1,1) = {"
-a
-d
-h
-c
-g
-t
-b
+XN
+FC
+dC
+dC
+Nt
+Nt
+aJ
+Nt
+Nt
+XQ
+Bz
+Bz
+Bz
+pu
+RO
+tW
+PY
+AE
+PO
+NW
 "}
 (7,1,1) = {"
-n
-b
-b
-b
-b
-b
-b
+XN
+XN
+rS
+XN
+ft
+XN
+nx
+pu
+pu
+pu
+Bz
+Eq
+XN
+Yp
+jm
+jm
+jm
+jm
+jm
+NW
+"}
+(8,1,1) = {"
+rS
+XN
+XN
+XN
+XN
+XN
+XN
+rS
+XN
+XN
+pu
+Bz
+XN
+XN
+XN
+XN
+XN
+GP
+XN
+XN
+"}
+(9,1,1) = {"
+XN
+XN
+Xh
+Xh
+Xh
+Xh
+Xh
+uH
+XN
+zJ
+pu
+pu
+XN
+XN
+NI
+NI
+NI
+NV
+NV
+XN
+"}
+(10,1,1) = {"
+XN
+uH
+Xh
+gK
+Zn
+aA
+Oi
+Bb
+XN
+pu
+nx
+pu
+Bz
+XQ
+NI
+qF
+Kv
+JG
+NV
+XN
+"}
+(11,1,1) = {"
+XN
+uH
+YC
+PY
+bJ
+Bz
+Bz
+uH
+uH
+pu
+pu
+rx
+Bz
+Bz
+NI
+Kv
+Kv
+ne
+NI
+XN
+"}
+(12,1,1) = {"
+XN
+Bb
+VQ
+lG
+Bz
+Bz
+Bz
+SZ
+BV
+pu
+pu
+ad
+NI
+Sd
+NI
+ip
+qy
+wW
+NI
+XN
+"}
+(13,1,1) = {"
+XN
+Xh
+RE
+PY
+Bz
+Bz
+Eq
+uH
+uH
+nx
+pu
+CQ
+NI
+Sd
+NI
+tB
+Nq
+BF
+NI
+XN
+"}
+(14,1,1) = {"
+XN
+Xh
+Xh
+PB
+HD
+BW
+Xo
+Bb
+KM
+pu
+pu
+pS
+NI
+QT
+Sd
+qy
+cE
+OT
+NI
+XN
+"}
+(15,1,1) = {"
+XN
+XN
+Xh
+Xh
+Xh
+uH
+uH
+uH
+XN
+pu
+pu
+xo
+NI
+NI
+NI
+NV
+NV
+NV
+NI
+XN
+"}
+(16,1,1) = {"
+XN
+XN
+XN
+GP
+XN
+XN
+XN
+XN
+XN
+XN
+pu
+pu
+pu
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+"}
+(17,1,1) = {"
+XN
+XN
+XN
+Nt
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+nx
+pu
+pu
+pu
+pu
+bR
+bR
+bR
+XN
+"}
+(18,1,1) = {"
+XN
+XN
+XN
+GP
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+pu
+pu
+nx
+pu
+af
+RX
+bR
+XN
+"}
+(19,1,1) = {"
+XN
+XN
+XN
+Nt
+XN
+XN
+XN
+XN
+XN
+Nt
+GP
+GP
+GP
+Nt
+pu
+pu
+bR
+bR
+WB
+XN
+"}
+(20,1,1) = {"
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
+XN
 "}
