@@ -82,11 +82,10 @@
 /datum/ai_holder/proc/walk_path(atom/A, get_to = 1)
 	ai_log("walk_path() : Entered.", AI_LOG_TRACE)
 
-	if (use_astar && get_dist(holder, A) > 5)
+	if (use_astar)
 		if (!path.len) // If we're missing a path, make a new one.
 			ai_log("walk_path() : No path. Attempting to calculate path.", AI_LOG_DEBUG)
 			calculate_path(A, get_to)
-			CHECK_TICK
 
 		if (!path.len) // If we still don't have one, then the target's probably somewhere inaccessible to us. Get as close as we can.
 			ai_log("walk_path() : Failed to obtain path to target. Using get_step_to() instead.", AI_LOG_INFO)
