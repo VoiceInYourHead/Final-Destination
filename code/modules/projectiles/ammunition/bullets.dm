@@ -144,9 +144,23 @@
 /obj/item/ammo_casing/rifle/russia
 	desc = "A rifle 12.7x55mm bullet casing."
 	caliber = CALIBER_RIFLE_RUSSIA
-	projectile_type = /obj/item/projectile/bullet/rifle/revolver
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
+	projectile_type = /obj/item/projectile/bullet/rifle/russian
+	icon_state = "ruscasing"
+	spent_icon = "ruscasing-spent"
+
+/obj/item/ammo_casing/rifle/russia/ap
+	desc = "A rifle AP 12.7x55mm bullet casing."
+	caliber = CALIBER_RIFLE_RUSSIA
+	projectile_type = /obj/item/projectile/bullet/rifle/russian/ap
+	icon_state = "ruscasing_ap"
+	spent_icon = "ruscasing_ap-spent"
+
+/obj/item/ammo_casing/rifle/russia/hp
+	desc = "A rifle HP 12.7x55mm bullet casing."
+	caliber = CALIBER_RIFLE_RUSSIA
+	projectile_type = /obj/item/projectile/bullet/rifle/russian/hp
+	icon_state = "ruscasing_hp"
+	spent_icon = "ruscasing_hp-spent"
 
 /obj/item/ammo_casing/shell
 	name = "shell casing"

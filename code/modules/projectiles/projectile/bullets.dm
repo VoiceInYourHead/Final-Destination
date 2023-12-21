@@ -223,12 +223,24 @@
 	penetrating = 1
 	distance_falloff = 1.5
 
-/obj/item/projectile/bullet/rifle/revolver
+/obj/item/projectile/bullet/rifle/russian
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 46
 	penetrating = 1
 	armor_penetration = 30
-	penetration_modifier = 1.5
+	penetration_modifier = 1.4
+
+/obj/item/projectile/bullet/rifle/russian/ap
+	damage = 38
+	penetrating = 2
+	armor_penetration = 55
+	penetration_modifier = 1.6
+
+/obj/item/projectile/bullet/rifle/russian/hp
+	damage = 52
+	penetrating = 0
+	armor_penetration = 15
+	penetration_modifier = 0.5
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'

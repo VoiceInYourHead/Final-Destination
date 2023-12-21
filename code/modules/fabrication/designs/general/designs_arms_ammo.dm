@@ -48,6 +48,10 @@
 	name = "ammunition (speedloader, magnum)"
 	path = /obj/item/ammo_magazine/speedloader/magnum
 
+/datum/fabricator_recipe/arms_ammo/hidden/speedloader_rifle
+	name = "ammunition (speedloader, rifle)"
+	path = /obj/item/ammo_magazine/speedloader/rifle
+
 /datum/fabricator_recipe/arms_ammo/hidden/magazine_pistol
 	name = "ammunition (pistol)"
 	path = /obj/item/ammo_magazine/pistol
@@ -115,6 +119,14 @@
 	name = "ammunition (flechette rifle)"
 	path = /obj/item/magnetic_ammo
 
+/datum/fabricator_recipe/arms_ammo/hidden/shotholder
+	name = "sholholder (slug, shotgun)"
+	path = /obj/item/ammo_magazine/shotholder/large
+
+/datum/fabricator_recipe/arms_ammo/hidden/shotholder
+	name = "sholholder (shell, shotgun)"
+	path = /obj/item/ammo_magazine/shotholder/large/shell
+
 /datum/fabricator_recipe/arms_ammo/hidden/skrellian_rifle_flechette
 	name = "ammunition (skrellian rifle, flechette)"
 	path = /obj/item/magnetic_ammo/skrell
@@ -138,3 +150,31 @@
 /datum/fabricator_recipe/arms_ammo/hidden/rifleinternalclip
 	name = "ammunition (rifle internal clip)"
 	path = /obj/item/ammo_magazine/iclipr
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_shotgun
+	name = "ammo box (slug, shotgun)"
+	path = /obj/item/ammo_magazine/box/shotgun
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_shotgun_shell
+	name = "ammo box (shell, shotgun)"
+	path = /obj/item/ammo_magazine/box/shotgun/shell
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_pistol
+	name = "ammo box (pistol)"
+	path = /obj/item/ammo_magazine/box/pistol
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_smallpistol
+	name = "ammo box (small pistol)"
+	path = /obj/item/ammo_magazine/box/smallpistol
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_rifle
+	name = "ammo box (rifle, 5mmR)"
+	path = /obj/item/ammo_magazine/box/rifle
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_rifle_mil
+	name = "ammo box (rifle, 7mmR military)"
+	path = /obj/item/ammo_magazine/box/rifle/military
+
+/datum/fabricator_recipe/arms_ammo/hidden/box_rifle_rus
+	name = "ammo box (rifle, 12,7x55mm)"
+	path = /obj/item/ammo_magazine/box/rifle/military
