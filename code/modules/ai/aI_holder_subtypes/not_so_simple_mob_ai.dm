@@ -257,10 +257,6 @@ var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list
 	if(!pack_leader.ai_holder.cooperative)
 		return
 
-	if(pack_leader != src)
-		smart_ai_holder.set_follow(null)
-		spawn(10) smart_ai_holder.set_follow(pack_leader)
-
 	if(!(src in pack_leader.current_pack_members))
 		pack_leader.current_pack_members += src
 
