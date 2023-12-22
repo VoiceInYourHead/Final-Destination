@@ -316,8 +316,6 @@ var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list
 			pack_member.current_pack_members -= src
 			var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
 			if(member_ai_holder)
-				if(member_ai_holder.leader == pack_leader)
-					member_ai_holder.set_follow(null)
 				if(pack_member.pack_leader == src)
 					pack_member.pack_leader = null
 		current_pack_members = list()
@@ -352,8 +350,6 @@ var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list
 			for(var/mob/living/simple_animal/hostile/smart_beast/pack_member in current_pack_members)
 				var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
 				pack_member.current_pack_members -= src
-				if(member_ai_holder.leader == pack_leader)
-					member_ai_holder.set_follow(null)
 				if(pack_member.pack_leader == src)
 					pack_member.pack_leader = null
 				current_pack_members = list()
