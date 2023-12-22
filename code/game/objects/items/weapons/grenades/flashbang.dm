@@ -53,32 +53,44 @@
 		if(ear_safety < 2 && get_dist(M, T) <= 2)
 			M.Stun(1)
 			M.confused += 3
+			if(M.psi)
+				M.psi.spend_power(rand(2,5),1)
 
 	else if(get_dist(M, T) <= 2)
 		M.Stun(3)
 		M.confused += 8
 		M.ear_damage += rand(0, 5)
 		M.ear_deaf = max(M.ear_deaf,15)
+		if(M.psi)
+			M.psi.spend_power(rand(20,30),1)
 
 	else if(get_dist(M, T) <= 5)
 		M.Stun(2)
 		M.confused += 5
 		M.ear_damage += rand(0, 3)
 		M.ear_deaf = max(M.ear_deaf,10)
+		if(M.psi)
+			M.psi.spend_power(rand(10,20),1)
 
 	else
 		M.Stun(1)
 		M.confused += 3
 		M.ear_damage += rand(0, 1)
 		M.ear_deaf = max(M.ear_deaf,5)
+		if(M.psi)
+			M.psi.spend_power(rand(2,5),1)
 
 	//This really should be in mob not every check
 	if (M.ear_damage >= 15)
 		to_chat(M, "<span class='danger'>Your ears start to ring badly!</span>")
 		sound_to(M, sound('sound/effects/ringing_ears.ogg', volume=100))
+		if(M.psi)
+			M.psi.backblast(rand(5,10))
 	else
 		if (M.ear_damage >= 5)
 			to_chat(M, "<span class='danger'>Your ears start to ring!</span>")
+			if(M.psi)
+				M.psi.spend_power(rand(30,40),1)
 
 /obj/item/grenade/flashbang/Destroy()
 	walk(src, 0) // Because we might have called walk_away, we must stop the walk loop or BYOND keeps an internal reference to us forever.

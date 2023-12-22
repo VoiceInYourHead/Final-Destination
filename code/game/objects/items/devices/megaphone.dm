@@ -13,6 +13,8 @@
 	var/list/insultmsg = list("FUCK EVERYONE!", "I'M A TATER!", "ALL SECURITY TO SHOOT ME ON SIGHT!", "I HAVE A BOMB!", "CAPTAIN IS A COMDOM!", "FOR THE SYNDICATE!")
 
 /obj/item/device/megaphone/attack_self(mob/living/user as mob)
+	var/mob/living/carbon/psionic
+
 	if (user.client)
 		if(user.client.prefs.muted & MUTE_IC)
 			to_chat(src, "<span class='warning'>You cannot speak in IC (muted).</span>")
@@ -58,6 +60,9 @@
 		else
 			for(var/mob/O in (viewers(user)))
 				O.hear_say(message, "broadcasts", lang, null, 0, user, null, null, 6)
+				for(psionic in oviewers(5, null))
+					if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+						psionic.psi.spend_power(rand(10,20))
 				if(O.client)
 					rec |= O.client
 

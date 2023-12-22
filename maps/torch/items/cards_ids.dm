@@ -194,7 +194,7 @@
 //NanoTrasen and Passengers
 
 /obj/item/card/id/torch/passenger
-	desc = "A card issued to passengers aboard the SEV Torch."
+	desc = "A card issued to passengers and off-duty personnel aboard the SEV Torch."
 	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_PAKISTAN_GREEN
 
