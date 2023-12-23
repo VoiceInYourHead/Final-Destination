@@ -3381,6 +3381,7 @@
 #include "code\unit_tests\zas_tests.dm"
 #include "code\unit_tests\~helpers.dm"
 #include "customs\code\chichi.dm"
+#include "customs\code\Jie.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 #include "maps\_maps.dm"
