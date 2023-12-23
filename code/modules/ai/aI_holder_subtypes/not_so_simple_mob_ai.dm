@@ -250,7 +250,7 @@ var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list
 	return pick(.)
 
 /mob/living/simple_animal/hostile/smart_beast/proc/attach_to_pack()
-	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+//	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	pack_leader = find_pack_leader()
 	if(!ai_holder.cooperative || !pack_leader)
 		return
@@ -348,7 +348,7 @@ var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list
 	if(stat == DEAD)
 		if(current_pack_members)
 			for(var/mob/living/simple_animal/hostile/smart_beast/pack_member in current_pack_members)
-				var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
+//				var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
 				pack_member.current_pack_members -= src
 				if(pack_member.pack_leader == src)
 					pack_member.pack_leader = null

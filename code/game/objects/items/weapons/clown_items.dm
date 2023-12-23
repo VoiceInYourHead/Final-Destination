@@ -34,7 +34,7 @@
 	if (spam_flag == 0)
 		spam_flag = 1
 		playsound(src.loc, pick(src.audio_files), 50, 1)
-		for(psionic in oviewers(7, null))
+		for(psionic in view(7, null))
 			if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
 				psionic.psi.spend_power(rand(6,10))
 		src.add_fingerprint(user)
@@ -55,7 +55,7 @@
 	if (spam_flag == 0)
 		spam_flag = 1
 		playsound(src.loc, pick(src.audio_files), 50, 1)
-		for(psionic in oviewers(7, null))
+		for(psionic in view(7, null))
 			if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
 				psionic.psi.spend_power(rand(15,25))
 		src.add_fingerprint(user)
