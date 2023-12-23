@@ -649,4 +649,3 @@
 	else if(harvest)
 		harvest()
 	return TRUE
-

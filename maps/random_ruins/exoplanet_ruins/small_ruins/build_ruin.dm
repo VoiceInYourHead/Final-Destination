@@ -72,39 +72,59 @@
 	ruin_tags = RUIN_HUMAN | RUIN_WRECK
 
 /datum/map_template/ruin/exoplanet/build/build12
-	name = "The WALL"
+	name = "The WALL 12"
 	id = "build12"
 	spawn_cost = 0.1
 	suffixes = list("small_ruins/build_ruin12.dmm")
 	ruin_tags = RUIN_ALIEN
 
 /datum/map_template/ruin/exoplanet/build/build13
-	name = "Bazar"
+	name = "Bazar 13"
 	id = "build13"
 	spawn_cost = 0.3
 	suffixes = list("small_ruins/build_ruin13.dmm")
 	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
 
 /datum/map_template/ruin/exoplanet/build/build14
-	name = "Old Road"
+	name = "Old Road 14"
 	id = "build14"
 	spawn_cost = 0.1
 	suffixes = list("small_ruins/build_ruin14.dmm")
 	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
 
 /datum/map_template/ruin/exoplanet/build/build15
-	name = "Crashed Pods"
+	name = "Crashed Pods 15"
 	id = "build15"
 	spawn_cost = 0.3
 	suffixes = list("small_ruins/build_ruin15.dmm")
 	ruin_tags = RUIN_HUMAN | RUIN_WRECK
 
 /datum/map_template/ruin/exoplanet/build/build16
-	name = "Ruined Railgun"
+	name = "Ruined Railgun 16"
 	id = "build16"
 	spawn_cost = 0.3
 	suffixes = list("small_ruins/build_ruin16.dmm")
 	ruin_tags = RUIN_ALIEN
+
+/datum/map_template/ruin/exoplanet/build/build17
+	name = "Ancient Library 17"
+	id = "build17"
+	spawn_cost = 0.4
+	suffixes = list("small_ruins/build_ruin17.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
+
+/datum/map_template/ruin/exoplanet/build/build18
+	name = "Ruined launching shaft 18"
+	id = "build18"
+	spawn_cost = 0.3
+	suffixes = list("small_ruins/build_ruin18.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
+
+/datum/map_template/ruin/exoplanet/build/build19
+	name = "Ruined Research 19"
+	id = "build19"
+	suffixes = list("small_ruins/build_ruin19.dmm")
+	ruin_tags = RUIN_HUMAN | RUIN_HABITAT
 
 
 
@@ -137,7 +157,11 @@
 	name = "Abandoned Store"
 /area/map_template/build/build16
 	name = "Ruined Railgun"
-
+/area/map_template/build/build17
+	name = "Ancient Library"
+	icon_state = "18"
+/area/map_template/build/build19
+	name = "Destroyed Research"
 // Other Code????    //
 
 /obj/structure/mob_spawner

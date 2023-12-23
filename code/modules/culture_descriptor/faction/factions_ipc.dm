@@ -22,7 +22,7 @@
 		/datum/job/janitor, /datum/job/chef, /datum/job/submap/pod, /datum/job/submap/citydweller, /datum/job/submap/colonist, /datum/job/submap/colonist2,
 		/datum/job/assistant, /datum/job/crew, /datum/job/ai, /datum/job/cyborg,
 		/datum/job/submap/aegis/pilot, /datum/job/submap/aegis/gunner, /datum/job/submap/aegis/surgeon, /datum/job/submap/aegis/field_engineer, /datum/job/submap/aegis/field_medic, /datum/job/submap/aegis/rifleman,
-		/datum/job/submap/ares, /datum/job/submap/bearcat_crewman, /datum/job/submap/carrier_pilot, /datum/job/submap/carrier_salvager, /datum/job/submap/carrier_crewman,
+		/datum/job/submap/ares, /datum/job/submap/bearcat_crewman, /datum/job/submap/carrier_pilot, /datum/job/submap/carrier_salvager, /datum/job/submap/carrier_crewman, /datum/job/submap/carrier_chef,
 		/datum/job/submap/scavver, /datum/job/submap/scavver_pilot, /datum/job/submap/scavver_doctor, /datum/job/submap/scavver_engineer, /datum/job/submap/smuggler,
 		/datum/job/submap/venera/pilot, /datum/job/submap/venera/gunner, /datum/job/submap/venera/rifleman, /datum/job/submap/CTI_engineer)
 
@@ -37,7 +37,7 @@
 		/datum/job/cargo_tech, /datum/job/mining, /datum/job/submap/pod, /datum/job/submap/citydweller, /datum/job/submap/colonist, /datum/job/submap/colonist2,
 		/datum/job/ai, /datum/job/cyborg, /datum/job/assistant,
 		/datum/job/submap/aegis/pilot, /datum/job/submap/aegis/gunner, /datum/job/submap/aegis/surgeon, /datum/job/submap/aegis/field_engineer, /datum/job/submap/aegis/field_medic, /datum/job/submap/aegis/rifleman,
-		/datum/job/submap/ares, /datum/job/submap/bearcat_crewman, /datum/job/submap/carrier_pilot, /datum/job/submap/carrier_salvager, /datum/job/submap/carrier_crewman,
+		/datum/job/submap/ares, /datum/job/submap/bearcat_crewman, /datum/job/submap/carrier_pilot, /datum/job/submap/carrier_salvager, /datum/job/submap/carrier_crewman, /datum/job/submap/carrier_doctor, /datum/job/submap/carrier_chef,
 		/datum/job/submap/scavver, /datum/job/submap/scavver_pilot, /datum/job/submap/scavver_doctor, /datum/job/submap/scavver_engineer, /datum/job/submap/smuggler,
 		/datum/job/submap/venera/pilot, /datum/job/submap/venera/gunner, /datum/job/submap/venera/rifleman, /datum/job/submap/CTI_engineer)
 
@@ -67,7 +67,7 @@
 		/datum/job/cargo_tech, /datum/job/mining, /datum/job/submap/pod, /datum/job/submap/citydweller, /datum/job/submap/colonist, /datum/job/submap/colonist2,
 		/datum/job/ai, /datum/job/cyborg, /datum/job/assistant,
 		/datum/job/submap/aegis/pilot, /datum/job/submap/aegis/gunner, /datum/job/submap/aegis/surgeon, /datum/job/submap/aegis/field_engineer, /datum/job/submap/aegis/field_medic, /datum/job/submap/aegis/rifleman,
-		/datum/job/submap/ares, /datum/job/submap/bearcat_crewman, /datum/job/submap/carrier_pilot, /datum/job/submap/carrier_salvager, /datum/job/submap/carrier_crewman,
+		/datum/job/submap/ares, /datum/job/submap/bearcat_crewman, /datum/job/submap/carrier_pilot, /datum/job/submap/carrier_salvager, /datum/job/submap/carrier_crewman,/datum/job/submap/carrier_doctor,/datum/job/submap/carrier_chef,
 		/datum/job/submap/scavver, /datum/job/submap/scavver_pilot, /datum/job/submap/scavver_doctor, /datum/job/submap/scavver_engineer, /datum/job/submap/smuggler,
 		/datum/job/submap/venera/pilot, /datum/job/submap/venera/gunner, /datum/job/submap/venera/rifleman, /datum/job/submap/CTI_engineer)
 

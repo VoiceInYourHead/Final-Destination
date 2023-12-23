@@ -1270,6 +1270,8 @@ About the new airlock wires panel:
 	return ..()
 
 /obj/machinery/door/airlock/close(var/forced=0)
+	var/mob/living/carbon/psionic
+
 	if(!can_close(forced))
 		return 0
 
@@ -1279,6 +1281,9 @@ About the new airlock wires panel:
 				if(AM.blocks_airlock())
 					if(world.time > next_beep_at)
 						playsound(src.loc, close_failure_blocked, 30, 0, -3)
+						for(psionic in view(5, src))
+							if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+								psionic.psi.spend_power(rand(5,10))
 						next_beep_at = world.time + SecondsToTicks(10)
 					close_door_at = world.time + 6
 					return

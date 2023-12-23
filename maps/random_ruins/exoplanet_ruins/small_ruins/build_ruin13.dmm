@@ -158,6 +158,7 @@
 "No" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
 "Nw" = (/obj/item/material/shard,/obj/effect/decal/cleanable/liquid_fuel,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
 "NF" = (/obj/effect/decal/cleanable/filth,/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete/reinforced,/area/template_noop)
+"OA" = (/obj/random/junk,/obj/machinery/door/unpowered/simple/iron,/turf/template_noop,/area/template_noop)
 "ON" = (/obj/random/circuitboard/shuttle,/turf/template_noop,/area/template_noop)
 "OU" = (/obj/structure/table/rack,/obj/random/snack{pixel_y = 6},/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/corner/green/mono,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/build/build13)
 "Pc" = (/obj/structure/table/mag,/obj/item/stack/material/phoron/ten{pixel_y = 11},/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/corner/yellow/mono,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/build/build13)
@@ -200,7 +201,7 @@
 (1,1,1) = {"
 bOBuBmUSUSBuSVtTBobOBuSiUSrtSVBuMcMcBmMcalpQbOSVBuBmSiKUxdbO
 BoBuhZBuUSBmBuwVUSBuSVSVSVSVBuBoSVSVMcUSrtKfBuBuBoSVBmBmxdet
-SVrtUSSVpQrtrtSVMcBmUSBmKfBopQrtBoBmUSMcBuBubORebOBuBuBoWxbO
+SVrtUSSVpQrtrtSVMcBmUSBmKfBoOArtBoBmUSMcBuBubORebOBuBuBoWxbO
 bOtutGUuVEBuUWbObOpBAVAVAVbObObObOpQbObObObObObOrtBuBuBobObO
 lmGAVUSVGiGivxKLxdxdxdbOxdxdxdbOxdEaxdbOxdxdxdbObOSVMcbOQeON
 UWZeVTVTVTVTXGUWTYUWHCHCUWUWUWHCHCUWUWUWHCUWBdBdtrUSKfBoQeet

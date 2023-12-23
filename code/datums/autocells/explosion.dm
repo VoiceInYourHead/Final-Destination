@@ -237,6 +237,8 @@ as having entered the turf.
 
 // Spawns a cellular automaton of an explosion
 /proc/cell_explosion(turf/epicenter, power, falloff, falloff_shape = EXPLOSION_FALLOFF_SHAPE_LINEAR, direction, shrapnel = TRUE, z_transfer = UP|DOWN, original = TRUE, datum/effect/effect/system/effective = /datum/effect/effect/system/explosion)
+	var/mob/living/carbon/psionic
+
 	if(!istype(epicenter))
 		epicenter = get_turf(epicenter)
 
@@ -251,8 +253,14 @@ as having entered the turf.
 
 		if(power >= 300) //Make BIG BOOMS
 			playsound(epicenter, "bigboom", 80, 1, max(round(power,1),7))
+			for(psionic in view(7, src))
+				if(psionic.psi)
+					psionic.psi.spend_power(rand(25,35))
 		else
 			playsound(epicenter, "explosion", 90, 1, max(round(power,1),7))
+			for(psionic in view(7, src))
+				if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+					psionic.psi.spend_power(rand(15,35))
 
 	var/datum/automata_cell/explosion/E = new /datum/automata_cell/explosion(epicenter)
 	// something went wrong :(

@@ -283,12 +283,14 @@
 	rank_types = list(
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/synthetic,
 	)
 
 	spawn_rank_types = list(
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/synthetic,
 	)
 
@@ -725,6 +727,10 @@
 /datum/mil_rank/civ/synthetic
 	name = "Synthetic"
 	name_short = "Synth"
+
+/datum/mil_rank/civ/offduty
+	name = "Off-Duty Personnel"
+	name_short = "Off-Duty"
 
 /*
  *  SolGov Employees

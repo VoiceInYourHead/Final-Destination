@@ -23,8 +23,8 @@ Civilian
 
 /datum/job/assistant
 	title = "Passenger"
-	total_positions = 12
-	spawn_positions = 12
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the Executive Officer"
 	economic_power = 6
 	announced = FALSE
@@ -39,11 +39,13 @@ Civilian
 		"Entertainer",
 		"Independent Observer",
 		"Sociologist",
-		"Trainer")
+		"Trainer",
+		"Off-Duty")
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
+		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/contractor
 	)
 	min_goals = 2

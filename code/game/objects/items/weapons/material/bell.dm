@@ -13,6 +13,8 @@
 
 
 /obj/item/material/bell/attack_hand(mob/living/user)
+	var/mob/living/carbon/psionic
+
 	if (user.a_intent == I_GRAB)
 		return ..()
 	else if (user.a_intent == I_HURT)
@@ -22,6 +24,9 @@
 			SPAN_WARNING("You hear a bell sounding. A lot.")
 		)
 		playsound(src, angry_sound, 60)
+		for(psionic in view(7, src))
+			if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+				psionic.psi.spend_power(rand(4,8))
 	else
 		user.visible_message(
 			SPAN_ITALIC("\The [user] rings \a [src]."),
@@ -29,6 +34,9 @@
 			SPAN_WARNING("You hear a bell sounding.")
 		)
 		playsound(src, normal_sound, 20)
+		for(psionic in view(7, src))
+			if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+				psionic.psi.spend_power(rand(2,4))
 	flick("bell_dingeth", src)
 
 

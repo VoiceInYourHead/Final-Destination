@@ -79,7 +79,6 @@
 //	path_display = TRUE
 //	stance_coloring = TRUE
 //	debug_ai = AI_LOG_DEBUG
-
 /mob/living/simple_animal/hostile/smart_beast
 	var/mob/living/simple_animal/hostile/smart_beast/pack_leader
 	var/list/beastmasters = list()
@@ -116,6 +115,8 @@
 	movement_cooldown = 2
 	movement_sound = null			// If set, will play this sound when it moves on its own will.
 	turn_sound = null				// If set, plays the sound when the mob's dir changes in most cases.
+
+var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list()
 
 /mob/living/simple_animal/hostile/smart_beast/proc/scale(factor)
 	if (factor)
@@ -233,40 +234,28 @@
 */
 /mob/living/simple_animal/hostile/smart_beast/proc/find_pack_leader()
 	var/list/pack_leader_candidates = list()
-	var/list/pack_leaders = list()
 
-	for(var/mob/living/simple_animal/hostile/smart_beast/leader_candidate in range(15,src))
-		var/datum/ai_holder/smart_animal/candidate_ai_holder
-		if(istype(leader_candidate, src.type) && leader_candidate.stat != DEAD)
-			candidate_ai_holder = leader_candidate.ai_holder
-			pack_leader_candidates += candidate_ai_holder.dominance
+	for(var/mob/living/simple_animal/hostile/smart_beast/leader_candidate in global.smart_beasts)
+		if(get_dist(src, leader_candidate) > 15 || !istype(leader_candidate, type) || leader_candidate.stat == DEAD)
+			continue
+		ADD_SORTED(pack_leader_candidates, leader_candidate, /proc/cmp_dominance)
 
-	if(!pack_leader_candidates.len)
-		return
+	. = list()
+	var/leader_dominance = pack_leader_candidates[pack_leader_candidates.len].ai_holder.dominance
+	for(var/mob/living/simple_animal/hostile/smart_beast/M in pack_leader_candidates)
+		var/datum/ai_holder/smart_animal/sai_holder = M.ai_holder
+		if(sai_holder.dominance == leader_dominance)
+			. += M
 
-	var/most_dominant_value = max(pack_leader_candidates)
-
-	for(var/mob/living/simple_animal/hostile/smart_beast/leader_candidate in range(15,src))
-		var/datum/ai_holder/smart_animal/candidate_ai_holder = leader_candidate.ai_holder
-		if(candidate_ai_holder.dominance == most_dominant_value && leader_candidate.stat != DEAD)
-			pack_leaders += leader_candidate
-
-	if(!pack_leaders.len)
-		return
-
-	return pick(pack_leaders)
+	return pick(.)
 
 /mob/living/simple_animal/hostile/smart_beast/proc/attach_to_pack()
-	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
+//	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	pack_leader = find_pack_leader()
 	if(!ai_holder.cooperative || !pack_leader)
 		return
 	if(!pack_leader.ai_holder.cooperative)
 		return
-
-	if(pack_leader != src)
-		smart_ai_holder.set_follow(null)
-		spawn(10) smart_ai_holder.set_follow(pack_leader)
 
 	if(!(src in pack_leader.current_pack_members))
 		pack_leader.current_pack_members += src
@@ -277,19 +266,19 @@
 		current_pack_members += pack_leader
 
 	for(var/mob/living/simple_animal/hostile/smart_beast/member in pack_leader.current_pack_members)
-		if(!(src in member.current_pack_members))
-			member.current_pack_members += src
+		member.current_pack_members |= src
 		if(src.pack_leader != member.pack_leader)
 			member.pack_leader = find_pack_leader()
 
-	for(var/mob/living/simple_animal/hostile/smart_beast/member in range(15,src))
-		if(istype(member, src.type))
-			if(!(src in member.current_pack_members))
-				member.current_pack_members += src
-			if(!(member in src.current_pack_members))
-				src.current_pack_members += member
-			if(src.pack_leader != member.pack_leader)
-				member.pack_leader = find_pack_leader()
+	for(var/mob/living/simple_animal/hostile/smart_beast/member in global.smart_beasts)
+		if(get_dist(src, member) > 15 || !istype(member, type))
+			continue
+
+		// This code is shit
+		member.current_pack_members |= src
+		current_pack_members        |= member
+		if(pack_leader != member.pack_leader)
+			member.pack_leader = find_pack_leader()
 
 	if(current_pack_members.len <= 1) // ты еблан? ты как СТАЮ в ОДИНОЧКУ создавать собрался, инфузория?
 		current_pack_members = list()
@@ -308,10 +297,16 @@
 	..()
 	var/datum/ai_holder/smart_animal/smart_ai_holder = ai_holder
 	if(smart_ai_holder.cooperative)
-		spawn(10) attach_to_pack()
+		spawn(10)
+			attach_to_pack()
+		global.smart_beasts += src
 	var/tone = rand(190,255)
 	if(randomize_tone)
 		color = rgb(tone,tone,tone)
+
+/mob/living/simple_animal/hostile/smart_beast/Destroy()
+	. = ..()
+	global.smart_beasts -= src
 
 /mob/living/simple_animal/hostile/smart_beast/death(gibbed, deathmessage, show_dead_message)
 	..(gibbed, deathmessage, show_dead_message)
@@ -321,14 +316,13 @@
 			pack_member.current_pack_members -= src
 			var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
 			if(member_ai_holder)
-				if(member_ai_holder.leader == pack_leader)
-					member_ai_holder.set_follow(null)
 				if(pack_member.pack_leader == src)
 					pack_member.pack_leader = null
 		current_pack_members = list()
 	if(pack_leader)
 		smart_ai_holder.set_follow(null)
 		pack_leader = null
+	global.smart_beasts -= src
 
 /datum/ai_holder/smart_animal/request_help()
 	var/mob/living/simple_animal/hostile/smart_beast/smart_holder = holder
@@ -354,10 +348,8 @@
 	if(stat == DEAD)
 		if(current_pack_members)
 			for(var/mob/living/simple_animal/hostile/smart_beast/pack_member in current_pack_members)
-				var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
+//				var/datum/ai_holder/smart_animal/member_ai_holder = pack_member.ai_holder
 				pack_member.current_pack_members -= src
-				if(member_ai_holder.leader == pack_leader)
-					member_ai_holder.set_follow(null)
 				if(pack_member.pack_leader == src)
 					pack_member.pack_leader = null
 				current_pack_members = list()
