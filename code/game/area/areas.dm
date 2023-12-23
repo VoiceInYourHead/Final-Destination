@@ -10,7 +10,7 @@
 	mouse_opacity = 2
 
 	///Filters you can apply to the players screen when they enter a new area
-	var/screen_filter
+	var/screen_filter = /obj/screenfilter
 
 /area/New()
 	icon_state = ""
