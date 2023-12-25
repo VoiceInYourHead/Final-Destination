@@ -489,6 +489,5 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/item/clothing/suit/space/void/engineering/salvage/prepared  = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/uranium/ten = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/plasteel/fifty = TRADER_THIS_TYPE,
-								  /obj/item/stack/material/steel/fifty = TRADER_THIS_TYPE,
-								  /obj/item/ore = TRADER_SUBTYPES_ONLY
+								  /obj/item/stack/material/steel/fifty = TRADER_THIS_TYPE
 								)
