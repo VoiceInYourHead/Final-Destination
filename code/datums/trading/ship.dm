@@ -2,7 +2,7 @@
 //They are ALSO the only ones that can appear after round start
 /datum/trader/ship
 	var/duration_of_stay = 0
-	var/typical_duration = 20 //minutes (since trader processes only tick once a minute)
+	var/typical_duration = 30 //minutes (since trader processes only tick once a minute)
 
 	overmap_object_type = /obj/effect/overmap/trading/ship
 

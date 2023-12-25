@@ -29,7 +29,7 @@
 								/obj/item/toy/figure/ert    = TRADER_THIS_TYPE,
 								/obj/item/toy/prize/honk    = TRADER_THIS_TYPE)
 
-	possible_trading_items = list(/obj/item/toy/prize                 = TRADER_SUBTYPES_ONLY,
+	possible_trading_items = list(/obj/item/toy/prize        		  = TRADER_SUBTYPES_ONLY,
 								/obj/item/toy/prize/honk              = TRADER_BLACKLIST,
 								/obj/item/toy/figure                  = TRADER_SUBTYPES_ONLY,
 								/obj/item/toy/figure/ert              = TRADER_BLACKLIST,
@@ -246,6 +246,7 @@ Sells devices, odds and ends, and medical stuff
 								/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris = TRADER_THIS_TYPE,
 								/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus     = TRADER_THIS_TYPE,
 								/obj/item/reagent_containers/food/drinks/bottle/oiljug          = TRADER_THIS_TYPE,
+								/obj/item/reagent_containers/food/condiment/space_drugs 		= TRADER_THIS_TYPE,
 								/obj/item/device/scanner/reagent           = TRADER_ALL,
 								/obj/item/stack/medical/advanced           = TRADER_ALL,
 								)
@@ -282,7 +283,12 @@ Sells devices, odds and ends, and medical stuff
 								/obj/item/device/bot_kit                          = TRADER_THIS_TYPE,
 								/obj/item/device/paicard                          = TRADER_THIS_TYPE,
 								/obj/item/aicard                                  = TRADER_THIS_TYPE,
-								/mob/living/bot                                   = TRADER_SUBTYPES_ONLY)
+								/obj/item/robot_parts							  = TRADER_SUBTYPES_ONLY,
+								/obj/item/device/mmi/digital/robot 				  = TRADER_THIS_TYPE,
+								/mob/living/bot                                   = TRADER_SUBTYPES_ONLY,
+								/obj/item/clothing/mask/monitor 				  = TRADER_THIS_TYPE,
+
+								)
 	speech = list(TRADER_HAIL_GENERIC = "Добро пожаловать в ORIGIN! Позвольте мне продемонстрировать вам весь ассортимент наших синтетических друзей!",
 				TRADER_HAIL_DENY      = "ORIGIN не собирается продолжать с вами разговор.",
 
@@ -394,6 +400,7 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/item/reagent_containers/glass/bottle/stoxin = TRADER_THIS_TYPE,
 								  /obj/item/reagent_containers/glass/bottle/antitoxin = TRADER_THIS_TYPE,
 								  /obj/item/reagent_containers/glass/bottle/inaprovaline = TRADER_THIS_TYPE,
+								  /obj/item/reagent_containers/ivbag/nanoblood = TRADER_THIS_TYPE,
 								  /obj/item/bodybag/cryobag = TRADER_THIS_TYPE,
 								  /obj/item/reagent_containers/chem_disp_cartridge/dexalin/small = TRADER_THIS_TYPE,
 								  /obj/item/sign/medipolma = TRADER_THIS_TYPE
@@ -478,8 +485,10 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/machinery/floodlight = TRADER_THIS_TYPE,
 								  /obj/machinery/floodlight = TRADER_THIS_TYPE,
 								  /obj/item/storage/box/greenglowsticks = TRADER_THIS_TYPE,
+								  /obj/item/pickaxe/diamonddrill = TRADER_THIS_TYPE,
 								  /obj/item/clothing/suit/space/void/engineering/salvage/prepared  = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/uranium/ten = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/plasteel/fifty = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/steel/fifty = TRADER_THIS_TYPE
+								  /obj/item/ore = TRADER_SUBTYPES_ONLY
 								)
