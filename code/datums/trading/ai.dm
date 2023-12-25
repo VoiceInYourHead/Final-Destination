@@ -141,7 +141,6 @@ They sell generic supplies and ask for generic supplies.
 								  /obj/item/inflatable/wall										= TRADER_THIS_TYPE,
 								  /obj/item/inflatable/door										= TRADER_THIS_TYPE,
 								  /obj/item/taperoll/engineering								= TRADER_THIS_TYPE,
-								  /obj/item/fd/data/engineering/lvl4							= TRADER_THIS_TYPE,
 								  /obj/item/tank/jetpack/carbondioxide							= TRADER_THIS_TYPE,
 								  /obj/item/tank/air											= TRADER_THIS_TYPE,
 								  /obj/item/welder_tank/experimental							= TRADER_THIS_TYPE,
