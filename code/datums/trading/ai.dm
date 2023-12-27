@@ -109,7 +109,11 @@ They sell generic supplies and ask for generic supplies.
 								/obj/structure/filingcabinet        = TRADER_THIS_TYPE,
 								/obj/structure/safe                 = TRADER_THIS_TYPE,
 								/obj/structure/plushie              = TRADER_SUBTYPES_ONLY,
-								/obj/item/contraband/poster         = TRADER_THIS_TYPE
+								/obj/item/contraband/poster         = TRADER_THIS_TYPE,
+								/obj/structure/holoplant 			= TRADER_THIS_TYPE,
+								/obj/structure/flora/pottedplant	= TRADER_THIS_TYPE,
+								/obj/structure/reagent_dispensers/water_cooler		= TRADER_THIS_TYPE
+
 								)
 
 /datum/trader/trading_beacon/engineering
@@ -143,7 +147,7 @@ They sell generic supplies and ask for generic supplies.
 								  /obj/item/taperoll/engineering								= TRADER_THIS_TYPE,
 								  /obj/item/tank/jetpack/carbondioxide							= TRADER_THIS_TYPE,
 								  /obj/item/tank/air											= TRADER_THIS_TYPE,
-								  /obj/item/welder_tank/experimental							= TRADER_THIS_TYPE,
+								  /obj/item/welder_tank/huge 							        = TRADER_THIS_TYPE,
 								  /obj/structure/reagent_dispensers/fueltank 					= TRADER_THIS_TYPE
 								 )
 
@@ -219,7 +223,12 @@ They sell generic supplies and ask for generic supplies.
 								/obj/structure/plushie                        = TRADER_SUBTYPES_ONLY,
 								/obj/item/a_gift							  = TRADER_THIS_TYPE,
 								/obj/item/contraband/poster                   = TRADER_THIS_TYPE,
-								/obj/item/storage/pill_bottle 				  = TRADER_SUBTYPES_ONLY
+								/obj/item/storage/pill_bottle/bicaridine	  = TRADER_THIS_TYPE,
+								/obj/item/storage/pill_bottle/kelotane		  = TRADER_THIS_TYPE,
+								/obj/item/storage/pill_bottle/dylovene        = TRADER_THIS_TYPE,
+								/obj/item/storage/pill_bottle/dexalin		  = TRADER_THIS_TYPE,
+								/obj/item/storage/pill_bottle/citalopram      = TRADER_THIS_TYPE
+
 								)
 
 /datum/trader/trading_beacon/starter/select_spawn_location()

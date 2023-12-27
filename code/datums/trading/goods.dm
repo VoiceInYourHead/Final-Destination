@@ -485,7 +485,7 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/machinery/floodlight = TRADER_THIS_TYPE,
 								  /obj/machinery/floodlight = TRADER_THIS_TYPE,
 								  /obj/item/storage/box/greenglowsticks = TRADER_THIS_TYPE,
-								  /obj/item/pickaxe/diamonddrill = TRADER_THIS_TYPE,
+								  /obj/item/pickaxe/drill = TRADER_THIS_TYPE,
 								  /obj/item/clothing/suit/space/void/engineering/salvage/prepared  = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/uranium/ten = TRADER_THIS_TYPE,
 								  /obj/item/stack/material/plasteel/fifty = TRADER_THIS_TYPE,
