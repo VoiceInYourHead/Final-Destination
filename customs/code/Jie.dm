@@ -4,7 +4,7 @@
 	icon_state = "pilot_vista"
 	item_state = "vista_helm"
 	light_overlay = "helmet_light_alt"
-	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	icon = 'icons/fd/custom_items/mech-helmet.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
