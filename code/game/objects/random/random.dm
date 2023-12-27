@@ -1484,7 +1484,7 @@ var/list/random_useful_
 	icon = 'icons/fd/landmarks.dmi'
 	icon_state = "tech-green"
 
-/obj/random/maintenance/spawn_choices()
+/obj/random/circuitboard/spawn_choices()
 	return list(/obj/random/circuitboard/ship_guns,
 				/obj/random/circuitboard/research,
 				/obj/random/circuitboard/cooking,

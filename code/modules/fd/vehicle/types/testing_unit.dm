@@ -1,4 +1,4 @@
-/obj/vehicles/warthog
+/obj/vehicles/large/warthog
 	name = "M12 Warthog LRV"
 	desc = "A nimble vehicle capable of providing anti-infantry support and small-scale troop transport."
 
@@ -23,7 +23,15 @@
 	min_speed = 8.5
 	max_speed = 2.5
 
-/obj/vehicles/warthog/on_death()
+	interior_template = /datum/map_template/ambulance
+	size_x = 5
+	size_y = 6
+
+/datum/map_template/ambulance
+	name = "Ambulance"
+	mappaths = list("maps/interiors/ambulance.dmm")
+
+/obj/vehicles/large/warthog/on_death()
 	. = ..()
 
 /obj/item/vehicle_component/health_manager/warthog
