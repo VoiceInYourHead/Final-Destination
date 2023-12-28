@@ -77,7 +77,8 @@
 	else
 		to_chat(user,"<span class = 'notice'>You toggle [src]'s headlights off.</span>")
 		headlights_state = 1
-		set_light(0,0,0,l_color = "ffffff")
+		set_light(0,0,0,l_color = "#ffffff")
+		update_light()
 
 /obj/vehicles/New()
 	. = ..()

@@ -939,9 +939,9 @@ var/global/list/mob/living/simple_animal/hostile/smart_beast/smart_beasts = list
 /datum/ai_holder/smart_animal/charbaby/engage_target()
 	. = ..()
 	var/mob/living/simple_animal/hostile/smart_beast/C = holder
-	if(isliving(C.target_mob) && prob(25))
+	if(isliving(C.target_mob) && prob(30))
 		var/mob/living/L = C.target_mob
-		if(prob(10))
+		if(prob(25))
 			L.adjust_fire_stacks(1)
 			L.IgniteMob()
 
