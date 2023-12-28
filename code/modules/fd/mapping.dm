@@ -21,6 +21,12 @@
 	light_outrange = 30
 	colored = "#c3f1fa"
 
+/obj/effect/landmark/light/snow_cage
+	light_brightness = 0.5
+	light_inrange = 20
+	light_outrange = 30
+	colored = "#618ac0"
+
 /obj/effect/landmark/light/junk_planet
 	light_brightness = 0.7
 	light_inrange = 20
@@ -42,3 +48,23 @@
 	light_inrange = 5
 	light_outrange = 10
 	colored = "#1e4679"
+
+//рандом спавнер для растительности(зимней)
+
+/obj/random/flora/snow
+	name = "random flora spawn"
+	desc = "This is a random flora spawner."
+	icon_state = "trees"
+	spawn_nothing_percentage = 50
+
+/obj/random/flora/snow/spawn_choices()
+	return list(/obj/structure/flora/tree/pine,
+				/obj/structure/flora/tree/dead,
+				/obj/structure/flora/ausbushes/brflowers,
+				/obj/structure/flora/ausbushes/pointybush,
+				/obj/structure/flora/ausbushes/grassybush,
+				/obj/structure/flora/ausbushes/ppflowers,
+				/obj/structure/flora/grass/brown,
+				/obj/structure/flora/grass/green,
+				/obj/structure/flora/grass/both,
+				/obj/structure/flora/bush)

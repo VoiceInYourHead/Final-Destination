@@ -207,6 +207,7 @@
 	#include "../away/junk_planet/jplanet.dm"
 	#include "../away/undersea/code_stuff.dm"
 	#include "../away/ecoffice/ecoffice.dm"
+	#include "../away/snow_cage/snow_cage.dm"
 
 //alternative future stuff
 	#include "../away/airfield/airfield.dm"
