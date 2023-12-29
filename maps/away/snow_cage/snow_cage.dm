@@ -38,18 +38,23 @@
 	base_area = /area/splanet/outdoors
 
 /area/splanet/outdoors
-	name = "arctic forest"
+	name = "Arctic forest"
 	icon_state = "centcom"
 	dynamic_lighting = 1
 	base_turf = /turf/unsimulated/floor/exoplanet/barren
 	screen_filter = /obj/screenfilter/snow
 
-/area/splanet/underground
-	name = "Ascent crashsite"
+/area/splanet/indoors
+	name = "Cold Caves"
+	icon_state = "centcom"
+	dynamic_lighting = 1
 	base_turf = /turf/unsimulated/floor/exoplanet/barren
 
+/area/splanet/underground
+	name = "Ascent crashsite"
+	base_turf = /turf/simulated/open
 
-//MOBS
+//МОБЫ
 
 /obj/effect/pile
 	name = "grey junk-pile"
@@ -84,6 +89,33 @@
 				L.status_flags ^= NOTARGET
 	return ..()
 
+/datum/say_list/smart/harron
+	speak = list("Hrrr...","HRrrRRr")
+	emote_see = list("clicking it's teeth","growls","sniffs")
+	emote_hear = list("barks!")
+
+	say_maybe_target = list("HRr?")	// When they briefly see something.
+	say_got_target = list()	// When a target is first assigned.
+	say_threaten = list("HRRRrAAA!!")		// When threatening someone.
+	say_stand_down = list("Hrrr")	// When the threatened thing goes away.
+	say_escalate = list("HRRRRK!!!")		// When the threatened thing doesn't go away.
+
+	threaten_sound = null	// Sound file played when the mob's AI calls threaten_target() for the first time.
+	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
+
+/datum/say_list/smart/rafama
+	speak = list("WOo...","WOOOOOO")
+	emote_see = list("howling","sniffs")
+	emote_hear = list("sniffs")
+
+	say_maybe_target = list("Woo")	// When they briefly see something.
+	say_got_target = list()	// When a target is first assigned.
+	say_threaten = list("WOOoo!!")		// When threatening someone.
+	say_stand_down = list("WOo...")	// When the threatened thing goes away.
+	say_escalate = list("WOOOOOOOOOOO!!!")		// When the threatened thing doesn't go away.
+
+	threaten_sound = null	// Sound file played when the mob's AI calls threaten_target() for the first time.
+	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
 
 /datum/say_list/smart/digger
 	speak = list("Skree!","SkRKkK")
@@ -92,15 +124,19 @@
 
 	say_maybe_target = list("SKkk?")	// When they briefly see something.
 	say_got_target = list()	// When a target is first assigned.
-	say_threaten = list("SKRRRRK!")		// When threatening someone.
+	say_threaten = list("SKRRRRK!!")		// When threatening someone.
 	say_stand_down = list("SKrr")	// When the threatened thing goes away.
-	say_escalate = list("SKREEE!")		// When the threatened thing doesn't go away.
+	say_escalate = list("SKREEE!!!")		// When the threatened thing doesn't go away.
 
 	threaten_sound = null	// Sound file played when the mob's AI calls threaten_target() for the first time.
 	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
 
+
+//ЗЕМЛЕРОЙКА
+
+
 /datum/ai_holder/smart_animal/digger
-	init_speak_chance = 5
+	init_speak_chance = 8
 	init_outmatched_threshold = 50
 
 /mob/living/simple_animal/hostile/smart_beast/digger
@@ -132,9 +168,7 @@
 	special_attack_max_range = 7
 	special_attack_cooldown = 5 SECONDS
 
-	/// How long the dig telegraphing is.
 	var/tunnel_warning = 0.5 SECONDS
-	/// How long to wait between each tile. Higher numbers result in an easier to dodge tunnel attack.
 	var/tunnel_tile_speed = 4
 
 /mob/living/simple_animal/hostile/smart_beast/digger/New(new_holder)
@@ -150,7 +184,6 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/smart_beast/digger/should_special_attack(atom/A)
-	// Make sure its possible for the spider to reach the target so it doesn't try to go through a window.
 	var/turf/destination = get_turf(A)
 	var/turf/starting_turf = get_turf(src)
 	var/turf/T = starting_turf
@@ -167,15 +200,12 @@
 	set waitfor = FALSE
 	set_AI_busy(TRUE)
 
-	// Save where we're gonna go soon.
 	var/turf/destination = get_turf(A)
 	var/turf/starting_turf = get_turf(src)
 
-	// Telegraph to give a small window to dodge if really close.
 	do_windup_animation(A, tunnel_warning)
 	sleep(tunnel_warning) // For the telegraphing.
 
-	// Do the dig!
 	visible_message(SPAN_DANGER("\The [src] tunnels towards \the [A]!"))
 	submerge()
 
@@ -184,7 +214,6 @@
 		emerge()
 		return FALSE
 
-	// Did we make it?
 	if (!(src in destination))
 		set_AI_busy(FALSE)
 		emerge()
@@ -192,7 +221,6 @@
 
 	var/overshoot = TRUE
 
-	// Test if something is at destination.
 	for (var/mob/living/L in destination)
 		if (L == src)
 			continue
@@ -202,12 +230,11 @@
 		L.Weaken(3)
 		overshoot = FALSE
 
-	if (!overshoot) // We hit the target, or something, at destination, so we're done.
+	if (!overshoot)
 		set_AI_busy(FALSE)
 		emerge()
 		return TRUE
 
-	// Otherwise we need to keep going.
 	to_chat(src, SPAN_WARNING("You overshoot your target!"))
 	playsound(src, 'sound/weapons/punchmiss.ogg', 75, 1)
 	var/dir_to_go = get_dir(starting_turf, destination)
@@ -219,51 +246,226 @@
 	emerge()
 	return FALSE
 
-
-
-/// Does the tunnel movement, stuns enemies, etc.
 /mob/living/simple_animal/hostile/smart_beast/digger/proc/handle_tunnel(turf/destination)
-	var/turf/T = get_turf(src) // Hold our current tile.
+	var/turf/T = get_turf(src)
 
-	// Regular tunnel loop.
 	for (var/i = 1 to get_dist(src, destination))
 		if (stat)
-			return FALSE // We died or got knocked out on the way.
+			return FALSE
 		if (loc == destination)
-			break // We somehow got there early.
+			break
 
-		// Update T.
 		T = get_step(src, get_dir(src, destination))
 		if (T.density)
 			to_chat(src, "<span class='critical'>You hit something really solid!</span>")
 			playsound(src, "punch", 75, 1)
 			Weaken(5)
-			return FALSE // Hit a wall.
+			return FALSE
 
-		// Stun anyone in our way.
 		for (var/mob/living/L in T)
 			playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
 			L.Weaken(2)
 
-		// Get into the tile.
 		forceMove(T)
 
-		// Visuals and sound.
 		dig_under_floor(get_turf(src))
 		playsound(src, 'sound/effects/break_stone.ogg', 75, 1)
 		sleep(tunnel_tile_speed)
 
-// For visuals.
 /mob/living/simple_animal/hostile/smart_beast/digger/proc/submerge()
 	alpha = 0
 	dig_under_floor(get_turf(src))
 	new /obj/effect/temporary/tunneler_hole(get_turf(src), 1 MINUTE)
 
-// Ditto.
 /mob/living/simple_animal/hostile/smart_beast/digger/proc/emerge()
 	alpha = 255
 	dig_under_floor(get_turf(src))
 	new /obj/effect/temporary/tunneler_hole(get_turf(src), 1 MINUTE)
 
 /mob/living/simple_animal/hostile/smart_beast/digger/proc/dig_under_floor(turf/T)
-	new /obj/item/ore/glass(T) // This will be rather weird when on station but the alternative is too much work.
+	new /obj/item/ore/glass(T)
+
+//ВОЛКОЛАК
+
+/datum/ai_holder/smart_animal/harron
+	init_outmatched_threshold = 150
+	init_speak_chance = 5
+
+/mob/living/simple_animal/hostile/smart_beast/harron
+	name = "wolfdog"
+	desc = "A fast, lightweighted predator accustomed to hiding and ambushing in cold terrain. Rare example of technologies and naure working together."
+	icon = 'icons/fd/animals/adhomai.dmi'
+	faction = "cyber_harron"
+	icon_state = "cyber_harron"
+	icon_living = "cyber_harron"
+	icon_dead = "cyber_harron_dead"
+	init_tame_difficulty = 10
+	maxHealth = 80
+	health = 80
+	speed = 2
+	diet = DIET_CARNIVOROUS
+	mob_bump_flag = HUMAN
+	mob_push_flags = ~HEAVY
+	mob_swap_flags = ~HEAVY
+	pass_flags = PASS_FLAG_TABLE
+	mob_size = MOB_MEDIUM
+	natural_weapon = /obj/item/natural_weapon/bite/strong
+	cold_damage_per_tick = 0
+
+	ai_holder = /datum/ai_holder/smart_animal/harron
+	say_list_type = /datum/say_list/smart/harron
+
+	var/cloaked_alpha = 45
+	var/cloaked_bonus_damage = 30
+	var/cloaked_weaken_amount = 3
+	var/cloak_cooldown = 10 SECONDS
+	var/last_uncloak = 0
+	var/cloaked = FALSE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/cloak()
+	if (is_cloaked())
+		return
+	animate(src, alpha = cloaked_alpha, time = 1 SECOND)
+	cloaked = TRUE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/uncloak()
+	last_uncloak = world.time
+	if (!is_cloaked())
+		return
+	animate(src, alpha = initial(alpha), time = 1 SECOND)
+	cloaked = FALSE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/can_cloak()
+	if (stat)
+		return FALSE
+	if (last_uncloak + cloak_cooldown > world.time)
+		return FALSE
+
+	return TRUE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/break_cloak()
+	uncloak()
+
+
+/mob/living/simple_animal/hostile/smart_beast/harron/is_cloaked()
+	return cloaked
+
+/mob/living/simple_animal/hostile/smart_beast/harron/handle_special()
+	if (!is_cloaked() && can_cloak())
+		cloak()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/apply_bonus_melee_damage(atom/A, damage_amount)
+	if (is_cloaked())
+		return damage_amount + cloaked_bonus_damage
+	return ..()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/apply_melee_effects(atom/A)
+	if (is_cloaked() && isliving(A))
+		var/mob/living/L = A
+		L.Weaken(cloaked_weaken_amount)
+		to_chat(L, SPAN_DANGER("\The [src] ambushes you!"))
+		playsound(src, 'sound/weapons/spiderlunge.ogg', 75, 1)
+	uncloak()
+	..()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/bullet_act(obj/item/projectile/P)
+	. = ..()
+	break_cloak()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
+	. = ..()
+	break_cloak()
+
+
+//ОЛЕНЬ
+
+
+/datum/ai_holder/smart_animal/rafama
+	init_outmatched_threshold = 100
+	init_speak_chance = 2
+
+/mob/living/simple_animal/hostile/smart_beast/rafama
+	name = "rafama"
+	desc = "A vaguely canine looking beast. It looks as though its fur is made of stone wool."
+	icon = 'icons/fd/animals/adhomai.dmi'
+	gender = MALE
+	faction = "rafama_m"
+	icon_state = "rafama_m"
+	icon_living = "rafama_m"
+	icon_dead = "rafama_m_dead"
+	init_tame_difficulty = 5
+	maxHealth = 200
+	health = 200
+	speed = 2
+	mob_size = MOB_LARGE
+	mob_bump_flag = HUMAN
+	mob_push_flags = ~HEAVY
+	mob_swap_flags = ~HEAVY
+	diet = DIET_HERBIVOROUS
+	natural_weapon = /obj/item/natural_weapon/claws
+	cold_damage_per_tick = 0
+
+	ai_holder = /datum/ai_holder/smart_animal/rafama
+	say_list_type = /datum/say_list/smart/rafama
+
+	special_attack_min_range = 3
+	special_attack_max_range = 7
+	special_attack_cooldown = 15 SECONDS
+
+	var/leap_warmup = 2 SECOND
+	var/leap_sound = 'sound/weapons/spiderlunge.ogg'
+
+/mob/living/simple_animal/hostile/smart_beast/rafama/New(new_holder)
+	gender = pick(MALE,FEMALE)
+	if(gender == MALE)
+		desc = "A vaguely canine looking beast. It looks as though its fur is made of stone wool. This one is probably male."
+	if(gender == FEMALE)
+		desc = "A vaguely canine looking beast. It looks as though its fur is made of stone wool. This one is probably female."
+		icon_state = "rafama_f"
+		icon_living = "rafama_f"
+		icon_dead = "rafama_f_dead"
+		special_attack_cooldown = 999 SECONDS //да-да, костыли
+
+	. = ..()
+
+/mob/living/simple_animal/hostile/smart_beast/rafama/do_special_attack(atom/A)
+	set waitfor = FALSE
+	set_AI_busy(TRUE)
+
+	do_windup_animation(A, leap_warmup)
+	sleep(leap_warmup)
+
+	status_flags |= LEAPING
+	visible_message(SPAN_DANGER("\The [src] leaps at \the [A]!"))
+	throw_at(get_step(get_turf(A), get_turf(src)), special_attack_max_range+1, 1, src)
+	playsound(src, leap_sound, 75, 1)
+
+	sleep(5)
+
+	if(status_flags & LEAPING)
+		status_flags &= ~LEAPING
+
+	var/turf/T = get_turf(src)
+
+	. = FALSE
+
+	var/mob/living/victim = null
+	for(var/mob/living/L in T)
+		if(L == src)
+			continue
+
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			if(H.check_shields(damage = 0, damage_source = src, attacker = src, def_zone = null, attack_text = "the leap"))
+				continue
+
+		victim = L
+		break
+
+	if(victim)
+		victim.Weaken(2)
+		victim.visible_message(SPAN_DANGER("\The [src] knocks down \the [victim]!"))
+		to_chat(victim, "<span class='critical'>\The [src] jumps on you!</span>")
+		. = TRUE
+
+	set_AI_busy(FALSE)

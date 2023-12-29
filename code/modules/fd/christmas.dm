@@ -1,3 +1,9 @@
+/obj/structure/sign/wreath
+	name = "christmas wreath"
+	desc = "Natural green wreath."
+	icon = 'icons/infinity/christmas_1.dmi'
+	icon_state = "doorwreath"
+
 /obj/structure/sign/xmas_lights
 	name = "colored lights"
 	desc = "Bunch of christmas lights."
@@ -24,6 +30,21 @@
 		icon_state = "xmaslights"
 	if(!on)
 		icon_state = "xmaslights_off"
+
+/obj/item/stack/wreath
+	name = "christmas wreath"
+	desc = "Natural green wreath."
+	icon = 'icons/infinity/christmas_1.dmi'
+	icon_state = "doorwreath_item"
+	max_amount = 10
+
+/obj/item/stack/wreath/afterattack(atom/target, mob/user as mob, proximity)
+	if(istype(target,/turf))
+		if(do_after(user, 30) && amount >= 1)
+			new /obj/structure/sign/wreath(user.loc)
+			amount -= 1
+			if(amount <= 0)
+				qdel(src)
 
 /obj/item/stack/xmas_lights
 	name = "colored lights"
