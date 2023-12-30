@@ -10,11 +10,16 @@
 	minimal_player_age = 7
 	supervisors = "the Executive Officer"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/chief_steward
+	alt_titles = list(
+		"Master-Chef"
+	)
 	allowed_branches = list(
+		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/service/cook,
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/chief_steward/fleet
 	)
 	allowed_ranks = list(
+		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
 		/datum/mil_rank/fleet/e6
@@ -75,7 +80,7 @@
 	department_flag = SRV
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Chief Steward"
+	supervisors = "the Chief Steward, Master-Chef"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 20
 	alt_titles = list(
@@ -113,7 +118,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	minimum_character_age = list(SPECIES_HUMAN = 18)
-	supervisors = "the Chief Steward"
+	supervisors = "the Chief Steward, Master-Chef"
 	alt_titles = list(
 		"Bartender",
 		"Cook",
@@ -157,7 +162,7 @@
 	department_flag = SRV
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "the Chief Steward"
+	supervisors = "the Chief Steward, Master-Chef"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/crewman
