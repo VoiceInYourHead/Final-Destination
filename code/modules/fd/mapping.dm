@@ -55,7 +55,7 @@
 	name = "random flora spawn"
 	desc = "This is a random flora spawner."
 	icon_state = "trees"
-	spawn_nothing_percentage = 50
+	spawn_nothing_percentage = 60
 
 /obj/random/flora/snow/spawn_choices()
 	return list(/obj/structure/flora/tree/pine,
@@ -64,6 +64,8 @@
 				/obj/structure/flora/ausbushes/pointybush,
 				/obj/structure/flora/ausbushes/grassybush,
 				/obj/structure/flora/ausbushes/ppflowers,
+				/obj/item/reagent_containers/food/snacks/grown/berries,
+				/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap,
 				/obj/structure/flora/grass/brown,
 				/obj/structure/flora/grass/green,
 				/obj/structure/flora/grass/both,

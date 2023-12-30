@@ -122,7 +122,7 @@ TORCH_ESCAPE_POD(17)
 	landmark_tag = "nav_ninja_deck5"
 
 //Merchant
-
+/*
 /datum/shuttle/autodock/ferry/merchant
 	name = "Merchant"
 	warmup_time = 10
@@ -130,7 +130,7 @@ TORCH_ESCAPE_POD(17)
 	waypoint_station = "nav_merchant_start"
 	waypoint_offsite = "nav_merchant_out"
 	dock_target = "merchant_ship_dock"
-
+*/
 /obj/effect/shuttle_landmark/merchant/start
 	name = "Merchant Base"
 	landmark_tag = "nav_merchant_start"
@@ -164,7 +164,7 @@ TORCH_ESCAPE_POD(17)
 	docking_controller = "admin_shuttle_dock_airlock"
 
 //Transport
-
+/*
 /datum/shuttle/autodock/ferry/centcom
 	name = "Centcom"
 	location = 1
@@ -173,16 +173,16 @@ TORCH_ESCAPE_POD(17)
 	dock_target = "centcom_shuttle"
 	waypoint_offsite = "nav_ferry_start"
 	waypoint_station = "nav_ferry_out"
-
+*/
 /obj/effect/shuttle_landmark/ferry/start
 	name = "Centcom"
 	landmark_tag = "nav_ferry_start"
-	docking_controller = "centcom_shuttle_bay"
+//	docking_controller = "centcom_shuttle_bay"
 
 /obj/effect/shuttle_landmark/ferry/out
 	name = "Docking Bay"
 	landmark_tag = "nav_ferry_out"
-	docking_controller = "centcom_shuttle_dock_airlock"
+//	docking_controller = "centcom_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/merc/hanger
 	name = "Northeast of Hanger Deck"
@@ -308,7 +308,7 @@ TORCH_ESCAPE_POD(17)
 	landmark_tag = "nav_ert_deck5"
 
 //SCGMC Assault Pod
-
+/*
 /datum/shuttle/autodock/ferry/specops/ert
 	name = "Special Operations"
 	warmup_time = 10
@@ -316,16 +316,16 @@ TORCH_ESCAPE_POD(17)
 	dock_target = "specops_shuttle_fore"
 	waypoint_station = "nav_specops_start"
 	waypoint_offsite = "nav_specops_out"
-
+*/
 /obj/effect/shuttle_landmark/specops/start
 	name = "Centcom"
 	landmark_tag = "nav_specops_start"
-	docking_controller = "specops_shuttle_port"
+//	docking_controller = "specops_shuttle_port"
 
 /obj/effect/shuttle_landmark/specops/out
 	name = "Docking Bay"
 	landmark_tag = "nav_specops_out"
-	docking_controller = "specops_dock_airlock"
+//	docking_controller = "specops_dock_airlock"
 
 //Cargo drone
 

@@ -24,26 +24,448 @@
 
 /obj/effect/shuttle_landmark/nav_splanet/nav1
 	name = "Forest Landing Point #1"
-	landmark_tag = "nav_splanet_1"
+	landmark_tag = "nav_snowcage_1"
 	base_area = /area/splanet/outdoors
 
 /obj/effect/shuttle_landmark/nav_splanet/nav2
 	name = "Forest Landing Point #2"
-	landmark_tag = "nav_splanet_2"
+	landmark_tag = "nav_snowcage_2"
 	base_area = /area/splanet/outdoors
 
 /obj/effect/shuttle_landmark/nav_splanet/nav3
 	name = "Forest Landing Point #3"
-	landmark_tag = "nav_splanet_3"
+	landmark_tag = "nav_snowcage_3"
 	base_area = /area/splanet/outdoors
 
 /area/splanet/outdoors
-	name = "arctic forest"
+	name = "Arctic forest"
 	icon_state = "centcom"
 	dynamic_lighting = 1
 	base_turf = /turf/unsimulated/floor/exoplanet/barren
 	screen_filter = /obj/screenfilter/snow
 
+/area/splanet/indoors
+	name = "Cold Caves"
+	icon_state = "centcom"
+	dynamic_lighting = 1
+	base_turf = /turf/unsimulated/floor/exoplanet/barren
+
 /area/splanet/underground
 	name = "Ascent crashsite"
-	base_turf = /turf/unsimulated/floor/exoplanet/barren
+	base_turf = /turf/simulated/open
+
+//МОБЫ
+
+/obj/effect/pile
+	name = "grey junk-pile"
+	desc = "It looks like an unknown mass of different things and materials"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "molten_big"
+
+/obj/effect/pile/Initialize()
+	. = ..()
+
+	for(var/atom/movable/O in loc)
+		if(!O.anchored)
+			O.forceMove(src)
+
+			if (istype(O, /mob/living))
+				var/mob/living/L = O
+				if (!(L.status_flags & NOTARGET))
+					L.status_flags ^= NOTARGET
+
+/obj/effect/pile/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/shovel))
+		if(do_after(user, 80))
+			qdel(src)
+
+/obj/effect/pile/Destroy()
+	src.visible_message("<span class='warning'>\The [src] falls over.</span>")
+	for(var/atom/movable/A in contents)
+		A.dropInto(loc)
+		if (istype(A, /mob/living))
+			var/mob/living/L = A
+			if (L.status_flags & NOTARGET)
+				L.status_flags ^= NOTARGET
+	return ..()
+
+/datum/say_list/smart/harron
+	speak = list("Hrrr...","HRrrRRr")
+	emote_see = list("clicking it's teeth","growls","sniffs")
+	emote_hear = list("barks!")
+
+	say_maybe_target = list("HRr?")	// When they briefly see something.
+	say_got_target = list()	// When a target is first assigned.
+	say_threaten = list("HRRRrAAA!!")		// When threatening someone.
+	say_stand_down = list("Hrrr")	// When the threatened thing goes away.
+	say_escalate = list("HRRRRK!!!")		// When the threatened thing doesn't go away.
+
+	threaten_sound = null	// Sound file played when the mob's AI calls threaten_target() for the first time.
+	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
+
+/datum/say_list/smart/rafama
+	speak = list("WOo...","WOOOOOO")
+	emote_see = list("howling","sniffs")
+	emote_hear = list("sniffs")
+
+	say_maybe_target = list("Woo")	// When they briefly see something.
+	say_got_target = list()	// When a target is first assigned.
+	say_threaten = list("WOOoo!!")		// When threatening someone.
+	say_stand_down = list("WOo...")	// When the threatened thing goes away.
+	say_escalate = list("WOOOOOOOOOOO!!!")		// When the threatened thing doesn't go away.
+
+	threaten_sound = null	// Sound file played when the mob's AI calls threaten_target() for the first time.
+	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
+
+/datum/say_list/smart/digger
+	speak = list("Skree!","SkRKkK")
+	emote_see = list("digs hole in the ground","trembles","giggles")
+	emote_hear = list("shakes it's ears")
+
+	say_maybe_target = list("SKkk?")	// When they briefly see something.
+	say_got_target = list()	// When a target is first assigned.
+	say_threaten = list("SKRRRRK!!")		// When threatening someone.
+	say_stand_down = list("SKrr")	// When the threatened thing goes away.
+	say_escalate = list("SKREEE!!!")		// When the threatened thing doesn't go away.
+
+	threaten_sound = null	// Sound file played when the mob's AI calls threaten_target() for the first time.
+	stand_down_sound = null							// Sound file played when the mob's AI loses sight of the threatened target.
+
+
+//ЗЕМЛЕРОЙКА
+
+
+/datum/ai_holder/smart_animal/digger
+	init_speak_chance = 8
+	init_outmatched_threshold = 50
+
+/mob/living/simple_animal/hostile/smart_beast/digger
+	name = "earthdigger"
+	desc = "Strange looking rodent with sharp claws, probably used as some kind of digging tool."
+	faction = "digger"
+	icon = 'icons/fd/animals/adhomai.dmi'
+	icon_state = "tunneler"
+	icon_living = "tunneler"
+	icon_dead = "tunneler_dead"
+	init_tame_difficulty = 3
+	movement_cooldown = 1
+	maxHealth = 45
+	health = 45
+	speed = 1
+	hunger_affects_hostility = FALSE
+	natural_weapon = /obj/item/natural_weapon/claws/weak
+	cold_damage_per_tick = 0
+	diet = DIET_OMNIVOROUS
+	pass_flags = PASS_FLAG_TABLE
+	density = FALSE
+	mob_size = MOB_SMALL
+	gender = MALE
+
+	ai_holder = /datum/ai_holder/smart_animal/digger
+	say_list_type = /datum/say_list/smart/digger
+
+	special_attack_min_range = 2
+	special_attack_max_range = 7
+	special_attack_cooldown = 5 SECONDS
+
+	var/tunnel_warning = 0.5 SECONDS
+	var/tunnel_tile_speed = 4
+
+/mob/living/simple_animal/hostile/smart_beast/digger/New(new_holder)
+	gender = pick(MALE,FEMALE)
+	if(gender == MALE)
+		desc = "Strange looking rodent with sharp claws, probably used as some kind of digging tool. This one is probably male"
+	if(gender == FEMALE)
+		desc = "Strange looking rodent with sharp claws, probably used as some kind of digging tool. This one is probably female"
+		icon_state = "tunneler_f"
+		icon_living = "tunneler_f"
+		icon_dead = "tunneler_f_dead"
+
+	. = ..()
+
+/mob/living/simple_animal/hostile/smart_beast/digger/should_special_attack(atom/A)
+	var/turf/destination = get_turf(A)
+	var/turf/starting_turf = get_turf(src)
+	var/turf/T = starting_turf
+	for (var/i = 1 to get_dist(starting_turf, destination))
+		if (T == destination)
+			break
+
+		T = get_step(T, get_dir(T, destination))
+		if (T.density)
+			return FALSE
+	return T == destination
+
+/mob/living/simple_animal/hostile/smart_beast/digger/do_special_attack(atom/A)
+	set waitfor = FALSE
+	set_AI_busy(TRUE)
+
+	var/turf/destination = get_turf(A)
+	var/turf/starting_turf = get_turf(src)
+
+	do_windup_animation(A, tunnel_warning)
+	sleep(tunnel_warning) // For the telegraphing.
+
+	visible_message(SPAN_DANGER("\The [src] tunnels towards \the [A]!"))
+	submerge()
+
+	if (handle_tunnel(destination) == FALSE)
+		set_AI_busy(FALSE)
+		emerge()
+		return FALSE
+
+	if (!(src in destination))
+		set_AI_busy(FALSE)
+		emerge()
+		return FALSE
+
+	var/overshoot = TRUE
+
+	for (var/mob/living/L in destination)
+		if (L == src)
+			continue
+
+		visible_message(SPAN_DANGER("\The [src] erupts from underneath, and hits \the [L]!"))
+		playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+		L.Weaken(3)
+		overshoot = FALSE
+
+	if (!overshoot)
+		set_AI_busy(FALSE)
+		emerge()
+		return TRUE
+
+	to_chat(src, SPAN_WARNING("You overshoot your target!"))
+	playsound(src, 'sound/weapons/punchmiss.ogg', 75, 1)
+	var/dir_to_go = get_dir(starting_turf, destination)
+	for (var/i = 1 to rand(2, 4))
+		destination = get_step(destination, dir_to_go)
+
+	handle_tunnel(destination)
+	set_AI_busy(FALSE)
+	emerge()
+	return FALSE
+
+/mob/living/simple_animal/hostile/smart_beast/digger/proc/handle_tunnel(turf/destination)
+	var/turf/T = get_turf(src)
+
+	for (var/i = 1 to get_dist(src, destination))
+		if (stat)
+			return FALSE
+		if (loc == destination)
+			break
+
+		T = get_step(src, get_dir(src, destination))
+		if (T.density)
+			to_chat(src, "<span class='critical'>You hit something really solid!</span>")
+			playsound(src, "punch", 75, 1)
+			Weaken(5)
+			return FALSE
+
+		for (var/mob/living/L in T)
+			playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+			L.Weaken(2)
+
+		forceMove(T)
+
+		dig_under_floor(get_turf(src))
+		playsound(src, 'sound/effects/break_stone.ogg', 75, 1)
+		sleep(tunnel_tile_speed)
+
+/mob/living/simple_animal/hostile/smart_beast/digger/proc/submerge()
+	alpha = 0
+	dig_under_floor(get_turf(src))
+	new /obj/effect/temporary/tunneler_hole(get_turf(src), 1 MINUTE)
+
+/mob/living/simple_animal/hostile/smart_beast/digger/proc/emerge()
+	alpha = 255
+	dig_under_floor(get_turf(src))
+	new /obj/effect/temporary/tunneler_hole(get_turf(src), 1 MINUTE)
+
+/mob/living/simple_animal/hostile/smart_beast/digger/proc/dig_under_floor(turf/T)
+	new /obj/item/ore/glass(T)
+
+//ВОЛКОЛАК
+
+/datum/ai_holder/smart_animal/harron
+	init_outmatched_threshold = 150
+	init_speak_chance = 5
+
+/mob/living/simple_animal/hostile/smart_beast/harron
+	name = "wolfdog"
+	desc = "A fast, lightweighted predator accustomed to hiding and ambushing in cold terrain. Rare example of technologies and naure working together."
+	icon = 'icons/fd/animals/adhomai.dmi'
+	faction = "cyber_harron"
+	icon_state = "cyber_harron"
+	icon_living = "cyber_harron"
+	icon_dead = "cyber_harron_dead"
+	init_tame_difficulty = 10
+	maxHealth = 80
+	health = 80
+	speed = 2
+	diet = DIET_CARNIVOROUS
+	mob_bump_flag = HUMAN
+	mob_push_flags = ~HEAVY
+	mob_swap_flags = ~HEAVY
+	pass_flags = PASS_FLAG_TABLE
+	mob_size = MOB_MEDIUM
+	natural_weapon = /obj/item/natural_weapon/bite/strong
+	cold_damage_per_tick = 0
+
+	ai_holder = /datum/ai_holder/smart_animal/harron
+	say_list_type = /datum/say_list/smart/harron
+
+	var/cloaked_alpha = 45
+	var/cloaked_bonus_damage = 30
+	var/cloaked_weaken_amount = 3
+	var/cloak_cooldown = 10 SECONDS
+	var/last_uncloak = 0
+	var/cloaked = FALSE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/cloak()
+	if (is_cloaked())
+		return
+	animate(src, alpha = cloaked_alpha, time = 1 SECOND)
+	cloaked = TRUE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/uncloak()
+	last_uncloak = world.time
+	if (!is_cloaked())
+		return
+	animate(src, alpha = initial(alpha), time = 1 SECOND)
+	cloaked = FALSE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/can_cloak()
+	if (stat)
+		return FALSE
+	if (last_uncloak + cloak_cooldown > world.time)
+		return FALSE
+
+	return TRUE
+
+/mob/living/simple_animal/hostile/smart_beast/harron/proc/break_cloak()
+	uncloak()
+
+
+/mob/living/simple_animal/hostile/smart_beast/harron/is_cloaked()
+	return cloaked
+
+/mob/living/simple_animal/hostile/smart_beast/harron/handle_special()
+	if (!is_cloaked() && can_cloak())
+		cloak()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/apply_bonus_melee_damage(atom/A, damage_amount)
+	if (is_cloaked())
+		return damage_amount + cloaked_bonus_damage
+	return ..()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/apply_melee_effects(atom/A)
+	if (is_cloaked() && isliving(A))
+		var/mob/living/L = A
+		L.Weaken(cloaked_weaken_amount)
+		to_chat(L, SPAN_DANGER("\The [src] ambushes you!"))
+		playsound(src, 'sound/weapons/spiderlunge.ogg', 75, 1)
+	uncloak()
+	..()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/bullet_act(obj/item/projectile/P)
+	. = ..()
+	break_cloak()
+
+/mob/living/simple_animal/hostile/smart_beast/harron/hit_with_weapon(obj/item/O, mob/living/user, effective_force, hit_zone)
+	. = ..()
+	break_cloak()
+
+
+//ОЛЕНЬ
+
+
+/datum/ai_holder/smart_animal/rafama
+	init_outmatched_threshold = 100
+	init_speak_chance = 2
+
+/mob/living/simple_animal/hostile/smart_beast/rafama
+	name = "rafama"
+	desc = "A vaguely canine looking beast. It looks as though its fur is made of stone wool."
+	icon = 'icons/fd/animals/adhomai.dmi'
+	gender = MALE
+	faction = "rafama_m"
+	icon_state = "rafama_m"
+	icon_living = "rafama_m"
+	icon_dead = "rafama_m_dead"
+	init_tame_difficulty = 5
+	maxHealth = 200
+	health = 200
+	speed = 2
+	mob_size = MOB_LARGE
+	mob_bump_flag = HUMAN
+	mob_push_flags = ~HEAVY
+	mob_swap_flags = ~HEAVY
+	diet = DIET_HERBIVOROUS
+	natural_weapon = /obj/item/natural_weapon/claws
+	cold_damage_per_tick = 0
+
+	ai_holder = /datum/ai_holder/smart_animal/rafama
+	say_list_type = /datum/say_list/smart/rafama
+
+	special_attack_min_range = 3
+	special_attack_max_range = 7
+	special_attack_cooldown = 15 SECONDS
+
+	var/leap_warmup = 2 SECOND
+	var/leap_sound = 'sound/weapons/spiderlunge.ogg'
+
+/mob/living/simple_animal/hostile/smart_beast/rafama/New(new_holder)
+	gender = pick(MALE,FEMALE)
+	if(gender == MALE)
+		desc = "A vaguely canine looking beast. It looks as though its fur is made of stone wool. This one is probably male."
+	if(gender == FEMALE)
+		desc = "A vaguely canine looking beast. It looks as though its fur is made of stone wool. This one is probably female."
+		icon_state = "rafama_f"
+		icon_living = "rafama_f"
+		icon_dead = "rafama_f_dead"
+		special_attack_cooldown = 999 SECONDS //да-да, костыли
+
+	. = ..()
+
+/mob/living/simple_animal/hostile/smart_beast/rafama/do_special_attack(atom/A)
+	set waitfor = FALSE
+	set_AI_busy(TRUE)
+
+	do_windup_animation(A, leap_warmup)
+	sleep(leap_warmup)
+
+	status_flags |= LEAPING
+	visible_message(SPAN_DANGER("\The [src] leaps at \the [A]!"))
+	throw_at(get_step(get_turf(A), get_turf(src)), special_attack_max_range+1, 1, src)
+	playsound(src, leap_sound, 75, 1)
+
+	sleep(5)
+
+	if(status_flags & LEAPING)
+		status_flags &= ~LEAPING
+
+	var/turf/T = get_turf(src)
+
+	. = FALSE
+
+	var/mob/living/victim = null
+	for(var/mob/living/L in T)
+		if(L == src)
+			continue
+
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			if(H.check_shields(damage = 0, damage_source = src, attacker = src, def_zone = null, attack_text = "the leap"))
+				continue
+
+		victim = L
+		break
+
+	if(victim)
+		victim.Weaken(2)
+		victim.visible_message(SPAN_DANGER("\The [src] knocks down \the [victim]!"))
+		to_chat(victim, "<span class='critical'>\The [src] jumps on you!</span>")
+		. = TRUE
+
+	set_AI_busy(FALSE)
