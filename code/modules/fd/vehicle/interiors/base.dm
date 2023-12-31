@@ -63,8 +63,8 @@
 	var/size_y = 0
 	var/datum/map_template/interior_template = /datum/map_template
 
-/obj/vehicles/large/get_occupants_in_position()
-	return ..() + list("passenger")
+/obj/vehicles/large/get_all_positions()
+	return ..() + list(VP_INTERIOR)
 
 /obj/vehicles/large/Initialize()
 	. = ..()
@@ -83,12 +83,12 @@
 		return
 
 	user.forceMove(get_turf(interior.entrance))
-	occupants[user] = "passenger"
+	occupants[user] = VP_INTERIOR
 
 	return TRUE
 
 /obj/vehicles/large/enter_as_position(mob/user, position)
-	if(position == "passenger")
+	if(position == VP_INTERIOR)
 		return move_to_interior(user)
 	return ..()
 

@@ -1,61 +1,50 @@
-/obj/vehicles/verb/verb_exit_vehicle()
-	set name = "Exit Vehicle"
-	set category = "Vehicle"
-	set src in view(1)
+/obj/vehicles/proc/get_all_positions()
+	return list(VP_DRIVER)
 
-	exit_vehicle(usr)
+/obj/vehicles/proc/position_name(position, prefix = TRUE)
+	switch(position)
+		if(VP_DRIVER)
+			return "[prefix && "on"] [position] seat"
+		if(VP_INTERIOR)
+			return "[prefix && "in the"] interiors"
 
-/obj/vehicles/proc/exit_vehicle(var/mob/user,var/ignore_incap_check = 0)
-	if(user.loc != src)
-		to_chat(user,"<span class = 'notice'>You must be inside [src] to exit it.</span>")
+// call before changing position
+/obj/vehicles/proc/handle_position_change(mob/user)
+
+/obj/vehicles/proc/exit_vehicle(mob/user, ignore_incap_check = FALSE, mob/puller = null)
+	if(!(user in get_occupants_in_position(VP_INTERIOR)) && user.loc != src)
+		to_chat(user, SPAN_NOTICE("[puller || "You"] must be inside [src] to exit it."))
 		return
 	if(user.incapacitated() && !ignore_incap_check)
-		to_chat(user,"<span class='warning'>You cannot do that when you are incapacitated!</span>")
+		to_chat(user, SPAN_WARNING("[puller || "You"] cannot do that when you are incapacitated!"))
 		return
 	var/loc_moveto = pick_valid_exit_loc()
-	if(isnull(loc_moveto))
-		to_chat(user,"<span class = 'notice'>There is no valid location to exit at.</span>")
+	if(!loc_moveto)
+		to_chat(user, SPAN_NOTICE("There is no valid location to exit at."))
 		return
+
+	handle_position_change(user)
+
 	occupants -= user
 	contents -= user
 	user.forceMove(loc_moveto)
-	update_user_view(user,1)
-	add_remove_vehicle_actions(user,1)
-	return
 
-/obj/vehicles/verb/enter_vehicle()
-	set name = "Enter Vehicle"
-	set category = "Vehicle"
-	set src in view(1)
+	update_icon()
 
-	var/mob/living/user = usr
-	if(!istype(user) || !src.Adjacent(user) || user.incapacitated())
-		return
-	var/player_pos_choice
-	var/list/L = ALL_VEHICLE_POSITIONS
-	if(L.len == 1)
-		player_pos_choice = L[1]
-	else
-		player_pos_choice = input(user,"Enter which position?","Vehicle Entry Position Select","Cancel") in ALL_VEHICLE_POSITIONS + list("Cancel")
-	if(player_pos_choice == "Cancel")
-		return
-	else
-		enter_as_position(user,player_pos_choice)
-
-/obj/vehicles/proc/show_occupants_contained(var/mob/user)
+/obj/vehicles/proc/show_occupants_contained(mob/user)
 	var/has_passengers = 0
 	for(var/mob/M in occupants)
 		has_passengers = 1
 		break
 	if(has_passengers)
-		to_chat(user,"<span class = 'notice'>Its visible occupants are:</span>")
+		to_chat(user, SPAN_NOTICE("Its visible occupants are:"))
 		for(var/mob/M in occupants)
 			if(occupants[M] in exposed_positions)
 				M.examine(user)
 
 /obj/vehicles/proc/kick_occupants()
 	for(var/mob/m in occupants)
-		exit_vehicle(m,1)
+		exit_vehicle(m, TRUE)
 
 /obj/vehicles/proc/get_occupants_in_position(var/position = null)
 	var/list/to_return = list()
@@ -65,56 +54,100 @@
 	return to_return
 
 /obj/vehicles/proc/get_occupant_amount()
-	return (occupants.len - 2)
+	return occupants.len - 2
 
 //Returns null to allow the enter, a string to disallow.
 /obj/vehicles/proc/check_enter_invalid()
 	if(get_occupant_amount() + 1 > (1 + occupants[1] + occupants[2]))
 		return "[src] is full!"
-	return
 
-/obj/vehicles/proc/check_position_blocked(var/position)
-	if(block_enter_exit)
-		return 1
+/obj/vehicles/proc/check_position_blocked(position)
 	var/list/occupants_in_pos = get_occupants_in_position(position)
-	if(position == "passenger" && occupants_in_pos.len + 1 > occupants[1])
-		return 1
-	if(position == "driver" && occupants_in_pos.len >= 1)
-		return 1
-	return 0
+	switch(position)
+		if(VP_DRIVER)
+			return occupants_in_pos.len >= 1
+		if(VP_INTERIOR)
+			return FALSE
 
-/obj/vehicles/proc/enter_as_position(var/mob/user,var/position = "passenger",)
+/obj/vehicles/proc/check_entering(mob/user, position, puller)
+	var/mob/msg_recipient = puller || user
+
+	if((position != VP_INTERIOR) && bounds_dist(src, msg_recipient) > 48)
+		to_chat(msg_recipient, SPAN_WARNING("\The [src] is too far."))
+		return FALSE
+
 	if(check_position_blocked(position))
-		to_chat(user,"<span class = 'notice'>No [position] spaces in [src]</span>")
-		return 0
-	var/mob/living/h_test = user
-	if(!istype(h_test) && position == "driver")
-		to_chat(user,"<span class = 'notice'>You don't know how to drive that.</span>") //Let's assume non-living mobs can't drive.
-		return 0
+		to_chat(msg_recipient, SPAN_WARNING("No [position] spaces in [src]"))
+		return FALSE
+
+	if(!isliving(user) && position == VP_DRIVER)
+		if(msg_recipient == user)
+			to_chat(msg_recipient, SPAN_WARNING("You don't know how to drive that."))
+		else
+			to_chat(msg_recipient, SPAN_WARNING("It doesn't look like [user] can drive that."))
+		return FALSE
+
 	var/can_enter = check_enter_invalid()
 	if(can_enter)
-		to_chat(user,"<span class = 'notice'>[can_enter]</span>")
-		return 0
-	if(user in occupants)
-		if(occupants[user] == position)
-			to_chat(user,"<span class = 'notice'>You're already a [position] of [src]</span>")
-			return 0
-		occupants[user] = position
-		visible_message("<span class = 'notice'>[user] enters [src] as [position]</span>")
-		return 1
+		to_chat(msg_recipient, SPAN_NOTICE("[can_enter]"))
+		return FALSE
 
-	occupants += user
+	return TRUE
+
+/obj/vehicles/proc/handle_entering(mob/user, position, puller)
+	handle_position_change(user)
+	occupants |= user
+	//user.client.view = "[round(VIEW_SIZE_X * vehicle_view_modifier)]x[round(VIEW_SIZE_Y * vehicle_view_modifier)]"
 	occupants[user] = position
 	user.loc = contents
-	contents += user
-	update_user_view(user)
-	visible_message("<span class = 'notice'>[user] enters the [position] position of [src].</span>")
-	to_chat(user,"<span class = 'info'>You are now in the [position] position of [src].</span>")
-	if(position == "driver")
-		add_remove_vehicle_actions(user)
-	return 1
+	contents |= user
+	update_icon()
+	if(puller)
+		visible_message(SPAN_NOTICE("[puller] put [user] [position_name(position)]."))
+	else
+		visible_message(SPAN_NOTICE("[user] enters the [position_name(position, null)] of [src]."))
+	to_chat(user, SPAN_INFO("You are now [position_name(position)] of [src]."))
 
-/obj/vehicles/proc/do_seat_switch(var/mob/user,var/position)
+/obj/vehicles/proc/enter_as_position(mob/user, position, mob/puller)
+	if(!check_entering(user, position))
+		return FALSE
+
+	if(user in occupants)
+		if(occupants[user] == position)
+			to_chat(user, SPAN_NOTICE("[puller || "You"]'re already a [position] of [src]"))
+			return FALSE
+		handle_entering(user, position, puller)
+		return TRUE
+
+	handle_entering(user, position, puller)
+
+	return TRUE
+
+/obj/vehicles/MouseDrop_T(mob/C, mob/user)
+	if(!ishuman(user))
+		return
+	if(!ishuman(user) || !Adjacent(user) || user.incapacitated())
+		return
+
+	if(ismob(C))
+		var/player_pos_choice
+		var/list/positions = get_all_positions()
+		if(positions.len == 1)
+			player_pos_choice = positions[1]
+		else
+			player_pos_choice = input(user, "Which position to put?", "Vehicle entry position select", "Cancel") in positions + list("Cancel")
+
+		if(player_pos_choice == "Cancel")
+			return
+
+		if(C == user)
+			enter_as_position(C, player_pos_choice)
+		else
+			enter_as_position(C, player_pos_choice, user)
+	else if(VP_INTERIOR in get_all_positions())
+		handle_entering(C, VP_INTERIOR, user)
+
+/obj/vehicles/proc/do_seat_switch(mob/user, position)
 	var/list/occ_in_pos = get_occupants_in_position(position)
 	if(!occ_in_pos||occ_in_pos.len == 0)
 		to_chat(user,"<span class = 'notice'>There are no [position] slots in [src]</span>")
@@ -129,31 +162,15 @@
 	enter_as_position(user,position)
 	enter_as_position(occ_tradewith,user_position)
 
-/obj/vehicles/verb/switch_seats()
-	set name = "Switch Seats"
-	set category = "Vehicle"
-	set src in view(1)
-	var/mob/user = usr
-	if(!istype(user) || !src.Adjacent(user))
-		return
-	var/position_switchto = input(user,"Enter which position?","Vehicle Position Select","Cancel") in ALL_VEHICLE_POSITIONS + list("Cancel")
-	if(position_switchto == "Cancel")
-		return
-	if(check_position_blocked(position_switchto))
-		do_seat_switch(user,position_switchto)
-		return
-	else
-		enter_as_position(user,position_switchto)
-
-/obj/vehicles/proc/damage_occupant(var/position,var/obj/item/P,var/mob/user = null)
+/obj/vehicles/proc/damage_occupant(position, obj/item/P, mob/user)
 	var/list/occ_list = get_occupants_in_position(position)
-	if(isnull(occ_list) || !occ_list.len)
+	if(!occ_list?.len)
 		return 1
 	var/mob/mob_to_hit = pick(occ_list)
 	if(isnull(mob_to_hit))
 		return 1
 	if(user)
-		mob_to_hit.attackby(P,user)
+		mob_to_hit.attackby(P, user)
 		return 0
 	else
 		mob_to_hit.bullet_act(P)
@@ -168,11 +185,5 @@
 			return position
 	return null
 
-/obj/vehicles/proc/update_user_view(var/mob/user,var/reset = 0)
-	if(user.client)
-		if(reset)
-			user.client.view = world.view
-			user.client.pixel_x = 0
-			user.client.pixel_y = 0
-		else
-			user.client.view *= vehicle_view_modifier
+/obj/vehicles/proc/get_exit_offsets()
+	return
