@@ -34,7 +34,7 @@
 	//Passenger Management
 	var/list/occupants = list(1,1) //Contains all occupants of the vehicle including the driver. First 2 values defines max passengers /gunners. Format: [MobRef] = [PositionName]
 	var/list/passengers = list()
-	var/list/exposed_positions = list("driver" = 0.0,"passenger" = 0.0) //Assoc. Value is the chance of hitting this position
+	var/list/exposed_positions = list(VP_DRIVER = 0.0) //Assoc. Value is the chance of hitting this position
 
 	//Cargo
 	var/used_cargo_space = 0
@@ -67,7 +67,7 @@
 	set category = "Vehicle"
 	set src in view(1)
 	var/mob/living/user = usr
-	if(!istype(user) || !(user in get_occupants_in_position("driver")))
+	if(!istype(user) || !(user in get_occupants_in_position(VP_DRIVER)))
 		to_chat(user,"<span class = 'notice'>You must be the driver of [src] to toggle the headlights.</span>")
 		return
 
@@ -507,8 +507,15 @@
 
 /obj/vehicles/attack_hand(var/mob/user)
 	if(user.a_intent != "harm")
-		if(!enter_as_position(user,"driver"))
-			enter_as_position(user,"passenger")
+		if(user in occupants)
+			usr = user
+			switch_seats()
+			return
+
+		for(var/pos in get_all_positions())
+			if(enter_as_position(user, pos))
+				return
+		to_chat(user, "There is no space left in \The [src]")
 	else
 		. = ..()
 
