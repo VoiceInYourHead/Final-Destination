@@ -2226,26 +2226,25 @@
 	required_reagents = list(/datum/reagent/hydrazine = 2, /datum/reagent/carbon = 2, /datum/reagent/ammonia = 2)
 	result_amount = 6
 	mix_message = "The solution begins to gleam with a fey inner light."
-
+/*
 /datum/chemical_reaction/oxyphoron
 	name = "Oxyphoron"
 	result = /datum/reagent/toxin/phoron/oxygen
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/toxin/phoron = 1)
 	result_amount = 2
 	mix_message = "The solution boils violently, shedding wisps of vapor."
-
+*/
 /datum/chemical_reaction/deuterium
 	name = "Deuterium"
-	result = null
-	required_reagents = list(/datum/reagent/water = 10)
-	catalysts = list(/datum/reagent/toxin/phoron/oxygen = 5)
-	result_amount = 1
+	result = /datum/reagent/toxin/phoron/oxygen
+	required_reagents = list(/datum/reagent/water = 15, /datum/reagent/toxin/phoron = 5)
+	result_amount = 5
 	mix_message = "The solution makes a loud cracking sound as it crystalizes."
 
 /datum/chemical_reaction/deuterium/on_reaction(var/datum/reagents/holder, var/created_volume, var/reaction_flags)
 	..()
 	var/turf/T = get_turf(holder.my_atom)
-	if(istype(T)) new /obj/item/stack/material/deuterium(T, created_volume)
+	if(istype(T)) new /obj/item/stack/material/deuterium(T, (created_volume/5))
 	return
 
 /datum/chemical_reaction/antidexafen
