@@ -9,6 +9,9 @@
 	throw_range = 10
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
+	fail_chance = 50
+	have_stances = TRUE
+	melee_strikes = list(/datum/melee_strike/swipe_strike/blunt_swing/mixed_combo,/datum/melee_strike/swipe_strike/blunt_swing/wide)
 	var/mopping = 0
 	var/mopcount = 0
 	var/mopspeed = 40
@@ -17,6 +20,12 @@
 		/obj/effect/rune,
 		/obj/structure/catwalk
 		)
+
+/obj/item/mop/attack_self(mob/living/carbon/user)
+	. = ..()
+
+	if(have_stances)
+		swap_stances(user)
 
 /obj/item/mop/Initialize()
 	. = ..()

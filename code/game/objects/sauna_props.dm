@@ -9,6 +9,7 @@
 	throwforce = 0.001
 	force = 0.001
 	mopspeed = 110
+	have_stances = FALSE
 
 /obj/item/mop/broom/afterattack(atom/A, mob/user, proximity)
 	if(!proximity)
@@ -60,4 +61,3 @@
 	icon_state = "bench_south"
 	base_icon = "bench_south"
 	buckle_lying = 1
-
