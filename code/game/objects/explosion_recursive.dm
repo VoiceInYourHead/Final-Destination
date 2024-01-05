@@ -100,7 +100,3 @@
 /obj/machinery/door/blast/get_explosion_resistance()
 	if(density)
 		return health / get_damage_resistance(DAMAGE_EXPLODE)
-
-/obj/machinery/door/blast/shutters/get_explosion_resistance()
-	if(density)
-		return health / get_damage_resistance(DAMAGE_EXPLODE)
