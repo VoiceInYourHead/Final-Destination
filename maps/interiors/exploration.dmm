@@ -1,0 +1,25 @@
+"a" = (/obj/effect/paint_stripe/yellow,/turf/simulated/wall/r_wall/invincible,/area/interior)
+"c" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/stasis_cage,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"e" = (/obj/effect/floor_decal/techfloor/orange,/obj/structure/railing/mapped,/obj/machinery/light/small/red{dir = 4},/obj/structure/anomaly_container,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"i" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/effect/vehicle_entrance,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"m" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"o" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"q" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/anomaly_container,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"v" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/table/rack/dark,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"I" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/obj/machinery/light/small/red{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"S" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"T" = (/obj/effect/floor_decal/techfloor/orange/corner,/obj/effect/floor_decal/techfloor/orange/corner{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"U" = (/obj/effect/floor_decal/techfloor/orange,/obj/structure/railing/mapped,/obj/machinery/light/small/red{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"X" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 4},/obj/machinery/light/small/red{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Z" = (/obj/effect/floor_decal/techfloor/orange/corner{dir = 1},/obj/effect/floor_decal/techfloor/orange/corner{dir = 4},/obj/effect/floor_decal/industrial/radiation,/obj/structure/vehicledoor/airlock,/turf/simulated/floor/tiled/techfloor,/area/interior)
+
+(1,1,1) = {"
+aaaaa
+aqvca
+aUTea
+aSmoa
+aSmoa
+aXmIa
+aSioa
+aaZaa
+"}

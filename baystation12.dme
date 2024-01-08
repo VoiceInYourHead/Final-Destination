@@ -1875,6 +1875,7 @@
 #include "code\modules\fd\vehicle\vehicle_occupant.dm"
 #include "code\modules\fd\vehicle\vehicle_verbs.dm"
 #include "code\modules\fd\vehicle\interiors\base.dm"
+#include "code\modules\fd\vehicle\types\exploration.dm"
 #include "code\modules\fd\vehicle\types\testing_unit.dm"
 #include "code\modules\fd\vehicle\~undefs\~undefs.dm"
 #include "code\modules\flufftext\TextFilters.dm"

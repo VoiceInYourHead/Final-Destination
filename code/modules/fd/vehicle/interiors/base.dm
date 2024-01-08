@@ -138,9 +138,14 @@
 	else
 		target.forceMove(interior.vehicle.pick_valid_exit_loc())
 
+/obj/structure/vehicledoor/airlock
+	icon = 'icons/obj/doors/station/door.dmi'
+	icon_state = "preview"
+
 /area/interior
 	name = "interior"
-	dynamic_lighting = TRUE
+	dynamic_lighting = 1
+	requires_power = 0
 
 /area/interiors_spawn
 	name = "interiors spawn"
