@@ -18,6 +18,7 @@
 	hide_from_reports = TRUE
 	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 	known = 0
+	free_landing = FALSE
 
 /decl/submap_archetype/shikra
 	descriptor = "PM-55 Shikra Interceptor"

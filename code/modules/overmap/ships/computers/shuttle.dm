@@ -27,7 +27,7 @@
 	. = ..()
 
 
-/obj/machinery/computer/shuttle_control/explore/get_ui_data(var/datum/shuttle/autodock/overmap/shuttle)
+/obj/machinery/computer/shuttle_control/explore/get_ui_data(var/datum/shuttle/autodock/overmap/shuttle, var/mob/user)
 	. = ..()
 	if(istype(shuttle))
 		var/total_gas = 0
@@ -66,7 +66,7 @@
 		return TOPIC_REFRESH
 
 	if(href_list["manual_landing"])
-		if(user.skill_check(SKILL_PILOT, SKILL_TRAINED))
+		if(user.skill_check(SKILL_PILOT, SKILL_EXPERIENCED))
 			if(current_user && current_user != user)
 				to_chat(user, SPAN_WARNING("Someone is already performing a landing maneuver!"))
 				return TOPIC_REFRESH

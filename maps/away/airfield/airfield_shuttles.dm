@@ -10,6 +10,7 @@
 	moving_state = "sfv-star_moving"
 	integrity_failure_cap = 40
 	skill_needed = SKILL_TRAINED
+	free_landing = FALSE
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
 	max_speed = 0.5/(3 SECONDS)
@@ -60,6 +61,7 @@
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.5/(3 SECONDS)
 	burn_delay = 0.5 SECONDS
 	hide_from_reports = TRUE
@@ -108,6 +110,7 @@
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.5/(3 SECONDS)
 	burn_delay = 0.5 SECONDS
 	hide_from_reports = TRUE
@@ -156,6 +159,7 @@
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.5/(3 SECONDS)
 	burn_delay = 0.5 SECONDS
 	hide_from_reports = TRUE
@@ -204,6 +208,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_mass = 4500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 1/(2 SECONDS) //same stats as charon
 	burn_delay = 2 SECONDS
 	hide_from_reports = TRUE
@@ -252,6 +257,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_mass = 4500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 1/(2 SECONDS) //same stats as charon
 	burn_delay = 2 SECONDS
 	hide_from_reports = TRUE
@@ -298,6 +304,7 @@
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.3 SECONDS
 	hide_from_reports = TRUE
@@ -344,6 +351,7 @@
 	skill_needed = SKILL_TRAINED
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.4/(2 SECONDS)
 	burn_delay = 0.3 SECONDS
 	hide_from_reports = TRUE
@@ -392,6 +400,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.4/(4 SECONDS)
 	burn_delay = 0.5 SECONDS
 	hide_from_reports = TRUE
@@ -440,6 +449,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_mass = 3500
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 0.4/(4 SECONDS)
 	burn_delay = 0.5 SECONDS
 	hide_from_reports = TRUE
@@ -486,6 +496,7 @@
 	skill_needed = SKILL_BASIC
 	vessel_mass = 4000
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	max_speed = 1/(4 SECONDS)
 	burn_delay = 0.3 SECONDS
 	hide_from_reports = TRUE

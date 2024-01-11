@@ -72,6 +72,10 @@
 /obj/vehicles/proc/check_entering(mob/user, position, puller)
 	var/mob/msg_recipient = puller || user
 
+	if(doors_locked())
+		to_chat(msg_recipient, SPAN_WARNING("\The [src] is locked."))
+		return FALSE
+
 	if((position != VP_INTERIOR) && bounds_dist(src, msg_recipient) > 48)
 		to_chat(msg_recipient, SPAN_WARNING("\The [src] is too far."))
 		return FALSE

@@ -14,7 +14,6 @@ var/const/OVERMAP_SPEED_CONSTANT = (1 SECOND)
 	name = "generic ship"
 	desc = "Space faring vessel."
 	icon_state = "ship"
-	free_landing = TRUE
 //	requires_contact = TRUE
 	var/moving_state = "ship_moving"
 	var/list/consoles

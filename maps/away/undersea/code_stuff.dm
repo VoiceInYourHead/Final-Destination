@@ -4,6 +4,7 @@
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	icon_state = "globe"
 	color = "#203046"
+	free_landing = FALSE
 	initial_generic_waypoints = list(
 		"nav_undersea_1"
 	)

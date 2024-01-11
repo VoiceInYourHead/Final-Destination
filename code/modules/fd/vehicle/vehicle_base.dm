@@ -62,6 +62,10 @@
 	var/light_outrange = 6
 	var/colored = "#f1f0cf"
 
+	var/serial_number
+	var/obj/item/key/car/inserted_key
+	var/key_type = /obj/item/key/car
+
 /obj/vehicles/verb/toggle_headlights()
 	set name = "Toggle Headlights"
 	set category = "Vehicle"
@@ -95,6 +99,9 @@
 	if(internal_air)
 		internal_air.volume = 2500
 		internal_air.temperature = T20C
+	if(!inserted_key)
+		inserted_key = new key_type(src)
+		inserted_key.key_data = serial_number
 
 /obj/vehicles/lost_in_space()
 	if(!can_space_move)
@@ -452,7 +459,7 @@
 	var/list/driver_list = get_occupants_in_position("driver")
 	var/is_driver = FALSE
 	for(var/mob/driver in driver_list)
-		if(user == driver)
+		if(user == driver && user.skill_check(SKILL_PILOT, SKILL_BASIC))
 			is_driver = TRUE
 			break
 	if(!is_driver)
@@ -528,6 +535,8 @@
 	if(istype(I,/obj/item/grab))
 		handle_grab_attack(I,user)
 		return
+	if(istype(I, /obj/item/key/car))
+		return attack_key(I, user)
 	if(user.a_intent == I_HURT)
 		if(comp_prof.is_repair_tool(I))
 			comp_prof.repair_inspected_with_tool(I,user)

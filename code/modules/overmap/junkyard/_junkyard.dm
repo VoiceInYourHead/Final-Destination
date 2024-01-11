@@ -4,7 +4,6 @@
 	name = "junkyard"
 	icon_state = "junkyard"
 	sector_flags = OVERMAP_SECTOR_KNOWN
-	free_landing = TRUE
 	var/area/junkyard_area
 //	var/list/fauna_types = list()		// possible types of mobs to spawn
 //	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn

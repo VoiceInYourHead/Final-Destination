@@ -11,6 +11,7 @@
 	burn_delay = 2 SECONDS
 	vessel_mass = 6000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 	vessel_size = SHIP_SIZE_SMALL
 
 /obj/effect/overmap/visitable/ship/landable/scavver_gantry/two
@@ -23,6 +24,7 @@
 	moving_state = "ship_moving"
 	max_speed = 1/(4 SECONDS)
 	burn_delay = 2.5 SECONDS
+	free_landing = FALSE
 	integrity_failure_cap = 35
 	vessel_mass = 3500 //more inefficient than GUP
 
@@ -33,6 +35,7 @@
 	fore_dir = NORTH
 	integrity_failure_cap = 10
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 	vessel_size = SHIP_SIZE_TINY
 
 /obj/machinery/computer/shuttle_control/explore/scavver_gantry

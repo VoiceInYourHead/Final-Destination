@@ -1,5 +1,5 @@
 /obj/vehicles/large/exploration
-	name = "STV-154-EC 'Triceratops'"
+	name = "SATV-154-EC 'Triceratops'"
 	desc = "A large transport vehicle, made specifically for the harsh environment."
 
 	icon = 'icons/fd/halo_vehicles/glider.dmi'
@@ -25,10 +25,13 @@
 
 	interior_template = /datum/map_template/exploration
 	size_x = 5
-	size_y = 8
+	size_y = 10
+
+	serial_number = "exploration"
+	key_type = /obj/item/key/car/exploration
 
 /datum/map_template/exploration
-	name = "STV-154-EC 'Triceratops'"
+	name = "SATV-154-EC 'Triceratops'"
 	mappaths = list("maps/interiors/exploration.dmm")
 
 /obj/vehicles/large/exploration/on_death()

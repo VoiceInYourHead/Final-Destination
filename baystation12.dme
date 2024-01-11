@@ -1872,6 +1872,7 @@
 #include "code\modules\fd\vehicle\vehicle_base.dm"
 #include "code\modules\fd\vehicle\vehicle_cargo.dm"
 #include "code\modules\fd\vehicle\vehicle_components.dm"
+#include "code\modules\fd\vehicle\vehicle_keys.dm"
 #include "code\modules\fd\vehicle\vehicle_occupant.dm"
 #include "code\modules\fd\vehicle\vehicle_verbs.dm"
 #include "code\modules\fd\vehicle\interiors\base.dm"

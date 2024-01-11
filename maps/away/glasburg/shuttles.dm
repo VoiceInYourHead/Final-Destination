@@ -8,6 +8,7 @@
 	integrity_failure_cap = 35
 	skill_needed = SKILL_TRAINED
 	vessel_size = SHIP_SIZE_SMALL
+	free_landing = FALSE
 	fore_dir = NORTH
 	color = "#940004"
 	hide_from_reports = TRUE

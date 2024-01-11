@@ -10,6 +10,7 @@
 	burn_delay = 2 SECONDS
 	vessel_mass = 6000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 	vessel_size = SHIP_SIZE_SMALL
 
 /obj/effect/overmap/visitable/ship/landable/scavver_gantry/two
@@ -18,6 +19,7 @@
 	desc = "Sensor array detects a tiny vessel, claiming to be 'ITV Vulcan', a utility pod of unknown make."
 	fore_dir = NORTH
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 	vessel_size = SHIP_SIZE_TINY
 	moving_state = "ship_moving"
 	max_speed = 1/(4 SECONDS)
@@ -30,6 +32,7 @@
 	desc = "Sensor array detects a tiny, unmarked vessel."
 	fore_dir = NORTH
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 	vessel_size = SHIP_SIZE_TINY
 
 /obj/machinery/computer/shuttle_control/explore/scavver_gantry

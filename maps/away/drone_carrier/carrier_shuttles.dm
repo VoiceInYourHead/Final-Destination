@@ -10,6 +10,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 
 /obj/machinery/computer/shuttle_control/explore/carrier/gup1
 	name = "landing control console"
@@ -50,6 +51,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 
 /obj/machinery/computer/shuttle_control/explore/carrier/gup2
 	name = "landing control console"
@@ -90,6 +92,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 
 /obj/machinery/computer/shuttle_control/explore/carrier/gup3
 	name = "landing control console"
@@ -130,6 +133,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 
 /obj/machinery/computer/shuttle_control/explore/carrier/gup4
 	name = "landing control console"
@@ -170,6 +174,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 
 /obj/machinery/computer/shuttle_control/explore/carrier/gup5
 	name = "landing control console"
@@ -210,6 +215,7 @@
 	burn_delay = 1 SECONDS
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
+	free_landing = FALSE
 
 /obj/machinery/computer/shuttle_control/explore/carrier/gup6
 	name = "landing control console"
