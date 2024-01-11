@@ -7,16 +7,18 @@
 "k" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "m" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/interior)
 "o" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
-"p" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/portable_atmospherics/canister/empty/air{maximum_pressure = 12000; start_pressure = 12000},/obj/machinery/atmospherics/portables_connector{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"p" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/atmospherics/unary/tank/air{dir = 1; start_pressure = 4559.63},/turf/simulated/floor/tiled/techfloor,/area/interior)
 "q" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/anomaly_container,/turf/simulated/floor/tiled/techfloor,/area/interior)
 "t" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/wall/r_wall/invincible,/area/interior)
 "v" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/table/rack/dark,/turf/simulated/floor/tiled/techfloor,/area/interior)
 "C" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"E" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 6},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "H" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "I" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/obj/machinery/light/small/red{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "J" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/wall/r_wall/invincible,/area/interior)
+"L" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 10},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "M" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/wall/r_wall/invincible,/area/interior)
-"N" = (/obj/machinery/light/small/red{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"N" = (/obj/machinery/light/small/red{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/universal,/turf/simulated/floor/tiled/techfloor,/area/interior)
 "P" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "R" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "S" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
@@ -27,7 +29,7 @@
 "Z" = (/obj/effect/floor_decal/techfloor/orange/corner{dir = 1},/obj/effect/floor_decal/techfloor/orange/corner{dir = 4},/obj/effect/floor_decal/industrial/radiation,/obj/structure/vehicledoor/airlock,/turf/simulated/floor/tiled/techfloor,/area/interior)
 
 (1,1,1) = {"
-aaaaa
+aELaa
 apNCM
 PVHat
 Jqvct

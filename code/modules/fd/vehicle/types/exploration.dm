@@ -20,8 +20,8 @@
 	vehicle_view_modifier = 1.5
 
 	acceleration = 2
-	min_speed = 10
-	max_speed = 4.5
+	min_speed = 8
+	max_speed = 3.5
 
 	interior_template = /datum/map_template/exploration
 	size_x = 5
