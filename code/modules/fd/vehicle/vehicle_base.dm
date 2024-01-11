@@ -78,9 +78,10 @@
 	if(headlights_state == 2)
 		to_chat(user,"<span class = 'notice'>You toggle [src]'s headlights on.</span>")
 		set_light(light_brightness, light_inrange, light_outrange, l_color = colored)
+		headlights_state = 1
 	else
 		to_chat(user,"<span class = 'notice'>You toggle [src]'s headlights off.</span>")
-		headlights_state = 1
+		headlights_state = 2
 		set_light(0,0,0,l_color = "#ffffff")
 		update_light()
 
@@ -369,6 +370,18 @@
 			moving_y = 0
 		last_moved_axis = 0
 	visible_message("<span class = 'notice'>[src] collides wth [obstacle]</span>")
+	if(istype(obstacle,/obj/structure/wall_frame))
+		comp_prof.take_component_damage(5)
+		qdel(obstacle)
+	if(istype(obstacle,/obj/structure/grille))
+		comp_prof.take_component_damage(5)
+		qdel(obstacle)
+	if(istype(obstacle,/obj/structure/girder))
+		comp_prof.take_component_damage(5)
+		qdel(obstacle)
+	if(istype(obstacle,/obj/structure/window))
+		comp_prof.take_component_damage(5)
+		qdel(obstacle)
 
 /obj/vehicles/Bump(var/atom/obstacle)
 	..()
