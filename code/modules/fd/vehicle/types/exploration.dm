@@ -21,7 +21,7 @@
 
 	acceleration = 2
 	min_speed = 8
-	max_speed = 3.5
+	max_speed = 2
 
 	interior_template = /datum/map_template/exploration
 	size_x = 5
