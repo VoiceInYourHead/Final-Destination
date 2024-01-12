@@ -74,7 +74,7 @@
 	if(user == puller)
 		visible_message(SPAN_NOTICE("[user] enters the interior of [src]."))
 	else
-		visible_message(SPAN_NOTICE("[puller] put [user] into interior of \the [src]."))
+		visible_message(SPAN_NOTICE("[puller] puts [user] into interior of \the [src]."))
 	to_chat(user, SPAN_NOTICE("You are now in the interior of [src]."))
 	playsound(src, null, 150, 1, 5)
 
@@ -87,9 +87,22 @@
 
 	return TRUE
 
-/obj/vehicles/large/enter_as_position(mob/user, position)
+/obj/vehicles/large/proc/move_object_to_interior(obj/object, puller)
+	if(isturf(object) || object.anchored || !interior?.entrance)
+		to_chat(puller, SPAN_NOTICE("You can't pull [object]"))
+		return FALSE
+
+	visible_message(SPAN_NOTICE("[puller] puts [object] into interior of \the [src]."))
+	object.forceMove(get_turf(interior.entrance))
+
+	return TRUE
+
+
+/obj/vehicles/large/enter_as_position(user, position, mob/puller)
 	if(position == VP_INTERIOR)
-		return move_to_interior(user)
+		if(!ismob(user))
+			return move_object_to_interior(user, puller)
+		return move_to_interior(user, puller)
 	return ..()
 
 /obj/structure/vehiclewall

@@ -128,8 +128,6 @@
 	return TRUE
 
 /obj/vehicles/MouseDrop_T(mob/C, mob/user)
-	if(!ishuman(user))
-		return
 	if(!ishuman(user) || !Adjacent(user) || user.incapacitated())
 		return
 
@@ -149,7 +147,7 @@
 		else
 			enter_as_position(C, player_pos_choice, user)
 	else if(VP_INTERIOR in get_all_positions())
-		handle_entering(C, VP_INTERIOR, user)
+		enter_as_position(C, VP_INTERIOR, user)
 
 /obj/vehicles/proc/do_seat_switch(mob/user, position)
 	var/list/occ_in_pos = get_occupants_in_position(position)
