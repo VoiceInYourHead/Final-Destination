@@ -102,14 +102,18 @@
 		to_chat(user, "<span class='notice'>The wires are exposed.</span>")
 
 /obj/item/device/taperecorder/hear_talk(mob/living/M as mob, msg, var/verb="says", datum/language/speaking=null)
+	var/speaker = null
 	if(mytape && recording)
-
+		if (istype(M, /mob/living/carbon/human))
+			speaker = M.GetVoice()
+		else
+			speaker = M.name
 		if(speaking)
 			if(!speaking.machine_understands)
 				msg = speaking.scramble(msg)
-			mytape.record_speech("[M.name] [speaking.format_message_plain(msg, verb)]")
+			mytape.record_speech("[speaker] [speaking.format_message_plain(msg, verb)]")
 		else
-			mytape.record_speech("[M.name] [verb], \"[msg]\"")
+			mytape.record_speech("[speaker] [verb], \"[msg]\"")
 
 
 /obj/item/device/taperecorder/see_emote(mob/M as mob, text, var/emote_type)
@@ -353,7 +357,7 @@
 	usr.put_in_hands(P)
 	playsound(src, "sound/machines/dotprinter.ogg", 30)
 	canprint = 0
-	sleep(300)
+	sleep(150)
 	canprint = 1
 
 
@@ -382,7 +386,7 @@
 
 /obj/item/device/tape
 	name = "tape"
-	desc = "A magnetic tape that can hold up to ten minutes of content."
+	desc = "A magnetic tape that can hold up to twenty minutes of content."
 	icon = 'icons/obj/tape_recorder.dmi'
 	icon_state = "tape_white"
 	item_state = "analyzer"
@@ -390,7 +394,7 @@
 	matter = list(MATERIAL_PLASTIC=20, MATERIAL_STEEL=5, MATERIAL_GLASS=5)
 	force = 1
 	throwforce = 0
-	var/max_capacity = 600
+	var/max_capacity = 1200
 	var/used_capacity = 0
 	var/list/storedinfo = new/list()
 	var/list/timestamp = new/list()
