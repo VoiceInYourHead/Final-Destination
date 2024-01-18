@@ -31,7 +31,7 @@
 "H" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/space)
 "I" = (/obj/structure/catwalk,/obj/random/trash,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/plating,/area/space)
 "J" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet,/obj/effect/decal/cleanable/dirt,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/steel_ridged,/area/space)
-"K" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/turf/simulated/floor/plating,/area/space)
+"K" = (/obj/machinery/alarm{pixel_y = 24; req_access = newlist()},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/space)
 "M" = (/obj/structure/catwalk,/obj/structure/closet,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/space)
 "N" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet,/obj/random/relic,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/steel_ridged,/area/space)
 "O" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/space)
@@ -41,14 +41,16 @@
 "S" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/machinery/light/small/red{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/turf/simulated/floor/plating,/area/space)
 "T" = (/obj/structure/catwalk,/obj/structure/closet/crate/trashcart,/obj/effect/decal/cleanable/dirt,/obj/random/trash,/obj/random/trash,/obj/random/trash,/obj/random/trash,/obj/random/trash,/obj/random/trash,/obj/random/trash,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/plating,/area/space)
 "U" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/structure/closet/crate/plastic,/obj/random/mre,/obj/random/mre,/obj/random/mre,/obj/random/mre,/obj/random/mre,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/turf/simulated/floor/plating,/area/space)
+"V" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/space)
+"W" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/machinery/firealarm{pixel_y = 13},/turf/simulated/floor/plating,/area/space)
 "X" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/space)
 "Y" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/railing/mapped,/obj/structure/closet/crate/large,/obj/effect/decal/cleanable/dirt,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/obj/random/junkyard/material,/turf/simulated/floor/tiled/steel_ridged,/area/space)
-"Z" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/turf/simulated/floor/plating,/area/space)
+"Z" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/space)
 
 (1,1,1) = {"
-TSsKusuuUxI
+TSWKVsuuUxI
 GDqzjBzvydC
 XJwPeEPmNtr
 kYRAOfzOpQn
-ahgHHMHZoFi
+ahgHHMZZoFi
 "}
