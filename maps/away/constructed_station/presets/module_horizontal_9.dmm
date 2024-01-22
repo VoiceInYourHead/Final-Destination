@@ -29,12 +29,13 @@
 "K" = (/obj/item/stool/wood{pixel_x = 1; pixel_y = 6},/obj/structure/window/reinforced/tinted{dir = 4},/obj/structure/window/reinforced/tinted{dir = 8},/obj/structure/hygiene/shower{pixel_y = 23},/obj/structure/curtain/open/shower,/obj/effect/floor_decal/industrial/outline/blue{color = "#50a0d3"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/old_cargo,/area/space)
 "L" = (/obj/effect/catwalk_plated/white,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/plating,/area/space)
 "M" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/old_tile,/area/space)
+"N" = (/obj/structure/closet/secure_closet/personal/empty,/obj/effect/floor_decal/industrial/hatch/blue,/obj/item/clothing/under/bathrobe,/obj/item/clothing/under/bathrobe,/obj/machinery/light/spot{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/space)
 "O" = (/obj/structure/window/reinforced/tinted{dir = 4},/obj/structure/window/reinforced/tinted{dir = 8},/obj/structure/hygiene/shower{pixel_y = 23},/obj/structure/curtain/open/shower,/obj/item/stool/wood{pixel_x = 1; pixel_y = 6},/obj/effect/floor_decal/industrial/outline/blue{color = "#50a0d3"},/turf/simulated/floor/tiled/old_cargo,/area/space)
 "P" = (/obj/effect/floor_decal/spline/plain/green{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/old_cargo,/area/space)
 "Q" = (/obj/effect/catwalk_plated/white,/obj/item/reagent_containers/glass/bucket/wood{pixel_x = 9; pixel_y = 15},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating,/area/space)
 "R" = (/obj/structure/hygiene/drain,/turf/simulated/floor/pool,/area/space)
 "T" = (/obj/item/soap,/turf/simulated/floor/pool,/area/space)
-"U" = (/obj/structure/hygiene/sink{dir = 1; pixel_y = 16},/obj/effect/floor_decal/industrial/outline/blue{color = "#50a0d3"},/turf/simulated/floor/tiled/old_cargo,/area/space)
+"U" = (/obj/structure/hygiene/sink{dir = 1; pixel_y = 16},/obj/effect/floor_decal/industrial/outline/blue{color = "#50a0d3"},/obj/machinery/light/spot{dir = 4},/turf/simulated/floor/tiled/old_cargo,/area/space)
 "V" = (/obj/effect/catwalk_plated/white,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating,/area/space)
 "W" = (/obj/effect/floor_decal/spline/plain/green{dir = 4},/obj/machinery/vending/lavatory,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/old_cargo,/area/space)
 "X" = (/obj/effect/floor_decal/spline/plain/green{dir = 4},/turf/simulated/floor/tiled/old_cargo,/area/space)
@@ -46,5 +47,5 @@ KOlrGGGDwIU
 pZXQyfTgvEp
 BMWzyRYLPxc
 kCAVyyyVvou
-aadmJJJHqIb
+NadmJJJHqIb
 "}
