@@ -1,0 +1,62 @@
+"a" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/borderfloorblack,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"b" = (/obj/structure/table/standard,/obj/item/paper_bin{pixel_y = 3},/obj/machinery/light/small{dir = 8},/obj/item/pen{pixel_x = 3; pixel_y = 7},/obj/structure/railing/mapped,/turf/simulated/floor/reinforced,/area/space)
+"c" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"d" = (/obj/machinery/artifact_scanpad,/obj/effect/floor_decal/industrial/hatch/yellow,/obj/random/relic,/turf/simulated/floor/reinforced,/area/space)
+"e" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/turf/simulated/floor/reinforced,/area/space)
+"f" = (/obj/effect/floor_decal/industrial/warning,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/reinforced,/area/space)
+"g" = (/obj/structure/stasis_cage,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"h" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/reinforced,/area/space)
+"j" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"k" = (/obj/structure/table/standard,/obj/machinery/artifact_analyser{pixel_y = 9},/obj/machinery/light/small{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"l" = (/obj/structure/anomaly_container,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"m" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/reinforced,/area/space)
+"n" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/reinforced,/area/space)
+"o" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"q" = (/obj/machinery/r_n_d/destructive_analyzer,/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/reinforced,/area/space)
+"r" = (/obj/effect/floor_decal/industrial/warning/corner,/obj/structure/bed/chair/comfy/black{dir = 4},/turf/simulated/floor/reinforced,/area/space)
+"t" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/machinery/firealarm{dir = 8; pixel_x = -24; pixel_y = 6},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"u" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/borderfloorblack,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"v" = (/obj/structure/table/standard,/obj/machinery/cell_charger{pixel_x = -2; pixel_y = 14},/obj/item/storage/belt/utility/full,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/random/relic,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"w" = (/obj/machinery/r_n_d/protolathe,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"x" = (/obj/structure/filingcabinet/chestdrawer,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/railing/mapped,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/reinforced,/area/space)
+"y" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"z" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"A" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"B" = (/obj/machinery/r_n_d/circuit_imprinter{pixel_x = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"C" = (/obj/machinery/light/small{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"D" = (/obj/structure/anomaly_container,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"F" = (/obj/effect/floor_decal/industrial/warning,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/reinforced,/area/space)
+"G" = (/obj/machinery/light/small{dir = 4},/obj/structure/railing/mapped,/turf/simulated/floor/reinforced,/area/space)
+"H" = (/obj/structure/table/standard,/obj/item/device/taperecorder{pixel_x = 9; pixel_y = 8},/obj/item/device/tape/random,/obj/structure/railing/mapped,/turf/simulated/floor/reinforced,/area/space)
+"I" = (/obj/machinery/fabricator,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"J" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/borderfloorblack,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"K" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"L" = (/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/reinforced,/area/space)
+"M" = (/obj/structure/bed/chair/comfy/black{dir = 8},/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"N" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"O" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/machinery/light/small{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"P" = (/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"Q" = (/obj/item/clothing/mask/gas{pixel_x = 12; pixel_y = 6},/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"R" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/structure/bed/chair/comfy/black,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"S" = (/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/railing/mapped,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"T" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/machinery/alarm{dir = 4; pixel_x = -22; req_access = newlist()},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/space)
+"U" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/reinforced,/area/space)
+"V" = (/turf/simulated/floor/tiled/skrell/blue,/area/space)
+"W" = (/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/railing/mapped,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"X" = (/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/railing/mapped,/obj/structure/railing/mapped,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"Y" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/borderfloorblack,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/steel_ridged,/area/space)
+"Z" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/reinforced,/area/space)
+
+(1,1,1) = {"
+SXPWW
+kdmAC
+rFfLz
+nclDU
+jywBq
+OcvMh
+ngIQo
+TVKVo
+tRZNe
+bHxAG
+aaJYu
+"}

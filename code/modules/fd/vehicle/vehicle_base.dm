@@ -5,7 +5,7 @@
 	density = 1
 	layer = ABOVE_HUMAN_LAYER
 
-	var/active = 1
+	var/active = 0
 	var/guns_disabled = 0
 	var/movement_destroyed = 0
 	var/block_enter_exit //Set this to block entering/exiting.
