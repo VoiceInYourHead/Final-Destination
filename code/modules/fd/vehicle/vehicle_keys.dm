@@ -56,3 +56,22 @@
 		inserted_key = key
 		key.forceMove(src)
 	playsound(src, 'sound/effects/buckle.ogg', 150, 1)
+
+/obj/vehicles/verb/engine()
+	set name = "Start/Shut the engine"
+	set category = "Vehicle"
+	set src in view(1)
+	var/mob/living/user = usr
+	if(!istype(user) || !(user in get_occupants_in_position("driver")))
+		to_chat(user, SPAN_NOTICE("You must be the driver of [src] to reach for the ignition."))
+		return
+	if(!inserted_key)
+		to_chat(user, SPAN_NOTICE("There are no keys in the ignition."))
+		return
+
+	if(!active)
+		active = TRUE
+		to_chat(user, SPAN_NOTICE("You turned the engine ingnition key."))
+	else
+		active = FALSE
+		to_chat(user, SPAN_NOTICE("You stop the engine."))

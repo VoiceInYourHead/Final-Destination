@@ -5,7 +5,7 @@
 	density = 1
 	layer = ABOVE_HUMAN_LAYER
 
-	var/active = 1
+	var/active = 0
 	var/guns_disabled = 0
 	var/movement_destroyed = 0
 	var/block_enter_exit //Set this to block entering/exiting.
@@ -150,6 +150,8 @@
 	. = ..()
 	if(!active)
 		to_chat(user,"[src]'s engine is inactive.")
+	if(active)
+		to_chat(user,"[src]'s engine is up and ready.")
 	if(movement_destroyed)
 		to_chat(user,"[src]'s movement is damaged beyond use.")
 	if(cargo_capacity)
@@ -475,14 +477,13 @@
 		to_chat(user,"<span class = 'notice'>[src] needs to be active to move!</span>")
 		return 0
 	next_move_input_at = world.time + max(max_speed,min_speed - (abs(speed[1]) + abs(speed[2])))
-	var/list/driver_list = get_occupants_in_position("driver")
-	var/is_driver = FALSE
-	for(var/mob/driver in driver_list)
-		if(user == driver && user.skill_check(SKILL_PILOT, SKILL_BASIC))
-			is_driver = TRUE
-			break
-	if(!is_driver)
-		return -1 //doesn't return 0 so we can differentiate this from the other problems for simple mobs.
+
+	if(!user.skill_check(SKILL_PILOT, SKILL_BASIC))
+		to_chat(user, SPAN_NOTICE("You can't understand how to control [src]!"))
+		return
+	if(occupants[user] != VP_DRIVER)
+		return -1
+
 	if(!(direction in list(NORTH,SOUTH,EAST,WEST)))
 		var/dirturn = 45
 		if(prob(50))
