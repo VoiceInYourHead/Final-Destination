@@ -150,6 +150,8 @@
 	. = ..()
 	if(!active)
 		to_chat(user,"[src]'s engine is inactive.")
+	if(active)
+		to_chat(user,"[src]'s engine is up and ready.")
 	if(movement_destroyed)
 		to_chat(user,"[src]'s movement is damaged beyond use.")
 	if(cargo_capacity)
