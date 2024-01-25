@@ -109,16 +109,6 @@ GLOBAL_LIST_EMPTY(skills)
 						"Experienced"		= "You can use all kinds of space suits, including specialized versions. Your years of experience in EVA keep you from being disoriented in space, and you have experience using a jetpack to move around. <br>- You cannot slip anymore.",
 						"Master"		= "You are just as much at home in a vacuum as in atmosphere. You probably do your job almost entirely EVA.<br>- You cannot get floored anymore.<br>- You get bonus speed in zero-G.")
 
-/decl/hierarchy/skill/general/EVA/mech
-	ID = "exosuit"
-	name = "Exosuit Operation"
-	desc = "Allows you to operate exosuits well."
-	levels = list("Untrained" = "You are unfamiliar with exosuit controls, and if you attempt to use them you are liable to make mistakes.",
-		"Trained" = "You are proficient in exosuit operation and safety, and can use them without penalties.")
-	prerequisites = list(SKILL_EVA = SKILL_TRAINED)
-	default_max = SKILL_BASIC
-	difficulty = SKILL_AVERAGE
-
 /decl/hierarchy/skill/general/pilot
 	ID = "pilot"
 	name = "Piloting"
@@ -174,6 +164,19 @@ GLOBAL_LIST_EMPTY(skills)
 						"Master"		= "Not only are you good at cooking and mixing drinks, but you can manage a kitchen staff and cater for special events. You can safely prepare exotic foods and drinks that would be poisonous if prepared incorrectly.")
 
 // Category: Security
+
+/decl/hierarchy/skill/security/armament
+	ID = "armament"
+	name = "Armament Calibrating"
+	desc = "Allows you to operate ship heavy armament."
+	levels = list( "Untrained"			= "You know where to load new ammo box, or why you shouldn't hit torpedo with the hammer, but nothing more. You will have a hell of a ride trying to calibrate big cannons.",
+						"Basic"				= "You used to operating small calibers, mostly used on jets and gunboats, but not much more. Complex things, like BSA or energy-based armament is still far ahead for you.",
+						"Trained"			= "You feeling comfortable operating ship heavy weaponry and don't need to bother with torpedo's course management.",
+						"Experienced"		= "You probably spent YEARS, managing, fixing and firing big cannons. You mastered it to the point you doing most of the things on auto.",
+						"Master"		= "You love your cannon. Your cannon nothing without you and you are nothing without your cannon. You can safely operate any existing weaponry and even some experimental ones, like ion prism. You need only a few seconds to calibrate them.")
+	prerequisites = list(SKILL_DEVICES = SKILL_TRAINED)
+	difficulty = SKILL_AVERAGE
+	default_max = SKILL_MAX
 
 /decl/hierarchy/skill/security/combat
 	ID = "combat"
@@ -290,10 +293,20 @@ GLOBAL_LIST_EMPTY(skills)
 	name = "Complex Devices"
 	desc = "Describes the ability to assemble complex devices, such as computers, circuits, printers, robots or gas tank assemblies (bombs). Note that if a device requires electronics or programming, those skills are also required in addition to this skill."
 	levels = list( "Unskilled"			= "You know how to use the technology that was present in whatever society you grew up in. You know how to tell when something is malfunctioning, but you have to call tech support to get it fixed.",
-						"Basic"				= "You use and repair high-tech equipment in the course of your daily work. You can fix simple problems, and you know how to use a circuit printer or autolathe. You can build simple robots such as cleanbots and medibots.",
-						"Trained"			= "You can build or repair an exosuit or cyborg chassis, use a protolathe and destructive analyzer, and build prosthetic limbs. You can safely transfer an MMI or posibrain into a cyborg chassis.<br>- You can attach robotic limbs. Its speed increases with level.<br>- You can perform cybernetics procedures if you have Trained Anatomy skill.",
+						"Basic"				= "You use and repair high-tech equipment in the course of your daily work. You can fix simple problems, and you know how to use a circuit printer or autolathe. You can build simple robots such as cleanbots and medibots.<br>- You know the basics about operating an exosuit or small ground vehicles, but can't fix or build them.",
+						"Trained"			= "You can build and repair an exosuit or small ground vehicles. You also know, how to make functioning cyborg chassis, use a protolathe and destructive analyzer, and build prosthetic limbs. You can safely transfer an MMI or posibrain into a cyborg chassis.<br>- You can attach robotic limbs. Its speed increases with level.<br>- You can perform cybernetics procedures if you have Trained Anatomy skill.<br>- You understand basics of ship weaponry industry and can distinguish autocannon from heavy rotated boltgun.",
 						"Experienced"		= "You have years of experience building or reverse-engineering complex devices. Your use of the lathes and destructive analyzers is efficient and methodical. You can design contraptions to order, and likely sell those designs at a profit.",
 						"Master"		= "You are an inventor or researcher. You can design, build, and modify equipment that most people don't even know exists. You are at home in the lab and the workshop and you've never met a gadget you couldn't take apart, put back together, and replicate.")
+
+/decl/hierarchy/skill/research/devices/mech
+	ID = "GVO"
+	name = "Ground Vehicles Operating"
+	desc = "Allows you to operate various ground vehicles."
+	levels = list("Untrained" = "You are unfamiliar with either exosuit or heavy vehicles controls, and if you attempt to use them you are liable to make mistakes.",
+		"Trained" = "You are proficient in driving and walking around in exosuit, and can use them without penalties.")
+	prerequisites = list(SKILL_DEVICES = SKILL_BASIC)
+	default_max = SKILL_BASIC
+	difficulty = SKILL_EASY
 
 /decl/hierarchy/skill/research/science
 	ID = "science"

@@ -478,7 +478,7 @@
 		return 0
 	next_move_input_at = world.time + max(max_speed,min_speed - (abs(speed[1]) + abs(speed[2])))
 
-	if(!user.skill_check(SKILL_PILOT, SKILL_BASIC))
+	if(!user.skill_check(SKILL_MECH, SKILL_BASIC))
 		to_chat(user, SPAN_NOTICE("You can't understand how to control [src]!"))
 		return
 	if(occupants[user] != VP_DRIVER)
