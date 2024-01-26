@@ -13,14 +13,14 @@
 	cooldown =         20
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_APPRENTICE
-	use_description = "Use this ranged laser attack while on harm intent. Your mastery of Energistics will determine how powerful the laser is. Be wary of overuse, and try not to fry your own brain."
+	use_description = "Выберите красный интент и нажмите по цели на дистанции чтобы запустить в неё луч концентрированной псионической энергии."
 
 /decl/psionic_power/energistics/zorch/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting == BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user]'s eyes flare with light!</span>")
+		user.visible_message("<span class='danger'>Глаза [user] загораются ярким светом!</span>")
 
 		var/user_rank = user.psi.get_rank(faculty)
 		var/obj/item/projectile/pew
@@ -59,7 +59,7 @@
 	cooldown =        60
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Target the head or eyes while on harm intent to use a melee attack that causes a localized electromagnetic pulse."
+	use_description = "Выберите голову или глаза на красном интенте и нажмите на любой объект, чтобы создать мощный электромагнитный импульс, направленный в него."
 
 /decl/psionic_power/electromagnetics/disrupt/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_HEAD && user.zone_sel.selecting != BP_EYES)
@@ -69,6 +69,6 @@
 	. = ..()
 	if(.)
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "blue_electricity_constant")
-		target.visible_message("<span class='danger'>\The [user] releases a gout of crackling static and arcing lightning over \the [target]!</span>")
+		target.visible_message("<span class='danger'>[user] взмахивает рукой, поражая [target] градом из молний!</span>")
 		empulse(target, 0, 1)
 		return TRUE

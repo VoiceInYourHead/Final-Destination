@@ -14,7 +14,7 @@
 	cooldown =        15
 	use_ranged =      TRUE
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Click on a distant target while on grab intent to manifest a psychokinetic grip. Use it manipulate objects at a distance."
+	use_description = "Нажмите по отдалённом объекту или существу на жёлтом интенте, чтобы захватить его телекинезом."
 	admin_log = FALSE
 	use_sound = 'sound/effects/psi/power_used.ogg'
 	var/global/list/valid_machine_types = list(
@@ -31,11 +31,11 @@
 
 		var/distance = get_dist(user, target)
 		if(distance > user.psi.get_rank(PSI_PSYCHOKINESIS) + 2)
-			to_chat(user, "<span class='warning'>Your telekinetic power won't reach that far.</span>")
+			to_chat(user, "<span class='warning'>Ваших сил недостаточно, чтобы достать до этого объекта.</span>")
 			return FALSE
 
 		if(istype(target, /obj/structure))
-			user.visible_message("<span class='notice'>\The [user] makes a strange gesture.</span>")
+			user.visible_message("<span class='notice'>[user] вытягивает руку вперёд, чуть сжимая пальцы.</span>")
 			var/obj/O = target
 			O.attack_hand(user)
 			return TRUE
@@ -48,7 +48,7 @@
 			var/obj/item/psychic_power/telekinesis/tk = new(user)
 			if(tk.set_focus(target))
 				tk.sparkle()
-				user.visible_message("<span class='notice'>\The [user] reaches out.</span>")
+				user.visible_message("<span class='notice'>[user] вытягивает руку вперёд, чуть сжимая пальцы.</span>")
 				return tk
 
 	return FALSE
@@ -60,15 +60,15 @@
 	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_OPERANT
-	use_description = "Target the arms or hands on grab intent and click anywhere to use a radial attack that throws everyone away from you."
+	use_description = "Выберите руки или кисти на жёлтом интенте, а затем нажмите куда угодно, чтобы разбросать всё вокруг себя мощной волной."
 
 /decl/psionic_power/psychokinesis/gravigeddon/invoke(var/mob/living/user, var/mob/living/target)
 	if(!(user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message(SPAN_DANGER("\The [user] suddenly throws up their hands, as though screaming silently!"))
-		to_chat(user, SPAN_DANGER("You strike at all around you with a psionic wave, pushing them away!"))
+		user.visible_message(SPAN_DANGER("[user] размахивает руками, крича!"))
+		to_chat(user, SPAN_DANGER("Вы выпускаете мощную псионическую волну, разметая всё вокруг!"))
 		var/pk_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
 		new /obj/effect/temporary(get_turf(user),9, 'icons/effects/effects.dmi', "summoning")
 		for(var/mob/living/M in range(user, user.psi.get_rank(PSI_PSYCHOKINESIS)))
@@ -79,7 +79,7 @@
 				if(C.can_feel_pain())
 					C.emote("scream")
 			if(!M.anchored && !M.buckled)
-				to_chat(M, SPAN_DANGER("A violent force slams into your body, pushing you away!"))
+				to_chat(M, SPAN_DANGER("Грубая сила ударяет в твоё тело, отправляя тебя в свободный полёт!"))
 				new /obj/effect/temporary(get_turf(M),4, 'icons/effects/effects.dmi', "smash")
 				M.throw_at(get_edge_target_turf(M, get_dir(user, M)), pk_rank*2, pk_rank*2, user)
 		return TRUE

@@ -14,7 +14,7 @@
 	cost =            5
 	cooldown =        50
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Click on or otherwise activate an empty hand while on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
+	use_description = "Нажмите по пустой руке на красном интенте, чтобы создать оружие из чистой псионической энергии."
 	admin_log = FALSE
 
 
@@ -79,7 +79,7 @@
 	cost =            5
 	cooldown =        10
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest one of many helpful tools."
+	use_description = "Нажмите по пустой руке на зелёном интенте, чтобы создать ряд полезных инструментов."
 	admin_log = FALSE
 
 /decl/psionic_power/manifestation/tinker/invoke(var/mob/living/user, var/mob/living/target)
@@ -94,7 +94,7 @@
 		if(option == "Gloves")
 			var/con_rank_user = user.psi.get_rank(PSI_MANIFESTATION)
 			if(con_rank_user < PSI_RANK_MASTER)
-				to_chat(user, SPAN_OCCULT("<b>You don't have enough experience to do something like this yet!</b>"))
+				to_chat(user, SPAN_OCCULT("<b>У вас ещё недостаточно навыков для создания вещей подобного уровня.</b>"))
 				return FALSE
 			else
 				var/option_second = alert(target, "What exactly do you want?", "Choose something!", "Insulated", "Latex")

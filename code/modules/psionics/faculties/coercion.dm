@@ -9,7 +9,7 @@
 
 /decl/psionic_power/coercion/invoke(var/mob/living/user, var/mob/living/target)
 	if (!istype(target))
-		to_chat(user, SPAN_WARNING("You cannot mentally attack \the [target]."))
+		to_chat(user, SPAN_WARNING("Вы не можете пробиться в сознание [target]."))
 		return FALSE
 
 	. = ..()
@@ -23,28 +23,28 @@
 	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Target the eyes on help intent and click anywhere to use a radial attack that blinds, deafens and disorients everyone near you."
+	use_description = "Выберите глаза и переключитесь на зелёный интент. Затем, нажмите куда угодно чтобы применить радиальную атаку, слепящую и оглушающую всех, кто оказался поблизости."
 
 /decl/psionic_power/coercion/blindstrike/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_EYES)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message(SPAN_DANGER("\The [user] suddenly throws back their head, as though screaming silently!"))
-		to_chat(user, SPAN_DANGER("You strike at all around you with a deafening psionic scream!"))
+		user.visible_message(SPAN_DANGER("[user] закидывает голову назад, издавая пронзительный крик!"))
+		to_chat(user, SPAN_DANGER("Вы издаёте пронзительный псионический крик, оглушая всех вокруг!"))
 		var/cn_rank = user.psi.get_rank(PSI_COERCION)
 		for(var/mob/living/M in range(user, user.psi.get_rank(PSI_COERCION)))
 			if(M == user)
 				continue
 			var/blocked = 100 * M.get_blocked_ratio(null, PSIONIC)
 			if(prob(blocked))
-				to_chat(M, SPAN_DANGER("A psionic onslaught strikes your mind, but you withstand it!"))
+				to_chat(M, SPAN_DANGER("Псионик пытается добраться до твоего разума, но тебе удаётся пресечь его попытки!"))
 				continue
 			if(prob(cn_rank * 20) && iscarbon(M))
 				var/mob/living/carbon/C = M
 				if(C.can_feel_pain())
 					M.emote("scream")
-			to_chat(M, SPAN_DANGER("Your senses are blasted into oblivion by a psionic scream!"))
+			to_chat(M, SPAN_DANGER("Ты ощущаешь, как земля уходит у тебя из под ног!"))
 			M.flash_eyes()
 			new /obj/effect/temporary(get_turf(user),6, 'icons/effects/effects.dmi', "summoning")
 			new /obj/effect/temporary(get_turf(M),3, 'icons/effects/effects.dmi', "purple_electricity_constant")
@@ -59,7 +59,7 @@
 	cooldown =      60
 	use_melee =     TRUE
 	min_rank =      PSI_RANK_APPRENTICE
-	use_description = "Target the groin on help intent to use a melee attack equivalent to a strike from a stun baton."
+	use_description = "Выберите нижнюю часть тела на зелёном интенте, а затем нажмите по цели вблизи, дабы совершить по ней удар, по силе сравнимый с шоковой дубинкой."
 
 /decl/psionic_power/coercion/agony/invoke(var/mob/living/user, var/mob/living/target)
 	if(!istype(target))
@@ -68,7 +68,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [target] has been struck by \the [user]!</span>")
+		user.visible_message("<span class='danger'>\[target] только что получил мощный разряд от [user]!</span>")
 		playsound(user.loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 		var/cn_rank = user.psi.get_rank(PSI_COERCION)
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "blue_electricity_constant")
@@ -81,7 +81,7 @@
 	cooldown =       100
 	use_ranged =     TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Target the arms or hands on help intent to use a ranged attack that may rip the weapons away from the target."
+	use_description = "Выберите кисти или руки на зелёном интенте. Затем, совершите дистанционную атаку по цели, чтобы попытаться вырвать оружие(или иной предмет) из ранее выбранной конечности."
 
 /decl/psionic_power/coercion/spasm/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
 	if(!istype(target))
@@ -99,24 +99,24 @@
 //				to_chat(user, "<span class='danger'>You lash out, trying to stab into \the [target], but fail to breach [target]'s defense!</span>")
 //				return TRUE
 			if(target.stunned == 0)
-				to_chat(user, "<span class='danger'>You lash out, stabbing into \the [target] with a lance of psi-energy.</span>")
-				to_chat(target, SPAN_DANGER("Your muscles feels locked, leaving you unable to move!"))
+				to_chat(user, "<span class='danger'>Вы совершаете выпад вперёд, поражая [target] 'копьём' из чистой пси-энергии.</span>")
+				to_chat(target, SPAN_DANGER("Вы ощущаете, как защемило каждую мышцу вашего тела. Боль невыносима!"))
 				target.Stun(1000)
 				user.emote("snap")
 			else if(target.stunned >= 10)
-				to_chat(user, "<span class='danger'>You lash out, removing \the [target] muscle lock.</span>")
-				to_chat(target, SPAN_DANGER("You feel like you can move your body again."))
+				to_chat(user, "<span class='danger'>Вы взмахиваете рукой, разжимая мышцы [target].</span>")
+				to_chat(target, SPAN_DANGER("Вы ощущаете, как снова можете пошевелить рукой."))
 				target.AdjustStunned(target.stunned * -1)
 				user.emote("snap")
 			return TRUE
-		to_chat(user, "<span class='danger'>You lash out, stabbing into \the [target] with a lance of psi-power.</span>")
-		to_chat(target, "<span class='danger'>The muscles in your arms cramp horrendously!</span>")
+		to_chat(user, "<span class='danger'>Вы совершаете выпад вперёд, поражая [target] 'копьём' из чистой пси-энергии.</span>")
+		to_chat(target, "<span class='danger'>Ваша кисть разжимается от внезапной боли, пронизывающей всю руку!</span>")
 		if(prob(80))
 			target.emote("scream")
 		if(prob(cn_rank * 20) && target.l_hand && target.l_hand.simulated && target.unEquip(target.l_hand))
-			target.visible_message("<span class='danger'>\The [target] drops what they were holding as their left hand spasms!</span>")
+			target.visible_message("<span class='danger'>[target] невольно роняет предмет, находившийся в его левой руке!</span>")
 		if(prob(cn_rank * 20) && target.r_hand && target.r_hand.simulated && target.unEquip(target.r_hand))
-			target.visible_message("<span class='danger'>\The [target] drops what they were holding as their right hand spasms!</span>")
+			target.visible_message("<span class='danger'>[target] невольно роняет предмет, находившийся в его правой руке!</span>")
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "white_electricity_constant")
 		return TRUE
 
@@ -127,7 +127,7 @@
 	use_grab =      TRUE
 	min_rank =      PSI_RANK_GRANDMASTER
 	suppress_parent_proc = TRUE
-	use_description = "Grab a victim, target the left or right hand, then use the grab on them while on help intent, in order to convert them into a loyal mind-slave. The process takes some time, and failure is punished harshly."
+	use_description = "Схватите жертву, выберите левую или правую кисть, затем переключитесь на зелёный интент и используйте захват НА НЕЙ, дабы обратить её в своего верного подчинённого."
 
 /decl/psionic_power/coercion/mindslave/invoke(var/mob/living/user, var/mob/living/target)
 	if(!istype(target))
@@ -137,21 +137,21 @@
 	. = ..()
 	if(.)
 		if(target.stat == DEAD || (target.status_flags & FAKEDEATH))
-			to_chat(user, "<span class='warning'>\The [target] is dead!</span>")
+			to_chat(user, "<span class='warning'>[target] мёрта!</span>")
 			return FALSE
 		if(!target.mind || !target.key)
-			to_chat(user, "<span class='warning'>\The [target] is mindless!</span>")
+			to_chat(user, "<span class='warning'>[target] находится в бессознательном состоянии!</span>")
 			return FALSE
 		if(GLOB.thralls.is_antagonist(target.mind))
-			to_chat(user, "<span class='warning'>\The [target] is already in thrall to someone!</span>")
+			to_chat(user, "<span class='warning'>[target] уже находится под чьим-то контролем!</span>")
 			return FALSE
-		user.visible_message("<span class='danger'><i>\The [user] seizes the head of \the [target] in both hands...</i></span>")
-		to_chat(user, "<span class='warning'>You plunge your mentality into that of \the [target]...</span>")
-		to_chat(target, "<span class='danger'>Your mind is invaded by the presence of \the [user]! They are trying to make you a slave!</span>")
+		user.visible_message("<span class='danger'><i>[user] обхватывает обе руки [target], прислоняя их к своим губам...</i></span>")
+		to_chat(user, "<span class='warning'>Вы проникаете в хрупкое сознание [target]...</span>")
+		to_chat(target, "<span class='danger'>Вы ощущаете присутствие [user] в своей голове! Его настойчивые мысли и желания постепенно заражают ваш разум!</span>")
 		if(!do_after(user, target.stat == CONSCIOUS ? 80 : 40, target))
 			user.psi.backblast(rand(10,25))
 			return TRUE
-		to_chat(user, "<span class='danger'>You sear through \the [target]'s neurons, reshaping as you see fit and leaving them subservient to your will!</span>")
-		to_chat(target, "<span class='danger'>Your defenses have eroded away and \the [user] has made you their mindslave.</span>")
+		to_chat(user, "<span class='danger'>Вы реконструируете сознание [target] под свои собственные желания, превращая его в покорного раба.</span>")
+		to_chat(target, "<span class='danger'>Ваши стены наконец пали и вы стали покорной куклой [user].</span>")
 		GLOB.thralls.add_antagonist(target.mind, new_controller = user)
 		return TRUE

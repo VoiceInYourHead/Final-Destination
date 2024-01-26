@@ -14,7 +14,7 @@
 	cooldown =         45
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_APPRENTICE
-	use_description = "Use this ranged attack while targeting mouth on harm intent. Your mastery of Psychoballistics will determine how powerful the bullet is. Be wary of overuse, and try not to shot down yourself."
+	use_description = "Выберите рот на красном интенте и нажмите по чему угодно, чтобы запустить из пальца маленькую сферу с сжатой псионической энергией."
 
 /obj/item/projectile/psi
 	name = "psionic projectile"
@@ -46,8 +46,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user] sneezing, spitting a bullet right from a mouth!</span>")
-		user.emote("sneeze")
+		user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
 
 		var/user_rank = user.psi.get_rank(faculty)
 		var/obj/item/projectile/pew
@@ -91,15 +90,14 @@
 	cooldown =         120
 	min_rank =         PSI_RANK_APPRENTICE
 	use_melee =        TRUE
-	use_description = "Use this ranged attack while targeting mouth on harm intent. Your mastery of Psychoballistics will determine how powerful the bullet is. Be wary of overuse, and try not to shot down yourself."
+	use_description = "Выберите рот на красном интенте и нажмите в любое место около себя, чтобы создать рой псионических снарядов, летящих в разные стороны."
 
 /decl/psionic_power/psychoballistics/storm/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user] sneezing, summoning bullets in all directions!</span>")
-		user.emote("sneeze")
+		user.visible_message("<span class='danger'>[user] создаёт вокруг себя рой из вращающихся пуль, запуская их в полёт!</span>")
 
 		var/user_rank = user.psi.get_rank(faculty)
 
