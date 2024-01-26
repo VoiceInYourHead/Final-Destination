@@ -46,12 +46,13 @@
 /decl/hierarchy/outfit/clover_crew
 	name = "'Clover' Crew"
 
-	uniform = null
+	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = null
 	back = null
 	belt = null
 	shoes = null
 	glasses = null
+	id_types = list(/obj/item/card/id)
 	backpack_contents = list()
 
 /obj/effect/submap_landmark/spawnpoint/clover/crew
