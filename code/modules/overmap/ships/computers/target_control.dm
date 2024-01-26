@@ -75,6 +75,9 @@
 	if (href_list["ship_lock"])
 		var/obj/effect/overmap/O = locate(href_list["ship_lock"])
 		if(istype(O) && !QDELETED(O) && (O in view(7,linked)))
+			if(!user.skill_check(SKILL_ARMAMENT, SKILL_TRAINED) && prob(70))
+				visible_message(SPAN_NOTICE("[src] states, 'MISSILE LOCK FAILED'"))
+				return
 			if(linked.set_target(TARGET_SHIP, O))
 				visible_message(SPAN_NOTICE("[src] states, 'TARGET LOCKED: [O.name]'"))
 				playsound(loc, "sound/machines/sensors/target_lock.ogg", 30, 1)
@@ -85,6 +88,9 @@
 	if (href_list["missile_lock"])
 		var/obj/effect/overmap/O = locate(href_list["missile_lock"])
 		if(istype(O) && !QDELETED(O) && (O in view(7,linked)))
+			if(!user.skill_check(SKILL_ARMAMENT, SKILL_TRAINED) && prob(70))
+				visible_message(SPAN_NOTICE("[src] states, 'MISSILE LOCK FAILED'"))
+				return
 			if(linked.set_target(TARGET_MISSILE, O))
 				visible_message(SPAN_NOTICE("[src] states, 'MISSILE LOCKED: [O.name]'"))
 				playsound(loc, "sound/machines/sensors/target_lock.ogg", 30, 1)
@@ -103,34 +109,50 @@
 		return TOPIC_HANDLED
 
 	if (href_list["set_planetx"])
+		var/inaccuracy = rand(3,8)
 		var/input = input("Set new planet X target", "Planet X", linked.get_target(TARGET_PLANETCOORD)[1]) as num|null
 		if(!CanInteract(user,state))
 			return TOPIC_NOACTION
 		if (input)
-			linked.set_target(TARGET_PLANET, linked.get_target(TARGET_PLANET)[1], clamp(input,1, world.maxx-8), linked.get_target(TARGET_PLANET)[3])
+			if(!user.skill_check(SKILL_ARMAMENT, SKILL_TRAINED) && prob(50))
+				linked.set_target(TARGET_PLANET, linked.get_target(TARGET_PLANET)[1], clamp((input + inaccuracy),1, world.maxx-8), linked.get_target(TARGET_PLANET)[3])
+			else
+				linked.set_target(TARGET_PLANET, linked.get_target(TARGET_PLANET)[1], clamp(input,1, world.maxx-8), linked.get_target(TARGET_PLANET)[3])
 		return TOPIC_REFRESH
 
 	if (href_list["set_planety"])
+		var/inaccuracy = rand(3,8)
 		var/input = input("Set new planet Y target", "Planet Y", linked.get_target(TARGET_PLANETCOORD)[2]) as num|null
 		if(!CanInteract(user,state))
 			return TOPIC_NOACTION
 		if (input)
-			linked.set_target(TARGET_PLANET, linked.get_target(TARGET_PLANET)[1], linked.get_target(TARGET_PLANET)[2], clamp(input,1, world.maxy-8))
+			if(!user.skill_check(SKILL_ARMAMENT, SKILL_TRAINED) && prob(50))
+				linked.set_target(TARGET_PLANET, linked.get_target(TARGET_PLANET)[1], linked.get_target(TARGET_PLANET)[2], clamp((input + inaccuracy),1, world.maxy-8))
+			else
+				linked.set_target(TARGET_PLANET, linked.get_target(TARGET_PLANET)[1], linked.get_target(TARGET_PLANET)[2], clamp(input,1, world.maxy-8))
 		return TOPIC_REFRESH
 
 
 	if (href_list["set_pointx"])
+		var/inaccuracy = rand(3,5)
 		var/input = input("Set new point X target", "Planet X", linked.get_target(TARGET_POINT)[1]) as num|null
 		if(!CanInteract(user,state))
 			return TOPIC_NOACTION
 		if (input)
-			linked.set_target(TARGET_POINT, null, clamp(input, 1, GLOB.using_map.overmap_size), linked.get_target(TARGET_POINT)[2])
+			if(!user.skill_check(SKILL_ARMAMENT, SKILL_TRAINED) && prob(50))
+				linked.set_target(TARGET_POINT, null, clamp((input + inaccuracy), 1, GLOB.using_map.overmap_size), linked.get_target(TARGET_POINT)[2])
+			else
+				linked.set_target(TARGET_POINT, null, clamp(input, 1, GLOB.using_map.overmap_size), linked.get_target(TARGET_POINT)[2])
 		return TOPIC_REFRESH
 
 	if (href_list["set_pointy"])
+		var/inaccuracy = rand(3,5)
 		var/input = input("Set new point Y target", "Planet Y", linked.get_target(TARGET_POINT)[2]) as num|null
 		if(!CanInteract(user,state))
 			return TOPIC_NOACTION
 		if (input)
-			linked.set_target(TARGET_POINT, null, linked.get_target(TARGET_POINT)[1], clamp(input, 1, GLOB.using_map.overmap_size))
+			if(!user.skill_check(SKILL_ARMAMENT, SKILL_TRAINED) && prob(50))
+				linked.set_target(TARGET_POINT, null, linked.get_target(TARGET_POINT)[1], clamp((input + inaccuracy), 1, GLOB.using_map.overmap_size))
+			else
+				linked.set_target(TARGET_POINT, null, linked.get_target(TARGET_POINT)[1], clamp(input, 1, GLOB.using_map.overmap_size))
 		return TOPIC_REFRESH

@@ -76,7 +76,8 @@
 	)
 	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
 						SKILL_PILOT = SKILL_TRAINED,
-						SKILL_MEDICAL = SKILL_BASIC)
+						SKILL_MEDICAL = SKILL_BASIC,
+						SKILL_MECH  = HAS_PERK,)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)

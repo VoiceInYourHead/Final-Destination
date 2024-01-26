@@ -81,6 +81,12 @@
 	outfit_type = /decl/hierarchy/outfit/scg_pilot
 	total_positions = 1
 
+	min_skill = list(
+		SKILL_COMBAT      = SKILL_TRAINED,
+		SKILL_WEAPONS     = SKILL_TRAINED,
+		SKILL_ARMAMENT    = SKILL_TRAINED
+	)
+
 /decl/hierarchy/outfit/scg_pilot
 	name = "SCG Pilot"
 

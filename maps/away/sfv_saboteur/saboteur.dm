@@ -80,6 +80,12 @@
 	outfit_type = /decl/hierarchy/outfit/scg_pilot
 	total_positions = 1
 
+	min_skill = list(
+		SKILL_COMBAT      = SKILL_TRAINED,
+		SKILL_WEAPONS     = SKILL_TRAINED,
+		SKILL_ARMAMENT    = SKILL_TRAINED
+	)
+
 /obj/effect/submap_landmark/spawnpoint/saboteur/pilot
 	name = "Saboteur Pilot"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE

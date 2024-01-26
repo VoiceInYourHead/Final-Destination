@@ -337,9 +337,9 @@
 	                    SKILL_COMBAT     = SKILL_BASIC,
 	                    SKILL_WEAPONS    = SKILL_BASIC)
 
-	max_skill = list(	SKILL_PILOT        = SKILL_TRAINED,
-	                    SKILL_COMBAT       = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS      = SKILL_EXPERIENCED,
+	max_skill = list(	SKILL_PILOT        = SKILL_MAX,
+	                    SKILL_COMBAT       = SKILL_MAX,
+	                    SKILL_WEAPONS      = SKILL_MAX,
 	                    SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX,
@@ -384,7 +384,8 @@
 		/datum/mil_rank/fleet/o2
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_TRAINED)
+	                    SKILL_PILOT       = SKILL_TRAINED,
+	                    SKILL_MECH        = HAS_PERK)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 	skill_points = 20

@@ -35,6 +35,7 @@
 	                    SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX,
+	                    SKILL_ARMAMENT     = SKILL_TRAINED,
 	                    SKILL_ATMOS        = SKILL_MAX)
 	skill_points = 20
 
@@ -132,6 +133,7 @@
 		SKILL_EVA     = SKILL_BASIC,
 		SKILL_WEAPONS = SKILL_TRAINED,
 		SKILL_COMBAT = SKILL_TRAINED,
+		SKILL_ARMAMENT = SKILL_BASIC
 	)
 
 	max_skill = list(
