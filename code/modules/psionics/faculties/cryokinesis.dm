@@ -35,7 +35,7 @@
 	cooldown =        100
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Выберите верхнюю часть тела и красный интент, затем нажав по цели чтобы заморозить её на некоторое время."
+	use_description = "Выберите верхнюю или нижнюю часть тела и красный интент, затем нажав по цели чтобы заморозить её на некоторое время."
 
 /decl/psionic_power/cryokinesis/freeze/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_CHEST && user.zone_sel.selecting != BP_GROIN)
