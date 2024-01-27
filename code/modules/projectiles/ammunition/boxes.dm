@@ -414,7 +414,46 @@
 	max_ammo = 8
 	multiple_sprites = TRUE
 
-<<<<<<< HEAD
+/obj/item/ammo_magazine/box/rifle
+	name = "ammunition crate"
+	desc = "ammunition crate for rifle caliber weapons."
+	icon_state = "rbox"
+	origin_tech = list(TECH_COMBAT = 2)
+	w_class = ITEM_SIZE_HUGE
+	caliber = CALIBER_RIFLE
+	matter = list(MATERIAL_STEEL = 10100)
+	slowdown_general = 0.2
+	ammo_type = /obj/item/ammo_casing/rifle
+	max_ammo = 240
+
+/obj/item/ammo_magazine/box/rifle/military
+	name = "7mmR rounds crate"
+	icon_state = "rbox_m"
+	caliber = CALIBER_RIFLE_MILITARY
+	ammo_type = /obj/item/ammo_casing/rifle/military
+
+/obj/item/ammo_magazine/box/rifle/military
+	name = "12.7 rounds crate"
+	icon_state = "rbox_r"
+	caliber = CALIBER_RIFLE_RUSSIA
+	ammo_type = /obj/item/ammo_casing/rifle/russia
+
+/obj/item/ammo_magazine/box/attack_self(mob/user)
+	if(!stored_ammo.len)
+		to_chat(user, "<span class='notice'>[src] is already empty!</span>")
+		return
+	if(alert("Do you really want to empty this container? All this amount of bullets will fall to the ground.",,"Im think, im not.","Yeah, let's fuck with it!") == "Im think, im not.")
+		return
+	if(stored_ammo.len > 30)
+		if(alert("I'll give you a second chance to think, are you SURE you want ALL [stored_ammo.len] these bullets on the floor?",,"I've changed my mind, I don't want to.","Let me put all these bullets on the floor already!") == "I've changed my mind, I don't want to.")
+			return
+	to_chat(user, "<span class='notice'>You empty [src].</span>")
+	for(var/obj/item/ammo_casing/C in stored_ammo)
+		C.forceMove(user.loc)
+		C.set_dir(pick(GLOB.alldirs))
+	stored_ammo.Cut()
+	update_icon()
+
 // FD
 
 //  Rifles
@@ -536,44 +575,3 @@
 	ammo_type = /obj/item/ammo_casing/rifle/military/marksman
 	matter = list(MATERIAL_STEEL = 3550)
 	max_ammo = 15
-=======
-/obj/item/ammo_magazine/box/rifle
-	name = "ammunition crate"
-	desc = "ammunition crate for rifle caliber weapons."
-	icon_state = "rbox"
-	origin_tech = list(TECH_COMBAT = 2)
-	w_class = ITEM_SIZE_HUGE
-	caliber = CALIBER_RIFLE
-	matter = list(MATERIAL_STEEL = 10100)
-	slowdown_general = 0.2
-	ammo_type = /obj/item/ammo_casing/rifle
-	max_ammo = 240
-
-/obj/item/ammo_magazine/box/rifle/military
-	name = "7mmR rounds crate"
-	icon_state = "rbox_m"
-	caliber = CALIBER_RIFLE_MILITARY
-	ammo_type = /obj/item/ammo_casing/rifle/military
-
-/obj/item/ammo_magazine/box/rifle/military
-	name = "12.7 rounds crate"
-	icon_state = "rbox_r"
-	caliber = CALIBER_RIFLE_RUSSIA
-	ammo_type = /obj/item/ammo_casing/rifle/russia
-
-/obj/item/ammo_magazine/box/attack_self(mob/user)
-	if(!stored_ammo.len)
-		to_chat(user, "<span class='notice'>[src] is already empty!</span>")
-		return
-	if(alert("Do you really want to empty this container? All this amount of bullets will fall to the ground.",,"Im think, im not.","Yeah, let's fuck with it!") == "Im think, im not.")
-		return
-	if(stored_ammo.len > 30)
-		if(alert("I'll give you a second chance to think, are you SURE you want ALL [stored_ammo.len] these bullets on the floor?",,"I've changed my mind, I don't want to.","Let me put all these bullets on the floor already!") == "I've changed my mind, I don't want to.")
-			return
-	to_chat(user, "<span class='notice'>You empty [src].</span>")
-	for(var/obj/item/ammo_casing/C in stored_ammo)
-		C.forceMove(user.loc)
-		C.set_dir(pick(GLOB.alldirs))
-	stored_ammo.Cut()
-	update_icon()
->>>>>>> upstream/main
