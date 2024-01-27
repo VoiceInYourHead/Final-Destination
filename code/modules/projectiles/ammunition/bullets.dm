@@ -141,6 +141,21 @@
 	icon_state = "riflecasing"
 	spent_icon = "riflecasing-spent"
 
+/obj/item/ammo_casing/rifle/fleet
+	desc = "A rifle bullet casing."
+	caliber = CALIBER_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/fleet
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/army
+	desc = "A rifle bullet casing."
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/bullet/rifle/army
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+
 /obj/item/ammo_casing/rifle/russia
 	desc = "A rifle 12.7x55mm bullet casing."
 	caliber = CALIBER_RIFLE_RUSSIA
@@ -210,3 +225,32 @@
 	spent_icon = "empshell-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(MATERIAL_STEEL = 260, MATERIAL_URANIUM = 200)
+
+// SCG
+
+/obj/item/ammo_casing/rifle/military/marksman
+	projectile_type = /obj/item/projectile/bullet/rifle/marksman
+
+/obj/item/ammo_casing/scg/shell
+	name = "shell casing"
+	desc = "An antimaterial shell casing."
+	icon_state = "lcasing"
+	spent_icon = "lcasing-spent"
+	caliber = CALIBER_ANTIMATERIAL
+	projectile_type = /obj/item/projectile/bullet/rifle/shell
+	matter = list(MATERIAL_STEEL = 1250)
+
+/obj/item/ammo_casing/scg/shell/apds
+	name = "\improper APDS shell casing"
+	desc = "An Armour Piercing Discarding Sabot shell."
+	projectile_type = /obj/item/projectile/bullet/rifle/shell/apds
+
+/obj/item/ammo_casing/scg/shell/explosive
+	name = "HE shell casing"
+	desc = "An antimaterial shell casing with explosive"
+	projectile_type = /obj/item/projectile/bullet/rifle/shell/explosive
+
+/obj/item/ammo_casing/scg/shell/emp
+	name = "haywire shell casing"
+	projectile_type  = /obj/item/projectile/ion/heavy
+	matter = list(MATERIAL_STEEL = 1100, MATERIAL_URANIUM = 300)

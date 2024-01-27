@@ -223,6 +223,23 @@
 	penetrating = 1
 	distance_falloff = 1.5
 
+/obj/item/projectile/bullet/rifle/fleet
+	damage = 35
+	armor_penetration = 30
+	penetrating = 0
+
+/obj/item/projectile/bullet/rifle/army
+	damage = 45
+	armor_penetration = 45
+	penetrating = 2
+	distance_falloff = 1.2
+
+/obj/item/projectile/bullet/rifle/marksman
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 50
+	armor_penetration = 50
+	penetrating = 1
+
 /obj/item/projectile/bullet/rifle/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 46
@@ -251,6 +268,20 @@
 	penetrating = 5
 	armor_penetration = 80
 	penetration_modifier = 1.5
+
+/obj/item/projectile/bullet/rifle/shell/explosive
+	name ="explosive shell"
+	icon_state= "bolter"
+	damage = 40
+	stun = 3
+	weaken = 3
+	armor_penetration = 30
+	penetrating = 0
+	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
+
+	on_hit(var/atom/target, var/blocked = 0)
+		cell_explosion(target, 50, 25)
+		return 1
 
 /* Miscellaneous */
 /obj/item/projectile/bullet/gyro
