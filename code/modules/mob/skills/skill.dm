@@ -167,9 +167,9 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/security/armament
 	ID = "armament"
-	name = "Armament Calibrating"
+	name = "Armament Calibration"
 	desc = "Allows you to operate ship heavy armament."
-	levels = list( "Untrained"			= "You know where to load new ammo box, or why you shouldn't hit torpedo with the hammer, but nothing more. You will have a hell of a ride trying to calibrate big cannons.",
+	levels = list( "Unskilled"			= "You know where to load new ammo box, or why you shouldn't hit torpedo with the hammer, but nothing more. You will have a hell of a ride trying to calibrate big cannons.",
 						"Basic"				= "You used to operating small calibers, mostly used on jets and gunboats, but not much more. Complex things, like BSA or energy-based armament is still far ahead for you.",
 						"Trained"			= "You feeling comfortable operating ship heavy weaponry and don't need to bother with torpedo's course management.",
 						"Experienced"		= "You probably spent YEARS, managing, fixing and firing big cannons. You mastered it to the point you doing most of the things on auto.",
@@ -300,7 +300,7 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/research/devices/mech
 	ID = "GVO"
-	name = "Ground Vehicles Operating"
+	name = "Ground Vehicles Operation"
 	desc = "Allows you to operate various ground vehicles."
 	levels = list("Untrained" = "You are unfamiliar with either exosuit or heavy vehicles controls, and if you attempt to use them you are liable to make mistakes.",
 		"Trained" = "You are proficient in driving and walking around in exosuit, and can use them without penalties.")

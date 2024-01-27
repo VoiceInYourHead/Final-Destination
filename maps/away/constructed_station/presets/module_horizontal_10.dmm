@@ -38,7 +38,7 @@
 "L" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/structure/cable/green{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/plating,/area/template_noop)
 "M" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/template_noop)
 "O" = (/obj/effect/floor_decal/techfloor/orange,/obj/item/flame/candle,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/ash{pixel_x = 8; pixel_y = 13},/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
-"P" = (/obj/structure/catwalk,/obj/structure/catwalk,/obj/machinery/light/small/red,/obj/effect/landmark/explosion/random,/turf/simulated/floor/plating,/area/template_noop)
+"P" = (/obj/structure/catwalk,/obj/structure/catwalk,/obj/machinery/light/small/red,/turf/simulated/floor/plating,/area/template_noop)
 "Q" = (/obj/effect/floor_decal/techfloor/orange,/obj/random/trash,/obj/random/trash,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "R" = (/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "S" = (/obj/effect/floor_decal/techfloor/orange,/obj/random/trash,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)

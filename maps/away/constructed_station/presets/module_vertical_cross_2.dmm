@@ -10,7 +10,6 @@
 "k" = (/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
 "l" = (/obj/structure/bed/padded,/obj/structure/bed/padded{buckle_pixel_shift = "x=0;y=8;z=0"; layer = 2.24; pixel_y = 8},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/alarm{dir = 4; pixel_x = -22; req_access = newlist()},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
 "m" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/machinery/light/small{dir = 4},/obj/random/trash,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
-"n" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/explosion/random,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
 "o" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
 "p" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
 "q" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
@@ -56,5 +55,5 @@ LkIDm
 bxRgS
 lqzdc
 WQeGs
-awent
+aweGt
 "}

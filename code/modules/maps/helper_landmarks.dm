@@ -63,16 +63,16 @@
 	falloff = 15
 
 /obj/effect/landmark/explosion/New()
-	var/turf/simulated/T = get_turf(src)
+	var/turf/T = get_turf(src)
 	if(istype(T))
 		cell_explosion(T, severity, falloff)
 	qdel(src)
 	. = ..()
 
 /obj/effect/landmark/explosion/random
-	severity = 80
-	falloff = 5
-	var/explosion_chance = 30
+	severity = 140
+	falloff = 10
+	var/explosion_chance = 50
 
 /obj/effect/landmark/explosion/random/New()
 	if(prob(explosion_chance))

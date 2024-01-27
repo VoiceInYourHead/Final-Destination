@@ -1,5 +1,5 @@
 /obj/effect/overmap/visitable/ship/landable/clover/truck
-	name = "TCGV-24 \"Odysseus\""
+	name = "TCGV-24"
 	shuttle = "TCGV-24"
 	desc = "An old cargo craft, broadcasting clearly expired TCGSV codes and the callsign \"TCGV-24 ODYSSEUS\"."
 	fore_dir = NORTH
@@ -18,12 +18,12 @@
 	shuttle_tag = "TCGV-24"
 
 /datum/shuttle/autodock/overmap/clover
-	name = "TCGV-24 \"Odysseus\""
+	name = "TCGV-24"
 	move_time = 20
 	shuttle_area = list(/area/ship/clover/shuttle)
-	current_location = "nav_dock_cs_1"
-	landmark_transition = "nav_transit_cs_1"
-	dock_target = "cs_1_shuttle_dock"
+	current_location = "nav_hangar_odysseus"
+	landmark_transition = "nav_transit_odysseus"
+	dock_target = "odysseus_shuttle_dock_airlock"
 	range = 0 //range = 2
 	fuel_consumption = 1
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/heist
@@ -31,11 +31,11 @@
 	defer_initialisation = TRUE
 
 /obj/effect/shuttle_landmark/clover/truck
-	name = "TCGV-24 \"Odysseus\" docking port"
-	landmark_tag = "nav_dock_cs_1"
-	docking_controller = "cs_1_shuttle_dock"
+	name = "TCGV-24 docking port"
+	landmark_tag = "nav_hangar_odysseus"
+	docking_controller = "odysseus_shuttle_dock_airlock"
 	base_area = /area/ship/clover/modules/m5
 
 /obj/effect/shuttle_landmark/transit/clover/truck
 	name = "In transit"
-	landmark_tag = "nav_transit_cs_1"
+	landmark_tag = "nav_transit_odysseus"

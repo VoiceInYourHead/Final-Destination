@@ -25,7 +25,6 @@
 "z" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/effect/decal/cleanable/dirt,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/template_noop)
 "A" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet/crate/plastic,/obj/random/hat,/obj/random/hat,/obj/random/hat,/obj/random/hat,/obj/random/accessory,/obj/random/accessory,/obj/random/accessory,/obj/random/accessory,/obj/random/hat,/obj/random/clothing{spawn_nothing_percentage = 50},/obj/random/clothing{spawn_nothing_percentage = 50},/obj/random/clothing{spawn_nothing_percentage = 50},/obj/random/clothing{spawn_nothing_percentage = 50},/obj/random/accessory,/obj/random/accessory,/obj/random/accessory,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "B" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/template_noop)
-"C" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/explosion/random,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "D" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet/crate/medical,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/random/junkyard/medical,/obj/random/junkyard/medical,/obj/random/junkyard/medical,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/obj/random/junkyard/medical/lite,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "E" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/random/trash,/obj/random/trash,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "F" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small/red,/obj/structure/table/rack,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
@@ -51,7 +50,7 @@
 "Z" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/structure/closet/crate/solar_assembly,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/template_noop)
 
 (1,1,1) = {"
-UrhRJSnIiNC
+UrhRJSnIiNW
 sPXBHuBfMtE
 llkZcLezvTT
 bOpjxQYoGdW
