@@ -82,8 +82,8 @@
 	desc = "They seem to pulse slightly with an inner life."
 	icon_state = "eggs"
 	var/amount_grown = 0
-	var/spiders_min = 6
-	var/spiders_max = 12
+	var/spiders_min = 5
+	var/spiders_max = 15
 	var/spider_type = /obj/effect/spider/spiderling
 
 /obj/effect/spider/eggcluster/Initialize(mapload, atom/parent)
@@ -116,8 +116,8 @@
 		qdel(src)
 
 /obj/effect/spider/eggcluster/small
-	spiders_min = 1
-	spiders_max = 3
+	spiders_min = 4
+	spiders_max = 8
 
 /obj/effect/spider/eggcluster/small/frost
 	spider_type = /obj/effect/spider/spiderling/frost
@@ -135,7 +135,7 @@
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent
 	var/travelling_in_vent = 0
 	var/dormant = FALSE    // If dormant, does not add the spiderling to the process list unless it's also growing
-	var/growth_chance = 50 // % chance of beginning growth, and eventually become a beautiful death machine
+	var/growth_chance = 70 // % chance of beginning growth, and eventually become a beautiful death machine
 
 	var/shift_range = 6
 	var/castes = list(/mob/living/simple_animal/hostile/giant_spider/lurker = 0.1,

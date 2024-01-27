@@ -127,7 +127,7 @@ var/global/floorIsLava = 0
 			body += "<a href='?src=\ref[psyker.psi];remove_psionics=1'>Remove psionics.</a><br/><br/>"
 			body += "<a href='?src=\ref[psyker.psi];trigger_psi_latencies=1'>Trigger latencies.</a><br/>"
 		body += "<table width = '100%'>"
-		for(var/faculty in list(PSI_COERCION, PSI_CONSCIOUSNESS, PSI_PSYCHOKINESIS, PSI_PSYCHOBALLISTICS, PSI_MANIFESTATION, PSI_ARCHERY, PSI_CRYOKINESIS, PSI_ENERGISTICS, PSI_ELECTRONICS, PSI_REDACTION))
+		for(var/faculty in list(PSI_COERCION, PSI_CONSCIOUSNESS, PSI_PSYCHOKINESIS, PSI_PSYCHOBALLISTICS, PSI_MANIFESTATION, PSI_CRYOKINESIS, PSI_ENERGISTICS, PSI_ELECTRONICS, PSI_REDACTION))
 			var/decl/psionic_faculty/faculty_decl = SSpsi.get_faculty(faculty)
 			var/faculty_rank = psyker.psi ? psyker.psi.get_rank(faculty) : 0
 			body += "<tr><td><b>[faculty_decl.name]</b></td>"

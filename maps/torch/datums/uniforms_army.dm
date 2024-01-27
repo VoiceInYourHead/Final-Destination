@@ -19,7 +19,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -63,7 +63,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -109,7 +109,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -156,7 +156,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -203,7 +203,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -247,7 +247,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -291,7 +291,7 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)
 
@@ -331,6 +331,6 @@
 
 	dress_under = /obj/item/clothing/under/solgov/mildress/army/command
 	dress_skirt = /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	dress_over = /obj/item/clothing/suit/dress/solgov/army/command
+	dress_over = /obj/item/clothing/suit/storage/dress/solgov/army/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/army/command
 	dress_extra = list(/obj/item/material/sword/replica/officersword/armyofficer)

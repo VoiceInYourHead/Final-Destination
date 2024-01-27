@@ -72,6 +72,26 @@
 /obj/machinery/power/apc/hyper
 	cell_type = /obj/item/cell/hyper
 
+/obj/machinery/power/apc/auto_access //for away locations
+	autoset_access = TRUE
+	req_access = list()
+
+/obj/machinery/power/apc/auto_access/high
+	cell_type = /obj/item/cell/high
+
+/obj/machinery/power/apc/auto_access/super
+	cell_type = /obj/item/cell/super
+
+/obj/machinery/power/apc/auto_access/hyper
+	cell_type = /obj/item/cell/hyper
+
+/obj/machinery/power/apc/auto_access/critical
+	cell_type = /obj/item/cell/high
+	is_critical = 1
+
+/obj/machinery/power/apc/auto_access/unlocked
+	locked = 0
+
 // Main APC code
 /obj/machinery/power/apc
 	name = "area power controller"
@@ -134,6 +154,7 @@
 	var/global/list/status_overlays_lighting
 	var/global/list/status_overlays_environ
 	var/autoname = 1
+	var/autoset_access = FALSE
 
 /obj/machinery/power/apc/updateDialog()
 	if (stat & (BROKEN|MAINT))
@@ -190,6 +211,33 @@
 	if(operating)
 		force_update_channels()
 	power_change()
+
+	if(autoset_access)
+#ifdef UNIT_TEST
+		if(length(req_access))
+			crash_with("A APC with mapped access restrictions was set to autoinitialize access.")
+#endif
+		return INITIALIZE_HINT_LATELOAD
+
+//	if(autoset_access)
+//		inherit_access_from_area()
+
+/obj/machinery/power/apc/LateInitialize()
+	..()
+	if(autoset_access)
+		inherit_access_from_area()
+
+/obj/machinery/power/apc/proc/inherit_access_from_area()
+	var/area/apc = access_area_by_dir()
+	if (!apc)
+		req_access = list()
+	else
+		req_access = req_access_diff(apc)
+
+/obj/machinery/power/apc/proc/access_area_by_dir()
+	var/turf/T = get_turf(src)
+	if (T && !T.density)
+		return get_area(T)
 
 /obj/machinery/power/apc/Destroy()
 	src.update()

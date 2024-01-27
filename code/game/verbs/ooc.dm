@@ -100,3 +100,18 @@
 	var/auth_key = input("Enter the key, that bot gave you.") as text
 	if(auth_key)
 		SSwebhooks.send(WEBHOOK_REG, list("auth_key" = auth_key, "ckey" = src.key))
+
+/client/verb/fix_hotkeys()
+	set name = "Fix Hotkeys"
+	set category = "OOC"
+
+	if(!(isghost(mob) || isliving(mob)))
+		return
+
+	if(alert(usr, "Are you sure? Ensure that you've switched to English keyboard layout.\nBe aware that this will clear chat and close all windows", "Fix hotkeys", "Yes", "No") == "Yes")
+		winset(src, null, "reset=true")
+		// see skin.dmf:1228
+		winset(src, null, "rpane.infob.is-visible=true;rpane.infob.pos=65,0 rpane.textb.is-visible=true rpane.infob.is-checked=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=infowindow")
+
+		chatOutput.loaded = FALSE
+		chatOutput.load()

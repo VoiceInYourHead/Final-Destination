@@ -19,7 +19,7 @@
 	generate_loot()
 
 /obj/structure/closet/crate/secure/loot/proc/generate_loot()
-	var/loot = rand(1, 111)
+	var/loot = rand(1, 114)
 	switch(loot)
 		if(1 to 5) // Common things go, 5%
 			new/obj/item/reagent_containers/food/drinks/bottle/rum(src)
@@ -159,6 +159,12 @@
 			new/obj/item/fd/ancient_items/skull(src)
 		if(111)
 			new/obj/item/clothing/glasses/psionic(src)
+		if(112)
+			new/obj/item/fd/ancient_items/eye_of_the_maw(src)
+		if(113)
+			new/obj/item/fd/ancient_items/lighting_staff(src)
+		if(114)
+			new/obj/item/fd/ancient_items/emerald(src)
 
 /obj/structure/closet/crate/secure/loot/togglelock(mob/user as mob)
 	if(!locked)

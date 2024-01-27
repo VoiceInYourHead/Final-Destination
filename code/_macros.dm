@@ -168,6 +168,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define SPAN_WARNING(X) "<span class='warning'>[X]</span>"
 
+#define SPAN_SUCCESS(X) SPAN_CLASS("success", "[X]")
+
 #define SPAN_GOOD(X) "<span class='good'>[X]</span>"
 
 #define SPAN_BAD(X) "<span class='bad'>[X]</span>"

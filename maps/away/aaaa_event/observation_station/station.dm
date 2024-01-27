@@ -6,6 +6,7 @@
 	desc = "This is orbital observation station."
 	icon_state = "junkyard"
 	known = 1
+	free_landing = FALSE
 
 	initial_generic_waypoints = list(
 		"obs_1"

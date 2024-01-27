@@ -13,7 +13,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/rubber
 
 /obj/item/ammo_magazine/speedloader/magnum
-	icon_state = "spdloader_magnum"
+	icon_state = "spdloader_small"
 	caliber = CALIBER_PISTOL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/pistol/magnum
 	matter = list(MATERIAL_STEEL = 1440)
@@ -24,7 +24,7 @@
 	ammo_type = /obj/item/ammo_casing/pistol/magnum/rubber
 
 /obj/item/ammo_magazine/speedloader/rifle
-	icon_state = "spdloader_magnum"
+	icon_state = "spdloader_small"
 	caliber = CALIBER_RIFLE_RUSSIA
 	ammo_type = /obj/item/ammo_casing/rifle/russia
 	matter = list(MATERIAL_STEEL = 1440)
@@ -83,12 +83,13 @@
 	max_ammo = 4
 	multiple_sprites = 1
 	var/marking_color
+	var/marking_icon = "shotholder-marking"
 
 /obj/item/ammo_magazine/shotholder/on_update_icon()
 	..()
 	overlays.Cut()
 	if(marking_color)
-		var/image/I = image(icon, "shotholder-marking")
+		var/image/I = image(icon, marking_icon)
 		I.color = marking_color
 		overlays += I
 
@@ -134,6 +135,41 @@
 	name = "shotgun ammunition holder"
 	matter = list(MATERIAL_STEEL = 250)
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/shotholder/large
+	name = "shotgun slug holder"
+	desc = "A convenient pouch that holds 12 gauge shells."
+	icon_state = "shotholder_big"
+	matter = list(MATERIAL_STEEL = 2800)
+	ammo_type = /obj/item/ammo_casing/shotgun
+	max_ammo = 10
+	marking_icon = "shotholder_big-marking"
+
+/obj/item/ammo_magazine/shotholder/large/shell
+	name = "shotgun shell holder"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	marking_color = COLOR_RED_GRAY
+
+/obj/item/ammo_magazine/shotholder/large/empty
+	name = "shotgun ammunition holder"
+	matter = list(MATERIAL_STEEL = 450)
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/box/shotgun
+	name = "shell box"
+	icon_state = "slbox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(MATERIAL_STEEL = 4950)
+	ammo_type = /obj/item/ammo_casing/shotgun
+	multiple_sprites = 1
+	max_ammo = 21
+	w_class = ITEM_SIZE_LARGE
+
+/obj/item/ammo_magazine/box/shotgun/shell
+	name = "shell box"
+	icon_state = "gbox"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
 /obj/item/ammo_magazine/machine_pistol
 	name = "stick magazine"
@@ -239,6 +275,15 @@
 /obj/item/ammo_magazine/magnum/empty
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/box/magnum
+	name = "ammunition box"
+	icon_state = "mbox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_PISTOL_MAGNUM
+	matter = list(MATERIAL_STEEL = 3250)
+	ammo_type = /obj/item/ammo_casing/pistol/magnum
+	max_ammo = 30
+
 /obj/item/ammo_magazine/box/smallpistol
 	name = "ammunition box"
 	icon_state = "smallpistol"
@@ -253,7 +298,7 @@
 	icon_state = "smallpistol"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_PISTOL
-	matter = list(MATERIAL_STEEL = 2250)
+	matter = list(MATERIAL_STEEL = 2550)
 	ammo_type = /obj/item/ammo_casing/pistol
 	max_ammo = 30
 
@@ -266,20 +311,22 @@
 	ammo_type = /obj/item/ammo_casing/pistol/throwback
 
 /obj/item/ammo_magazine/box/emp/pistol
-	name = "ammunition box"
+	name = "EMP ammunition box"
+	icon_state = "empbox"
 	desc = "A box containing loose rounds of standard EMP ammo."
 	labels = list("haywire")
 	ammo_type = /obj/item/ammo_casing/pistol/emp
 	caliber = CALIBER_PISTOL
-	max_ammo = 15
+	max_ammo = 30
 
 /obj/item/ammo_magazine/box/emp/smallpistol
-	name = "ammunition box"
+	name = "EMP ammunition box"
+	icon_state = "empbox"
 	desc = "A box containing loose rounds of small EMP ammo."
 	labels = list("haywire")
 	ammo_type = /obj/item/ammo_casing/pistol/small/emp
 	caliber = CALIBER_PISTOL_SMALL
-	max_ammo = 8
+	max_ammo = 35
 
 /obj/item/ammo_magazine/proto_smg
 	name = "submachine gun magazine"
@@ -367,6 +414,7 @@
 	max_ammo = 8
 	multiple_sprites = TRUE
 
+<<<<<<< HEAD
 // FD
 
 //  Rifles
@@ -488,3 +536,44 @@
 	ammo_type = /obj/item/ammo_casing/rifle/military/marksman
 	matter = list(MATERIAL_STEEL = 3550)
 	max_ammo = 15
+=======
+/obj/item/ammo_magazine/box/rifle
+	name = "ammunition crate"
+	desc = "ammunition crate for rifle caliber weapons."
+	icon_state = "rbox"
+	origin_tech = list(TECH_COMBAT = 2)
+	w_class = ITEM_SIZE_HUGE
+	caliber = CALIBER_RIFLE
+	matter = list(MATERIAL_STEEL = 10100)
+	slowdown_general = 0.2
+	ammo_type = /obj/item/ammo_casing/rifle
+	max_ammo = 240
+
+/obj/item/ammo_magazine/box/rifle/military
+	name = "7mmR rounds crate"
+	icon_state = "rbox_m"
+	caliber = CALIBER_RIFLE_MILITARY
+	ammo_type = /obj/item/ammo_casing/rifle/military
+
+/obj/item/ammo_magazine/box/rifle/military
+	name = "12.7 rounds crate"
+	icon_state = "rbox_r"
+	caliber = CALIBER_RIFLE_RUSSIA
+	ammo_type = /obj/item/ammo_casing/rifle/russia
+
+/obj/item/ammo_magazine/box/attack_self(mob/user)
+	if(!stored_ammo.len)
+		to_chat(user, "<span class='notice'>[src] is already empty!</span>")
+		return
+	if(alert("Do you really want to empty this container? All this amount of bullets will fall to the ground.",,"Im think, im not.","Yeah, let's fuck with it!") == "Im think, im not.")
+		return
+	if(stored_ammo.len > 30)
+		if(alert("I'll give you a second chance to think, are you SURE you want ALL [stored_ammo.len] these bullets on the floor?",,"I've changed my mind, I don't want to.","Let me put all these bullets on the floor already!") == "I've changed my mind, I don't want to.")
+			return
+	to_chat(user, "<span class='notice'>You empty [src].</span>")
+	for(var/obj/item/ammo_casing/C in stored_ammo)
+		C.forceMove(user.loc)
+		C.set_dir(pick(GLOB.alldirs))
+	stored_ammo.Cut()
+	update_icon()
+>>>>>>> upstream/main

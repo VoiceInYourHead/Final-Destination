@@ -11,7 +11,7 @@
 	habitability_distribution = list(HABITABILITY_IDEAL = 30, HABITABILITY_OKAY = 50, HABITABILITY_BAD = 10)
 	has_trees = TRUE
 	flora_diversity = 4
-	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/samak, /mob/living/simple_animal/hostile/smart_beast/diyaab/pack_spawn, /mob/living/simple_animal/hostile/smart_beast/shantak)
+	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/samak, /mob/living/simple_animal/hostile/smart_beast/shantak)
 	megafauna_types = list(/mob/living/simple_animal/hostile/retaliate/giant_crab)
 	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/samak, /mob/living/simple_animal/hostile/smart_beast/diyaab, /mob/living/simple_animal/hostile/smart_beast/shantak)
 
@@ -37,3 +37,4 @@
 /area/exoplanet/snow
 	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 	base_turf = /turf/unsimulated/floor/exoplanet/snow/
+	screen_filter = /obj/screenfilter/snow

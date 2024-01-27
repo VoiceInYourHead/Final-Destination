@@ -1,10 +1,10 @@
 /obj/effect/submap_landmark/joinable_submap/providence
-	name = "ITV Providence"
+	name = "IPV Providence"
 	archetype = /decl/submap_archetype/providence
 
 /decl/submap_archetype/providence
-	descriptor = "ITV Providence"
-	map = "ITV Providence"
+	descriptor = "IPV Providence"
+	map = "IPV Providence"
 	crew_jobs = list(
 		/datum/job/submap/providence/trucker
 	)

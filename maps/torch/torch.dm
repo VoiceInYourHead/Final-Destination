@@ -147,9 +147,10 @@
 	#include "z1_admin.dmm"
 	#include "z2_transit.dmm"
 
-	#include "300x300_placeholder.dmm"
+//	#include "300x300_placeholder.dmm"
 
 	#include "../away/empty.dmm"
+	#include "../away/small_away/small_away.dm"
 	#include "../away/shade/_mining.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
@@ -175,6 +176,7 @@
 	#include "../away/casino/casino.dm"
 	#include "../away/yacht/yacht.dm"
 	#include "../away/yacht2/yacht2.dm"
+	#include "../away/tradership/tradership.dm"
 	#include "../away/venera/venera.dm"
 	#include "../away/venera_a/venera_a.dm"
 	#include "../away/blueriver/blueriver.dm"
@@ -203,7 +205,9 @@
 	#include "../away/itv_providence/providence.dm"
 	#include "../away/drone_carrier/carrier.dm"
 	#include "../away/junk_planet/jplanet.dm"
+	#include "../away/undersea/code_stuff.dm"
 	#include "../away/ecoffice/ecoffice.dm"
+	#include "../away/snow_cage/snow_cage.dm"
 
 //alternative future stuff
 	#include "../away/airfield/airfield.dm"

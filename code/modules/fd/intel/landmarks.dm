@@ -13,7 +13,7 @@ obj/random/relic //Large objects to block things off in maintenance
 	desc = "This is a random relique spawn."
 	icon = 'icons/fd/overmap_eris.dmi'
 	icon_state = "relic"
-	spawn_nothing_percentage = 90
+	spawn_nothing_percentage = 80
 
 obj/random/relic/spawn_choices()
 	return list(/obj/item/fd/ancient_items/psionic,
@@ -32,5 +32,6 @@ obj/random/relic/spawn_choices()
 				/obj/item/fd/ancient_items/bio_implant/health,
 				/obj/item/fd/ancient_items/bio_implant/reflexes,
 				/obj/item/fd/ancient_items/bio_implant/accuracy,
-				/obj/item/fd/ancient_items/lighting_staff
+				/obj/item/fd/ancient_items/lighting_staff,
+				/obj/item/fd/ancient_items/eye_of_the_maw
 				)

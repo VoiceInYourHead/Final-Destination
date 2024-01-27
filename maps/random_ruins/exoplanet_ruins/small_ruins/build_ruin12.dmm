@@ -1,0 +1,60 @@
+"a" = (/turf/simulated/wall/sandstone,/area/template_noop)
+"q" = (/turf/template_noop,/area/template_noop)
+"t" = (/turf/simulated/floor/airless/stone{color = "#C2B49B"},/area/template_noop)
+"D" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{color = "#C2B49B"},/area/template_noop)
+"Q" = (/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"T" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless/stone{color = "#C2B49B"},/area/template_noop)
+"Z" = (/obj/structure/girder,/turf/simulated/floor/airless/stone{color = "#C2B49B"},/area/template_noop)
+
+(1,1,1) = {"
+qqTTTTTTTT
+qTTaaaaaaa
+TTaaZZZaaq
+Taaaaaaaaa
+TaZaTTTTTT
+TaZaTqqqqq
+TaZaTqqqqq
+TaaaTqqqqq
+TaaaTqqqqq
+TaaaTqqqqq
+TaZaTqqqqq
+TaZaTqqqqq
+TaZaTqqqqq
+TaaaTTqqqq
+TTaaaTqqqq
+qTaaaTqqqq
+qTaZaTqqqq
+qTaZaTqqqq
+qTaZaTqqqq
+qTaaaTqqqq
+qTaaaTTqqq
+qTTaaaTqqq
+qqTaaaTqqq
+qqTaZaTqqq
+qqTaZaTqqq
+qqTaZaTqqq
+qqTaZaTqqq
+qqTaaaTqqq
+qqTaaaTTqq
+qqTTaaaTqq
+qqqDaaaDqq
+qqqTaZaDqq
+qqqTaZaDqq
+qqqTaZaDqq
+qqqTaaaTqq
+qqqTaaaTtq
+qqqtTaaaTq
+qqqqTaZaTq
+qqqqTaZaTq
+qqqqTaZaTq
+qqqqTaaaTt
+qqqqtTaaaT
+qqqqqTaaaT
+qqqqqTaZaT
+qqqqqTaZaT
+qqqqqTaZaT
+qqqqqTaaaT
+qqqqqTaaaT
+qqqqqTaaaT
+qqqqqTaQaT
+"}

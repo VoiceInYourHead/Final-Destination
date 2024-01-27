@@ -1,6 +1,6 @@
 /obj/effect/overmap/visitable/ship/torch
 	name = "SEV Torch"
-	desc = "A frankensteined HNS Mako-class corvette, broadcasting SCGEC codes and the designation \"SEV Torch, HSC-4-13-X\"."
+	desc = "This is a frigate, broadcasting SCGEC codes and the designation \"SEV Torch, HSC-4-13-X\"."
 	fore_dir = WEST
 	dir = WEST
 	vessel_mass = 100000

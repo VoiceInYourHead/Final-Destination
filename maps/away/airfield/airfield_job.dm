@@ -4,7 +4,7 @@
 /*	 	Command		 */
 
 /datum/job/submap/airfield/command/instructor
-	title = "Senior Enlisted Advisor"
+	title = "Instructor"
 	info = "You are Senior Enlisted Advisor. You assigned to teach new officers in academy as a Flight Instructor."
 	supervisors = "Fleet Command, Senior Officers, Senior Enlisted Advisor"
 	outfit_type = /decl/hierarchy/outfit/job/airfield/command/instructor
@@ -150,7 +150,7 @@
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /obj/effect/submap_landmark/spawnpoint/airfield/instructor
-	name = "Senior Enlisted Advisor"
+	name = "Instructor"
 
 /obj/effect/submap_landmark/spawnpoint/airfield/assistant
 	name = "Assistant of Instructor"

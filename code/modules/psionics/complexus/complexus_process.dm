@@ -66,14 +66,10 @@
 					aura_color = "#cc3333"
 				else if(highest_faculty == PSI_MANIFESTATION)
 					aura_color = "#cc8221"
-				else if(highest_faculty == PSI_ARCHERY)
-					aura_color = "#33cc7a"
 				else if(highest_faculty == PSI_CRYOKINESIS)
 					aura_color = "#33ccc9"
 				else if(highest_faculty == PSI_ELECTRONICS)
 					aura_color = "#cccc33"
-				else if(highest_faculty == PSI_ELECTROMAGNETICS)
-					aura_color = "#334acc"
 			aura_image.pixel_x = -64 - owner.default_pixel_x
 			aura_image.pixel_y = -64 - owner.default_pixel_y
 
@@ -110,7 +106,7 @@
 		if(psi_leech)
 			if(stamina > 10)
 				stamina = max(0, stamina - rand(15,20))
-				to_chat(owner, SPAN_DANGER("You feel your psi-power leeched away by \the [psi_leech]..."))
+				//to_chat(owner, SPAN_DANGER("You feel your psi-power leeched away by \the [psi_leech]..."))
 			else
 				stamina++
 		else if(stamina < max_stamina)

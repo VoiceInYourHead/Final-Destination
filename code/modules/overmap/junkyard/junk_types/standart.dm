@@ -6,7 +6,7 @@
 	possible_themes = list(/datum/junkyard_theme/robotic_guardians)
 	map_generators = list(/datum/random_map/noise/junkyard/standart)
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER|RUIN_RAINWORLD
-	features_budget = 20
+	features_budget = 30
 
 /*/obj/effect/overmap/visitable/sector/junkyard/standart/handle_repopulation()
 	return*/

@@ -26,3 +26,10 @@
 	req_tech = list(TECH_MATERIAL = 7, TECH_POWER = 8, TECH_ENGINEERING = 6)
 	build_path = /obj/item/stock_parts/smes_coil/super_io
 	sort_string = "VAXAC"
+
+/datum/design/item/smes_coil/advanced
+	name = "advanced"
+	id = "smes_coil_advanced"
+	req_tech = list(TECH_MATERIAL = 7, TECH_POWER = 8, TECH_ENGINEERING = 7)
+	build_path = /obj/item/stock_parts/smes_coil/advanced
+	sort_string = "VAXAD"

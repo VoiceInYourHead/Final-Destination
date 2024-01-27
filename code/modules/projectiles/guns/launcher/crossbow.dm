@@ -154,6 +154,11 @@
 			user.visible_message("[user] slides [bolt] into [src].","You slide [bolt] into [src].")
 			update_icon()
 			return
+		if (istype(W,/obj/item/psyarrow) && user.unEquip(W, src))
+			bolt = W
+			user.visible_message("[user] slides [bolt] into [src].","You slide [bolt] into [src].")
+			update_icon()
+			return
 		else if(istype(W,/obj/item/stack/material/rods))
 			var/obj/item/stack/material/rods/R = W
 			if (R.use(1))

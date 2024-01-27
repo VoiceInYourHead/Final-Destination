@@ -13,6 +13,8 @@
 	gender = pick(MALE, FEMALE)
 
 /obj/structure/skele_stand/proc/rattle_bones(mob/user, atom/thingy)
+	var/mob/living/carbon/psionic
+
 	if((world.time - cooldown) <= 1 SECOND)
 		return //reduces spam.
 	if(user)
@@ -21,6 +23,9 @@
 		visible_message("\The [src] rattles on \his stand upon hitting [thingy?"\the [thingy]":"something"].")
 	cooldown = world.time
 	playsound(loc, 'sound/effects/bonerattle.ogg', 40)
+	for(psionic in view(5, src))
+		if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+			psionic.psi.spend_power(rand(5,10))
 
 /obj/structure/skele_stand/attack_hand(mob/user)
 	if(swag.len)

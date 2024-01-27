@@ -9,6 +9,9 @@
 	var/area_flags
 	mouse_opacity = 2
 
+	///Filters you can apply to the players screen when they enter a new area
+	var/screen_filter = /obj/screenfilter
+
 /area/New()
 	icon_state = ""
 	uid = ++global_uid
@@ -236,6 +239,11 @@ var/list/mob/living/forced_ambiance_list = new
 
 	play_ambience(L)
 	L.lastarea = newarea
+	for(var/obj/screenfilter/F in L.client?.screen)
+		if(F!=newarea.screen_filter)
+			F.Fade()
+	if(!(newarea.screen_filter in L.client?.screen))
+		L.client?.screen += new newarea.screen_filter
 
 /area/proc/play_ambience(var/mob/living/L)
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch

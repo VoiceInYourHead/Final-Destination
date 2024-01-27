@@ -9,7 +9,7 @@
 	force = 10
 	one_hand_penalty = 2
 	bulk = GUN_BULK_RIFLE
-	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 3)
 	matter = list(MATERIAL_STEEL = 2000)
 	projectile_type = /obj/item/projectile/beam/midlaser
 	wielded_item_state = "laser-wielded"
@@ -135,7 +135,7 @@
 	icon = 'icons/obj/guns/laser_sniper.dmi'
 	icon_state = "sniper"
 	item_state = "laser"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 4)
+	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 5, TECH_POWER = 4)
 	projectile_type = /obj/item/projectile/beam/sniper
 	one_hand_penalty = 5 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
 	slot_flags = SLOT_BACK

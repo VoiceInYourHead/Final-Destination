@@ -30,6 +30,8 @@
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
+						SKILL_COMBAT      = SKILL_EXPERIENCED,
+						SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 24
@@ -93,6 +95,8 @@
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
+						SKILL_COMBAT      = SKILL_EXPERIENCED,
+						SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 20
@@ -197,6 +201,8 @@
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
 		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/army/e4,
+		/datum/mil_rank/army/e5,
 		/datum/mil_rank/civ/contractor
 	)
 	min_skill = list(   SKILL_COMPUTER		= SKILL_TRAINED,

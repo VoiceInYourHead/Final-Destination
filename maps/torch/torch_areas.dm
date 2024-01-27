@@ -903,6 +903,11 @@
 	icon_state = "toxstorage"
 	req_access = list(list(access_hangar, access_cargo))
 
+/area/quartermaster/garage
+	name = "\improper 'Triceratops' Garage"
+	icon_state = "toxstorage"
+	req_access = list(list(access_hangar, access_cargo))
+
 /area/quartermaster/hangar
 	name = "\improper Hangar Deck"
 	icon_state = "hangar"

@@ -23,8 +23,8 @@ Civilian
 
 /datum/job/assistant
 	title = "Passenger"
-	total_positions = 12
-	spawn_positions = 12
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "the Executive Officer"
 	economic_power = 6
 	announced = FALSE
@@ -39,15 +39,41 @@ Civilian
 		"Entertainer",
 		"Independent Observer",
 		"Sociologist",
-		"Trainer")
+		"Trainer",
+		"Off-Duty")
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
+		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/contractor
 	)
 	min_goals = 2
 	max_goals = 7
+
+	max_skill = list(
+		SKILL_BUREAUCRACY = SKILL_MAX,
+		SKILL_FINANCE = SKILL_MAX,
+		SKILL_EVA = SKILL_MAX,
+		SKILL_PILOT = SKILL_MAX,
+		SKILL_HAULING = SKILL_MAX,
+		SKILL_COMPUTER = SKILL_MAX,
+		SKILL_BOTANY = SKILL_MAX,
+		SKILL_COOKING = SKILL_MAX,
+		SKILL_COMBAT = SKILL_MAX,
+		SKILL_WEAPONS = SKILL_MAX,
+		SKILL_FORENSICS = SKILL_MAX,
+		SKILL_CONSTRUCTION = SKILL_MAX,
+		SKILL_ELECTRICAL = SKILL_MAX,
+		SKILL_ATMOS = SKILL_MAX,
+		SKILL_ENGINES = SKILL_MAX,
+		SKILL_DEVICES = SKILL_MAX,
+		SKILL_SCIENCE = SKILL_MAX,
+		SKILL_MEDICAL = SKILL_MAX,
+		SKILL_ANATOMY = SKILL_MAX,
+		SKILL_CHEMISTRY = SKILL_MAX
+	)
+	skill_points = 10
 
 /datum/job/merchant
 	title = "Merchant"

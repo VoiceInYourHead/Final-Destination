@@ -82,7 +82,7 @@
 	if(get_damage_resistance(DAMAGE_EXPLODE) == 0)
 		return 1000000
 	if(density)
-		return health_current / get_damage_resistance(DAMAGE_EXPLODE)
+		return health / get_damage_resistance(DAMAGE_EXPLODE)
 	else
 		return 20
 
@@ -96,3 +96,7 @@
 	if(get_damage_resistance(DAMAGE_EXPLODE) == 0)
 		return 1000000
 	return health_current / get_damage_resistance(DAMAGE_EXPLODE)
+
+/obj/machinery/door/blast/get_explosion_resistance()
+	if(density)
+		return health / get_damage_resistance(DAMAGE_EXPLODE)

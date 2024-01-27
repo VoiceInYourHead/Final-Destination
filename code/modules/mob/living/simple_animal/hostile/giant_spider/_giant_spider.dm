@@ -72,6 +72,7 @@
 /mob/living/simple_animal/hostile/giant_spider/Initialize(mapload, atom/parent)
 	get_light_and_color(parent)
 	spider_randomify()
+	scale(rand(0.7, 1))
 	update_icon()
 	. = ..()
 

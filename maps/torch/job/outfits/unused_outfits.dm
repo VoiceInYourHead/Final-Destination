@@ -46,7 +46,7 @@
 	name = OUTFIT_JOB_NAME("SCGA Dress - Officer")
 	uniform = /obj/item/clothing/under/solgov/mildress/army/command
 	head = /obj/item/clothing/head/solgov/dress/army/command
-	suit = /obj/item/clothing/suit/dress/solgov/army/command
+	suit = /obj/item/clothing/suit/storage/dress/solgov/army/command
 
 /decl/hierarchy/outfit/job/torch/armydress/officer/skirt
 	name = OUTFIT_JOB_NAME("SCGA Dress - Officer Skirt")

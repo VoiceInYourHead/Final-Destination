@@ -2,6 +2,7 @@
 	sort_category = "Augments"
 	category = /datum/gear/augment
 	cost = 1 //proxima. was: cost = 2
+	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 
 /datum/gear/augment/armor_minor
@@ -78,4 +79,31 @@
 	options["integrated security HUD"] = /obj/item/organ/internal/augment/active/hud/security
 	options["integrated filth HUD"] = /obj/item/organ/internal/augment/active/hud/janitor
 	options["integrated sciHUD"] = /obj/item/organ/internal/augment/active/hud/science
+	gear_tweaks += new /datum/gear_tweak/path (options)
+
+/datum/gear/augment/r_arm_major
+	display_name = "Right Arm Augments (Major)"
+	description = "Arm augments, which have massive effect on the game."
+	path = /obj/item/organ/internal/augment
+	cost = 5
+
+/datum/gear/augment/r_arm_major/New()
+	..()
+	var/list/options = list()
+	options["engineering toolset"] = /obj/item/organ/internal/augment/active/polytool/engineer
+	options["surgical toolset"] = /obj/item/organ/internal/augment/active/polytool/surgical
+	gear_tweaks += new /datum/gear_tweak/path (options)
+
+/datum/gear/augment/boosts
+	display_name = "Bionic Enhancers (Major)"
+	description = "Body augments, which have massive effect on the game."
+	path = /obj/item/organ/internal/augment
+	cost = 5
+
+/datum/gear/augment/boosts/New()
+	..()
+	var/list/options = list()
+	options["mechanical muscles"] = /obj/item/organ/internal/augment/boost/muscle
+	options["synapse interceptor"] = /obj/item/organ/internal/augment/boost/reflex
+	options["accuracy corrector"] = /obj/item/organ/internal/augment/boost/shooting
 	gear_tweaks += new /datum/gear_tweak/path (options)

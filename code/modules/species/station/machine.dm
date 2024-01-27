@@ -30,10 +30,10 @@
 	heat_level_3 = SYNTH_HEAT_LEVEL_3
 
 	body_temperature = null
-	passive_temp_gain = 5  // This should cause IPCs to stabilize at ~80 C in a 20 C environment.
+	passive_temp_gain = 0  // This should cause IPCs to stabilize at ~80 C in a 20 C environment.(5)
 
 	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON
-	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION
+	spawn_flags = SPECIES_CAN_JOIN | SPECIES_NO_FBP_CONSTRUCTION
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR //IPCs can wear undies too :(
 
 	blood_color = "#1f181f"
@@ -41,7 +41,8 @@
 
 	has_organ = list(
 		BP_POSIBRAIN = /obj/item/organ/internal/posibrain,
-		BP_EYES = /obj/item/organ/internal/eyes/robot
+		BP_EYES = /obj/item/organ/internal/eyes/robot,
+		BP_COOLING = /obj/item/organ/internal/cooling_system
 		)
 
 	heat_discomfort_level = 373.15

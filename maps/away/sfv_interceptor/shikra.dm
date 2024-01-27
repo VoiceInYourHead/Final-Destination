@@ -18,6 +18,7 @@
 	hide_from_reports = TRUE
 	sector_flags = OVERMAP_SECTOR_IN_SPACE | OVERMAP_SECTOR_UNTARGETABLE
 	known = 0
+	free_landing = FALSE
 
 /decl/submap_archetype/shikra
 	descriptor = "PM-55 Shikra Interceptor"
@@ -47,7 +48,7 @@
 /obj/effect/overmap/visitable/ship/landable/shikra
 	name = "PM-55 Shikra Interceptor"
 	shuttle = "PM-55 Shikra Interceptor"
-	desc = "Wake signature indicates a small armed vessel."
+	desc = "Wake signature indicates a small armed vessel, broadcasting registration codes \"SCGFV-3471-S-463\"."
 	fore_dir = NORTH
 	color = "#0751f3"
 	alpha = 30

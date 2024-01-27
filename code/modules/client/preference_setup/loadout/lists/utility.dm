@@ -33,6 +33,16 @@
 	display_name = "personal AI device"
 	path = /obj/item/device/paicard
 
+/datum/gear/utility/custom_player
+	display_name = "custom cassete player"
+	path = /obj/item/music_player/csplayer
+	cost = 2
+
+/datum/gear/utility/custom_cassete
+	display_name = "custom music cassete"
+	path = /obj/item/music_tape/custom
+	cost = 2
+
 /datum/gear/utility/camera
 	display_name = "camera"
 	path = /obj/item/device/camera

@@ -133,9 +133,52 @@
 
 /obj/item/clothing/suit/storage/solgov/service/army/command
 	name = "officer green army coat"
-	desc = "An olive green coat, part of SCG Army 'Greens' service uniform, complete with a touch of gold and optional garnish. Most would say it looks way too ancient."
+	desc = "An olive green coat, part of SCG Army 'Greens' service uniform, complete with a touch of gold. Most would say it looks way too ancient."
 	icon_state = "greenservice_com"
 	item_state = "greenservice_com"
+
+//Fleet Service Sweater
+
+/obj/item/clothing/suit/solgov/fleet_sweater
+	name = "fleet service sweater"
+	desc = "A navy blue SCG Fleet service sweater."
+	icon = 'maps/torch/icons/obj/obj_suit_solgov.dmi'
+	item_icons = list(slot_wear_suit_str = 'maps/torch/icons/mob/onmob_suit_solgov.dmi')
+	icon_state = "fleet_sweater"
+	item_state = "fleet_sweater"
+	body_parts_covered = UPPER_TORSO|ARMS
+	allowed = null
+	valid_accessory_slots = list(
+		ACCESSORY_SLOT_ARMBAND,
+		ACCESSORY_SLOT_MEDAL,
+		ACCESSORY_SLOT_INSIGNIA,
+		ACCESSORY_SLOT_RANK,
+		ACCESSORY_SLOT_DEPT,
+		ACCESSORY_SLOT_DECOR
+	)
+	restricted_accessory_slots = list(
+		ACCESSORY_SLOT_ARMBAND,
+		ACCESSORY_SLOT_RANK,
+		ACCESSORY_SLOT_DEPT
+	)
+
+/obj/item/clothing/suit/solgov/fleet_sweater/officer
+	name = "fleet officer's service sweater"
+	desc = "A navy blue SCG Fleet service sweater with silver accents."
+	icon_state = "fleet_sweater_off"
+	item_state = "fleet_sweater_off"
+
+/obj/item/clothing/suit/solgov/fleet_sweater/command
+	name = "fleet senior officer's service sweater"
+	desc = "A navy blue SCG Fleet service sweater with gold accents."
+	icon_state = "fleet_sweater_comm"
+	item_state = "fleet_sweater_comm"
+
+/obj/item/clothing/suit/solgov/fleet_sweater/flag
+	name = "fleet flag officer's service sweater"
+	desc = "A navy blue SCG Fleet serivce sweater with red accents."
+	icon_state = "fleet_sweater_flag"
+	item_state = "fleet_sweater_flag"
 
 //Dress - murder me with a gun why are these 3 different types
 
@@ -246,13 +289,13 @@
 	icon_state = "sailordress"
 	item_state = "sailordress"
 
-/obj/item/clothing/suit/dress/solgov/army
+/obj/item/clothing/suit/storage/dress/solgov/army
 	name = "army dress jacket"
 	desc = "A tailored black SCG Army dress jacket with red trim and a fancy stark-white belt. Pretty sharp at the collar."
 	icon_state = "blackdress"
 	item_state = "blackdress"
 
-/obj/item/clothing/suit/dress/solgov/army/command
+/obj/item/clothing/suit/storage/dress/solgov/army/command
 	name = "army officer's dress jacket"
 	desc = "A tailored black SCG Army dress jacket with red trim, golden cuffs and ceremonial aiguilettes. Smells like a parade."
 	icon_state = "blackdress_com"

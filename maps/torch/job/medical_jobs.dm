@@ -34,6 +34,8 @@
 						SKILL_DEVICES     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+						SKILL_COMBAT      = SKILL_EXPERIENCED,
+						SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 20
@@ -129,6 +131,8 @@
 	                    SKILL_ANATOMY = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+						SKILL_COMBAT      = SKILL_EXPERIENCED,
+						SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
 	access = list(
@@ -277,12 +281,12 @@
 	)
 	give_psionic_implant_on_join = FALSE
 
-/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
+/*/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
 	if(H.mind?.role_alt_title == "Psionic Counselor")
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_APPRENTICE)
 	if(H.mind?.role_alt_title == "Mentalist")
 		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_APPRENTICE)
-	return ..()
+	return ..()*/
 
 
 /datum/job/psychiatrist/get_description_blurb()

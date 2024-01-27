@@ -1,7 +1,7 @@
 /decl/psionic_faculty/consciousness
 	id = PSI_CONSCIOUSNESS
 	name = "Consciousness"
-	associated_intent = I_DISARM
+	associated_intent = I_HELP
 	armour_types = list(PSIONIC, "melee")
 
 /decl/psionic_power/consciousness
@@ -21,9 +21,10 @@
 	cost =            2
 	cooldown =        50
 	use_ranged =       TRUE
+	use_melee = TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Target the mouth on disarm intent at any range to attempt to connect with victim's mind."
+	use_description = "Target the mouth on help intent at any range to attempt to connect with victim's mind."
 
 /decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH)
@@ -66,9 +67,10 @@
 	cost =            6
 	cooldown =        80
 	use_ranged =       TRUE
+	use_melee = TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Target the head on disarm intent at any range to attempt to read a victim's surface thoughts."
+	use_description = "Target the head on help intent at any range to attempt to read a victim's surface thoughts."
 
 /decl/psionic_power/consciousness/mindread/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD)
@@ -142,14 +144,14 @@
 	use_grab =     TRUE
 	min_rank =      PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Grab a patient, target the mouth, then use the grab on them while on disarm intent, in order to cure ailments of the mind."
+	use_description = "Grab a patient, target the mouth, then use the grab on them while on help intent, in order to cure ailments of the mind."
 
 /decl/psionic_power/consciousness/focus/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message(SPAN_WARNING("\The [user] holds the head of \the [target] in both hands..."))
+		user.visible_message(SPAN_WARNING("\The [user] kisses \the [target]..."))
 		to_chat(user, SPAN_NOTICE("You probe \the [target]'s mind for various ailments.."))
 		to_chat(target, SPAN_WARNING("Your mind is being cleansed of ailments by \the [user]."))
 		if(!do_after(user, (target.stat == CONSCIOUS ? 50 : 25), target))
@@ -165,6 +167,7 @@
 		if(istype(target, /mob/living/carbon))
 			var/mob/living/carbon/M = target
 			M.adjust_hallucination(-30)
+			M.adjustBrainLoss(-rand(20,35))
 		return TRUE
 
 /decl/psionic_power/consciousness/assay
@@ -174,7 +177,7 @@
 	use_grab =        TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Grab a patient, target the head, then use the grab on them while on disarm intent, in order to perform a deep coercive-redactive probe of their psionic potential."
+	use_description = "Grab a patient, target the head, then use the grab on them while on help intent, in order to perform a deep coercive-redactive probe of their psionic potential."
 
 /decl/psionic_power/consciousness/assay/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_HEAD)
@@ -190,38 +193,4 @@
 		to_chat(user, SPAN_NOTICE("You retreat from \the [target], holding your new knowledge close."))
 		to_chat(target, SPAN_DANGER("Your mental complexus is laid bare to judgement of \the [user]."))
 		target.show_psi_assay(user)
-		return TRUE
-
-/decl/psionic_power/consciousness/mindslave
-	name =          "Mindslave"
-	cost =          28
-	cooldown =      200
-	use_grab =      TRUE
-	min_rank =      PSI_RANK_GRANDMASTER
-	suppress_parent_proc = TRUE
-	use_description = "Grab a victim, target the eyes, then use the grab on them while on disarm intent, in order to convert them into a loyal mind-slave. The process takes some time, and failure is punished harshly."
-
-/decl/psionic_power/consciousness/mindslave/invoke(var/mob/living/user, var/mob/living/target)
-	if(!istype(target) || user.zone_sel.selecting != BP_EYES)
-		return FALSE
-	. = ..()
-	if(.)
-		if(target.stat == DEAD || (target.status_flags & FAKEDEATH))
-			to_chat(user, "<span class='warning'>\The [target] is dead!</span>")
-			return FALSE
-		if(!target.mind || !target.key)
-			to_chat(user, "<span class='warning'>\The [target] is mindless!</span>")
-			return FALSE
-		if(GLOB.thralls.is_antagonist(target.mind))
-			to_chat(user, "<span class='warning'>\The [target] is already in thrall to someone!</span>")
-			return FALSE
-		user.visible_message("<span class='danger'><i>\The [user] seizes the head of \the [target] in both hands...</i></span>")
-		to_chat(user, "<span class='warning'>You plunge your mentality into that of \the [target]...</span>")
-		to_chat(target, "<span class='danger'>Your mind is invaded by the presence of \the [user]! They are trying to make you a slave!</span>")
-		if(!do_after(user, target.stat == CONSCIOUS ? 80 : 40, target))
-			user.psi.backblast(rand(10,25))
-			return TRUE
-		to_chat(user, "<span class='danger'>You sear through \the [target]'s neurons, reshaping as you see fit and leaving them subservient to your will!</span>")
-		to_chat(target, "<span class='danger'>Your defenses have eroded away and \the [user] has made you their mindslave.</span>")
-		GLOB.thralls.add_antagonist(target.mind, new_controller = user)
 		return TRUE

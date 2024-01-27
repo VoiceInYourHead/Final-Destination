@@ -29,9 +29,14 @@
 	var/audio_files = list("sound/items/bikehorn.ogg")
 
 /obj/item/bikehorn/attack_self(mob/user as mob)
+	var/mob/living/carbon/psionic
+
 	if (spam_flag == 0)
 		spam_flag = 1
 		playsound(src.loc, pick(src.audio_files), 50, 1)
+		for(psionic in view(7, null))
+			if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+				psionic.psi.spend_power(rand(6,10))
 		src.add_fingerprint(user)
 		spawn(20)
 			spam_flag = 0
@@ -43,3 +48,17 @@
 	icon_state = "air_horn"
 	item_state = "air_horn"
 	audio_files = list("sound/items/air_horn_1.ogg", "sound/items/air_horn_2.ogg")
+
+/obj/item/bikehorn/airhorn/attack_self(mob/user as mob)
+	var/mob/living/carbon/psionic
+
+	if (spam_flag == 0)
+		spam_flag = 1
+		playsound(src.loc, pick(src.audio_files), 50, 1)
+		for(psionic in view(7, null))
+			if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
+				psionic.psi.spend_power(rand(15,25))
+		src.add_fingerprint(user)
+		spawn(20)
+			spam_flag = 0
+	return

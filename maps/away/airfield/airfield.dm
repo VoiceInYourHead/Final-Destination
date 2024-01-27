@@ -21,6 +21,7 @@
 	desc = "Sensor array detects a large planet, named Rubicon 3, with big amount of various infrastructure on it."
 	vessel_mass = 100000
 	integrity_failure_cap = 9999
+	free_landing = FALSE
 	icon_state = "globe"
 	color = "#6db8b8"
 	fore_dir = NORTH

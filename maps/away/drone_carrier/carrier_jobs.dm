@@ -305,6 +305,19 @@
 /obj/effect/submap_landmark/spawnpoint/carrier_cyborg
 	name = "Salvage Drone"
 
+//ID'S
+
+/var/const/access_bigsbyarmory = "ACCESS_BIGSBY_ARMORY"
+/datum/access/bigsbyarmory
+	id = access_bigsbyarmory
+	desc = "Weapons Access"
+	region = ACCESS_REGION_NONE
+
+/obj/item/card/id/bigsby_captain
+	access = list(access_bigsbyarmory)
+
+/obj/item/card/id/bigsby
+
 // OUTFITS
 
 /decl/hierarchy/outfit/job/carrier
@@ -318,7 +331,7 @@
 	gloves = /obj/item/clothing/gloves/thick
 	hierarchy_type = /decl/hierarchy/outfit/job/carrier
 	belt = /obj/item/storage/belt/utility/full
-	id_types = null
+	id_types = list(/obj/item/card/id/bigsby)
 	pda_type = null
 
 /decl/hierarchy/outfit/job/carrier/crewman
@@ -365,6 +378,7 @@
 	r_pocket = /obj/item/device/radio/map_preset/carrier
 	l_pocket = /obj/item/crowbar/prybar
 	shoes = /obj/item/clothing/shoes/jackboots
+	id_types = list(/obj/item/card/id/bigsby_captain)
 	belt = null
 
 /decl/hierarchy/outfit/job/carrier/doctor

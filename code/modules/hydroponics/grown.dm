@@ -50,7 +50,7 @@
 	// Fill the object up with the appropriate reagents.
 	for(var/rid in seed.chems)
 		var/list/reagent_data = seed.chems[rid]
-		if(reagent_data && reagent_data.len)
+		if(islist(reagent_data) && reagent_data.len)
 			var/rtotal = reagent_data[1]
 			var/list/data = list()
 			if(reagent_data.len > 1 && potency > 0)

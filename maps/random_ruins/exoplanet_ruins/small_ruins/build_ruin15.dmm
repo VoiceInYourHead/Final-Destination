@@ -1,0 +1,111 @@
+"af" = (/obj/structure/cryofeed{dir = 4},/obj/machinery/light{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"ah" = (/obj/effect/decal/cleanable/dirt,/obj/item/cautery,/turf/template_noop,/area/template_noop)
+"aG" = (/obj/structure/mob_spawner{thing_to_spawn = /obj/effect/spider/spiderling/growing; detect_range = 2},/turf/template_noop,/area/template_noop)
+"cq" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/machinery/constructable_frame/machine_frame/deconstruct,/turf/simulated/floor/plating,/area/template_noop)
+"cS" = (/obj/machinery/light{dir = 8},/obj/item/stack/material/uranium/ten,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"df" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/steel,/turf/template_noop,/area/template_noop)
+"ds" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/steel,/turf/template_noop,/area/template_noop)
+"dw" = (/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/effect/decal/cleanable/dirt,/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"dV" = (/obj/structure/cryofeed,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"em" = (/obj/structure/door_assembly/door_assembly_ext,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"eD" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"fn" = (/obj/machinery/constructable_frame/computerframe/deconstruct,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"gZ" = (/obj/effect/decal/cleanable/dirt,/obj/item/cell/crap/empty,/turf/simulated/floor/plating,/area/template_noop)
+"hS" = (/obj/effect/paint/sun,/turf/simulated/wall,/area/template_noop)
+"hT" = (/obj/structure/foamedmetal,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"ic" = (/obj/effect/spider/spiderling/growing,/obj/effect/spider/spiderling{pixel_y = 13},/obj/structure/mob_spawner{thing_to_spawn = /obj/effect/spider/spiderling/growing; detect_range = 2},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"ir" = (/obj/structure/broken_cryo{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"jx" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/template_noop)
+"jE" = (/obj/item/stack/material/rods,/turf/template_noop,/area/template_noop)
+"jG" = (/obj/structure/cryofeed{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"jI" = (/obj/effect/decal/cleanable/dirt,/obj/structure/broken_cryo,/turf/simulated/floor/plating,/area/template_noop)
+"jV" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/steel,/turf/simulated/floor/plating,/area/template_noop)
+"jX" = (/obj/random/loot{name = "random loot 50%"; spawn_nothing_percentage = 50},/turf/template_noop,/area/template_noop)
+"kh" = (/obj/effect/decal/cleanable/dirt,/obj/item/board,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"ky" = (/obj/item/stack/material/tritium,/turf/template_noop,/area/template_noop)
+"kF" = (/obj/effect/paint/red/dark,/turf/simulated/wall,/area/template_noop)
+"lz" = (/obj/structure/cryofeed,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"mc" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"mn" = (/obj/effect/decal/cleanable/dirt,/obj/random/loot{name = "random loot 50%"; spawn_nothing_percentage = 50},/turf/template_noop,/area/template_noop)
+"ms" = (/obj/effect/decal/cleanable/dirt,/obj/random/loot,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"mE" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/template_noop)
+"mL" = (/obj/item/stack/material/steel,/turf/template_noop,/area/template_noop)
+"mM" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/turf/template_noop,/area/template_noop)
+"ni" = (/turf/template_noop,/area/template_noop)
+"nQ" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"pd" = (/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/steel,/turf/template_noop,/area/template_noop)
+"pW" = (/obj/machinery/constructable_frame/computerframe{dir = 4},/turf/simulated/floor/plating,/area/template_noop)
+"qf" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"rY" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/uranium,/turf/template_noop,/area/template_noop)
+"tv" = (/obj/item/stack/material/rods,/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"tA" = (/obj/effect/decal/cleanable/dirt,/obj/item/caution/cone{pixel_x = -13},/turf/simulated/floor/plating,/area/template_noop)
+"tP" = (/turf/simulated/floor/plating,/area/template_noop)
+"tS" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"ub" = (/obj/effect/catwalk_plated/dark,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"un" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/rods,/turf/template_noop,/area/template_noop)
+"uH" = (/obj/structure/door_assembly/door_assembly_ext,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"uL" = (/obj/effect/landmark/scorcher,/turf/template_noop,/area/template_noop)
+"uU" = (/obj/effect/paint/black,/turf/simulated/wall,/area/template_noop)
+"vk" = (/obj/structure/fireaxecabinet{pixel_y = -32},/obj/structure/foamedmetal,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"xD" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"xS" = (/obj/structure/cryofeed,/obj/machinery/light{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"yx" = (/obj/effect/landmark/scorcher,/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"zf" = (/obj/effect/decal/cleanable/dirt,/obj/item/bedsheet,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"zg" = (/obj/machinery/constructable_frame/machine_frame/deconstruct,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"zr" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"BB" = (/obj/effect/landmark/scorcher,/turf/simulated/floor/plating,/area/template_noop)
+"CH" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"CQ" = (/obj/effect/decal/cleanable/dirt,/obj/item/airlock_electronics,/turf/template_noop,/area/template_noop)
+"DR" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/obj/item/airalarm_electronics,/turf/simulated/floor/plating,/area/template_noop)
+"FM" = (/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"HD" = (/obj/machinery/space_heater,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Ij" = (/obj/structure/foamedmetal,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"IB" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"Ko" = (/obj/item/cell/device/high,/turf/template_noop,/area/template_noop)
+"Ma" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"Mn" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/obj/random/loot{name = "random loot 50%"; spawn_nothing_percentage = 50},/turf/simulated/floor/plating,/area/template_noop)
+"Na" = (/obj/effect/paint/red,/turf/simulated/wall,/area/template_noop)
+"Nf" = (/obj/machinery/light{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/template_noop)
+"Nj" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"Ny" = (/obj/effect/catwalk_plated/dark,/obj/effect/decal/cleanable/dirt,/obj/effect/spider/spiderling/growing,/obj/effect/spider/spiderling{pixel_y = 13},/turf/simulated/floor/plating,/area/template_noop)
+"NA" = (/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"Oj" = (/obj/structure/window/reinforced,/turf/simulated/floor/plating,/area/template_noop)
+"Or" = (/obj/structure/broken_cryo{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"OV" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"PA" = (/obj/effect/catwalk_plated/dark,/obj/structure/foamedmetal,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
+"PH" = (/obj/machinery/door/airlock/external,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"PZ" = (/obj/item/stack/material/uranium,/turf/template_noop,/area/template_noop)
+"Qa" = (/obj/item/stack/material/uranium/ten,/turf/template_noop,/area/template_noop)
+"QS" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/turf/template_noop,/area/template_noop)
+"QY" = (/obj/machinery/door/airlock/external/bolted,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Ro" = (/obj/machinery/light_construct,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/reinforced,/area/template_noop)
+"RO" = (/obj/effect/landmark/scorcher,/obj/item/airlock_electronics,/turf/template_noop,/area/template_noop)
+"RW" = (/obj/effect/decal/cleanable/dirt,/obj/random/loot,/turf/simulated/floor/tiled/dark,/area/template_noop)
+"Sy" = (/obj/structure/extinguisher_cabinet{pixel_x = -32},/obj/effect/decal/cleanable/dirt,/obj/effect/spider/spiderling/growing,/obj/effect/spider/spiderling{pixel_y = 13},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"TZ" = (/obj/structure/broken_cryo{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+"Ub" = (/obj/effect/landmark/scorcher,/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/steel,/turf/template_noop,/area/template_noop)
+"Vx" = (/obj/effect/landmark/scorcher,/obj/item/stack/material/rods,/obj/item/bonegel,/turf/template_noop,/area/template_noop)
+"ZG" = (/obj/structure/cryofeed{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/template_noop)
+
+(1,1,1) = {"
+ninininininininininiKoniPZjEjEuHmndfzrQa
+niaGnininininijEnininijEmLnifnQSuLDRxDhS
+nininininiNAQSQSeDeDNACQNAFMtSVxxDyxBBhS
+ninininiQSuLQSQSQSuLNAahUbuLcqCHCHzgzfhS
+nininiNAuLNaQSQSuLNauLNAuLhSxDMnjVtAgZhS
+nininiNAuLkFjxjxRokFuLQSnihSnQtvtPdwOjhS
+nininiunuUkFkFQYkFkFuUuLNAhScSkhubjImchS
+ninininiuUuUmsOVqfuUuUQSjEhSpWMaOVMaHDhS
+nininiQSuUjGTZubOrlzuUzrmMhShShSPHhShShS
+niniNAQSuUafTZubOrxSuUNAuLuLNaQSQSQSNauL
+niniNAuLuUZGTZNyOrdVuUNAniUbmMuLQSQSuLuL
+niniNAQSuUuUSyRWicuUuUniNAmnzrzrUbPZFMni
+niniNAuLuUZGTZNyOrlzuUuLNANAniuLQSNANAni
+nininiQSuUafTZubOrxSuUQSNANANAQSQSFMFMni
+nininiQSuUjGirPAOrdVuUQSaGniNANAniNAnini
+ninininiuUuUvkhTIjuUuUNAninipdNAniNANAni
+ninininiuUkFkFemkFkFuUnininiNANAnimnnini
+ninininiuLkFjxmENfkFuLQSNAniniNANANAdsni
+nininizrQSNaQSNjRONaQSrYuLniniFMNANAkyni
+aGniniQSQSQSQSIBQSQSIBuLuLjXniniNAFMnini
+"}

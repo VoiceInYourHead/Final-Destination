@@ -7,6 +7,8 @@
 	var/material/material
 	var/datum/geosample/geologic_data
 
+	quota_type = 2
+
 /obj/item/ore/get_material()
 	return material
 

@@ -99,3 +99,8 @@
 
 /proc/cmp_marking_order(list/A, list/B)
 	return A[1] - B[1][1]
+
+/proc/cmp_dominance(mob/living/simple_animal/hostile/smart_beast/A, mob/living/simple_animal/hostile/smart_beast/B)
+	var/datum/ai_holder/smart_animal/AH = A.ai_holder
+	var/datum/ai_holder/smart_animal/BH = B.ai_holder
+	return AH.dominance - BH.dominance

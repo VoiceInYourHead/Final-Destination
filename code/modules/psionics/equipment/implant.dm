@@ -5,7 +5,7 @@
 
 	var/overload = 0
 	var/max_overload = 100
-	var/psi_mode = PSI_IMPLANT_AUTOMATIC
+	var/psi_mode = PSI_IMPLANT_DISABLED
 
 /obj/item/implant/psi_control/islegal()
 	return TRUE
