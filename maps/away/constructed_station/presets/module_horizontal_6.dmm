@@ -1,4 +1,4 @@
-"a" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/effect/landmark/explosion/random,/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
+"a" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/techfloor/grid,/area/template_noop)
 "b" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/ore_box,/turf/simulated/floor/tiled/steel_ridged,/area/template_noop)
 "i" = (/obj/effect/wallframe_spawn/reinforced/no_grille,/turf/simulated/floor/plating,/area/template_noop)
 "j" = (/obj/machinery/computer/mining,/turf/simulated/wall/r_wall,/area/template_noop)

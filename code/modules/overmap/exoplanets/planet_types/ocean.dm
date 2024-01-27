@@ -11,6 +11,7 @@
 	habitability_distribution = list(HABITABILITY_IDEAL = 70, HABITABILITY_OKAY = 20, HABITABILITY_BAD = 5)
 	has_trees = FALSE
 	flora_diversity = 3
+	features_budget = 4
 	fauna_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly, /mob/living/simple_animal/hostile/retaliate/aquatic/carp, /mob/living/simple_animal/aquatic/fish/grump, /mob/living/simple_animal/aquatic/fish/judge)
 	megafauna_types = list(/mob/living/simple_animal/hostile/aquatic/deathsquid)
 	repopulate_types = list(/mob/living/simple_animal/hostile/aquatic/shark, /mob/living/simple_animal/hostile/retaliate/jelly, /mob/living/simple_animal/hostile/retaliate/aquatic/carp, /mob/living/simple_animal/aquatic/fish/grump, /mob/living/simple_animal/aquatic/fish/judge)

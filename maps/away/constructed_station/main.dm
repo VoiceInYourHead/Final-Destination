@@ -8,14 +8,10 @@
 	icon_state = "station"
 	known = TRUE
 	initial_restricted_waypoints = list(
-			"TCGV-24 \"Odysseus\"" = list("nav_dock_cs_1", "nav_cs_5")
+			"TCGV-24" = list("nav_hangar_odysseus", "nav_cs_1")
 			)
 	initial_generic_waypoints = list(
-		"nav_cs_1",
-		"nav_cs_2",
-		"nav_cs_3",
-		"nav_cs_4",
-		"nav_cs_5",
+		"nav_cs_1"
 	)
 
 /obj/effect/submap_landmark/joinable_submap/clover
@@ -30,7 +26,7 @@
 	)
 
 /datum/job/submap/clover/crew
-	title = "'Clover' Crew"
+	title = "Station Crew"
 	total_positions = 9
 	supervisors = "nobody but yourself"
 	info = "You slept for a long time. Now you should face the consequences of the world that you left behind."
@@ -45,7 +41,7 @@
 	)
 
 /decl/hierarchy/outfit/clover_crew
-	name = "'Clover' Crew"
+	name = "Station Crew"
 
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = null
@@ -57,7 +53,7 @@
 	backpack_contents = list()
 
 /obj/effect/submap_landmark/spawnpoint/clover/crew
-	name = "'Clover' Crew"
+	name = "Station Crew"
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /datum/map_template/ruin/away_site/clover
@@ -72,23 +68,3 @@
 		/datum/shuttle/autodock/overmap/clover
 	)
 	area_usage_test_exempted_root_areas = list(/area/ship/clover)
-
-/obj/effect/shuttle_landmark/nav_cs/nav1
-	name = "North-west Docking port"
-	landmark_tag = "nav_cs_1"
-
-/obj/effect/shuttle_landmark/nav_cs/nav2
-	name = "North-east Docking port"
-	landmark_tag = "nav_cs_2"
-
-/obj/effect/shuttle_landmark/nav_cs/nav3
-	name = "South-west Docking port"
-	landmark_tag = "nav_cs_3"
-
-/obj/effect/shuttle_landmark/nav_cs/nav4
-	name = "South-east Docking port"
-	landmark_tag = "nav_cs_4"
-
-/obj/effect/shuttle_landmark/nav_cs/nav5
-	name = "\"Odysseus\" Parking place"
-	landmark_tag = "nav_cs_5"

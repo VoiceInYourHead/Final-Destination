@@ -34,7 +34,6 @@
 "M" = (/obj/structure/catwalk,/obj/structure/cable/green{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "N" = (/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
 "O" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
-"P" = (/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/effect/landmark/explosion/random,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
 "S" = (/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/industrial/warning,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/random/trash,/obj/random/trash,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
 "T" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/structure/table/rack,/turf/simulated/floor/tiled/techfloor,/area/template_noop)
 "U" = (/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/industrial/warning,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel_grid,/area/template_noop)
@@ -46,7 +45,7 @@
 
 (1,1,1) = {"
 roECGulClof
-zXZbgkgcNPD
+zXZbgkgcNND
 AwypnjKHxBA
 OUdtvsSMeUI
 aWYVlWlmlJT

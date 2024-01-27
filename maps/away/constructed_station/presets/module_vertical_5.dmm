@@ -11,7 +11,6 @@
 "t" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 "w" = (/obj/structure/backup_server,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/bluegrid,/area/template_noop)
 "x" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
-"z" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/explosion/random,/turf/simulated/floor/plating,/area/template_noop)
 "A" = (/turf/simulated/floor/bluegrid,/area/template_noop)
 "B" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "C" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/template_noop)
@@ -33,7 +32,7 @@
 "Z" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/template_noop)
 
 (1,1,1) = {"
-CCzCD
+CCxCD
 YdxAY
 YAtMY
 FJEkB
