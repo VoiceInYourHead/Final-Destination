@@ -3,7 +3,7 @@
 /obj/effect/overmap/visitable/ship/landable/carrier/gup1
 	name = "FTU-SV GUP #1"
 	shuttle = "FTU-SV GUP #1"
-	desc = "An SSE-U20 long range shuttle, broadcasting SCGSV codes and the callsign \"FTU-SV GUP #1\"."
+	desc = "An SSE-U20 long range shuttle, broadcasting FTUSV codes and the callsign \"FTU-SV GUP #1\"."
 	fore_dir = NORTH
 	integrity_failure_cap = 30
 	max_speed = 1/(2 SECONDS) //same stats as charon
@@ -44,7 +44,7 @@
 /obj/effect/overmap/visitable/ship/landable/carrier/gup2
 	name = "FTU-SV GUP #2"
 	shuttle = "FTU-SV GUP #2"
-	desc = "An SSE-U20 long range shuttle, broadcasting SCGSV codes and the callsign \"FTU-SV GUP #2\"."
+	desc = "An SSE-U20 long range shuttle, broadcasting FTUSV codes and the callsign \"FTU-SV GUP #2\"."
 	fore_dir = NORTH
 	integrity_failure_cap = 30
 	max_speed = 1/(2 SECONDS) //same stats as charon
@@ -85,7 +85,7 @@
 /obj/effect/overmap/visitable/ship/landable/carrier/gup3
 	name = "FTU-SV GUP #3"
 	shuttle = "FTU-SV GUP #3"
-	desc = "An SSE-U20 long range shuttle, broadcasting SCGSV codes and the callsign \"FTU-SV GUP #3\"."
+	desc = "An SSE-U20 long range shuttle, broadcasting FTUSV codes and the callsign \"FTU-SV GUP #3\"."
 	fore_dir = NORTH
 	integrity_failure_cap = 30
 	max_speed = 1/(2 SECONDS) //same stats as charon
@@ -126,7 +126,7 @@
 /obj/effect/overmap/visitable/ship/landable/carrier/gup4
 	name = "FTU-SV GUP #4"
 	shuttle = "FTU-SV GUP #4"
-	desc = "An SSE-U20 long range shuttle, broadcasting SCGSV codes and the callsign \"FTU-SV GUP #4\"."
+	desc = "An SSE-U20 long range shuttle, broadcasting FTUSV codes and the callsign \"FTU-SV GUP #4\"."
 	fore_dir = NORTH
 	integrity_failure_cap = 30
 	max_speed = 1/(2 SECONDS) //same stats as charon
@@ -167,7 +167,7 @@
 /obj/effect/overmap/visitable/ship/landable/carrier/gup5
 	name = "FTU-SV GUP #5"
 	shuttle = "FTU-SV GUP #5"
-	desc = "An SSE-U20 long range shuttle, broadcasting SCGSV codes and the callsign \"FTU-SV GUP #5\"."
+	desc = "An SSE-U20 long range shuttle, broadcasting FTUSV codes and the callsign \"FTU-SV GUP #5\"."
 	fore_dir = NORTH
 	integrity_failure_cap = 30
 	max_speed = 1/(2 SECONDS) //same stats as charon
@@ -208,7 +208,7 @@
 /obj/effect/overmap/visitable/ship/landable/carrier/gup6
 	name = "FTU-SV GUP #6"
 	shuttle = "FTU-SV GUP #6"
-	desc = "An SSE-U20 long range shuttle, broadcasting SCGSV codes and the callsign \"FTU-SV GUP #6\"."
+	desc = "An SSE-U20 long range shuttle, broadcasting FTUSV codes and the callsign \"FTU-SV GUP #6\"."
 	fore_dir = NORTH
 	integrity_failure_cap = 30
 	max_speed = 1/(2 SECONDS) //same stats as charon

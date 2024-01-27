@@ -1,14 +1,21 @@
+#include "areas.dm"
+#include "shuttle.dm"
+#include "presets.dm"
+
 /obj/effect/overmap/visitable/ship/clover
 	name = "Station 'Clover'"
 	desc = "Rusty station of an very old design."
 	icon_state = "station"
 	known = TRUE
-
+	initial_restricted_waypoints = list(
+			"TCGV-24 \"Odysseus\"" = list("nav_dock_cs_1", "nav_cs_5")
+			)
 	initial_generic_waypoints = list(
 		"nav_cs_1",
 		"nav_cs_2",
 		"nav_cs_3",
-		"nav_cs_4"
+		"nav_cs_4",
+		"nav_cs_5",
 	)
 
 /obj/effect/submap_landmark/joinable_submap/clover
@@ -29,6 +36,7 @@
 	info = "You slept for a long time. Now you should face the consequences of the world that you left behind."
 	outfit_type = /decl/hierarchy/outfit/clover_crew
 	loadout_allowed = TRUE
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
 	min_skill = list(
 		SKILL_EVA = SKILL_TRAINED,
 		SKILL_HAULING = SKILL_TRAINED,
@@ -39,12 +47,13 @@
 /decl/hierarchy/outfit/clover_crew
 	name = "'Clover' Crew"
 
-	uniform = null
+	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = null
 	back = null
 	belt = null
 	shoes = null
 	glasses = null
+	id_types = list(/obj/item/card/id)
 	backpack_contents = list()
 
 /obj/effect/submap_landmark/spawnpoint/clover/crew
@@ -57,7 +66,11 @@
 	description = "An old rusted station."
 	suffixes = list("constructed_station/constructed_station.dmm")
 	spawn_cost = 1
+	generate_mining_by_z = 1
 	player_cost = 2
+	shuttles_to_initialise = list(
+		/datum/shuttle/autodock/overmap/clover
+	)
 	area_usage_test_exempted_root_areas = list(/area/ship/clover)
 
 /obj/effect/shuttle_landmark/nav_cs/nav1
@@ -75,3 +88,7 @@
 /obj/effect/shuttle_landmark/nav_cs/nav4
 	name = "South-east Docking port"
 	landmark_tag = "nav_cs_4"
+
+/obj/effect/shuttle_landmark/nav_cs/nav5
+	name = "\"Odysseus\" Parking place"
+	landmark_tag = "nav_cs_5"

@@ -69,6 +69,17 @@
 	qdel(src)
 	. = ..()
 
+/obj/effect/landmark/explosion/random
+	severity = 80
+	falloff = 5
+	var/explosion_chance = 30
+
+/obj/effect/landmark/explosion/random/New()
+	if(prob(explosion_chance))
+		. = ..()
+	else
+		qdel(src)
+
 /obj/effect/landmark/damager
 	name = "damager"
 	icon_state = "fire"
