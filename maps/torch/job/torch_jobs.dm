@@ -11,10 +11,10 @@
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hop, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/representative, /datum/job/rd
 	species_to_job_blacklist = list(
-		/datum/species/unathi  = list(HUMAN_ONLY_JOBS, /datum/job/pathfinder, /datum/job/liaison, /datum/job/warden, /datum/job/sea, /datum/job/research_guard), //Other jobs unavailable via branch restrictions, /*/datum/job/synthetic*/
-		/datum/species/unathi/yeosa = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/pathfinder, /datum/job/warden, /datum/job/engineer, /datum/job/scientist, /datum/job/sea, /datum/job/research_guard), /*/datum/job/synthetic*/
+		/datum/species/unathi  = list(HUMAN_ONLY_JOBS, /datum/job/pathfinder, /datum/job/liaison, /datum/job/warden, /datum/job/sea), //Other jobs unavailable via branch restrictions, /*/datum/job/synthetic*/
+		/datum/species/unathi/yeosa = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/pathfinder, /datum/job/warden, /datum/job/engineer, /datum/job/scientist, /datum/job/sea), /*/datum/job/synthetic*/
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS, /datum/job/sea, /datum/job/pathfinder), /*/datum/job/synthetic*/
-		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/rd, /datum/job/liaison, /datum/job/warden, /datum/job/sea, /datum/job/pathfinder),
+		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/rd, /datum/job/liaison, /datum/job/warden, /datum/job/sea, /datum/job/pathfinder, /datum/job/research_guard),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS, /datum/job/liaison), /*/datum/job/synthetic*/
 		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/pathfinder, /datum/job/officer, /datum/job/liaison, /datum/job/warden, /datum/job/doctor, /datum/job/medical_trainee, /datum/job/sea, /datum/job/research_guard), /*/datum/job/synthetic*/ //Other jobs unavailable via branch restrictions,
 		/datum/species/human/gravworlder = list(), /*/datum/job/synthetic*/
