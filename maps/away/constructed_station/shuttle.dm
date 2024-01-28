@@ -1,3 +1,7 @@
+
+/area/ship/clover/shuttle
+	name = "\improper TCGV-24 \"Odysseus\""
+
 /obj/effect/overmap/visitable/ship/landable/clover/truck
 	name = "TCGV-24"
 	shuttle = "TCGV-24"
@@ -9,9 +13,6 @@
 	vessel_mass = 5000
 	skill_needed = SKILL_BASIC
 	free_landing = FALSE
-
-/area/ship/clover/shuttle
-	name = "\improper TCGV-24 \"Odysseus\""
 
 /obj/machinery/computer/shuttle_control/explore/clover/truck
 	name = "landing control console"

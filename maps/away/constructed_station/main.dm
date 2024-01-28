@@ -8,11 +8,12 @@
 	icon_state = "station"
 	known = TRUE
 	initial_restricted_waypoints = list(
-			"TCGV-24" = list("nav_hangar_odysseus", "nav_cs_1")
-			)
-	initial_generic_waypoints = list(
-		"nav_cs_1"
+			"TCGV-24" = list("nav_hangar_odysseus", "nav_clover_1")
 	)
+	initial_generic_waypoints = list(
+		"nav_clover_1"
+	)
+
 
 /obj/effect/submap_landmark/joinable_submap/clover
 	name = "Station Clover"
@@ -58,7 +59,7 @@
 
 /datum/map_template/ruin/away_site/clover
 	name = "Station Clover"
-	id = "awaysite_cs_station"
+	id = "awaysite_clover"
 	description = "An old rusted station."
 	suffixes = list("constructed_station/constructed_station.dmm")
 	spawn_cost = 1
