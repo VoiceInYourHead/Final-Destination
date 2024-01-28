@@ -8,7 +8,7 @@
 //	var/list/fauna_types = list()		// possible types of mobs to spawn
 //	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
 //	var/list/animals = list()
-	var/max_animal_count = 40
+	var/max_animal_count = 30
 
 	var/maxx
 	var/maxy

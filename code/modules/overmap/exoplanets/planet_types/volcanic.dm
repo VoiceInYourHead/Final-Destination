@@ -13,7 +13,7 @@
 	habitability_distribution = HABITABILITY_BAD
 	has_trees = FALSE
 	flora_diversity = 3
-	features_budget = 6
+	features_budget = 4
 	fauna_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/shantak/lava, /mob/living/simple_animal/hostile/smart_beast/charbaby)
 	megafauna_types = list(/mob/living/simple_animal/hostile/drake)
 	repopulate_types = list(/mob/living/simple_animal/hostile/smart_beast/thinbug, /mob/living/simple_animal/hostile/smart_beast/shantak/lava, /mob/living/simple_animal/hostile/smart_beast/charbaby)
