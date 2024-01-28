@@ -3,7 +3,7 @@
 #include "presets.dm"
 
 /obj/effect/overmap/visitable/ship/clover
-	name = "Station 'Clover'"
+	name = "Station Clover"
 	desc = "Rusty station of an very old design."
 	icon_state = "station"
 	known = TRUE
@@ -15,12 +15,12 @@
 	)
 
 /obj/effect/submap_landmark/joinable_submap/clover
-	name = "Station 'Clover'"
+	name = "Station Clover"
 	archetype = /decl/submap_archetype/clover
 
 /decl/submap_archetype/clover
-	descriptor = "Station 'Clover'"
-	map = "Station 'Clover'"
+	descriptor = "Station Clover"
+	map = "Station Clover"
 	crew_jobs = list(
 		/datum/job/submap/clover/crew
 	)
@@ -57,7 +57,7 @@
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /datum/map_template/ruin/away_site/clover
-	name = "Station 'Clover'"
+	name = "Station Clover"
 	id = "awaysite_cs_station"
 	description = "An old rusted station."
 	suffixes = list("constructed_station/constructed_station.dmm")
