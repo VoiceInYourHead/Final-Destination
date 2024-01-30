@@ -75,9 +75,17 @@
 		I.anchored = locked
 	playsound(src, 'sound/effects/storage/briefcase.ogg', 100, 1)
 
-/obj/structure/table/mag/attackby(obj/item/W as obj, mob/user as mob, var/click_params)
+/obj/structure/table/mag/attackby(obj/item/W as obj, var/mob/living/user as mob, var/click_params)
 	if(isrobot(user))
 		return
+	if(istype(W, /obj/item/psychic_power/psielectro))
+		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
+			if(do_after(user, 50))
+				to_chat(user, "<span class='warning'>Одним лишь касанием вы переписываете доступ, привязанный к этому столу...</span>")
+				owned = FALSE
+		else
+			to_chat(user, "<span class='warning'>Как бы того не хотелось, но вы ещё слишком неумелы, чтобы взламывать подобное.</span>")
+			return
 	if(istype(W, /obj/item/card/id) || istype(W, /obj/item/modular_computer))
 		var/obj/item/card/id/id_card = /obj/item/card/id
 		if(owned)

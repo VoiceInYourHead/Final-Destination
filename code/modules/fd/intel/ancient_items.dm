@@ -456,7 +456,7 @@
 
 	sleep(80)
 
-	for(var/faculty in list(PSI_COERCION, PSI_CONSCIOUSNESS, PSI_CRYOKINESIS, PSI_ELECTRONICS, PSI_PSYCHOBALLISTICS, PSI_PSYCHOKINESIS, PSI_MANIFESTATION, PSI_REDACTION, PSI_ENERGISTICS, PSI_ARCHERY,))
+	for(var/faculty in list(PSI_COERCION, PSI_CONSCIOUSNESS, PSI_CRYOKINESIS, PSI_METAKINESIS, PSI_PSYCHOBALLISTICS, PSI_PSYCHOKINESIS, PSI_MANIFESTATION, PSI_REDACTION, PSI_ENERGISTICS))
 		if(faculty in boosted_faculties)
 			H.set_psi_rank(faculty, boosted_rank, take_larger = TRUE, temporary = TRUE)
 		else
@@ -789,6 +789,13 @@
 
 	anchored = FALSE
 	density = FALSE
+
+/obj/structure/fd/light_sphere/attack_hand(var/mob/living/carbon/user)
+	if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
+		if(do_after(user, 50))
+			to_chat(user, "<span class='warning'>Вы поглощаете сферу, восстанавливая собственные запасы...</span>")
+			user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(5,10))
+			qdel(src)
 
 /obj/structure/fd/light_sphere/New()
 	set_light(0.5, 3, 7, l_color = "#c2e2d5")

@@ -2920,7 +2920,6 @@
 #include "code\modules\psionics\faculties\coercion.dm"
 #include "code\modules\psionics\faculties\consciousness.dm"
 #include "code\modules\psionics\faculties\cryokinesis.dm"
-#include "code\modules\psionics\faculties\electronics.dm"
 #include "code\modules\psionics\faculties\energistics.dm"
 #include "code\modules\psionics\faculties\manifestation.dm"
 #include "code\modules\psionics\faculties\metakinesis.dm"

@@ -20,4 +20,13 @@
 	if((target && user != target) || user.a_intent != I_GRAB)
 		return FALSE
 	. = ..()
-//	if(.)
+	if(.)
+		var/option = input(target, "Choose something!", "Element to use") in list("Electricity", "Fire", "Ice")
+		if (!option)
+			return
+		if(option == "Electricity")
+			return new /obj/item/psychic_power/psielectro(user, user)
+		if(option == "Fire")
+			return
+		if(option == "Ice")
+			return
