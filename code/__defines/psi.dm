@@ -10,6 +10,7 @@
 #define PSI_PSYCHOBALLISTICS   "psychoballistics"
 #define PSI_MANIFESTATION      "manifestation"
 #define PSI_ARCHERY            "archery"
+#define PSI_METAKINESIS        "metakinesis"
 #define PSI_CRYOKINESIS        "cryokinesis"
 #define PSI_ENERGISTICS        "energistics"
 #define PSI_ELECTRONICS        "electronics"

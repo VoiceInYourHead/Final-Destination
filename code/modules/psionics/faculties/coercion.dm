@@ -1,7 +1,7 @@
 /decl/psionic_faculty/coercion
 	id = PSI_COERCION
 	name = "Coercion"
-	associated_intent = I_HELP
+	associated_intent = I_DISARM
 	armour_types = list(PSIONIC, "melee")
 
 /decl/psionic_power/coercion
@@ -23,7 +23,7 @@
 	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Выберите глаза и переключитесь на зелёный интент. Затем, нажмите куда угодно чтобы применить радиальную атаку, слепящую и оглушающую всех, кто оказался поблизости."
+	use_description = "Выберите глаза и переключитесь на синий интент. Затем, нажмите куда угодно чтобы применить радиальную атаку, слепящую и оглушающую всех, кто оказался поблизости."
 
 /decl/psionic_power/coercion/blindstrike/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_EYES)
@@ -59,7 +59,7 @@
 	cooldown =      60
 	use_melee =     TRUE
 	min_rank =      PSI_RANK_APPRENTICE
-	use_description = "Выберите нижнюю часть тела на зелёном интенте, а затем нажмите по цели вблизи, дабы совершить по ней удар, по силе сравнимый с шоковой дубинкой."
+	use_description = "Выберите нижнюю часть тела на синем интенте, а затем нажмите по цели вблизи, дабы совершить по ней удар, по силе сравнимый с шоковой дубинкой."
 
 /decl/psionic_power/coercion/agony/invoke(var/mob/living/user, var/mob/living/target)
 	if(!istype(target))
@@ -81,7 +81,7 @@
 	cooldown =       100
 	use_ranged =     TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Выберите кисти или руки на зелёном интенте. Затем, совершите дистанционную атаку по цели, чтобы попытаться вырвать оружие(или иной предмет) из ранее выбранной конечности."
+	use_description = "Выберите кисти или руки на синем интенте. Затем, совершите дистанционную атаку по цели, чтобы попытаться вырвать оружие(или иной предмет) из ранее выбранной конечности."
 
 /decl/psionic_power/coercion/spasm/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
 	if(!istype(target))
@@ -127,7 +127,7 @@
 	use_grab =      TRUE
 	min_rank =      PSI_RANK_GRANDMASTER
 	suppress_parent_proc = TRUE
-	use_description = "Схватите жертву, выберите левую или правую кисть, затем переключитесь на зелёный интент и используйте захват НА НЕЙ, дабы обратить её в своего верного подчинённого."
+	use_description = "Схватите жертву, выберите левую или правую кисть, затем переключитесь на синий интент и используйте захват НА НЕЙ, дабы обратить её в своего верного подчинённого."
 
 /decl/psionic_power/coercion/mindslave/invoke(var/mob/living/user, var/mob/living/target)
 	if(!istype(target))
