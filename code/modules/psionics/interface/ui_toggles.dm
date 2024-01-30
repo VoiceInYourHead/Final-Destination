@@ -43,3 +43,42 @@
 	else
 		icon_state = "arrow_right"
 // End menu toggle.
+
+// Facility toggle.
+/obj/screen/psi/toggle_faculty
+	var/image/disable_overlay
+	var/faculty_id
+
+/obj/screen/psi/toggle_faculty/New(mob/living/_owner, id)
+	disable_overlay = image(icon, "cooldown")
+	faculty_id = id
+
+	name = "Переключить школу [faculty_id]"
+	icon_state = "[faculty_id]"
+	..(_owner)
+
+/obj/screen/psi/toggle_faculty/on_update_icon()
+	..()
+	if(invisibility != 0)
+		return
+
+	if(owner.psi.ranks_stat[faculty_id])
+		overlays.Cut()
+	else
+		overlays |= disable_overlay
+
+/obj/screen/psi/toggle_faculty/Click()
+	if(!owner.psi)
+		return
+
+	var/faculty_stat = owner.psi.ranks_stat[faculty_id]
+	owner.psi.ranks_stat[faculty_id] = !faculty_stat
+
+	if(faculty_stat)
+		sound_to(owner, sound('sound/effects/psi/power_fail.ogg', volume = 40))
+		to_chat(owner, SPAN_NOTICE("Вы более не будете использовать силы школы [faculty_id]."))
+	else
+		sound_to(owner, sound('sound/effects/psi/power_unlock.ogg', volume = 40))
+		to_chat(owner, SPAN_NOTICE("Вы вновь можете использовать силы школы [faculty_id]."))
+	update_icon()
+// End facility toggle

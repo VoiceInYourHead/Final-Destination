@@ -8,11 +8,14 @@
 	faculty = PSI_COERCION
 
 /decl/psionic_power/coercion/invoke(var/mob/living/user, var/mob/living/target)
+	. = ..()
+	if (!.)
+		return FALSE
+
 	if (!istype(target))
 		to_chat(user, SPAN_WARNING("Вы не можете пробиться в сознание [target]."))
 		return FALSE
 
-	. = ..()
 	if(. && target.deflect_psionic_attack(user))
 		return FALSE
 

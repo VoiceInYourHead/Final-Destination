@@ -50,9 +50,6 @@
 	maptext = "[round((owner.psi.stamina/owner.psi.max_stamina)*100)]%"
 	update_icon()
 
-/obj/screen/psi/hub/examine(mob/user)
-	return
-
 /obj/screen/psi/hub/Click(var/location, var/control, var/params)
 	var/list/click_params = params2list(params)
 	if(click_params["shift"])

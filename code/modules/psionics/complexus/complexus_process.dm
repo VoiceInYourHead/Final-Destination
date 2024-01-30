@@ -35,13 +35,24 @@
 				cost_modifier -= min(1, max(0.1, (rating-1) / 10))
 			if(!ui)
 				ui = new(owner)
-				if(owner.client)
-					owner.client.screen += ui.components
-					owner.client.screen += ui
-			else
-				if(owner.client)
-					owner.client.screen |= ui.components
-					owner.client.screen |= ui
+			for(var/faculty in ranks)
+				var/existing_button = FALSE
+				for(var/obj/screen/psi/toggle_faculty/button in ui.components)
+					if(button.faculty_id == faculty)
+						existing_button = button
+				if(ranks[faculty] <= PSI_RANK_LATENT)
+					if(existing_button)
+						ui.components -= existing_button
+					continue
+				if(existing_button)
+					continue
+				var/obj/screen/psi/toggle_faculty/faculty_toggle = new(owner, faculty)
+				ui.components.Insert(2, faculty_toggle)
+				var/obj/screen/psi/toggle_psi_menu/arrow = ui.components[LAZYLEN(ui.components)]
+				faculty_toggle.hidden = arrow.hidden
+			if(owner.client)
+				owner.client.screen |= ui.components
+				owner.client.screen |= ui
 			if(!suppressed && owner.client)
 				for(var/thing in SSpsi.all_aura_images)
 					owner.client.images |= thing
