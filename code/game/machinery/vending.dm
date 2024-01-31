@@ -151,7 +151,7 @@
 
 	var/obj/item/card/id/I = W.GetIdCard()
 
-	if(istype(I, /obj/item/psychic_power/psielectro))
+	if(istype(W, /obj/item/psychic_power/psielectro))
 		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
 			var/option = input(user, "Do something!", "What do you want to do?") in list("Hack", "Electrify")
 			if (!option)

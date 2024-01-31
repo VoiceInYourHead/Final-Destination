@@ -79,7 +79,7 @@
 
 	if(istype(A,/obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/D = A
-		var/option = input(user, "Do something!", "What do you want to do?") in list("Open/Close", "Bolt/Unbolt It", "Electrify")
+		var/option = input(user, "Do something!", "What do you want to do?") in list("Open/Close", "Bolt/Unbolt", "Electrify")
 		if (!option)
 			return
 		if(option == "Open/Close")
@@ -108,7 +108,7 @@
 			new /obj/effect/temporary(get_turf(A),3, 'icons/effects/effects.dmi', "electricity_constant")
 			playsound(D.loc, "sparks", 50, 1)
 
-		if(option == "Bolt/Unbolt it")
+		if(option == "Bolt/Unbolt")
 			if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
 				D.toggle_lock()
 				if(proximity)
