@@ -2,13 +2,16 @@
 	name = "orb of energy"
 	force = 5
 	edge = TRUE
-	maintain_cost = 8
+	maintain_cost = 10
 	icon_state = "electro"
 	item_state = "electro"
 	attack_cooldown = 5
 	var/ranged = FALSE
 
 /obj/item/psychic_power/psielectro/New(var/mob/living/user)
+	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
+	maintain_cost -= el_rank
+
 	if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) == PSI_RANK_GRANDMASTER)
 		ranged = TRUE
 
@@ -50,7 +53,7 @@
 	if(istype(A, /obj/machinery/light))
 		var/obj/machinery/light/lighting = A
 		if(lighting.on)
-			if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
+			if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
 				if(do_after(user, 30))
 					if(proximity)
 						user.visible_message("<span class='danger'>[user] прислоняет руку к источнику света, и уже через пару секунд он угасает!</span>")
@@ -124,46 +127,63 @@
 
 	..()
 
-/proc/get_ranged_target_turf_direct(atom/A, atom/target, range, offset)
-	var/angle = ATAN2(target.x - A.x, target.y - A.y)
-	if(offset)
-		angle += offset
-
 /obj/item/psychic_power/psifire
 	name = "orb of eternal flame"
 	force = 5
 	edge = TRUE
-	maintain_cost = 8
+	maintain_cost = 10
 	icon_state = "pyro"
 	item_state = "pyro"
 	attack_cooldown = 5
+	var/turf/previousturf = null
 
-	var/flame_power = 20
-	var/flame_distance = 4
-	var/flame_color = COLOR_ORANGE
+	var/range = 2
+	var/flame_power = 25
+	var/flame_color = COLOR_RED
+
+/obj/item/psychic_power/psifire/New(var/mob/living/user)
+	var/fire_rank = user.psi.get_rank(PSI_METAKINESIS)
+
+	maintain_cost -= fire_rank
+	flame_power += fire_rank
+	range += fire_rank
+
+	if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
+		flame_color = COLOR_BLUE
+		flame_power += 5
+
+	..()
 
 /obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 
 	if(istype(A, /turf/))
-		var/turf/target = A
-		var/turf/start_turf = get_step(get_turf(user), get_dir(user, target))
-		var/turf/target_turf = get_ranged_target_turf_direct(start_turf, target, flame_distance)
-		var/list/flame_line = getline(start_turf, target_turf)
-		for(var/i = 1 to length(flame_line))
-			var/turf/T = flame_line[i]
-			if(T.density)
-				break
-			var/dense_obj = FALSE
-			for(var/obj/O in T)
-				if(O.density)
-					dense_obj = TRUE
-					break
-			if(dense_obj)
-				break
-			addtimer(CALLBACK(src, .proc/PlaceFlame, T), i-1)
+		var/turf/target_turf = get_turf(A)
+		if(target_turf)
+			var/turflist = getline(user, target_turf)
+			flame_turf(turflist)
 
-/obj/item/psychic_power/psifire/proc/PlaceFlame(turf/T)
-	var/obj/effect/turf_fire/TF = T.IgniteTurf(flame_power, flame_color)
-	if(istype(TF))
-		TF.interact_with_atmos = FALSE
-	T.hotspot_expose((flame_power * 3) + 300, 50)
+/obj/item/psychic_power/psifire/proc/flame_turf(list/turflist)
+	var/length = LAZYLEN(turflist)
+	if(length < 1)
+		return
+	turflist.len = min(length, range)
+
+	playsound(src, pick('sound/weapons/guns/flamethrower1.ogg','sound/weapons/guns/flamethrower2.ogg','sound/weapons/guns/flamethrower3.ogg' ), 50, TRUE, -3)
+
+	for(var/turf/T in turflist)
+		if(T.density || istype(T, /turf/space))
+			break
+		if(!previousturf && length(turflist)>1)
+			previousturf = get_turf(src)
+			continue	//so we don't burn the tile we be standin on
+		if(previousturf && (!T.CanPass(null, previousturf, 0,0) || !previousturf.CanPass(null, T, 0,0)))
+			break
+		previousturf = T
+
+		//Consume part of our fuel to create a fire spot
+		var/obj/effect/turf_fire/TF = T.IgniteTurf(flame_power, flame_color)
+		if(istype(TF))
+			TF.interact_with_atmos = FALSE
+		T.hotspot_expose((flame_power * 3) + 300, 50)
+		sleep(1)
+	previousturf = null
