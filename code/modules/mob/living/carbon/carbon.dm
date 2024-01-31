@@ -100,6 +100,18 @@
 	return
 
 /mob/living/carbon/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
+	var/mob/living/user
+
+	if(user.psi && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
+		src.visible_message("<span class='warning'>[user] absorbed all pure energy, sent into them!</span>")
+		user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(15,20))
+
+		var/datum/effect/effect/system/spark_spread/l = new /datum/effect/effect/system/spark_spread
+		l.set_up(5, 1, loc)
+		l.start()
+
+		return 0
+
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	shock_damage = apply_shock(shock_damage, def_zone, siemens_coeff)

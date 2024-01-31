@@ -16,6 +16,16 @@
 	SSpsi.psi_monitors += src
 	..()
 
+/obj/machinery/psi_monitor/attackby(var/obj/item/O as obj, var/mob/living/user as mob)
+	if(istype(O, /obj/item/psychic_power/psielectro))
+		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
+			if(do_after(user, 30))
+				to_chat(user, "<span class='warning'>Вы прислоняете руку к монитору, пропуская мощный поток тока, ломающий все электронные замки!</span>")
+				if(!emagged)
+					emag_act()
+					new /obj/effect/temporary(get_turf(src),3, 'icons/effects/effects.dmi', "electricity_constant")
+				. = TRUE
+
 /obj/machinery/psi_monitor/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
 		emagged = TRUE

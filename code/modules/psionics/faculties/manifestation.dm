@@ -29,6 +29,8 @@
 				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear", "Crossbow")
 				if (!option)
 					return
+				if(user.psi.suppressed)
+					return
 				if(option == "Club")
 					return new /obj/item/psychic_power/psiclub/master/grand/paramount(user, user)
 				if(option == "Blade")
@@ -42,6 +44,8 @@
 			if(PSI_RANK_MASTER)
 				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear", "Crossbow")
 				if (!option)
+					return
+				if(user.psi.suppressed)
 					return
 				if(option == "Club")
 					return new /obj/item/psychic_power/psiclub/master/grand(user, user)
@@ -57,6 +61,8 @@
 				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear")
 				if (!option)
 					return
+				if(user.psi.suppressed)
+					return
 				if(option == "Club")
 					return new /obj/item/psychic_power/psiclub/master(user, user)
 				if(option == "Blade")
@@ -68,6 +74,8 @@
 			else
 				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club")
 				if (!option)
+					return
+				if(user.psi.suppressed)
 					return
 				if(option == "Club")
 					return new /obj/item/psychic_power/psiclub(user, user)
@@ -90,6 +98,8 @@
 
 		var/option = alert(target, "What toolkit you need?", "Choose something!", "Medical", "Engineering", "Gloves")
 		if (!option)
+			return
+		if(user.psi.suppressed)
 			return
 		if(option == "Gloves")
 			var/con_rank_user = user.psi.get_rank(PSI_MANIFESTATION)

@@ -226,13 +226,21 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 /datum/wires/proc/ResetPulsed(index)
 	return
 
-/datum/wires/proc/examine(index, mob/user)
+/datum/wires/proc/examine(index, var/mob/living/user)
 	var/checked = FALSE
 	. = "You aren't sure what this wire does."
 
 	var/datum/wire_description/wd = get_description(index)
 	if(!wd)
 		return
+	if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
+		if(!checked)
+			. = "Hmm...I think i remember this one!"
+			checked = TRUE
+			return wd.description
+		else
+			. = "You already checked this one! It connected to..."
+			return wd.description
 	if(wd.skill_level && !user.skill_check(SKILL_ELECTRICAL, wd.skill_level))
 		if(prob(10) && !checked)
 			. = "Hmm...I think i remember this one!"

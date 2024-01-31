@@ -521,6 +521,9 @@
 		item_copied -= option
 
 /obj/item/fd/ancient_items/emerald/afterattack(atom/A, mob/user as mob, proximity)
+	if(!proximity)
+		return
+
 	if(broken)
 		to_chat(user, "<span class='warning'>You can't use [src] anymore, it's broken!</span>")
 		return
@@ -794,7 +797,7 @@
 	if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
 		if(do_after(user, 50))
 			to_chat(user, "<span class='warning'>Вы поглощаете сферу, восстанавливая собственные запасы...</span>")
-			user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(5,10))
+			user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(10,15))
 			qdel(src)
 
 /obj/structure/fd/light_sphere/New()
@@ -840,6 +843,9 @@
 		icon_state = "rusty_medalion"
 
 /obj/item/fd/ancient_items/eye_of_the_maw/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+	if(!proximity)
+		return
+
 	if(istype(A, /mob/living/carbon) && !broken)
 		var/mob/living/carbon/L = A
 		if(L.stat != DEAD && !(L.status_flags & FAKEDEATH))
