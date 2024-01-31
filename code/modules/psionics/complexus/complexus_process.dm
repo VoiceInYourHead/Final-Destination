@@ -43,6 +43,7 @@
 				if(ranks[faculty] <= PSI_RANK_LATENT)
 					if(existing_button)
 						ui.components -= existing_button
+						qdel(existing_button)
 					continue
 				if(existing_button)
 					continue
@@ -56,6 +57,7 @@
 			if(!suppressed && owner.client)
 				for(var/thing in SSpsi.all_aura_images)
 					owner.client.images |= thing
+			ui.update_icon()
 
 			var/image/aura_image = get_aura_image()
 			if(rating >= PSI_RANK_GRANDMASTER) // spooky boosters

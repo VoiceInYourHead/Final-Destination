@@ -19,5 +19,5 @@
 	else
 		invisibility = 0
 
-/obj/screen/psi/hub/examine(mob/user)
+/obj/screen/psi/examine(mob/user)
 	return TRUE // Daniil Bassow looks at the Psi
