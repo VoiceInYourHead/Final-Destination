@@ -27,6 +27,6 @@
 		if(option == "Electricity")
 			return new /obj/item/psychic_power/psielectro(user, user)
 		if(option == "Fire")
-			return
+			return new /obj/item/psychic_power/psifire(user, user)
 		if(option == "Ice")
 			return
