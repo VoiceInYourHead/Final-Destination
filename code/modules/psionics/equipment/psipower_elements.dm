@@ -6,7 +6,16 @@
 	icon_state = "electro"
 	item_state = "electro"
 	attack_cooldown = 5
+	var/last_used = 0 //last world.time it was used.
 	var/ranged = FALSE
+
+/obj/item/psychic_power/psielectro/proc/orb_recharge()
+	//capacitor recharges over time
+	for(var/i=0, i<3, i++)
+		if(last_used+100 > world.time)
+			break
+		last_used += 100
+	last_used = world.time
 
 /obj/item/psychic_power/psielectro/New(var/mob/living/user)
 	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
@@ -36,6 +45,9 @@
 	if(istype(A, /mob/living))
 		var/mob/living/target = A
 
+		if(last_used != world.time)
+			to_chat(user, "<span class='warning'>“ы не можешь использовать данную способность настолько часто!</span>")
+			return
 		if(target == user)
 			to_chat(user, "<span class='warning'>¬ы не можете зар€дить самого себ€!</span>")
 			return
@@ -48,14 +60,17 @@
 			if(el_rank_target >= el_rank && prob(40))
 				user.visible_message("<span class='danger'>[target] пропускает ток через себ€, возвраща€ его [user] в виде молнии!</span>")
 				user.electrocute_act(rand(el_rank_target * 2,el_rank_target * 5), target, 1, target.zone_sel.selecting)
+				orb_recharge()
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
 			if(el_rank_target >= PSI_RANK_GRANDMASTER)
 				user.visible_message("<span class='danger'>[target] пропускает ток через себ€, возвраща€ его [user] в виде молнии!</span>")
 				user.electrocute_act(rand(el_rank_target * 4,el_rank_target * 6), target, 1, target.zone_sel.selecting)
+				orb_recharge()
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
 		target.electrocute_act(rand(el_rank * 2,el_rank * 5), user, 1, user.zone_sel.selecting)
+		orb_recharge()
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
 		return TRUE
 
@@ -170,9 +185,9 @@
 /obj/item/psychic_power/psifire/AltClick(mob/user)
 	combat_mode = !combat_mode
 	if(!combat_mode)
-		to_chat("<span class='warning'>¬ы приготовились к бою. “еперь, ваше касание будет поджигать людей</span>")
+		to_chat(user, "<span class='warning'>¬ы приготовились к бою. “еперь, ваше касание будет поджигать людей</span>")
 	if(combat_mode)
-		to_chat("<span class='warning'>¬ы вновь можете безопасно прикасатьс€ к вещам вокруг.</span>")
+		to_chat(user, "<span class='warning'>¬ы вновь можете безопасно прикасатьс€ к вещам вокруг.</span>")
 
 /obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 //TURFS

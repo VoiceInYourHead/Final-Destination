@@ -24,33 +24,7 @@
 	use_melee = TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	var/space = 0
-	var/list/linked_soul = list()
 	use_description = "Выберите рот на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
-
-/decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate(var/mob/living/user, var/mob/living/target)
-	set name     = "Contact your friend"
-	set category = "Psionics"
-
-	var/soul = input(usr,"Кому мы отправляем сообщение?") as null | anything in linked_soul
-	if (!soul)
-		return
-	else
-		linked_soul = soul
-
-	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
-	if(!phrase || user.incapacitated())
-		return FALSE
-
-	to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
-	to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
-	var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
-	switch(option)
-		if("Да")
-			var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
-			to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
-		else
-			return
 
 /decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH)
@@ -62,32 +36,6 @@
 	if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
 		to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
 		return FALSE
-
-	for(user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
-		var/option = input(target, "Связь!", "Что вы хотите сделать?") in list("Поговорить", "Привязать", "Отвязать")
-		if (!option)
-			return
-		if(option == "Привязать")
-			if(space >= 1)
-				to_chat(user, SPAN_NOTICE("<b>Вы не можете поддерживать столь личную связь с более чем одним человеком! Это неправильно!</b>"))
-				return
-			linked_soul += target
-			space += 1
-			target.verbs += /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
-			user.verbs += /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
-			to_chat(user, SPAN_NOTICE("<b>Вы ощущаете, как ваше сознание становится единым целым с сознанием [target]</b>"))
-			return
-		if(option == "Отвязать")
-			if(target in linked_soul)
-				user.verbs -= /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
-				target.verbs -= /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
-				linked_soul -= target
-				space -= 1
-				to_chat(user, SPAN_NOTICE("<b>Вы раз и навсегда рвёте ваши узы с [target]!</b>"))
-				to_chat(target, SPAN_WARNING("Вы ощущаете странную потерю..."))
-				return
-		if(option == "Поговорить")
-			break
 
 	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
 	if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
