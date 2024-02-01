@@ -6,16 +6,16 @@
 	icon_state = "electro"
 	item_state = "electro"
 	attack_cooldown = 5
-	var/last_used = 0 //last world.time it was used.
+	var/cooldown = 0
 	var/ranged = FALSE
 
 /obj/item/psychic_power/psielectro/proc/orb_recharge()
-	//capacitor recharges over time
-	for(var/i=0, i<3, i++)
-		if(last_used+100 > world.time)
-			break
-		last_used += 100
-	last_used = world.time
+	set waitfor = 0
+	cooldown += 10
+	var/T = cooldown
+	while(T > 0)
+		sleep(1 SECOND)
+		T--
 
 /obj/item/psychic_power/psielectro/New(var/mob/living/user)
 	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
@@ -45,7 +45,7 @@
 	if(istype(A, /mob/living))
 		var/mob/living/target = A
 
-		if(last_used != world.time)
+		if(cooldown > 0)
 			to_chat(user, "<span class='warning'>Ты не можешь использовать данную способность настолько часто!</span>")
 			return
 		if(target == user)

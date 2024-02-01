@@ -20,8 +20,7 @@
 	name =            "Telepathy"
 	cost =            2
 	cooldown =        50
-	use_ranged =       TRUE
-	use_melee = TRUE
+	use_ranged =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
 	use_description = "Выберите рот на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
@@ -66,8 +65,7 @@
 	name =            "Read Mind"
 	cost =            6
 	cooldown =        80
-	use_ranged =       TRUE
-	use_melee = TRUE
+	use_ranged =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
 	use_description = "Выберите голову на зелёном интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
@@ -199,8 +197,7 @@
 	name =            "Absorption"
 	cost =            10
 	cooldown =        50
-	use_ranged =       TRUE
-	use_melee = TRUE
+	use_ranged =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
 	use_description = "Выберите верхнюю часть тела на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы попытаться поглатить часть его псионической силы."
