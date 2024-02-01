@@ -6,16 +6,18 @@
 	icon_state = "electro"
 	item_state = "electro"
 	attack_cooldown = 5
+	var/used = FALSE
 	var/cooldown = 0
 	var/ranged = FALSE
 
-/obj/item/psychic_power/psielectro/proc/orb_recharge()
-	set waitfor = 0
-	cooldown += 10
-	var/T = cooldown
-	while(T > 0)
-		sleep(1 SECOND)
-		T--
+/obj/item/psychic_power/psielectro/Process()
+	if(used && (cooldown > 0))
+		cooldown--
+	if(used && cooldown <= 0)
+		used = FALSE
+		cooldown = 10
+
+	. = ..()
 
 /obj/item/psychic_power/psielectro/New(var/mob/living/user)
 	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
@@ -45,7 +47,7 @@
 	if(istype(A, /mob/living))
 		var/mob/living/target = A
 
-		if(cooldown > 0)
+		if(used)
 			to_chat(user, "<span class='warning'>Ты не можешь использовать данную способность настолько часто!</span>")
 			return
 		if(target == user)
@@ -60,17 +62,17 @@
 			if(el_rank_target >= el_rank && prob(40))
 				user.visible_message("<span class='danger'>[target] пропускает ток через себя, возвращая его [user] в виде молнии!</span>")
 				user.electrocute_act(rand(el_rank_target * 2,el_rank_target * 5), target, 1, target.zone_sel.selecting)
-				orb_recharge()
+				used = TRUE
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
 			if(el_rank_target >= PSI_RANK_GRANDMASTER)
 				user.visible_message("<span class='danger'>[target] пропускает ток через себя, возвращая его [user] в виде молнии!</span>")
 				user.electrocute_act(rand(el_rank_target * 4,el_rank_target * 6), target, 1, target.zone_sel.selecting)
-				orb_recharge()
+				used = TRUE
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
 		target.electrocute_act(rand(el_rank * 2,el_rank * 5), user, 1, user.zone_sel.selecting)
-		orb_recharge()
+		used = TRUE
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
 		return TRUE
 
