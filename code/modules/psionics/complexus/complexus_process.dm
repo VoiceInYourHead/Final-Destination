@@ -75,8 +75,6 @@
 					aura_color = "#cc8221"
 				else if(highest_faculty == PSI_CONSCIOUSNESS)
 					aura_color = "#5233cc"
-				else if(highest_faculty == PSI_PSYCHOBALLISTICS)
-					aura_color = "#cc3333"
 				else if(highest_faculty == PSI_METAKINESIS)
 					aura_color = "#cc8221"
 				else if(highest_faculty == PSI_MANIFESTATION)

@@ -33,6 +33,8 @@
 		return (S.lit)
 	else if(istype(A, /obj/item/device/assembly/igniter))
 		return TRUE
+	else if(istype(A, /obj/item/psychic_power/psifire))
+		return TRUE
 	return FALSE
 
 ///////////

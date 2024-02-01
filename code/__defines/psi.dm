@@ -7,7 +7,7 @@
 #define PSI_COERCION           "coercion"
 #define PSI_CONSCIOUSNESS      "consciousness"
 #define PSI_PSYCHOKINESIS      "psychokinesis"
-#define PSI_PSYCHOBALLISTICS   "psychoballistics"
+//#define PSI_PSYCHOBALLISTICS   "psychoballistics"
 #define PSI_MANIFESTATION      "manifestation"
 //#define PSI_ARCHERY            "archery"
 #define PSI_METAKINESIS        "metakinesis"

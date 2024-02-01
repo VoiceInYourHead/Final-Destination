@@ -24,7 +24,33 @@
 	use_melee = TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
+	var/space = 0
+	var/list/linked_soul = list()
 	use_description = "Выберите рот на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
+
+/decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate(var/mob/living/user, var/mob/living/target)
+	set name     = "Contact your friend"
+	set category = "Psionics"
+
+	var/soul = input(usr,"Кому мы отправляем сообщение?") as null | anything in linked_soul
+	if (!soul)
+		return
+	else
+		linked_soul = soul
+
+	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
+	if(!phrase || user.incapacitated())
+		return FALSE
+
+	to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
+	to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
+	var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
+	switch(option)
+		if("Да")
+			var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+			to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
+		else
+			return
 
 /decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH)
@@ -36,6 +62,32 @@
 	if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
 		to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
 		return FALSE
+
+	for(user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
+		var/option = input(target, "Связь!", "Что вы хотите сделать?") in list("Поговорить", "Привязать", "Отвязать")
+		if (!option)
+			return
+		if(option == "Привязать")
+			if(space >= 1)
+				to_chat(user, SPAN_NOTICE("<b>Вы не можете поддерживать столь личную связь с более чем одним человеком! Это неправильно!</b>"))
+				return
+			linked_soul += target
+			space += 1
+			target.verbs += /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
+			user.verbs += /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
+			to_chat(user, SPAN_NOTICE("<b>Вы ощущаете, как ваше сознание становится единым целым с сознанием [target]</b>"))
+			return
+		if(option == "Отвязать")
+			if(target in linked_soul)
+				user.verbs -= /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
+				target.verbs -= /decl/psionic_power/consciousness/telepathy/proc/ContactSoulmate
+				linked_soul -= target
+				space -= 1
+				to_chat(user, SPAN_NOTICE("<b>Вы раз и навсегда рвёте ваши узы с [target]!</b>"))
+				to_chat(target, SPAN_WARNING("Вы ощущаете странную потерю..."))
+				return
+		if(option == "Поговорить")
+			break
 
 	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
 	if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
@@ -194,3 +246,67 @@
 		to_chat(target, SPAN_DANGER("[user] наконец покидает ваше сознание, узнав желаемое."))
 		target.show_psi_assay(user)
 		return TRUE
+
+/decl/psionic_power/consciousness/absorb
+	name =            "Absorption"
+	cost =            10
+	cooldown =        50
+	use_ranged =       TRUE
+	use_melee = TRUE
+	min_rank =        PSI_RANK_APPRENTICE
+	suppress_parent_proc = TRUE
+	use_description = "Выберите верхнюю часть тела на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы попытаться поглатить часть его псионической силы."
+
+/decl/psionic_power/consciousness/absorb/invoke(var/mob/living/user, var/mob/living/target)
+	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+	if(user.zone_sel.selecting != BP_CHEST)
+		return FALSE
+	. = ..()
+	if(.)
+		if(target.psi && !target.psi.suppressed)
+			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+			if(con_rank_user >= con_rank_target)
+				sound_to(user, 'sound/effects/psi/power_fail.ogg')
+				if(prob(20))
+					to_chat(user, SPAN_DANGER("Вы попытались проникнуть в разум [target], но тот ловко ускользнул из под вашего воздействия."))
+					to_chat(target, SPAN_WARNING("Не важно как, но вы чудом избежали губительного воздействия [user] на ваш разум."))
+					return
+				to_chat(user, SPAN_NOTICE("Вы с лёгкостью разбили защиту [target], забрав часть его сил себе."))
+				to_chat(target, SPAN_DANGER("Вы ощущаете сильную головную боль, пока [user] пристально сверлит вас взглядом. Ваше тело ослабевает..."))
+				target.adjustBrainLoss(25)
+				user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(10,15))
+				target.psi.spend_power(rand(10,20))
+			if(con_rank_user == con_rank_target)
+				sound_to(user, 'sound/effects/psi/power_fail.ogg')
+				if(prob(50))
+					to_chat(user, SPAN_WARNING("Вы попытались проникнуть в разум [target], но в ходе битвы сами получаете значительный урон!"))
+					to_chat(target, SPAN_DANGER("Вы что есть силы пытались отбить атаки [user] на ваш разум, но в конечном счёте всё равно проиграли. По-крайней мере, ему тоже досталось."))
+					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(5,15))
+					target.psi.spend_power(rand(5,15))
+					user.adjustBrainLoss(15)
+					target.adjustBrainLoss(15)
+					user.emote("scream")
+					target.emote("scream")
+					return
+				to_chat(user, SPAN_WARNING("Вы с лёгкостью разбили защиту [target], забрав часть его сил себе."))
+				to_chat(target, SPAN_DANGER("Вы ощущаете сильную головную боль, пока [user] пристально сверлит вас взглядом. Ваше тело ослабевает..."))
+				target.adjustBrainLoss(15)
+				user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(10,15))
+				target.psi.spend_power(rand(10,20))
+			if(con_rank_user <= con_rank_target)
+				sound_to(user, 'sound/effects/psi/power_fail.ogg')
+				if(prob(20))
+					to_chat(user, SPAN_WARNING("Каким-то чудом, но вам удалось пробиться через псионическую завесу [target]!"))
+					to_chat(target, SPAN_DANGER("Вопреки всякой логике и здравому смыслу, [user] пробился в ваш разум чистой, грубой силой, нанеся в процессе значительный урон."))
+					target.adjustBrainLoss(15)
+					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(20,25))
+					target.psi.spend_power(rand(20,25))
+					return
+				to_chat(user, SPAN_DANGER("Вы пытаетесь пробиться через барьер [target], но встречаете серьёзное сопротивление!"))
+				to_chat(target, SPAN_NOTICE("[user] только что попытался пробиться в ваше сознание...к его сожалению - безуспешно."))
+				user.emote("scream")
+				user.adjustBrainLoss(25)
+				user.psi.spend_power(rand(20,30))
+		else
+			to_chat(user, SPAN_NOTICE("Вы не обнаружили у [target] каких-либо псионических способностей для подпитки."))
+

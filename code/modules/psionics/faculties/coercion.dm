@@ -140,7 +140,7 @@
 	. = ..()
 	if(.)
 		if(target.stat == DEAD || (target.status_flags & FAKEDEATH))
-			to_chat(user, "<span class='warning'>[target] мёрта!</span>")
+			to_chat(user, "<span class='warning'>[target] мёртв!</span>")
 			return FALSE
 		if(!target.mind || !target.key)
 			to_chat(user, "<span class='warning'>[target] находится в бессознательном состоянии!</span>")

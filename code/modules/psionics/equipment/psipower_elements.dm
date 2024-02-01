@@ -18,6 +18,14 @@
 	..()
 
 /obj/item/psychic_power/psielectro/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
+
+//TURFS AND ANYTHING ELSE
+
+	if(proximity)
+		var/datum/effect/effect/system/spark_spread/sparks = new ()
+		sparks.set_up(3, 0, get_turf(A))
+		sparks.start()
+
 	if(!proximity && !ranged)
 		return
 
@@ -28,6 +36,9 @@
 	if(istype(A, /mob/living))
 		var/mob/living/target = A
 
+		if(target == user)
+			to_chat(user, "<span class='warning'>Вы не можете зарядить самого себя!</span>")
+			return
 		if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) <= PSI_RANK_OPERANT)
 			user.visible_message("<span class='danger'>[user] направляет свору еле-заметных молний в тело [target]!</span>")
 		if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
@@ -135,6 +146,8 @@
 	icon_state = "pyro"
 	item_state = "pyro"
 	attack_cooldown = 5
+
+	var/combat_mode = FALSE
 	var/turf/previousturf = null
 
 	var/range = 2
@@ -154,13 +167,52 @@
 
 	..()
 
-/obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
+/obj/item/psychic_power/psifire/AltClick(mob/user)
+	combat_mode = !combat_mode
+	if(!combat_mode)
+		to_chat("<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет поджигать людей</span>")
+	if(combat_mode)
+		to_chat("<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
 
-	if(istype(A, /turf/))
+/obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
+//TURFS
+
+	if(istype(A, /turf/) && !proximity)
 		var/turf/target_turf = get_turf(A)
 		if(target_turf)
 			var/turflist = getline(user, target_turf)
 			flame_turf(turflist)
+			user.visible_message("<span class='danger'>[user] взмахивает рукой, создавая стену из огня!</span>")
+
+	else if(!proximity)
+		return
+
+//OTHER STUFF
+
+	var/obj/OBJ = A
+	if(istype(OBJ))
+		if(istype(A, /obj/item/clothing/mask/smokable/cigarette))
+			var/obj/item/clothing/mask/smokable/cigarette/S = A
+			S.light("[user] щёлкает пальцами как зажигалкой, подпаливая [S.name].")
+			playsound(S.loc, "light_bic", 100, 1, -4)
+		else
+			user.visible_message("<span class='warning'>[user] прислоняет руку к [OBJ]. Можно заметить, как от места соприкосновения идёт пар.</span>")
+			OBJ.HandleObjectHeating(src, user, 700)
+
+//MOBS
+
+	if(istype(A, /mob/living) && combat_mode)
+		var/mob/living/target = A
+		user.visible_message("<span class='danger'>[user] прислоняет руку к [target], зажигая его как спичку!</span>")
+		target.fire_act(exposed_temperature = 300, exposed_volume = 250)
+	else if(istype(A, /mob/living))
+		var/mob/living/target = A
+		if(istype(target.wear_mask, /obj/item/clothing/mask/smokable/cigarette) && user.zone_sel.selecting == BP_MOUTH)
+			var/obj/item/clothing/mask/smokable/cigarette/cig = target.wear_mask
+			if(target == user)
+				cig.attackby(src, user)
+			else
+				cig.light("<span class='notice'>[user] щёлкает пальцами как зажигалкой, подпаливая [cig.name] во рту [target].</span>")
 
 /obj/item/psychic_power/psifire/proc/flame_turf(list/turflist)
 	var/length = LAZYLEN(turflist)
