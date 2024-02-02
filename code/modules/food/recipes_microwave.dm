@@ -1514,8 +1514,9 @@
 		"apple" = 1,
 		"lemon" = 1,
 		"orange" = 1,
-		"watermelonslice" = 2
-
+	)
+	items = list(
+		/obj/item/reagent_containers/food/snacks/watermelonslice = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/fruitsalad
 
@@ -1527,7 +1528,9 @@
 		"lemon" = 2,
 		"banana" = 2,
 		"watermelonslice" = 2
-
+	)
+	items = list(
+		/obj/item/reagent_containers/food/snacks/watermelonslice = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/junglesalad
 
