@@ -214,13 +214,11 @@
 			'sound/voice/emotes/gasp_female5.ogg', 'sound/voice/emotes/gasp_female6.ogg',
 			'sound/voice/emotes/gasp_female7.ogg'))
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_VOX, SPECIES_RESOMI, SPECIES_SKRELL)
 
 /decl/emote/audible/whistle
 	emote_sound = 'sound/voice/emotes/whistle.ogg'
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_VOX, SPECIES_RESOMI, SPECIES_IPC,
 	SPECIES_SKRELL)
 
@@ -237,7 +235,6 @@
 		'sound/voice/emotes/snore_5.ogg', 'sound/voice/emotes/snore_6.ogg',
 		'sound/voice/emotes/snore_7.ogg')
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_VOX, SPECIES_RESOMI, SPECIES_SKRELL)
 
 /decl/emote/audible/sneeze/resomi
@@ -259,7 +256,6 @@
 		MALE = 'sound/voice/emotes/cough_male.ogg',
 		FEMALE = 'sound/voice/emotes/cough_female.ogg')
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_VOX, SPECIES_RESOMI, SPECIES_SKRELL)
 
 /decl/emote/audible/cough/resomi
@@ -278,7 +274,6 @@
 		MALE = 'sound/voice/emotes/sigh_male.ogg',
 		FEMALE = 'sound/voice/emotes/sigh_female.ogg')
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_VOX, SPECIES_RESOMI, SPECIES_SKRELL)
 
 /decl/emote/audible/laugh

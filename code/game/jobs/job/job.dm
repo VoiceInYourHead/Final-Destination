@@ -55,7 +55,7 @@
 
 	var/required_language
 
-	var/psi_allowed_species = list(/datum/species/human,/datum/species/human/vatgrown,/datum/species/human/tritonian,/datum/species/human/gravworlder,/datum/species/human/spacer,/datum/species/human/mule)
+	var/psi_allowed_species = list(/datum/species/human,/datum/species/human/vatgrown,/datum/species/human/tritonian,/datum/species/human/gravworlder,/datum/species/human/spacer)
 
 /datum/job/New()
 
