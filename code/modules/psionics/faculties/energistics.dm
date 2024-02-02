@@ -13,9 +13,11 @@
 	cooldown =         20
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_APPRENTICE
-	use_description = "Выберите красный интент и нажмите по цели на дистанции чтобы запустить в неё луч концентрированной псионической энергии."
+	use_description = "Выберите красный интент и верхнюю часть тела, чтобы по нажатию запустить в цель луч концентрированной псионической энергии."
 
 /decl/psionic_power/energistics/zorch/invoke(var/mob/living/user, var/mob/living/target)
+	if(user.zone_sel.selecting != BP_CHEST)
+		return FALSE
 	if(user.zone_sel.selecting == BP_MOUTH)
 		return FALSE
 	. = ..()
@@ -70,7 +72,7 @@
 	. = ..()
 	if(.)
 		if(en_rank == PSI_RANK_GRANDMASTER)
-			var/option = input(target, "Choose something!", "How big should be the empulse?") in list("Concentrated", "Uncontrolled")
+			var/option = input(user, "Choose something!", "How big should be the empulse?") in list("Concentrated", "Uncontrolled")
 			if (!option)
 				return
 			if(option == "Concentrated")

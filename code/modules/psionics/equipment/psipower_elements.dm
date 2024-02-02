@@ -15,7 +15,7 @@
 		cooldown--
 	if(used && cooldown <= 0)
 		used = FALSE
-		cooldown = 10
+		cooldown = 5
 
 	. = ..()
 
@@ -179,7 +179,7 @@
 	range += fire_rank
 
 	if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
-		flame_color = COLOR_BLUE
+		flame_color = "#33ccc9"
 		flame_power += 5
 
 	..()
