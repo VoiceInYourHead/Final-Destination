@@ -1,6 +1,6 @@
 /decl/psionic_faculty/manifestation
 	id = PSI_MANIFESTATION
-	name = "Manifestation"
+	name = "Demiurgy"
 	associated_intent = I_GRAB
 	armour_types = list("bullet", "melee")
 

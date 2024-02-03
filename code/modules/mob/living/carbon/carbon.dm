@@ -101,18 +101,17 @@
 
 /mob/living/carbon/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
 
-	if(src.psi)
-		if(src.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER && prob(60))
-			src.visible_message("<span class='warning'>[src] absorbed all pure energy, sent into them!</span>")
-			src.psi.stamina = min(src.psi.max_stamina, src.psi.stamina + rand(15,20))
+	var/obj/item/psychic_power/psielectro/carried_orb
+	if(carried_orb in list(l_hand,r_hand))
+		if(src.psi && src.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
+			if(prob(80))
+				src.visible_message("<span class='warning'>[src] absorbed all pure energy, sent into them!</span>")
+				src.psi.stamina = min(src.psi.max_stamina, src.psi.stamina + rand(15,20))
 
-			var/datum/effect/effect/system/spark_spread/l = new /datum/effect/effect/system/spark_spread
-			l.set_up(5, 1, loc)
-			l.start()
-		else
-			return 1
-
-		return 0
+				var/datum/effect/effect/system/spark_spread/l = new /datum/effect/effect/system/spark_spread
+				l.set_up(5, 1, loc)
+				l.start()
+				return 0
 
 	if(status_flags & GODMODE)	return 0	//godmode
 

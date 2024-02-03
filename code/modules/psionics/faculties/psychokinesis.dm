@@ -1,6 +1,6 @@
 /decl/psionic_faculty/psychokinesis
 	id = PSI_PSYCHOKINESIS
-	name = "Psychokinesis"
+	name = "Teleplexy"
 	associated_intent = I_GRAB
 	armour_types = list("bullet", "melee")
 

@@ -74,7 +74,6 @@
 /obj/item/psychic_power/psiclub
 	name = "psychokinetic club"
 	force = 10
-	sharp = TRUE
 	edge = TRUE
 	maintain_cost = 5
 	icon_state = "psiclub"
