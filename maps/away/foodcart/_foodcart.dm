@@ -29,7 +29,7 @@
 	total_positions = 4
 	supervisors = "nobody but yourself"
 	info = "You are the crewman of your small flying restaurant. Pursue your goals, cook, trade with people; try to make everyone happy."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_RESOMI)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_RESOMI)
 	outfit_type = /decl/hierarchy/outfit/job/foodcart
 	loadout_allowed = TRUE
 	min_skill = list(
