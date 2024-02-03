@@ -1,6 +1,6 @@
 /decl/psionic_faculty/energistics
 	id = PSI_ENERGISTICS
-	name = "Energistics"
+	name = "Hyloforia"
 	associated_intent = I_HURT
 	armour_types = list("laser", "melee") //"bomb"
 

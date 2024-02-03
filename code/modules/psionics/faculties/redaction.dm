@@ -1,6 +1,6 @@
 /decl/psionic_faculty/redaction
 	id = PSI_REDACTION
-	name = "Redaction"
+	name = "Ephanoferia"
 	associated_intent = I_HELP
 	armour_types = list("bio", "rad")
 
@@ -40,14 +40,130 @@
 
 /decl/psionic_power/redaction/mend
 	name =            "Mend"
-	cost =            7
+	cost =            20
 	cooldown =        50
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
 	use_description = "Выберите любую часть тела на зелёном интенте и нажмите по цели, чтобы убрать возможные ранения с указанной зоны."
 
+//UPDATED
+
 /decl/psionic_power/redaction/mend/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
+	var/red_rank = user.psi.get_rank(PSI_REDACTION)
+	var/pk_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
+	var/obj/item/organ/external/E = target.get_organ(user.zone_sel.selecting)
+	if(!istype(user) || !istype(target))
+		return FALSE
+	. = ..()
+	if(.)
+		var/option = input(user, "Выберите что-нибудь!", "Какую помощь вы хотите оказать [target]?") in list("Базовая", "Переломы", "Кровотечение", "Органы")
+		user.psi.set_cooldown(cooldown)
+		if (!option)
+			return
+		if(option == "Базовая")
+			if(do_after(user, 50))
+				user.visible_message(SPAN_NOTICE("<i>[user] кладёт руки на плечи [target]...</i>"))
+				to_chat(target, SPAN_NOTICE("Вы ощущаете приятное тепло...ваши раны заживают."))
+				new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+				target.adjustBruteLoss(-(rand(10,20) * red_rank))
+				target.adjustFireLoss(-(rand(10,20) * red_rank))
+				if(pk_rank >= PSI_RANK_OPERANT)
+					var/removal_size = clamp(5-pk_rank, 0, 5)
+					var/valid_objects = list()
+					for(var/thing in E.implants)
+						var/obj/imp = thing
+
+						if(!imp)
+							continue
+
+						if(imp.w_class >= removal_size && !istype(imp, /obj/item/implant))
+							valid_objects += imp
+					if(LAZYLEN(valid_objects))
+						var/removing = pick(valid_objects)
+						target.remove_implant(removing, TRUE)
+						to_chat(user, SPAN_WARNING("Помимо прочего, вы также извлекли [removing] из [E.name] вашего пациента."))
+				return 1
+		if(option == "Переломы")
+
+//It's easier to repair severed tendon, than put bones in place or either repair it structure, so no rank check
+
+			if(E.status & ORGAN_TENDON_CUT)
+				if(do_after(user, 50))
+					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+					to_chat(user, SPAN_NOTICE("Вы аккуратно сплели новое сухожилие на месте повреждённого в [E.name]."))
+					E.status &= ~ORGAN_TENDON_CUT
+					return 1
+
+			if(red_rank < PSI_RANK_OPERANT)
+				to_chat(user, SPAN_WARNING("Боюсь, ваших сил недостаточно для проведения данной операции!"))
+				return 0
+			if(!E)
+				to_chat(user, SPAN_WARNING("Эта конечность отсутствует!"))
+				return 0
+			if(BP_IS_ROBOTIC(E))
+				to_chat(user, SPAN_WARNING("Эта конечность заменена протезом."))
+				return 0
+			if(E.is_stump())
+				to_chat(user, SPAN_WARNING("Нет смысла тратить силы на этот обрубок. Здесь вы бессильны."))
+				return 0
+			if(E.status & ORGAN_BROKEN)
+				user.visible_message(SPAN_NOTICE("<i>[user] кладёт руку на [target]'s [E.name]...</i>"))
+				if(do_after(user, 80))
+					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+					to_chat(user, SPAN_NOTICE("Вы установили кости на их прежнее место, заделав образовавшиеся на их поверхности трещины."))
+					E.status &= ~ORGAN_BROKEN
+					E.stage = 0
+					to_chat(target, SPAN_NOTICE("Вы ощущаете приятное тепло в районе [E.name]...кости начинают вставать на место."))
+					return 1
+		if(option == "Кровотечение")
+			if(red_rank < PSI_RANK_OPERANT)
+				to_chat(user, SPAN_WARNING("Боюсь, ваших сил недостаточно для проведения данной операции!"))
+				return 0
+			if(!E)
+				to_chat(user, SPAN_WARNING("Эта конечность отсутствует!"))
+				return 0
+			if(BP_IS_ROBOTIC(E))
+				to_chat(user, SPAN_WARNING("Эта конечность заменена протезом."))
+				return 0
+			if(E.is_stump())
+				to_chat(user, SPAN_WARNING("Нет смысла тратить силы на этот обрубок. Здесь вы бессильны."))
+				return 0
+			if(E.status & ORGAN_ARTERY_CUT)
+				if(do_after(user, 80))
+					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+					to_chat(user, SPAN_NOTICE("Вы вновь связали разованные вены в [E.name], останавливая внутреннее кровотечение."))
+					to_chat(target, SPAN_NOTICE("Вы ощущаете неприятное чувство в районе [E.name]...словно кто-то вновь сплетает ваши вены воедино."))
+					E.status &= ~ORGAN_ARTERY_CUT
+					return 1
+			for(var/datum/wound/W in E.wounds)
+				if(W.bleeding())
+					if(W.wound_damage() < 30)
+						if(do_after(user, 30))
+							to_chat(user, SPAN_NOTICE("Вы аккуратно перекрыли поток крови, хлыщащий из [E.name], устранив протечку и зашив её."))
+							to_chat(target, SPAN_NOTICE("Вы ощущаете приятное тепло в районе [E.name]...кровь, ранее шедшая из этого места - остановилась."))
+							new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+							W.bleed_timer = 0
+							W.clamped = TRUE
+							E.status &= ~ORGAN_BLEEDING
+							return 1
+					else
+						to_chat(user, SPAN_NOTICE("Это ранение превыше ваших сил."))
+						return 0
+		if(option == "Органы")
+			if(red_rank >= PSI_RANK_MASTER)
+				for(var/obj/item/organ/internal/I in E.internal_organs)
+					if(!BP_IS_ROBOTIC(I) && !BP_IS_CRYSTAL(I) && I.damage > 0)
+						if(do_after(user, 120))
+							to_chat(user, SPAN_NOTICE("Вы проникаете внутрь тела [target], восстанавливая повреждённый орган: [I]."))
+							new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+							var/heal_rate = red_rank
+							I.damage = max(0, I.damage - rand(heal_rate,heal_rate*3))
+							return 1
+
+//OLD VERSION
+
+/*/decl/psionic_power/redaction/mend/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
 	if(!istype(user) || !istype(target))
 		return FALSE
 	. = ..()
@@ -126,7 +242,7 @@
 					return TRUE
 
 		to_chat(user, SPAN_NOTICE("В его [E.name] нечего лечить."))
-		return FALSE
+		return FALSE*/
 
 /decl/psionic_power/redaction/cleanse
 	name =            "Cleanse"

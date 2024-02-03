@@ -6,16 +6,12 @@
 	icon_state = "electro"
 	item_state = "electro"
 	attack_cooldown = 5
-	var/used = FALSE
 	var/cooldown = 0
 	var/ranged = FALSE
 
 /obj/item/psychic_power/psielectro/Process()
-	if(used && (cooldown > 0))
+	if(cooldown > 0)
 		cooldown--
-	if(used && cooldown <= 0)
-		used = FALSE
-		cooldown = 5
 
 	. = ..()
 
@@ -47,7 +43,7 @@
 	if(istype(A, /mob/living))
 		var/mob/living/target = A
 
-		if(used)
+		if(cooldown > 0)
 			to_chat(user, "<span class='warning'>“ы не можешь использовать данную способность настолько часто!</span>")
 			return
 		if(target == user)
@@ -62,17 +58,17 @@
 			if(el_rank_target >= el_rank && prob(40))
 				user.visible_message("<span class='danger'>[target] пропускает ток через себ€, возвраща€ его [user] в виде молнии!</span>")
 				user.electrocute_act(rand(el_rank_target * 2,el_rank_target * 5), target, 1, target.zone_sel.selecting)
-				used = TRUE
+				cooldown += 2
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
-			if(el_rank_target >= PSI_RANK_GRANDMASTER)
+			if(el_rank_target == PSI_RANK_GRANDMASTER)
 				user.visible_message("<span class='danger'>[target] пропускает ток через себ€, возвраща€ его [user] в виде молнии!</span>")
 				user.electrocute_act(rand(el_rank_target * 4,el_rank_target * 6), target, 1, target.zone_sel.selecting)
-				used = TRUE
+				cooldown += 2
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
 		target.electrocute_act(rand(el_rank * 2,el_rank * 5), user, 1, user.zone_sel.selecting)
-		used = TRUE
+		cooldown += 2
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
 		return TRUE
 
@@ -164,7 +160,7 @@
 	item_state = "pyro"
 	attack_cooldown = 5
 
-	var/combat_mode = FALSE
+	var/combat_mode = TRUE
 	var/turf/previousturf = null
 
 	var/range = 2
@@ -186,15 +182,15 @@
 
 /obj/item/psychic_power/psifire/AltClick(mob/user)
 	combat_mode = !combat_mode
-	if(!combat_mode)
-		to_chat(user, "<span class='warning'>¬ы приготовились к бою. “еперь, ваше касание будет поджигать людей</span>")
 	if(combat_mode)
+		to_chat(user, "<span class='warning'>¬ы приготовились к бою. “еперь, ваше касание будет поджигать людей</span>")
+	if(!combat_mode)
 		to_chat(user, "<span class='warning'>¬ы вновь можете безопасно прикасатьс€ к вещам вокруг.</span>")
 
 /obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 //TURFS
 
-	if(istype(A, /turf/) && !proximity)
+	if(istype(A, /turf/) && !proximity && combat_mode)
 		var/turf/target_turf = get_turf(A)
 		if(target_turf)
 			var/turflist = getline(user, target_turf)

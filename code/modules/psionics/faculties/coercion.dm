@@ -1,6 +1,6 @@
 /decl/psionic_faculty/coercion
 	id = PSI_COERCION
-	name = "Coercion"
+	name = "Catastellia"
 	associated_intent = I_DISARM
 	armour_types = list(PSIONIC, "melee")
 

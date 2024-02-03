@@ -1,6 +1,6 @@
 /decl/psionic_faculty/consciousness
 	id = PSI_CONSCIOUSNESS
-	name = "Consciousness"
+	name = "Allaxetia"
 	associated_intent = I_DISARM
 	armour_types = list(PSIONIC, "melee")
 
@@ -24,33 +24,30 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Выберите рот на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
+	use_description = "Выберите рот на синем интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
 
 /mob/living
 	var/space = 0
-	var/list/linked_soul = list()
+	var/linked_soul
 
 /mob/living/proc/ContactSoulmate()
 	set name     = "Contact your friend"
 	set category = "Psionics"
 
-	var/soul = input(usr,"Кому мы отправляем сообщение?") in linked_soul
-	if (!soul)
+	if (!linked_soul)
 		return
-	else
-		linked_soul = soul
 
 	var/phrase =  input(usr, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
 	if(!phrase || usr.incapacitated())
 		return FALSE
 
-	to_chat(usr, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [soul], дабы донести до него следующее: <i>[phrase]</i></b>"))
-	to_chat(soul, SPAN_OCCULT("<b>Вы слышите отчётливый голос [usr] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
-	var/option =  alert(soul, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
+	to_chat(usr, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [linked_soul], дабы донести до него следующее: <i>[phrase]</i></b>"))
+	to_chat(linked_soul, SPAN_OCCULT("<b>Вы слышите отчётливый голос [usr] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
+	var/option =  alert(linked_soul, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
 	switch(option)
 		if("Да")
-			var/answer =  input(soul, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
-			to_chat(usr, SPAN_OCCULT("<b>[soul] отвечает вам: <i>[answer]</i></b>"))
+			var/answer =  input(linked_soul, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+			to_chat(usr, SPAN_OCCULT("<b>[linked_soul] отвечает вам: <i>[answer]</i></b>"))
 		else
 			return
 
@@ -73,11 +70,11 @@
 			if(user.space >= 1)
 				to_chat(user, SPAN_NOTICE("<b>Вы не можете поддерживать столь личную связь с более чем одним человеком! Это неправильно!</b>"))
 				return 0
-			var/answer = alert(target, "Слияние", "[user] пытается связать ваши разумы воедино. Вы позволите ему сделать это?", "Да", "Нет")
+			var/answer = alert(target, "[user] пытается связать ваши разумы воедино. Вы позволите ему сделать это?", "Слияние", "Да", "Нет")
 			switch(answer)
 				if("Да")
-					user.linked_soul += target
-					user.space += 1
+					user.linked_soul = target
+					user.space = 1
 					user.verbs += /mob/living/proc/ContactSoulmate
 					to_chat(user, SPAN_NOTICE("<b>Вы ощущаете, как ваше сознание становится единым целым с сознанием [target]</b>"))
 					return 0
@@ -85,12 +82,15 @@
 					to_chat(user, SPAN_NOTICE("<b>[target] отказался от вашего предложения.</b>"))
 					return 0
 		if(option == "Отвязать")
-			user.verbs -= /mob/living/proc/ContactSoulmate
-			user.linked_soul -= target
-			user.space -= 1
-			to_chat(user, SPAN_NOTICE("<b>Вы раз и навсегда рвёте ваши узы с [target]!</b>"))
-			to_chat(target, SPAN_WARNING("Вы ощущаете странную потерю..."))
-			return 0
+			if(user.linked_soul == target)
+				user.verbs -= /mob/living/proc/ContactSoulmate
+				user.linked_soul = null
+				user.space = 0
+				to_chat(user, SPAN_NOTICE("<b>Вы раз и навсегда рвёте ваши узы с [target]!</b>"))
+				to_chat(target, SPAN_WARNING("Вы ощущаете странную потерю..."))
+				return 0
+			else
+				to_chat(user, SPAN_NOTICE("<b>У вас нет никаких уз с [target]!</b>"))
 		if(option == "Поговорить")
 
 ///Yes. And no, i don't know how to do it better///
@@ -154,7 +154,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Выберите голову на зелёном интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
+	use_description = "Выберите голову на синем интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
 
 /decl/psionic_power/consciousness/mindread/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD)
@@ -228,14 +228,14 @@
 	use_grab =     TRUE
 	min_rank =      PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Схватите цель, затем выберите рот на зелёном интенте и нажмите по ней захватом ещё раз, дабы частично очистить её сознание от возможного урона."
+	use_description = "Схватите цель, затем выберите рот на синем интенте и нажмите по ней захватом ещё раз, дабы частично очистить её сознание от возможного урона."
 
 /decl/psionic_power/consciousness/focus/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message(SPAN_WARNING("[user] целует [target]..."))
+		user.visible_message(SPAN_WARNING("[user] целует [target] в лоб..."))
 		to_chat(user, SPAN_NOTICE("Вы проверяете разум [target] на наличие повреждений..."))
 		to_chat(target, SPAN_WARNING("Вы ощущаете, как ваш разум очищается, становясь яснее."))
 		if(!do_after(user, (target.stat == CONSCIOUS ? 50 : 25), target))
@@ -261,7 +261,7 @@
 	use_grab =        TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Схватите цель, затем выберите голову и зелёный интент. После этого, нажмите по цели захватом, чтобы погрузится в глубины её разума и отыскать там скрытый потенциал."
+	use_description = "Схватите цель, затем выберите голову и синий интент. После этого, нажмите по цели захватом, чтобы погрузится в глубины её разума и отыскать там скрытый потенциал."
 
 /decl/psionic_power/consciousness/assay/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_HEAD)
@@ -287,7 +287,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Выберите верхнюю часть тела на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы попытаться поглатить часть его псионической силы."
+	use_description = "Выберите верхнюю часть тела на синем интенте, и затем нажмите по цели с любого расстояния, чтобы попытаться поглатить часть его псионической силы."
 
 /decl/psionic_power/consciousness/absorb/invoke(var/mob/living/user, var/mob/living/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
@@ -346,3 +346,70 @@
 			to_chat(user, SPAN_NOTICE("Вы не обнаружили у [target] каких-либо псионических способностей для подпитки."))
 			return 0
 
+/decl/psionic_power/consciousness/invis
+	name =            "Invisibility"
+	cost =            30
+	cooldown =        100
+	use_ranged =     TRUE
+	use_melee =     TRUE
+	min_rank =        PSI_RANK_MASTER
+	suppress_parent_proc = TRUE
+	use_description = "Выберите глаза на синем интенте, и затем нажмите куда угодно, чтобы временно исчезнуть."
+
+/mob/living
+	var/invis_timer = 30
+
+/mob/living/proc/run_timer_invisibility()
+	set waitfor = 0
+	var/T = invis_timer
+	while(T > 0)
+		sleep(1 SECOND)
+		T--
+	src.visible_message(SPAN_WARNING("[src] внезапно материализуется из воздуха!"))
+	src.alpha = 100
+	sleep(2)
+	src.alpha = 150
+	sleep(2)
+	src.alpha = 200
+	sleep(2)
+	src.alpha = 255
+
+/decl/psionic_power/consciousness/invis/invoke(var/mob/living/user, var/mob/living/target)
+	if(user.zone_sel.selecting != BP_EYES)
+		return FALSE
+	. = ..()
+	if(.)
+		user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
+		user.alpha = 200
+		sleep(2)
+		user.alpha = 150
+		sleep(2)
+		user.alpha = 100
+		sleep(2)
+		user.alpha = 50
+		sleep(2)
+		user.alpha = 25
+		sleep(2)
+		user.alpha = 10
+		user.run_timer_invisibility()
+		return TRUE
+
+/decl/psionic_power/consciousness/curse
+	name =            "Curse"
+	cost =            20
+	cooldown =        50
+	use_grab =        TRUE
+	use_melee =     TRUE
+	min_rank =        PSI_RANK_OPERANT
+	suppress_parent_proc = TRUE
+	use_description = "Схватите цель, затем выберите верхнюю часть тела и синий интент. После этого, нажмите по цели захватом, чтобы погрузить её в мир галлюцинаций."
+
+/decl/psionic_power/consciousness/curse/invoke(var/mob/living/user, var/mob/living/carbon/target)
+	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+	if(user.zone_sel.selecting != BP_CHEST)
+		return FALSE
+	. = ..()
+	if(.)
+		new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "eye_opening")
+		playsound(target.loc, 'sound/hallucinations/far_noise.ogg', 15, 1)
+		target.hallucination(rand(10,20) * con_rank_user, 100)

@@ -281,6 +281,10 @@
 	location.hotspot_expose(fire_burn_temperature(), 50, 1)
 
 /mob/living/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	var/obj/item/psychic_power/psifire/carried_orb
+	if(carried_orb in list(l_hand,r_hand))
+		if(src.psi && src.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
+			return
 	if (status_flags & GODMODE)
 		return
 	//once our fire_burn_temperature has reached the temperature of the fire that's giving fire_stacks, stop adding them.
