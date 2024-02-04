@@ -84,7 +84,7 @@
 		return TRUE
 	if (isWelder(I))
 		var/obj/item/weldingtool/W = I
-		if (!W.welding)
+		if(istype(I, /obj/item/weldingtool && !W.welding))
 			to_chat(user, SPAN_WARNING("\The [I] isn't turned on."))
 			return TRUE
 		if (!emagged)

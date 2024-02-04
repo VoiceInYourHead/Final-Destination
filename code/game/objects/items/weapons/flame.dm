@@ -28,6 +28,8 @@
 	else if(istype(A, /obj/item/flame))
 		var/obj/item/flame/F = A
 		return (F.lit)
+	else if (istype(A, /obj/item/psychic_power/psifire))
+		return TRUE
 	else if(istype(A, /obj/item/clothing/mask/smokable) && !istype(A, /obj/item/clothing/mask/smokable/pipe))
 		var/obj/item/clothing/mask/smokable/S = A
 		return (S.lit)
