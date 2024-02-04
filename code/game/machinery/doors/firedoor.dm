@@ -206,25 +206,26 @@
 
 	if(isWelder(C) && !repairing)
 		var/obj/item/weldingtool/W = C
-		if(W.remove_fuel(0, user))
-			user.visible_message(
-				SPAN_WARNING("\The [user] starts [!blocked ? "welding \the [src] shut" : "cutting open \the [src]"]."),
+		if (istype(C, /obj/item/weldingtool) && !W.remove_fuel(0, user))
+			return
+		user.visible_message(
+			SPAN_WARNING("\The [user] starts [!blocked ? "welding \the [src] shut" : "cutting open \the [src]"]."),
 				SPAN_DANGER("You start [!blocked ? "welding \the [src] closed" : "cutting open \the [src]"]."),
 				SPAN_ITALIC("You hear welding.")
 			)
-			playsound(loc, 'sound/items/Welder.ogg', 50, TRUE)
-			if(do_after(user, 2 SECONDS, src))
-				if(!W.isOn())
-					return
-				blocked = !blocked
-				user.visible_message(
+		playsound(loc, 'sound/items/Welder.ogg', 50, TRUE)
+		if(do_after(user, 2 SECONDS, src))
+			if (istype(C, /obj/item/weldingtool) && !W.isOn())
+				return
+			blocked = !blocked
+			user.visible_message(
 					SPAN_DANGER("\The [user] [blocked ? "welds \the [src] shut" : "cuts open \the [src]"]."),
 					SPAN_DANGER("You [blocked ? "weld shut" : "undo the welds on"] \the [src]."),
 					SPAN_ITALIC("You hear welding.")
 				)
-				playsound(loc, 'sound/items/Welder2.ogg', 50, TRUE)
-				update_icon()
-				return
+			playsound(loc, 'sound/items/Welder2.ogg', 50, TRUE)
+			update_icon()
+			return
 
 	if(density && isScrewdriver(C))
 		hatch_open = !hatch_open

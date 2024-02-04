@@ -955,7 +955,7 @@ About the new airlock wires panel:
 
 	if(isWelder(item))
 		var/obj/item/weldingtool/WT = item
-		if(!WT.remove_fuel(0,user))
+		if (istype(item, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 			return 0
 		cut_verb = "cutting"
 		cut_sound = 'sound/items/Welder.ogg'
@@ -1060,7 +1060,7 @@ About the new airlock wires panel:
 
 	if(!repairing && isWelder(C) && !( operating > 0 ) && density)
 		var/obj/item/weldingtool/W = C
-		if(!W.remove_fuel(0,user))
+		if(istype(C, /obj/item/weldingtool) && !W.remove_fuel(0,user))
 			to_chat(user, SPAN_NOTICE("Your [W.name] doesn't have enough fuel."))
 			return
 		playsound(src, 'sound/items/Welder.ogg', 50, 1)
