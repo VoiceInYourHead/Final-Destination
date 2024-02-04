@@ -349,7 +349,7 @@
 /decl/psionic_power/consciousness/invis
 	name =            "Invisibility"
 	cost =            30
-	cooldown =        100
+	cooldown =        200
 	use_ranged =     TRUE
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_MASTER

@@ -31,7 +31,7 @@
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
 				if(user.a_intent == I_HELP)
-					pew = /obj/item/projectile/beam/stun/shock/heavy
+					pew = new /obj/item/projectile/beam/stun/shock/heavy(get_turf(user))
 					pew.name = "gigawatt mental beam"
 					pew_sound = 'sound/weapons/taser2.ogg'
 				if(user.a_intent == I_HURT)
@@ -40,7 +40,7 @@
 					pew_sound = 'sound/weapons/pulse.ogg'
 			if(PSI_RANK_MASTER)
 				if(user.a_intent == I_HELP)
-					pew = /obj/item/projectile/beam/stun/shock
+					pew = new /obj/item/projectile/beam/stun/shock(get_turf(user))
 					pew.name = "megawatt mental beam"
 					pew_sound = 'sound/weapons/taser2.ogg'
 				if(user.a_intent == I_HURT)
@@ -49,7 +49,7 @@
 					pew_sound = 'sound/weapons/Laser.ogg'
 			if(PSI_RANK_OPERANT)
 				if(user.a_intent == I_HELP)
-					pew = /obj/item/projectile/beam/stun
+					pew = new /obj/item/projectile/beam/stun(get_turf(user))
 					pew.name = "mental beam"
 					pew_sound = 'sound/weapons/taser2.ogg'
 				if(user.a_intent == I_HURT)
@@ -158,7 +158,8 @@
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
 				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/psi/strong(get_turf(user))
+					pew = new /obj/item/projectile/psi(get_turf(user))
+					pew.damage = 40
 					pew.name = "psionic round"
 					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 				if(user.a_intent == I_HURT)
@@ -167,9 +168,15 @@
 					pew.damage = 25
 					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_MASTER)
-				pew = new /obj/item/projectile/psi/strong(get_turf(user))
-				pew.name = "psionic round"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				if(user.a_intent == I_HELP)
+					pew = new /obj/item/projectile/psi(get_turf(user))
+					pew.damage = 40
+					pew.name = "psionic round"
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				if(user.a_intent == I_HURT)
+					pew = new /obj/item/projectile/psi/strong(get_turf(user))
+					pew.name = "psionic round"
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_OPERANT)
 				pew = new /obj/item/projectile/psi(get_turf(user))
 				pew.name = "psionic bullet"

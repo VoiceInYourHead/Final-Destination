@@ -29,4 +29,4 @@
 		if(option == "Fire")
 			return new /obj/item/psychic_power/psifire(user, user)
 		if(option == "Ice")
-			return
+			return new /obj/item/psychic_power/psiice(user, user)

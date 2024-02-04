@@ -79,8 +79,6 @@
 					aura_color = "#cccc33"
 				else if(highest_faculty == PSI_MANIFESTATION)
 					aura_color = "#cc8221"
-				else if(highest_faculty == PSI_CRYOKINESIS)
-					aura_color = "#33ccc9"
 			aura_image.pixel_x = -64 - owner.default_pixel_x
 			aura_image.pixel_y = -64 - owner.default_pixel_y
 

@@ -11,7 +11,7 @@
 #define PSI_MANIFESTATION      "demiurgy"
 //#define PSI_ARCHERY            "archery"
 #define PSI_METAKINESIS        "metaplexy"
-#define PSI_CRYOKINESIS        "cryokinesis"
+//#define PSI_CRYOKINESIS        "cryokinesis"
 #define PSI_ENERGISTICS        "hyloforia"
 //#define PSI_ELECTRONICS        "electronics"
 //#define PSI_ELECTROMAGNETICS   "electromagnetics"

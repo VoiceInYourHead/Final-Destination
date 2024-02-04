@@ -61,6 +61,7 @@
 	supervisors = "a Teachers."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
 	total_positions = 30
+	loadout_allowed = TRUE
 	skill_points = 15
 
 /obj/effect/submap_landmark/spawnpoint/camp/psionic
@@ -72,6 +73,7 @@
 	supervisors = "your fantasy and Void google doc."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 3
+	loadout_allowed = TRUE
 	skill_points = 30
 
 /obj/effect/submap_landmark/spawnpoint/camp/teacher
@@ -83,6 +85,7 @@
 	supervisors = "the Hippocratic oath."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 1
+	loadout_allowed = TRUE
 	skill_points = 30
 
 /obj/effect/submap_landmark/spawnpoint/camp/doctor
@@ -94,6 +97,7 @@
 	supervisors = "your imagination."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
 	total_positions = 1
+	loadout_allowed = TRUE
 	skill_points = 20
 
 /obj/effect/submap_landmark/spawnpoint/camp/cook
@@ -105,7 +109,7 @@
 	spawn_cost = 1000 //NO BITCHES??
 	player_cost = 4
 	description = "PSY School with students and teachers. For events only."
-	suffixes = list("psycho/school-1.dmm", "psycho/school-2.dmm")
+	suffixes = list("psycho/school_remake-1.dmm", "psycho/school_remake-2.dmm")
 	area_usage_test_exempted_root_areas = list(/area/psionic_school)
 	apc_test_exempt_areas = list(
 		/area/psionic_school = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -165,6 +169,9 @@
 /area/psionic_school/indoor/toilet
 	name = "\improper Restroom"
 	lighting_tone = AREA_LIGHTING_WHITE
+
+/area/psionic_school/indoor/sec
+	name = "\improper Security Checkpoint"
 
 /area/psionic_school/indoor/room1
 	name = "\improper Room 1"
@@ -240,6 +247,15 @@
 /area/psionic_school/indoor/kitchen/canteen
 	name = "\improper Canteen"
 
+/area/psionic_school/indoor/kitchen/freezer
+	name = "\improper Kitchen Freezer"
+
+/area/psionic_school/indoor/bar
+	name = "\improper Bar"
+
+/area/psionic_school/indoor/bar/lounge
+	name = "\improper Bar Lounge"
+
 /area/psionic_school/indoor/gym
 	name = "\improper Gym"
 
@@ -250,17 +266,31 @@
 	name = "\improper Classroom 2"
 
 /area/psionic_school/indoor/training
-	name = "\improper Training Arena"
+	name = "\improper Training Arena 1"
+
+/area/psionic_school/indoor/training/two
+	name = "\improper Training Arena 2"
+
+/area/psionic_school/indoor/training/three
+	name = "\improper Training Arena 3"
+
+/area/psionic_school/indoor/training/frange
+	name = "\improper Firing Range"
 
 /area/psionic_school/indoor/medbay
 	name = "\improper Hospital"
 	lighting_tone = AREA_LIGHTING_WHITE
 
+/area/psionic_school/indoor/medbay/breakroom
+	name = "\improper Hospital Breakroom"
+
 /area/psionic_school/indoor/medbay/ward1
 	name = "\improper Hospital Ward 1"
+	lighting_tone = AREA_LIGHTING_WARM
 
 /area/psionic_school/indoor/medbay/ward2
 	name = "\improper Hospital Ward 2"
+	lighting_tone = AREA_LIGHTING_WARM
 
 /area/psionic_school/indoor/medbay/ward3
 	name = "\improper Hospital Ward 3"
