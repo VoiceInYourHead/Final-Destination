@@ -33,7 +33,7 @@
 	info = "You slept for a long time. Now you should face the consequences of the world that you left behind."
 	outfit_type = /decl/hierarchy/outfit/clover_crew
 	loadout_allowed = TRUE
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	min_skill = list(
 		SKILL_EVA = SKILL_TRAINED,
 		SKILL_HAULING = SKILL_TRAINED,
@@ -43,7 +43,6 @@
 
 /decl/hierarchy/outfit/clover_crew
 	name = "Station Crew"
-
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = null
 	back = null
