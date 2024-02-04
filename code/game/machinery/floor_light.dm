@@ -31,13 +31,15 @@ var/list/floor_light_cache = list()
 		visible_message("<span class='notice'>\The [user] has [anchored ? "attached" : "detached"] \the [src].</span>")
 	else if(isWelder(W) && (damaged || (stat & BROKEN)))
 		var/obj/item/weldingtool/WT = W
-		if(!WT.remove_fuel(0, user))
+		if (istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0, user) )
 			to_chat(user, "<span class='warning'>\The [src] must be on to complete this task.</span>")
 			return
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 		if(!do_after(user, 20, src))
 			return
-		if(!src || !WT.isOn())
+		if(!src)
+			return
+		if (istype(W, /obj/item/weldingtool) && (!WT.isOn()) )
 			return
 		visible_message("<span class='notice'>\The [user] has repaired \the [src].</span>")
 		set_broken(FALSE)

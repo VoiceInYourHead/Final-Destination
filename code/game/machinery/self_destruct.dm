@@ -15,12 +15,12 @@
 			user.visible_message("[user] begins to repair [src].", "You begin repairing [src].")
 			if(do_after(usr, 100, src))
 				var/obj/item/weldingtool/w
-				if(w.burn_fuel(10))
-					damaged = 0
-					user.visible_message("[user] repairs [src].", "You repair [src].")
-				else
+				if (istype(W, /obj/item/weldingtool) && !w.burn_fuel(10))
 					to_chat(user, "<span class='warning'>There is not enough fuel to repair [src].</span>")
-				return
+					return
+				damaged = 0
+				user.visible_message("[user] repairs [src].", "You repair [src].")
+
 	if(istype(W, /obj/item/nuclear_cylinder))
 		if(damaged)
 			to_chat(user, "<span class='warning'>[src] is damaged, you cannot place the cylinder.</span>")

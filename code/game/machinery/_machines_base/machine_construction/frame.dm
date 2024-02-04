@@ -2,7 +2,7 @@
 
 /decl/machine_construction/frame/unwrenched/state_is_valid(obj/machinery/machine)
 	return !machine.anchored
-	
+
 /decl/machine_construction/frame/unwrenched/validate_state(obj/machinery/constructable_frame/machine)
 	. = ..()
 	if(!.)
@@ -20,12 +20,14 @@
 			machine.anchored = TRUE
 	if(isWelder(I))
 		var/obj/item/weldingtool/WT = I
-		if(!WT.remove_fuel(0, user))
+		if (istype(I, /obj/item/weldingtool) && !WT.remove_fuel(0, user))
 			to_chat(user, "The welding tool must be on to complete this task.")
 			return TRUE
 		playsound(machine.loc, 'sound/items/Welder.ogg', 50, 1)
 		if(do_after(user, 20, machine))
-			if(!WT.isOn())
+			if(!src || !user)
+				return TRUE
+			if (istype(I, /obj/item/weldingtool) && !WT.isOn())
 				return TRUE
 			TRANSFER_STATE(/decl/machine_construction/default/deconstructed)
 			to_chat(user, "<span class='notice'>You deconstruct \the [machine].</span>")
