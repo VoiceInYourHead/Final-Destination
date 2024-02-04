@@ -236,7 +236,7 @@
 		/datum/mob_descriptor/build = 0
 	)
 
-	var/standing_jump_range = 2
+	var/standing_jump_range = 3
 	var/list/maneuvers = list(/decl/maneuver/leap)
 
 	var/list/available_cultural_info = list(

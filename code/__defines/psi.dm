@@ -4,18 +4,18 @@
 #define PSI_IMPLANT_LOG        "Log Incident"
 #define PSI_IMPLANT_DISABLED   "Disabled"
 
-#define PSI_COERCION           "coercion"
-#define PSI_CONSCIOUSNESS      "consciousness"
-#define PSI_PSYCHOKINESIS      "psychokinesis"
+#define PSI_COERCION           "catastellia"
+#define PSI_CONSCIOUSNESS      "allaxetia"
+#define PSI_PSYCHOKINESIS      "teleplexy"
 //#define PSI_PSYCHOBALLISTICS   "psychoballistics"
-#define PSI_MANIFESTATION      "manifestation"
+#define PSI_MANIFESTATION      "demiurgy"
 //#define PSI_ARCHERY            "archery"
-#define PSI_METAKINESIS        "metakinesis"
+#define PSI_METAKINESIS        "metaplexy"
 #define PSI_CRYOKINESIS        "cryokinesis"
-#define PSI_ENERGISTICS        "energistics"
+#define PSI_ENERGISTICS        "hyloforia"
 //#define PSI_ELECTRONICS        "electronics"
 //#define PSI_ELECTROMAGNETICS   "electromagnetics"
-#define PSI_REDACTION          "redaction"
+#define PSI_REDACTION          "ephanoferia"
 
 #define PSI_RANK_BLUNT         0
 #define PSI_RANK_LATENT        1

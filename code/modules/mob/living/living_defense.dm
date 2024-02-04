@@ -281,8 +281,9 @@
 	location.hotspot_expose(fire_burn_temperature(), 50, 1)
 
 /mob/living/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+//По всем законам логики оно не должно работать, но если ставить тут == вместо != - оно волшебным образом ломается
 	var/obj/item/psychic_power/psifire/carried_orb
-	if(carried_orb in list(l_hand,r_hand))
+	if(carried_orb != src.get_active_hand())
 		if(src.psi && src.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
 			return
 	if (status_flags & GODMODE)

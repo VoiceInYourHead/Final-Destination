@@ -30,19 +30,34 @@
 
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
-				pew = new /obj/item/projectile/beam/heavylaser(get_turf(user))
-				pew.name = "gigawatt mental laser"
-				pew_sound = 'sound/weapons/pulse.ogg'
+				if(user.a_intent == I_HELP)
+					pew = /obj/item/projectile/beam/stun/shock/heavy
+					pew.name = "gigawatt mental beam"
+					pew_sound = 'sound/weapons/taser2.ogg'
+				if(user.a_intent == I_HURT)
+					pew = new /obj/item/projectile/beam/heavylaser(get_turf(user))
+					pew.name = "gigawatt mental laser"
+					pew_sound = 'sound/weapons/pulse.ogg'
 			if(PSI_RANK_MASTER)
-				pew = new /obj/item/projectile/beam/megabot(get_turf(user))
-				pew.name = "megawatt mental laser"
-				pew_sound = 'sound/weapons/Laser.ogg'
+				if(user.a_intent == I_HELP)
+					pew = /obj/item/projectile/beam/stun/shock
+					pew.name = "megawatt mental beam"
+					pew_sound = 'sound/weapons/taser2.ogg'
+				if(user.a_intent == I_HURT)
+					pew = new /obj/item/projectile/beam/megabot(get_turf(user))
+					pew.name = "megawatt mental laser"
+					pew_sound = 'sound/weapons/Laser.ogg'
 			if(PSI_RANK_OPERANT)
-				pew = new /obj/item/projectile/beam/midlaser(get_turf(user))
-				pew.name = "mental laser"
-				pew_sound = 'sound/weapons/scan.ogg'
+				if(user.a_intent == I_HELP)
+					pew = /obj/item/projectile/beam/stun
+					pew.name = "mental beam"
+					pew_sound = 'sound/weapons/taser2.ogg'
+				if(user.a_intent == I_HURT)
+					pew = new /obj/item/projectile/beam/midlaser(get_turf(user))
+					pew.name = "mental laser"
+					pew_sound = 'sound/weapons/scan.ogg'
 			if(PSI_RANK_APPRENTICE)
-				pew = new /obj/item/projectile/beam/smalllaser(get_turf(user))
+				pew = new /obj/item/projectile/beam/stun/smalllaser(get_turf(user))
 				pew.name = "mental beam"
 				pew_sound = 'sound/weapons/taser2.ogg'
 
@@ -142,10 +157,15 @@
 		user.psi.spend_power(cost)
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
-				pew = new /obj/item/projectile/psi/strong(get_turf(user))
-				pew.name = "big psionic round"
-				pew.damage = 25
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				if(user.a_intent == I_HELP)
+					pew = new /obj/item/projectile/psi/strong(get_turf(user))
+					pew.name = "psionic round"
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				if(user.a_intent == I_HURT)
+					pew = new /obj/item/projectile/psi/strong(get_turf(user))
+					pew.name = "big psionic round"
+					pew.damage = 25
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 			if(PSI_RANK_MASTER)
 				pew = new /obj/item/projectile/psi/strong(get_turf(user))
 				pew.name = "psionic round"

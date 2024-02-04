@@ -100,9 +100,9 @@
 	return
 
 /mob/living/carbon/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
-
+//По всем законам логики оно не должно работать, но если ставить тут == вместо != - оно волшебным образом ломается
 	var/obj/item/psychic_power/psielectro/carried_orb
-	if(carried_orb in list(l_hand,r_hand))
+	if(carried_orb != src.get_active_hand())
 		if(src.psi && src.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
 			if(prob(80))
 				src.visible_message("<span class='warning'>[src] absorbed all pure energy, sent into them!</span>")
