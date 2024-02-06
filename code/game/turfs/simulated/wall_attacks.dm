@@ -318,7 +318,7 @@
 				var/cut_cover
 				if(isWelder(W))
 					var/obj/item/weldingtool/WT = W
-					if(istype(C, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
+					if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 						return
 					cut_cover=1
 				else if (istype(W, /obj/item/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master))

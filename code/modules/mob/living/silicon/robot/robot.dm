@@ -514,16 +514,16 @@
 			to_chat(user, "Nothing to fix here!")
 			return
 		var/obj/item/weldingtool/WT = W
-		if (WT.remove_fuel(0))
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			adjustBruteLoss(-30)
-			updatehealth()
-			add_fingerprint(user)
-			for(var/mob/O in viewers(user, null))
-				O.show_message(text("<span class='warning'>[user] has fixed some of the dents on [src]!</span>"), 1)
-		else
+		if (istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0))
 			to_chat(user, "Need more welding fuel!")
 			return
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		adjustBruteLoss(-30)
+		updatehealth()
+		add_fingerprint(user)
+		for(var/mob/O in viewers(user, null))
+			O.show_message(text("<span class='warning'>[user] has fixed some of the dents on [src]!</span>"), 1)
+
 
 	else if(istype(W, /obj/item/stack/cable_coil) && (wiresexposed || istype(src,/mob/living/silicon/robot/drone)))
 		if (!getFireLoss())

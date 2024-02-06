@@ -82,21 +82,23 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 				to_chat(user, "Eject the items first!")
 				return
 			var/obj/item/weldingtool/W = I
-			if(W.remove_fuel(0,user))
-				playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-				to_chat(user, "You start slicing the floorweld off the disposal unit.")
-
-				if(do_after(user,20,src))
-					if(!src || !W.isOn()) return
-					to_chat(user, "You sliced the floorweld off the disposal unit.")
-					var/obj/structure/disposalconstruct/machine/C = new (loc, src)
-					src.transfer_fingerprints_to(C)
-					C.update()
-					qdel(src)
-				return
-			else
+			if(istype(I, /obj/item/weldingtool) && !W.remove_fuel(0,user))
 				to_chat(user, "You need more welding fuel to complete this task.")
 				return
+			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+			to_chat(user, "You start slicing the floorweld off the disposal unit.")
+
+			if(do_after(user,20,src))
+				if(!src) return
+				if(istype(I, /obj/item/weldingtool) && !W.isOn())
+					return
+				to_chat(user, "You sliced the floorweld off the disposal unit.")
+				var/obj/structure/disposalconstruct/machine/C = new (loc, src)
+				src.transfer_fingerprints_to(C)
+				C.update()
+				qdel(src)
+				return
+
 
 	if(istype(I, /obj/item/melee/energy/blade))
 		to_chat(user, "You can't place that item inside the disposal unit.")
@@ -626,23 +628,24 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You attach the screws around the power connection.")
 			return
-	else if(istype(I,/obj/item/weldingtool) && mode==1)
+	else if(isWelder(I) && mode==1)
 		var/obj/item/weldingtool/W = I
-		if(W.remove_fuel(0,user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-			to_chat(user, "You start slicing the floorweld off the disposal outlet.")
-			if(do_after(user,20, src))
-				if(!src || !W.isOn()) return
-				to_chat(user, "You sliced the floorweld off the disposal outlet.")
-				var/obj/structure/disposalconstruct/machine/outlet/C = new (loc, src)
-				src.transfer_fingerprints_to(C)
-				C.anchored = TRUE
-				C.set_density(1)
-				C.update()
-				qdel(src)
-				return
-		else
+		if(istype(I, /obj/item/weldingtool) && !W.remove_fuel(0,user))
 			to_chat(user, "You need more welding fuel to complete this task.")
+			return
+		playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+		to_chat(user, "You start slicing the floorweld off the disposal outlet.")
+		if(do_after(user,20, src))
+			if(!src) return
+			if(istype(I, /obj/item/weldingtool) && !W.isOn())
+				return
+			to_chat(user, "You sliced the floorweld off the disposal outlet.")
+			var/obj/structure/disposalconstruct/machine/outlet/C = new (loc, src)
+			src.transfer_fingerprints_to(C)
+			C.anchored = TRUE
+			C.set_density(1)
+			C.update()
+			qdel(src)
 			return
 
 /obj/structure/disposaloutlet/forceMove()//updates this when shuttle moves. So you can YEET things out the airlock

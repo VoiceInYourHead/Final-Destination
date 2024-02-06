@@ -243,10 +243,10 @@
 		if(is_reinforced == FRAME_REINFORCED)
 			to_chat(user, SPAN_WARNING("The reinforcement inside \the [src] has not been secured."))
 			return
-		if(istype(W, /obj/item/weldingtool) && !WT.isOn())
+		if(istype(thing, /obj/item/weldingtool) && !WT.isOn())
 			to_chat(user, SPAN_WARNING("Turn \the [WT] on, first."))
 			return
-		if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(1, user))
+		if(istype(thing, /obj/item/weldingtool) && !WT.remove_fuel(1, user))
 			to_chat(user, SPAN_WARNING("Not enough fuel!"))
 			return
 

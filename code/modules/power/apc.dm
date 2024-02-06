@@ -609,7 +609,7 @@
 			to_chat(user, SPAN_WARNING("The wire connection is in the way."))
 			return TRUE
 		var/obj/item/weldingtool/WT = W
-		if (WT.get_fuel() < 3)
+		if (istype(W, /obj/item/weldingtool) && WT.get_fuel() < 3)
 			to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 			return
 		user.visible_message(SPAN_WARNING("\The [user] begins to weld \the [src]."), \
@@ -617,7 +617,7 @@
 							"You hear welding.")
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
-			if(!WT.remove_fuel(3, user))
+			if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened==2)
 				new /obj/item/stack/material/steel(loc)

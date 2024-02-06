@@ -134,13 +134,13 @@
 		return
 	else if(reinf_material && reinf_material.stack_type && isWelder(W))
 		var/obj/item/weldingtool/WT = W
-			if(istype(W, /obj/item/weldingtool) && WT.isOn() && WT.get_fuel() > 2 && use(2))
-				return
-			if(istype(W, /obj/item/weldingtool))
-				WT.remove_fuel(2, user)
-			to_chat(user,"<span class='notice'>You recover some [reinf_material.use_name] from the [src].</span>")
-			reinf_material.place_sheet(get_turf(user), 1)
+		if(istype(W, /obj/item/weldingtool) && WT.isOn() && WT.get_fuel() > 2 && use(2))
 			return
+		if(istype(W, /obj/item/weldingtool))
+			WT.remove_fuel(2, user)
+		to_chat(user,"<span class='notice'>You recover some [reinf_material.use_name] from the [src].</span>")
+		reinf_material.place_sheet(get_turf(user), 1)
+		return
 	return ..()
 
 /obj/item/stack/material/on_update_icon()

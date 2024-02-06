@@ -145,21 +145,24 @@
 		update()
 		update_verbs()
 
-	else if(istype(I, /obj/item/weldingtool))
+	else if(isWelder(I))
 		if(anchored)
 			var/obj/item/weldingtool/W = I
-			if(W.remove_fuel(0,user))
-				playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-				to_chat(user, "Welding \the [src] in place.")
-				if(do_after(user, 20, src))
-					if(!src || !W.isOn()) return
-					to_chat(user, "\The [src] has been welded in place!")
-					build(CP)
-					qdel(src)
-					return
-			else
+			if(istype(I, /obj/item/weldingtool) && !W.remove_fuel(0,user))
 				to_chat(user, "You need more welding fuel to complete this task.")
 				return
+			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+			to_chat(user, "Welding \the [src] in place.")
+			if(do_after(user, 20, src))
+				if(!src) return
+				if(istype(I, /obj/item/weldingtool) && !W.isOn())
+					return
+				to_chat(user, "\The [src] has been welded in place!")
+				build(CP)
+				qdel(src)
+				return
+			else
+
 		else
 			to_chat(user, "You need to attach it to the plating first!")
 			return
