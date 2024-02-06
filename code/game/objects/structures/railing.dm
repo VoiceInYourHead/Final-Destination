@@ -243,16 +243,17 @@
 	// Repair
 	if(isWelder(W))
 		var/obj/item/weldingtool/F = W
-		if(F.isOn())
+		if(istype(W, /obj/item/weldingtool) && !F.isOn())
+			return
+		if(!health_damaged())
+			to_chat(user, "<span class='warning'>\The [src] does not need repairs.</span>")
+			return
+		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+		if(do_after(user, 20, src))
 			if(!health_damaged())
-				to_chat(user, "<span class='warning'>\The [src] does not need repairs.</span>")
 				return
-			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-			if(do_after(user, 20, src))
-				if(!health_damaged())
-					return
-				user.visible_message("<span class='notice'>\The [user] repairs some damage to \the [src].</span>", "<span class='notice'>You repair some damage to \the [src].</span>")
-				restore_health(get_max_health() / 5)
+			user.visible_message("<span class='notice'>\The [user] repairs some damage to \the [src].</span>", "<span class='notice'>You repair some damage to \the [src].</span>")
+			restore_health(get_max_health() / 5)
 		return
 
 	// Install

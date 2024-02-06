@@ -15,11 +15,11 @@
 	..()
 	if(isWelder(thing))
 		var/obj/item/weldingtool/WT = thing
-		if(WT.isOn())
-			welded = !welded
-			to_chat(user, "<span class='notice'>You weld \the [src] [welded ? "closed" : "open"].</span>")
-		else
+		if(istype(thing, /obj/item/weldingtool) && !WT.isOn())
 			to_chat(user, "<span class='warning'>Turn \the [thing] on, first.</span>")
+			return
+		welded = !welded
+		to_chat(user, "<span class='notice'>You weld \the [src] [welded ? "closed" : "open"].</span>")
 		update_icon()
 		return
 	if(isWrench(thing))

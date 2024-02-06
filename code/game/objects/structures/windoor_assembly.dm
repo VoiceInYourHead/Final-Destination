@@ -70,20 +70,20 @@ obj/structure/windoor_assembly/Destroy()
 		if("01")
 			if(isWelder(W) && !anchored )
 				var/obj/item/weldingtool/WT = W
-				if (WT.remove_fuel(0,user))
-					user.visible_message("[user] dissassembles the windoor assembly.", "You start to dissassemble the windoor assembly.")
-					playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
-
-					if(do_after(user, 40,src))
-						if(!src || !WT.isOn()) return
-						to_chat(user, "<span class='notice'>You dissasembled the windoor assembly!</span>")
-						new /obj/item/stack/material/glass/reinforced(get_turf(src), 5)
-						if(secure)
-							new /obj/item/stack/material/rods(get_turf(src), 4)
-						qdel(src)
-				else
+				if (istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 					to_chat(user, "<span class='notice'>You need more welding fuel to dissassemble the windoor assembly.</span>")
 					return
+				user.visible_message("[user] dissassembles the windoor assembly.", "You start to dissassemble the windoor assembly.")
+				playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
+
+				if(do_after(user, 40,src))
+					if(!src) return
+					if(istype(W, /obj/item/weldingtool) && !WT.isOn()) return
+					to_chat(user, "<span class='notice'>You dissasembled the windoor assembly!</span>")
+					new /obj/item/stack/material/glass/reinforced(get_turf(src), 5)
+					if(secure)
+						new /obj/item/stack/material/rods(get_turf(src), 4)
+					qdel(src)
 
 			//Wrenching an unsecure assembly anchors it in place. Step 4 complete
 			if(isWrench(W) && !anchored)

@@ -175,12 +175,13 @@
 	if(locate(/obj/effect/overlay/wallrot) in src)
 		if(isWelder(W))
 			var/obj/item/weldingtool/WT = W
-			if( WT.remove_fuel(0,user) )
-				to_chat(user, "<span class='notice'>You burn away the fungi with \the [WT].</span>")
-				playsound(src, 'sound/items/Welder.ogg', 10, 1)
-				for(var/obj/effect/overlay/wallrot/WR in src)
-					qdel(WR)
+			if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user) )
 				return
+			to_chat(user, "<span class='notice'>You burn away the fungi with \the [WT].</span>")
+			playsound(src, 'sound/items/Welder.ogg', 10, 1)
+			for(var/obj/effect/overlay/wallrot/WR in src)
+				qdel(WR)
+			return
 		else if(!is_sharp(W) && W.force >= 10 || W.force >= 20)
 			to_chat(user, "<span class='notice'>\The [src] crumbles away under the force of your [W.name].</span>")
 			kill_health()
@@ -190,9 +191,10 @@
 	if(thermite)
 		if(isWelder(W))
 			var/obj/item/weldingtool/WT = W
-			if( WT.remove_fuel(0,user) )
-				thermitemelt(user)
+			if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user) )
 				return
+			thermitemelt(user)
+			return
 
 		else if(istype(W, /obj/item/gun/energy/plasmacutter))
 			thermitemelt(user)
@@ -212,16 +214,17 @@
 	var/turf/T = user.loc	//get user's location for delay checks
 
 	var/damage = get_damage_value()
-	if(damage && istype(W, /obj/item/weldingtool))
+	if(damage && isWelder(W))
 
 		var/obj/item/weldingtool/WT = W
 
-		if(WT.remove_fuel(0,user))
-			to_chat(user, "<span class='notice'>You start repairing the damage to [src].</span>")
-			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			if(do_after(user, max(5, damage / 5), src) && WT && WT.isOn())
-				to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
-				restore_health(damage)
+		if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
+			return
+		to_chat(user, "<span class='notice'>You start repairing the damage to [src].</span>")
+		playsound(src, 'sound/items/Welder.ogg', 100, 1)
+		if(do_after(user, max(5, damage / 5), src) && WT && WT.isOn())
+			to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
+			restore_health(damage)
 		return
 
 	// Basic dismantling.
@@ -231,9 +234,9 @@
 		var/dismantle_verb
 		var/dismantle_sound
 
-		if(istype(W,/obj/item/weldingtool))
+		if(isWelder(W))
 			var/obj/item/weldingtool/WT = W
-			if(!WT.remove_fuel(0,user))
+			if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 				return
 			dismantle_verb = "cutting"
 			dismantle_sound = 'sound/items/Welder.ogg'
@@ -313,12 +316,11 @@
 						return
 			if(4)
 				var/cut_cover
-				if(istype(W,/obj/item/weldingtool))
+				if(isWelder(W))
 					var/obj/item/weldingtool/WT = W
-					if(WT.remove_fuel(0,user))
-						cut_cover=1
-					else
+					if(istype(C, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 						return
+					cut_cover=1
 				else if (istype(W, /obj/item/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master))
 					if(istype(W, /obj/item/gun/energy/plasmacutter))
 						var/obj/item/gun/energy/plasmacutter/cutter = W
@@ -356,12 +358,11 @@
 					return
 			if(1)
 				var/cut_cover
-				if(istype(W, /obj/item/weldingtool))
+				if(isWelder(W))
 					var/obj/item/weldingtool/WT = W
-					if( WT.remove_fuel(0,user) )
-						cut_cover=1
-					else
+					if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user) )
 						return
+					cut_cover=1
 				else if(istype(W, /obj/item/gun/energy/plasmacutter) || istype(W,/obj/item/psychic_power/psiblade/master))
 					if(istype(W, /obj/item/gun/energy/plasmacutter))
 						var/obj/item/gun/energy/plasmacutter/cutter = W
