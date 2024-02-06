@@ -9,6 +9,7 @@
 	throw_speed = 1
 	throw_range = 4
 	throwforce = 7
+	attack_cooldown = 10
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/nullrod/disrupts_psionics()
@@ -44,6 +45,14 @@
 		return
 
 	..()
+
+/obj/item/nullrod/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	..()
+	if(target.psi)
+		target.stun_effect_act(0, rand(20,30), hit_zone, src) // 20-30 agony
+		target.psi.set_cooldown(rand(10,20))
+		to_chat(target, "<span class='danger'> You feel your concentration dropping by hit of [src].")
+	return
 
 /obj/item/energy_net
 	name = "energy net"
