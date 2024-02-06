@@ -1,4 +1,4 @@
-
+#define ACTION_USE_SMOKE
 #define ACTION_USE_BRAKE "Toggle Brake"
 #define ACTION_DETACH_VEHICLE "Detach Vehicle"
 
