@@ -273,6 +273,8 @@
 	var/range = 2
 	var/cooldown = 0
 	var/turf/previousturf = null
+	var/inner_radius = -1 //for all your ring spell needs
+	var/outer_radius = 2
 
 /obj/item/psychic_power/psiice/New(var/mob/living/user)
 	var/cryo_rank = user.psi.get_rank(PSI_METAKINESIS)
@@ -407,6 +409,31 @@
 	if(istype(A, /mob/living))
 		cooldown += 2
 		var/mob/living/target = A
+
+		if(target == user && cryo_rank >= PSI_RANK_MASTER && combat_mode)
+			var/list/targets = list()
+
+			for(var/turf/point in oview_or_orange(outer_radius, user, "range"))
+				if(!(point in oview_or_orange(inner_radius, user, "range")))
+					if(point.density)
+						continue
+					if(istype(point, /turf/space))
+						continue
+					targets += point
+
+			if(!targets.len)
+				return FALSE
+
+			var/turf/user_turf = get_turf(user)
+			for(var/turf/T in targets)
+				var/obj/structure/girder/ice_wall/IW = new(T)
+				if(istype(IW))
+					IW.pixel_x = (user_turf.x - T.x) * world.icon_size
+					IW.pixel_y = (user_turf.y - T.y) * world.icon_size
+					animate(IW, pixel_x = 0, pixel_y = 0, time = 3, easing = EASE_OUT)
+
+			return TRUE
+
 		new /obj/structure/girder/ice_wall(get_turf(target))
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "extinguish")
 		target.Stun(3*cryo_rank)
