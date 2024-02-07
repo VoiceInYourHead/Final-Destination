@@ -128,7 +128,7 @@
 
 /turf/simulated/wall/mahogany
 	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
-	icon_state = "woodneric"
+	icon_state = "wood_red"
 
 /turf/simulated/wall/mahogany/New(var/newloc)
 	..(newloc,MATERIAL_MAHOGANY)
@@ -142,14 +142,14 @@
 
 /turf/simulated/wall/ebony
 	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
-	icon_state = "woodneric"
+	icon_state = "wood_ebony"
 
 /turf/simulated/wall/ebony/New(var/newloc)
 	..(newloc,MATERIAL_EBONY)
 
 /turf/simulated/wall/walnut
 	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
-	icon_state = "woodneric"
+	icon_state = "wood_wallnut"
 
 /turf/simulated/wall/walnut/New(var/newloc)
 	..(newloc,MATERIAL_WALNUT)
@@ -178,6 +178,8 @@
 /turf/simulated/wall/growth/New(var/newloc)
 	..(newloc, MATERIAL_GROWTH)
 
+/turf/simulated/wall/concrete
+	icon_state = "concrete"
 /turf/simulated/wall/concrete/New(var/newloc)
 	..(newloc,MATERIAL_CONCRETE)
 
