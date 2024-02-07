@@ -18,8 +18,6 @@
 /decl/psionic_power/energistics/zorch/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_CHEST)
 		return FALSE
-	if(user.zone_sel.selecting == BP_MOUTH)
-		return FALSE
 	. = ..()
 	if(.)
 		user.visible_message("<span class='danger'>Глаза [user] загораются ярким светом!</span>")
@@ -76,11 +74,11 @@
 	cooldown =        60
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Выберите голову или глаза на красном интенте и нажмите на любой объект, чтобы создать мощный электромагнитный импульс, направленный в него."
+	use_description = "Выберите глаза на красном интенте и нажмите на любой объект, чтобы создать мощный электромагнитный импульс, направленный в него."
 
 /decl/psionic_power/energistics/disrupt/invoke(var/mob/living/user, var/mob/living/target)
 	var/en_rank = user.psi.get_rank(PSI_ENERGISTICS)
-	if(user.zone_sel.selecting != BP_HEAD && user.zone_sel.selecting != BP_EYES)
+	if(user.zone_sel.selecting != BP_EYES)
 		return FALSE
 	if(istype(target, /turf))
 		return FALSE
@@ -114,7 +112,7 @@
 	cooldown =         45
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_APPRENTICE
-	use_description = "Выберите правую или левую кисть на красном интенте и нажмите по чему угодно, чтобы запустить из пальца маленькую сферу с сжатой псионической энергией."
+	use_description = "Выберите голову на красном интенте и нажмите по чему угодно, чтобы запустить из пальца маленькую сферу с сжатой псионической энергией."
 
 /obj/item/projectile/psi
 	name = "psionic projectile"
@@ -142,7 +140,7 @@
 	..()
 
 /decl/psionic_power/energistics/spit/invoke(var/mob/living/user, var/mob/living/target)
-	if(!(user.zone_sel.selecting in list(BP_L_HAND, BP_R_HAND)))
+	if(user.zone_sel.selecting != BP_HEAD)
 		return FALSE
 	. = ..()
 	if(.)

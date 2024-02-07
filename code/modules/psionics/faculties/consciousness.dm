@@ -356,10 +356,8 @@
 	suppress_parent_proc = TRUE
 	use_description = "Выберите глаза на синем интенте, и затем нажмите куда угодно, чтобы временно исчезнуть."
 
-/mob/living
-	var/invis_timer = 30
-
 /mob/living/proc/run_timer_invisibility()
+	var/invis_timer = 30
 	var/con_rank_user = src.psi.get_rank(PSI_CONSCIOUSNESS)
 	set waitfor = 0
 	var/T = invis_timer

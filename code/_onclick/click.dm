@@ -245,6 +245,7 @@
 		if(a_intent == I_DISARM)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Allaxetia"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Catastellia"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Teleplexy"]), A)
 		if(a_intent == I_HELP)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Ephanoferia"]), A)
 	return 1
