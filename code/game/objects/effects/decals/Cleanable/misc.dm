@@ -46,6 +46,13 @@
 	icon_state = "snow"
 	alpha = 100
 
+/obj/effect/decal/cleanable/snow/plain
+	icon_state = "snow_plain"
+	alpha = 200
+/obj/effect/decal/cleanable/snow/plain/New()
+	..()
+	src.dir = rand(1,4)
+
 /obj/effect/decal/cleanable/snow/hexagonal
 	icon_state = "snow_hex"
 	alpha = 100
