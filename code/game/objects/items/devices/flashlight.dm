@@ -223,6 +223,26 @@
 
 	on = 1
 
+/obj/item/device/flashlight/lamp/small
+	name = "desk lamp"
+	desc = "A desk lamp."
+	icon = 'icons/fd/structures/furniture2.dmi'
+	icon_state = "lamp"
+	w_class = ITEM_SIZE_NORMAL
+	flashlight_inner_range = 1
+	flashlight_outer_range = 4
+	light_color = COLOR_ORANGE
+
+/obj/item/device/flashlight/lamp/floor
+	name = "floor lamp"
+	desc = "A desk lamp."
+	icon = 'icons/fd/structures/furniture2.dmi'
+	icon_state = "floor_lamp"
+	w_class = ITEM_SIZE_HUGE
+	flashlight_inner_range = 3
+	flashlight_outer_range = 6
+	light_color = COLOR_ORANGE
+
 // green-shaded desk lamp
 /obj/item/device/flashlight/lamp/green
 	desc = "A classic green-shaded desk lamp."
