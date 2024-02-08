@@ -1,4 +1,49 @@
 #include "school_radio.dm"
+
+//ASSETS
+
+/obj/structure/fd/school/prop1
+	name = "Old shotgun"
+	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces in the past. Now - it's only a relic."
+	icon = 'icons/obj/guns/shotguns.dmi'
+	icon_state = "shotgun"
+	anchored = TRUE
+
+/obj/structure/fd/school/prop2
+	name = "UFO sign"
+	desc = "Just an neon sign of an old UFO vision."
+	icon = 'icons/fd/structures/manhattan/signs/signs.dmi'
+	icon_state = "ufo"
+	anchored = TRUE
+
+/obj/structure/fd/school/prop3
+	name = "City sign"
+	desc = "Just an neon sign of an night city."
+	icon = 'icons/fd/structures/manhattan/signs/signs_large.dmi'
+	icon_state = "city_of_night"
+	anchored = TRUE
+
+/obj/structure/fd/school/prop4
+	name = "Ancient fresco"
+	desc = "Very old piece of art, probably from Earth."
+	icon = 'icons/fd/structures/manhattan/mnhtn_paintings.dmi'
+	icon_state = "1,15"
+	anchored = TRUE
+
+/obj/structure/fd/school/prop5
+	name = "figure"
+	desc = "Just an neon figure"
+	icon = 'icons/fd/structures/manhattan/signs/signs.dmi'
+	icon_state = "square"
+	anchored = TRUE
+
+/obj/structure/fd/school/prop6
+	name = "symbol"
+	desc = "Strange looking symbol"
+	icon = 'icons/fd/fabric_symbols.dmi'
+	icon_state = "9"
+	anchored = TRUE
+
 /obj/effect/overmap/visitable/sector/camp
 	name = "jungle planet"
 	desc = "A jungle planet with high amount of hostile xenofauna and environment."
@@ -20,7 +65,10 @@
 	map = "Psionics Camp"
 	crew_jobs = list(
 		/datum/job/submap/camp/psionic,
-		/datum/job/submap/camp/teacher,
+		/datum/job/submap/camp/teacher1,
+		/datum/job/submap/camp/teacher2,
+		/datum/job/submap/camp/teacher3,
+		/datum/job/submap/camp/teacher4,
 		/datum/job/submap/camp/cook,
 		/datum/job/submap/camp/doctor
 	)
@@ -43,6 +91,7 @@
 	back = null
 	l_ear = null
 	r_pocket = /obj/item/pen
+	l_pocket = /obj/item/storage/wallet/random
 
 /decl/hierarchy/outfit/job/psionic/staff
 	id_types = null
@@ -51,7 +100,7 @@
 	shoes = /obj/item/clothing/shoes/dress
 	glasses = /obj/item/clothing/glasses/prescription
 	r_pocket = /obj/item/device/radio/map_preset/psy_school
-	l_pocket = /obj/item/device/flashlight/maglight
+	l_pocket = /obj/item/storage/wallet/random
 	l_ear = /obj/item/device/radio/headset/map_preset/psy_school
 	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 
@@ -67,17 +116,53 @@
 /obj/effect/submap_landmark/spawnpoint/camp/psionic
 	name = "Psionic student"
 
-/datum/job/submap/camp/teacher
-	title = "Psionic teacher"
+/datum/job/submap/camp/teacher1
+	title = "Psionic teacher 1"
 	info = "You here to teach some dumbasses how to beat bad guys and not die in progress"
 	supervisors = "your fantasy and Void google doc."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
-	total_positions = 3
+	total_positions = 1
 	loadout_allowed = TRUE
 	skill_points = 30
 
-/obj/effect/submap_landmark/spawnpoint/camp/teacher
-	name = "Psionic teacher"
+/obj/effect/submap_landmark/spawnpoint/camp/teacher1
+	name = "Psionic teacher 1"
+
+/datum/job/submap/camp/teacher2
+	title = "Psionic teacher 2"
+	info = "You here to teach some dumbasses how to beat bad guys and not die in progress"
+	supervisors = "your fantasy and Void google doc."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
+	total_positions = 1
+	loadout_allowed = TRUE
+	skill_points = 30
+
+/obj/effect/submap_landmark/spawnpoint/camp/teacher2
+	name = "Psionic teacher 2"
+
+/datum/job/submap/camp/teacher3
+	title = "Psionic teacher 3"
+	info = "You here to teach some dumbasses how to beat bad guys and not die in progress"
+	supervisors = "your fantasy and Void google doc."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
+	total_positions = 1
+	loadout_allowed = TRUE
+	skill_points = 30
+
+/obj/effect/submap_landmark/spawnpoint/camp/teacher3
+	name = "Psionic teacher 3"
+
+/datum/job/submap/camp/teacher4
+	title = "Psionic teacher 4"
+	info = "You here to teach some dumbasses how to beat bad guys and not die in progress"
+	supervisors = "your fantasy and Void google doc."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/staff
+	total_positions = 1
+	loadout_allowed = TRUE
+	skill_points = 30
+
+/obj/effect/submap_landmark/spawnpoint/camp/teacher4
+	name = "Psionic teacher 4"
 
 /datum/job/submap/camp/doctor
 	title = "Doctor"
@@ -134,115 +219,143 @@
 
 /area/psionic_school
 	name = "\improper Camp"
-	icon_state = "centcom"
+	icon_state = "unknown"
 	requires_power = 0
 	dynamic_lighting = 1
 
 /area/psionic_school/outdoor
 	name = "\improper Streets"
-	icon_state = "centcom"
+	icon_state = "dark"
 	requires_power = 0
 	dynamic_lighting = 1
-	lighting_tone = AREA_LIGHTING_COOL
 	sound_env = LARGE_ENCLOSED
 
 /area/psionic_school/indoor
 	name = "\improper Indoor"
-	icon_state = "centcom"
+	icon_state = "red"
 	requires_power = 0
 	dynamic_lighting = 1
-	lighting_tone = AREA_LIGHTING_WARM
 
-/area/psionic_school/indoor/library
-	name = "\improper Library"
+//MAIN BUILDING
 
-/area/psionic_school/indoor/stud_hall
-	name = "\improper Student's Hallway"
-	lighting_tone = AREA_LIGHTING_WHITE
+/area/psionic_school/indoor/main
+	name = "\improper Main Building"
 
-/area/psionic_school/indoor/studentsbath1
-	name = "\improper Bath 1"
+/area/psionic_school/indoor/main/firingrange
+	name = "\improper Firing Range"
 
-/area/psionic_school/indoor/studentsbath2
-	name = "\improper Bath 2"
+/area/psionic_school/indoor/main/gym
+	name = "\improper Gym"
 
-/area/psionic_school/indoor/toilet
-	name = "\improper Restroom"
-	lighting_tone = AREA_LIGHTING_WHITE
+/area/psionic_school/indoor/main/arena1
+	name = "\improper Training Arena 1"
+
+/area/psionic_school/indoor/main/arena2
+	name = "\improper Training Arena 2"
+
+/area/psionic_school/indoor/main/arena3
+	name = "\improper Training Arena 3"
+
+/area/psionic_school/indoor/main/class1
+	name = "\improper Classroom 1"
+
+/area/psionic_school/indoor/main/class2
+	name = "\improper Classroom 2"
+
+//OTHER
+
+/area/psionic_school/indoor/train
+	name = "\improper Train Station"
+
+/area/psionic_school/indoor/tcomms
+	name = "\improper Telecommunications"
 
 /area/psionic_school/indoor/sec
 	name = "\improper Security Checkpoint"
 
-/area/psionic_school/indoor/room1
-	name = "\improper Room 1"
+//CAMPUS
 
-/area/psionic_school/indoor/room2
-	name = "\improper Room 2"
+/area/psionic_school/indoor/campus
+	name = "\improper Campus"
 
-/area/psionic_school/indoor/room3
-	name = "\improper Room 3"
+/area/psionic_school/indoor/campus/storage
+	name = "\improper Storage"
 
-/area/psionic_school/indoor/room4
-	name = "\improper Room 4"
+/area/psionic_school/indoor/campus/toilet1
+	name = "\improper Restroom 1"
 
-/area/psionic_school/indoor/room5
-	name = "\improper Room 5"
+/area/psionic_school/indoor/campus/toilet2
+	name = "\improper Restroom 2"
 
-/area/psionic_school/indoor/room6
-	name = "\improper Room 6"
+/area/psionic_school/indoor/campus/studentsbath1
+	name = "\improper Bath 1"
 
-/area/psionic_school/indoor/room7
-	name = "\improper Room 7"
+/area/psionic_school/indoor/campus/studentsbath2
+	name = "\improper Bath 2"
 
-/area/psionic_school/indoor/room8
-	name = "\improper Room 8"
+/area/psionic_school/indoor/campus/girls
+	name = "\improper Girls Block"
 
-/area/psionic_school/indoor/room9
-	name = "\improper Room 9"
+/area/psionic_school/indoor/campus/girls/r1
+	name = "\improper Girls Block(Room 1)"
 
-/area/psionic_school/indoor/room10
-	name = "\improper Room 10"
+/area/psionic_school/indoor/campus/girls/r2
+	name = "\improper Girls Block(Room 2)"
 
-/area/psionic_school/indoor/room11
-	name = "\improper Room 11"
+/area/psionic_school/indoor/campus/girls/r3
+	name = "\improper Girls Block(Room 3)"
 
-/area/psionic_school/indoor/room12
-	name = "\improper Room 12"
+/area/psionic_school/indoor/campus/girls/r4
+	name = "\improper Girls Block(Room 4)"
 
-/area/psionic_school/indoor/room13
-	name = "\improper Room 13"
+/area/psionic_school/indoor/campus/male
+	name = "\improper Male Block"
 
-/area/psionic_school/indoor/room14
-	name = "\improper Room 14"
+/area/psionic_school/indoor/campus/male/r1
+	name = "\improper Male Block(Room 1)"
 
-/area/psionic_school/indoor/room15
-	name = "\improper Room 15"
+/area/psionic_school/indoor/campus/male/r2
+	name = "\improper Male Block(Room 2)"
 
-/area/psionic_school/indoor/room16
-	name = "\improper Room 16"
+/area/psionic_school/indoor/campus/male/r3
+	name = "\improper Male Block(Room 3)"
 
-/area/psionic_school/indoor/teacher_hall
-	name = "\improper Teacher's Hallway"
-	lighting_tone = AREA_LIGHTING_WHITE
+/area/psionic_school/indoor/campus/male/r4
+	name = "\improper Male Block(Room 4)"
 
-/area/psionic_school/indoor/teacherroom1
-	name = "\improper Teacher room 1"
+/area/psionic_school/indoor/campus/teacherroom1
+	name = "\improper Teacher Room 1"
 
-/area/psionic_school/indoor/teacherroom2
-	name = "\improper Teacher room 2"
+/area/psionic_school/indoor/campus/teacherroom1/toilet
 
-/area/psionic_school/indoor/teacherroom3
-	name = "\improper Teacher room 3"
+/area/psionic_school/indoor/campus/teacherroom2
+	name = "\improper Teacher Room 2"
 
-/area/psionic_school/indoor/teacherroom4
-	name = "\improper Teacher room 4"
+/area/psionic_school/indoor/campus/teacherroom2/toilet
 
-/area/psionic_school/indoor/teacherroom5
-	name = "\improper Teacher room 5"
+/area/psionic_school/indoor/campus/teacherroom3
+	name = "\improper Teacher Room 3"
+
+/area/psionic_school/indoor/campus/teacherroom3/toilet
+
+/area/psionic_school/indoor/campus/teacherroom4
+	name = "\improper Teacher Room 4"
+
+/area/psionic_school/indoor/campus/teacherroom4/toilet
+
+/area/psionic_school/indoor/campus/library
+	name = "\improper Library"
+
+/area/psionic_school/indoor/campus/stud_hall
+	name = "\improper Campus Hallway(Floor 1)"
+
+/area/psionic_school/indoor/campus/teacher_hall
+	name = "\improper Campus Hallway(Floor 2)"
+
+//CAFETERIA
 
 /area/psionic_school/indoor/kitchen
 	name = "\improper Kitchen"
-	lighting_tone = AREA_LIGHTING_COOL
 
 /area/psionic_school/indoor/kitchen/canteen
 	name = "\improper Canteen"
@@ -256,57 +369,25 @@
 /area/psionic_school/indoor/bar/lounge
 	name = "\improper Bar Lounge"
 
-/area/psionic_school/indoor/gym
-	name = "\improper Gym"
-
-/area/psionic_school/indoor/class1
-	name = "\improper Classroom 1"
-
-/area/psionic_school/indoor/class2
-	name = "\improper Classroom 2"
-
-/area/psionic_school/indoor/training
-	name = "\improper Training Arena 1"
-
-/area/psionic_school/indoor/training/two
-	name = "\improper Training Arena 2"
-
-/area/psionic_school/indoor/training/three
-	name = "\improper Training Arena 3"
-
-/area/psionic_school/indoor/training/frange
-	name = "\improper Firing Range"
+//HOSPITAL
 
 /area/psionic_school/indoor/medbay
 	name = "\improper Hospital"
-	lighting_tone = AREA_LIGHTING_WHITE
 
 /area/psionic_school/indoor/medbay/breakroom
 	name = "\improper Hospital Breakroom"
 
 /area/psionic_school/indoor/medbay/ward1
 	name = "\improper Hospital Ward 1"
-	lighting_tone = AREA_LIGHTING_WARM
 
 /area/psionic_school/indoor/medbay/ward2
 	name = "\improper Hospital Ward 2"
-	lighting_tone = AREA_LIGHTING_WARM
-
-/area/psionic_school/indoor/medbay/ward3
-	name = "\improper Hospital Ward 3"
-
-/area/psionic_school/indoor/medbay/ward4
-	name = "\improper Hospital Ward 4"
 
 /area/psionic_school/indoor/medbay/storage
 	name = "\improper Hospital Storage"
 
 /area/psionic_school/indoor/medbay/office
-	name = "\improper Phisician's Office"
-	lighting_tone = AREA_LIGHTING_WARM
-
-/area/psionic_school/indoor/tcomms
-	name = "\improper Telecommunications"
+	name = "\improper Doctor's Office"
 
 // ACCESS
 /var/const/access_camp_teacher1 = "ACCESS_CAMP_TEACHER1"

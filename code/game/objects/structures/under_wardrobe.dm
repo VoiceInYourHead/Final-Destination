@@ -92,9 +92,9 @@
 			return
 
 		var/id = H.GetIdCard()
-		if(!id)
+/*		if(!id)
 			audible_message("No ID card detected. Unable to acquire your underwear quota for this shift.", WARDROBE_BLIND_MESSAGE(H))
-			return
+			return*/
 
 		var/current_quota = LAZYACCESS(amount_of_underwear_by_id_card, id)
 		if(current_quota >= length(GLOB.underwear.categories))

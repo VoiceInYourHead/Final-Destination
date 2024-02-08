@@ -460,6 +460,10 @@
 	name = "kitchen sink"
 	icon_state = "sink_alt"
 
+/obj/structure/hygiene/sink/modern
+	name = "modern sink"
+	icon_state = "sink_modern"
+
 /obj/structure/hygiene/sink/puddle	//splishy splashy ^_^
 	name = "puddle"
 	icon_state = "puddle"

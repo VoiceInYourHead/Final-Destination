@@ -23,19 +23,18 @@
 	if(!istype(A))
 		return FALSE
 	if(isWelder(A))
-		var/obj/item/weldingtool/WT = A
-		return (WT.isOn())
+		if(istype(A, /obj/item/psychic_power/psifire))
+			return TRUE
+		else
+			var/obj/item/weldingtool/WT = A
+			return (WT.isOn())
 	else if(istype(A, /obj/item/flame))
 		var/obj/item/flame/F = A
 		return (F.lit)
-	else if (istype(A, /obj/item/psychic_power/psifire))
-		return TRUE
 	else if(istype(A, /obj/item/clothing/mask/smokable) && !istype(A, /obj/item/clothing/mask/smokable/pipe))
 		var/obj/item/clothing/mask/smokable/S = A
 		return (S.lit)
 	else if(istype(A, /obj/item/device/assembly/igniter))
-		return TRUE
-	else if(istype(A, /obj/item/psychic_power/psifire))
 		return TRUE
 	return FALSE
 

@@ -33,6 +33,8 @@
 	var/hair_styles_per_species   = list() // Custom hair styles, per species -type-, if any. For example if you want a punk gang with handlebars.
 	var/facial_styles_per_species = list() // Custom facial hair styles, per species -type-, if any. See above as to why
 	var/genders_per_species       = list() // For gender biases per species -type-
+	var/brute_damage = 10
+	var/burn_damage = 0
 
 
 /obj/effect/landmark/corpse/Initialize()
@@ -45,6 +47,8 @@
 	var/mob/living/carbon/human/corpse = new (loc, new_species)
 	corpse.adjustOxyLoss(corpse.maxHealth)
 	corpse.setBrainLoss(corpse.maxHealth)
+	corpse.adjustBruteLoss(brute_damage)
+	corpse.adjustFireLoss(burn_damage)
 	var/obj/item/organ/internal/heart/heart = corpse.internal_organs_by_name[BP_HEART]
 	if (heart)
 		heart.pulse = PULSE_NONE
