@@ -65,6 +65,7 @@
 	map = "Psionics Camp"
 	crew_jobs = list(
 		/datum/job/submap/camp/psionic,
+		/datum/job/submap/camp/psionic2,
 		/datum/job/submap/camp/teacher1,
 		/datum/job/submap/camp/teacher2,
 		/datum/job/submap/camp/teacher3,
@@ -105,7 +106,16 @@
 	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 
 /datum/job/submap/camp/psionic
-	title = "Psionic student"
+	title = "Class 1-A"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 15
+
+/datum/job/submap/camp/psionic2
+	title = "Class 1-B"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
@@ -114,7 +124,10 @@
 	skill_points = 15
 
 /obj/effect/submap_landmark/spawnpoint/camp/psionic
-	name = "Psionic student"
+	name = "Class 1-A"
+
+/obj/effect/submap_landmark/spawnpoint/camp/psionic2
+	name = "Class 1-B"
 
 /datum/job/submap/camp/teacher1
 	title = "Psionic teacher 1"
