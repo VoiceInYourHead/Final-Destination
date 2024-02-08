@@ -148,7 +148,7 @@
 
 			target.throw_at(get_edge_target_turf(target, get_dir(user, target)), 1, 2, user)
 
-		return TRUE
+			return TRUE
 
 
 ///MASTER///
@@ -200,7 +200,7 @@
 
 			target.throw_at(get_edge_target_turf(target, get_dir(user, target)), 3, 2, user)
 
-		return TRUE
+			return TRUE
 
 
 ///GRANDMASTER///
@@ -252,4 +252,4 @@
 
 			target.throw_at(get_edge_target_turf(target, get_dir(user, target)), 6, 2, user)
 
-		return TRUE
+			return TRUE
