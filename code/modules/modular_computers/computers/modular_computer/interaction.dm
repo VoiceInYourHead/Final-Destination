@@ -123,7 +123,7 @@
 		if(card_slot.insert_id(I, user))
 			update_verbs()
 		return
-		
+
 	if(istype(W, /obj/item/pen) && stores_pen)
 		if(istype(stored_pen))
 			to_chat(user, "<span class='notice'>There is already a pen in [src].</span>")
@@ -167,7 +167,7 @@
 		return
 	if(isWelder(W))
 		var/obj/item/weldingtool/WT = W
-		if(!WT.isOn())
+		if(istype(W, /obj/item/weldingtool) && !WT.isOn())
 			to_chat(user, "\The [W] is off.")
 			return
 
@@ -176,7 +176,10 @@
 			return
 
 		to_chat(user, "You begin repairing damage to \the [src]...")
-		if(WT.remove_fuel(round(damage/75)) && do_after(usr, damage/10))
+		if(istype(W, /obj/item/weldingtool) && WT.remove_fuel(round(damage/75)) && do_after(usr, damage/10))
+			damage = 0
+			to_chat(user, "You repair \the [src].")
+		if(do_after(usr,damage/10))
 			damage = 0
 			to_chat(user, "You repair \the [src].")
 		return

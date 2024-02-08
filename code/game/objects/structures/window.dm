@@ -421,7 +421,7 @@
 			to_chat(user, SPAN_WARNING("It looks like it could use more sheets."))
 		return
 
-	if (istype(W, /obj/item/weldingtool))
+	if (isWelder(W))
 		if (!health_damaged())
 			to_chat(user, SPAN_NOTICE("\The [src] does not need repair."))
 			return
@@ -431,11 +431,11 @@
 			return
 
 		var/obj/item/weldingtool/T = W
-		if (!T.welding)
+		if (istype(W, /obj/item/weldingtool) && !T.welding)
 			to_chat(user, SPAN_WARNING("\The [T] needs to be turned on first."))
 			return
 
-		if (!T.remove_fuel(1, user))
+		if (istype(W, /obj/item/weldingtool) && !T.remove_fuel(1, user))
 			return
 
 		restore_health(repair_pending)

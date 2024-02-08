@@ -204,7 +204,7 @@
 	return ..()
 
 /obj/machinery/atmospherics/unary/vent_scrubber/attackby(var/obj/item/W as obj, var/mob/user as mob)
-	if(istype(W, /obj/item/weldingtool))
+	if(isWelder(W))
 
 		var/obj/item/weldingtool/WT = W
 

@@ -481,19 +481,18 @@
 			return
 	else if(isWelder(I) && c_mode==1)
 		var/obj/item/weldingtool/W = I
-		if(W.remove_fuel(1,user))
-			to_chat(user, "You start slicing the floorweld off the delivery chute.")
-			if(do_after(user,20, src))
-				playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-				if(!src || !W.isOn()) return
-				to_chat(user, "You sliced the floorweld off the delivery chute.")
-				var/obj/structure/disposalconstruct/C = new (loc, src)
-				C.update()
-				qdel(src)
-			return
-		else
+		if(istype(I, /obj/item/weldingtool) && W.remove_fuel(1,user))
 			to_chat(user, "You need more welding fuel to complete this task.")
 			return
+		to_chat(user, "You start slicing the floorweld off the delivery chute.")
+		if(do_after(user,20, src))
+			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+			if(!src || !W.isOn()) return
+			to_chat(user, "You sliced the floorweld off the delivery chute.")
+			var/obj/structure/disposalconstruct/C = new (loc, src)
+			C.update()
+			qdel(src)
+		return
 
 /obj/machinery/disposal/deliveryChute/Destroy()
 	if(trunk)
