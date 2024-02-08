@@ -62,8 +62,9 @@
 		return
 	if(isWelder(C))
 		var/obj/item/weldingtool/WT = C
-		if(WT.remove_fuel(0, user))
-			deconstruct(user)
+		if(istype(C, /obj/item/weldingtool) && !WT.remove_fuel(0, user))
+			return
+		deconstruct(user)
 		return
 	if(istype(C, /obj/item/gun/energy/plasmacutter))
 		var/obj/item/gun/energy/plasmacutter/cutter = C

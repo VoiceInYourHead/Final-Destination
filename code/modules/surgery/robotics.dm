@@ -180,7 +180,8 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 	allowed_tools = list(
 		/obj/item/weldingtool = 100,
 		/obj/item/gun/energy/plasmacutter = 50,
-		/obj/item/psychic_power/psiblade/master = 100
+		/obj/item/psychic_power/psiblade/master = 100,
+		/obj/item/psychic_power/psifire = 100
 	)
 
 	min_duration = 50
@@ -202,7 +203,7 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 			return FALSE
 		if(isWelder(tool))
 			var/obj/item/weldingtool/welder = tool
-			if(!welder.isOn() || !welder.remove_fuel(1,user))
+			if(istype(tool, /obj/item/weldingtool)  && (!welder.isOn() || !welder.remove_fuel(1,user)))
 				return FALSE
 		if(istype(tool, /obj/item/gun/energy/plasmacutter))
 			var/obj/item/gun/energy/plasmacutter/cutter = tool
