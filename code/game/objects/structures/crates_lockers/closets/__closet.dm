@@ -251,9 +251,10 @@
 			return 0
 		if(isWelder(W))
 			var/obj/item/weldingtool/WT = W
-			if(WT.remove_fuel(0,user))
-				slice_into_parts(WT, user)
+			if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 				return
+			slice_into_parts(WT, user)
+			return
 		if(istype(W, /obj/item/gun/energy/plasmacutter))
 			var/obj/item/gun/energy/plasmacutter/cutter = W
 			if(!cutter.slice(user))
@@ -293,7 +294,7 @@
 
 	if (isWelder(W) && (setup & CLOSET_CAN_BE_WELDED))
 		var/obj/item/weldingtool/WT = W
-		if(!WT.remove_fuel(0,user))
+		if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(0,user))
 			if(!WT.isOn())
 				return
 			else

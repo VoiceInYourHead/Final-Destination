@@ -211,25 +211,26 @@ obj/structure/disposalpipe/Destroy()
 		..()
 		return
 
-	if(istype(I, /obj/item/weldingtool))
+	if(isWelder(I))
 		var/obj/item/weldingtool/W = I
-		if(W.remove_fuel(0,user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-			// check if anything changed over 2 seconds
-			var/turf/uloc = user.loc
-			var/atom/wloc = W.loc
-			to_chat(user, "Slicing the disposal pipe.")
-			sleep(30)
-			if(!W.isOn()) return
-			if(user.loc == uloc && wloc == W.loc)
-				welded()
-			else
-				to_chat(user, "You must stay still while welding the pipe.")
-		else
-			to_chat(user, "You need more welding fuel to cut the pipe.")
-		return
+		if(istype(I, /obj/item/weldingtool) && !W.remove_fuel(0,user))
+			to_chat(user, "You must stay still while welding the pipe.")
+			return
+		playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+		// check if anything changed over 2 seconds
+		var/turf/uloc = user.loc
+		var/atom/wloc = W.loc
+		to_chat(user, "Slicing the disposal pipe.")
+		sleep(30)
+		if(istype(I, /obj/item/weldingtool) && !W.isOn()) return
+		if(user.loc == uloc && wloc == W.loc)
+			welded()
 
-	..()
+	else
+		to_chat(user, "You need more welding fuel to cut the pipe.")
+
+	. = ..()
+	return
 
 	// called when pipe is cut with welder
 /obj/structure/disposalpipe/proc/welded()
@@ -768,24 +769,24 @@ obj/structure/disposalpipe/Destroy()
 	if(!T.is_plating())
 		return		// prevent interaction with T-scanner revealed pipes
 	src.add_fingerprint(user, 0, I)
-	if(istype(I, /obj/item/weldingtool))
+	if(isWelder(I))
 		var/obj/item/weldingtool/W = I
 
-		if(W.remove_fuel(0,user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-			// check if anything changed over 2 seconds
-			var/turf/uloc = user.loc
-			var/atom/wloc = W.loc
-			to_chat(user, "Slicing the disposal pipe.")
-			sleep(30)
-			if(!W.isOn()) return
-			if(user.loc == uloc && wloc == W.loc)
-				if(linked && istype(linked,/obj/machinery/disposal))
-					var/obj/machinery/disposal/D = linked
-					D.trunk = null
-				welded()
-			else
-				to_chat(user, "You must stay still while welding the pipe.")
+		if(istype(I, /obj/item/weldingtool) && !W.remove_fuel(0,user))
+			to_chat(user, "You must stay still while welding the pipe.")
+			return
+		playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
+		// check if anything changed over 2 seconds
+		var/turf/uloc = user.loc
+		var/atom/wloc = W.loc
+		to_chat(user, "Slicing the disposal pipe.")
+		sleep(30)
+		if(istype(I, /obj/item/weldingtool) && !W.isOn()) return
+		if(user.loc == uloc && wloc == W.loc)
+			if(linked && istype(linked,/obj/machinery/disposal))
+				var/obj/machinery/disposal/D = linked
+				D.trunk = null
+			welded()
 		else
 			to_chat(user, "You need more welding fuel to cut the pipe.")
 			return
