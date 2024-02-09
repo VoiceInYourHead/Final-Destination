@@ -37,7 +37,20 @@
 	icon_state = "psiblade_long"
 	item_state = "psiblade_long"
 
+/obj/item/psychic_power/psiaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+	if(!proximity) return
 
+	if(A)
+		if(istype(A,/obj/structure/window))
+			var/obj/structure/window/W = A
+			W.shatter()
+		else if(istype(A,/obj/structure/grille))
+			qdel(A)
+		else if(istype(A,/obj/effect/vine))
+			var/obj/effect/vine/P = A
+			P.die_off()
+
+	..()
 
 /obj/item/psychic_power/psiaxe
 	name = "psychokinetic axe"

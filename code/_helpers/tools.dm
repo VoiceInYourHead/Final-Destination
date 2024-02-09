@@ -55,5 +55,11 @@
 /obj/item/material/hatchet/ishatchet()
 	return TRUE
 
+/obj/item/psychic_power/psiblade/ishatchet()
+	return TRUE
+
+/obj/item/psychic_power/psiaxe/ishatchet()
+	return TRUE
+
 /obj/item/psychic_power/psifire/iswelder()
 	return TRUE

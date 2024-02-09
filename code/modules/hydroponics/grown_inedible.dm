@@ -19,7 +19,9 @@
 	var/list/allow_tool_types = list(
 		/obj/item/material/knife,
 		/obj/item/material/hatchet,
-		/obj/item/circular_saw
+		/obj/item/circular_saw,
+		/obj/item/psychic_power/psiaxe,
+		/obj/item/psychic_power/psiblade
 	)
 	var/carve_time = 5 SECONDS
 	var/result_type = null

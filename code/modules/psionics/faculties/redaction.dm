@@ -62,7 +62,7 @@
 		if (!option)
 			return
 		if(option == "Базовая")
-			if(do_after(user, 50))
+			if(do_after(user, 60))
 				user.visible_message(SPAN_NOTICE("<i>[user] кладёт руки на плечи [target]...</i>"))
 				to_chat(target, SPAN_NOTICE("Вы ощущаете приятное тепло...ваши раны заживают."))
 				new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
@@ -89,7 +89,7 @@
 //It's easier to repair severed tendon, than put bones in place or either repair it structure, so no rank check
 
 			if(E.status & ORGAN_TENDON_CUT)
-				if(do_after(user, 50))
+				if(do_after(user, 80))
 					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
 					to_chat(user, SPAN_NOTICE("Вы аккуратно сплели новое сухожилие на месте повреждённого в [E.name]."))
 					E.status &= ~ORGAN_TENDON_CUT
@@ -109,7 +109,7 @@
 				return 0
 			if(E.status & ORGAN_BROKEN)
 				user.visible_message(SPAN_NOTICE("<i>[user] кладёт руку на [target]'s [E.name]...</i>"))
-				if(do_after(user, 80))
+				if(do_after(user, 100))
 					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
 					to_chat(user, SPAN_NOTICE("Вы установили кости на их прежнее место, заделав образовавшиеся на их поверхности трещины."))
 					E.status &= ~ORGAN_BROKEN
@@ -130,7 +130,7 @@
 				to_chat(user, SPAN_WARNING("Нет смысла тратить силы на этот обрубок. Здесь вы бессильны."))
 				return 0
 			if(E.status & ORGAN_ARTERY_CUT)
-				if(do_after(user, 80))
+				if(do_after(user, 100))
 					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
 					to_chat(user, SPAN_NOTICE("Вы вновь связали разованные вены в [E.name], останавливая внутреннее кровотечение."))
 					to_chat(target, SPAN_NOTICE("Вы ощущаете неприятное чувство в районе [E.name]...словно кто-то вновь сплетает ваши вены воедино."))
@@ -154,7 +154,7 @@
 			if(red_rank >= PSI_RANK_MASTER)
 				for(var/obj/item/organ/internal/I in E.internal_organs)
 					if(!BP_IS_ROBOTIC(I) && !BP_IS_CRYSTAL(I) && I.damage > 0)
-						if(do_after(user, 120))
+						if(do_after(user, 220))
 							to_chat(user, SPAN_NOTICE("Вы проникаете внутрь тела [target], восстанавливая повреждённый орган: [I]."))
 							new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
 							var/heal_rate = red_rank

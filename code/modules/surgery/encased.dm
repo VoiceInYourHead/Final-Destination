@@ -11,7 +11,9 @@
 	allowed_tools = list(
 		/obj/item/circular_saw = 100,
 		/obj/item/material/knife = 50,
-		/obj/item/material/hatchet = 75
+		/obj/item/material/hatchet = 75,
+		/obj/item/psychic_power/psiaxe = 75,
+		/obj/item/psychic_power/psiblade = 50
 	)
 	can_infect = 1
 	blood_level = 1
