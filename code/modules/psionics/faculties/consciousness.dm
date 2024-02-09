@@ -399,7 +399,7 @@
 		return TRUE
 
 /decl/psionic_power/consciousness/curse
-	name =            "Curse"
+	name =            "Hallucinations"
 	cost =            20
 	cooldown =        50
 	use_grab =        TRUE

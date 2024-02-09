@@ -2909,6 +2909,7 @@
 #include "code\modules\psionics\equipment\psipower_blade.dm"
 #include "code\modules\psionics\equipment\psipower_bow.dm"
 #include "code\modules\psionics\equipment\psipower_elements.dm"
+#include "code\modules\psionics\equipment\psipower_gun.dm"
 #include "code\modules\psionics\equipment\psipower_surgery.dm"
 #include "code\modules\psionics\equipment\psipower_tinker.dm"
 #include "code\modules\psionics\equipment\psipower_tk.dm"

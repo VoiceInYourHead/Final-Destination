@@ -107,6 +107,7 @@
 			if(prob(80))
 				src.visible_message("<span class='warning'>[src] absorbed all pure energy, sent into them!</span>")
 				src.psi.stamina = min(src.psi.max_stamina, src.psi.stamina + rand(15,20))
+				carried_orb.charge += 1
 
 				var/datum/effect/effect/system/spark_spread/l = new /datum/effect/effect/system/spark_spread
 				l.set_up(5, 1, loc)

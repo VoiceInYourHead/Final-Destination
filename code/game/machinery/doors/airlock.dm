@@ -990,6 +990,22 @@ About the new airlock wires panel:
 		src.lock_cut_state = BOLTS_EXPOSED
 		return 0
 
+///PSIONICS///
+
+	else if(istype(item,/obj/item/psychic_power/psiaxe))
+		//special case - zero delay, different message
+		if (src.lock_cut_state == BOLTS_EXPOSED)
+			return 0 //can't actually cut the bolts, go back to regular smashing
+		user.visible_message(
+			"<span class='danger'>\The [user] smashes the bolt cover open!</span>",
+			"<span class='warning'>You smash the bolt cover open!</span>"
+			)
+		playsound(src, 'sound/weapons/smash.ogg', 100, 1)
+		src.lock_cut_state = BOLTS_EXPOSED
+		return 0
+
+///PSIONICS///
+
 	else
 		// I guess you can't cut bolts with that item. Never mind then.
 		return 0
@@ -1149,6 +1165,30 @@ About the new airlock wires panel:
 					spawn(0)	close(1)
 				else
 					to_chat(user, "<span class='warning'>You need to be wielding \the [C] to do that.</span>")
+
+///PSIONICS///
+
+	else if (istype(C, /obj/item/psychic_power/psiaxe) && !(stat & BROKEN) && user.a_intent == I_HURT)
+		var/obj/item/psychic_power/psiaxe/F = C
+		playsound(src, 'sound/weapons/smash.ogg', 100, 1)
+		health -= F.force * 2
+		if(health <= 0)
+			user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [C] into the airlock's control panel! It explodes in a shower of sparks!"))
+			health = 0
+			set_broken(TRUE)
+		else
+			user.visible_message(SPAN_DANGER("[user] smashes \the [C] into the airlock's control panel!"))
+
+	else if(istype(C, /obj/item/psychic_power/psiaxe) && !arePowerSystemsOn())
+		if(locked)
+			to_chat(user, "<span class='notice'>The airlock's bolts prevent it from being forced.</span>")
+		else if( !welded && !operating )
+			if(density)
+				spawn(0)	open(1)
+			else
+				spawn(0)	close(1)
+
+///PSIONICS///
 
 	else if(istype(C, /obj/item/device/paint_sprayer))
 		return

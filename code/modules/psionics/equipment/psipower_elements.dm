@@ -6,6 +6,7 @@
 	icon_state = "electro"
 	item_state = "electro"
 	attack_cooldown = 5
+	var/charge = 0
 	var/cooldown = 0
 	var/ranged = FALSE
 
@@ -61,8 +62,10 @@
 				cooldown += 1
 				new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
 				return TRUE
-		target.electrocute_act(rand(el_rank * 2,el_rank * 5), user, 1, user.zone_sel.selecting)
+		target.electrocute_act(rand(el_rank + charge * 2,el_rank + charge * 5), user, 1, user.zone_sel.selecting)
 		cooldown += 1
+		if(charge >= 1)
+			charge -= 1
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
 		return TRUE
 
@@ -86,6 +89,7 @@
 						to_chat(user, "<span class='warning'>Вы с скрипом разбиваете источник света, вытягивая всё электричество, которое в нём было.</span>")
 					lighting.broken(TRUE)
 					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(5,10))
+					charge += 1
 		else
 			return
 

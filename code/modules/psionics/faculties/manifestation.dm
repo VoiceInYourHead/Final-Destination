@@ -26,14 +26,14 @@
 	if(.)
 		switch(user.psi.get_rank(faculty))
 			if(PSI_RANK_GRANDMASTER)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear", "Crossbow")
+				var/option = input(target, "Choose something!", "Weapons to create") in list("Sword", "Club", "Battle Axe", "Spear", "Crossbow", "Pistol")
 				if (!option)
 					return
 				if(user.psi.suppressed)
 					return
 				if(option == "Club")
 					return new /obj/item/psychic_power/psiclub/master/grand/paramount(user, user)
-				if(option == "Blade")
+				if(option == "Sword")
 					return new /obj/item/psychic_power/psiblade/master/grand/paramount(user, user)
 				if(option == "Battle Axe")
 					return new /obj/item/psychic_power/psiaxe/master/grand/paramount(user, user)
@@ -41,15 +41,21 @@
 					return new /obj/item/psychic_power/psispear/master/grand/paramount(user, user)
 				if(option == "Crossbow")
 					return new /obj/item/gun/launcher/crossbow/psibow/master/grand/paramount(user, user)
+				if(option == "Pistol")
+					if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED) && user.skill_check(SKILL_CONSTRUCTION, SKILL_EXPERIENCED))
+						return new /obj/item/gun/energy/psigun(user, user)
+					else
+						to_chat(user, SPAN_OCCULT("<b>Вы пытаетесь какое-то время собраться с мыслями, но совершенно не понимаете, как вам создать столь сложную конструкцию.</b>"))
+						return FALSE
 			if(PSI_RANK_MASTER)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear", "Crossbow")
+				var/option = input(target, "Choose something!", "Weapons to create") in list("Sword", "Club", "Battle Axe", "Spear", "Crossbow")
 				if (!option)
 					return
 				if(user.psi.suppressed)
 					return
 				if(option == "Club")
 					return new /obj/item/psychic_power/psiclub/master/grand(user, user)
-				if(option == "Blade")
+				if(option == "Sword")
 					return new /obj/item/psychic_power/psiblade/master/grand(user, user)
 				if(option == "Battle Axe")
 					return new /obj/item/psychic_power/psiaxe/master(user, user)
