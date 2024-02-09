@@ -89,7 +89,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = null
 	pda_type = null
-	back = null
+	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 	l_ear = null
 	r_pocket = /obj/item/pen
 	l_pocket = /obj/item/storage/wallet/random
@@ -112,7 +112,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
 	total_positions = 30
 	loadout_allowed = TRUE
-	skill_points = 15
+	skill_points = 25
 
 /datum/job/submap/camp/psionic2
 	title = "Class 1-B"
@@ -121,7 +121,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
 	total_positions = 30
 	loadout_allowed = TRUE
-	skill_points = 15
+	skill_points = 25
 
 /obj/effect/submap_landmark/spawnpoint/camp/psionic
 	name = "Class 1-A"
