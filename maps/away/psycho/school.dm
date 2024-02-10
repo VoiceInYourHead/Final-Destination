@@ -1,4 +1,5 @@
 #include "school_radio.dm"
+#include "school_mobs.dm"
 
 //ASSETS
 
