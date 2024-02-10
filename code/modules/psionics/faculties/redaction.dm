@@ -62,10 +62,16 @@
 		if (!option)
 			return
 		if(option == "Базовая")
-			if(do_after(user, 60))
+			if(do_after(user, 20))
 				user.visible_message(SPAN_NOTICE("<i>[user] кладёт руки на плечи [target]...</i>"))
 				to_chat(target, SPAN_NOTICE("Вы ощущаете приятное тепло...ваши раны заживают."))
 				new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+
+				if(user.skill_check(SKILL_ANATOMY, SKILL_TRAINED) && user.skill_check(SKILL_MEDICAL, SKILL_TRAINED))
+					to_chat(user, SPAN_NOTICE("Помимо прочего, благодаря имеющимся навыкам, вам удалогсь залечить некоторые из менее заметных ран [target], значительно ускорив его реабилитацию."))
+					target.adjustBruteLoss(-rand(20,40))
+					target.adjustFireLoss(-rand(20,40))
+
 				target.adjustBruteLoss(-(rand(10,20) * red_rank))
 				target.adjustFireLoss(-(rand(10,20) * red_rank))
 				if(pk_rank >= PSI_RANK_OPERANT)
@@ -82,14 +88,14 @@
 					if(LAZYLEN(valid_objects))
 						var/removing = pick(valid_objects)
 						target.remove_implant(removing, TRUE)
-						to_chat(user, SPAN_WARNING("Помимо прочего, вы также извлекли [removing] из [E.name] вашего пациента."))
+						to_chat(user, SPAN_NOTICE("Помимо прочего, вы также извлекли [removing] из [E.name] вашего пациента."))
 				return 1
 		if(option == "Переломы")
 
 //It's easier to repair severed tendon, than put bones in place or either repair it structure, so no rank check
 
 			if(E.status & ORGAN_TENDON_CUT)
-				if(do_after(user, 80))
+				if(do_after(user, 40))
 					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
 					to_chat(user, SPAN_NOTICE("Вы аккуратно сплели новое сухожилие на месте повреждённого в [E.name]."))
 					E.status &= ~ORGAN_TENDON_CUT
@@ -109,13 +115,22 @@
 				return 0
 			if(E.status & ORGAN_BROKEN)
 				user.visible_message(SPAN_NOTICE("<i>[user] кладёт руку на [target]'s [E.name]...</i>"))
-				if(do_after(user, 100))
+				if(do_after(user, 60))
 					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+					if(!user.skill_check(SKILL_ANATOMY, SKILL_BASIC))
+						if(prob(30))
+							to_chat(user, SPAN_WARNING("Вы кое-как попытались вновь соединить кости [target], однако сделали своей неопытностью только хуже."))
+							target.apply_damage(20,BRUTE,E)
+							return 0
 					to_chat(user, SPAN_NOTICE("Вы установили кости на их прежнее место, заделав образовавшиеся на их поверхности трещины."))
 					E.status &= ~ORGAN_BROKEN
 					E.stage = 0
 					to_chat(target, SPAN_NOTICE("Вы ощущаете приятное тепло в районе [E.name]...кости начинают вставать на место."))
 					return 1
+			else
+				to_chat(user, SPAN_WARNING("[E.name] не имеет никаких внутренних повреждений!"))
+				return 0
+
 		if(option == "Кровотечение")
 			if(red_rank < PSI_RANK_OPERANT)
 				to_chat(user, SPAN_WARNING("Боюсь, ваших сил недостаточно для проведения данной операции!"))
@@ -130,8 +145,13 @@
 				to_chat(user, SPAN_WARNING("Нет смысла тратить силы на этот обрубок. Здесь вы бессильны."))
 				return 0
 			if(E.status & ORGAN_ARTERY_CUT)
-				if(do_after(user, 100))
+				if(do_after(user, 60))
 					new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+					if(!user.skill_check(SKILL_ANATOMY, SKILL_BASIC))
+						if(prob(30))
+							to_chat(user, SPAN_WARNING("Ваша попытка связать разорванные вены в [E.name] закончились ужасным провалом."))
+							target.apply_damage(20,BRUTE,E)
+							return 0
 					to_chat(user, SPAN_NOTICE("Вы вновь связали разованные вены в [E.name], останавливая внутреннее кровотечение."))
 					to_chat(target, SPAN_NOTICE("Вы ощущаете неприятное чувство в районе [E.name]...словно кто-то вновь сплетает ваши вены воедино."))
 					E.status &= ~ORGAN_ARTERY_CUT
@@ -150,16 +170,68 @@
 					else
 						to_chat(user, SPAN_NOTICE("Это ранение превыше ваших сил."))
 						return 0
+				else
+					to_chat(user, SPAN_WARNING("[E.name] не имеет никаких внутренних повреждений!"))
+					return 0
+
 		if(option == "Органы")
+			if(red_rank < PSI_RANK_MASTER)
+				to_chat(user, SPAN_WARNING("Боюсь, ваших сил недостаточно для проведения данной операции!"))
+				return 0
 			if(red_rank >= PSI_RANK_MASTER)
+				if(!E)
+					var/what =  alert(user, "Вы уверены, что хотите прибегнуть к трансплантации?", "Обратная связь", "Да", "Нет")
+					switch(what)
+						if("Да")
+							if(do_after(user, 120))
+								// Remove all stumps first
+								for(var/O in target.organs_by_name)
+									var/obj/item/organ/external/S = target.organs_by_name[O]
+									if(S.is_stump())
+										target.visible_message(SPAN_WARNING("[S.name] рассыпается, а на его месте начинает формироваться нечто новое..."))
+										qdel(S)
+								var/list/missing_limbs = target.species.has_limbs - target.organs_by_name
+								if(do_after(user, 30))
+									if(!LAZYLEN(missing_limbs))
+										return
+									var/o_type = pick(missing_limbs)
+									new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
+									missing_limbs -= o_type
+									var/limb_type = target.species.has_limbs[o_type]["path"]
+									var/obj/new_limb = new limb_type(target)
+									target.visible_message(SPAN_DANGER("Место на теле [target], где раньше был лишь обрубок - внезапно начинает формировать новую [new_limb.name]!"))
+									user.visible_message(SPAN_DANGER("[user] выглядит крайне обессиленным."))
+									if(!user.skill_check(SKILL_ANATOMY, SKILL_TRAINED) || !user.skill_check(SKILL_MEDICAL, SKILL_BASIC))
+										if(prob(60))
+											var/limb = pick(BP_L_LEG,BP_R_LEG, BP_L_HAND, BP_R_HAND)
+											to_chat(user, SPAN_WARNING("Ваша некомпетентность привела к тому, что во время восстановления [new_limb.name] вы нанесли критический урон вашей конечности!"))
+											user.apply_damage(80,BRUTE,limb)
+									user.adjustBruteLoss(rand(30,40))
+									user.psi.spend_power(30)
+
+									target.regenerate_icons()
+
+						else
+							return 0
+
 				for(var/obj/item/organ/internal/I in E.internal_organs)
 					if(!BP_IS_ROBOTIC(I) && !BP_IS_CRYSTAL(I) && I.damage > 0)
-						if(do_after(user, 220))
+						if(do_after(user, 120))
 							to_chat(user, SPAN_NOTICE("Вы проникаете внутрь тела [target], восстанавливая повреждённый орган: [I]."))
 							new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "redaction_healing")
 							var/heal_rate = red_rank
+							if(!user.skill_check(SKILL_ANATOMY, SKILL_TRAINED) || !user.skill_check(SKILL_MEDICAL, SKILL_BASIC))
+								if(prob(60))
+									to_chat(user, SPAN_WARNING("Однако, ваша неопытность приводит к тому, что [target] получает ещё больше урона!"))
+									I.damage = max(0, I.damage + rand(5,10))
+									return 0
 							I.damage = max(0, I.damage - rand(heal_rate,heal_rate*3))
 							return 1
+					else
+						to_chat(user, SPAN_WARNING("[E.name] не имеет никаких внутренних повреждений!"))
+						return 0
+
+
 
 //OLD VERSION
 

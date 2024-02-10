@@ -76,6 +76,8 @@
 	//First do species check
 	if(species && species.can_overcome_gravity(src))
 		return 1
+	if(levitation)
+		return 1
 	else
 		var/turf/T = loc
 		if(((T.height + T.get_fluid_depth()) >= FLUID_DEEP) || T.get_fluid_depth() >= FLUID_MAX_DEPTH)
@@ -204,6 +206,8 @@
 
 /mob/living/carbon/human/can_fall(var/anchor_bypass = FALSE, var/turf/location_override = loc)
 	if(..())
+		if(levitation)
+			return FALSE
 		return species.can_fall(src)
 
 /atom/movable/proc/handle_fall(var/turf/landing)
