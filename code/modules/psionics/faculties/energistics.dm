@@ -235,3 +235,30 @@
 		var/obj/item/projectile/P = new fragment_type(T)
 		P.shot_from = src.name
 		P.launch(O)
+
+/decl/psionic_power/energistics/cloud
+	name =            "Cloud"
+	cost =            20
+	cooldown =        50
+	use_melee =       TRUE
+	min_rank =        PSI_RANK_OPERANT
+	use_description = "Выберите грудь на зелёном интенте и нажмите по себе, чтобы создать дымовую завесу."
+	admin_log = FALSE
+	var/smoke_amt = 1
+
+/decl/psionic_power/energistics/cloud/invoke(var/mob/living/user, var/mob/living/target)
+	var/en_rank = user.psi.get_rank(PSI_ENERGISTICS)
+	smoke_amt += en_rank
+
+	if(user.zone_sel.selecting != BP_CHEST)
+		return FALSE
+	if(target != user)
+		return FALSE
+	if(user.a_intent != I_HELP)
+		return FALSE
+
+	. = ..()
+
+	var/datum/effect/effect/system/smoke_spread/bad/smoke = new /datum/effect/effect/system/smoke_spread/bad()
+	smoke.set_up(smoke_amt, 0, get_turf(user)) //no idea what the 0 is
+	smoke.start()

@@ -8,14 +8,31 @@
 	if(invisibility == 0)
 		icon_state = owner.psi.use_psi_armour ? "psiarmour_on" : "psiarmour_off"
 
+/mob/living/carbon/human
+	var/levitation = FALSE
+
 /obj/screen/psi/armour/Click()
 	if(!owner.psi)
 		return
 	owner.psi.use_psi_armour = !owner.psi.use_psi_armour
 	if(owner.psi.use_psi_armour)
 		to_chat(owner, SPAN_NOTICE("You will now use your psionics to deflect or block incoming attacks."))
+		var/mob/living/carbon/human/A = owner
+		if(A.psi.get_rank(PSI_PSYCHOKINESIS) > PSI_RANK_APPRENTICE)
+			A.levitation = TRUE
+			A.pass_flags |= PASS_FLAG_TABLE
+			A.pixel_y = 8
+			A.overlays += image('icons/screen/psi.dmi', "levitation")
+			A.make_floating(5)
 	else
 		to_chat(owner, SPAN_NOTICE("You will no longer use your psionics to deflect or block incoming attacks."))
+		var/mob/living/carbon/human/A = owner
+		if(A.psi.get_rank(PSI_PSYCHOKINESIS) > PSI_RANK_APPRENTICE)
+			A.levitation = FALSE
+			A.pass_flags &= ~PASS_FLAG_TABLE
+			A.pixel_y = 0
+			A.overlays -= image('icons/screen/psi.dmi', "levitation")
+			A.stop_floating()
 	update_icon()
 
 // End psi armour toggle.

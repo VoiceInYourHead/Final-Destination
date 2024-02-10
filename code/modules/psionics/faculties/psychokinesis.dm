@@ -22,7 +22,7 @@
 	)
 
 /decl/psionic_power/psychokinesis/telekinesis/invoke(var/mob/living/user, var/mob/living/target)
-	if((user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+	if((user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_HEAD)))
 		return FALSE
 	if(user.a_intent != I_GRAB)
 		return FALSE
@@ -71,8 +71,11 @@
 		to_chat(user, SPAN_DANGER("Вы выпускаете мощную псионическую волну, разметая всё вокруг!"))
 		var/pk_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
 		new /obj/effect/temporary(get_turf(user),9, 'icons/effects/effects.dmi', "summoning")
-		for(var/mob/living/M in range(user, user.psi.get_rank(PSI_PSYCHOKINESIS)))
+		var/list/mobs = GLOB.living_mob_list_ + GLOB.dead_mob_list_
+		for(var/mob/living/M in mobs)
 			if(M == user)
+				continue
+			if(get_dist(user, M) > user.psi.get_rank(PSI_PSYCHOKINESIS))
 				continue
 			if(prob(20) && iscarbon(M))
 				var/mob/living/carbon/C = M
@@ -88,17 +91,29 @@
 	name =           "Telekinetic Punch"
 	cost =           20
 	cooldown =       50
+	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_APPRENTICE
 	use_description = "Выберите голову на синем интенте, а затем нажмите по цели, чтобы совершить усиленный телекинетический удар."
 
-/decl/psionic_power/psychokinesis/tele_punch/invoke(var/mob/living/user, var/mob/living/target)
+/decl/psionic_power/psychokinesis/tele_punch/invoke(var/mob/living/carbon/user, var/mob/living/target)
 
 	var/pk_rank_user = user.psi.get_rank(PSI_PSYCHOKINESIS)
 
+	if(pk_rank_user < PSI_RANK_GRANDMASTER && get_dist(user, target) > 1)
+		return FALSE
+
+	var/obj/item/organ/external/E = user.organs_by_name[BP_L_HAND]
+	if(!E || E.is_stump())
+		return FALSE
+
+	E = user.organs_by_name[BP_R_HAND]
+	if(!E || E.is_stump())
+		return FALSE
+
 	if(user.zone_sel.selecting != BP_HEAD)
 		return FALSE
-	if(user.a_intent != I_DISARM)
+	if(user.a_intent != I_HURT)
 		return FALSE
 	. = ..()
 	if(.)
@@ -208,6 +223,17 @@
 
 		if(pk_rank_user == PSI_RANK_GRANDMASTER)
 			user.visible_message(SPAN_DANGER("[user] заносит руку назад, совершая резкий удар, буквально разрезающий воздух!"))
+
+			var/mob/living/M = target
+			if(get_dist(user, M) <= 6)
+				var/turf/target_turf = get_step(get_turf(target), pick(GLOB.alldirs))
+				var/list/line_list = getline(user, target_turf)
+				for(var/i = 1 to length(line_list))
+					var/turf/T = line_list[i]
+					var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(T, user.dir, user)
+					D.alpha = min(150 + i*15, 255)
+					animate(D, alpha = 0, time = 2 + i*2)
+				user.forceMove(target_turf)
 
 //ENEMY PSI CHECK START
 

@@ -58,3 +58,17 @@
 	pixel_x = rand(-12, 12)
 	pixel_y = rand(0, 16)
 	animate(src, alpha = 0, pixel_x = pixel_x + rand(-6, 6), pixel_y = pixel_y + 12, duration, easing = EASE_IN)
+
+/obj/effect/temp_visual/decoy
+	desc = "It's a decoy!"
+	duration = 15
+
+/obj/effect/temp_visual/decoy/Initialize(mapload, set_dir, atom/mimiced_atom, modified_duration = 15)
+	duration = modified_duration
+	. = ..()
+	alpha = initial(alpha)
+	if(mimiced_atom)
+		name = mimiced_atom.name
+		appearance = mimiced_atom.appearance
+		set_dir(set_dir)
+		mouse_opacity = 0

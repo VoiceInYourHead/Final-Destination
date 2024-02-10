@@ -429,15 +429,16 @@
 		var/turf/target = A
 		if(combat_mode)
 			if(!proximity && cryo_rank >= PSI_RANK_MASTER)
-				if(do_after(user, 20))
+				if(do_after(user, 10))
 					cooldown += 2
+					user.visible_message("<span class='danger'>[user] возводит стену из льда!</span>")
 					var/turf/target_turf = get_turf(target)
 					if(target_turf)
 						var/turflist = getline(user, target_turf)
 						ice_turf(turflist)
 			if(!proximity)
 				return
-			if(do_after(user, 20))
+			if(do_after(user, 10))
 				cooldown += 2
 				user.visible_message("<span class='danger'>[user] возводит стену из льда!</span>")
 				new /obj/effect/temporary(target,3, 'icons/effects/effects.dmi', "blueshatter")
