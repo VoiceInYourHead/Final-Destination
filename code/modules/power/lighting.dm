@@ -206,9 +206,25 @@
 	color = "#4f7fad"
 	light_type = /obj/item/light/tube/blue
 
+/obj/machinery/light/blue/invisible
+	invisibility = 101
+
 /obj/machinery/light/golden
 	color = "#f1d57f"
 	light_type = /obj/item/light/tube/golden
+
+/obj/machinery/light/golden/invisible
+	invisibility = 101
+
+/obj/machinery/light/school
+	color = "#e2d1b2"
+	light_type = /obj/item/light/tube/school
+	invisibility = 101
+
+/obj/machinery/light/school_sun
+	color = COLOR_DARK_ORANGE
+	light_type = /obj/item/light/tube/school_sun
+	invisibility = 101
 
 // the smaller bulb light fixture
 /obj/machinery/light/small
@@ -744,6 +760,18 @@
 	name = "light tube (golden)"
 	color = COLOR_YELLOW_GRAY
 	b_colour = COLOR_YELLOW_GRAY
+	random_tone = FALSE
+
+/obj/item/light/tube/school
+	name = "light tube (school)"
+	color = COLOR_BLUE_GRAY
+	b_colour = COLOR_BLUE_GRAY
+	random_tone = FALSE
+
+/obj/item/light/tube/school_sun
+	name = "light tube (school sun)"
+	color = COLOR_DARK_ORANGE
+	b_colour = COLOR_DARK_ORANGE
 	random_tone = FALSE
 
 /obj/item/light/tube/warm

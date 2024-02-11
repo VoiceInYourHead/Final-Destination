@@ -94,7 +94,7 @@
 	use_ranged =     TRUE
 	use_melee =      TRUE
 	min_rank =       PSI_RANK_APPRENTICE
-	use_description = "Выберите голову на синем интенте, а затем нажмите по цели, чтобы совершить усиленный телекинетический удар."
+	use_description = "Выберите голову на красном интенте, а затем нажмите по цели, чтобы совершить усиленный телекинетический удар."
 
 /decl/psionic_power/psychokinesis/tele_punch/invoke(var/mob/living/carbon/user, var/mob/living/target)
 
