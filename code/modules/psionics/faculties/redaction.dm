@@ -57,7 +57,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		var/option = input(user, "Выберите что-нибудь!", "Какую помощь вы хотите оказать [target]?") in list("Базовая", "Переломы", "Кровотечение", "Органы")
+		var/option = input(user, "Выберите что-нибудь!", "Какую помощь вы хотите оказать [target]?") in list("Базовая", "Переломы", "Кровотечение", "Конечности", "Органы")
 		user.psi.set_cooldown(cooldown)
 		if (!option)
 			return
@@ -174,11 +174,12 @@
 					to_chat(user, SPAN_WARNING("[E.name] не имеет никаких внутренних повреждений!"))
 					return 0
 
-		if(option == "Органы")
+		if(option == "Конечности")
 			if(red_rank < PSI_RANK_MASTER)
 				to_chat(user, SPAN_WARNING("Боюсь, ваших сил недостаточно для проведения данной операции!"))
 				return 0
 			if(red_rank >= PSI_RANK_MASTER)
+
 				if(!E)
 					var/what =  alert(user, "Вы уверены, что хотите прибегнуть к трансплантации?", "Обратная связь", "Да", "Нет")
 					switch(what)
@@ -214,6 +215,11 @@
 						else
 							return 0
 
+		if(option == "Органы")
+			if(red_rank < PSI_RANK_MASTER)
+				to_chat(user, SPAN_WARNING("Боюсь, ваших сил недостаточно для проведения данной операции!"))
+				return 0
+			if(red_rank >= PSI_RANK_MASTER)
 				for(var/obj/item/organ/internal/I in E.internal_organs)
 					if(!BP_IS_ROBOTIC(I) && !BP_IS_CRYSTAL(I) && I.damage > 0)
 						if(do_after(user, 120))
@@ -227,10 +233,6 @@
 									return 0
 							I.damage = max(0, I.damage - rand(heal_rate,heal_rate*3))
 							return 1
-					else
-						to_chat(user, SPAN_WARNING("[E.name] не имеет никаких внутренних повреждений!"))
-						return 0
-
 
 
 //OLD VERSION

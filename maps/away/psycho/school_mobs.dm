@@ -39,6 +39,10 @@
 	say_list_type = /datum/say_list/hivebot
 
 /mob/living/simple_animal/hostile/school_robot/ranged
+	icon = 'icons/fd/smallrobot.dmi'
+	icon_state = "deimoslaser"
+	icon_living = "deimoslaser"
+	icon_dead = "deimoslaser_dead"
 	health = 80
 	maxHealth = 80
 	ranged = 1

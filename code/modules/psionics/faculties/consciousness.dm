@@ -135,7 +135,7 @@
 				var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
 				switch(option)
 					if("Да")
-						var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+						var/answer =  input(target, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
 						to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
 					else
 						return
