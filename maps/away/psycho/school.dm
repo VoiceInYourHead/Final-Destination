@@ -116,7 +116,7 @@
 	skill_points = 25
 
 /datum/job/submap/camp/psionic2
-	title = "Class 1-B"
+	title = "New Student"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
@@ -128,7 +128,7 @@
 	name = "Class 1-A"
 
 /obj/effect/submap_landmark/spawnpoint/camp/psionic2
-	name = "Class 1-B"
+	name = "New Student"
 
 /datum/job/submap/camp/teacher1
 	title = "Psionic teacher 1"
