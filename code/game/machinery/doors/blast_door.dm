@@ -249,6 +249,26 @@
 	else
 		icon_state = "blastctrl"
 
+/obj/machinery/button/blast_door/indicator
+	icon = 'icons/obj/stationobjs.dmi'
+	name = "blast door-control"
+	desc = "It controls blast doors, remotely. This one with indicator."
+	icon_state = "blastctrl"
+	var/state = FALSE //state for indicator, really simple.
+
+/obj/machinery/button/blast_door/indicator/on_update_icon()
+	if(state)
+		icon_state = "blastctrlin"
+	else
+		icon_state = "blastctrlin1"
+
+/obj/machinery/button/blast_door/indicator/activate(mob/living/user)
+	if(state)
+		state = FALSE
+	else
+		state = TRUE
+	..()
+
 // SUBTYPE: Regular
 // Your classical blast door, found almost everywhere.
 /obj/machinery/door/blast/regular
