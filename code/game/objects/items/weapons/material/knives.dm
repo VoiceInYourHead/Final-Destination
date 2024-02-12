@@ -136,7 +136,7 @@
 /obj/item/material/knife/utility/lightweight/throwing
 	name = "lightweight knife"
 	desc = "A lightweight knife."
-	icon_state = "titanium"
+	icon_state = "throwing"
 	default_material = MATERIAL_TITANIUM
 	max_force = 15
 	force_multiplier = 0.3
