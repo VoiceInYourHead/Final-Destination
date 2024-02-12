@@ -417,3 +417,37 @@
 		new /obj/effect/temporary(get_turf(target),8, 'icons/effects/effects.dmi', "eye_opening")
 		playsound(target.loc, 'sound/hallucinations/far_noise.ogg', 15, 1)
 		target.hallucination(rand(10,20) * con_rank_user, 100)
+
+/decl/psionic_power/consciousness/swap
+	name =           "Shadow Swap"
+	cost =           30
+	cooldown =       100
+	use_ranged =     TRUE
+	min_rank =       PSI_RANK_MASTER
+	use_description = "Выберите пятки или ноги на синем интенте. Затем, нажмите по цели на дистанции, чтобы незаметно обменяться с ней местами."
+
+/decl/psionic_power/consciousness/swap/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
+	var/cn_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+
+	if(!istype(target))
+		return FALSE
+
+	if(!(user.zone_sel.selecting in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)))
+		return FALSE
+
+	. = ..()
+
+	var/turf/target_turf = get_turf(target)
+	var/turf/user_turf = get_turf(user)
+
+	var/list/mobs = GLOB.living_mob_list_ + GLOB.dead_mob_list_
+	for(var/mob/living/M in mobs)
+		if(M == user)
+			continue
+		if(get_dist(user, M) > cn_rank_user)
+			continue
+		M.eye_blind = max(M.eye_blind,cn_rank_user)
+	target.forceMove(user_turf)
+	user.forceMove(target_turf)
+
+	return TRUE
