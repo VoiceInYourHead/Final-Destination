@@ -212,6 +212,26 @@
 	initial_gas = null
 	temperature = TCMB
 
+/turf/simulated/floor/tiled/tile1
+	name = "floor"
+	icon_state = "tile1"
+	initial_flooring = /decl/flooring/tiling/tile1
+
+/turf/simulated/floor/tiled/tile2
+	name = "floor"
+	icon_state = "tile2"
+	initial_flooring = /decl/flooring/tiling/tile2
+
+/turf/simulated/floor/tiled/tile3
+	name = "floor"
+	icon_state = "tile3"
+	initial_flooring = /decl/flooring/tiling/tile3
+
+/turf/simulated/floor/tiled/mosaic
+	name = "floor"
+	icon_state = "mosaic"
+	initial_flooring = /decl/flooring/tiling/mosaic
+
 /turf/simulated/floor/tiled/freezer
 	name = "tiles"
 	icon_state = "freezer"

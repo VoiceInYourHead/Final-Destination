@@ -190,6 +190,30 @@
 	icon_base = "monotile"
 	build_type = null
 
+/decl/flooring/tiling/tile1
+	icon_base = "tile1"
+	desc = "Tiled floor."
+	color = COLOR_DARK_GUNMETAL
+	build_type = /obj/item/stack/tile/floor_tile1
+
+/decl/flooring/tiling/tile2
+	icon_base = "tile2"
+	desc = "Tiled floor."
+	color = COLOR_DARK_GUNMETAL
+	build_type = /obj/item/stack/tile/floor_tile2
+
+/decl/flooring/tiling/tile3
+	icon_base = "tile3"
+	desc = "Diagonal tiled floor."
+	color = COLOR_DARK_GUNMETAL
+	build_type = /obj/item/stack/tile/floor_tile3
+
+/decl/flooring/tiling/mosaic
+	icon_base = "mosaic"
+	desc = "Mosaic floor."
+	color = COLOR_DARK_GUNMETAL
+	build_type = /obj/item/stack/tile/floor_mosaic
+
 /decl/flooring/tiling/freezer
 	desc = "Don't slip."
 	icon_base = "freezer"
