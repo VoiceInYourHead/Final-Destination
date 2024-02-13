@@ -67,6 +67,22 @@
 	title = "dark floor tile"
 	result_type = /obj/item/stack/tile/floor_dark
 
+/datum/stack_recipe/tile/metal/floor1
+	title = "tiled 1 floor tile"
+	result_type = /obj/item/stack/tile/floor_tile1
+
+/datum/stack_recipe/tile/metal/floor2
+	title = "tiled 2 floor tile"
+	result_type = /obj/item/stack/tile/floor_tile2
+
+/datum/stack_recipe/tile/metal/floor3
+	title = "tiled 3 floor tile"
+	result_type = /obj/item/stack/tile/floor_tile3
+
+/datum/stack_recipe/tile/metal/mosaic
+	title = "mosaic floor tile"
+	result_type = /obj/item/stack/tile/floor_mosaic
+
 /datum/stack_recipe/tile/light/floor
 	title = "white floor tile"
 	result_type = /obj/item/stack/tile/floor_white
