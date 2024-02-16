@@ -140,6 +140,14 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/spawn_chemdisp_cartridge,
 	/datum/admins/proc/mass_debug_closet_icons
 	)
+
+var/list/admin_verbs_actor = list(
+	/client/proc/admin_ghost,			// allows us to ghost/reenter body at will,
+	/client/proc/cmd_mod_say,
+	/client/proc/aooc,
+	/client/proc/roll_dices
+	)
+
 var/list/admin_verbs_server = list(
 	/datum/admins/proc/capture_map_part,
 	/datum/admins/proc/startnow,
@@ -333,6 +341,7 @@ var/list/admin_verbs_xeno = list(
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
 		if(holder.rights & R_SOUNDS)		verbs += admin_verbs_sounds
 		if(holder.rights & R_SPAWN)			verbs += admin_verbs_spawn
+		if(holder.rights & R_ACTOR)			verbs += admin_verbs_actor
 		if(holder.rights & R_MOD)			verbs += admin_verbs_mod
 		if(holder.rights & R_XENO)			verbs += admin_verbs_xeno		//INF
 
