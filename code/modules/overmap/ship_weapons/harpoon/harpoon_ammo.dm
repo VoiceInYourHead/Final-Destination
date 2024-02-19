@@ -37,7 +37,7 @@
 
 /obj/item/projectile/bullet/huge_caliber/harpoon_cannon/process_thingies()
 	if(origin && entered_overmap)
-		if(overmap_projectile.z == 11)
+		if(overmap_projectile.z == 12)
 			handle_overbeam(overmap_projectile)
 		else
 			handle_overbeam(overmap_projectile.loc)
@@ -46,7 +46,7 @@
 	set waitfor = FALSE
 	if(get_dist(origin, target) > 5) return TRUE
 
-	if(origin.z == 11) origin.Beam(target, beam_icon, time = 30, maxdistance = world.maxx)
+	if(origin.z == 12) origin.Beam(target, beam_icon, time = 30, maxdistance = world.maxx)
 	else origin.loc.Beam(target, beam_icon, time = 30, maxdistance = world.maxx)
 
 /obj/item/projectile/bullet/huge_caliber/harpoon_cannon/enter_sector(var/z_level, var/target_fore_dir, var/obj/effect/overmap/target)
@@ -216,7 +216,7 @@
 		return INFINITY // exoplanet/station = very chunky boi
 
 	var/obj/effect/overmap/visitable/ship/us = src
-	if(istype(us,/obj/effect/overmap/visitable/ship/landable) && us.z != 11)
+	if(istype(us,/obj/effect/overmap/visitable/ship/landable) && us.z != 12)
 		us = pick(us.locs) // If we are docked to something - use our mothership weight numbers instead
 
 	if(istype(compare_to))

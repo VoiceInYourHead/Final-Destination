@@ -27,6 +27,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/path
 	var/config_path = null
 
+	var/list/interior_levels = list() // Z-levels where vehicle interiors located
 	var/list/station_levels = list() // Z-levels the station exists on
 	var/list/admin_levels = list()   // Z-levels for admin functionality (Centcom, shuttle transit, etc)
 	var/list/contact_levels = list() // Z-levels that can be contacted from the station, for eg announcements
