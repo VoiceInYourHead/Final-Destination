@@ -11,6 +11,7 @@
 	atom_flags = ATOM_FLAG_CAN_BE_PAINTED
 
 	var/damage_overlay = 0
+	var/explosion_resistance_add = 0
 	var/global/damage_overlays[16]
 	var/active
 	var/can_open = 0

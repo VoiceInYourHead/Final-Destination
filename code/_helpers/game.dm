@@ -15,6 +15,8 @@
 		max_z = max(z, max_z)
 	for(var/z in GLOB.using_map.player_levels)
 		max_z = max(z, max_z)
+	for(var/z in GLOB.using_map.interior_levels)
+		max_z = max(z, max_z)
 	return max_z
 
 /proc/living_observers_present(var/list/zlevels)

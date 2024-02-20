@@ -283,6 +283,7 @@
 
 
 /decl/psionic_power/energistics/cloud/invoke(var/mob/living/user, var/mob/living/target)
+
 	if(PSI_RANK_GRANDMASTER)
 		outer_radius += 3
 

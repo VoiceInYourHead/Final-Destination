@@ -55,7 +55,7 @@
 
 /obj/effect/overmap/projectile/Process()
 	actual_projectile.process_thingies()
-	if(!actual_projectile || z != 11)
+	if(!actual_projectile || z != 12)
 		return
 
 	if(walk_timer >= walk_delay)

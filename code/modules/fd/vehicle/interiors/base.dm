@@ -13,7 +13,6 @@
 	var/area/area
 
 	var/global/list/datum/map_template/templates_cache = list()
-	var/global/z_level = -1
 
 /datum/vehicle_interior/New(datum/map_template/interior_template, new_vehicle)
 	if(!(interior_template in templates_cache))
@@ -22,10 +21,8 @@
 
 	interior_template = templates_cache[interior_template]
 
-	if(z_level == -1)
-		z_level = ++world.maxz
-
-	for(var/turf/space/T in block(locate(1, 1, z_level), locate(world.maxx, world.maxy, z_level)))
+	var/list/interior_levels = GLOB.using_map.interior_levels
+	for(var/turf/space/T in block(locate(TRANSITIONEDGE, TRANSITIONEDGE, min(interior_levels)), locate(world.maxx - TRANSITIONEDGE, world.maxy - TRANSITIONEDGE, max(interior_levels))))
 		var/valid = TRUE
 		for(var/turf/check in interior_template.get_affected_turfs(T))
 			if(!istype(check, /turf/space))
