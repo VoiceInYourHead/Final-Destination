@@ -244,11 +244,48 @@
 	min_rank =        PSI_RANK_OPERANT
 	use_description = "Выберите грудь на зелёном интенте и нажмите по себе, чтобы создать дымовую завесу."
 	admin_log = FALSE
-	var/smoke_amt = 1
+	var/turf/previousturf = null
+	var/inner_radius = -1 //for all your ring spell needs
+	var/outer_radius = 2
+
+/obj/effect/smoke_wall
+	icon_state = "smoke wall"
+	anchored = TRUE
+	opacity = TRUE
+	layer = ABOVE_HUMAN_LAYER
+	icon = 'icons/fd/structures/smoke.dmi'
+	icon_state = "smoke"
+	pixel_x = -9
+	pixel_y = -6
+	var/timer = 30
+
+/obj/effect/smoke_wall/New()
+	run_timer()
+
+/obj/effect/smoke_wall/proc/run_timer()
+	set waitfor = 0
+	var/T = timer
+	while(T > 0)
+		sleep(1 SECOND)
+		T--
+	src.alpha = 200
+	sleep(2)
+	src.alpha = 150
+	sleep(2)
+	src.alpha = 100
+	sleep(2)
+	src.alpha = 50
+	sleep(2)
+	src.alpha = 20
+	sleep(2)
+	src.alpha = 10
+	qdel(src)
+
 
 /decl/psionic_power/energistics/cloud/invoke(var/mob/living/user, var/mob/living/target)
-	var/en_rank = user.psi.get_rank(PSI_ENERGISTICS)
-	smoke_amt += en_rank
+
+	if(PSI_RANK_GRANDMASTER)
+		outer_radius += 3
 
 	if(user.zone_sel.selecting != BP_CHEST)
 		return FALSE
@@ -259,6 +296,26 @@
 
 	. = ..()
 
-	var/datum/effect/effect/system/smoke_spread/bad/smoke = new /datum/effect/effect/system/smoke_spread/bad()
-	smoke.set_up(smoke_amt, 0, get_turf(user)) //no idea what the 0 is
-	smoke.start()
+	if(target == user)
+		var/list/targets = list()
+
+		for(var/turf/point in oview_or_orange(outer_radius, user, "range"))
+			if(!(point in oview_or_orange(inner_radius, user, "range")))
+				if(point.density)
+					continue
+				if(istype(point, /turf/space))
+					continue
+				targets += point
+
+		if(!targets.len)
+			return FALSE
+
+		var/turf/user_turf = get_turf(user)
+		for(var/turf/T in targets)
+			var/obj/effect/smoke_wall/IW = new(T)
+			if(istype(IW))
+				IW.pixel_x = (user_turf.x - T.x) * world.icon_size
+				IW.pixel_y = (user_turf.y - T.y) * world.icon_size
+				animate(IW, pixel_x = 0, pixel_y = 0, time = 3, easing = EASE_OUT)
+
+		return TRUE

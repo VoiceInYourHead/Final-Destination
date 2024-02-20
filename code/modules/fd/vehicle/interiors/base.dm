@@ -22,7 +22,7 @@
 	interior_template = templates_cache[interior_template]
 
 	var/list/interior_levels = GLOB.using_map.interior_levels
-	for(var/turf/space/T in block(locate(1, 1, min(interior_levels)), locate(world.maxx, world.maxy, max(interior_levels))))
+	for(var/turf/space/T in block(locate(TRANSITIONEDGE, TRANSITIONEDGE, min(interior_levels)), locate(world.maxx - TRANSITIONEDGE, world.maxy - TRANSITIONEDGE, max(interior_levels))))
 		var/valid = TRUE
 		for(var/turf/check in interior_template.get_affected_turfs(T))
 			if(!istype(check, /turf/space))
