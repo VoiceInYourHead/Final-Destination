@@ -1,4 +1,5 @@
 #include "school_radio.dm"
+#include "school_mobs.dm"
 
 //ASSETS
 
@@ -64,7 +65,19 @@
 	descriptor = "Secret SCG camp on unknown planet"
 	map = "Psionics Camp"
 	crew_jobs = list(
-		/datum/job/submap/camp/psionic,
+		/datum/job/submap/camp/ardent,
+		/datum/job/submap/camp/saturio,
+		/datum/job/submap/camp/maxim,
+		/datum/job/submap/camp/okita,
+		/datum/job/submap/camp/numerius,
+		/datum/job/submap/camp/julian,
+
+		/datum/job/submap/camp/shtorn,
+		/datum/job/submap/camp/sara,
+		/datum/job/submap/camp/vivian,
+		/datum/job/submap/camp/mara,
+
+		/datum/job/submap/camp/psionic2,
 		/datum/job/submap/camp/teacher1,
 		/datum/job/submap/camp/teacher2,
 		/datum/job/submap/camp/teacher3,
@@ -88,7 +101,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = null
 	pda_type = null
-	back = null
+	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 	l_ear = null
 	r_pocket = /obj/item/pen
 	l_pocket = /obj/item/storage/wallet/random
@@ -104,17 +117,143 @@
 	l_ear = /obj/item/device/radio/headset/map_preset/psy_school
 	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 
-/datum/job/submap/camp/psionic
-	title = "Psionic student"
+///BOYS///
+
+/datum/job/submap/camp/ardent
+	title = "Ardent Mire"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
 	outfit_type = /decl/hierarchy/outfit/job/psionic/student
 	total_positions = 30
 	loadout_allowed = TRUE
-	skill_points = 15
+	skill_points = 25
 
-/obj/effect/submap_landmark/spawnpoint/camp/psionic
-	name = "Psionic student"
+/obj/effect/submap_landmark/spawnpoint/camp/ardent
+	name = "Ardent Mire"
+
+/datum/job/submap/camp/saturio
+	title = "Saturio Amantes"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/saturio
+	name = "Saturio Amantes"
+
+/datum/job/submap/camp/maxim
+	title = "Maxim Kuznetsov"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/maxim
+	name = "Maxim Kuznetsov"
+
+/datum/job/submap/camp/okita
+	title = "Okita Takeda"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/okita
+	name = "Okita Takeda"
+
+/datum/job/submap/camp/numerius
+	title = "Numerius De Vigo"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/numerius
+	name = "Numerius De Vigo"
+
+/datum/job/submap/camp/julian
+	title = "Julian Morawski"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/julian
+	name = "Julian Morawski"
+
+///GIRLS///
+
+/datum/job/submap/camp/shtorn
+	title = "Shtorn Avasarala"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/shtorn
+	name = "Shtorn Avasarala"
+
+/datum/job/submap/camp/sara
+	title = "Sara Mayer"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/sara
+	name = "Sara Mayer"
+
+/datum/job/submap/camp/vivian
+	title = "Vivian Rockwell"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/vivian
+	name = "Vivian Rockwell"
+
+/datum/job/submap/camp/mara
+	title = "Mara Sumitomo"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/mara
+	name = "Mara Sumitomo"
+
+///END///
+
+/datum/job/submap/camp/psionic2
+	title = "New Student"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/psionic2
+	name = "New Student"
 
 /datum/job/submap/camp/teacher1
 	title = "Psionic teacher 1"
@@ -222,6 +361,7 @@
 	icon_state = "unknown"
 	requires_power = 0
 	dynamic_lighting = 1
+	base_turf = /turf/unsimulated/floor/exoplanet/barren
 
 /area/psionic_school/outdoor
 	name = "\improper Streets"
@@ -272,6 +412,9 @@
 
 /area/psionic_school/indoor/sec
 	name = "\improper Security Checkpoint"
+
+/area/psionic_school/indoor/green
+	name = "\improper Greenhouse"
 
 //CAMPUS
 
