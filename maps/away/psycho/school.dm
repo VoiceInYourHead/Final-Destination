@@ -1,6 +1,43 @@
 #include "school_radio.dm"
 #include "school_mobs.dm"
 
+//LORE ITEMS
+
+/obj/item/paper/school/journal
+	icon = 'icons/fd/items/oddities2.dmi'
+	icon_state = "book_log"
+	name = "Dusty Journal"
+	language = LANGUAGE_CULT_GLOBAL
+	info = "Для начала, думаю, будет резонно извиниться перед вами за то, что сообщаю это таким образом.<br>\
+			По моим расчётам, отталкиваясь от уровня вашей привязанности к моей персоне и общего любопытства - вы должны найти данную записку спустя месяц(ориентировочно) после моей трагической кончины.<br>\
+			Если я не ошибся в расчётах, то примерно в это же время мне найдут замену и вероятнее всего приставят к вашему лагерю кого-то более покладистого и недальновидного. Для наблюдения, естественно. Вполне возможно, он даже поддержит ваш интерес к поиску правды, но вы...я более чем уверен, что вы достаточно сообразительны для того, чтобы понять это и без меня.<br>\
+			<b>------</b> <br>\
+			Касательно моего трагичного исхода. Был ли инцидент подстроен в заранее, с целью ликвидации конкретно меня? Да. Было ли это дело рук самого Центрального Правительства? Определённо да. Почему? Здесь стоит остановиться и рассказать вам немного подробнее о том, что послужило причиной моего ВЕРОЯТНОГО устранения.<br>\
+			Для начала, о битве при Нью-Амстердаме. Говорить об этом не принято, но Институт понёс куда более значительные потери, чем заявляется официально. Не смотря на одержанную победу - наш любимый и широко уважаемый Профессор Кучулейн - и сам получил травмы, несовместимые с жизнью. По сей причине, уже некоторое время он не находится при делах и не имеет никакого контроля над происходящим в рамках организации.<br>\
+			Это позволило государству, а вместе с тем и фракциям поменьше, что этим государством 'управляют' - пустить свои корни в рабочую инфраструктуру НИИ, постепенно заменяя старый кадровый состав своими агентами.<br>\
+			По моим примерным расчётам, в данный момент мы имеем следующее соотношение: 44% лоялистов к 56% подрядчиков, косвенно или напрямую относящихся к 'N.E.M.E.S.I.S.'.<br>\
+			<b>------</b> <br>\
+			Их основная цель - отбор и промывание наилучших выпускников с целью дальнейшего применения оных в карательных целях. Не всегда удачно, не всегда гуманно. Некоторые не переживают данную процедуру вовсе.<br>\
+			Когда я находился в своей командировке - мне удалось лицезреть данную картину самолично.<br>\
+			Не то что на улицах - даже в школах теперь небезопасно. Но сражаться или бежать - смысла тоже нет. Учителей крайне быстро устранят, а ученики даже не вспомнят о их существовании. При всём уважении к тебе и Крису, Наоки - вы не протянете и минуты.<br>\
+			Тем не менее, был бы я собой, если бы не позаботился о плане 'Б'?<br>\
+			<b>------</b> <br>\
+			В спине левой статуи, на главной площади лагеря - вы найдёте папку с документами, среди которых находятся доказательства выше написанного, а также имена и информация о людях, которым вы можете доверять.<br>\
+			Не пытайтесь найти или связаться с ними самостоятельно. Это лишь поставит ваше и их прикрытие под удар. Я оставил для них такие же инструкции.<br>\
+			Всё что требуется от вас - это держать данную информацию в голове и не провоцировать верхушку на преждевременные действия. Положитесь на них, как я положился на вас, коллеги.<br>\
+			<b>------</b> <br>\
+			Что же до учащихся...<br>\
+			Вы не сможете спасти каждого из них. Кто-то откажется верить вам, кто-то просто будет обузой для остальных.<br>\
+			Лучшее, что мы можем сделать - это подарить им мгновения спокойствия перед грядущим, сфокусировав свои силы на тех, кто сможет спасти ещё сотни в будущем.<br>\
+			Впрочем, вы ведь всё равно не станете слушать меня, верно? Не думаю, что я нахожусь в той позиции, чтобы осуждать подобную иррациональную и безумную приверженность добру и благу. В конце концов, именно я, прямо сейчас, мёртв. А вы ещё живы и читаете это.<br>\
+			<b>------</b> <br>\
+			Я хочу пожелать вам удачи.<br>\
+			Какое бы вы решение в итоге не приняли...я не сомневаюсь в том, что вы отдадитесь ему с головой.<br>\
+			Но пообещайте мне одно.<br>\
+			Не забывайте о них. О тех, кто погиб, ради того, чтобы вы добрались до этой точки. И продолжайте двигаться вперёд. Не важно, насколько больны будут раны, и насколько стёрты будут ваши пятки - продолжайте, идти.<br>\
+			Ради всех студентов, что стали их жертвами. Ради всех коллег и друзей, что погибли на этой тайной войне. Ради наших общих идеалов и будущего, которое ждёт следующие поколения.<br>\
+			Ради того, чтобы нам ВСЕМ было куда возвращаться.<br>"
+
 //ASSETS
 
 /obj/structure/fd/school/prop1
@@ -44,6 +81,49 @@
 	icon = 'icons/fd/fabric_symbols.dmi'
 	icon_state = "9"
 	anchored = TRUE
+
+/obj/structure/fd/school/prop7
+	name = "old workbench"
+	desc = "Old and primitive working station for some metalworking."
+	icon = 'icons/fd/structures/workbenches.dmi'
+	icon_state = "weaponbench"
+	anchored = TRUE
+	density = TRUE
+	bound_width = 64
+
+/obj/structure/fd/school/prop8
+	name = "oven"
+	desc = "Old oven made from clay."
+	icon = 'icons/fd/structures/kitchen.dmi'
+	icon_state = "oven0"
+	anchored = TRUE
+	var/on = FALSE
+
+/obj/structure/fd/school/prop8/attack_hand(mob/user as mob)
+	if(do_after(user, 20) && !on)
+		on = TRUE
+		icon_state = "oven1"
+		set_light(0.4, 2, 3, l_color = "#c58822")
+		return
+	else
+		if(do_after(user, 20))
+			on = FALSE
+			icon_state = "oven0"
+			set_light(0, 0, 0, l_color = "#ffffff")
+			update_light()
+			return
+
+/obj/machinery/fabricator/school
+	name = "advanced crafting station"
+	desc = "A very complex and options-heavy machine, used to create some very complex things."
+	icon = 'icons/fd/structures/workbenches.dmi'
+	icon_state = "tinkerbench"
+	bound_width = 64
+
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/machinery/fabricator/school/on_update_icon()
+	return
 
 /obj/effect/overmap/visitable/sector/camp
 	name = "jungle planet"
@@ -143,6 +223,14 @@
 /obj/effect/submap_landmark/spawnpoint/camp/saturio
 	name = "Saturio Amantes"
 
+//SATURIO CUSTOM ITEMS
+
+/obj/item/material/twohanded/sledgehammer/dwarf
+	icon = 'icons/fd/items/melee_inventory.dmi'
+	icon_state = "hammer_power0"
+	base_icon = "hammer_power"
+	item_state = "breacher1"
+
 /datum/job/submap/camp/maxim
 	title = "Maxim Kuznetsov"
 	info = "You here to learn how to beat the bad guys"
@@ -166,6 +254,25 @@
 
 /obj/effect/submap_landmark/spawnpoint/camp/okita
 	name = "Okita Takeda"
+
+//OKITA CUSTOM ITEMS
+
+/obj/item/clothing/head/helmet/custom/biker
+	name = "bike helmet"
+	desc = "It's a heavy-stylized bike helmet. Kinda looks like axolotl."
+	icon = 'icons/fd/custom_items/sliva_helmet.dmi'
+	item_icons = list(slot_head_str = 'icons/fd/custom_items/sliva_helmet_worn.dmi')
+	icon_state = "sliva"
+	item_state = "sliva"
+	valid_accessory_slots = null
+	body_parts_covered = HEAD|FACE|EYES //face shield
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_MINOR
+		)
+	siemens_coefficient = 0.7
+	flags_inv = BLOCKHAIR
+
 
 /datum/job/submap/camp/numerius
 	title = "Numerius De Vigo"
@@ -264,6 +371,48 @@
 	loadout_allowed = TRUE
 	skill_points = 30
 
+//NAOKI CUSTOM ITEMS
+
+/obj/item/clothing/glasses/custom/aizawa_red
+	name = "red combat glasses"
+	desc = "Protects the eyes from various flashes and direct damage."
+	icon = 'icons/fd/items/andersen_goggles.dmi'
+	item_icons = list(slot_glasses_str = 'icons/fd/items/andersen_worn.dmi')
+	icon_state = "andersen_goggles"
+	item_state = "andersen_goggles"
+	action_button_name = "Flip Welding Goggles"
+	matter = list(MATERIAL_STEEL = 1500, MATERIAL_GLASS = 1000)
+	use_alt_layer = TRUE
+	var/up = FALSE
+	flash_protection = FLASH_PROTECTION_MAJOR
+
+/obj/item/clothing/glasses/custom/aizawa_red/attack_self()
+	toggle()
+
+/obj/item/clothing/glasses/custom/aizawa_red/verb/toggle()
+	set category = "Object"
+	set name = "Adjust welding goggles"
+	set src in usr
+
+	if(!usr.incapacitated())
+		if(src.up)
+			src.up = !src.up
+			flags_inv |= HIDEEYES
+			body_parts_covered |= EYES
+			icon_state = initial(icon_state)
+			flash_protection = initial(flash_protection)
+			to_chat(usr, "You flip \the [src] down to protect your eyes.")
+		else
+			src.up = !src.up
+			flags_inv &= ~HIDEEYES
+			body_parts_covered &= ~EYES
+			icon_state = "[initial(icon_state)]_up"
+			flash_protection = FLASH_PROTECTION_NONE
+			to_chat(usr, "You push \the [src] up out of your face.")
+		update_clothing_icon()
+		update_vision()
+		usr.update_action_buttons()
+
 /obj/effect/submap_landmark/spawnpoint/camp/teacher1
 	name = "Psionic teacher 1"
 
@@ -326,6 +475,25 @@
 
 /obj/effect/submap_landmark/spawnpoint/camp/cook
 	name = "Cook"
+
+//AMORE CUSTOM ITEMS
+
+/obj/item/paper/school/amore
+	icon = 'icons/fd/items/mrakiizar_book.dmi'
+	icon_state = "mrakiizar_book1"
+	name = "Old Book"
+	var/closed = FALSE
+
+/obj/item/paper/school/amore/attack_self()
+	if(!closed)
+		closed = TRUE
+		icon_state = "mrakiizar_book_closed"
+	else
+		closed = FALSE
+		icon_state = "mrakiizar_book1"
+
+/obj/item/paper/school/amore/on_update_icon()
+	return
 
 /datum/map_template/ruin/away_site/camp
 	name = "Jungle Planet"
@@ -416,6 +584,12 @@
 /area/psionic_school/indoor/green
 	name = "\improper Greenhouse"
 
+/area/psionic_school/indoor/sara
+	name = "\improper Sara's Treehouse"
+
+/area/psionic_school/indoor/sara/upper
+	base_turf = /turf/simulated/open
+
 //CAMPUS
 
 /area/psionic_school/indoor/campus
@@ -453,6 +627,12 @@
 
 /area/psionic_school/indoor/campus/male
 	name = "\improper Male Block"
+
+/area/psionic_school/indoor/campus/male/forge
+	name = "\improper Male Block(Forge)"
+
+/area/psionic_school/indoor/campus/male/church
+	name = "\improper Male Block(Church)"
 
 /area/psionic_school/indoor/campus/male/r1
 	name = "\improper Male Block(Room 1)"
