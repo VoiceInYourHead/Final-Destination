@@ -53,11 +53,13 @@
 /obj/effect/landmark/light/school
 	light_brightness = 0.3
 	light_inrange = 30
+	light_outrange = 30
 	colored = "#e2d1b2"
 
 /obj/effect/landmark/light/school_sun
 	light_brightness = 0.3
 	light_inrange = 30
+	light_outrange = 30
 	colored = "#db9857"
 
 //рандом спавнер для растительности(зимней)
