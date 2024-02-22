@@ -514,11 +514,12 @@
 		M.add_chemical_effect(CE_PULSE, 4)
 		M.add_chemical_effect(CE_SPEEDBOOST, 0.25) //your buff, my little slowdown(pick(-0.25,-0.8)) c:
 	else
-		if(prob(5))
+		if(prob(1))
 			M.emote(pick("twitch", "blink_r", "shiver"))
 		M.add_chemical_effect(CE_SPEEDBOOST, 1)
 		M.add_chemical_effect(CE_PULSE, 3)
 		M.add_chemical_effect(CE_STIMULANT, 4)
+		M.add_chemical_effect(CE_ENERGETIC, 4)
 
 /datum/reagent/ethylredoxrazine
 	name = "Ethylredoxrazine"

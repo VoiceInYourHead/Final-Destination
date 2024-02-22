@@ -133,7 +133,7 @@ SUBSYSTEM_DEF(jobs)
 	if(!job.is_position_available())
 		to_chat(joining, "<span class='warning'>Unfortunately, that job is no longer available.</span>")
 		return FALSE
-	if(!check_rights(R_SERVER))
+	if(!check_rights(R_SERVER) || !check_rights(R_ACTOR))
 		if(!config.enter_allowed)
 			to_chat(joining, "<span class='warning'>There is an administrative lock on entering the game!</span>")
 			return FALSE

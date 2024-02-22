@@ -25,6 +25,7 @@
 	                    SKILL_COMBAT = SKILL_MAX,
 	                    SKILL_WEAPONS = SKILL_MAX,
 	                    SKILL_FORENSICS = SKILL_MAX,
+	                    SKILL_ARMAMENT = SKILL_MAX,
 	                    SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL = SKILL_MAX,
 	                    SKILL_ATMOS = SKILL_MAX,

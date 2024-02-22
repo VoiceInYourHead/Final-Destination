@@ -4,12 +4,6 @@
 
 #define MATERIAL_GLASS_RED                   "painted glass"
 
-/var/const/access_iccg = "ACCESS_ICCG"
-/datum/access/glasburg
-	id = access_iccg
-	desc = "GCDV Crew"
-	region = ACCESS_REGION_NONE
-
 /obj/machinery/door/airlock/glasburg
 	req_access = list(access_iccg)
 	door_color = "#212d38"

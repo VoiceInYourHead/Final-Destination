@@ -10,9 +10,9 @@
 	if(!material)
 		material = SSmaterials.get_material_by_name(DEFAULT_WALL_MATERIAL)
 	if(material)
-		explosion_resistance = material.explosion_resistance
+		explosion_resistance = material.explosion_resistance + explosion_resistance_add
 	if(reinf_material && reinf_material.explosion_resistance > explosion_resistance)
-		explosion_resistance = reinf_material.explosion_resistance
+		explosion_resistance = reinf_material.explosion_resistance + explosion_resistance_add
 
 	if(reinf_material)
 		SetName("reinforced [material.display_name] [material.wall_name]")
