@@ -194,6 +194,7 @@
 	#include "../away/scavver_alt/scavver_gantry_alt.dm"
 	#include "../away/stranded/stranded.dm"
 	#include "../away/psycho/school.dm"
+	#include "../away/psycho_away1/forest_practice.dm"
 	#include "../away/sfv_interceptor/shikra.dm"
 	#include "../away/sfv_bomber/comet.dm"
 	#include "../away/sfv_saboteur/saboteur.dm"

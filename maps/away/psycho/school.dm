@@ -38,7 +38,50 @@
 			Ради всех студентов, что стали их жертвами. Ради всех коллег и друзей, что погибли на этой тайной войне. Ради наших общих идеалов и будущего, которое ждёт следующие поколения.<br>\
 			Ради того, чтобы нам ВСЕМ было куда возвращаться.<br>"
 
+/obj/item/paper/school/journal/on_update_icon()
+	return
+
+/obj/item/paper/school/note
+	icon = 'icons/fd/items/oddities.dmi'
+	icon_state = "paper_crumpled"
+	name = "Old note"
+	info = "Какой вообще смысл сохранять эти обгорелые трупы? Я имею в виду, разве мы не можем просто развеять их по ветру и не париться?<br>\
+			В последнее время, их становится только сложнее прятать - пещера-то не резиновая! Да и мерещится тут всякое. Аж дрожь по коже. Я слышал о том, что эти ребята даже после того как подохнут - продолжают ебать всем мозги, но уже не как люди, а как ссаные проекции. 'Эссенции души' - так их Умник обозвал. Криповая хуйня.<br>\
+			Воют так громко, что аж уши закладывает...а на следующей неделе из ЗПА ещё с десяток пришлют. Таких же 'нежелательных' кадров. Тьфу, блять.<br>\
+			В следующий раз, как увижусь с боссом, нужно будет перетереть о надбавке для себя и пацанов. Я точно кукухой двинусь за такие копейки работать.<br>"
+
+/obj/item/paper/school/note/on_update_icon()
+	return
+
 //ASSETS
+
+/obj/random/flora/school
+	name = "random flora spawn"
+	desc = "This is a random flora spawner."
+	icon_state = "trees"
+	spawn_nothing_percentage = 50
+
+/obj/random/flora/school/spawn_choices()
+	return list(/obj/structure/flora/tree/jungle,
+				/obj/structure/flora/tree/jungle/small,
+				/obj/structure/flora/ausbushes/brflowers,
+				/obj/structure/flora/ausbushes/fullgrass,
+				/obj/structure/flora/ausbushes/grassybush,
+				/obj/structure/flora/ausbushes/lavendergrass,
+				/obj/structure/flora/ausbushes/ppflowers,
+				/obj/structure/flora/ausbushes/sparsegrass,
+				/obj/structure/flora/ausbushes/ywflowers,
+				/obj/structure/flora/ausbushes/genericbush,
+				/obj/structure/flora/ausbushes/sunnybush,
+				/obj/structure/flora/ausbushes/sunnybush,
+				/obj/item/reagent_containers/food/snacks/grown/berries,
+				/obj/structure/flora/ausbushes/ywflowers,
+				/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap,
+				/obj/item/reagent_containers/food/snacks/grown/poisonberries,
+				/obj/item/reagent_containers/food/snacks/grown/apple,
+				/obj/structure/flora/tree/jungle/small,
+				/obj/structure/flora/tropic/rock,
+				/obj/structure/flora/jungle/bush)
 
 /obj/structure/fd/school/prop1
 	name = "Old shotgun"
@@ -127,7 +170,7 @@
 
 /obj/effect/overmap/visitable/sector/camp
 	name = "jungle planet"
-	desc = "A jungle planet with high amount of hostile xenofauna and environment."
+	desc = "A jungle planet."
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	icon_state = "globe"
 	color = "#6db8b8"
