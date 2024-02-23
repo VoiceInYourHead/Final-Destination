@@ -213,6 +213,9 @@ proc/get_radio_key_from_channel(var/channel)
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
 		return custom_emote(1, copytext_char(message, 2))
 
+	if(whispering && mind_controller && psi && psi.get_rank(PSI_COERCION) > PSI_RANK_OPERANT)
+		mind_controller.speak_through_affected(message)
+
 	//parse the language code and consume it
 	if(!speaking)
 		speaking = parse_language(message)

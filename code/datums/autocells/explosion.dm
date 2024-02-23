@@ -253,12 +253,12 @@ as having entered the turf.
 
 		if(power >= 300) //Make BIG BOOMS
 			playsound(epicenter, "bigboom", 80, 1, max(round(power,1),7))
-			for(psionic in view(7, src))
+			for(psionic in view(7, epicenter))
 				if(psionic.psi)
 					psionic.psi.spend_power(rand(25,35))
 		else
 			playsound(epicenter, "explosion", 90, 1, max(round(power,1),7))
-			for(psionic in view(7, src))
+			for(psionic in view(7, epicenter))
 				if(psionic.psi && psionic.get_sound_volume_multiplier() > 0.1)
 					psionic.psi.spend_power(rand(15,35))
 

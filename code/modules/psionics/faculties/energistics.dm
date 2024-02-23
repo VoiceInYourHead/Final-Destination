@@ -251,7 +251,7 @@
 /obj/effect/smoke_wall
 	icon_state = "smoke wall"
 	anchored = TRUE
-	opacity = TRUE
+	opacity = FALSE
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/fd/structures/smoke.dmi'
 	icon_state = "smoke"

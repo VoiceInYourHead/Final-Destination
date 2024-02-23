@@ -53,6 +53,7 @@
 
 /obj/item/retractor/psi
 	name = "psychokinetic retractor"
+	item_state = "retractor"
 
 	var/mob/living/owner
 	color = "#0095ff"
@@ -88,6 +89,7 @@
 
 /obj/item/hemostat/psi
 	name = "psychokinetic hemostat"
+	item_state = "hemostat"
 
 	var/mob/living/owner
 	color = "#0095ff"
@@ -123,6 +125,7 @@
 
 /obj/item/surgicaldrill/psi
 	name = "psychokinetic drill"
+	item_state = "drill"
 
 	var/mob/living/owner
 	color = "#0095ff"
@@ -158,6 +161,7 @@
 
 /obj/item/scalpel/psi
 	name = "psychokinetic scalpel"
+	item_state = "scalpel"
 
 	var/mob/living/owner
 	color = "#0095ff"
@@ -193,6 +197,7 @@
 
 /obj/item/circular_saw/psi
 	name = "psychokinetic saw"
+	item_state = "saw3"
 
 	var/mob/living/owner
 	color = "#0095ff"
@@ -228,6 +233,7 @@
 
 /obj/item/bonesetter/psi
 	name = "psychokinetic bone setter"
+	item_state = "bone setter"
 
 	var/mob/living/owner
 	color = "#0095ff"
