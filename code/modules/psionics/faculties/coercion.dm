@@ -55,15 +55,19 @@
 
 /decl/psionic_power/coercion/emotions
 	name =            "Emotion Amplifier"
-	cost =            10
+	cost =            20
 	cooldown =        30
 	use_melee =     TRUE
 	use_ranged =     TRUE
 	min_rank =        PSI_RANK_OPERANT
-	use_description = "Выберите голову и переключитесь на синий интент. Затем, нажмите по вашей цели, чтобы многократно усилить одну из её эмоций."
+	use_description = "Выберите грудь и переключитесь на синий интент. Затем, нажмите по вашей цели, чтобы многократно усилить одну из её эмоций."
 
 /decl/psionic_power/coercion/emotions/invoke(var/mob/living/user, var/mob/living/target)
-	if(user.zone_sel.selecting != BP_HEAD)
+	if(user.zone_sel.selecting != BP_CHEST)
+		return FALSE
+	if(target == user)
+		return FALSE
+	if(isrobot(target))
 		return FALSE
 	. = ..()
 	if(.)
@@ -73,17 +77,50 @@
 		if(user.psi.suppressed)
 			return 0
 		if(option == "Радость") //заставляет человека смеяться, катаясь по полу/крутясь на месте
-			return 0
+			var/funny_option = pick("вспоминаете крайне смешную шутку", "вспоминаете очень глупую историю", "всматриваетесь в лицо [user]")
+			to_chat(target, SPAN_WARNING("Внезапно, вы [funny_option], начиная истошно смеяться и кататься по полу."))
+			var/mob/living/carbon/C = target
+			C.Weaken(5)
+			C.spin(32,2)
+			C.emote("giggle")
+			sleep(3 SECONDS)
+			C.emote("giggle")
+			sleep(3 SECONDS)
+			C.emote("giggle")
+			sleep(3 SECONDS)
+			return 1
 		if(option == "Грусть") //замыливает экран от плача? пока что хз
-			return 0
+			var/sad_option = pick("погружаетесь в ваши детские воспоминания", "вспоминаете о ужасной потере", "на секунду замечаете перед собой знакомый силуэт", "вспоминаете о своих прошлых ошибках")
+			to_chat(target, SPAN_WARNING("Внезапно, вы [sad_option], не замечая, как по вашим щекам текут слёзы."))
+			var/mob/living/carbon/C = target
+			C.eye_blurry = max(C.eye_blurry, 10)
+			C.emote("whimper")
+			sleep(3 SECONDS)
+			C.emote("whimper")
+			sleep(3 SECONDS)
+			C.emote("whimper")
+			sleep(3 SECONDS)
+			return 1
 		if(option == "Страх") //заставляет временно застыть на месте, но не перманентно, в отличии от спазма(можно сделать так, чтобы челик ещё и дрожал при этом)
-			return 0
+			to_chat(target, SPAN_WARNING("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [user]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))
+			var/cn_rank = user.psi.get_rank(PSI_COERCION)
+			var/mob/living/carbon/C = target
+			C.make_dizzy(10)
+			C.Stun(5 + cn_rank)
+			return 1
 		if(option == "Тревога") //вариант для рп, пишет всякое в чат(мб добавить страшные звуки)
-			return 0
+			var/strange_option = pick("ощущаете чьё-то зловещее присутствие", "сильно потеете", "чувствуете, что за вами что-то наблюдает", "ощущаете странный холод", "чувствуете, как что-то ползает по вам")
+			to_chat(target, SPAN_WARNING("Вы [strange_option]."))
+			return 1
 		if(option == "Злость") //вариант для рп, пишет всякое в чат
-			return 0
+			var/anger_option = pick("к самому себе", "к человеку, что стоит рядом", "к месту, в котором вы находитесь", "к своей жизни", "по отношению к данной ситуации", "к сегодняшнему дню", "к сегодняшней погоде", "к вашей работе", "к тому, что было вчера")
+			to_chat(target, SPAN_WARNING("Внезапно, вы ощущаете странную злобу [anger_option]."))
+			return 1
 		if(option == "Спокойствие") //вариант для рп, пишет всякое в чат
-			return 0
+			to_chat(target, SPAN_WARNING("Вы ощущаете странное умиротворение."))
+			if(target.psi)
+				target.psi.stamina = min(target.psi.max_stamina, target.psi.stamina + rand(15,20))
+			return 1
 
 /decl/psionic_power/coercion/agony
 	name =          "Agony"
