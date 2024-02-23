@@ -219,25 +219,18 @@
 #endif
 		return INITIALIZE_HINT_LATELOAD
 
-//	if(autoset_access)
-//		inherit_access_from_area()
-
 /obj/machinery/power/apc/LateInitialize()
 	..()
 	if(autoset_access)
 		inherit_access_from_area()
 
 /obj/machinery/power/apc/proc/inherit_access_from_area()
-	var/area/apc = access_area_by_dir()
+	var/turf/T = get_turf(src)
+	var/area/apc = get_area(T)
 	if (!apc)
 		req_access = list()
 	else
-		req_access = req_access_diff(apc)
-
-/obj/machinery/power/apc/proc/access_area_by_dir()
-	var/turf/T = get_turf(src)
-	if (T && !T.density)
-		return get_area(T)
+		req_access = apc.req_access
 
 /obj/machinery/power/apc/Destroy()
 	src.update()

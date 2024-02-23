@@ -85,6 +85,10 @@
 /// The cotangent of degrees
 #define Cot(degrees) (1 / tan(degrees))
 
+/proc/Wrap(val, min, max)
+	var/d = max - min
+	var/t = Floor((val - min) / d)
+	return val - (t * d)
 
 /// The 2-argument arctangent of x and y
 /proc/Atan2(x, y)

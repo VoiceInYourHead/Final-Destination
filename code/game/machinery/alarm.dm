@@ -186,29 +186,22 @@
 	if(autoset_access)
 #ifdef UNIT_TEST
 		if(length(req_access))
-			crash_with("A APC with mapped access restrictions was set to autoinitialize access.")
+			crash_with("An Alarm with mapped access restrictions was set to autoinitialize access.")
 #endif
 		return INITIALIZE_HINT_LATELOAD
 
+/obj/machinery/alarm/LateInitialize()
+	..()
 	if(autoset_access)
 		inherit_access_from_area()
-/obj/machinery/alarm/proc/access_area_by_dir()
-	var/turf/T = get_turf(src)
-	if (T && !T.density)
-		return get_area(T)
 
 /obj/machinery/alarm/proc/inherit_access_from_area()
-	var/area/fore = access_area_by_dir(dir)
-	var/area/aft = access_area_by_dir(GLOB.reverse_dir[dir])
-	fore = fore || aft
-	aft = aft || fore
-
-	if (!fore && !aft)
+	var/turf/T = get_turf(src)
+	var/area/alarm = get_area(T)
+	if (!alarm)
 		req_access = list()
-	else if (fore.secure || aft.secure)
-		req_access = req_access_union(fore, aft)
 	else
-		req_access = req_access_diff(fore, aft)
+		req_access = alarm.req_access
 
 
 /obj/machinery/alarm/get_req_access()

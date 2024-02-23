@@ -56,6 +56,39 @@
 			M.confused = cn_rank * rand(1,3)
 		return TRUE
 
+
+/decl/psionic_power/coercion/emotions
+	name =            "Emotion Amplifier"
+	cost =            10
+	cooldown =        30
+	use_melee =     TRUE
+	use_ranged =     TRUE
+	min_rank =        PSI_RANK_OPERANT
+	use_description = "Выберите голову и переключитесь на синий интент. Затем, нажмите по вашей цели, чтобы многократно усилить одну из её эмоций."
+
+/decl/psionic_power/coercion/emotions/invoke(var/mob/living/user, var/mob/living/target)
+	if(user.zone_sel.selecting != BP_HEAD)
+		return FALSE
+	. = ..()
+	if(.)
+		var/option = input(target, "Choose something!", "Emotion to simulate") in list("Радость", "Грусть", "Страх", "Тревога", "Злость", "Спокойствие")
+		if (!option)
+			return 0
+		if(user.psi.suppressed)
+			return 0
+		if(option == "Радость") //заставляет человека смеяться, катаясь по полу/крутясь на месте
+			return 0
+		if(option == "Грусть") //замыливает экран от плача? пока что хз
+			return 0
+		if(option == "Страх") //заставляет временно застыть на месте, но не перманентно, в отличии от спазма(можно сделать так, чтобы челик ещё и дрожал при этом)
+			return 0
+		if(option == "Тревога") //вариант для рп, пишет всякое в чат(мб добавить страшные звуки)
+			return 0
+		if(option == "Злость") //вариант для рп, пишет всякое в чат
+			return 0
+		if(option == "Спокойствие") //вариант для рп, пишет всякое в чат
+			return 0
+
 /decl/psionic_power/coercion/agony
 	name =          "Agony"
 	cost =          8
