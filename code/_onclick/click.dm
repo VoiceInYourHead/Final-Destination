@@ -244,11 +244,11 @@
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Metaplexy"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Demiurgy"]), A)
 		if(a_intent == I_DISARM)
-			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Allaxetia"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Catastellia"]), A)
 		if(a_intent == I_HELP)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Ephanoferia"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Hyloforia"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_melee_powers(SSpsi.faculties_by_name_new["Allaxetia"]), A)
 	return 1
 
 /*
@@ -277,11 +277,11 @@
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Metaplexy"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Demiurgy"]), A)
 		if(a_intent == I_DISARM)
-			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Allaxetia"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Catastellia"]), A)
 		if(a_intent == I_HELP)
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Hyloforia"]), A)
 			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Ephanoferia"]), A)
+			INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_name_new["Allaxetia"]), A)
 	..()
 
 /mob/living/proc/check_psi_grab(var/obj/item/grab/grab)
@@ -293,10 +293,10 @@
 			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Metaplexy"]), grab.affecting)
 			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Demiurgy"]), grab.affecting)
 		if(a_intent == I_DISARM)
-			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Allaxetia"]), grab.affecting)
 			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Catastellia"]), grab.affecting)
 		if(a_intent == I_HELP)
 			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Ephanoferia"]), grab.affecting)
+			INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_name_new["Allaxetia"]), grab.affecting)
 
 /*
 	Restrained ClickOn

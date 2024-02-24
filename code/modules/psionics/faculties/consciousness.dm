@@ -1,7 +1,7 @@
 /decl/psionic_faculty/consciousness
 	id = PSI_CONSCIOUSNESS
 	name = "Allaxetia"
-	associated_intent = I_DISARM
+	associated_intent = I_HELP
 	armour_types = list(PSIONIC, "melee")
 
 /decl/psionic_power/consciousness
@@ -24,7 +24,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Выберите рот на синем интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
+	use_description = "Выберите рот на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы установить с ней ментальную связь."
 
 /mob/living
 	var/space = 0
@@ -154,7 +154,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Выберите голову на синем интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
+	use_description = "Выберите голову на зелёном интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
 
 /decl/psionic_power/consciousness/mindread/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD)
@@ -228,7 +228,7 @@
 	use_grab =     TRUE
 	min_rank =      PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Схватите цель, затем выберите рот на синем интенте и нажмите по ней захватом ещё раз, дабы частично очистить её сознание от возможного урона."
+	use_description = "Схватите цель, затем выберите рот на зелёном интенте и нажмите по ней захватом ещё раз, дабы частично очистить её сознание от возможного урона."
 
 /decl/psionic_power/consciousness/focus/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_MOUTH)
@@ -261,7 +261,7 @@
 	use_grab =        TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Схватите цель, затем выберите голову и синий интент. После этого, нажмите по цели захватом, чтобы погрузится в глубины её разума и отыскать там скрытый потенциал."
+	use_description = "Схватите цель, затем выберите голову и зелёном интент. После этого, нажмите по цели захватом, чтобы погрузится в глубины её разума и отыскать там скрытый потенциал."
 
 /decl/psionic_power/consciousness/assay/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_HEAD)
@@ -287,7 +287,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
 	suppress_parent_proc = TRUE
-	use_description = "Выберите верхнюю часть тела на синем интенте, и затем нажмите по цели с любого расстояния, чтобы попытаться поглатить часть его псионической силы."
+	use_description = "Выберите верхнюю часть тела на зелёном интенте, и затем нажмите по цели с любого расстояния, чтобы попытаться поглатить часть его псионической силы."
 
 /decl/psionic_power/consciousness/absorb/invoke(var/mob/living/user, var/mob/living/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
@@ -354,7 +354,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_OPERANT
 	suppress_parent_proc = TRUE
-	use_description = "Выберите глаза на синем интенте, и затем нажмите куда угодно, чтобы временно исчезнуть."
+	use_description = "Выберите глаза на зелёном интенте, и затем нажмите куда угодно, чтобы временно исчезнуть."
 
 /mob/living/proc/run_timer_invisibility()
 	var/invis_timer = 30
@@ -406,7 +406,7 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_OPERANT
 	suppress_parent_proc = TRUE
-	use_description = "Схватите цель, затем выберите верхнюю часть тела и синий интент. После этого, нажмите по цели захватом, чтобы погрузить её в мир галлюцинаций."
+	use_description = "Схватите цель, затем выберите верхнюю часть тела и зелёном интент. После этого, нажмите по цели захватом, чтобы погрузить её в мир галлюцинаций."
 
 /decl/psionic_power/consciousness/curse/invoke(var/mob/living/user, var/mob/living/carbon/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
@@ -424,7 +424,7 @@
 	cooldown =       100
 	use_ranged =     TRUE
 	min_rank =       PSI_RANK_MASTER
-	use_description = "Выберите пятки или ноги на синем интенте. Затем, нажмите по цели на дистанции, чтобы незаметно обменяться с ней местами."
+	use_description = "Выберите пятки или ноги на зелёном интенте. Затем, нажмите по цели на дистанции, чтобы незаметно обменяться с ней местами."
 
 /decl/psionic_power/consciousness/swap/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
 	var/cn_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)

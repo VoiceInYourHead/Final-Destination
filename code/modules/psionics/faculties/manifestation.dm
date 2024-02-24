@@ -95,8 +95,9 @@
 	min_rank =        PSI_RANK_APPRENTICE
 	use_description = "Нажмите по пустой руке на зелёном интенте, чтобы создать ряд полезных инструментов."
 	admin_log = FALSE
+	var/list/images = list()
+
 	var/list/items_medical = list()
-	var/list/images_medical = list()
 	var/list/paths_medical = list(/obj/item/bonesetter/psi,
 		/obj/item/circular_saw/psi,
 		/obj/item/hemostat/psi,
@@ -104,67 +105,69 @@
 		/obj/item/scalpel/psi,
 		/obj/item/surgicaldrill/psi)
 
+	var/list/items_engineering = list()
+	var/list/paths_engineering = list(/obj/item/crowbar/psi,
+		/obj/item/screwdriver/psi,
+		/obj/item/wirecutters/psi,
+		/obj/item/wrench/psi)
+
 /decl/psionic_power/manifestation/tinker/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HELP)
 		return FALSE
 
-	for(var/medtool in paths_medical)
-		var/obj/item/I = new medtool (src)
-		items_medical += I
-		var/image/img = image(icon = I.icon, icon_state = I.item_state)
-		img.name = I.name
-		images_medical[I] = img
+	var/fire_rank = user.psi.get_rank(PSI_METAKINESIS)
+	var/demi_rank = user.psi.get_rank(PSI_MANIFESTATION)
+
+	if(demi_rank >= PSI_RANK_MASTER)
+		paths_medical += /obj/item/clothing/gloves/latex/psi
+		paths_engineering += /obj/item/clothing/gloves/insulated/psi
+
+	if(fire_rank >= PSI_RANK_LATENT && demi_rank >= PSI_RANK_OPERANT && user.skill_check(SKILL_CONSTRUCTION, SKILL_TRAINED))
+		paths_engineering += /obj/item/weldingtool/experimental/psi
+
+	if(demi_rank >= PSI_RANK_MASTER && user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC) && user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
+		paths_engineering += /obj/item/device/multitool/psi
 
 	. = ..()
 	if(.)
 
-		var/option = alert(target, "What toolkit you need?", "Choose something!", "Medical", "Engineering", "Gloves")
+		var/option = alert(target, "What toolkit you need?", "Choose something!", "Medical", "Engineering")
 		if (!option)
 			return
+
 		if(user.psi.suppressed)
 			return
-		if(option == "Gloves")
-			var/con_rank_user = user.psi.get_rank(PSI_MANIFESTATION)
-			if(con_rank_user < PSI_RANK_MASTER)
-				to_chat(user, SPAN_OCCULT("<b>У вас ещё недостаточно навыков для создания вещей подобного уровня.</b>"))
-				return FALSE
-			else
-				var/option_second = alert(target, "What exactly do you want?", "Choose something!", "Insulated", "Latex")
-				if (!option_second)
-					return
-				if(option_second == "Insulated")
-					return new /obj/item/clothing/gloves/insulated/psi(user)
-				if(option_second == "Latex")
-					return new /obj/item/clothing/gloves/latex/psi(user)
+
 		if(option == "Engineering")
-			return new /obj/item/psychic_power/tinker(user)
+			for(var/engietool in paths_engineering)
+				var/obj/item/I = new engietool (src)
+				items_engineering += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
 		if(option == "Medical")
-			var/obj/item = show_radial_menu(user, user, images_medical, radius = 48, require_near = TRUE)
-			if(!item || user.psi.suppressed)
-				return
-			else
-				return new item(user)
+			for(var/medtool in paths_medical)
+				var/obj/item/I = new medtool (src)
+				items_medical += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
 
-/decl/psionic_power/manifestation/tinker/handle_post_power(var/mob/living/user, var/atom/target)
+		var/obj/item = show_radial_menu(user, user, images, radius = 48, require_near = TRUE)
+		if(item && !user.psi.suppressed)
+			var/item_type = item.type
+			. = new item_type(user)
 
-	items_medical = list()
-	images_medical = list()
+		for(item in items_medical + items_engineering)
+			qdel(item)
 
-	. = ..()
+		images.Cut()
+		items_medical.Cut()
+		items_engineering.Cut()
 
+		paths_medical -= /obj/item/clothing/gloves/latex/psi
 
-/*			var/option_third = input(target, "What exactly do you want?", "Choose something!") in list("Saw", "Scalpel", "Bone Setter", "Retractor", "Hemostat", "Drill")
-			if (!option_third)
-				return
-			if(option_third == "Scalpel")
-				return new /obj/item/scalpel/psi(user)
-			if(option_third == "Saw")
-				return new /obj/item/circular_saw/psi(user)
-			if(option_third == "Bone Setter")
-				return new /obj/item/bonesetter/psi(user)
-			if(option_third == "Retractor")
-				return new /obj/item/retractor/psi(user)
-			if(option_third == "Hemostat")
-				return new /obj/item/hemostat/psi(user)
-			if(option_third == "Drill")
-				return new /obj/item/surgicaldrill/psi(user)*/
+		paths_engineering -= /obj/item/device/multitool/psi
+		paths_engineering -= /obj/item/weldingtool/experimental/psi
+		paths_engineering -= /obj/item/clothing/gloves/insulated/psi

@@ -56,39 +56,6 @@
 
 //МОБЫ
 
-/obj/effect/pile
-	name = "grey junk-pile"
-	desc = "It looks like an unknown mass of different things and materials"
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "molten_big"
-
-/obj/effect/pile/Initialize()
-	. = ..()
-
-	for(var/atom/movable/O in loc)
-		if(!O.anchored)
-			O.forceMove(src)
-
-			if (istype(O, /mob/living))
-				var/mob/living/L = O
-				if (!(L.status_flags & NOTARGET))
-					L.status_flags ^= NOTARGET
-
-/obj/effect/pile/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/shovel))
-		if(do_after(user, 80))
-			qdel(src)
-
-/obj/effect/pile/Destroy()
-	src.visible_message("<span class='warning'>\The [src] falls over.</span>")
-	for(var/atom/movable/A in contents)
-		A.dropInto(loc)
-		if (istype(A, /mob/living))
-			var/mob/living/L = A
-			if (L.status_flags & NOTARGET)
-				L.status_flags ^= NOTARGET
-	return ..()
-
 /datum/say_list/smart/harron
 	speak = list("Hrrr...","HRrrRRr")
 	emote_see = list("clicking it's teeth","growls","sniffs")
