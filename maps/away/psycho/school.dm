@@ -1,6 +1,27 @@
 #include "school_radio.dm"
 #include "school_mobs.dm"
 
+/obj/machinery/vending/npc
+	shut_up = 0
+	slogan_delay = 10
+	use_power = 0
+	icon = 'icons/mob/human_races/species/human/npc.dmi'
+	icon_state = "preview"
+
+/obj/machinery/vending/npc/emag_act()
+	return
+
+/obj/machinery/vending/npc/on_update_icon()
+	return
+
+/obj/machinery/vending/npc/police
+	name = "Policeman"
+	desc = "The one who protects you."
+	icon_state = "npc_police"
+	product_slogans = "Когда уже перерыв...;Интересно, как там дома?;Уже шестое исчезновение за неделю и ни одной зацепки...;Эй! Позовите сюда Майка!;Нужно отнести это дело шефу в офис.;Надеюсь, я успею закончить отчёт до конца смены...не хочу сидеть сверхурочные.;Вечером по пивку, а?;Думаю, стоит сделать перекур.;У кого-нибудь есть лишний листок?;Какой же бардак...;Я так устал...;Мне действительно стоит поговорить с боссом об отпуске, это перебор;Пу-пу-пу-у..."
+	product_ads = "Я занят.;Обратитесь ко мне позже.;У вас нет других дел?;Отвалите...;Найдите себе занятие получше.;Ну?;Что вам нужно?;Что вы здесь забыли?"
+
+
 //LORE ITEMS
 
 /obj/item/paper/school/journal

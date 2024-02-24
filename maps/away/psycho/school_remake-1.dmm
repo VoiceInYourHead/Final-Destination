@@ -1225,7 +1225,7 @@
 "Ey" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 10},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/campus/male)
 "Ez" = (/obj/effect/floor_decal/spline/plain/black{dir = 6},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "EA" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lime/border,/obj/effect/floor_decal/spline/plain/black{dir = 1},/obj/item/trash/cigbutt{pixel_x = 5; pixel_y = -13},/obj/item/device/flashlight/lamp/lava/orange{pixel_y = 10},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/studentsbath2)
-"EB" = (/obj/structure/table/woodentable/mahogany,/obj/structure/flora/pottedplant/thinbush{pixel_x = -3; pixel_y = 16},/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/r1)
+"EB" = (/obj/structure/table/woodentable/mahogany,/obj/structure/flora/pottedplant/thinbush{pixel_x = -3; pixel_y = 16},/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/item{icon = 'icons/fd/items/artefacts.dmi'; icon_state = "mandragora"; name = "strange eyed plant"; pixel_x = 10; pixel_y = 7},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/r1)
 "EC" = (/obj/structure/flora/pottedplant/minitree,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls)
 "ED" = (/obj/machinery/disposal,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/stud_hall)
 "EE" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/sara)
