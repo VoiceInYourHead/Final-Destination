@@ -9,9 +9,11 @@
 "o" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "p" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/atmospherics/unary/tank/air{dir = 1; start_pressure = 4559.63},/turf/simulated/floor/tiled/techfloor,/area/interior)
 "q" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/anomaly_container,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"s" = (/turf/simulated/wall/r_wall/invincible,/area/interior)
 "t" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/wall/r_wall/invincible,/area/interior)
 "u" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 6},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "v" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/table/rack/dark,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"x" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 4},/obj/structure/storage/vehicles{dir = 4; pixel_x = -12},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "C" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/interior)
 "E" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 6},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "H" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/turf/simulated/wall/r_wall/invincible,/area/interior)
@@ -21,6 +23,7 @@
 "L" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 10},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "M" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/universal,/turf/simulated/wall/r_wall/invincible,/area/interior)
 "N" = (/obj/machinery/atmospherics/pipe/simple/hidden/universal,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"O" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/obj/structure/storage/vehicles{dir = 8; pixel_x = 12},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "P" = (/obj/effect/paint_stripe/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/turf/simulated/wall/r_wall/invincible,/area/interior)
 "R" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 8},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "S" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/bed/chair/shuttle/black{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
@@ -37,8 +40,9 @@ PVHat
 Jqvct
 JUTet
 bdmRk
-aSmoa
+axmOa
 aXmIa
 aSioa
 aaZaa
+sssss
 "}
