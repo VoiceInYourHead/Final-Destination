@@ -57,3 +57,13 @@
 	slots = null
 	storage_space = 25
 	max_w_class = ITEM_SIZE_LARGE
+
+/obj/structure/storage/vehicles
+	name = "containment unit"
+	icon = 'icons/fd/halo_vehicles/vehicle_walls.dmi'
+	icon_state = "container"
+	density = FALSE
+	slots = null
+	storage_space = 20
+	max_w_class = ITEM_SIZE_NORMAL
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
