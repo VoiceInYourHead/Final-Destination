@@ -11,7 +11,7 @@
 	id = "awaysite_forest_practice"
 	spawn_cost = 1000 //NO BITCHES??
 	player_cost = 4
-	description = "PSY School with students and teachers. For events only."
+	description = "PSY forest. For events only."
 	suffixes = list("psycho_away1/forest_practice-1.dmm", "psycho_away1/forest_practice-2.dmm", "psycho_away1/forest_practice-3.dmm", "psycho_away1/forest_practice-4.dmm")
 	area_usage_test_exempted_root_areas = list(/area/psionic_school)
 	apc_test_exempt_areas = list(
