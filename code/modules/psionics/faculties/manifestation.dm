@@ -17,76 +17,95 @@
 	use_description = "Нажмите по пустой руке на красном интенте, чтобы создать оружие из чистой псионической энергии."
 	admin_log = FALSE
 
+	var/list/images = list()
 
-//I know, there is a lot of better ways to do this
+	var/list/items_lvl1 = list()
+	var/list/paths_lvl1 = list(
+								/obj/item/psychic_power/psiclub,
+								/obj/item/psychic_power/psiblade)
+
+	var/list/items_lvl2 = list()
+	var/list/paths_lvl2 = list(
+								/obj/item/psychic_power/psiclub/master,
+								/obj/item/psychic_power/psiblade/master,
+								/obj/item/psychic_power/psiaxe,
+								/obj/item/psychic_power/psispear)
+
+	var/list/items_lvl3 = list()
+	var/list/paths_lvl3 = list(
+								/obj/item/psychic_power/psiclub/master/grand,
+								/obj/item/psychic_power/psiblade/master/grand,
+								/obj/item/psychic_power/psiaxe/master,
+								/obj/item/psychic_power/psispear/master,
+								/obj/item/gun/launcher/crossbow/psibow/master)
+
+	var/list/items_lvl4 = list()
+	var/list/paths_lvl4 = list(
+								/obj/item/psychic_power/psiclub/master/grand/paramount,
+								/obj/item/psychic_power/psiblade/master/grand/paramount,
+								/obj/item/psychic_power/psiaxe/master/grand/paramount,
+								/obj/item/psychic_power/psispear/master/grand/paramount,
+								/obj/item/gun/launcher/crossbow/psibow/master/grand/paramount)
+
 /decl/psionic_power/manifestation/psiblade/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HURT)
 		return FALSE
+
+	var/demi_rank = user.psi.get_rank(PSI_MANIFESTATION)
+
+	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED) && user.skill_check(SKILL_CONSTRUCTION, SKILL_EXPERIENCED))
+		paths_lvl4 += /obj/item/gun/energy/psigun
+
 	. = ..()
 	if(.)
-		switch(user.psi.get_rank(faculty))
-			if(PSI_RANK_GRANDMASTER)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Sword", "Club", "Battle Axe", "Spear", "Crossbow", "Pistol")
-				if (!option)
-					return
-				if(user.psi.suppressed)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub/master/grand/paramount(user, user)
-				if(option == "Sword")
-					return new /obj/item/psychic_power/psiblade/master/grand/paramount(user, user)
-				if(option == "Battle Axe")
-					return new /obj/item/psychic_power/psiaxe/master/grand/paramount(user, user)
-				if(option == "Spear")
-					return new /obj/item/psychic_power/psispear/master/grand/paramount(user, user)
-				if(option == "Crossbow")
-					return new /obj/item/gun/launcher/crossbow/psibow/master/grand/paramount(user, user)
-				if(option == "Pistol")
-					if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED) && user.skill_check(SKILL_CONSTRUCTION, SKILL_EXPERIENCED))
-						return new /obj/item/gun/energy/psigun(user, user)
-					else
-						to_chat(user, SPAN_OCCULT("<b>Вы пытаетесь какое-то время собраться с мыслями, но совершенно не понимаете, как вам создать столь сложную конструкцию.</b>"))
-						return FALSE
-			if(PSI_RANK_MASTER)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Sword", "Club", "Battle Axe", "Spear", "Crossbow")
-				if (!option)
-					return
-				if(user.psi.suppressed)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub/master/grand(user, user)
-				if(option == "Sword")
-					return new /obj/item/psychic_power/psiblade/master/grand(user, user)
-				if(option == "Battle Axe")
-					return new /obj/item/psychic_power/psiaxe/master(user, user)
-				if(option == "Spear")
-					return new /obj/item/psychic_power/psispear/master(user, user)
-				if(option == "Crossbow")
-					return new /obj/item/gun/launcher/crossbow/psibow/master(user, user)
-			if(PSI_RANK_OPERANT)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear")
-				if (!option)
-					return
-				if(user.psi.suppressed)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub/master(user, user)
-				if(option == "Blade")
-					return new /obj/item/psychic_power/psiblade/master(user, user)
-				if(option == "Battle Axe")
-					return new /obj/item/psychic_power/psiaxe(user, user)
-				if(option == "Spear")
-					return new /obj/item/psychic_power/psispear(user, user)
-			else
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club")
-				if (!option)
-					return
-				if(user.psi.suppressed)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub(user, user)
-				if(option == "Blade")
-					return new /obj/item/psychic_power/psiblade(user, user)
+
+		if(demi_rank <= PSI_RANK_APPRENTICE)
+			for(var/weapon1 in paths_lvl1)
+				var/obj/item/I = new weapon1 (src)
+				items_lvl1 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		if(demi_rank == PSI_RANK_OPERANT)
+			for(var/weapon2 in paths_lvl2)
+				var/obj/item/I = new weapon2 (src)
+				items_lvl2 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		if(demi_rank == PSI_RANK_MASTER)
+			for(var/weapon3 in paths_lvl3)
+				var/obj/item/I = new weapon3 (src)
+				items_lvl3 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		if(demi_rank >= PSI_RANK_GRANDMASTER)
+			for(var/weapon4 in paths_lvl4)
+				var/obj/item/I = new weapon4 (src)
+				items_lvl4 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		var/obj/item = show_radial_menu(user, user, images, radius = 48, require_near = TRUE)
+		if(item && !user.psi.suppressed)
+			var/item_type = item.type
+			. = new item_type(user)
+
+		for(item in items_lvl1 + items_lvl2 + items_lvl3 + items_lvl4)
+			qdel(item)
+
+		images.Cut()
+		items_lvl1.Cut()
+		items_lvl2.Cut()
+		items_lvl3.Cut()
+		items_lvl4.Cut()
+
+		paths_lvl4 -= /obj/item/gun/energy/psigun
 
 /decl/psionic_power/manifestation/tinker
 	name =            "Manifest tool"

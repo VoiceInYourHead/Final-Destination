@@ -71,7 +71,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		var/option = input(target, "Choose something!", "Emotion to simulate") in list("Радость", "Грусть", "Страх", "Тревога", "Злость", "Спокойствие")
+		var/option = input(user, "Choose something!", "Emotion to stimulate") in list("Радость", "Грусть", "Страх", "Тревога", "Злость", "Спокойствие")
 		if (!option)
 			return 0
 		if(user.psi.suppressed)
@@ -102,7 +102,7 @@
 			sleep(3 SECONDS)
 			return 1
 		if(option == "Страх") //заставляет временно застыть на месте, но не перманентно, в отличии от спазма(можно сделать так, чтобы челик ещё и дрожал при этом)
-			to_chat(target, SPAN_WARNING("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [user]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))
+			to_chat(target, SPAN_OCCULT("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [user]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))
 			var/cn_rank = user.psi.get_rank(PSI_COERCION)
 			var/mob/living/carbon/C = target
 			C.make_dizzy(10)
@@ -110,14 +110,14 @@
 			return 1
 		if(option == "Тревога") //вариант для рп, пишет всякое в чат(мб добавить страшные звуки)
 			var/strange_option = pick("ощущаете чьё-то зловещее присутствие", "сильно потеете", "чувствуете, что за вами что-то наблюдает", "ощущаете странный холод", "чувствуете, как что-то ползает по вам")
-			to_chat(target, SPAN_WARNING("Вы [strange_option]."))
+			to_chat(target, SPAN_DANGER("Вы [strange_option]."))
 			return 1
 		if(option == "Злость") //вариант для рп, пишет всякое в чат
 			var/anger_option = pick("к самому себе", "к человеку, что стоит рядом", "к месту, в котором вы находитесь", "к своей жизни", "по отношению к данной ситуации", "к сегодняшнему дню", "к сегодняшней погоде", "к вашей работе", "к тому, что было вчера")
-			to_chat(target, SPAN_WARNING("Внезапно, вы ощущаете странную злобу [anger_option]."))
+			to_chat(target, SPAN_DANGER("Внезапно, вы ощущаете странную злобу [anger_option]."))
 			return 1
 		if(option == "Спокойствие") //вариант для рп, пишет всякое в чат
-			to_chat(target, SPAN_WARNING("Вы ощущаете странное умиротворение."))
+			to_chat(target, SPAN_NOTICE("Вы ощущаете странное умиротворение."))
 			if(target.psi)
 				target.psi.stamina = min(target.psi.max_stamina, target.psi.stamina + rand(15,20))
 			return 1
