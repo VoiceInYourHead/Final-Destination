@@ -138,9 +138,11 @@
 	if(isWrench(I))
 		playsound(loc, 'sound/items/scrape_clunk.ogg', 100)
 		if (!active)
-			active = 1
-			to_chat(user, "<span class='notice'>You manually armed the [name], it's warhead priming mechanism is now active!</span>")
-			playsound(loc, activation_sound, 100)
+			to_chat(user, "<span class='warning'>You are starting to manually activate [name]!</span>")
+			if(!do_after(user, 30, src))
+				active = 1
+				to_chat(user, "<span class='notice'>You manually armed the [name], it's warhead priming mechanism is now active!</span>")
+				playsound(loc, activation_sound, 100)
 		else
 			active = 0
 			playsound(loc, 'sound/machines/defib_safetyOff.ogg', 100)

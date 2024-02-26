@@ -86,6 +86,10 @@
 	item_state = "jetpack"
 	starting_pressure = list(GAS_OXYGEN = 6*ONE_ATMOSPHERE)
 
+/obj/item/tank/jetpack/oxygen/full
+	volume = 200
+	starting_pressure = list(GAS_OXYGEN = 13*ONE_ATMOSPHERE)
+
 /obj/item/tank/jetpack/carbondioxide
 	name = "jetpack (carbon dioxide)"
 	desc = "A tank of compressed carbon dioxide for use as propulsion in zero-gravity areas. Painted black to indicate that it should not be used as a source for internals."

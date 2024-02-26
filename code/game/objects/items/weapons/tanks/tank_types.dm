@@ -20,6 +20,9 @@
 		GAS_OXYGEN = 6 * ONE_ATMOSPHERE
 	)
 
+/obj/item/tank/oxygen/full
+	starting_pressure = list(GAS_OXYGEN = 13*ONE_ATMOSPHERE)
+
 
 /obj/item/tank/oxygen_yellow
 	name = "oxygen tank"
