@@ -7,6 +7,7 @@
 /decl/psionic_power/energistics
 	faculty = PSI_ENERGISTICS
 
+
 /decl/psionic_power/energistics/zorch
 	name =             "Zorch"
 	cost =             20
@@ -67,6 +68,7 @@
 			pew.shot_from = user
 			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
 			return TRUE
+
 
 /decl/psionic_power/energistics/disrupt
 	name =            "Disrupt"
@@ -173,7 +175,6 @@
 	..()
 //PROJECTILES
 
-
 /decl/psionic_power/energistics/spit
 	name =             "Bullet Spit"
 	cost =             20
@@ -204,16 +205,15 @@
 		var/pew_sound
 
 		if(target == user)
-			var/chosen_option = show_radial_menu(user, user, options, radius = 48, require_near = TRUE)
+			var/chosen_option = show_radial_menu(user, user, options, radius = 35, require_near = TRUE)
 			if (!chosen_option)
 				return
 			psi_shot = chosen_option
 			to_chat(user, "<span class='warning'>Теперь, ты будешь выпускать снаряды типа '[chosen_option]' при использовании псионики.</span>")
 			return TRUE
 
-		user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
-
 		if(psi_shot == "Standart")
+			user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
 			if(user_rank == PSI_RANK_APPRENTICE)
 				pew = new /obj/item/projectile/psi(get_turf(user))
 				pew.name = "small psionic bullet"
@@ -225,6 +225,7 @@
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 
 		if(psi_shot == "Armor Piercing")
+			user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
 			if(user_rank == PSI_RANK_APPRENTICE)
 				if(prob(10))
 					pew = new /obj/item/projectile/psi(get_turf(user))
@@ -258,6 +259,7 @@
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 
 		if(psi_shot == "Explosive")
+			user.visible_message("<span class='danger'>[user] делает резкий выпад рукой, запуская в полёт огромный сгусток энергии!</span>")
 			if(user_rank == PSI_RANK_APPRENTICE)
 				if(prob(10))
 					pew = new /obj/item/projectile/psi/strong(get_turf(user))
@@ -274,6 +276,7 @@
 
 
 		if(psi_shot == "Piercing Charges")
+			user.visible_message("<span class='danger'>[user] выставляет перед собой руку, создавая импровизированную трубу и пропускает через неё сжатый сгусток энергии!</span>")
 			if(user_rank <= PSI_RANK_OPERANT)
 				if(prob(10))
 					pew = new /obj/item/projectile/psi/strong_piercing(get_turf(user))
@@ -315,54 +318,6 @@
 			pew.shot_from = user
 			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
 		return TRUE
-
-/*		var/user_rank = user.psi.get_rank(faculty)
-		var/obj/item/projectile/pew
-		var/pew_sound
-
-		user.psi.set_cooldown(cooldown)
-		sleep(4)
-		user.psi.spend_power(cost)
-		switch(user_rank)
-			if(PSI_RANK_GRANDMASTER)
-				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/psi(get_turf(user))
-					pew.damage = 40
-					pew.name = "psionic round"
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-				if(user.a_intent == I_HURT)
-					pew = new /obj/item/projectile/psi/strong(get_turf(user))
-					pew.name = "big psionic round"
-					pew.damage = 25
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_MASTER)
-				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/psi(get_turf(user))
-					pew.damage = 40
-					pew.name = "psionic round"
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-				if(user.a_intent == I_HURT)
-					pew = new /obj/item/projectile/psi/strong(get_turf(user))
-					pew.name = "psionic round"
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_OPERANT)
-				pew = new /obj/item/projectile/psi(get_turf(user))
-				pew.name = "psionic bullet"
-				pew.damage = 40
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_APPRENTICE)
-				pew = new /obj/item/projectile/psi(get_turf(user))
-				pew.name = "small psionic bullet"
-				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-
-		if(istype(pew))
-			playsound(pew.loc, pew_sound, 25, 1)
-			pew.original = target
-			pew.current = target
-			pew.starting = get_turf(user)
-			pew.shot_from = user
-			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
-		return TRUE*/
 
 
 /decl/psionic_power/energistics/storm
@@ -406,6 +361,7 @@
 		var/obj/item/projectile/P = new fragment_type(T)
 		P.shot_from = src.name
 		P.launch(O)
+
 
 /decl/psionic_power/energistics/cloud
 	name =            "Cloud"
@@ -451,7 +407,6 @@
 	sleep(2)
 	src.alpha = 10
 	qdel(src)
-
 
 /decl/psionic_power/energistics/cloud/invoke(var/mob/living/user, var/mob/living/target)
 
