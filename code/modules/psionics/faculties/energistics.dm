@@ -7,6 +7,7 @@
 /decl/psionic_power/energistics
 	faculty = PSI_ENERGISTICS
 
+
 /decl/psionic_power/energistics/zorch
 	name =             "Zorch"
 	cost =             20
@@ -68,6 +69,7 @@
 			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
 			return TRUE
 
+
 /decl/psionic_power/energistics/disrupt
 	name =            "Disrupt"
 	cost =            10
@@ -106,14 +108,8 @@
 			empulse(target, 1, 2)
 		return TRUE
 
-/decl/psionic_power/energistics/spit
-	name =             "Bullet Spit"
-	cost =             20
-	cooldown =         45
-	use_ranged =       TRUE
-	min_rank =         PSI_RANK_APPRENTICE
-	use_description = "Выберите голову на красном интенте и нажмите по чему угодно, чтобы запустить из пальца маленькую сферу с сжатой псионической энергией."
 
+//PROJECTILES
 /obj/item/projectile/psi
 	name = "psionic projectile"
 	icon = 'icons/obj/projectiles.dmi'
@@ -129,60 +125,189 @@
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_BULLET_MEAT, BULLET_IMPACT_METAL = SOUNDS_BULLET_METAL)
 
 /obj/item/projectile/psi/strong
-	damage = 15
+	damage = 25
 	icon_state = "plasma_bolt"
 	color = "#c40eed"
-	var/explosion_power = 50
+	var/explosion_power = 20
 	var/explosion_falloff = 10
 
 /obj/item/projectile/psi/strong/on_hit(var/atom/target, var/blocked = 0)
 	cell_explosion(get_turf(target), explosion_power, explosion_falloff)
 	..()
 
+/obj/item/projectile/psi/strong_piercing
+	damage = 40
+	icon_state = "plasma_bolt"
+	color = "#c40eed"
+	var/explosion_power = 20
+	var/explosion_falloff = 10
+	var/exploded_inwall = FALSE
+	var/delay = 4
+
+	armor_penetration = 100
+	penetrating = 2
+	penetration_modifier = 1.1
+	var/proximity_detonation = FALSE //should we explode near our target, and not inside of it?
+	var/exploded = FALSE
+
+/obj/item/projectile/psi/strong_piercing/Bump(atom/A as mob|obj|turf|area, forced=0)
+	..()
+	if(exploded)
+		return
+
+	exploded = TRUE
+	if(istype(A,/obj/effect/shield))
+		cell_explosion(get_turf(A), explosion_power, explosion_falloff)
+		qdel(src)
+		return
+
+	sleep(delay)
+
+	if(src && !exploded_inwall)
+		cell_explosion(get_turf(src), explosion_power, explosion_falloff)
+		qdel(src)
+
+/obj/item/projectile/psi/strong_piercing/Destroy()
+	if(src && !exploded_inwall && !istype(loc,/atom/movable))
+		exploded = TRUE
+		exploded_inwall = TRUE
+		cell_explosion(get_turf(src), explosion_power, explosion_falloff)
+	..()
+//PROJECTILES
+
+/decl/psionic_power/energistics/spit
+	name =             "Bullet Spit"
+	cost =             20
+	cooldown =         45
+	use_ranged =       TRUE
+	use_melee =       TRUE
+	min_rank =         PSI_RANK_APPRENTICE
+	use_description = "Выберите голову на красном интенте и нажмите по чему угодно, чтобы запустить из пальца маленькую сферу с сжатой псионической энергией."
+
+	var/psi_shot = "Standart"
+
 /decl/psionic_power/energistics/spit/invoke(var/mob/living/user, var/mob/living/target)
+
+	var/list/options = list(
+		"Armor Piercing" = image('icons/screen/psi.dmi', "AP"),
+		"Explosive" = image('icons/screen/psi.dmi', "EXP"),
+		"Piercing Charges" = image('icons/screen/psi.dmi', "EXPAP"),
+		"Standart" = image('icons/screen/psi.dmi', "DEF")
+	)
+
 	if(user.zone_sel.selecting != BP_HEAD)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
 
 		var/user_rank = user.psi.get_rank(faculty)
 		var/obj/item/projectile/pew
 		var/pew_sound
 
-		user.psi.set_cooldown(cooldown)
-		sleep(4)
-		user.psi.spend_power(cost)
-		switch(user_rank)
-			if(PSI_RANK_GRANDMASTER)
-				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/psi(get_turf(user))
-					pew.damage = 40
-					pew.name = "psionic round"
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-				if(user.a_intent == I_HURT)
-					pew = new /obj/item/projectile/psi/strong(get_turf(user))
-					pew.name = "big psionic round"
-					pew.damage = 25
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_MASTER)
-				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/psi(get_turf(user))
-					pew.damage = 40
-					pew.name = "psionic round"
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-				if(user.a_intent == I_HURT)
-					pew = new /obj/item/projectile/psi/strong(get_turf(user))
-					pew.name = "psionic round"
-					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_OPERANT)
+		if(target == user)
+			var/chosen_option = show_radial_menu(user, user, options, radius = 35, require_near = TRUE)
+			if (!chosen_option)
+				return
+			psi_shot = chosen_option
+			to_chat(user, "<span class='warning'>Теперь, ты будешь выпускать снаряды типа '[chosen_option]' при использовании псионики.</span>")
+			return TRUE
+
+		if(psi_shot == "Standart")
+			user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
+			if(user_rank == PSI_RANK_APPRENTICE)
+				pew = new /obj/item/projectile/psi(get_turf(user))
+				pew.name = "small psionic bullet"
+				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+			if(user_rank >= PSI_RANK_MASTER)
 				pew = new /obj/item/projectile/psi(get_turf(user))
 				pew.name = "psionic bullet"
 				pew.damage = 40
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
-			if(PSI_RANK_APPRENTICE)
+
+		if(psi_shot == "Armor Piercing")
+			user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
+			if(user_rank == PSI_RANK_APPRENTICE)
+				if(prob(10))
+					pew = new /obj/item/projectile/psi(get_turf(user))
+					pew.name = "piercing psionic bullet"
+					pew.color = "#a70909"
+					pew.armor_penetration = 80
+					pew.penetrating = 5
+					pew.penetration_modifier = 1.1
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				else
+					pew = new /obj/item/projectile/psi(get_turf(user))
+					pew.name = "small psionic bullet"
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+					to_chat(user, "<span class='warning'>Ты пытаешься сконцентрировать всю энергию в одном маленьком сгустке, дабы создать пробивной снаряд, но что-то мешает тебе...</span>")
+			if(user_rank == PSI_RANK_OPERANT)
 				pew = new /obj/item/projectile/psi(get_turf(user))
-				pew.name = "small psionic bullet"
+				pew.name = "piercing psionic bullet"
+				pew.color = "#a70909"
+				pew.armor_penetration = 80
+				pew.penetrating = 5
+				pew.penetration_modifier = 1.1
+				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+			if(user_rank >= PSI_RANK_MASTER)
+				pew = new /obj/item/projectile/psi(get_turf(user))
+				pew.name = "piercing psionic bullet"
+				pew.color = "#a70909"
+				pew.armor_penetration = 100
+				pew.penetrating = 6
+				pew.penetration_modifier = 1.1
+				pew.damage = 40
+				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+
+		if(psi_shot == "Explosive")
+			user.visible_message("<span class='danger'>[user] делает резкий выпад рукой, запуская в полёт огромный сгусток энергии!</span>")
+			if(user_rank == PSI_RANK_APPRENTICE)
+				if(prob(10))
+					pew = new /obj/item/projectile/psi/strong(get_turf(user))
+					pew.name = "explosive psionic round"
+					pew.damage = 10
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				else
+					to_chat(user, "<span class='danger'>Огромный ком энергии накапливается внутри тебя, готовясь вырваться наружу, но что-то идёт не так...</span>")
+					cell_explosion(get_turf(user), 10, 5)
+			if(user_rank >= PSI_RANK_OPERANT)
+				pew = new /obj/item/projectile/psi/strong(get_turf(user))
+				pew.name = "explosive psionic round"
+				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+
+
+		if(psi_shot == "Piercing Charges")
+			user.visible_message("<span class='danger'>[user] выставляет перед собой руку, создавая импровизированную трубу и пропускает через неё сжатый сгусток энергии!</span>")
+			if(user_rank <= PSI_RANK_OPERANT)
+				if(prob(10))
+					pew = new /obj/item/projectile/psi/strong_piercing(get_turf(user))
+					pew.name = "piercing psionic round"
+					pew.color = "#a70909"
+					pew.damage = 20
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				else
+					pew = new /obj/item/projectile/psi(get_turf(user))
+					pew.name = "piercing psionic bullet"
+					pew.color = "#a70909"
+					pew.armor_penetration = 80
+					pew.penetrating = 5
+					pew.penetration_modifier = 1.1
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+					to_chat(user, "<span class='warning'>Ты пытаешься сконцентрировать всю энергию в одном маленьком сгустке, дабы создать пробивной снаряд, но что-то мешает тебе...</span>")
+					cell_explosion(get_turf(user), 15, 5)
+			if(user_rank == PSI_RANK_MASTER)
+				if(prob(70))
+					pew = new /obj/item/projectile/psi/strong_piercing(get_turf(user))
+					pew.name = "piercing psionic round"
+					pew.color = "#a70909"
+					pew.damage = 20
+					pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+				else
+					to_chat(user, "<span class='warning'>Ты пытаешься сконцентрировать всю энергию в одном маленьком сгустке, дабы создать пробивной снаряд, но что-то мешает тебе...</span>")
+					cell_explosion(get_turf(user), 15, 5)
+			if(user_rank == PSI_RANK_GRANDMASTER)
+				pew = new /obj/item/projectile/psi/strong_piercing(get_turf(user))
+				pew.name = "piercing psionic round"
+				pew.color = "#a70909"
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 
 		if(istype(pew))
@@ -193,6 +318,7 @@
 			pew.shot_from = user
 			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
 		return TRUE
+
 
 /decl/psionic_power/energistics/storm
 	name =             "Bullet Storm"
@@ -235,6 +361,7 @@
 		var/obj/item/projectile/P = new fragment_type(T)
 		P.shot_from = src.name
 		P.launch(O)
+
 
 /decl/psionic_power/energistics/cloud
 	name =            "Cloud"
@@ -280,7 +407,6 @@
 	sleep(2)
 	src.alpha = 10
 	qdel(src)
-
 
 /decl/psionic_power/energistics/cloud/invoke(var/mob/living/user, var/mob/living/target)
 

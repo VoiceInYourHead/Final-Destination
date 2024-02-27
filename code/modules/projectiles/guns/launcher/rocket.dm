@@ -20,7 +20,7 @@
 	max_shells = 1
 	one_hand_penalty = 10
 	handle_casings = HOLD_CASINGS
-	ammo_type = /obj/item/ammo_casing/rocket
+	ammo_type = /obj/item/ammo_casing/huge_caliber/rocket	///obj/item/ammo_casing/rocket
 	var/windup = 5 // Rockets take half a second to prep to fire, set to zero to invalidate cmompletly.
 	load_sound = 'sound/weapons/guns/interaction/rpg_reload.ogg'
 
