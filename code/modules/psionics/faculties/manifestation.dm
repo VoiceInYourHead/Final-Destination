@@ -91,7 +91,7 @@
 				img.name = I.name
 				images[I] = img
 
-		var/obj/item = show_radial_menu(user, user, images, radius = 48, require_near = TRUE)
+		var/obj/item = show_radial_menu(user, user, images, radius = 30, require_near = TRUE)
 		if(item && !user.psi.suppressed)
 			var/item_type = item.type
 			. = new item_type(user)
@@ -173,7 +173,7 @@
 				img.name = I.name
 				images[I] = img
 
-		var/obj/item = show_radial_menu(user, user, images, radius = 48, require_near = TRUE)
+		var/obj/item = show_radial_menu(user, user, images, radius = 30, require_near = TRUE)
 		if(item && !user.psi.suppressed)
 			var/item_type = item.type
 			. = new item_type(user)

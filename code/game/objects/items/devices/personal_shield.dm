@@ -103,7 +103,7 @@
 		power_cell.emp_act(severity)
 		if(shield)
 			visible_message(SPAN_DANGER("\The [src] explodes!"))
-			cell_explosion(get_turf(src), 50, 50)
+			cell_explosion(get_turf(src), 10, 5)
 			qdel(src)
 	else
 		..()

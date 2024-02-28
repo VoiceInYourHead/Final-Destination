@@ -205,7 +205,7 @@
 		var/pew_sound
 
 		if(target == user)
-			var/chosen_option = show_radial_menu(user, user, options, radius = 35, require_near = TRUE)
+			var/chosen_option = show_radial_menu(user, user, options, radius = 20, require_near = TRUE)
 			if (!chosen_option)
 				return
 			psi_shot = chosen_option
@@ -409,9 +409,10 @@
 	qdel(src)
 
 /decl/psionic_power/energistics/cloud/invoke(var/mob/living/user, var/mob/living/target)
+	var/en_rank_user = user.psi.get_rank(PSI_ENERGISTICS)
 
-	if(PSI_RANK_GRANDMASTER)
-		outer_radius += 3
+	if(en_rank_user == PSI_RANK_GRANDMASTER)
+		outer_radius = 4
 
 	if(user.zone_sel.selecting != BP_CHEST)
 		return FALSE

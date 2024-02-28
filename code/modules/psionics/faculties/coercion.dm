@@ -81,7 +81,7 @@
 	. = ..()
 	if(.)
 
-		var/chosen_option = show_radial_menu(user, user, options, radius = 42, require_near = TRUE)
+		var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
 		if (!chosen_option)
 			return 0
 		if(user.psi.suppressed)
