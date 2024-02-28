@@ -233,6 +233,9 @@
 /obj/structure/wall_frame/invincible/hitby()
 	return
 
+/obj/structure/wall_frame/invincible/Destroy()
+	return
+
 /obj/structure/wall_frame/invincible/can_damage_health()
 	SHOULD_CALL_PARENT(FALSE)
 	return FALSE

@@ -155,6 +155,30 @@
 			update_material()
 		return 1
 
+	if(material && istype(W, /obj/item/stack/material/steel) && user.a_intent == I_GRAB)
+		var/obj/item/stack/material/steel/S = W
+		var/obj/TA = locate(/obj/structure/storage/table) in loc
+		if(istype(TA, /obj/structure/storage/table))
+			to_chat(user, "<span class='warning'>There is another storage here.</span>")
+			return
+		if(S.in_use)
+			return
+		if(S.get_amount() < 5)
+			to_chat(user, "<span class='warning'>You need at least five to do this.</span>")
+			return
+		to_chat(user, "<span class='notice'>You begin making storage under \the [src].</span>")
+		S.in_use = 1
+		if(!do_after(user, 100, src))
+			S.in_use = 0
+			return
+		if(!S.use(5))
+			return
+		var/obj/structure/storage/table/sp = new /obj/structure/storage/table(loc)
+		user.visible_message("<span class='notice'>\The [user] made a storage under \the [src].</span>")
+		S.in_use = 0
+		sp.add_fingerprint(user)
+		return
+
 	if(istype(W, /obj/item/hand)) //playing cards
 		var/obj/item/hand/H = W
 		if(H.cards && H.cards.len == 1)

@@ -36,6 +36,7 @@
 	icon_state = "rocket"
 	spent_icon = "rocket-spent"
 	caliber = CALIBER_SHIP_ROCKET
+	w_class = ITEM_SIZE_NORMAL
 	projectile_type = /obj/item/projectile/bullet/huge_caliber/rocket
 
 /obj/item/ammo_casing/huge_caliber/rocket/high_explosive
