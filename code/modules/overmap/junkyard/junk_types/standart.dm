@@ -14,9 +14,9 @@
 /datum/random_map/noise/junkyard/standart
 	descriptor = "junkyard"
 	smoothing_iterations = 4
-	land_type = /turf/space
+	land_type = /turf/unsimulated/floor/exoplanet/desert/alt
 //	fauna_prob = 0
 
 /area/junkyard/standart
 	name = "\improper Junkyard area"
-	base_turf = /turf/space
+	base_turf = /turf/unsimulated/floor/exoplanet/desert/alt

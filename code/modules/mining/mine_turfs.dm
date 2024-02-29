@@ -70,7 +70,7 @@ var/global/list/mining_floors = list()
 		if(update_neighbors && istype(turf_to_check,/turf/simulated/floor/asteroid))
 			var/turf/simulated/floor/asteroid/T = turf_to_check
 			T.updateMineralOverlays()
-		else if(istype(turf_to_check,/turf/space) || istype(turf_to_check,/turf/simulated/floor))
+		else if(istype(turf_to_check,/turf/unsimulated/floor/exoplanet/clouds) || istype(turf_to_check,/turf/simulated/floor))
 			var/image/rock_side = image(icon, "rock_side", dir = turn(direction, 180))
 			rock_side.turf_decal_layerise()
 			switch(direction)
@@ -524,7 +524,7 @@ var/global/list/mining_floors = list()
 	var/list/step_overlays = list("n" = NORTH, "s" = SOUTH, "e" = EAST, "w" = WEST)
 	for(var/direction in step_overlays)
 
-		if(istype(get_step(src, step_overlays[direction]), /turf/space))
+		if(istype(get_step(src, step_overlays[direction]), /turf/unsimulated/floor/exoplanet/clouds))
 			var/image/aster_edge = image('icons/turf/flooring/asteroid.dmi', "asteroid_edges", dir = step_overlays[direction])
 			aster_edge.turf_decal_layerise()
 			overlays += aster_edge

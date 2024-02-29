@@ -86,8 +86,8 @@
 						if(istype(m, f2))
 							from_objs += m
 
-				else if(text_starts_with(f, "/turf/space"))
-					for(var/turf/space/m in world)
+				else if(text_starts_with(f, "/turf/unsimulated/floor/exoplanet/clouds"))
+					for(var/turf/unsimulated/floor/exoplanet/clouds/m in world)
 						if(istype(m, f2))
 							from_objs += m
 
@@ -155,8 +155,8 @@
 							if(istype(m, f2))
 								objs += m
 
-					else if(text_starts_with(f, "/turf/space"))
-						for(var/turf/space/m in from_obj)
+					else if(text_starts_with(f, "/turf/unsimulated/floor/exoplanet/clouds"))
+						for(var/turf/unsimulated/floor/exoplanet/clouds/m in from_obj)
 							if(istype(m, f2))
 								objs += m
 

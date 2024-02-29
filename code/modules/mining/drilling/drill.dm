@@ -255,7 +255,7 @@
 	icon_state = "mining_brace"
 	obj_flags = OBJ_FLAG_ROTATABLE
 	interact_offline = 1
-	
+
 	machine_name = "mining drill brace"
 	machine_desc = "A mobile support strut that provides support for the head of a mining drill when anchored. Placed on either side of the drill head."
 
@@ -274,7 +274,7 @@
 		return TRUE
 	if(isWrench(W))
 
-		if(istype(get_turf(src), /turf/space))
+		if(istype(get_turf(src), /turf/unsimulated/floor/exoplanet/clouds))
 			to_chat(user, "<span class='notice'>You can't anchor something to empty space. Idiot.</span>")
 			return
 

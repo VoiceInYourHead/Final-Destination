@@ -247,7 +247,7 @@
 	if(!seed)
 		return
 
-	if(istype(user.loc,/turf/space))
+	if(istype(user.loc,/turf/unsimulated/floor/exoplanet/clouds))
 		return
 
 	if(user.a_intent == I_HURT)

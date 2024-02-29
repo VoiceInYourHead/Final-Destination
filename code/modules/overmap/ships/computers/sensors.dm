@@ -50,8 +50,8 @@
 			data["status"] = "DESTROYED"
 		else if(!sensors.powered())
 			data["status"] = "NO POWER"
-		else if(!sensors.in_vacuum())
-			data["status"] = "VACUUM SEAL BROKEN"
+/*		else if(!sensors.in_vacuum())
+			data["status"] = "VACUUM SEAL BROKEN"*/
 		else
 			data["status"] = "OK"
 		var/list/contacts = list()
@@ -209,7 +209,7 @@
 	..()
 
 /obj/machinery/shipsensors/proc/toggle()
-	if(!use_power && (health == 0 || !in_vacuum()))
+	if(!use_power && (health == 0))
 		return // No turning on if broken or misplaced.
 	if(!use_power) //need some juice to kickstart
 		use_power_oneoff(idle_power_usage*5)
@@ -218,8 +218,6 @@
 
 /obj/machinery/shipsensors/Process()
 	if(use_power) //can't run in non-vacuum
-		if(!in_vacuum())
-			toggle()
 		if(heat > critical_heat)
 			src.visible_message("<span class='danger'>\The [src] violently spews out sparks!</span>")
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread

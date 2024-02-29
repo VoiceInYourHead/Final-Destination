@@ -285,7 +285,7 @@ var/list/mob/living/forced_ambiance_list = new
 		M.update_floating()
 
 /area/proc/thunk(mob/mob)
-	if(istype(get_turf(mob), /turf/space)) // Can't fall onto nothing.
+	if(istype(get_turf(mob), /turf/unsimulated/floor/exoplanet/clouds)) // Can't fall onto nothing.
 		return
 
 	if(mob.Check_Shoegrip())

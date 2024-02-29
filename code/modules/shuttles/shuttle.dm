@@ -107,10 +107,10 @@
 			var/area/D = get_area(destination)
 
 			for (var/mob/M in GLOB.player_list)
-				if (M.client && M.z == A.z && !istype(get_turf(M), /turf/space) && !(get_area(M) in src.shuttle_area))
+				if (M.client && M.z == A.z && !istype(get_turf(M), /turf/unsimulated/floor/exoplanet/clouds) && !(get_area(M) in src.shuttle_area))
 					to_chat(M, SPAN_NOTICE("The rumble of engines are heard as the [name] lifts off."))
 
-				if (M.client && M.z == D.z && !istype(get_turf(M), /turf/space) && !(get_area(M) in src.shuttle_area) && prob(80))
+				if (M.client && M.z == D.z && !istype(get_turf(M), /turf/unsimulated/floor/exoplanet/clouds) && !(get_area(M) in src.shuttle_area) && prob(80))
 					to_chat(M, SPAN_NOTICE("Flash of an unusually bright falling star appears in the sky."))
 
 	spawn(warmup_time*10)
@@ -135,11 +135,11 @@
 						var/area/D = get_area(destination)
 
 						for (var/mob/M in GLOB.player_list)
-							if (M.client && M.z == D.z && !istype(get_turf(M), /turf/space) && !(get_area(M) in src.shuttle_area))
+							if (M.client && M.z == D.z && !istype(get_turf(M), /turf/unsimulated/floor/exoplanet/clouds) && !(get_area(M) in src.shuttle_area))
 								to_chat(M, SPAN_DANGER("The rumble of a shuttle's engines fills the area as [name] manuevers in for a landing!"))
 								sound_to(M, sound(sound_landing, volume=5))
 
-							if (M.client && M.z != D.z && !istype(get_turf(M), /turf/space) && (get_area(M) in src.shuttle_area))
+							if (M.client && M.z != D.z && !istype(get_turf(M), /turf/unsimulated/floor/exoplanet/clouds) && (get_area(M) in src.shuttle_area))
 								sound_to(M, sound(sound_landing, volume=60))
 
 				sleep(5)

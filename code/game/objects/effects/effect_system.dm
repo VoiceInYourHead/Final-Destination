@@ -443,7 +443,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 
 /datum/effect/effect/system/trail/ion
 	trail_type = /obj/effect/effect/ion_trails
-	specific_turfs = list(/turf/space)
+	specific_turfs = list(/turf/unsimulated/floor/exoplanet/clouds)
 	duration_of_effect = 20
 
 /datum/effect/effect/system/trail/ion/effect(obj/effect/effect/T)
@@ -458,7 +458,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 
 /datum/effect/effect/system/trail/thermal
 	trail_type = /obj/effect/effect/thermal_trail
-	specific_turfs = list(/turf/space)
+	specific_turfs = list(/turf/unsimulated/floor/exoplanet/clouds)
 
 /////////////////////////////////////////////
 //////// Attach a steam trail to an object (eg. a reacting beaker) that will follow it

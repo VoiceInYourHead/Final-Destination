@@ -39,7 +39,7 @@
 		to_chat(user, "<span class='warning'>\The [src] does not recognize your authority!</span>")
 		return
 	var/turf/T = get_turf(src)
-	if(!istype(T) && !istype(T,/turf/space))
+	if(!(istype(T) && !istype(T,/turf/space)) || !(istype(T) && !istype(T,/turf/unsimulated/floor/exoplanet/clouds)))
 		to_chat(user, "<span class='warning'>\The [src] is unable to deploy here!</span>")
 		return
 	if(user.unEquip(src))

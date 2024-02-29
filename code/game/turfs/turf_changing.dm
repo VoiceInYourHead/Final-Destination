@@ -22,9 +22,9 @@
 		return
 
 	// This makes sure that turfs are not changed to space when one side is part of a zone
-	if(N == /turf/space)
+	if(N == /turf/unsimulated/floor/exoplanet/clouds)
 		var/turf/below = GetBelow(src)
-		if(istype(below) && !istype(below,/turf/space))
+		if(istype(below) && !istype(below,/turf/unsimulated/floor/exoplanet/clouds))
 			N = /turf/simulated/open
 
 	var/old_air = air
@@ -86,7 +86,7 @@
 
 	SSair.mark_for_update(src) //handle the addition of the new turf.
 
-	for(var/turf/space/S in range(W,1))
+	for(var/turf/unsimulated/floor/exoplanet/clouds/S in range(W,1))
 		S.update_starlight()
 
 	W.above = old_above

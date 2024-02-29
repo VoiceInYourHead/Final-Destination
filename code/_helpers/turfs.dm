@@ -59,7 +59,7 @@
 */
 
 /proc/is_space_turf(var/turf/T)
-	return istype(T, /turf/space)
+	return istype(T, /turf/unsimulated/floor/exoplanet/clouds)
 
 /proc/is_not_space_turf(var/turf/T)
 	return !is_space_turf(T)
@@ -92,7 +92,7 @@
 	if (!T)
 		return "The spawn location doesn't seem to exist. Please contact an admin via adminhelp if this error persists."
 
-	if(istype(T, /turf/space)) // Space tiles
+	if(istype(T, /turf/unsimulated/floor/exoplanet/clouds)) // Space tiles
 		return "Spawn location is open to space."
 	var/datum/gas_mixture/air = T.return_air()
 	if(!air)

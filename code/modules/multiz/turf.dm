@@ -16,6 +16,15 @@
 			return 0
 	return 1
 
+/turf/unsimulated/floor/exoplanet/clouds/CanZPass(atom/A, direction)
+	if(locate(/obj/structure/catwalk, src))
+		if(z == A.z)
+			if(direction == DOWN)
+				return 0
+		else if(direction == UP)
+			return 0
+	return 1
+
 /turf/space/CanZPass(atom/A, direction)
 	if(locate(/obj/structure/catwalk, src))
 		if(z == A.z)
