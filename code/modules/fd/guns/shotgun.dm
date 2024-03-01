@@ -42,7 +42,7 @@
 	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
 	icon_state = "gshotgun2"
 	item_state = "gshotgun2"
-	wielded_item_state = "shotgun2"
+	wielded_item_state = "gshotgun2"
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/shotgun/iccgn
 	allowed_magazines = /obj/item/ammo_magazine/shotgun/iccgn

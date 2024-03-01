@@ -668,3 +668,32 @@
 	ammo_type = /obj/item/ammo_casing/rifle/military/marksman
 	matter = list(MATERIAL_STEEL = 3550)
 	max_ammo = 15
+
+/obj/item/ammo_magazine/sniper/iccgn
+	name = "magazine"
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gsniperrifle4M"
+	mag_type = MAGAZINE
+	caliber = CALIBER_RIFLE_MILITARY
+	ammo_type = /obj/item/ammo_casing/scg/shell
+	matter = list(MATERIAL_STEEL = 3550)
+	max_ammo = 7
+
+/obj/item/ammo_magazine/speedloader/dmr
+	name = "marksman stripper clip"
+	desc = "A stripper clip for rifle caliber weapons."
+	icon_state = "iclipr"
+	caliber = CALIBER_RIFLE_MILITARY
+	ammo_type = /obj/item/ammo_casing/rifle/dmr
+	max_ammo = 8
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speedloader/dmr/apds
+	labels = list("APDS")
+	ammo_type = /obj/item/ammo_casing/rifle/dmr/apds
+	max_ammo = 4
+
+/obj/item/ammo_magazine/speedloader/dmr/haywire
+	labels = list("haywire")
+	ammo_type = /obj/item/ammo_casing/rifle/dmr/haywire
+	max_ammo = 4

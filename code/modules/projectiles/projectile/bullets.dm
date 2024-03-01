@@ -302,9 +302,20 @@
 
 /obj/item/projectile/bullet/rifle/marksman
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 50
-	armor_penetration = 50
+	damage = 30
+	armor_penetration = 20
 	penetrating = 1
+
+/obj/item/projectile/bullet/rifle/marksman/dmr
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 35
+	armor_penetration = 30
+	penetrating = 1
+
+/obj/item/projectile/bullet/rifle/marksman/dmr/apds
+	damage = 20
+	armor_penetration = 45
+	penetrating = 2
 
 /obj/item/projectile/bullet/rifle/russian
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
@@ -357,7 +368,7 @@
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 
 	on_hit(var/atom/target, var/blocked = 0)
-		cell_explosion(target, 15, 5)
+		cell_explosion(target, 5, 5)
 		return 1
 
 /* Miscellaneous */

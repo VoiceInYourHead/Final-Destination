@@ -11,15 +11,6 @@
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
 	icon_state = "pistolcasing_r"
 
-/obj/item/ammo_casing/pistol/assasin
-	caliber = CALIBER_PISTOL_FLECHETTE
-
-/obj/item/ammo_casing/pistol/assasin/rubber
-	desc = "A rubber pistol bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistolcasing_r"
-	caliber = CALIBER_PISTOL_FLECHETTE
-
 /obj/item/ammo_casing/pistol/practice
 	desc = "A practice pistol bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
@@ -160,45 +151,6 @@
 	icon_state = "riflecasing"
 	spent_icon = "riflecasing-spent"
 
-/obj/item/ammo_casing/rifle/fleet
-	desc = "A rifle bullet casing."
-	caliber = CALIBER_RIFLE
-	projectile_type = /obj/item/projectile/bullet/rifle/fleet
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
-
-/obj/item/ammo_casing/rifle/army
-	desc = "A rifle bullet casing."
-	caliber = CALIBER_RIFLE_MILITARY
-	projectile_type = /obj/item/projectile/bullet/rifle/army
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
-
-/obj/item/ammo_casing/rifle/iccgn
-	desc = "A rifle bullet casing"
-	caliber = CALIBER_RIFLE
-	projectile_type = /obj/item/projectile/bullet/rifle
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
-
-/obj/item/ammo_casing/rifle/accurate
-	desc = "A rifle bullet casing"
-	caliber = CALIBER_RIFLE_MILITARY
-	projectile_type = /obj/item/projectile/bullet/rifle/accurate
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
-
-/obj/item/ammo_casing/rifle/bolter
-	desc = "A heavy battle rifle casing. This one - Armour-Piercing Discarding Sabot(APDS)"
-	caliber = CALIBER_BOLTER
-	projectile_type = /obj/item/projectile/bullet/rifle/bolter
-	icon_state = "lcasing"
-	spent_icon = "lcasing-spent"
-
-/obj/item/ammo_casing/rifle/bolter/explosive
-	desc = "A heavy battle rifle casing."
-	projectile_type = /obj/item/projectile/bullet/rifle/bolter/explosive
-
 /obj/item/ammo_casing/rifle/russia
 	desc = "A rifle 12.7x55mm bullet casing."
 	caliber = CALIBER_RIFLE_RUSSIA
@@ -291,6 +243,14 @@
 
 /obj/item/ammo_casing/pistol/automatic
 	projectile_type = /obj/item/projectile/bullet/pistol/automatic
+/obj/item/ammo_casing/pistol/assasin
+	caliber = CALIBER_PISTOL_FLECHETTE
+
+/obj/item/ammo_casing/pistol/assasin/rubber
+	desc = "A rubber pistol bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	icon_state = "pistolcasing_r"
+	caliber = CALIBER_PISTOL_FLECHETTE
 
 /obj/item/ammo_casing/pistol/automatic/rubber
 	projectile_type = /obj/item/projectile/bullet/pistol/automatic/rubber
@@ -321,3 +281,68 @@
 	name = "haywire shell casing"
 	projectile_type  = /obj/item/projectile/ion/heavy
 	matter = list(MATERIAL_STEEL = 1100, MATERIAL_URANIUM = 300)
+
+/obj/item/ammo_casing/rifle/fleet
+	desc = "A rifle bullet casing."
+	caliber = CALIBER_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/fleet
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/army
+	desc = "A rifle bullet casing."
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/bullet/rifle/army
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/iccgn
+	desc = "A rifle bullet casing"
+	caliber = CALIBER_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/accurate
+	desc = "A rifle bullet casing"
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/bullet/rifle/accurate
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/bolter
+	desc = "A heavy battle rifle casing. This one - Armour-Piercing Discarding Sabot(APDS)"
+	caliber = CALIBER_BOLTER
+	projectile_type = /obj/item/projectile/bullet/rifle/bolter
+	icon_state = "lcasing"
+	spent_icon = "lcasing-spent"
+
+/obj/item/ammo_casing/rifle/bolter/explosive
+	desc = "A heavy battle rifle casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/bolter/explosive
+
+/obj/item/ammo_casing/sniper//emp
+	name = "haywire shell casing"
+	projectile_type  = /obj/item/projectile/ion/heavy
+	matter = list(MATERIAL_STEEL = 1100, MATERIAL_URANIUM = 300)
+
+/obj/item/ammo_casing/rifle/dmr
+	desc = "A rifle bullet casing"
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/bullet/rifle/marksman/dmr
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/dmr/apds
+	desc = "A rifle bullet casing"
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/bullet/rifle/marksman/dmr/apds
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/dmr/haywire
+	desc = "A rifle bullet casing. Haywire one."
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/ion
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
