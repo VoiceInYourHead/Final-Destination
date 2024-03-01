@@ -34,12 +34,13 @@ var/global/list/empty_playable_ai_cores = list()
 					state = 1
 			if(isWelder(P))
 				var/obj/item/weldingtool/WT = P
-				if(!WT.isOn())
+				if (istype(P, /obj/item/weldingtool && !WT.isOn()))
 					to_chat(user, "The welder must be on for this task.")
 					return
 				playsound(loc, 'sound/items/Welder.ogg', 50, 1)
 				if(do_after(user, 20, src))
-					if(!src || !WT.remove_fuel(0, user)) return
+					if(!src) return
+					if (istype(P, /obj/item/weldingtool) && !WT.remove_fuel(0, user)) return
 					to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
 					new /obj/item/stack/material/plasteel( loc, 4)
 					qdel(src)

@@ -10,6 +10,9 @@
 #define PI 3.141592
 
 
+#define ATAN2(x, y) ( !(x) && !(y) ? 0 : (y) >= 0 ? arccos((x) / sqrt((x)*(x) + (y)*(y))) : -arccos((x) / sqrt((x)*(x) + (y)*(y))) )
+
+
 /// A random real number between low and high inclusive
 #define Frand(low, high) ( rand() * ((high) - (low)) + (low) )
 
@@ -82,6 +85,10 @@
 /// The cotangent of degrees
 #define Cot(degrees) (1 / tan(degrees))
 
+/proc/Wrap(val, min, max)
+	var/d = max - min
+	var/t = Floor((val - min) / d)
+	return val - (t * d)
 
 /// The 2-argument arctangent of x and y
 /proc/Atan2(x, y)

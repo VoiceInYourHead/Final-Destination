@@ -1573,3 +1573,46 @@
 
 	glass_name = "horchata"
 	glass_desc = "A lovely looking horchata del chufa."
+
+//DRG Beer?
+
+/datum/reagent/ethanol/arkenstout
+	name = "Arkenstout"
+	description = "An ancient recipe going back millenia, tasting of honor, gold, and glory days of yore."
+	taste_description = "freezing mushrooms"
+	color = "#0066ff"
+	strength = 10
+
+	glass_name = "Arkenstout"
+	glass_desc = "A freezing container with the coldest beer."
+
+/datum/reagent/ethanol/arkenstout/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	..()
+	if(alien == IS_DIONA)
+		return
+	M.jitteriness = max(M.jitteriness - 3, 0)
+	M.bodytemperature = M.bodytemperature - 15
+
+/datum/reagent/ethanol/blackout_stout
+	name = "Blackout Stout"
+	description = "Renowned through space and time, a tankard of Blackout is enough to knock out almost anyone. A true test for the true drunkard."
+	taste_description = "the best taste you've ever tasted"
+	color = "#50311c"
+	strength = 0.01
+	druggy = 3
+	halluci = 3
+
+	glass_name = "Blackout Stout"
+	glass_desc = "A container with the strongest beer."
+
+/datum/reagent/ethanol/blackout_stout/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	..()
+	if(alien == IS_DIONA)
+		M.sleeping = max(M.sleeping, 10) //even dioneia :D
+		return
+	M.jitteriness = max(M.jitteriness - 5, 0)
+	M.add_chemical_effect(CE_SEDATE, 1)
+	M.add_chemical_effect(CE_MIND, 2)
+	M.add_chemical_effect(CE_STABLE, 2)
+	M.add_chemical_effect(CE_PULSE, -1)
+	M.sleeping = max(M.sleeping, 10)

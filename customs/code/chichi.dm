@@ -18,3 +18,9 @@
 			if(bodytype == SPECIES_RESOMI)
 				return overlay_image('icons/mob/species/resomi/spear_r.dmi', item_state_slots[slot_r_hand_str], color, RESET_COLOR)
 	. = ..(user, slot)
+
+/obj/item/skill_buffer/piloting
+	name = "pilot qualification"
+	icon = 'maps/torch/icons/obj/obj_accessories_solgov.dmi'
+	icon_state = "ec_badge_eva"
+	buffs = list(SKILL_PILOT = 1)

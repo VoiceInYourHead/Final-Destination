@@ -21,7 +21,6 @@
 #define SKILL_BUREAUCRACY   /decl/hierarchy/skill/organizational/bureaucracy
 #define SKILL_FINANCE       /decl/hierarchy/skill/organizational/finance
 #define SKILL_EVA           /decl/hierarchy/skill/general/EVA
-#define SKILL_MECH          /decl/hierarchy/skill/general/EVA/mech
 #define SKILL_PILOT         /decl/hierarchy/skill/general/pilot
 #define SKILL_HAULING       /decl/hierarchy/skill/general/hauling
 #define SKILL_COMPUTER      /decl/hierarchy/skill/general/computer
@@ -34,7 +33,11 @@
 #define SKILL_ELECTRICAL    /decl/hierarchy/skill/engineering/electrical
 #define SKILL_ATMOS         /decl/hierarchy/skill/engineering/atmos
 #define SKILL_ENGINES       /decl/hierarchy/skill/engineering/engines
+
 #define SKILL_DEVICES       /decl/hierarchy/skill/research/devices
+#define SKILL_ARMAMENT      /decl/hierarchy/skill/security/armament
+#define SKILL_MECH          /decl/hierarchy/skill/research/devices/mech
+
 #define SKILL_SCIENCE       /decl/hierarchy/skill/research/science
 #define SKILL_MEDICAL       /decl/hierarchy/skill/medical/medical
 #define SKILL_ANATOMY       /decl/hierarchy/skill/medical/anatomy

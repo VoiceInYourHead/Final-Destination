@@ -473,4 +473,7 @@ var/const/enterloopsanity = 100
 		has_opaque_atom = null
 
 /turf/proc/IgniteTurf(power, fire_colour)
-	return
+	if(turf_fire)
+		turf_fire.AddPower(power)
+		return
+	new /obj/effect/turf_fire(src, power, fire_colour)

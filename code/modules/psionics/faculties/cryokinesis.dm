@@ -13,7 +13,7 @@
 	cooldown =        100
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Target a non-living target in melee range on harm intent to cause ice to appear. Anyone can slip on it."
+	use_description = "Нажмите по любому неживому объекту на красном интенте, чтобы охладить его температуру. В некоторых случаях это может создать скользкий лёд."
 
 /decl/psionic_power/cryokinesis/icyfy/invoke(var/mob/living/user, var/mob/living/target)
 	if(isnull(target) || istype(target)) return FALSE
@@ -35,7 +35,7 @@
 	cooldown =        100
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Target the chest or groin while on harm intent to use a melee attack that freezes a victim."
+	use_description = "Выберите верхнюю или нижнюю часть тела и красный интент, затем нажав по цели чтобы заморозить её на некоторое время."
 
 /decl/psionic_power/cryokinesis/freeze/invoke(var/mob/living/user, var/mob/living/target)
 	if(user.zone_sel.selecting != BP_CHEST && user.zone_sel.selecting != BP_GROIN)
@@ -44,7 +44,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>\The [user] uses a cold touch, greatly cooling \the [target] body!</span>")
+		user.visible_message("<span class='danger'>[user] прикасается к телу [target] обледеневшей рукой, обращая его в лёд!</span>")
 		var/cryo_rank = user.psi.get_rank(PSI_CRYOKINESIS)
 		if(istype(target))
 			new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "extinguish")

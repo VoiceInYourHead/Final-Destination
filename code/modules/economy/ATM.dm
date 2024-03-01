@@ -67,7 +67,17 @@
 		to_chat(user, "[icon2html(src, user)] <span class='warning'>[src] beeps: \"[response]\"</span>")
 		return 1
 
-/obj/machinery/atm/attackby(obj/item/I as obj, mob/user as mob)
+/obj/machinery/atm/attackby(obj/item/I as obj, var/mob/living/user as mob)
+
+	if(istype(I, /obj/item/psychic_power/psielectro))
+		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_OPERANT)
+			if(do_after(user, 30))
+				to_chat(user, "<span class='warning'>Вы прислоняете руку к терминалу, запуская в него мощный поток тока!</span>")
+				if(!emagged)
+					emag_act()
+					new /obj/effect/temporary(get_turf(src),3, 'icons/effects/effects.dmi', "electricity_constant")
+				. = TRUE
+
 	if(istype(I, /obj/item/card/id))
 		if(emagged > 0)
 			//prevent inserting id into an emagged ATM

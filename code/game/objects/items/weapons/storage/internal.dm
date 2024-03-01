@@ -3,7 +3,7 @@
 /obj/item/storage/internal
 	var/obj/item/master_item
 
-/obj/item/storage/internal/New(obj/item/MI)
+/obj/item/storage/internal/New(obj/MI)
 	master_item = MI
 	name = master_item.name
 	verbs -= /obj/item/verb/verb_pickup	//make sure this is never picked up.
@@ -94,3 +94,21 @@
 /obj/item/storage/internal/pouch/New(var/newloc, var/storage_space)
 	max_storage_space = storage_space
 	..()
+
+/obj/item/storage/internal/structure/New(var/newloc, var/slots, var/slot_size, var/storage_space)
+	storage_slots = slots
+	max_w_class = slot_size
+	max_storage_space = storage_space
+	..()
+
+/obj/item/storage/internal/structure/handle_attack_hand(mob/user as mob)
+
+	if(user in range(1, master_item.loc))
+		src.add_fingerprint(user)
+		src.open(user)
+		return 0
+
+	for(var/mob/M in range(1, master_item.loc))
+		if (M.s_active == src)
+			src.close(M)
+	return 1

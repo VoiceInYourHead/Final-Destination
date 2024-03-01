@@ -20,7 +20,23 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 	return simulated
 
 /turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+	if(fire_protection > world.time-300)
+		return 0
+	if(locate(/obj/hotspot) in src)
+		return 1
+	var/datum/gas_mixture/air_contents = return_air()
+	if(!air_contents || exposed_temperature < PHORON_MINIMUM_BURN_TEMPERATURE)
+		return 0
 
+	var/igniting = 0
+	var/obj/effect/decal/cleanable/liquid_fuel/liquid = locate() in src
+	if(liquid && air_contents.check_combustability(liquid))
+		IgniteTurf(liquid.amount * 10)
+		QDEL_NULL(liquid)
+	if(air_contents.check_combustability())
+		igniting = 1
+		create_fire(exposed_temperature)
+	return igniting
 
 /turf/simulated/hotspot_expose(exposed_temperature, exposed_volume, soh)
 	if(fire_protection > world.time-300)
@@ -194,10 +210,13 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 	SSair.active_hotspots.Remove(src)
 	. = ..()
 
-/turf/simulated/var/fire_protection = 0 //Protects newly extinguished tiles from being overrun again.
+/turf/var/fire_protection = 0 //Protects newly extinguished tiles from being overrun again.
 /turf/proc/apply_fire_protection()
-/turf/simulated/apply_fire_protection()
 	fire_protection = world.time
+
+///turf/simulated/var/fire_protection = 0
+/*/turf/simulated/apply_fire_protection()
+	fire_protection = world.time*/
 
 //Returns the firelevel
 /datum/gas_mixture/proc/react(zone/zone, force_burn, no_check = 0)

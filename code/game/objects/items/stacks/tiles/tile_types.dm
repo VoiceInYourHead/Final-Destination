@@ -206,6 +206,24 @@
 /obj/item/stack/tile/floor_dark/fifty
 	amount = 50
 
+/obj/item/stack/tile/floor_tile1
+	name = "floor tile"
+	singular_name = "floor tile"
+	icon_state = "tile1"
+	matter = list(MATERIAL_STEEL = 450)
+
+/obj/item/stack/tile/floor_tile2
+	icon_state = "tile2"
+
+/obj/item/stack/tile/floor_tile3
+	icon_state = "tile3"
+
+/obj/item/stack/tile/floor_mosaic
+	name = "mosaic floor tile"
+	singular_name = "mosaic floor tile"
+	icon_state = "tile_mosaic"
+	matter = list(MATERIAL_STEEL = 450)
+
 /obj/item/stack/tile/floor_freezer
 	name = "freezer floor tile"
 	singular_name = "freezer floor tile"

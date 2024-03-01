@@ -38,7 +38,7 @@
 	. = ..()
 
 /obj/item/vehicle_component/health_manager/exploration
-	integrity = 800
+	integrity = 2000
 	resistances = list("bullet"=85,"energy"=85,"emp"=25,"bomb"=85)
 
 /datum/component_profile/exploration

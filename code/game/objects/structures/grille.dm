@@ -13,6 +13,7 @@
 	health_max = 10
 	damage_hitsound = 'sound/effects/grillehit.ogg'
 	var/init_material = MATERIAL_STEEL
+	var/electrified = FALSE
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
 	noblend_objects = list(/obj/machinery/door/window)
@@ -82,7 +83,12 @@
 				overlays += I
 
 /obj/structure/grille/Bumped(atom/user)
-	if(ismob(user)) shock(user, 70)
+	if(ismob(user))
+		shock(user, 70)
+	if(istype(user, /mob/living))
+		var/mob/living/target = user
+		if(electrified)
+			target.electrocute_act(20, src, 1)
 
 /obj/structure/grille/attack_hand(mob/user as mob)
 
@@ -97,6 +103,10 @@
 		if(H.species.can_shred(H))
 			attack_message = "mangles"
 			damage_dealt = 5
+
+	if(electrified)
+		var/mob/living/target = user
+		target.electrocute_act(20, src, 1)
 
 	if(shock(user, 70))
 		return
@@ -152,10 +162,21 @@
 	damage_health(damage, Proj.damage_type)
 
 /obj/structure/grille/attackby(obj/item/W as obj, mob/user as mob)
+	var/mob/living/target = user
+
+	if(istype(W, /obj/item/psychic_power/psielectro))
+		if(istype(target) && target.psi && !target.psi.suppressed && target.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
+			if(do_after(target, 30))
+				to_chat(target, "<span class='warning'>Вы наполняете решётку огромным количеством энергии...</span>")
+				electrified = TRUE
+
 	if (user.a_intent == I_HURT)
 		if (!(W.obj_flags & OBJ_FLAG_CONDUCTIBLE) || !shock(user, 70))
 			..()
 		return
+
+	if(electrified && !(W.obj_flags & OBJ_FLAG_CONDUCTIBLE))
+		target.electrocute_act(20, src, 1)
 
 	if(isWirecutter(W))
 		if(!shock(user, 100))

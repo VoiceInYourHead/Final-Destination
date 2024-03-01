@@ -42,20 +42,20 @@
 
 	if(isWelder(I))
 		var/obj/item/weldingtool/W = I
-		if(W.isOn())
-			if(W.get_fuel() >= 2)
-				var/obj/item/inside = locate() in src
-				if(inside)
-					inside.dropInto(loc)
-					visible_message("<span class='info'>\The [src] burns away revealing \the [inside].</span>")
-				else
-					visible_message("<span class='info'>\The [src] burns away into nothing.</span>")
-				qdel(src)
-				W.remove_fuel(2)
-			else
-				visible_message("<span class='info'>A few sparks fly off \the [src], but nothing else happens.</span>")
-				W.remove_fuel(1)
+		if(W.get_fuel() >= 1)
+			visible_message("<span class='info'>A few sparks fly off \the [src], but nothing else happens.</span>")
+			W.remove_fuel(1)
 			return
+		if(istype(I, /obj/item/weldingtool) && !W.isOn())
+			return
+		var/obj/item/inside = locate() in src
+		if(inside)
+			inside.dropInto(loc)
+			visible_message("<span class='info'>\The [src] burns away revealing \the [inside].</span>")
+		else
+			visible_message("<span class='info'>\The [src] burns away into nothing.</span>")
+		qdel(src)
+		W.remove_fuel(2)
 
 	else if(istype(I, /obj/item/device/core_sampler))
 		var/obj/item/device/core_sampler/S = I

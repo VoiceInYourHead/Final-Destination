@@ -23,8 +23,11 @@
 	if(!istype(A))
 		return FALSE
 	if(isWelder(A))
-		var/obj/item/weldingtool/WT = A
-		return (WT.isOn())
+		if(istype(A, /obj/item/psychic_power/psifire))
+			return TRUE
+		else
+			var/obj/item/weldingtool/WT = A
+			return (WT.isOn())
 	else if(istype(A, /obj/item/flame))
 		var/obj/item/flame/F = A
 		return (F.lit)

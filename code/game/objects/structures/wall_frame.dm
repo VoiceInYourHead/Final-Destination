@@ -185,6 +185,30 @@
 /obj/structure/wall_frame/titanium
 	material = MATERIAL_TITANIUM
 
+/obj/structure/wall_frame/wood
+	material = MATERIAL_WOOD
+
+/obj/structure/wall_frame/wood/walnut
+	material = MATERIAL_WALNUT
+
+/obj/structure/wall_frame/wood/yew
+	material = MATERIAL_YEW
+
+/obj/structure/wall_frame/wood/ebony
+	material = MATERIAL_EBONY
+
+/obj/structure/wall_frame/wood/maple
+	material = MATERIAL_MAPLE
+
+/obj/structure/wall_frame/wood/mahogany
+	material = MATERIAL_MAHOGANY
+
+/obj/structure/wall_frame/concrete
+	material = MATERIAL_CONCRETE
+
+/obj/structure/wall_frame/sandstone
+	material = MATERIAL_SANDSTONE
+
 /obj/structure/wall_frame/hull
 	paint_color = COLOR_SOL
 
@@ -207,6 +231,9 @@
 	return
 
 /obj/structure/wall_frame/invincible/hitby()
+	return
+
+/obj/structure/wall_frame/invincible/Destroy()
 	return
 
 /obj/structure/wall_frame/invincible/can_damage_health()

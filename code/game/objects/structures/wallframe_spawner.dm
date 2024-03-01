@@ -95,6 +95,21 @@
 	name = "wall frame window spawner (no grille)"
 	grille_path = null
 
+/obj/effect/wallframe_spawn/wood
+	name = "wooden wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/wood
+	grille_path = null
+
+/obj/effect/wallframe_spawn/concrete
+	name = "concrete wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/concrete
+	grille_path = null
+
+/obj/effect/wallframe_spawn/sandstone
+	name = "sandstone wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/sandstone
+	grille_path = null
+
 /obj/effect/wallframe_spawn/reinforced
 	name = "reinforced wall frame window spawner"
 	icon_state = "r-wingrille"

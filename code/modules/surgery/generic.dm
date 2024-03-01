@@ -297,7 +297,9 @@
 	name = "Amputate limb"
 	allowed_tools = list(
 		/obj/item/circular_saw = 100,
-		/obj/item/material/hatchet = 75
+		/obj/item/material/hatchet = 75,
+		/obj/item/psychic_power/psiaxe = 75,
+		/obj/item/psychic_power/psiblade = 50
 	)
 	min_duration = 110
 	max_duration = 160

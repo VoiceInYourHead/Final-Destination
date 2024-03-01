@@ -299,18 +299,21 @@
 		holder.remove_reagent(/datum/reagent/frostoil, 10 * removed)
 	if(volume > 15)
 		M.add_chemical_effect(CE_PULSE, 1)
+		M.add_chemical_effect(CE_ENERGETIC, 1)
 	if(volume > 45)
 		M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/nutriment/coffee/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
 	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_ENERGETIC, 1)
 
 /datum/reagent/drink/coffee/overdose(var/mob/living/carbon/M, var/alien)
 	if(alien == IS_DIONA)
 		return
 	M.make_jittery(5)
 	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_ENERGETIC, 1)
 
 /datum/reagent/drink/coffee/icecoffee
 	name = "Iced Coffee"

@@ -219,25 +219,18 @@
 #endif
 		return INITIALIZE_HINT_LATELOAD
 
-//	if(autoset_access)
-//		inherit_access_from_area()
-
 /obj/machinery/power/apc/LateInitialize()
 	..()
 	if(autoset_access)
 		inherit_access_from_area()
 
 /obj/machinery/power/apc/proc/inherit_access_from_area()
-	var/area/apc = access_area_by_dir()
+	var/turf/T = get_turf(src)
+	var/area/apc = get_area(T)
 	if (!apc)
 		req_access = list()
 	else
-		req_access = req_access_diff(apc)
-
-/obj/machinery/power/apc/proc/access_area_by_dir()
-	var/turf/T = get_turf(src)
-	if (T && !T.density)
-		return get_area(T)
+		req_access = apc.req_access
 
 /obj/machinery/power/apc/Destroy()
 	src.update()
@@ -609,7 +602,7 @@
 			to_chat(user, SPAN_WARNING("The wire connection is in the way."))
 			return TRUE
 		var/obj/item/weldingtool/WT = W
-		if (WT.get_fuel() < 3)
+		if (istype(W, /obj/item/weldingtool) && WT.get_fuel() < 3)
 			to_chat(user, SPAN_WARNING("You need more welding fuel to complete this task."))
 			return
 		user.visible_message(SPAN_WARNING("\The [user] begins to weld \the [src]."), \
@@ -617,7 +610,7 @@
 							"You hear welding.")
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 		if(do_after(user, 50, src) && opened && has_electronics == 0 && !terminal())
-			if(!WT.remove_fuel(3, user))
+			if(istype(W, /obj/item/weldingtool) && !WT.remove_fuel(3, user))
 				return TRUE
 			if (emagged || (stat & BROKEN) || opened==2)
 				new /obj/item/stack/material/steel(loc)

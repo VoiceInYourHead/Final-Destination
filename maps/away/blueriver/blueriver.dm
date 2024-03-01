@@ -1,10 +1,10 @@
-//quality code theft
+//quality code theft -- Remap, GTC - Grand Theft Code
 #include "blueriver_areas.dm"
 /obj/effect/overmap/visitable/sector/arcticplanet
 	name = "arctic planetoid"
 	desc = "Sensor array detects an arctic planet with a small vessle on the planet's surface. Scans further indicate strange energy levels below the planet's surface."
 	sector_flags = OVERMAP_SECTOR_KNOWN
-	icon_state = "globe"
+	icon_state = "hoxxes"
 	initial_generic_waypoints = list(
 		"nav_blueriv_1",
 		"nav_blueriv_2",
@@ -22,12 +22,13 @@
 	spawn_cost = 2
 	description = "Two z-level map with an arctic planet and an alien underground surface"
 	suffixes = list("blueriver/blueriver-1.dmm", "blueriver/blueriver-2.dmm")
-	generate_mining_by_z = 2
-	area_usage_test_exempted_root_areas = list(/area/bluespaceriver)
+	generate_mining_by_z = list(1,2)
+	area_usage_test_exempted_root_areas = list(/area/map_template/bluespaceriver)
 	apc_test_exempt_areas = list(
-		/area/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC
+		/area/map_template/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/map_template/bluespaceriver/surface = NO_SCRUBBER|NO_VENT|NO_APC
 	)
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/horizon)
 
 //This is ported from /vg/ and isn't entirely functional. If it sees a threat, it moves towards it, and then activates it's animation.
 //At that point while it sees threats, it will remain in it's attack stage. It's a bug, but I figured it nerfs it enough to not be impossible to deal with
@@ -115,31 +116,31 @@
 /obj/effect/shuttle_landmark/nav_blueriv/nav1
 	name = "Arctic Planet Landing Point #1"
 	landmark_tag = "nav_blueriv_1"
-	base_area = /area/bluespaceriver/ground
+	base_area = /area/map_template/bluespaceriver/surface
 	base_turf = /turf/unsimulated/floor/exoplanet/snow
 
 /obj/effect/shuttle_landmark/nav_blueriv/nav2
 	name = "Arctic Planet Landing Point #2"
 	landmark_tag = "nav_blueriv_2"
-	base_area = /area/bluespaceriver/ground
+	base_area = /area/map_template/bluespaceriver/surface
 	base_turf = /turf/unsimulated/floor/exoplanet/snow
 
 /obj/effect/shuttle_landmark/nav_blueriv/nav3
 	name = "Arctic Planet Landing Point #3"
 	landmark_tag = "nav_blueriv_3"
-	base_area = /area/bluespaceriver/ground
+	base_area = /area/map_template/bluespaceriver/surface
 	base_turf = /turf/unsimulated/floor/exoplanet/snow
 
 /obj/effect/shuttle_landmark/nav_blueriv/nav4
 	name = "Arctic Planet Navpoint #4"
 	landmark_tag = "nav_blueriv_antag"
-	base_area = /area/bluespaceriver/ground
+	base_area = /area/map_template/bluespaceriver/surface
 	base_turf = /turf/unsimulated/floor/exoplanet/snow
 
 /turf/simulated/floor/away/blueriver/alienfloor
 	name = "glowing floor"
 	desc = "The floor glows without any apparent reason."
-	icon = 'riverturfs.dmi'
+	icon = 'maps/away/blueriver/riverturfs.dmi'
 	icon_state = "floor"
 	temperature = 233
 
@@ -151,7 +152,7 @@
 /turf/unsimulated/wall/away/blueriver/livingwall
 	name = "alien wall"
 	desc = "You feel a sense of dread from just looking at this wall. Its surface seems to be constantly moving, as if it were breathing."
-	icon = 'riverturfs.dmi'
+	icon = 'maps/away/blueriver/riverturfs.dmi'
 	icon_state = "evilwall_1"
 	opacity = 1
 	density = TRUE
@@ -166,7 +167,7 @@
 /turf/unsimulated/wall/supermatter/no_spread
 	name = "weird liquid"
 	desc = "The viscous liquid glows and moves as if it were alive."
-	icon='blueriver.dmi'
+	icon='maps/away/blueriver/blueriver.dmi'
 	icon_state = "bluespacecrystal1"
 	layer = SUPERMATTER_WALL_LAYER
 	plane = EFFECTS_ABOVE_LIGHTING_PLANE
@@ -207,3 +208,39 @@
 
 /obj/structure/deity/bullet_act(var/obj/item/projectile/P)
 	damage_health(P.get_structure_damage(), P.damage_type)
+
+
+/obj/machinery/computer/shuttle_control/explore/horizon //HORIZON
+	name = "Horizon control console"
+	req_access = list()
+	shuttle_tag = "Horizon"
+
+/obj/effect/overmap/visitable/ship/landable/horizon
+	name = "EV - Horizon"
+	shuttle = "Horizon"
+	fore_dir = NORTH
+	dir = NORTH
+	integrity_failure_cap = 90
+	color = "#a131ce"
+	alpha = 240
+	vessel_mass = 950
+	vessel_size = SHIP_SIZE_TINY
+
+/datum/shuttle/autodock/overmap/horizon
+	name = "Horizon"
+	warmup_time = 10
+	current_location = "nav_horizon"
+	range = 0
+	fuel_consumption = 0.5
+	shuttle_area = /area/map_template/bluespaceriver/horizon
+	defer_initialisation = TRUE
+	flags = SHUTTLE_FLAGS_PROCESS
+	skill_needed = SKILL_BASIC
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+
+/obj/effect/shuttle_landmark/horizon
+	name = "Horizon LZ"
+	landmark_tag = "nav_horizon"
+	base_area = /area/map_template/bluespaceriver/surface
+	base_turf = /turf/unsimulated/floor/exoplanet/snow
+	movable_flags = MOVABLE_FLAG_EFFECTMOVE

@@ -18,7 +18,6 @@
 	START_PROCESSING(SSprocessing, src)
 
 /obj/screen/psi/hub/on_update_icon()
-
 	if(!owner.psi)
 		return
 
@@ -27,11 +26,21 @@
 		overlays |= on_cooldown
 	else
 		overlays.Cut()
-	var/offset = 1
+
+	var/length = LAZYLEN(components)
+	var/x_offset = 1
+	var/y_offset = 3
 	for(var/thing in components)
 		var/obj/screen/psi/component = thing
 		component.update_icon()
-		if(!component.invisibility) component.screen_loc = "EAST-[++offset]:28,CENTER-3:11"
+
+		var/is_menu_toggle = components.Find(component) == length
+		if(x_offset > 3 && !is_menu_toggle)
+			x_offset = y_offset > 4 ? 2 : 1
+			y_offset++
+
+		if(!component.invisibility)
+			component.screen_loc = "EAST-[++x_offset]:28,CENTER-[y_offset]:11"
 
 /obj/screen/psi/hub/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
@@ -49,9 +58,6 @@
 		return
 	maptext = "[round((owner.psi.stamina/owner.psi.max_stamina)*100)]%"
 	update_icon()
-
-/obj/screen/psi/hub/examine(mob/user)
-	return
 
 /obj/screen/psi/hub/Click(var/location, var/control, var/params)
 	var/list/click_params = params2list(params)

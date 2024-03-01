@@ -42,13 +42,22 @@
 
 /turf/unsimulated/floor/exoplanet/attackby(obj/item/C, mob/user)
 	if(diggable && istype(C,/obj/item/shovel))
-		visible_message("<span class='notice'>\The [user] starts digging \the [src]</span>")
-		if(do_after(user, 50))
-			to_chat(user,"<span class='notice'>You dig a deep pit.</span>")
-			new /obj/structure/pit(src)
-			diggable = 0
-		else
-			to_chat(user,"<span class='notice'>You stop shoveling.</span>")
+		var/option = alert(user, "What do you want?", "Choose something!", "Grave", "Pit")
+		if (!option)
+			return
+		if(option == "Grave")
+			visible_message("<span class='notice'>\The [user] starts digging \the [src]</span>")
+			if(do_after(user, 50))
+				to_chat(user,"<span class='notice'>You dig a grave.</span>")
+				new /obj/structure/pit(src)
+				diggable = 0
+			else
+				to_chat(user,"<span class='notice'>You stop shoveling.</span>")
+		if(option == "Pit")
+			visible_message("<span class='notice'>\The [user] starts digging \the [src]</span>")
+			if(do_after(user, 50))
+				new /obj/effect/pile(src)
+				diggable = 0
 	else if(istype(C, /obj/item/stack/tile))
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))

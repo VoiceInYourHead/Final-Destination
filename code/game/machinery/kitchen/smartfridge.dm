@@ -258,7 +258,16 @@
 *   Item Adding
 ********************/
 
-/obj/machinery/smartfridge/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/smartfridge/attackby(var/obj/item/O as obj, var/mob/living/user as mob)
+	if(istype(O, /obj/item/psychic_power/psielectro))
+		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
+			if(do_after(user, 30))
+				to_chat(user, "<span class='warning'>Вы аккуратно меняете настройки автомата...</span>")
+				if(!emagged)
+					emag_act()
+					new /obj/effect/temporary(get_turf(src),3, 'icons/effects/effects.dmi', "electricity_constant")
+				. = TRUE
+
 	if(isScrewdriver(O))
 		panel_open = !panel_open
 		user.visible_message("[user] [panel_open ? "opens" : "closes"] the maintenance panel of \the [src].", "You [panel_open ? "open" : "close"] the maintenance panel of \the [src].")

@@ -4,7 +4,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/carrier/pilot
 	supervisors = "Captain and FTU itself."
 	info = "You are the pilot of your meagre Scavenger Crew. Keep your metal buddy safe, don't left it, try not to get bored."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -45,7 +45,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/carrier/captain
 	supervisors = "FTU itself."
 	info = "You are the captain of your meagre Scavenger Crew. Keep your crew safe, make money, try not to die from rebelios hands."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	min_skill = list(
 		SKILL_HAULING = SKILL_TRAINED,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -90,7 +90,7 @@
 	supervisors = "Captain and FTU itself."
 	info = "You are a part of your meagre Scavenger Crew. Keep yourself safe, and seek goodies for your ship and company. \
 	Your weapons are limited; trade, salvage, but avoid conflict as a matter of course."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -131,7 +131,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/carrier/doctor
 	supervisors = "Captain and FTU itself."
 	info = "You are the doctor aboard your meagre Salvage team. Keep everyone alive. Try not to get bored while waiting for salvagers to return."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_SKRELL,SPECIES_RESOMI)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_SKRELL,SPECIES_RESOMI)
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,
@@ -173,7 +173,7 @@
 	supervisors = "Captain, other crewmates and FTU itself."
 	info = "You are an young crewman aboard FTU-SV Bigsby. Try to help anyone around - you have just enough skills for everything! Probably... \
 	Also, some spare hands on the salvage mission will be helpful too!"
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_UNATHI,SPECIES_MULE,SPECIES_RESOMI)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_UNATHI,SPECIES_RESOMI)
 	min_skill = list(
 		SKILL_HAULING = SKILL_TRAINED,
 		SKILL_COMPUTER = SKILL_BASIC,
@@ -224,7 +224,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/carrier/cook
 	supervisors = "Captain and FTU itself"
 	info = "You are the cook onboard salvagers vessel. Keep your crew in good mood and well-fed."
-	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_MULE,SPECIES_DIONA,SPECIES_UNATHI,SPECIES_RESOMI)
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_DIONA,SPECIES_UNATHI,SPECIES_RESOMI)
 	min_skill = list(
 		SKILL_HAULING = SKILL_BASIC,
 		SKILL_EVA = SKILL_EXPERIENCED,

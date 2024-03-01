@@ -69,7 +69,8 @@ useful things:
 	apc_test_exempt_areas = list()
 
 /turf/simulated/wall/r_wall/black
-	paint_color = COLOR_BLACK
+	paint_color = COLOR_DARK_GRAY
+	color = COLOR_DARK_GRAY
 
 /turf/simulated/wall/r_wall/black/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL,MATERIAL_TITANIUM)
@@ -88,7 +89,7 @@ useful things:
 				break
 		if(spacefacing)
 			var/bleach_factor = rand(10,50)
-			paint_color = "[pick("#420d0d", COLOR_BLACK)]"
+			paint_color = "[pick("#420d0d", COLOR_DARK_GRAY)]"
 			paint_color = adjust_brightness(paint_color, bleach_factor)
 	update_icon()
 
@@ -160,7 +161,7 @@ useful things:
 	movable_flags = MOVABLE_FLAG_EFFECTMOVE
 
 /turf/simulated/wall/black
-	paint_color = COLOR_BLACK
+	paint_color = COLOR_DARK_GRAY
 
 /turf/simulated/wall/black/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL)

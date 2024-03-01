@@ -258,20 +258,20 @@
 			return
 
 		var/obj/item/weldingtool/welder = I
-		if(welder.remove_fuel(0,user))
-			to_chat(user, "<span class='notice'>You start to fix dents and weld \the [repairing] into place.</span>")
-			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			if(do_after(user, 5 * repairing.amount, src) && welder && welder.isOn())
-				if (!repairing)
-					return //the materials in the door have been removed before welding was finished.
-
-				to_chat(user, "<span class='notice'>You finish repairing the damage to \the [src].</span>")
-				health = clamp(health + repairing.amount * DOOR_REPAIR_AMOUNT, health, maxhealth)
-				update_icon()
-				qdel(repairing)
-				repairing = null
+		if (istype(I, /obj/item/weldingtool) && !welder.remove_fuel(0, user))
+			to_chat(user, "<span class='notice'>You need more welding fuel.</span>")
+			return
+		to_chat(user, "<span class='notice'>You start to fix dents and weld \the [repairing] into place.</span>")
+		playsound(src, 'sound/items/Welder.ogg', 100, 1)
+		if(do_after(user, 5 * repairing.amount, src))
+			if (istype(I, /obj/item/weldingtool) && !welder && !welder.isOn() && !repairing)
+				return //the materials in the door have been removed before welding was finished.
+			to_chat(user, "<span class='notice'>You finish repairing the damage to \the [src].</span>")
+			health = clamp(health + repairing.amount * DOOR_REPAIR_AMOUNT, health, maxhealth)
+			update_icon()
+			qdel(repairing)
+			repairing = null
 		return
-
 	if(repairing && isCrowbar(I))
 		to_chat(user, "<span class='notice'>You remove \the [repairing].</span>")
 		playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)

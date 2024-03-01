@@ -89,7 +89,17 @@ GLOBAL_LIST_INIT(recomended_holoplants_colors, list(COLOR_LIGHTING_RED_BRIGHT,CO
 				change_plant(input("Select Hologram", "Hologram") in (emagged ? emagged_states : possible_states))
 		update_icon()
 
-/obj/structure/holoplant/attackby(obj/item/I, mob/user, click_params)
+/obj/structure/holoplant/attackby(obj/item/I, var/mob/living/user, click_params)
+	if(istype(I, /obj/item/psychic_power/psielectro))
+		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
+			if(do_after(user, 30))
+				to_chat(user, "<span class='warning'>Вы аккуратно меняете настройки голо-цветка...</span>")
+				if(!emagged)
+					emag_act()
+					new /obj/effect/temporary(get_turf(src),3, 'icons/effects/effects.dmi', "electricity_constant")
+				else
+					rollback()
+				. = TRUE
 	if(istype(I, /obj/item/card/id))
 		if(!emagged)
 			emag_act()

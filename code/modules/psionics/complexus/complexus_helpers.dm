@@ -26,6 +26,7 @@
 /datum/psi_complexus/proc/set_rank(var/faculty, var/rank, var/defer_update, var/temporary)
 	if(get_rank(faculty) != rank)
 		LAZYSET(ranks, faculty, rank)
+		LAZYSET(ranks_stat, faculty, TRUE)
 		if(!temporary)
 			LAZYSET(base_ranks, faculty, rank)
 		if(!defer_update)

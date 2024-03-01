@@ -8,7 +8,7 @@
 //	var/list/fauna_types = list()		// possible types of mobs to spawn
 //	var/list/megafauna_types = list() 	// possibble types of megafauna to spawn
 //	var/list/animals = list()
-	var/max_animal_count = 40
+	var/max_animal_count = 30
 
 	var/maxx
 	var/maxy
@@ -29,7 +29,7 @@
 	//Flags deciding what features to pick
 	var/ruin_tags_whitelist
 	var/ruin_tags_blacklist = RUIN_RAINWORLD
-	var/features_budget = 30
+	var/features_budget = 40
 	var/list/possible_features = list()
 	var/list/spawned_features
 

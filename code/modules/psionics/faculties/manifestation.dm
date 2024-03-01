@@ -1,6 +1,6 @@
 /decl/psionic_faculty/manifestation
 	id = PSI_MANIFESTATION
-	name = "Manifestation"
+	name = "Demiurgy"
 	associated_intent = I_GRAB
 	armour_types = list("bullet", "melee")
 
@@ -14,111 +14,179 @@
 	cost =            5
 	cooldown =        50
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Click on or otherwise activate an empty hand while on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
+	use_description = "Нажмите по пустой руке на красном интенте, чтобы создать оружие из чистой псионической энергии."
 	admin_log = FALSE
 
+	var/list/images = list()
 
-//I know, there is a lot of better ways to do this
+	var/list/items_lvl1 = list()
+	var/list/paths_lvl1 = list(
+								/obj/item/psychic_power/psiclub,
+								/obj/item/psychic_power/psiblade)
+
+	var/list/items_lvl2 = list()
+	var/list/paths_lvl2 = list(
+								/obj/item/psychic_power/psiclub/master,
+								/obj/item/psychic_power/psiblade/master,
+								/obj/item/psychic_power/psiaxe,
+								/obj/item/psychic_power/psispear)
+
+	var/list/items_lvl3 = list()
+	var/list/paths_lvl3 = list(
+								/obj/item/psychic_power/psiclub/master/grand,
+								/obj/item/psychic_power/psiblade/master/grand,
+								/obj/item/psychic_power/psiaxe/master,
+								/obj/item/psychic_power/psispear/master,
+								/obj/item/gun/launcher/crossbow/psibow/master)
+
+	var/list/items_lvl4 = list()
+	var/list/paths_lvl4 = list(
+								/obj/item/psychic_power/psiclub/master/grand/paramount,
+								/obj/item/psychic_power/psiblade/master/grand/paramount,
+								/obj/item/psychic_power/psiaxe/master/grand/paramount,
+								/obj/item/psychic_power/psispear/master/grand/paramount,
+								/obj/item/gun/launcher/crossbow/psibow/master/grand/paramount)
+
 /decl/psionic_power/manifestation/psiblade/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HURT)
 		return FALSE
+
+	var/demi_rank = user.psi.get_rank(PSI_MANIFESTATION)
+
+	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED) && user.skill_check(SKILL_CONSTRUCTION, SKILL_EXPERIENCED))
+		paths_lvl4 += /obj/item/gun/energy/psigun
+
 	. = ..()
 	if(.)
-		switch(user.psi.get_rank(faculty))
-			if(PSI_RANK_GRANDMASTER)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear", "Crossbow")
-				if (!option)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub/master/grand/paramount(user, user)
-				if(option == "Blade")
-					return new /obj/item/psychic_power/psiblade/master/grand/paramount(user, user)
-				if(option == "Battle Axe")
-					return new /obj/item/psychic_power/psiaxe/master/grand/paramount(user, user)
-				if(option == "Spear")
-					return new /obj/item/psychic_power/psispear/master/grand/paramount(user, user)
-				if(option == "Crossbow")
-					return new /obj/item/gun/launcher/crossbow/psibow/master/grand/paramount(user, user)
-			if(PSI_RANK_MASTER)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear", "Crossbow")
-				if (!option)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub/master/grand(user, user)
-				if(option == "Blade")
-					return new /obj/item/psychic_power/psiblade/master/grand(user, user)
-				if(option == "Battle Axe")
-					return new /obj/item/psychic_power/psiaxe/master(user, user)
-				if(option == "Spear")
-					return new /obj/item/psychic_power/psispear/master(user, user)
-				if(option == "Crossbow")
-					return new /obj/item/gun/launcher/crossbow/psibow/master(user, user)
-			if(PSI_RANK_OPERANT)
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club", "Battle Axe", "Spear")
-				if (!option)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub/master(user, user)
-				if(option == "Blade")
-					return new /obj/item/psychic_power/psiblade/master(user, user)
-				if(option == "Battle Axe")
-					return new /obj/item/psychic_power/psiaxe(user, user)
-				if(option == "Spear")
-					return new /obj/item/psychic_power/psispear(user, user)
-			else
-				var/option = input(target, "Choose something!", "Weapons to create") in list("Blade", "Club")
-				if (!option)
-					return
-				if(option == "Club")
-					return new /obj/item/psychic_power/psiclub(user, user)
-				if(option == "Blade")
-					return new /obj/item/psychic_power/psiblade(user, user)
+
+		if(demi_rank <= PSI_RANK_APPRENTICE)
+			for(var/weapon1 in paths_lvl1)
+				var/obj/item/I = new weapon1 (src)
+				items_lvl1 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		if(demi_rank == PSI_RANK_OPERANT)
+			for(var/weapon2 in paths_lvl2)
+				var/obj/item/I = new weapon2 (src)
+				items_lvl2 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		if(demi_rank == PSI_RANK_MASTER)
+			for(var/weapon3 in paths_lvl3)
+				var/obj/item/I = new weapon3 (src)
+				items_lvl3 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		if(demi_rank >= PSI_RANK_GRANDMASTER)
+			for(var/weapon4 in paths_lvl4)
+				var/obj/item/I = new weapon4 (src)
+				items_lvl4 += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		var/obj/item = show_radial_menu(user, user, images, radius = 30, require_near = TRUE)
+		if(item && !user.psi.suppressed)
+			var/item_type = item.type
+			. = new item_type(user)
+
+		for(item in items_lvl1 + items_lvl2 + items_lvl3 + items_lvl4)
+			qdel(item)
+
+		images.Cut()
+		items_lvl1.Cut()
+		items_lvl2.Cut()
+		items_lvl3.Cut()
+		items_lvl4.Cut()
+
+		paths_lvl4 -= /obj/item/gun/energy/psigun
 
 /decl/psionic_power/manifestation/tinker
 	name =            "Manifest tool"
 	cost =            5
 	cooldown =        10
 	min_rank =        PSI_RANK_APPRENTICE
-	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest one of many helpful tools."
+	use_description = "Нажмите по пустой руке на зелёном интенте, чтобы создать ряд полезных инструментов."
 	admin_log = FALSE
+	var/list/images = list()
+
+	var/list/items_medical = list()
+	var/list/paths_medical = list(/obj/item/bonesetter/psi,
+		/obj/item/circular_saw/psi,
+		/obj/item/hemostat/psi,
+		/obj/item/retractor/psi,
+		/obj/item/scalpel/psi,
+		/obj/item/surgicaldrill/psi)
+
+	var/list/items_engineering = list()
+	var/list/paths_engineering = list(/obj/item/crowbar/psi,
+		/obj/item/screwdriver/psi,
+		/obj/item/wirecutters/psi,
+		/obj/item/wrench/psi)
 
 /decl/psionic_power/manifestation/tinker/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HELP)
 		return FALSE
+
+	var/fire_rank = user.psi.get_rank(PSI_METAKINESIS)
+	var/demi_rank = user.psi.get_rank(PSI_MANIFESTATION)
+
+	if(demi_rank >= PSI_RANK_MASTER)
+		paths_medical += /obj/item/clothing/gloves/latex/psi
+		paths_engineering += /obj/item/clothing/gloves/insulated/psi
+
+	if(fire_rank >= PSI_RANK_LATENT && demi_rank >= PSI_RANK_OPERANT && user.skill_check(SKILL_CONSTRUCTION, SKILL_TRAINED))
+		paths_engineering += /obj/item/weldingtool/experimental/psi
+
+	if(demi_rank >= PSI_RANK_MASTER && user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC) && user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
+		paths_engineering += /obj/item/device/multitool/psi
+
 	. = ..()
 	if(.)
 
-		var/option = alert(target, "What toolkit you need?", "Choose something!", "Medical", "Engineering", "Gloves")
+		var/option = alert(target, "What toolkit you need?", "Choose something!", "Medical", "Engineering")
 		if (!option)
 			return
-		if(option == "Gloves")
-			var/con_rank_user = user.psi.get_rank(PSI_MANIFESTATION)
-			if(con_rank_user < PSI_RANK_MASTER)
-				to_chat(user, SPAN_OCCULT("<b>You don't have enough experience to do something like this yet!</b>"))
-				return FALSE
-			else
-				var/option_second = alert(target, "What exactly do you want?", "Choose something!", "Insulated", "Latex")
-				if (!option_second)
-					return
-				if(option_second == "Insulated")
-					return new /obj/item/clothing/gloves/insulated/psi(user)
-				if(option_second == "Latex")
-					return new /obj/item/clothing/gloves/latex/psi(user)
+
+		if(user.psi.suppressed)
+			return
+
 		if(option == "Engineering")
-			return new /obj/item/psychic_power/tinker(user)
+			for(var/engietool in paths_engineering)
+				var/obj/item/I = new engietool (src)
+				items_engineering += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
 		if(option == "Medical")
-			var/option_third = input(target, "What exactly do you want?", "Choose something!") in list("Saw", "Scalpel", "Bone Setter", "Retractor", "Hemostat", "Drill")
-			if (!option_third)
-				return
-			if(option_third == "Scalpel")
-				return new /obj/item/scalpel/psi(user)
-			if(option_third == "Saw")
-				return new /obj/item/circular_saw/psi(user)
-			if(option_third == "Bone Setter")
-				return new /obj/item/bonesetter/psi(user)
-			if(option_third == "Retractor")
-				return new /obj/item/retractor/psi(user)
-			if(option_third == "Hemostat")
-				return new /obj/item/hemostat/psi(user)
-			if(option_third == "Drill")
-				return new /obj/item/surgicaldrill/psi(user)
+			for(var/medtool in paths_medical)
+				var/obj/item/I = new medtool (src)
+				items_medical += I
+				var/image/img = image(icon = I.icon, icon_state = I.item_state)
+				img.name = I.name
+				images[I] = img
+
+		var/obj/item = show_radial_menu(user, user, images, radius = 30, require_near = TRUE)
+		if(item && !user.psi.suppressed)
+			var/item_type = item.type
+			. = new item_type(user)
+
+		for(item in items_medical + items_engineering)
+			qdel(item)
+
+		images.Cut()
+		items_medical.Cut()
+		items_engineering.Cut()
+
+		paths_medical -= /obj/item/clothing/gloves/latex/psi
+
+		paths_engineering -= /obj/item/device/multitool/psi
+		paths_engineering -= /obj/item/weldingtool/experimental/psi
+		paths_engineering -= /obj/item/clothing/gloves/insulated/psi

@@ -58,7 +58,7 @@
 		icon_state = icon_state_brolen_fully
 	return
 
-/obj/structure/fd/intel_console/attackby(var/obj/item/I, var/mob/user)
+/obj/structure/fd/intel_console/attackby(var/obj/item/I, var/mob/living/user)
 
 	if(state == 3 && istype(I, /obj/item/stack/material/glass/))
 		var/obj/item/stack/material/glass/guass = I
@@ -74,7 +74,9 @@
 				qdel(I)
 	if(state == 2 && isWelder(I))
 		var/obj/item/weldingtool/welder = I
-		if(do_after(user, 50) && welder.remove_fuel(0, user))
+		if(do_after(user, 50))
+			if(istype(I, /obj/item/weldingtool) && !welder.remove_fuel(0, user))
+				return
 			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
 			to_chat(user, "<span class='notice'>Вы начинаете сваривать детали и приводить кейпад в божеский вид...</span>")
 			state = 1
@@ -85,6 +87,14 @@
 				powerless = FALSE
 				to_chat(user, "<span class='notice'>Вы аккуратно вставляете внутрь батарею...</span>")
 				qdel(I)
+				update_icon()
+		if(powerless == TRUE && istype(I, /obj/item/psychic_power/psielectro))
+			if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) < PSI_RANK_OPERANT)
+				to_chat(user, "<span class='notice'>Вы ещё не успели освоиться с током настолько хорошо, чтобы провернуть нечто подобное...</span>")
+				return
+			if(do_after(user, 60))
+				powerless = FALSE
+				to_chat(user, "<span class='notice'>Вы оживляете платы старого терминала, наполняя его своим внутренним электричеством...</span>")
 				update_icon()
 	if(state == 1 && powerless == FALSE)
 		if(data == 1)

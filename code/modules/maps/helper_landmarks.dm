@@ -51,17 +51,34 @@
 /obj/effect/landmark/explosion
 	name = "explosion"
 	icon_state = "x"
-	var/severity = 3
+	var/severity = 50
+	var/falloff = 5
 
 /obj/effect/landmark/explosion/medium
-	severity = 7
+	severity = 100
+	falloff = 10
 
 /obj/effect/landmark/explosion/large
-	severity = 11
+	severity = 200
+	falloff = 15
 
-/obj/effect/landmark/explosion/New(var/turf/T)
-	T.ex_act(severity)
+/obj/effect/landmark/explosion/New()
+	var/turf/T = get_turf(src)
+	if(istype(T))
+		cell_explosion(T, severity, falloff)
 	qdel(src)
+	. = ..()
+
+/obj/effect/landmark/explosion/random
+	severity = 140
+	falloff = 10
+	var/explosion_chance = 50
+
+/obj/effect/landmark/explosion/random/New()
+	if(prob(explosion_chance))
+		. = ..()
+	else
+		qdel(src)
 
 /obj/effect/landmark/damager
 	name = "damager"

@@ -138,28 +138,52 @@
 
 /obj/item/material/twohanded/sledgehammer/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
-	..()
 	if(A && wielded)
 		if(istype(A,/obj/structure/window)) //windows
 			var/obj/structure/window/W = A
+			if(src.in_use)
+				return
+			src.in_use = 1
+			if(!do_after(user, 10, src))
+				src.in_use = 0
+				to_chat(user, "<span class='danger'>You must be still to smash \the [W]!</span>")
+				return
+			src.in_use = 0
 			W.shatter()
+			user.do_attack_animation(src)
+			return
 
 		else if(istype(A,/obj/structure/grille))
-			qdel(A)
+			if(src.in_use)
+				return
+			src.in_use = 1
+			if(!do_after(user, 20, src))
+				src.in_use = 0
+				to_chat(user, "<span class='danger'>You must be still to smash \the [A]!</span>")
+				return
+			src.in_use = 0
+			A.Destroy()
+			user.do_attack_animation(src)
+			return
 
 		else if(istype(A,/obj/machinery/suit_storage_unit)) //suit storage unit
 			var/obj/machinery/suit_storage_unit/S = A
-			if(prob(10) && !S.isopen)
+			if(src.in_use)
+				return
+			src.in_use = 1
+			if(!do_after(user, 20, src))
+				src.in_use = 0
+				to_chat(user, "<span class='danger'>You must be still to smash \the [A]!</span>")
+				return
+			src.in_use = 0
+			if(!S.isopen)
 				to_chat(user, "<span class='danger'>You critically damaged and made \the [A] open up.</span>")
 				user.do_attack_animation(src)
 				playsound(src, 'sound/weapons/smash.ogg', 50, 0)
 				S.islocked = FALSE
 				S.isopen = TRUE
 				S.update_icon()
-			else if(!S.isopen)
-				to_chat(user, "<span class='danger'>You hit \the [A], but it doesn't give in.</span>")
-				user.do_attack_animation(src)
-				playsound(src, 'sound/weapons/smash.ogg', 50, 0)
+			return
 
 		else if(istype(A,/obj/machinery/door/airlock)) //airlocks
 			if(prob(40))
@@ -170,23 +194,62 @@
 					S.health = 0
 				else
 					S.health /= 4
+			return
 
 		else if(istype(A,/obj/machinery/door/firedoor)) //firedoor
-			var/obj/machinery/door/firedoor/S = A
-			if(prob(40) && S.density)
+			if(src.in_use)
+				return
+			if(A.density)
+				src.in_use = 1
+				if(!do_after(user, 20, src))
+					src.in_use = 0
+					to_chat(user, "<span class='danger'>You must be still to smash \the [A]!</span>")
+					return
+				src.in_use = 0
 				to_chat(user, "<span class='danger'>You smash through \the [A]!</span>")
 				qdel(A)
+			return
 
 		else if(istype(A,/obj/structure/wall_frame) && !istype(A,/obj/structure/wall_frame/invincible)) //wallframe
-			qdel(A)
+			A.Destroy()
 
 		else if(istype(A,/turf/simulated/wall) && !istype(A,/turf/simulated/wall/r_wall/invincible)) //walls
-			if(prob(30))
-				to_chat(user, "<span class='danger'>You smash through \the [A]!</span>")
-				user.do_attack_animation(src)
-				A.health_current /= 4
-				//A.kill_health()
-				//A.dismantle_wall()
+			if(!user.skill_check(SKILL_HAULING, SKILL_TRAINED))
+				to_chat(user, "<span class='danger'>You are too weak to smash \the [A]!</span>")
+				return
+			if(src.in_use)
+				return
+			src.in_use = 1
+			var/timer = A.health_max / (user.get_skill_value(SKILL_COMBAT) + 5)
+			if(timer <= 10)
+				timer = 10
+			if(!do_after(user, timer, src))
+				src.in_use = 0
+				to_chat(user, "<span class='danger'>You must be still to smash \the [A]!</span>")
+				return
+			src.in_use = 0
+			to_chat(user, "<span class='danger'>You smash through \the [A]!</span>")
+			user.do_attack_animation(src)
+			A.kill_health()
+			return
+
+		else if(istype(A,/mob/living/carbon)) //leto i arbaleti
+			var/mob/living/target = A
+			if(user.a_intent == I_GRAB)
+				var/dam = 3 * (user.get_skill_value(SKILL_COMBAT) * user.get_skill_value(SKILL_HAULING))
+				visible_message("<span class='warning'>[user] raises \the [src] above \The [target].</span>")
+				if(src.in_use)
+					return
+				src.in_use = 1
+				if(!do_after(user, 50, src))
+					src.in_use = 0
+					to_chat(user, "<span class='danger'>You must be still to smash [target]!</span>")
+					return
+				src.in_use = 0
+				target.apply_damage(dam, BRUTE)
+				visible_message("<span class='warning'>[user] smash \The [target] with .</span>")
+			return
+	. = ..()
 
 //spears, bay edition
 /obj/item/material/twohanded/spear

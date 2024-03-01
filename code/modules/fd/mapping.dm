@@ -10,10 +10,11 @@
 	var/light_brightness = 0
 	var/light_inrange = 0
 	var/light_outrange = 0
+	var/light_falloff = 0
 	var/colored = "#ffffff"
 
 /obj/effect/landmark/light/New()
-	set_light(light_brightness, light_inrange, light_outrange, l_color = colored)
+	set_light(light_brightness, light_inrange, light_outrange, light_falloff, l_color = colored)
 
 /obj/effect/landmark/light/airfield
 	light_brightness = 0.7
@@ -48,6 +49,18 @@
 	light_inrange = 5
 	light_outrange = 10
 	colored = "#1e4679"
+
+/obj/effect/landmark/light/school
+	light_brightness = 0.3
+	light_inrange = 30
+	light_outrange = 30
+	colored = "#e2d1b2"
+
+/obj/effect/landmark/light/school_sun
+	light_brightness = 0.3
+	light_inrange = 30
+	light_outrange = 30
+	colored = "#db9857"
 
 //рандом спавнер для растительности(зимней)
 

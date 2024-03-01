@@ -1,3 +1,44 @@
+/obj/effect/pile
+	name = "grey junk-pile"
+	desc = "It looks like an unknown mass of different things and materials"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "molten_big"
+
+/obj/effect/pile/Initialize()
+	. = ..()
+
+	for(var/atom/movable/O in loc)
+		if(!O.anchored)
+			O.forceMove(src)
+
+			if (istype(O, /mob/living))
+				var/mob/living/L = O
+				if (!(L.status_flags & NOTARGET))
+					L.status_flags ^= NOTARGET
+
+/obj/effect/pile/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/shovel))
+		if(do_after(user, 80))
+			qdel(src)
+	if(istype(I,/obj/item/stack/material/wood))
+		var/obj/item/stack/material/wood/sticks = I
+		if(do_after(user, 50) && sticks.amount >= 5)
+			sticks.amount -= 5
+			new /obj/structure/fd/campfire(src)
+			if(sticks.amount <= 0)
+				qdel(sticks)
+			qdel(src)
+
+/obj/effect/pile/Destroy()
+	src.visible_message("<span class='warning'>\The [src] falls over.</span>")
+	for(var/atom/movable/A in contents)
+		A.dropInto(loc)
+		if (istype(A, /mob/living))
+			var/mob/living/L = A
+			if (L.status_flags & NOTARGET)
+				L.status_flags ^= NOTARGET
+	return ..()
+
 /obj/structure/fd/placeholder
 	name = "there is nothing"
 	icon = 'icons/mob/screen1.dmi'
@@ -288,7 +329,7 @@
 		to_chat(L, SPAN_DANGER("You're tangled in \the [src]!"))
 
 /obj/structure/fd/bs_vines/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/material/hatchet))
+	if(istype(I, /obj/item/material/hatchet) || istype(I,/obj/item/psychic_power/psiaxe) || istype(I,/obj/item/psychic_power/psiblade))
 		if(do_after(user, 80))
 			qdel(src)
 

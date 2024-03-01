@@ -456,7 +456,7 @@
 
 	sleep(80)
 
-	for(var/faculty in list(PSI_COERCION, PSI_CONSCIOUSNESS, PSI_CRYOKINESIS, PSI_ELECTRONICS, PSI_PSYCHOBALLISTICS, PSI_PSYCHOKINESIS, PSI_MANIFESTATION, PSI_REDACTION, PSI_ENERGISTICS, PSI_ARCHERY,))
+	for(var/faculty in list(PSI_COERCION, PSI_CONSCIOUSNESS, PSI_METAKINESIS, PSI_PSYCHOKINESIS, PSI_MANIFESTATION, PSI_REDACTION, PSI_ENERGISTICS))
 		if(faculty in boosted_faculties)
 			H.set_psi_rank(faculty, boosted_rank, take_larger = TRUE, temporary = TRUE)
 		else
@@ -521,6 +521,9 @@
 		item_copied -= option
 
 /obj/item/fd/ancient_items/emerald/afterattack(atom/A, mob/user as mob, proximity)
+	if(!proximity)
+		return
+
 	if(broken)
 		to_chat(user, "<span class='warning'>You can't use [src] anymore, it's broken!</span>")
 		return
@@ -790,6 +793,13 @@
 	anchored = FALSE
 	density = FALSE
 
+/obj/structure/fd/light_sphere/attack_hand(var/mob/living/carbon/user)
+	if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
+		if(do_after(user, 50))
+			to_chat(user, "<span class='warning'>Вы поглощаете сферу, восстанавливая собственные запасы...</span>")
+			user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(10,15))
+			qdel(src)
+
 /obj/structure/fd/light_sphere/New()
 	set_light(0.5, 3, 7, l_color = "#c2e2d5")
 	src.run_timer()
@@ -833,6 +843,9 @@
 		icon_state = "rusty_medalion"
 
 /obj/item/fd/ancient_items/eye_of_the_maw/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+	if(!proximity)
+		return
+
 	if(istype(A, /mob/living/carbon) && !broken)
 		var/mob/living/carbon/L = A
 		if(L.stat != DEAD && !(L.status_flags & FAKEDEATH))

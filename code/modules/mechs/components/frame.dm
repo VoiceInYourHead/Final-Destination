@@ -243,22 +243,23 @@
 		if(is_reinforced == FRAME_REINFORCED)
 			to_chat(user, SPAN_WARNING("The reinforcement inside \the [src] has not been secured."))
 			return
-		if(!WT.isOn())
+		if(istype(thing, /obj/item/weldingtool) && !WT.isOn())
 			to_chat(user, SPAN_WARNING("Turn \the [WT] on, first."))
 			return
-		if(WT.remove_fuel(1, user))
-
-			var/last_reinforced_state = is_reinforced
-			visible_message("\The [user] begins welding the metal reinforcement inside \the [src].")
-			if(!do_after(user, 20 * user.skill_delay_mult(SKILL_DEVICES)) || last_reinforced_state != is_reinforced)
-				return
-
-			visible_message("\The [user] [(is_reinforced == FRAME_REINFORCED_WELDED) ? "unwelds the reinforcement from" : "welds the reinforcement into"] \the [src].")
-			is_reinforced = (is_reinforced == FRAME_REINFORCED_WELDED) ? FRAME_REINFORCED_SECURE : FRAME_REINFORCED_WELDED
-			playsound(user.loc, 'sound/items/Welder.ogg', 50, 1)
-		else
+		if(istype(thing, /obj/item/weldingtool) && !WT.remove_fuel(1, user))
 			to_chat(user, SPAN_WARNING("Not enough fuel!"))
 			return
+
+		var/last_reinforced_state = is_reinforced
+		visible_message("\The [user] begins welding the metal reinforcement inside \the [src].")
+		if(!do_after(user, 20 * user.skill_delay_mult(SKILL_DEVICES)) || last_reinforced_state != is_reinforced)
+			return
+
+		visible_message("\The [user] [(is_reinforced == FRAME_REINFORCED_WELDED) ? "unwelds the reinforcement from" : "welds the reinforcement into"] \the [src].")
+		is_reinforced = (is_reinforced == FRAME_REINFORCED_WELDED) ? FRAME_REINFORCED_SECURE : FRAME_REINFORCED_WELDED
+		playsound(user.loc, 'sound/items/Welder.ogg', 50, 1)
+		to_chat(user, SPAN_WARNING("Not enough fuel!"))
+		return
 	// Installing basic components.
 	else if(istype(thing,/obj/item/mech_component/manipulators))
 		if(arms)

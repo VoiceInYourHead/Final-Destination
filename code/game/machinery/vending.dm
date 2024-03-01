@@ -147,9 +147,25 @@
 		to_chat(user, "You short out the product lock on \the [src]")
 		return 1
 
-/obj/machinery/vending/attackby(obj/item/W as obj, mob/user as mob)
+/obj/machinery/vending/attackby(obj/item/W as obj, var/mob/living/user as mob)
 
 	var/obj/item/card/id/I = W.GetIdCard()
+
+	if(istype(W, /obj/item/psychic_power/psielectro))
+		if(istype(user) && user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_APPRENTICE)
+			var/option = input(user, "Do something!", "What do you want to do?") in list("Hack", "Electrify")
+			if (!option)
+				return
+			if(option == "Hack")
+				if(do_after(user, 30))
+					to_chat(user, "<span class='warning'>Вы аккуратно меняете настройки автомата...</span>")
+					if(!emagged)
+						emag_act()
+			if(option == "Electrify")
+				if(do_after(user, 50))
+					to_chat(user, "<span class='warning'>Вы прикладываете руку к автомату, наполняя его избыточной энергией...</span>")
+					new /obj/effect/temporary(get_turf(src),3, 'icons/effects/effects.dmi', "electricity_constant")
+					src.seconds_electrified = 50
 
 	if (currently_vending && vendor_account && !vendor_account.suspended)
 		var/paid = 0

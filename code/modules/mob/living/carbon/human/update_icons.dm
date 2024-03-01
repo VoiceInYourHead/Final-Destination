@@ -915,7 +915,6 @@ var/global/list/damage_icon_parts = list()
 #undef HO_BELT_LAYER
 #undef HO_EARS_LAYER
 #undef HO_SUIT_LAYER
-#undef HO_TAIL_LAYER
 #undef HO_GLASSES_LAYER
 #undef HO_BELT_LAYER_ALT
 #undef HO_SUIT_STORE_LAYER

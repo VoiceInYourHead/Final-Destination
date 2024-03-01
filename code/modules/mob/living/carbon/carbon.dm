@@ -100,6 +100,20 @@
 	return
 
 /mob/living/carbon/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
+//По всем законам логики оно не должно работать, но если ставить тут == вместо != - оно волшебным образом ломается
+	var/obj/item/psychic_power/psielectro/carried_orb
+	if(carried_orb != src.get_active_hand())
+		if(src.psi && src.psi.get_rank(PSI_METAKINESIS) >= PSI_RANK_MASTER)
+			if(prob(80))
+				src.visible_message("<span class='warning'>[src] absorbed all pure energy, sent into them!</span>")
+				src.psi.stamina = min(src.psi.max_stamina, src.psi.stamina + rand(15,20))
+				carried_orb.charge += 1
+
+				var/datum/effect/effect/system/spark_spread/l = new /datum/effect/effect/system/spark_spread
+				l.set_up(5, 1, loc)
+				l.start()
+				return 0
+
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	shock_damage = apply_shock(shock_damage, def_zone, siemens_coeff)

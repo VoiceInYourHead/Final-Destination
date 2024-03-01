@@ -7,7 +7,6 @@
 	possible_themes = list(/datum/exoplanet_theme/mountains)
 	map_generators = list(/datum/random_map/noise/exoplanet/barren, /datum/random_map/noise/ore/rich)
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER|RUIN_RAINWORLD
-	features_budget = 6
 	surface_color = "#807d7a"
 	water_color = null
 	habitability_distribution = HABITABILITY_BAD
