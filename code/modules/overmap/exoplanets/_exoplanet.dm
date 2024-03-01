@@ -1,8 +1,8 @@
 GLOBAL_VAR(planet_repopulation_disabled)
 
 /obj/effect/overmap/visitable/sector/exoplanet
-	name = "exoplanet"
-	icon_state = "globe"
+	name = "city"
+	icon_state = "city"
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	var/area/planetary_area
 	var/list/seeds = list()
@@ -89,7 +89,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 
 	planetary_area = new planetary_area()
 	GLOB.using_map.area_purity_test_exempt_areas += planetary_area.type
-	planetary_area.name = "Surface of [planet_name]"
+	planetary_area.name = "Streets of [planet_name]"
 	planetary_area.assigned_planet = src
 
 	INCREMENT_WORLD_Z_SIZE

@@ -1,7 +1,7 @@
 /obj/effect/overmap/trading
 	name = "station"
 	desc = "A trading station."
-	icon_state = "trading_station"
+	icon_state = "trade_camp"
 	scannable = TRUE
 	known = TRUE
 	plane = 4

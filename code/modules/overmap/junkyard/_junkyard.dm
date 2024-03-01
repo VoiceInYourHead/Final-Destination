@@ -2,7 +2,7 @@
 
 /obj/effect/overmap/visitable/sector/junkyard
 	name = "junkyard"
-	icon_state = "junkyard"
+	icon_state = "ship_graveyard"
 	sector_flags = OVERMAP_SECTOR_KNOWN
 	var/area/junkyard_area
 //	var/list/fauna_types = list()		// possible types of mobs to spawn

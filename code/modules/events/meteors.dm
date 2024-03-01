@@ -1,16 +1,12 @@
 /datum/event/meteor_wave
 	startWhen		= 30	// About one minute early warning
 	endWhen 		= 60	// Adjusted automatically in tick()
-	has_skybox_image = TRUE
 	var/alarmWhen   = 30
 	var/next_meteor = 40
 	var/waves = 1
 	var/start_side
 	var/next_meteor_lower = 10
 	var/next_meteor_upper = 20
-
-/datum/event/meteor_wave/get_skybox_image()
-	return overlay_image('icons/skybox/rockbox.dmi', "rockbox", COLOR_ASTEROID_ROCK, RESET_COLOR)
 
 /datum/event/meteor_wave/setup()
 	waves = 0
@@ -23,9 +19,9 @@
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce(replacetext_char(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "[location_name()] Sensor Array", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
+			command_announcement.Announce("[location_name()] в данный момент находится в зоне поражения ПВО.", "[location_name()] Sensor Array", zlevels = affecting_z)
 		else
-			command_announcement.Announce("The [location_name()] is now in a meteor shower.", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("[location_name()] в данный момент находится в зоне поражения ПВО.", "[location_name()] Sensor Array", zlevels = affecting_z)
 
 /datum/event/meteor_wave/tick()
 	// Begin sending the alarm signals to shield diffusers so the field is already regenerated (if it exists) by the time actual meteors start flying around.
@@ -53,9 +49,9 @@
 /datum/event/meteor_wave/end()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("The [location_name()] has cleared the meteor storm.", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("[location_name()] покинул опасную область.", "[location_name()] Sensor Array", zlevels = affecting_z)
 		else
-			command_announcement.Announce("The [location_name()] has cleared the meteor shower", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("[location_name()] покинул опасную область.", "[location_name()] Sensor Array", zlevels = affecting_z)
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)
@@ -67,36 +63,26 @@
 			return meteors_minor
 
 /var/list/meteors_minor = list(
-	/obj/effect/meteor/medium     = 80,
-	/obj/effect/meteor/dust       = 30,
-	/obj/effect/meteor/irradiated = 30,
-	/obj/effect/meteor/big        = 30,
-	/obj/effect/meteor/flaming    = 10,
-	/obj/effect/meteor/golden     = 10,
-	/obj/effect/meteor/silver     = 10,
+	/obj/effect/meteor/medium/missile = 80,
+	/obj/effect/meteor/dust           = 30,
+	/obj/effect/meteor/medium/missile = 30,
+	/obj/effect/meteor/flaming/missile = 10
 )
 
 /var/list/meteors_moderate = list(
-	/obj/effect/meteor/medium     = 80,
-	/obj/effect/meteor/big        = 30,
-	/obj/effect/meteor/dust       = 30,
-	/obj/effect/meteor/irradiated = 30,
-	/obj/effect/meteor/flaming    = 10,
-	/obj/effect/meteor/golden     = 10,
-	/obj/effect/meteor/silver     = 10,
-	/obj/effect/meteor/emp        = 10,
+	/obj/effect/meteor/medium/missile     = 80,
+	/obj/effect/meteor/big/missile        = 30,
+	/obj/effect/meteor/dust               = 30,
+	/obj/effect/meteor/flaming/missile    = 10,
+	/obj/effect/meteor/emp/missile        = 10
 )
 
 /var/list/meteors_major = list(
-	/obj/effect/meteor/medium     = 80,
-	/obj/effect/meteor/big        = 30,
-	/obj/effect/meteor/dust       = 30,
-	/obj/effect/meteor/irradiated = 30,
-	/obj/effect/meteor/emp        = 30,
-	/obj/effect/meteor/flaming    = 10,
-	/obj/effect/meteor/golden     = 10,
-	/obj/effect/meteor/silver     = 10,
-	/obj/effect/meteor/tunguska   = 1,
+	/obj/effect/meteor/medium/missile     = 80,
+	/obj/effect/meteor/big/missile        = 60,
+	/obj/effect/meteor/dust               = 60,
+	/obj/effect/meteor/flaming/missile    = 10,
+	/obj/effect/meteor/emp/missile        = 10
 )
 
 /datum/event/meteor_wave/overmap

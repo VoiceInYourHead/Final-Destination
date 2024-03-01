@@ -27,11 +27,11 @@
 			var/type = pick(datum_spawn.hazards)
 			new type(event_turf)
 
-		//star cleaning stuff
+/*		//star cleaning stuff
 		for(var/obj/effect/overmap/event/star/S in world)
 			for(var/obj/effect/overmap/event/E in get_turf(S))
 				if(!istype(E,/obj/effect/overmap/event/star))
-					qdel(E)
+					qdel(E)*/
 
 		qdel(datum_spawn)//idk help how do I do this better?
 
@@ -209,12 +209,12 @@
 	overmap_event_handler.update_hazards(T)
 
 /obj/effect/overmap/event/meteor
-	name = "asteroid field"
+	name = "danger zone"
 	events = list(/datum/event/meteor_wave/overmap)
-	event_icon_states = list("meteor1", "meteor2", "meteor3", "meteor4")
+	event_icon_states = list("meteor")
 	difficulty = EVENT_LEVEL_MAJOR
 	weaknesses = OVERMAP_WEAKNESS_MINING | OVERMAP_WEAKNESS_EXPLOSIVE
-	color = "#a08444"
+	color = "#b91010"
 
 /obj/effect/overmap/event/nebula
 	name = "bluespace nebula"
@@ -360,7 +360,7 @@
 /obj/effect/overmap/event/dust
 	name = "dust cloud"
 	events = list(/datum/event/dust)
-	event_icon_states = list("dust1", "dust2", "dust3", "dust4")
+	event_icon_states = list("dust1", "dust2", "dust3")
 	weaknesses = OVERMAP_WEAKNESS_MINING | OVERMAP_WEAKNESS_EXPLOSIVE | OVERMAP_WEAKNESS_FIRE
 	color = "#6c6c6c"
 
@@ -449,7 +449,7 @@
 
 /datum/overmap_event/dust
 	name = "dust cloud"
-	count = 16
+	count = 20
 	radius = 4
 	hazards = /obj/effect/overmap/event/dust
 

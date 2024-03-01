@@ -1,10 +1,13 @@
 /obj/effect/overmap/visitable/ship/torch
 	name = "SEV Torch"
 	desc = "This is a frigate, broadcasting SCGEC codes and the designation \"SEV Torch, HSC-4-13-X\"."
+	icon_state = "gccv-ulyanovsk"
+	moving_state = "gccv-ulyanovsk_moving"
 	fore_dir = WEST
 	dir = WEST
 	vessel_mass = 100000
-	integrity_failure_cap = 460
+	integrity_failure_cap = 500
+	integrity_failure = 100
 	repair_speed = 0.01
 	burn_delay = 2 SECONDS
 	base = TRUE
