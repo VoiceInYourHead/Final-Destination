@@ -57,6 +57,6 @@
 	num_traders = 6
 	num_exoplanets = 1
 	away_site_budget = 0
-	num_junkyards = 1
+	num_junkyards = 0
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'

@@ -1473,7 +1473,7 @@
 	requires_power = 1
 	always_unpowered = 1
 	has_gravity = FALSE
-	base_turf = /turf/space
+	base_turf = /turf/unsimulated/floor/exoplanet/clouds
 	req_access = list(access_engine_equip)
 
 /area/solar/auxstarboard

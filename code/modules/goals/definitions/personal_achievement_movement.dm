@@ -40,7 +40,7 @@
 
 /datum/goal/movement/walk/check_success()
 	return (steps >= required_steps)
-	
+
 /datum/goal/movement/walk/update_strings()
 	description = "Stave off microgravity muscle atrophy by walking at least [required_steps] step\s this shift."
 
@@ -51,7 +51,7 @@
 
 /datum/goal/movement/walk/eva/valid_step()
 	var/datum/mind/mind = owner
-	return istype(mind.current.loc, /turf/space)
+	return istype(mind.current.loc, /turf/unsimulated/floor/exoplanet/clouds)
 
 /datum/goal/movement/walk/eva/update_strings()
 	description = "It's so stuffy inside. Go for a spacewalk - at least [required_steps] step\s."

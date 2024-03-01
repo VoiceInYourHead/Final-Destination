@@ -102,7 +102,7 @@
 /datum/movement_handler/mob/buckle_relay/DoMove(var/direction, var/mover)
 	// TODO: Datumlize buckle-handling
 	if(mob.pulledby || mob.buckled) // Wheelchair driving!
-		if(istype(mob.loc, /turf/space))
+		if(istype(mob.loc, /turf/unsimulated/floor/exoplanet/clouds))
 			return // No wheelchair driving in space
 		if(istype(mob.pulledby, /obj/structure/bed/chair/wheelchair))
 			. = MOVEMENT_HANDLED

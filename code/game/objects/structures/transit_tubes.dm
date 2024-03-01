@@ -338,7 +338,7 @@
 			do
 				sleep(last_delay)
 
-				if(!istype(loc, /turf/space))
+				if(!istype(loc, /turf/unsimulated/floor/exoplanet/clouds))
 					last_delay++
 
 				if(last_delay > 10)

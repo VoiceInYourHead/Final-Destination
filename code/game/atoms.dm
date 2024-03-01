@@ -327,7 +327,7 @@
 	return pass_flags&passflag
 
 /atom/proc/isinspace()
-	if(istype(get_turf(src), /turf/space))
+	if(istype(get_turf(src), /turf/unsimulated/floor/exoplanet/clouds))
 		return 1
 	else
 		return 0

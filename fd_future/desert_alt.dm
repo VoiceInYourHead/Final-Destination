@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(cloud_turfs)
 	return TRUE
 
 /turf/unsimulated/floor/exoplanet/clouds/Crossed(atom/movable/mover, atom/forget)
-	if(!isliving(mover) && !isobj(mover))
+	if(!isliving(mover) || istype(mover, /obj/effect))
 		return ..()
 
 	var/datum/thrownthing/flying = mover.throwing

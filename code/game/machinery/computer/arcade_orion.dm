@@ -438,7 +438,7 @@
 		if(ORION_TRAIL_COLLISION)
 			if(prob(90) && !supplies["2"])
 				var/turf/simulated/floor/F = src.loc
-				F.ChangeTurf(/turf/space)
+				F.ChangeTurf(/turf/unsimulated/floor/exoplanet/clouds)
 				src.visible_message("<span class='danger'>Something slams into the floor around \the [src], exposing it to space!</span>", "You hear something crack and break.")
 			else
 				src.visible_message("Something slams into the floor around \the [src] - luckily, it didn't get through!", "You hear something crack.")

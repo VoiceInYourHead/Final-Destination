@@ -68,7 +68,7 @@
 	new /obj/item/stack/material/rods(src.loc)
 	new /obj/item/stack/material/rods(src.loc)
 	//Lattice would delete itself, but let's save ourselves a new obj
-	if(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open))
+	if(istype(src.loc, /turf/unsimulated/floor/exoplanet/clouds) || istype(src.loc, /turf/simulated/open))
 		new /obj/structure/lattice/(src.loc)
 	if(plated_tile)
 		new plated_tile.build_type(src.loc)

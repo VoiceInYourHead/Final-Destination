@@ -19,7 +19,7 @@
 			cell_explosion(T, 300, 100)
 			if(T && T.density)
 				T.ex_act(1,TRUE)
-		else if(killing_floor && !istype(T, /turf/space))
+		else if(killing_floor && !istype(T, /turf/unsimulated/floor/exoplanet/clouds))
 			sleep(beam_speed)
 			cell_explosion(T, 300, 100)
 			if(T)
@@ -30,7 +30,7 @@
 				if(!J || !(J.z in relevant_z))
 					continue
 				shake_camera(M, shake_camera_force/10, 0.5)
-			if(!T.density && !istype(T, /turf/space))
+			if(!T.density && !istype(T, /turf/unsimulated/floor/exoplanet/clouds))
 				empulse(T, heavy_ion_effect_range, light_ion_effect_range)
 		else
 			sleep(beam_speed)

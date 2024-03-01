@@ -5,7 +5,7 @@
 
 /datum/random_map/noise/seafloor/replace_space
 	descriptor = "seafloor (replace space)"
-	target_turf_type = /turf/space
+	target_turf_type = /turf/unsimulated/floor/exoplanet/clouds
 
 /datum/random_map/noise/seafloor/replace_space/get_appropriate_path(var/value)
 	return /turf/simulated/ocean

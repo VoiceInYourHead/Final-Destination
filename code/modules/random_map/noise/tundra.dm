@@ -4,7 +4,7 @@
 
 /datum/random_map/noise/tundra/replace_space
 	descriptor = "tundra (replacement)"
-	target_turf_type = /turf/space
+	target_turf_type = /turf/unsimulated/floor/exoplanet/clouds
 
 /datum/random_map/noise/tundra/get_map_char(var/value)
 	var/val = min(9,max(0,round((value/cell_range)*10)))

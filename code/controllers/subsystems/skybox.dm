@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(skybox)
 		dust.alpha = 80
 		dust.blend_mode = BLEND_ADD
 
-		var/mutable_appearance/space = new /mutable_appearance(/turf/space)
+		var/mutable_appearance/space = new /mutable_appearance(/turf/unsimulated/floor/exoplanet/clouds)
 		space.icon_state = "white"
 		space.overlays += dust
 		space_appearance_cache[i + 1] = space.appearance

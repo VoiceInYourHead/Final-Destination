@@ -38,12 +38,7 @@
 
 /obj/effect/overmap/visitable/proc/fight_or_flight() // if it's a star - we run, else - kill it with fire
 	for(var/obj/effect/overmap/event/E in get_turf(src))
-		if(istype(E,/obj/effect/overmap/event/star))
-			forceMove(locate(rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), rand(OVERMAP_EDGE, GLOB.using_map.overmap_size - OVERMAP_EDGE), GLOB.using_map.overmap_z))
-			fight_or_flight()
-			break
-		else
-			qdel(E)
+		qdel(E)
 
 /obj/effect/overmap/visitable/Initialize()
 	. = ..()

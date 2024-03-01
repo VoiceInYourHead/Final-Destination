@@ -24,7 +24,7 @@ proc/get_base_turf_by_area(var/turf/T)
 	if(!choice)
 		return
 
-	var/new_base_path = input("Please select a turf path (cancel to reset to /turf/space).") as null|anything in typesof(/turf)
+	var/new_base_path = input("Please select a turf path (cancel to reset to /turf/unsimulated/floor/exoplanet/clouds).") as null|anything in typesof(/turf)
 	if(!new_base_path)
 		new_base_path = /turf/unsimulated/floor/exoplanet/clouds
 	GLOB.using_map.base_turf_by_z["[choice]"] = new_base_path

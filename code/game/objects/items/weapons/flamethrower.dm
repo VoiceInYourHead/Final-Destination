@@ -180,7 +180,7 @@
 
 	operating = TRUE //anti-spam tool, is unset when the flame projectile goes away
 	for(var/turf/T in turflist)
-		if(T.density || istype(T, /turf/space))
+		if(T.density || istype(T, /turf/unsimulated/floor/exoplanet/clouds))
 			break
 		if(!previousturf && length(turflist)>1)
 			previousturf = get_turf(src)
