@@ -219,6 +219,13 @@
 /obj/item/ammo_magazine/smg/empty
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/smg/iccgn
+	name = "magazine"
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gsmg3M"
+	max_ammo = 45
+	multiple_sprites = 0
+
 /obj/item/ammo_magazine/pistol
 	name = "pistol magazine"
 	icon_state = "pistol_mag"
@@ -466,18 +473,49 @@
 	caliber = CALIBER_RIFLE
 	ammo_type = /obj/item/ammo_casing/rifle/fleet
 	max_ammo = 40
-	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle/army
-	name = "assault rifle magazine"
+	name = "battle rifle magazine"
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
 	icon_state = "automat3M"
 	mag_type = MAGAZINE
 	caliber = CALIBER_RIFLE_MILITARY
 	ammo_type = /obj/item/ammo_casing/rifle/army
 	max_ammo = 20
-	multiple_sprites = 1
 
+/obj/item/ammo_magazine/rifle/iccgn
+	name = "assault rifle magazine"
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gautomatic2M"
+	mag_type = MAGAZINE
+	caliber = CALIBER_RIFLE
+	ammo_type = /obj/item/ammo_casing/rifle/iccgn
+	max_ammo = 30
+/obj/item/ammo_magazine/rifle/precise
+	name = "assault rifle magazine"
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gautomatic1M"
+	mag_type = MAGAZINE
+	caliber = CALIBER_RIFLE_MILITARY
+	ammo_type =  /obj/item/ammo_casing/rifle/accurate
+	max_ammo = 30
+
+/obj/item/ammo_magazine/rifle/bolter
+	name = "heavy battle rifle magazine"
+	desc = "A magazine for some kind of gun. This one - Armour-Piercing Discarding Sabot(APDS)"
+	labels = list("APDS")
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gsmg3M"
+	mag_type = MAGAZINE
+	caliber =  CALIBER_BOLTER
+	ammo_type = /obj/item/ammo_casing/rifle/bolter
+	max_ammo = 24
+
+
+/obj/item/ammo_magazine/rifle/bolter/explosive
+	desc = "A magazine for some kind of gun."
+	labels = null
+	ammo_type = /obj/item/ammo_casing/rifle/bolter/explosive
 
 // Pistols
 
@@ -500,14 +538,43 @@
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
 	icon_state = "pistol6M"
 	mag_type = MAGAZINE
-	caliber = CALIBER_PISTOL
+	caliber = CALIBER_PISTOL_FLECHETTE
 	matter = list(MATERIAL_STEEL = 1050)
-	ammo_type = /obj/item/ammo_casing/pistol
+	ammo_type = /obj/item/ammo_casing/pistol/assasin
 	max_ammo = 12
 
 /obj/item/ammo_magazine/pistol/assasin/rubber
 	labels = list("rubber")
-	ammo_type = /obj/item/ammo_casing/pistol/rubber
+	ammo_type = /obj/item/ammo_casing/pistol/assasin/rubber
+
+
+/obj/item/ammo_magazine/pistol/iccgn
+	name = "pistol magazine"
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gpistol8M"
+	mag_type = MAGAZINE
+	caliber = CALIBER_PISTOL_MAGNUM
+	matter = list(MATERIAL_STEEL = 1680)
+	ammo_type = /obj/item/ammo_casing/pistol/iccgn
+	max_ammo = 15
+
+/obj/item/ammo_magazine/pistol/iccgn/rubber
+	labels = list("rubber")
+	ammo_type = /obj/item/ammo_casing/pistol/iccgn
+
+
+/obj/item/ammo_magazine/pistol/automatic
+	name = "automatic pistol magazine"
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gpistol9M"
+	mag_type = MAGAZINE
+	matter = list(MATERIAL_STEEL = 2000)
+	ammo_type = /obj/item/ammo_casing/pistol/automatic
+	max_ammo = 45
+
+/obj/item/ammo_magazine/pistol/automatic/rubber
+	labels = list("rubber")
+	ammo_type = /obj/item/ammo_casing/pistol/automatic/rubber
 
 // SMGs
 
@@ -563,6 +630,32 @@
 	matter = list(MATERIAL_STEEL = 1790)
 
 /obj/item/ammo_magazine/shotgun/scg/empty
+	matter = list(MATERIAL_STEEL = 350)
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/shotgun/iccgn
+	name = "shotgun drum"
+	labels = list("slugs")
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gshotgun2M"
+	mag_type = MAGAZINE
+	caliber = CALIBER_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 5600)
+	max_ammo = 15
+
+/obj/item/ammo_magazine/shotgun/iccgn/beanbag
+	labels = list("beanbags")
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	matter = list(MATERIAL_STEEL = 2790)
+
+/obj/item/ammo_magazine/shotgun/iccgn/magnum
+	desc = "When you need to oblitirate enemy"
+	labels = list("magnum")
+	ammo_type = /obj/item/ammo_casing/magnum/shotgun
+	matter = list(MATERIAL_STEEL = 5600)
+
+/obj/item/ammo_magazine/shotgun/iccgn/empty
 	matter = list(MATERIAL_STEEL = 350)
 	initial_ammo = 0
 

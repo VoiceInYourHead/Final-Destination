@@ -24,9 +24,43 @@
 	item_state = "pistol6"
 	magazine_type = /obj/item/ammo_magazine/pistol/assasin
 	allowed_magazines = /obj/item/ammo_magazine/pistol/assasin
-	caliber = CALIBER_PISTOL
+	caliber = CALIBER_PISTOL_FLECHETTE
 	force = 9
 	silenced = 1
 	fire_delay = 4
 	accuracy = 2
+	one_hand_penalty = 3
+
+// ICCGN
+/obj/item/gun/projectile/pistol/iccgn
+	name = "standart pistol"
+	desc = "Kishevatov Standard Pistol (KSP) made by Kishevatov's designer for quick elimination of soldiers with medium armor."
+	icon = 'icons/fd/guns/pistol_iccgn.dmi'
+	icon_state = "gpistol9"
+	item_state = "gpistol9"
+	magazine_type = /obj/item/ammo_magazine/pistol/iccgn
+	allowed_magazines = /obj/item/ammo_magazine/pistol/iccgn
+	caliber = CALIBER_PISTOL_MAGNUM
+	force = 10
+	accuracy = 1
+	fire_delay = 6
+	move_delay = 2
+	one_hand_penalty = 4
+	ammo_indicator = TRUE
+
+/obj/item/gun/projectile/automatic/pistol/iccgn
+	name = "automatic pistol"
+	desc = "Boarding Automatic Pistol - 34 (BAP-34) developed by Heltek Corporation for boarding teams."
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gpistol8"
+	item_state = "gpistol8"
+	magazine_type = /obj/item/ammo_magazine/pistol/automatic
+	allowed_magazines = /obj/item/ammo_magazine/pistol/automatic
+	caliber = CALIBER_PISTOL
+	force = 7
+	accuracy = 0
+	fire_delay = 2
 	one_hand_penalty = 2
+	init_firemodes = list(
+		FULL_AUTO_800
+	)

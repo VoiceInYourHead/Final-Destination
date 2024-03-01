@@ -19,12 +19,12 @@
 	icon_state = "shotgun4"
 	item_state = "shotgun4"
 	wielded_item_state = "shotgun4"
-	max_shells = 8
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/shotgun/scg
 	allowed_magazines = /obj/item/ammo_magazine/shotgun/scg
+	bulk = GUN_BULK_RIFLE
+	accuracy = -1
 	init_firemodes = list(
-			SEMI_AUTO_NODELAY,
 			BURST_3_ROUND,
 			FULL_AUTO_400
 		)
@@ -35,3 +35,28 @@
 		icon_state = "shotgun4"
 	else
 		icon_state = "shotgun4-empty"
+
+/obj/item/gun/projectile/automatic/shotgun/iccgn
+	name = "shotgun"
+	desc = "Volleygun (VG-23) not being able to boast of speed has the ability to clearly state the enemy with his shot in the face. Good ammunition with two firing modes and a unique cartridge."
+	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
+	icon_state = "gshotgun2"
+	item_state = "gshotgun2"
+	wielded_item_state = "shotgun2"
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/shotgun/iccgn
+	allowed_magazines = /obj/item/ammo_magazine/shotgun/iccgn
+	bulk = GUN_BULK_RIFLE
+	accuracy = 0
+	one_hand_penalty=5
+	init_firemodes = list(
+			SEMI_AUTO_NODELAY,
+			list(mode_name="2-beam bursts", mode_desc = "Short, controlled bursts", burst=2, fire_delay=null, move_delay=2)
+		)
+
+/obj/item/gun/projectile/automatic/shotgun/iccgn/on_update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "gshotgun2"
+	else
+		icon_state = "gshotgun2-empty"

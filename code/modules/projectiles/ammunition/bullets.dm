@@ -11,6 +11,15 @@
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
 	icon_state = "pistolcasing_r"
 
+/obj/item/ammo_casing/pistol/assasin
+	caliber = CALIBER_PISTOL_FLECHETTE
+
+/obj/item/ammo_casing/pistol/assasin/rubber
+	desc = "A rubber pistol bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	icon_state = "pistolcasing_r"
+	caliber = CALIBER_PISTOL_FLECHETTE
+
 /obj/item/ammo_casing/pistol/practice
 	desc = "A practice pistol bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
@@ -79,6 +88,16 @@
 	spent_icon = "gshell-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
 	matter = list(MATERIAL_STEEL = 360)
+
+/obj/item/ammo_casing/magnum/shotgun
+	name = "shotgun magnum shell"
+	desc = "A shotgun shell with extra power."
+	icon_state = "gshell"
+	spent_icon = "gshell-spent"
+	caliber = CALIBER_SHOTGUN
+	fall_sounds = list('sound/weapons/guns/shotgun_fall.ogg')
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/magnum
+	matter = list(MATERIAL_STEEL = 720)
 
 /obj/item/ammo_casing/shotgun/flechette
 	name = "flechette shell"
@@ -155,6 +174,30 @@
 	icon_state = "riflecasing"
 	spent_icon = "riflecasing-spent"
 
+/obj/item/ammo_casing/rifle/iccgn
+	desc = "A rifle bullet casing"
+	caliber = CALIBER_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/accurate
+	desc = "A rifle bullet casing"
+	caliber = CALIBER_RIFLE_MILITARY
+	projectile_type = /obj/item/projectile/bullet/rifle/accurate
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
+
+/obj/item/ammo_casing/rifle/bolter
+	desc = "A heavy battle rifle casing. This one - Armour-Piercing Discarding Sabot(APDS)"
+	caliber = CALIBER_BOLTER
+	projectile_type = /obj/item/projectile/bullet/rifle/bolter
+	icon_state = "lcasing"
+	spent_icon = "lcasing-spent"
+
+/obj/item/ammo_casing/rifle/bolter/explosive
+	desc = "A heavy battle rifle casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/bolter/explosive
 
 /obj/item/ammo_casing/rifle/russia
 	desc = "A rifle 12.7x55mm bullet casing."
@@ -241,6 +284,16 @@
 	matter = list(MATERIAL_STEEL = 260, MATERIAL_URANIUM = 200)
 
 // SCG
+
+/obj/item/ammo_casing/pistol/iccgn
+	projectile_type = /obj/item/projectile/bullet/pistol/iccgn
+	caliber = CALIBER_PISTOL_MAGNUM
+
+/obj/item/ammo_casing/pistol/automatic
+	projectile_type = /obj/item/projectile/bullet/pistol/automatic
+
+/obj/item/ammo_casing/pistol/automatic/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol/automatic/rubber
 
 /obj/item/ammo_casing/rifle/military/marksman
 	projectile_type = /obj/item/projectile/bullet/rifle/marksman
