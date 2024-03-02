@@ -4,16 +4,12 @@ var/const/NETWORK_CHARON     = "Charon"
 var/const/NETWORK_EXPEDITION  = "Expedition"
 var/const/NETWORK_FIRST_DECK  = "First Deck"
 var/const/NETWORK_FOURTH_DECK = "Fourth Deck"
-var/const/NETWORK_POD         = "General Utility Pod"
-var/const/NETWORK_POD2         = "General Utility Pod #2"
-var/const/NETWORK_YACHT			= "Private Catamaran"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
 var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
 var/const/NETWORK_FIFTH_DECK  = "Fifth Deck"
-var/const/NETWORK_PETROV  = "Petrov"
 
 /datum/map/torch/get_network_access(var/network)
 	switch(network)
@@ -23,18 +19,12 @@ var/const/NETWORK_PETROV  = "Petrov"
 			return access_heads
 		if(NETWORK_CHARON)
 			return access_expedition_shuttle
-		if(NETWORK_POD)
-			return access_guppy
-		if(NETWORK_POD2)
-			return access_guppy
 		if(NETWORK_SUPPLY)
 			return access_mailsorting
 		if(NETWORK_HANGAR)
 			return access_hangar
 		if(NETWORK_EXPLO)
 			return access_explorer
-		if(NETWORK_PETROV)
-			return access_petrov
 	return get_shared_network_access(network) || ..()
 
 /datum/map/torch
@@ -59,10 +49,6 @@ var/const/NETWORK_PETROV  = "Petrov"
 		NETWORK_HANGAR,
 		NETWORK_AQUILA,
 		NETWORK_CHARON,
-		NETWORK_POD,
-		NETWORK_POD2,
-		NETWORK_YACHT,
-		NETWORK_PETROV,
 		NETWORK_ALARM_ATMOS,
 		NETWORK_ALARM_CAMERA,
 		NETWORK_ALARM_FIRE,
@@ -97,15 +83,6 @@ var/const/NETWORK_PETROV  = "Petrov"
 /obj/machinery/camera/network/fifth_deck
 	network = list(NETWORK_FIFTH_DECK)
 
-/obj/machinery/camera/network/pod
-	network = list(NETWORK_POD)
-
-/obj/machinery/camera/network/pod2
-	network = list(NETWORK_POD2)
-
-/obj/machinery/camera/network/yacht
-	network = list(NETWORK_YACHT)
-
 /obj/machinery/camera/network/second_deck
 	network = list(NETWORK_SECOND_DECK)
 
@@ -132,9 +109,6 @@ var/const/NETWORK_PETROV  = "Petrov"
 
 /obj/machinery/camera/network/engineering_outpost
 	network = list(NETWORK_ENGINEERING_OUTPOST)
-
-/obj/machinery/camera/network/petrov
-	network = list(NETWORK_PETROV)
 
 // Motion
 /obj/machinery/camera/motion/engineering_outpost
@@ -224,28 +198,4 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 		num2text(SRV_FREQ)   = list(access_radio_serv),
 		num2text(EXP_FREQ)   = list(access_radio_exp),
 		num2text(HAIL_FREQ)  = list(),
-	)
-
-/decl/stock_part_preset/radio/receiver/vent_pump/guppy
-	frequency = 1431
-
-/decl/stock_part_preset/radio/event_transmitter/vent_pump/guppy
-	frequency = 1431
-
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/guppy
-	stock_part_presets = list(
-		/decl/stock_part_preset/radio/receiver/vent_pump/guppy = 1,
-		/decl/stock_part_preset/radio/event_transmitter/vent_pump/guppy = 1
-	)
-
-/decl/stock_part_preset/radio/receiver/vent_scrubber/guppy
-	frequency = 1431
-
-/decl/stock_part_preset/radio/event_transmitter/vent_scrubber/guppy
-	frequency = 1431
-
-/obj/machinery/atmospherics/unary/vent_scrubber/guppy
-	stock_part_presets = list(
-		/decl/stock_part_preset/radio/receiver/vent_scrubber/guppy = 1,
-		/decl/stock_part_preset/radio/event_transmitter/vent_scrubber/guppy = 1
 	)

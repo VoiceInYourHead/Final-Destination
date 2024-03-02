@@ -5,6 +5,7 @@
 	moving_state = "gccv-ulyanovsk_moving"
 	fore_dir = WEST
 	dir = WEST
+	color = "#db542e"
 	vessel_mass = 100000
 	integrity_failure_cap = 500
 	integrity_failure = 100
@@ -15,9 +16,7 @@
 
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_charon"), 	//can't have random shuttles popping inside the ship
-		"Guppy" = list("nav_hangar_guppy"),
-		"Bubble" = list("nav_hangar_bubble"),
-		"Butterfly" = list("nav_hangar_butterfly"),
+		"Styx" = list("nav_hangar_styx"), 	//can't have random shuttles popping inside the ship
 		"Aquila" = list("nav_hangar_aquila"),
 		"Ascent Caulship" = list("nav_ascent_caulship_torch"), //restricts caulship specific docking waypoint on deck 4 starboard side
 		"Skrellian Scout" = list("nav_skrellscout_dock"), //restricts Skrell Scoutship specific docking waypoint on deck 4 portside
@@ -37,9 +36,6 @@
 		"nav_skipjack_deck5",
 		"nav_ert_deck5",
 		"nav_bridge_charon",
-		"nav_bridge_guppy",
-		"nav_bridge_bubble",
-		"nav_bridge_butterfly",
 		"nav_bridge_aquila",
 
 		//start First Deck
@@ -48,9 +44,6 @@
 		"nav_skipjack_deck1",
 		"nav_ert_deck4",
 		"nav_deck4_charon",
-		"nav_deck4_guppy",
-		"nav_deck4_bubble",
-		"nav_deck4_butterfly",
 		"nav_deck4_aquila",
 
 		//start Second Deck
@@ -59,9 +52,6 @@
 		"nav_skipjack_deck2",
 		"nav_ert_deck3",
 		"nav_deck3_charon",
-		"nav_deck3_guppy",
-		"nav_deck3_bubble",
-		"nav_deck3_butterfly",
 		"nav_deck3_aquila",
 
 		//start Third Deck
@@ -70,9 +60,6 @@
 		"nav_skipjack_deck3",
 		"nav_ert_deck2",
 		"nav_deck2_charon",
-		"nav_deck2_guppy",
-		"nav_deck2_bubble",
-		"nav_deck2_butterfly",
 		"nav_deck2_aquila",
 
 		//start Forth Deck
@@ -81,9 +68,6 @@
 		"nav_skipjack_deck4",
 		"nav_ert_deck1",
 		"nav_deck1_charon",
-		"nav_deck1_guppy",
-		"nav_deck1_bubble",
-		"nav_deck1_butterfly",
 		"nav_deck1_aquila",
 		"nav_vox_raider_dock",
 
@@ -122,6 +106,19 @@
 	skill_needed = SKILL_BASIC
 	vessel_size = SHIP_SIZE_SMALL
 
+/obj/effect/overmap/visitable/ship/landable/vagabond_shuttle
+	name = "Styx"
+	desc = "An Frankenstein of a ship, made from the scrap, left after various other shuttles. It's broadcasting very old SCG codes with a name of \"Torch-3 Styx\"."
+	shuttle = "Styx"
+	max_speed = 1/(2 SECONDS)
+	burn_delay = 1 SECONDS
+	integrity_failure_cap = 50
+	integrity_failure = 10
+	vessel_mass = 7000
+	fore_dir = NORTH
+	skill_needed = SKILL_BASIC
+	vessel_size = SHIP_SIZE_SMALL
+
 /obj/effect/overmap/visitable/ship/landable/aquila
 	name = "Aquila"
 	desc = "A PM-24 modular transport, broadcasting SCGEC codes and the callsign \"Torch-1 Aquila\"."
@@ -133,45 +130,6 @@
 	fore_dir = NORTH
 	vessel_size = SHIP_SIZE_SMALL
 
-/obj/effect/overmap/visitable/ship/landable/guppy
-	name = "Guppy"
-	desc = "An SSE-U3 utility pod, broadcasting SCGEC codes and the callsign \"Torch-3 Guppy\"."
-	shuttle = "Guppy"
-	max_speed = 1/(3 SECONDS)
-	burn_delay = 2 SECONDS
-	integrity_failure_cap = 20
-	vessel_mass = 3000 //very inefficient pod
-	fore_dir = SOUTH
-	dir = SOUTH
-	skill_needed = SKILL_BASIC
-	vessel_size = SHIP_SIZE_TINY
-
-/obj/effect/overmap/visitable/ship/landable/bubble
-	name = "Bubble"
-	desc = "An SSE-U2 utility pod, broadcasting SCGEC codes and the callsign \"Torch-4 Bubble\"."
-	shuttle = "Bubble"
-	max_speed = 1/(3 SECONDS)
-	burn_delay = 2 SECONDS
-	integrity_failure_cap = 20
-	vessel_mass = 3000 //very inefficient pod
-	fore_dir = SOUTH
-	dir = SOUTH
-	skill_needed = SKILL_BASIC
-	vessel_size = SHIP_SIZE_TINY
-
-/obj/effect/overmap/visitable/ship/landable/butterfly
-	name = "Butterfly"
-	desc = "An SSE-U09 long range shuttle, broadcasting SCGEC codes and the callsign \"Torch-5 Butterfly\"."
-	shuttle = "Butterfly"
-	max_speed = 1/(2 SECONDS)
-	burn_delay = 1 SECONDS
-	integrity_failure_cap = 40
-	vessel_mass = 4000
-	fore_dir = SOUTH
-	dir = SOUTH
-	skill_needed = SKILL_BASIC
-	vessel_size = SHIP_SIZE_TINY
-
 /obj/machinery/computer/shuttle_control/explore/aquila
 	name = "aquila control console"
 	shuttle_tag = "Aquila"
@@ -182,19 +140,10 @@
 	shuttle_tag = "Charon"
 	req_access = list(access_expedition_shuttle_helm)
 
-/obj/machinery/computer/shuttle_control/explore/guppy
-	name = "guppy control console"
-	shuttle_tag = "Guppy"
-	req_access = list(access_guppy_helm)
-
-/obj/machinery/computer/shuttle_control/explore/bubble
-	name = "Bubble control console"
-	shuttle_tag = "Bubble"
-	req_access = list(access_guppy_helm)
-
-/obj/machinery/computer/shuttle_control/explore/butterfly
-	name = "Butterfly control console"
-	shuttle_tag = "Butterfly"
+/obj/machinery/computer/shuttle_control/explore/styx
+	name = "shuttle control console"
+	shuttle_tag = "Styx"
+	req_access = list(access_expedition_shuttle_helm)
 
 /obj/effect/overmap/visitable/ship/torch/Initialize()
 	. = ..()
@@ -205,6 +154,12 @@
 	for(var/obj/machinery/computer/ship/helm/H in SSmachines.machinery)
 		H.add_known_sector(R)
 	add_starter_trader()
+
+	clouds = block(locate(world.maxx, world.maxy, max(map_z)), locate(1, 1, min(map_z)))
+	for(var/atom/A as anything in clouds)
+		if(!istype(A.loc, /area/space))
+			clouds -= A
+	update_daynight()
 
 /obj/effect/overmap/visitable/ship/torch/proc/add_starter_trader()
 	var/trader_type = /datum/trader/trading_beacon/starter

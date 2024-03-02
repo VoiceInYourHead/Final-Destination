@@ -17,6 +17,15 @@
 	..()
 	BACKPACK_OVERRIDE_COMMAND
 
+/decl/hierarchy/outfit/job/torch/crew/command/CO/fleet
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/command
+
+/decl/hierarchy/outfit/job/torch/crew/command/CO/iccgn
+	uniform = /obj/item/clothing/under/iccgn/utility
+	head = /obj/item/clothing/head/iccgn/beret
+	shoes = /obj/item/clothing/shoes/iccgn/utility
+	gloves = /obj/item/clothing/gloves/iccgn/duty
+
 /decl/hierarchy/outfit/job/torch/crew/command/XO
 	name = OUTFIT_JOB_NAME("Executive Officer")
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/command
@@ -32,6 +41,17 @@
 /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet
 	name = OUTFIT_JOB_NAME("Executive Officer - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command
+	shoes = /obj/item/clothing/shoes/dutyboots
+
+/decl/hierarchy/outfit/job/torch/crew/command/XO/civ
+	name = OUTFIT_JOB_NAME("Executive Officer - Civilian")
+	uniform = /obj/item/clothing/under/syndicate/combat
+	shoes = /obj/item/clothing/shoes/dutyboots
+
+/decl/hierarchy/outfit/job/torch/crew/command/XO/army
+	name = OUTFIT_JOB_NAME("Executive Officer - Army")
+	uniform = /obj/item/clothing/under/solgov/utility/army
+	head = /obj/item/clothing/head/solgov/utility/army
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/torch/crew/command/cmo

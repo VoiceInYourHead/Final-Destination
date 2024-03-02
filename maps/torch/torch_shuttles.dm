@@ -41,38 +41,13 @@ TORCH_ESCAPE_POD(6)
 TORCH_ESCAPE_POD(7)
 //TORCH_ESCAPE_POD(8)
 TORCH_ESCAPE_POD(9)
-TORCH_ESCAPE_POD(10)
-TORCH_ESCAPE_POD(11)
+//TORCH_ESCAPE_POD(10)
+//TORCH_ESCAPE_POD(11)
 TORCH_ESCAPE_POD(12)
 TORCH_ESCAPE_POD(13)
 TORCH_ESCAPE_POD(15)
 TORCH_ESCAPE_POD(16)
 TORCH_ESCAPE_POD(17)
-
-//Petrov
-
-/datum/shuttle/autodock/ferry/petrov
-	name = "Petrov"
-	warmup_time = 10
-	dock_target = "petrov_shuttle_airlock"
-	waypoint_station = "nav_petrov_start"
-	waypoint_offsite = "nav_petrov_out"
-	logging_home_tag = "nav_petrov_start"
-	logging_access = access_petrov_helm
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-
-/datum/shuttle/autodock/ferry/petrov/New(_name, var/obj/effect/shuttle_landmark/initial_location)
-	shuttle_area = subtypesof(/area/shuttle/petrov)
-	..()
-
-/obj/effect/shuttle_landmark/petrov/start
-	name = "First Deck"
-	landmark_tag = "nav_petrov_start"
-	docking_controller = "petrov_shuttle_dock_airlock"
-
-/obj/effect/shuttle_landmark/petrov/out
-	name = "Space near the ship"
-	landmark_tag = "nav_petrov_out"
 
 //Ninja Shuttle.
 /datum/shuttle/autodock/multi/antag/ninja
@@ -390,151 +365,30 @@ TORCH_ESCAPE_POD(17)
 	name = "In transit"
 	landmark_tag = "nav_transit_charon"
 
-/datum/shuttle/autodock/overmap/guppy
-	name = "Guppy"
-	warmup_time = 5
-	move_time = 30
-	shuttle_area = /area/guppy_hangar/start
-	dock_target ="guppy_shuttle"
-	current_location = "nav_hangar_guppy"
-	landmark_transition = "nav_transit_guppy"
-	sound_takeoff = 'sound/effects/rocket.ogg'
-	sound_landing = 'sound/effects/rocket_backwards.ogg'
-	fuel_consumption = 2
-	logging_home_tag = "nav_hangar_guppy"
-	logging_access = access_guppy_helm
-	skill_needed = SKILL_UNSKILLED
+/datum/shuttle/autodock/overmap/styx
+	name = "Styx"
+	move_time = 90
+	shuttle_area = list(/area/styx/cockpit, /area/styx/main, /area/styx/engine)
+	dock_target = "styx_shuttle"
+	current_location = "nav_hangar_styx"
+	landmark_transition = "nav_transit_styx"
+	range = 0 //range = 1
+	fuel_consumption = 4
+	logging_home_tag = "nav_hangar_styx"
+	logging_access = access_expedition_shuttle_helm
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
 
-/obj/effect/shuttle_landmark/torch/hangar/guppy
-	name = "Guppy Hangar"
-	landmark_tag = "nav_hangar_guppy"
+/obj/effect/shuttle_landmark/torch/hangar/styx
+	name = "Styx Hangar"
+	landmark_tag = "nav_hangar_styx"
 	base_area = /area/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
-/obj/effect/shuttle_landmark/torch/deck1/guppy
-	name = "Space near Forth Deck"
-	landmark_tag = "nav_deck1_guppy"
-
-/obj/effect/shuttle_landmark/torch/deck2/guppy
-	name = "Space near Third Deck"
-	landmark_tag = "nav_deck2_guppy"
-
-/obj/effect/shuttle_landmark/torch/deck3/guppy
-	name = "Space near Second Deck"
-	landmark_tag = "nav_deck3_guppy"
-
-/obj/effect/shuttle_landmark/torch/deck4/guppy
-	name = "Space near First Deck"
-	landmark_tag = "nav_deck4_guppy"
-
-/obj/effect/shuttle_landmark/torch/deck5/guppy
-	name = "Space near Bridge"
-	landmark_tag = "nav_bridge_guppy"
-
-/obj/effect/shuttle_landmark/transit/torch/guppy
+/obj/effect/shuttle_landmark/transit/torch/styx
 	name = "In transit"
-	landmark_tag = "nav_transit_guppy"
+	landmark_tag = "nav_transit_styx"
 
-// Bubble
-
-/datum/shuttle/autodock/overmap/bubble
-	name = "Bubble"
-	warmup_time = 5
-	move_time = 30
-	shuttle_area = /area/bubble_hangar/start
-	dock_target ="bubble_shuttle"
-	current_location = "nav_hangar_bubble"
-	landmark_transition = "nav_transit_bubble"
-	sound_takeoff = 'sound/effects/rocket.ogg'
-	sound_landing = 'sound/effects/rocket_backwards.ogg'
-	fuel_consumption = 2
-	logging_home_tag = "nav_hangar_bubble"
-	logging_access = access_guppy_helm
-	skill_needed = SKILL_UNSKILLED
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
-
-/obj/effect/shuttle_landmark/torch/hangar/bubble
-	name = "Bubble Hangar"
-	landmark_tag = "nav_hangar_bubble"
-	base_area = /area/quartermaster/hangar
-	base_turf = /turf/simulated/floor/plating
-
-/obj/effect/shuttle_landmark/torch/deck1/bubble
-	name = "Space near Forth Deck"
-	landmark_tag = "nav_deck1_bubble"
-
-/obj/effect/shuttle_landmark/torch/deck2/bubble
-	name = "Space near Third Deck"
-	landmark_tag = "nav_deck2_bubble"
-
-/obj/effect/shuttle_landmark/torch/deck3/bubble
-	name = "Space near Second Deck"
-	landmark_tag = "nav_deck3_bubble"
-
-/obj/effect/shuttle_landmark/torch/deck4/bubble
-	name = "Space near First Deck"
-	landmark_tag = "nav_deck4_bubble"
-
-/obj/effect/shuttle_landmark/torch/deck5/bubble
-	name = "Space near Bridge"
-	landmark_tag = "nav_bridge_bubble"
-
-/obj/effect/shuttle_landmark/transit/torch/bubble
-	name = "In transit"
-	landmark_tag = "nav_transit_bubble"
-
-// end
-
-// Butterfly
-
-/datum/shuttle/autodock/overmap/butterfly
-	name = "Butterfly"
-	warmup_time = 5
-	move_time = 30
-	shuttle_area = list(/area/butterfly_hangar,/area/butterfly_hangar/cockpit)
-	dock_target ="butterfly_shuttle"
-	current_location = "nav_hangar_butterfly"
-	landmark_transition = "nav_transit_butterfly"
-	sound_takeoff = 'sound/effects/rocket.ogg'
-	sound_landing = 'sound/effects/rocket_backwards.ogg'
-	fuel_consumption = 2
-	logging_home_tag = "nav_hangar_butterfly"
-	logging_access = access_guppy_helm
-	skill_needed = SKILL_UNSKILLED
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
-
-/obj/effect/shuttle_landmark/torch/hangar/butterfly
-	name = "Butterfly Hangar"
-	landmark_tag = "nav_hangar_butterfly"
-	base_area = /area/quartermaster/hangar
-	base_turf = /turf/simulated/floor/plating
-
-/obj/effect/shuttle_landmark/torch/deck1/butterfly
-	name = "Space near Forth Deck"
-	landmark_tag = "nav_deck1_butterfly"
-
-/obj/effect/shuttle_landmark/torch/deck2/butterfly
-	name = "Space near Third Deck"
-	landmark_tag = "nav_deck2_butterfly"
-
-/obj/effect/shuttle_landmark/torch/deck3/butterfly
-	name = "Space near Second Deck"
-	landmark_tag = "nav_deck3_butterfly"
-
-/obj/effect/shuttle_landmark/torch/deck4/butterfly
-	name = "Space near First Deck"
-	landmark_tag = "nav_deck4_butterfly"
-
-/obj/effect/shuttle_landmark/torch/deck5/butterfly
-	name = "Space near Bridge"
-	landmark_tag = "nav_bridge_butterfly"
-
-/obj/effect/shuttle_landmark/transit/torch/butterfly
-	name = "In transit"
-	landmark_tag = "nav_transit_butterfly"
-
-// end
+//end
 
 /datum/shuttle/autodock/overmap/aquila
 	name = "Aquila"

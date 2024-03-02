@@ -1,16 +1,32 @@
 /datum/job/captain
-	title = "Commanding Officer"
-	supervisors = "the Sol Central Government and the Sol Code of Uniform Justice"
+	title = "Captain"
+	supervisors = "the right way"
 	minimal_player_age = 14
 	economic_power = 16
-	minimum_character_age = list(SPECIES_HUMAN = 40)
-	ideal_character_age = 50
+	minimum_character_age = list(SPECIES_HUMAN = 30)
+	ideal_character_age = 60
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/CO
 	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/CO/fleet,
+		/datum/mil_branch/iccgn = /decl/hierarchy/outfit/job/torch/crew/command/CO/iccgn
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/ec/o6
+		/datum/mil_rank/ec/o6,
+		/datum/mil_rank/ec/o8,
+		/datum/mil_rank/fleet/o5,
+		/datum/mil_rank/fleet/o6,
+		/datum/mil_rank/fleet/o7,
+		/datum/mil_rank/fleet/o8,
+		/datum/mil_rank/fleet/o9,
+		/datum/mil_rank/fleet/o10,
+		/datum/mil_rank/fleet/o10_alt,
+		/datum/mil_rank/iccgn/o3,
+		/datum/mil_rank/iccgn/o4,
+		/datum/mil_rank/iccgn/o5,
+		/datum/mil_rank/iccgn/o6,
+		/datum/mil_rank/iccgn/o7,
+		/datum/mil_rank/iccgn/o8
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_SCIENCE     = SKILL_TRAINED,
@@ -26,7 +42,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/captain/get_description_blurb()
-	return "You are the Commanding Officer. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Executive Officer, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
+	return "You are the Captain. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] survives this storm. Delegate to your Right Hand, and your department heads to effectively manage the ship, and listen to and trust their expertise."
 
 /datum/job/captain/post_equip_rank(var/mob/person, var/alt_title)
 	var/sound/announce_sound = (GAME_STATE <= RUNLEVEL_SETUP)? null : sound('sound/misc/boatswain.ogg', volume=20)
@@ -34,23 +50,62 @@
 	..()
 
 /datum/job/hop
-	title = "Executive Officer"
-	supervisors = "the Commanding Officer"
+	title = "Right Hand"
+	supervisors = "the Captain"
 	department = "Command"
 	department_flag = COM
 	minimal_player_age = 14
 	economic_power = 14
-	minimum_character_age = list(SPECIES_HUMAN = 35)
-	ideal_character_age = 45
+	minimum_character_age = list(SPECIES_HUMAN = 20)
+	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/XO
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/command/XO/civ,
+		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/command/XO/army,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/ec/o5,
+		/datum/mil_rank/civ/civ,
+		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/fleet/e7,
+		/datum/mil_rank/fleet/e8,
+		/datum/mil_rank/fleet/e9,
+		/datum/mil_rank/fleet/e9_alt1,
+		/datum/mil_rank/fleet/e9_alt2,
+		/datum/mil_rank/fleet/e9_alt3,
+		/datum/mil_rank/fleet/e9_alt4,
+		/datum/mil_rank/fleet/o0,
+		/datum/mil_rank/fleet/o1,
+		/datum/mil_rank/fleet/o2,
+		/datum/mil_rank/fleet/o3,
 		/datum/mil_rank/fleet/o4,
-		/datum/mil_rank/fleet/o5
+		/datum/mil_rank/fleet/o5,
+		/datum/mil_rank/army/e8,
+		/datum/mil_rank/army/e8_alt,
+		/datum/mil_rank/army/e9,
+		/datum/mil_rank/army/e9_alt,
+		/datum/mil_rank/army/e9_meme,
+		/datum/mil_rank/army/o1,
+		/datum/mil_rank/army/o2,
+		/datum/mil_rank/army/o3,
+		/datum/mil_rank/army/o4,
+		/datum/mil_rank/army/o5,
+		/datum/mil_rank/army/o6,
+		/datum/mil_rank/sol/gov,
+		/datum/mil_rank/sol/junior_agent,
+		/datum/mil_rank/sol/duty_agent,
+		/datum/mil_rank/sol/agent,
+		/datum/mil_rank/sol/senior_agent,
+		/datum/mil_rank/sol/inspector_agent,
+		/datum/mil_rank/sol/curator_agent,
+		/datum/mil_rank/sol/deputy_agent,
+		/datum/mil_rank/ec/e3,
+		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/ec/e7,
+		/datum/mil_rank/ec/o1,
+		/datum/mil_rank/ec/o3,
+		/datum/mil_rank/ec/o5
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_TRAINED,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
@@ -82,7 +137,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hop/get_description_blurb()
-	return "You are the Executive Officer. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Commanding Officer. In their absence, you are expected to take their place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	return "You are the Right Hand. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Boss. In their absence, you are expected to take their place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship."
 
 /*/datum/job/rd
 	title = "Chief Science Officer"
