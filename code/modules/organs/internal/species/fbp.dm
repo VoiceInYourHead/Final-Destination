@@ -58,9 +58,9 @@
 			to_chat(owner, "<span class='warning'>You don't have enough energy to function!</span>")
 		owner.Paralyse(3)
 
-		if(owner.species.name && SPECIES_IPC)
+		if(owner.species.name == SPECIES_IPC)
 			owner.species.passive_temp_gain = 0
-	if(owner.species.name && SPECIES_IPC)
+	if(owner.species.name == SPECIES_IPC)
 		var/obj/item/organ/internal/cooling_system/Cooling = owner.internal_organs_by_name[BP_COOLING]
 		if(!(owner.internal_organs_by_name[BP_COOLING]))
 			if(owner.bodytemperature > 950 CELSIUS)
@@ -70,6 +70,21 @@
 		else
 			owner.species.passive_temp_gain = Cooling.get_tempgain()
 
+/*var/cost = get_power_drain()
+	if(!checked_use(cost) && owner.isSynthetic())
+		if(owner.species.name == SPECIES_IPC)
+			owner.species.passive_temp_gain = 0
+	if(owner.species.name == SPECIES_IPC)
+		var/obj/item/organ/internal/cooling_system/cooling_organ = owner.internal_organs_by_name[BP_COOLING]
+		var/normal_passive_temp_gain = 30
+		if(!cooling_organ)
+			if(owner.bodytemperature > 950 CELSIUS)
+				owner.species.passive_temp_gain = 0
+			else
+				owner.species.passive_temp_gain = normal_passive_temp_gain
+		else
+			owner.species.passive_temp_gain = cooling_organ.get_tempgain()
+ */
 /obj/item/organ/internal/cell/emp_act(severity)
 	..()
 	if(cell)
