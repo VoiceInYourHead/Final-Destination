@@ -5,7 +5,7 @@
 	name = "assault rifle"
 	desc = "A standard assault rifle in service with the SCG Fleet. Appreciated for its good velocity and not inferior caliber with blunt-nosed projectiles designed to be fired without risk of damaging thin bulkheads."
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
-	icon_state = "automat4-wielded"
+	icon_state = "automat4"
 	item_state = "automat4"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
@@ -38,7 +38,7 @@
 	name = "battle rifle"
 	desc = "The heavy rifle of the Sol Gov army, beloved by them for its high armor penetration rates. However, it's unlikely to fit comfortably on a bulletproof vest."
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
-	icon_state = "automat3-wielded"
+	icon_state = "automat3"
 	item_state = "automat3"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
@@ -72,6 +72,8 @@
 	name = "submachine gun"
 	desc = "A submachine gun valued for its compactness, cheapness and lightness. However, it is unlikely to shoot you in the head.."
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
+	icon_state = "smg5"
+	item_state = "smg5"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CALIBER_PISTOL
 	slot_flags = SLOT_BELT
@@ -99,6 +101,8 @@
 	name = "special ops smg"
 	desc = "A new model of submachine gun, for short and medium ranges. Made to order by SolGov Special Operations units"
 	icon = 'icons/fd/guns/bullupsmg_cpps.dmi'
+	icon_state = "smg6"
+	item_state = "smg6"
 	wielded_item_state = "smg6"
 	w_class = ITEM_SIZE_LARGE
 	force = 6
