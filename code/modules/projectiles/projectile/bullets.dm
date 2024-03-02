@@ -451,7 +451,7 @@
 	embed = 0
 	damage_type = BURN
 	eyeblur = 4
-	muzzle_type = /obj/effect/projectile/laser/muzzle
+	muzzle_type = null
 
 /obj/item/projectile/bullet/lasbolt/lasgun
 	name = "laser"
@@ -460,7 +460,6 @@
 	fire_sound = 'sound/weapons/gunshot/lasgun2.ogg'
 	damage = 40
 	armor_penetration = 20
-
 
 /obj/item/projectile/bullet/lasbolt/overcharge
 	name = "laser"
