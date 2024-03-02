@@ -69,7 +69,7 @@
 
 /obj/item/gun/projectile/automatic
 	name = "prototype SMG"
-	desc = "A protoype lightweight, fast firing submachine gun."
+	desc = "A prototype lightweight, fast firing submachine gun."
 	icon = 'icons/obj/guns/prototype_smg.dmi'
 	icon_state = "prototype"
 	item_state = "saber"

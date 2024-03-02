@@ -4,6 +4,7 @@
 	suffix = "\[3\]"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
+	var/icon_state_init
 
 	var/on = 1 // 0 for off
 	var/last_transmission
@@ -50,10 +51,12 @@
 
 /obj/item/device/radio/Initialize()
 	. = ..()
+	icon_state_init = icon_state
 	wires = new(src)
 	if(ispath(cell))
 		cell = new cell(src)
 		on = FALSE // start powered off
+		icon_state = icon_state_init +"-off"
 	internal_channels = GLOB.using_map.default_internal_channels()
 	GLOB.listening_objects += src
 
@@ -71,10 +74,12 @@
 		var/obj/item/cell/has_cell = get_cell()
 		if(!has_cell) // No cell
 			on = FALSE
+			icon_state = icon_state_init +"-off"
 			STOP_PROCESSING(SSobj, src)
 			return FALSE
 		if(!has_cell.checked_use(power_usage * CELLRATE)) // Use power and display if we run out.
 			on = FALSE
+			icon_state = icon_state_init +"-off"
 			STOP_PROCESSING(SSobj, src)
 			visible_message(SPAN_WARNING("[icon2html(src, viewers(src))] [src] lets out a quiet click as it powers down."), SPAN_WARNING("You hear \a [src] let out a quiet click."))
 			return FALSE
@@ -202,11 +207,13 @@
 		return FALSE //Can't toggle power if there's no power to use
 	var/obj/item/cell/has_cell = get_cell()
 	if(!has_cell || !has_cell.check_charge(power_usage * CELLRATE)) // No cell or not enough power to turn on
+		icon_state = icon_state_init +"-off"
 		return FALSE
 
 	//We're good to toggle state
 	on = !on
 	if(on)
+		icon_state = icon_state_init
 		if(ismob(src.loc))
 			playsound(src.loc, 'sound/effects/walkieon.ogg', 40, 0, -1)
 		START_PROCESSING(SSobj, src)

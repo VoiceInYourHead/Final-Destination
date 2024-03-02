@@ -9,7 +9,7 @@
 #define CALIBER_RIFLE_MILITARY  "7mmR"
 #define CALIBER_RIFLE_RUSSIA 	"12.7x55mm"
 #define CALIBER_ANTIMATERIAL    "15mmR"
-
+#define CALIBER_BOLTER			".75"
 #define CALIBER_SHOTGUN			"12g"
 #define CALIBER_GYROJET			"20mmG"
 #define CALIBER_CAPS			"caps"
