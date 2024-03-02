@@ -90,7 +90,7 @@
 			clouds -= A
 	update_daynight()
 
-/obj/effect/overmap/visitable/ship/torch/proc/update_daynight(light = 0.5, light_color = "#e0ca9f")
+/obj/effect/overmap/visitable/ship/torch/proc/update_daynight(light = 0.7, light_color = "#e0ca9f")
 	for(var/turf/T as anything in clouds)
 		T.set_light(light, 0.1, 2, l_color = light_color)
 

@@ -1,3 +1,51 @@
+/mob/living/simple_animal/hostile/ascent_alate
+	name = "alate"
+	desc = "A mantid creature in light armor."
+	icon = 'icons/fd/animals/ascent_enemies.dmi'
+	icon_state = "alate_armor"
+	icon_living = "alate_armor"
+	icon_dead = "alate_armor"
+	response_help = "pokes"
+	response_disarm = "shoves"
+	response_harm = "hits"
+	turns_per_move = 3
+	speed = 2
+	maxHealth = 500
+	health = 500
+	harm_intent_damage = 5
+	can_escape = TRUE
+	a_intent = I_HURT
+	natural_weapon = /obj/item/natural_weapon/claws/strong
+	unsuitable_atmos_damage = 0
+	faction = "ascent"
+	status_flags = CANPUSH
+
+	ai_holder = /datum/ai_holder/simple_animal/humanoid/hostile/violent
+
+	loot_list = list(/obj/item/clothing/suit/space/void/ascent = 1)
+
+/mob/living/simple_animal/hostile/ascent_alate/death()
+	. = ..()
+	check_delete()
+
+/mob/living/simple_animal/hostile/ascent_alate/ranged
+	desc = "A mantid creature in light armor. They have a weird weapon in their \"hands\"."
+	icon_state = "alate_armor_rifle"
+	icon_living = "alate_armor_rifle"
+	turns_per_move = 3
+	speed = 2
+
+	ranged = 1
+	rapid = 1
+	projectiletype = /obj/item/projectile/beam/particle
+	projectile_dispersion = 0.75
+
+	loot_list = list(
+		/obj/item/clothing/suit/space/void/ascent = 1,
+		/obj/item/gun/energy/particle = 1,
+		)
+
+
 /mob/living/simple_animal/fd/wendigo
 	name = "???"
 	desc = "???"

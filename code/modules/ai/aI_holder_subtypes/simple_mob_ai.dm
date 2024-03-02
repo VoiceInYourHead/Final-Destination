@@ -187,3 +187,6 @@
 	if(get_dist(holder, A) < run_if_this_close)
 		holder.IMove(get_step_away(holder, A))
 		holder.face_atom(A)
+
+/datum/ai_holder/simple_animal/humanoid/hostile/violent
+	mauling = TRUE
