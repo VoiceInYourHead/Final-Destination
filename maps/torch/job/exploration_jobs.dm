@@ -1,4 +1,4 @@
-/datum/job/pathfinder
+/*/datum/job/pathfinder
 	title = "Pathfinder"
 	department = "Exploration"
 	department_flag = EXP
@@ -218,6 +218,7 @@
 
 /datum/job/expeng/get_description_blurb()
 	return "You are an Exploration Engineer. Your duty is to go on expeditions to away sites. The Pathfinder is your team leader. You are to keep shuttle operational and make holes wherever your boss says."
+*/
 /*
 /datum/job/expmar
 	title = "Expedition Marine Guard"

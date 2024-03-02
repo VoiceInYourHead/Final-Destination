@@ -1,4 +1,4 @@
-/datum/job/chief_steward
+/*/datum/job/chief_steward
 	title = "Chief Steward"
 	department = "Service"
 	department_flag = SRV
@@ -185,3 +185,4 @@
 		access_maint_tunnels, access_emergency_storage,
 		access_solgov_crew, access_radio_serv
 	)
+*/

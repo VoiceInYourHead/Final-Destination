@@ -1,4 +1,4 @@
-/datum/job/senior_scientist
+/*/datum/job/senior_scientist
 	title = "Senior Researcher"
 	department = "Science"
 	department_flag = SCI
@@ -175,3 +175,4 @@
 
 /datum/job/research_guard/get_description_blurb()
 	return "You are a security guard from the Organization of the Expeditionary Corps, which must protect the scientific department and its employees from various threats. Eat donuts, call scientists \"eggheads\"."
+*/

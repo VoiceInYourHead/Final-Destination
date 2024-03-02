@@ -125,13 +125,11 @@
 	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/armband_emt
-	allowed_roles = list(/datum/job/doctor, /datum/job/medical_trainee)
 	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/armband_corpsman
 	display_name = "medical armband"
 	path = /obj/item/clothing/accessory/armband/medblue
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/junior_doctor, /datum/job/doctor, /datum/job/medical_trainee)
 	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/armband_engineering
@@ -139,7 +137,6 @@
 	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/armband_hydro
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
 	flags = GEAR_HAS_NO_CUSTOMIZATION
 
 /datum/gear/accessory/armband_nt
@@ -175,8 +172,6 @@
 	gear_tweaks += new/datum/gear_tweak/path(holsters)
 
 /datum/gear/tactical/sheath
-	allowed_roles = list(/datum/job/pathfinder, /datum/job/explorer)
-
 
 /datum/gear/tactical/bloodpatch
 	display_name = "blood patch selection"
@@ -218,7 +213,6 @@
 /datum/gear/tactical/press_tag
 	display_name = "Press tag"
 	path = /obj/item/clothing/accessory/armor_tag/press
-	allowed_roles = list(/datum/job/assistant)
 
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES

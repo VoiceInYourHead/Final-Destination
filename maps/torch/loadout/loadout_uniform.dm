@@ -48,7 +48,6 @@
 	allowed_roles = SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/thermal
-	allowed_branches = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/civilian)
 
 //from infinity
 /datum/gear/uniform/formal_shirt_and_pants
@@ -90,13 +89,9 @@
 	allowed_roles = ENGINEERING_ROLES
 
 /datum/gear/uniform/corp_overalls
-	allowed_roles = list(/datum/job/mining, /datum/job/scientist_assistant)
 
 /datum/gear/uniform/corp_flight
-	allowed_roles = list(/datum/job/nt_pilot)
 
 /datum/gear/uniform/corp_exec
-	allowed_roles = list(/datum/job/liaison)
 
 /datum/gear/uniform/corp_exec_jacket
-	allowed_roles = list(/datum/job/liaison)

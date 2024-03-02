@@ -1,4 +1,4 @@
-/datum/job/senior_engineer
+/*/datum/job/senior_engineer
 	title = "Senior Engineer"
 	department = "Engineering"
 	department_flag = ENG
@@ -228,3 +228,4 @@
 
 /datum/job/roboticist/get_description_blurb()
 	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics (like robots). You are also responsible for the production of exosuits(mechs) and bots for various departments. You answer to the Chief Engineer."
+*/

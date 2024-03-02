@@ -1,4 +1,4 @@
-/datum/job/senior_doctor
+/*/datum/job/senior_doctor
 	title = "Physician"
 	department = "Medical"
 	department_flag = MED
@@ -291,3 +291,4 @@
 
 /datum/job/psychiatrist/get_description_blurb()
 		return "You are the Counselor. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."
+*/

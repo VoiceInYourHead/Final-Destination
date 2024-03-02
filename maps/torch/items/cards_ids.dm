@@ -23,7 +23,7 @@
 /obj/item/card/id/torch/crew
 	desc = "An identification card issued to SolGov crewmembers aboard the SEV Torch."
 	color = "#d3e3e1"
-	job_access_type = /datum/job/crew
+	job_access_type = DEFAULT_JOB_TYPE
 	color = "#ccecff"
 
 
@@ -42,14 +42,14 @@
 	detail_color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/card/id/torch/crew/medical/senior
-	job_access_type = /datum/job/senior_doctor
+	job_access_type = DEFAULT_JOB_TYPE
 
 /obj/item/card/id/torch/contractor/medical
 	job_access_type = /datum/job/doctor
 	detail_color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/card/id/torch/contractor/medical/senior
-	job_access_type = /datum/job/senior_doctor
+	job_access_type = DEFAULT_JOB_TYPE
 
 /obj/item/card/id/torch/contractor/chemist
 	job_access_type = /datum/job/chemist
@@ -83,7 +83,7 @@
 	detail_color = COLOR_SUN
 
 /obj/item/card/id/torch/crew/engineering/senior
-	job_access_type = /datum/job/senior_engineer
+	job_access_type = DEFAULT_JOB_TYPE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/torch/contractor/engineering
@@ -112,7 +112,7 @@
 	detail_color = COLOR_CIVIE_GREEN
 
 /obj/item/card/id/torch/crew/service/chief_steward
-	job_access_type = /datum/job/chief_steward
+	job_access_type = DEFAULT_JOB_TYPE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/torch/crew/service/janitor
@@ -130,39 +130,39 @@
 
 
 /obj/item/card/id/torch/crew/representative
-	job_access_type = /datum/job/representative
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_COMMAND_BLUE
 
 /obj/item/card/id/torch/crew/sea
-	job_access_type = /datum/job/sea
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_COMMAND_BLUE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/torch/crew/bridgeofficer
-	job_access_type = /datum/job/bridgeofficer
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_COMMAND_BLUE
 
 /obj/item/card/id/torch/crew/pathfinder
-	job_access_type = /datum/job/pathfinder
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_PURPLE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/torch/crew/explorer
-	job_access_type = /datum/job/explorer
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_PURPLE
 
 /obj/item/card/id/torch/crew/pilot
-	job_access_type = /datum/job/nt_pilot
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_PURPLE
 
 //EC Medic
 /obj/item/card/id/torch/crew/expmed
-	job_access_type = /datum/job/expmed
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_PURPLE
 
 //EC Engineer
 /obj/item/card/id/torch/crew/expeng
-	job_access_type = /datum/job/expeng
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_PURPLE
 /*
 //EC Marine
@@ -172,43 +172,43 @@
 */
 // EC Science
 /obj/item/card/id/torch/silver/research
-	job_access_type = /datum/job/rd
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_RESEARCH
 	color = COLOR_WHITE
 
 /obj/item/card/id/torch/crew/research
 	desc = "A card issued to science personnel aboard the SEV Torch."
-	job_access_type = /datum/job/scientist_assistant
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_RESEARCH
 
 /obj/item/card/id/torch/crew/research/senior_scientist
-	job_access_type = /datum/job/senior_scientist
+	job_access_type = DEFAULT_JOB_TYPE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/torch/crew/research/scientist
-	job_access_type = /datum/job/scientist
+	job_access_type = DEFAULT_JOB_TYPE
 
 /obj/item/card/id/torch/crew/research/research_guard
-	job_access_type = /datum/job/research_guard
+	job_access_type = DEFAULT_JOB_TYPE
 
 //NanoTrasen and Passengers
 
 /obj/item/card/id/torch/passenger
 	desc = "A card issued to passengers and off-duty personnel aboard the SEV Torch."
-	job_access_type = DEFAULT_JOB_TYPE
+	job_access_type = /datum/job/captain
 	detail_color = COLOR_PAKISTAN_GREEN
 
 /obj/item/card/id/torch/passenger/research
 	desc = "A card issued to corporate personnel aboard the SEV Torch."
-	job_access_type = /datum/job/scientist_assistant
+	job_access_type = DEFAULT_JOB_TYPE
 	detail_color = COLOR_BOTTLE_GREEN
 
 /obj/item/card/id/torch/passenger/research/senior_scientist
-	job_access_type = /datum/job/senior_scientist
+	job_access_type = DEFAULT_JOB_TYPE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/torch/passenger/research/nt_pilot
-	job_access_type = /datum/job/nt_pilot
+	job_access_type = DEFAULT_JOB_TYPE
 
 /obj/item/card/id/torch/passenger/research/scientist
 	job_access_type = /datum/job/scientist
@@ -221,7 +221,7 @@
 	detail_color = COLOR_OFF_WHITE
 
 /obj/item/card/id/torch/passenger/corporate/liaison
-	job_access_type = /datum/job/liaison
+	job_access_type = DEFAULT_JOB_TYPE
 	extra_details = list("onegoldstripe")
 
 //Merchant

@@ -1,4 +1,4 @@
-/datum/job/warden
+/*/datum/job/warden
 	title = "Brig Chief"
 	total_positions = 1
 	spawn_positions = 1
@@ -142,6 +142,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+*/
 
 /* До лучших времен
 /datum/job/officer/sfp

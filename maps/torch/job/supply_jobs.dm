@@ -1,4 +1,4 @@
-/datum/job/qm
+/*/datum/job/qm
 	title = "Deck Chief"
 	department = "Supply"
 	department_flag = SUP
@@ -130,3 +130,4 @@
 		access_guppy_helm, access_solgov_crew, access_eva,
 		access_radio_exp, access_radio_sup
 	)
+*/

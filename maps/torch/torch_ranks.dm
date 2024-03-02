@@ -155,7 +155,7 @@
 		/datum/mil_rank/ec/o6
 	)
 
-	assistant_job = /datum/job/crew
+	assistant_job = /datum/job/assistant
 
 	min_skill = list(	SKILL_HAULING = SKILL_BASIC,
 						SKILL_SCIENCE = SKILL_BASIC,
@@ -212,7 +212,7 @@
 		/datum/mil_rank/fleet/o5
 	)
 
-	assistant_job = /datum/job/crew
+	assistant_job = /datum/job/assistant
 	min_skill = list(	SKILL_HAULING = SKILL_BASIC,
 						SKILL_WEAPONS = SKILL_BASIC,
 						SKILL_EVA     = SKILL_BASIC,
@@ -271,7 +271,7 @@
 		/datum/mil_rank/army/o5
 	)
 
-	assistant_job = /datum/job/crew
+	assistant_job = /datum/job/assistant
 	min_skill = list(	SKILL_HAULING = SKILL_TRAINED,
 	                    SKILL_WEAPONS = SKILL_BASIC,
 	                    SKILL_COMBAT  = SKILL_BASIC)
