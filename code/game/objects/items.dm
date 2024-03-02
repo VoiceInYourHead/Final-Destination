@@ -53,6 +53,7 @@
 	var/list/armor
 	var/armor_degradation_speed //How fast armor will degrade, multiplier to blocked damage to get armor damage value.
 	var/list/allowed = null //suit storage stuff.
+	var/list/blacklist = null //blacklist for suitstorage
 	var/obj/item/device/uplink/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
@@ -468,7 +469,7 @@ var/list/global/slot_flags_enumeration = list(
 				if(!disable_warning)
 					to_chat(usr, "<span class='warning'>You somehow have a suit with no defined allowed items for suit storage, stop that.</span>")
 				return 0
-			if( !(istype(src, /obj/item/modular_computer/pda) || istype(src, /obj/item/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
+			if( !(istype(src, /obj/item/modular_computer/pda) || istype(src, /obj/item/pen) || is_type_in_list(src, H.wear_suit.allowed)) || is_type_in_list(src, H.wear_suit.blacklist) )
 				return 0
 		if(slot_handcuffed)
 			if(!istype(src, /obj/item/handcuffs))
