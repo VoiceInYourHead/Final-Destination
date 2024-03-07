@@ -5,7 +5,7 @@
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg),
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hop
+#define HUMAN_ONLY_JOBS /datum/job/captain
 	species_to_job_blacklist = list(
 		/datum/species/unathi  = list(HUMAN_ONLY_JOBS),
 		/datum/species/unathi/yeosa = list(HUMAN_ONLY_JOBS),

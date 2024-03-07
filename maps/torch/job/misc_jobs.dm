@@ -146,6 +146,7 @@ Civilian
 
 /datum/job/wanderer
 	title = "Vagabond"
+	department_flag = CIV
 	total_positions = 10
 	spawn_positions = 10
 	supervisors = "the Right Hand"
