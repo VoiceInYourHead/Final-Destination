@@ -114,30 +114,13 @@ GLOBAL_LIST_EMPTY(cloud_turfs)
 
 /turf/unsimulated/floor/exoplanet/clouds/attackby(obj/item/C as obj, mob/user as mob)
 
-	if (istype(C, /obj/item/stack/material/rods))
-		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-		if(L)
-			return L.attackby(C, user)
-		var/obj/item/stack/material/rods/R = C
-		if (R.use(1))
-			to_chat(user, "<span class='notice'>Constructing support lattice ...</span>")
-			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			ReplaceWithLattice(R.material.name)
+	if(istype(C, /obj/item/stack/tile))
+		var/obj/item/stack/tile/T = C
+		if(T.use(1))
+			playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
+			ChangeTurf(/turf/simulated/floor, FALSE, FALSE, TRUE)
+	else if (isCrowbar(C) || isWelder(C) || istype(C, /obj/item/gun/energy/plasmacutter))
 		return
-
-	if (istype(C, /obj/item/stack/tile/floor))
-		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-		if(L)
-			var/obj/item/stack/tile/floor/S = C
-			if (!S.use(1))
-				return
-			qdel(L)
-			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			ChangeTurf(/turf/simulated/floor, keep_air = TRUE)
-			return
-		else
-			to_chat(user, "<span class='warning'>The plating is going to need some support.</span>")
-	return
 
 /turf/unsimulated/floor/exoplanet/clouds/is_open()
 	return TRUE

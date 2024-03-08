@@ -78,22 +78,6 @@
 		"nav_ert_hanger",
 	)
 
-	var/list/clouds
-	var/lightlevel = 0.3 //This default makes turfs not generate light. Adjust to have exoplanents be lit.
-
-/obj/effect/overmap/visitable/ship/torch/Initialize()
-	..()
-
-	clouds = block(locate(world.maxx, world.maxy, max(map_z)), locate(1, 1, min(map_z)))
-	for(var/atom/A as anything in clouds)
-		if(!istype(A.loc, /area/space))
-			clouds -= A
-	update_daynight()
-
-/obj/effect/overmap/visitable/ship/torch/proc/update_daynight(light = 0.7, light_color = "#e0ca9f")
-	for(var/turf/T as anything in clouds)
-		T.set_light(light, 0.1, 2, l_color = light_color)
-
 /obj/effect/overmap/visitable/ship/landable/exploration_shuttle
 	name = "Charon"
 	desc = "An SSE-U11 long range shuttle, broadcasting SCGEC codes and the callsign \"Torch-2 Charon\"."
@@ -154,12 +138,6 @@
 	for(var/obj/machinery/computer/ship/helm/H in SSmachines.machinery)
 		H.add_known_sector(R)
 	add_starter_trader()
-
-	clouds = block(locate(world.maxx, world.maxy, max(map_z)), locate(1, 1, min(map_z)))
-	for(var/atom/A as anything in clouds)
-		if(!istype(A.loc, /area/space))
-			clouds -= A
-	update_daynight()
 
 /obj/effect/overmap/visitable/ship/torch/proc/add_starter_trader()
 	var/trader_type = /datum/trader/trading_beacon/starter
