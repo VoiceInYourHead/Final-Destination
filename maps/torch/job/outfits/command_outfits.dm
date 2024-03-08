@@ -2,6 +2,7 @@
 	name = OUTFIT_JOB_NAME("Torch Command Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/torch/crew/command
 	l_ear = /obj/item/device/radio/headset/headset_com
+	r_pocket = /obj/item/device/radio/hailing
 
 /decl/hierarchy/outfit/job/torch/crew/command/CO
 	name = OUTFIT_JOB_NAME("Commanding Officer")
@@ -32,6 +33,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/torchexec
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/torch/silver)
+	r_pocket = /obj/item/device/radio/hailing
 	pda_type = /obj/item/modular_computer/pda/heads/hop
 
 /decl/hierarchy/outfit/job/torch/crew/command/XO/New()
@@ -53,6 +55,13 @@
 	uniform = /obj/item/clothing/under/solgov/utility/army
 	head = /obj/item/clothing/head/solgov/utility/army
 	shoes = /obj/item/clothing/shoes/dutyboots
+
+/decl/hierarchy/outfit/job/torch/crew/command/XO/iccgn
+	name = OUTFIT_JOB_NAME("Executive Officer - ICCGN")
+	head = /obj/item/clothing/head/iccgn/beret
+	uniform = /obj/item/clothing/under/iccgn/utility
+	shoes = /obj/item/clothing/shoes/iccgn/utility
+	gloves = /obj/item/clothing/gloves/iccgn/duty
 
 /decl/hierarchy/outfit/job/torch/crew/command/cmo
 	name = OUTFIT_JOB_NAME("Chief Medical Officer - Torch")

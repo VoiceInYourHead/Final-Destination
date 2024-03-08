@@ -24,7 +24,8 @@
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/solgov,
 		/datum/mil_branch/alien,
-		/datum/mil_branch/skrell_fleet
+		/datum/mil_branch/skrell_fleet,
+		/datum/mil_branch/iccgn
 	)
 
 	species_to_branch_blacklist = list(
@@ -195,6 +196,7 @@
 	)
 
 	spawn_rank_types = list(
+		/datum/mil_rank/fleet/e1,
 		/datum/mil_rank/fleet/e2,
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4,
@@ -204,12 +206,21 @@
 		/datum/mil_rank/fleet/e8,
 		/datum/mil_rank/fleet/e9,
 		/datum/mil_rank/fleet/e9_alt1,
+		/datum/mil_rank/fleet/e9_alt2,
+		/datum/mil_rank/fleet/e9_alt3,
+		/datum/mil_rank/fleet/e9_alt4,
 		/datum/mil_rank/fleet/o0,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
 		/datum/mil_rank/fleet/o3,
 		/datum/mil_rank/fleet/o4,
-		/datum/mil_rank/fleet/o5
+		/datum/mil_rank/fleet/o5,
+		/datum/mil_rank/fleet/o6,
+		/datum/mil_rank/fleet/o7,
+		/datum/mil_rank/fleet/o8,
+		/datum/mil_rank/fleet/o9,
+		/datum/mil_rank/fleet/o10,
+		/datum/mil_rank/fleet/o10_alt
 	)
 
 	assistant_job = /datum/job/assistant
@@ -260,15 +271,23 @@
 		/datum/mil_rank/army/e5,
 		/datum/mil_rank/army/e6,
 		/datum/mil_rank/army/e7,
+		/datum/mil_rank/army/e7_meme,
 		/datum/mil_rank/army/e8,
 		/datum/mil_rank/army/e8_alt,
 		/datum/mil_rank/army/e9,
 		/datum/mil_rank/army/e9_alt,
+		/datum/mil_rank/army/e9_meme,
 		/datum/mil_rank/army/o1,
 		/datum/mil_rank/army/o2,
 		/datum/mil_rank/army/o3,
 		/datum/mil_rank/army/o4,
-		/datum/mil_rank/army/o5
+		/datum/mil_rank/army/o5,
+		/datum/mil_rank/army/o6,
+		/datum/mil_rank/army/o7,
+		/datum/mil_rank/army/o8,
+		/datum/mil_rank/army/o9,
+		/datum/mil_rank/army/o10,
+		/datum/mil_rank/army/o10_alt
 	)
 
 	assistant_job = /datum/job/assistant

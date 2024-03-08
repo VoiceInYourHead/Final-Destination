@@ -35,6 +35,7 @@ Civilian
 		"Scientist",
 		"Shipman" = /decl/hierarchy/outfit/job/torch/passenger/passenger/soldier/fleet,
 		"Soldier" = /decl/hierarchy/outfit/job/torch/passenger/passenger/soldier,
+		"Soldier ICCGN" = /decl/hierarchy/outfit/job/torch/passenger/passenger/soldier/iccgn,
 		"Explorer" = /decl/hierarchy/outfit/job/torch/passenger/passenger/explorer,
 		"Corpo",
 		"Governor"
@@ -115,7 +116,24 @@ Civilian
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/ec/o5,
-		/datum/mil_rank/ec/o6
+		/datum/mil_rank/ec/o6,
+		/datum/mil_rank/iccgn/e1,
+		/datum/mil_rank/iccgn/e3,
+		/datum/mil_rank/iccgn/e4,
+		/datum/mil_rank/iccgn/e5,
+		/datum/mil_rank/iccgn/e6,
+		/datum/mil_rank/iccgn/e7,
+		/datum/mil_rank/iccgn/e8,
+		/datum/mil_rank/iccgn/e9,
+		/datum/mil_rank/iccgn/o1,
+		/datum/mil_rank/iccgn/o2,
+		/datum/mil_rank/iccgn/o3,
+		/datum/mil_rank/iccgn/o4,
+		/datum/mil_rank/iccgn/o5,
+		/datum/mil_rank/iccgn/o6,
+		/datum/mil_rank/iccgn/o7,
+		/datum/mil_rank/iccgn/o8,
+		/datum/mil_rank/iccgn/o9
 	)
 	min_goals = 2
 	max_goals = 7
@@ -142,7 +160,7 @@ Civilian
 		SKILL_ANATOMY = SKILL_MAX,
 		SKILL_CHEMISTRY = SKILL_MAX
 	)
-	skill_points = 20
+	skill_points = 35
 
 /datum/job/wanderer
 	title = "Vagabond"
@@ -157,6 +175,7 @@ Civilian
 		"Corpsman" = /decl/hierarchy/outfit/job/torch/passenger/passenger/doctor,
 		"Recon" = /decl/hierarchy/outfit/job/torch/passenger/passenger/vagabond,
 		"Fighter" = /decl/hierarchy/outfit/job/torch/passenger/passenger/soldier,
+		"Fighter ICCGN" = /decl/hierarchy/outfit/job/torch/passenger/passenger/soldier/iccgn,
 		"Gatherer" = /decl/hierarchy/outfit/job/torch/passenger/passenger/explorer
 	)
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
@@ -235,7 +254,24 @@ Civilian
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/ec/o5,
-		/datum/mil_rank/ec/o6
+		/datum/mil_rank/ec/o6,
+		/datum/mil_rank/iccgn/e1,
+		/datum/mil_rank/iccgn/e3,
+		/datum/mil_rank/iccgn/e4,
+		/datum/mil_rank/iccgn/e5,
+		/datum/mil_rank/iccgn/e6,
+		/datum/mil_rank/iccgn/e7,
+		/datum/mil_rank/iccgn/e8,
+		/datum/mil_rank/iccgn/e9,
+		/datum/mil_rank/iccgn/o1,
+		/datum/mil_rank/iccgn/o2,
+		/datum/mil_rank/iccgn/o3,
+		/datum/mil_rank/iccgn/o4,
+		/datum/mil_rank/iccgn/o5,
+		/datum/mil_rank/iccgn/o6,
+		/datum/mil_rank/iccgn/o7,
+		/datum/mil_rank/iccgn/o8,
+		/datum/mil_rank/iccgn/o9
 	)
 	min_goals = 2
 	max_goals = 7
@@ -262,7 +298,7 @@ Civilian
 		SKILL_ANATOMY = SKILL_MAX,
 		SKILL_CHEMISTRY = SKILL_MAX
 	)
-	skill_points = 20
+	skill_points = 35
 
 /datum/job/merchant
 	title = "Merchant"

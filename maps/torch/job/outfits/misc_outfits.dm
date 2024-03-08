@@ -4,6 +4,7 @@
 	l_ear = /obj/item/device/radio/headset
 	shoes = /obj/item/clothing/shoes/dutyboots
 	pda_type = /obj/item/modular_computer/pda
+	r_pocket = /obj/item/device/radio/hailing
 	id_types = list(/obj/item/card/id/torch/passenger)
 
 /decl/hierarchy/outfit/job/torch/passenger/passenger/engineer
@@ -29,6 +30,14 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium/sol
 	belt = /obj/item/storage/belt/holster/security/tactical
 	backpack_contents = list(/obj/item/gun/projectile/pistol/military = 1, /obj/item/ammo_magazine/pistol/double = 2)
+
+/decl/hierarchy/outfit/job/torch/passenger/passenger/soldier/iccgn
+	name = OUTFIT_JOB_NAME("Passenger - Soldier ICCGN")
+	head = /obj/item/clothing/head/iccgn/beret
+	uniform = /obj/item/clothing/under/iccgn/utility
+	shoes = /obj/item/clothing/shoes/iccgn/utility
+	gloves = /obj/item/clothing/gloves/iccgn/duty
+	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 
 /decl/hierarchy/outfit/job/torch/passenger/passenger/soldier/fleet
 	name = OUTFIT_JOB_NAME("Passenger - Fleet Crew")

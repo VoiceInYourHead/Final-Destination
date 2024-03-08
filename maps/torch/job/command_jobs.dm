@@ -32,9 +32,29 @@
 	                    SKILL_SCIENCE     = SKILL_TRAINED,
 	                    SKILL_PILOT       = SKILL_TRAINED)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 30
+	max_skill = list(
+		SKILL_BUREAUCRACY = SKILL_MAX,
+		SKILL_FINANCE = SKILL_MAX,
+		SKILL_EVA = SKILL_MAX,
+		SKILL_PILOT = SKILL_MAX,
+		SKILL_HAULING = SKILL_MAX,
+		SKILL_COMPUTER = SKILL_MAX,
+		SKILL_BOTANY = SKILL_MAX,
+		SKILL_COOKING = SKILL_MAX,
+		SKILL_COMBAT = SKILL_MAX,
+		SKILL_WEAPONS = SKILL_MAX,
+		SKILL_FORENSICS = SKILL_MAX,
+		SKILL_CONSTRUCTION = SKILL_MAX,
+		SKILL_ELECTRICAL = SKILL_MAX,
+		SKILL_ATMOS = SKILL_MAX,
+		SKILL_ENGINES = SKILL_MAX,
+		SKILL_DEVICES = SKILL_MAX,
+		SKILL_SCIENCE = SKILL_MAX,
+		SKILL_MEDICAL = SKILL_MAX,
+		SKILL_ANATOMY = SKILL_MAX,
+		SKILL_CHEMISTRY = SKILL_MAX
+	)
+	skill_points = 40
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,
@@ -61,9 +81,11 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/XO
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/command/XO/civ,
-		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/command/XO/army,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet
+		/datum/mil_branch/army = /decl/hierarchy/outfit/job/torch/crew/command/XO/army,
+		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/command/XO/civ,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet,
+		/datum/mil_branch/solgov = /decl/hierarchy/outfit/job/torch/crew/command/XO/civ,
+		/datum/mil_branch/iccgn = /decl/hierarchy/outfit/job/torch/crew/command/XO/iccgn
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
@@ -85,13 +107,13 @@
 		/datum/mil_rank/army/e8_alt,
 		/datum/mil_rank/army/e9,
 		/datum/mil_rank/army/e9_alt,
-		/datum/mil_rank/army/e9_meme,
 		/datum/mil_rank/army/o1,
 		/datum/mil_rank/army/o2,
 		/datum/mil_rank/army/o3,
 		/datum/mil_rank/army/o4,
 		/datum/mil_rank/army/o5,
 		/datum/mil_rank/army/o6,
+		/datum/mil_rank/army/o7,
 		/datum/mil_rank/sol/gov,
 		/datum/mil_rank/sol/junior_agent,
 		/datum/mil_rank/sol/duty_agent,
@@ -105,15 +127,43 @@
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/ec/o3,
-		/datum/mil_rank/ec/o5
+		/datum/mil_rank/ec/o5,
+		/datum/mil_rank/iccgn/e7,
+		/datum/mil_rank/iccgn/e8,
+		/datum/mil_rank/iccgn/e9,
+		/datum/mil_rank/iccgn/o1,
+		/datum/mil_rank/iccgn/o2,
+		/datum/mil_rank/iccgn/o3,
+		/datum/mil_rank/iccgn/o4,
+		/datum/mil_rank/iccgn/o5
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_TRAINED,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_PILOT       = SKILL_BASIC)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 30
+	max_skill = list(
+		SKILL_BUREAUCRACY = SKILL_MAX,
+		SKILL_FINANCE = SKILL_MAX,
+		SKILL_EVA = SKILL_MAX,
+		SKILL_PILOT = SKILL_MAX,
+		SKILL_HAULING = SKILL_MAX,
+		SKILL_COMPUTER = SKILL_MAX,
+		SKILL_BOTANY = SKILL_MAX,
+		SKILL_COOKING = SKILL_MAX,
+		SKILL_COMBAT = SKILL_MAX,
+		SKILL_WEAPONS = SKILL_MAX,
+		SKILL_FORENSICS = SKILL_MAX,
+		SKILL_CONSTRUCTION = SKILL_MAX,
+		SKILL_ELECTRICAL = SKILL_MAX,
+		SKILL_ATMOS = SKILL_MAX,
+		SKILL_ENGINES = SKILL_MAX,
+		SKILL_DEVICES = SKILL_MAX,
+		SKILL_SCIENCE = SKILL_MAX,
+		SKILL_MEDICAL = SKILL_MAX,
+		SKILL_ANATOMY = SKILL_MAX,
+		SKILL_CHEMISTRY = SKILL_MAX
+	)
+	skill_points = 40
 
 	access = list(
 		access_security, access_brig, access_armory, access_forensics_lockers, access_heads, access_medical, access_morgue, access_tox, access_tox_storage,
