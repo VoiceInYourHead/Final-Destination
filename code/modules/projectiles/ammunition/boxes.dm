@@ -469,6 +469,7 @@
 	name = "assault rifle magazine"
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
 	icon_state = "automat4M"
+	matter = list(MATERIAL_STEEL = 1800)
 	mag_type = MAGAZINE
 	caliber = CALIBER_RIFLE
 	ammo_type = /obj/item/ammo_casing/rifle/fleet
@@ -477,6 +478,7 @@
 /obj/item/ammo_magazine/rifle/army
 	name = "battle rifle magazine"
 	icon = 'icons/fd/guns/weapon_cpss_icon.dmi'
+	matter = list(MATERIAL_STEEL = 3600)
 	icon_state = "automat3M"
 	mag_type = MAGAZINE
 	caliber = CALIBER_RIFLE_MILITARY
@@ -490,12 +492,15 @@
 	mag_type = MAGAZINE
 	caliber = CALIBER_RIFLE
 	ammo_type = /obj/item/ammo_casing/rifle/iccgn
+	matter = list(MATERIAL_STEEL = 1800)
 	max_ammo = 30
+
 /obj/item/ammo_magazine/rifle/precise
 	name = "assault rifle magazine"
 	icon = 'icons/fd/guns/weapon_gkk_icon.dmi'
 	icon_state = "gautomatic1M"
 	mag_type = MAGAZINE
+	matter = list(MATERIAL_STEEL = 1800)
 	caliber = CALIBER_RIFLE_MILITARY
 	ammo_type =  /obj/item/ammo_casing/rifle/accurate
 	max_ammo = 30
@@ -645,7 +650,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/shotgun/iccgn/beanbag
-	labels = list("beanbags")
+	labels = list("beanbag")
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 2790)
 
