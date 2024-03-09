@@ -3,11 +3,6 @@
 	name_short = "ICCGN"
 	email_domain = "navy.gcc"
 	assistant_job = null
-	min_skill = list(
-		SKILL_HAULING = SKILL_BASIC,
-		SKILL_WEAPONS = SKILL_BASIC,
-		SKILL_EVA = SKILL_BASIC
-	)
 
 	assistant_job = /datum/job/assistant
 	min_skill = list(	SKILL_HAULING = SKILL_TRAINED,
