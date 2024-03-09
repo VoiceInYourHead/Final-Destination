@@ -80,6 +80,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/exploration_shuttle
 	name = "Charon"
+	color = "#db542e"
 	desc = "An SSE-U11 long range shuttle, broadcasting SCGEC codes and the callsign \"Torch-2 Charon\"."
 	shuttle = "Charon"
 	max_speed = 1/(2 SECONDS)
@@ -92,6 +93,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/vagabond_shuttle
 	name = "Styx"
+	color = "#db542e"
 	desc = "An Frankenstein of a ship, made from the scrap, left after various other shuttles. It's broadcasting very old SCG codes with a name of \"Torch-3 Styx\"."
 	shuttle = "Styx"
 	max_speed = 1/(2 SECONDS)
@@ -105,6 +107,7 @@
 
 /obj/effect/overmap/visitable/ship/landable/aquila
 	name = "Aquila"
+	color = "#db542e"
 	desc = "A PM-24 modular transport, broadcasting SCGEC codes and the callsign \"Torch-1 Aquila\"."
 	shuttle = "Aquila"
 	integrity_failure_cap = 60

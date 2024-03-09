@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(cloud_turfs)
 /obj/effect/overmap/visitable/sector/exoplanet/desert_good
 	name = "deserted ruins"
 	desc = "An old city, crumbled under the Ascent's invasion."
-	color = "#a7a7a7"
+	color = "#047a29"
 	planetary_area = /area/exoplanet/desert_good
 	rock_colors = list(COLOR_BEIGE, COLOR_PALE_YELLOW, COLOR_GRAY80, COLOR_BROWN)
 	plant_colors = list("#efdd6f","#7b4a12","#e49135","#ba6222","#5c755e","#420d22")

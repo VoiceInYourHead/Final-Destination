@@ -168,4 +168,4 @@
 	area_flags = AREA_FLAG_EXTERNAL
 	junkyard_surface = TRUE
 
-	has_gravity = FALSE
+	has_gravity = TRUE
