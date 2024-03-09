@@ -9,6 +9,11 @@
 	name = "large scarf"
 	desc = "A massive scarf made of durable fabric. Has several fastenings for attaching to outer clothing or voidsuits."
 	icon = 'icons/fd/mob/onmob_accessories.dmi'
+	accessory_icons = list(
+        slot_w_uniform_str = 'icons/fd/mob/onmob_accessories.dmi',
+        slot_wear_suit_str = 'icons/fd/mob/onmob_accessories.dmi')
+	item_icons = list(
+        slot_wear_mask_str = 'icons/fd/mob/onmob_mask.dmi')
 	icon_state = "coolscarf"
 	item_state = "coolscarf"
 	slot = ACCESSORY_SLOT_INSIGNIA
@@ -18,6 +23,11 @@
 	name = "Shemagh"
 	desc = "A thick bandana designed to be worn around the neck. Has several fastenings for attaching to outer clothing or voidsuits."
 	icon = 'icons/fd/mob/onmob_accessories.dmi'
+	accessory_icons = list(
+        slot_w_uniform_str = 'icons/fd/mob/onmob_accessories.dmi',
+        slot_wear_suit_str = 'icons/fd/mob/onmob_accessories.dmi')
+	item_icons = list(
+        slot_wear_mask_str = 'icons/fd/mob/onmob_mask.dmi')
 	icon_state = "shemagh"
 	item_state = "shemagh"
 	slot = ACCESSORY_SLOT_INSIGNIA
@@ -33,6 +43,11 @@
 	name = "shoulder cape"
 	desc = "A shoulder cape, often used to show the rank or specialization of the wearer. Has several fastenings for attaching to outer clothing or voidsuits."
 	icon = 'icons/fd/mob/onmob_accessories.dmi'
+	accessory_icons = list(
+        slot_w_uniform_str = 'icons/fd/mob/onmob_accessories.dmi',
+        slot_wear_suit_str = 'icons/fd/mob/onmob_accessories.dmi')
+	item_icons = list(
+        slot_wear_mask_str = 'icons/fd/mob/onmob_mask.dmi')
 	icon_state = "shoulder_cape"
 	item_state = "shoulder_cape"
 	slot = ACCESSORY_SLOT_INSIGNIA
