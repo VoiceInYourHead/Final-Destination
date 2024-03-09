@@ -57,6 +57,8 @@
 #define CULTURE_HUMAN_VATGROWN "Nonborn"
 #define CULTURE_HUMAN_MARTIAN  "Martian, Surfacer"
 #define CULTURE_HUMAN_MARSTUN  "Martian, Tunneller"
+#define CULTURE_HUMAN_KIPERIUSMINER "Kiperius, Miner Colony"
+#define CULTURE_HUMAN_KIPERIUSPRISONER "Kiperius, Prison"
 #define CULTURE_HUMAN_LUNAPOOR "Luna, Lower Class"
 #define CULTURE_HUMAN_LUNARICH "Luna, Upper Class"
 #define CULTURE_HUMAN_VENUSIAN "Venusian, Zoner"
