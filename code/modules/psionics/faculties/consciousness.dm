@@ -350,7 +350,7 @@
 
 /decl/psionic_power/consciousness/invis
 	name =            "Invisibility"
-	cost =            30
+	cost =            50
 	cooldown =        200
 	use_ranged =     TRUE
 	use_melee =     TRUE
@@ -368,12 +368,12 @@
 		T--
 	src.visible_message(SPAN_WARNING("[src] внезапно материализуется из воздуха!"))
 	src.alpha = 100
-	sleep(2)
-	src.alpha = 150
-	sleep(2)
-	src.alpha = 200
-	sleep(2)
-	src.alpha = 255
+	spawn(1 SECONDS)
+		src.alpha = 150
+	spawn(2 SECONDS)
+		src.alpha = 200
+	spawn(3 SECONDS)
+		src.alpha = 255
 	if(con_rank_user == PSI_RANK_GRANDMASTER)
 		src.RemoveMovementHandler(/datum/movement_handler/mob/incorporeal)
 
@@ -387,31 +387,31 @@
 			if(do_after(user, 30))
 				user.visible_message(SPAN_WARNING("[user] касается [target] и тот исчезает на глазах!"))
 				target.alpha = 200
-				sleep(2)
-				target.alpha = 150
-				sleep(2)
-				target.alpha = 100
-				sleep(2)
-				target.alpha = 50
-				sleep(2)
-				target.alpha = 25
-				sleep(2)
-				target.alpha = 10
+				spawn(1 SECONDS)
+					target.alpha = 150
+				spawn(2 SECONDS)
+					target.alpha = 100
+				spawn(3 SECONDS)
+					target.alpha = 50
+				spawn(4 SECONDS)
+					target.alpha = 25
+				spawn(5 SECONDS)
+					target.alpha = 10
 				target.run_timer_invisibility()
 				return TRUE
 
 		user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
 		user.alpha = 200
-		sleep(2)
-		user.alpha = 150
-		sleep(2)
-		user.alpha = 100
-		sleep(2)
-		user.alpha = 50
-		sleep(2)
-		user.alpha = 25
-		sleep(2)
-		user.alpha = 10
+		spawn(1 SECONDS)
+			user.alpha = 150
+		spawn(2 SECONDS)
+			user.alpha = 100
+		spawn(3 SECONDS)
+			user.alpha = 50
+		spawn(4 SECONDS)
+			user.alpha = 25
+		spawn(5 SECONDS)
+			user.alpha = 10
 		if(con_rank_user == PSI_RANK_GRANDMASTER)
 			user.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
 		user.run_timer_invisibility()
