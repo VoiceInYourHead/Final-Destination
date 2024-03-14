@@ -9,6 +9,7 @@
 "i" = (/obj/structure/flora/tropic/rock,/turf/unsimulated/floor/exoplanet/water/shallow{color = "#7599a7"},/area/psionic_school/outdoor)
 "j" = (/obj/structure/flora/tropic/rock,/turf/unsimulated/floor/exoplanet/water/shallow,/area/psionic_school/outdoor)
 "k" = (/turf/simulated/open,/area/psionic_school/outdoor)
+"l" = (/obj/effect/landmark/map_data{height = 2},/turf/unsimulated/wall{color = "black"},/area/psionic_school/outdoor)
 "m" = (/obj/structure/fd/placeholder/better{opacity = 0},/obj/structure/fd/bs_crystal,/turf/unsimulated/floor/exoplanet/barren{color = "#313453"; flooded = 0},/area/psionic_school/outdoor/cave)
 "n" = (/obj/random/flora/school,/obj/random/flora/school,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 "o" = (/obj/random/flora/school,/mob/living/simple_animal/hostile/smart_beast/rafama,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
@@ -250,5 +251,5 @@ aIIIZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 aIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIa
 aIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIa
 aIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
