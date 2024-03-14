@@ -81,7 +81,7 @@
 	. = ..()
 	if(.)
 
-		var/chosen_option = show_radial_menu(user, user, options, radius = 42, require_near = TRUE)
+		var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
 		if (!chosen_option)
 			return 0
 		if(user.psi.suppressed)
@@ -94,11 +94,10 @@
 				C.Weaken(5)
 				C.spin(32,2)
 				C.emote("giggle")
-				sleep(3 SECONDS)
-				C.emote("giggle")
-				sleep(3 SECONDS)
-				C.emote("giggle")
-				sleep(3 SECONDS)
+				spawn(3 SECONDS)
+					C.emote("giggle")
+				spawn(6 SECONDS)
+					C.emote("giggle")
 				return 1
 			if("Sadness")
 				var/sad_option = pick("погружаетесь в ваши детские воспоминания", "вспоминаете о ужасной потере", "на секунду замечаете перед собой знакомый силуэт", "вспоминаете о своих прошлых ошибках")
@@ -106,11 +105,10 @@
 				var/mob/living/carbon/C = target
 				C.eye_blurry = max(C.eye_blurry, 10)
 				C.emote("whimper")
-				sleep(3 SECONDS)
-				C.emote("whimper")
-				sleep(3 SECONDS)
-				C.emote("whimper")
-				sleep(3 SECONDS)
+				spawn(3 SECONDS)
+					C.emote("whimper")
+				spawn(6 SECONDS)
+					C.emote("whimper")
 				return 1
 			if("Fear")
 				to_chat(target, SPAN_OCCULT("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [user]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))

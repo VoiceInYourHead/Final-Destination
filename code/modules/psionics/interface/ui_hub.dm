@@ -72,6 +72,13 @@
 	owner.psi.suppressed = !owner.psi.suppressed
 	to_chat(owner, "<span class='notice'>You are <b>[owner.psi.suppressed ? "now suppressing" : "no longer suppressing"]</b> your psi-power.</span>")
 	if(owner.psi.suppressed)
+		var/mob/living/carbon/human/A = owner
+		if(A.levitation)
+			A.levitation = FALSE
+			A.pass_flags &= ~PASS_FLAG_TABLE
+			A.pixel_y = 0
+			A.overlays -= image('icons/screen/psi.dmi', "levitation")
+			A.stop_floating()
 		owner.psi.cancel()
 		owner.psi.hide_auras()
 	else

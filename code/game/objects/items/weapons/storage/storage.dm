@@ -447,6 +447,12 @@
 			dump_contents()
 			return 1
 
+/obj/item/storage/proc/empty_all()
+	var/turf/T = get_turf(src)
+	for(var/obj/item/I in contents)
+		remove_from_storage(I, T, 1)
+	finish_bulk_removal()
+
 /obj/item/storage/proc/make_exact_fit()
 	storage_slots = contents.len
 

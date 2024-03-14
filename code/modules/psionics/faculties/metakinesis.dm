@@ -16,19 +16,33 @@
 	use_description = "Нажмите по пустой руке на жёлтом интенте, чтобы воспользоваться одним из трёх стихийных элементов."
 	admin_log = FALSE
 
+	var/list/images = list()
+
+	var/list/items_elements = list()
+	var/list/paths_elements = list(/obj/item/psychic_power/psielectro,
+		/obj/item/psychic_power/psifire,
+		/obj/item/psychic_power/psiice)
+
 /decl/psionic_power/metakinesis/element/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_GRAB)
 		return FALSE
 	. = ..()
 	if(.)
-		var/option = input(target, "Choose something!", "Element to use") in list("Electricity", "Fire", "Ice")
-		if (!option)
-			return
-		if(user.psi.suppressed)
-			return
-		if(option == "Electricity")
-			return new /obj/item/psychic_power/psielectro(user, user)
-		if(option == "Fire")
-			return new /obj/item/psychic_power/psifire(user, user)
-		if(option == "Ice")
-			return new /obj/item/psychic_power/psiice(user, user)
+
+		for(var/element in paths_elements)
+			var/obj/item/I = new element (src)
+			items_elements += I
+			var/image/img = image(icon = I.icon, icon_state = I.item_state)
+			img.name = I.name
+			images[I] = img
+
+		var/obj/item = show_radial_menu(user, user, images, radius = 30, require_near = TRUE)
+		if(item && !user.psi.suppressed)
+			var/item_type = item.type
+			. = new item_type(user)
+
+		for(item in items_elements)
+			qdel(item)
+
+		images.Cut()
+		items_elements.Cut()

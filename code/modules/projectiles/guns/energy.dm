@@ -115,7 +115,7 @@
 	if(cell_type)
 		power_supply = new cell_type(src)
 	else
-		power_supply = new /obj/item/cell/guncell/medium(src)
+		power_supply = new battery_type(src)
 	if(self_recharge)
 		START_PROCESSING(SSobj, src)
 	update_icon()

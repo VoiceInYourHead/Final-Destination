@@ -62,7 +62,7 @@
 		to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
 		return FALSE
 
-	if(user.psi.get_rank(PSI_CONSCIOUSNESS) >= PSI_RANK_MASTER)
+	if(user.psi.get_rank(PSI_CONSCIOUSNESS) >= PSI_RANK_MASTER && target != user)
 		var/option = input(user, "Связь!", "Что вы хотите сделать?") in list("Поговорить", "Привязать", "Отвязать")
 		if (!option)
 			return
@@ -121,6 +121,8 @@
 
 /// ///
 
+	if(target != user)
+		return FALSE
 	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
 	if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
 		return FALSE
@@ -296,7 +298,7 @@
 	. = ..()
 	if(.)
 		if(target == user)
-			to_chat(user, "<span class='warning'>Вы не можете применить это на самих себя!</span>")
+			to_chat(user, "<span class='warning'>Вы не можете применить эту способность на себе!</span>")
 			return 0
 		if(target.psi)
 			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
@@ -348,7 +350,7 @@
 
 /decl/psionic_power/consciousness/invis
 	name =            "Invisibility"
-	cost =            30
+	cost =            50
 	cooldown =        200
 	use_ranged =     TRUE
 	use_melee =     TRUE
@@ -366,12 +368,12 @@
 		T--
 	src.visible_message(SPAN_WARNING("[src] внезапно материализуется из воздуха!"))
 	src.alpha = 100
-	sleep(2)
-	src.alpha = 150
-	sleep(2)
-	src.alpha = 200
-	sleep(2)
-	src.alpha = 255
+	spawn(1 SECONDS)
+		src.alpha = 150
+	spawn(2 SECONDS)
+		src.alpha = 200
+	spawn(3 SECONDS)
+		src.alpha = 255
 	if(con_rank_user == PSI_RANK_GRANDMASTER)
 		src.RemoveMovementHandler(/datum/movement_handler/mob/incorporeal)
 
@@ -381,18 +383,35 @@
 		return FALSE
 	. = ..()
 	if(.)
+		if(istype(target, /mob/living/carbon) && target != user && con_rank_user == PSI_RANK_MASTER)
+			if(do_after(user, 30))
+				user.visible_message(SPAN_WARNING("[user] касается [target] и тот исчезает на глазах!"))
+				target.alpha = 200
+				spawn(1 SECONDS)
+					target.alpha = 150
+				spawn(2 SECONDS)
+					target.alpha = 100
+				spawn(3 SECONDS)
+					target.alpha = 50
+				spawn(4 SECONDS)
+					target.alpha = 25
+				spawn(5 SECONDS)
+					target.alpha = 10
+				target.run_timer_invisibility()
+				return TRUE
+
 		user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
 		user.alpha = 200
-		sleep(2)
-		user.alpha = 150
-		sleep(2)
-		user.alpha = 100
-		sleep(2)
-		user.alpha = 50
-		sleep(2)
-		user.alpha = 25
-		sleep(2)
-		user.alpha = 10
+		spawn(1 SECONDS)
+			user.alpha = 150
+		spawn(2 SECONDS)
+			user.alpha = 100
+		spawn(3 SECONDS)
+			user.alpha = 50
+		spawn(4 SECONDS)
+			user.alpha = 25
+		spawn(5 SECONDS)
+			user.alpha = 10
 		if(con_rank_user == PSI_RANK_GRANDMASTER)
 			user.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
 		user.run_timer_invisibility()
@@ -406,11 +425,13 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_OPERANT
 	suppress_parent_proc = TRUE
-	use_description = "Схватите цель, затем выберите верхнюю часть тела и зелёном интент. После этого, нажмите по цели захватом, чтобы погрузить её в мир галлюцинаций."
+	use_description = "Схватите цель, затем выберите верхнюю часть тела на зелёном интент. После этого, нажмите по цели захватом, чтобы погрузить её в мир галлюцинаций."
 
 /decl/psionic_power/consciousness/curse/invoke(var/mob/living/user, var/mob/living/carbon/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
 	if(user.zone_sel.selecting != BP_CHEST)
+		return FALSE
+	if(target == user)
 		return FALSE
 	. = ..()
 	if(.)
@@ -436,18 +457,112 @@
 		return FALSE
 
 	. = ..()
+	if(.)
+		var/turf/target_turf = get_turf(target)
+		var/turf/user_turf = get_turf(user)
 
-	var/turf/target_turf = get_turf(target)
-	var/turf/user_turf = get_turf(user)
+		var/list/mobs = GLOB.living_mob_list_ + GLOB.dead_mob_list_
+		for(var/mob/living/M in mobs)
+			if(M == user)
+				continue
+			if(get_dist(user, M) > cn_rank_user)
+				continue
+			M.eye_blind = max(M.eye_blind,cn_rank_user)
+		target.forceMove(user_turf)
+		user.forceMove(target_turf)
 
-	var/list/mobs = GLOB.living_mob_list_ + GLOB.dead_mob_list_
-	for(var/mob/living/M in mobs)
-		if(M == user)
-			continue
-		if(get_dist(user, M) > cn_rank_user)
-			continue
-		M.eye_blind = max(M.eye_blind,cn_rank_user)
-	target.forceMove(user_turf)
-	user.forceMove(target_turf)
+		return TRUE
 
-	return TRUE
+//This differs from how TG does it, they have a dedicated turf type for open turf, we have to check the density. Thanks Aurora, always be special.
+///Returns a list with all the adjacent open turfs. Clears the list of nulls in the end.
+/proc/get_adjacent_open_turfs(atom/center)
+	var/list/hand_back = list()
+	// Inlined get_open_turf_in_dir, just to be fast
+	var/turf/new_turf = get_step(center, NORTH)
+	if(istype(new_turf) && !new_turf.density)
+		hand_back += new_turf
+	new_turf = get_step(center, SOUTH)
+	if(istype(new_turf) && !new_turf.density)
+		hand_back += new_turf
+	new_turf = get_step(center, EAST)
+	if(istype(new_turf) && !new_turf.density)
+		hand_back += new_turf
+	new_turf = get_step(center, WEST)
+	if(istype(new_turf) && !new_turf.density)
+		hand_back += new_turf
+	return hand_back
+
+/decl/psionic_power/consciousness/copies
+	name =            "Non-Existing Copies"
+	cost =            50
+	cooldown =        100
+	use_melee =     TRUE
+	min_rank =        PSI_RANK_OPERANT
+	suppress_parent_proc = TRUE
+	use_description = "Выберите рот на синем интенте, и затем нажмите по себе, чтобы создать сразу несколько копий самого себя."
+	var/amount = 1
+
+/decl/psionic_power/consciousness/copies/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
+	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+
+	if(con_rank_user == PSI_RANK_OPERANT)
+		amount = 2
+
+	if(con_rank_user == PSI_RANK_MASTER)
+		amount = 3
+
+	if(con_rank_user == PSI_RANK_GRANDMASTER)
+		amount = 5
+
+	if(user.zone_sel.selecting != BP_MOUTH)
+		return FALSE
+
+	if(user.a_intent != I_DISARM)
+		return FALSE
+
+	if(target != user)
+		return FALSE
+
+	. = ..()
+	if(.)
+		if(do_after(user, 10))
+			to_chat(user, SPAN_WARNING("Ты разделяешь своё подсознание на [amount] копий"))
+			for(var/i = 1 to amount)
+				var/mob/living/simple_animal/hostile/mirror_shade/MS = new(pick(get_adjacent_open_turfs(user)), user)
+				MS.appearance = user.appearance
+				MS.name = user.name
+			return TRUE
+
+/mob/living/simple_animal/hostile/mirror_shade
+
+	turns_per_move = 2
+	response_help = "pokes"
+	response_disarm = "shoves"
+	response_harm = "hits"
+	speed = 1
+	maxHealth = 50
+	health = 50
+	harm_intent_damage = 10
+	natural_weapon = /obj/item/natural_weapon/punch
+	a_intent = I_HURT
+	status_flags = CANPUSH
+
+	var/mob/living/carbon/human/owner
+
+/mob/living/simple_animal/hostile/mirror_shade/Initialize(mapload, var/mob/set_owner)
+	. = ..()
+	if(set_owner)
+		owner = set_owner
+		friends += owner
+	QDEL_IN(src, 30 SECONDS)
+
+/mob/living/simple_animal/hostile/mirror_shade/examine(mob/user)
+	if(!QDELETED(owner))
+		/// Technically suspicious, but these have 30 seconds of lifetime so it's probably fine.
+		return owner.examine(user)
+	return ..()
+
+/mob/living/simple_animal/hostile/mirror_shade/Destroy()
+	owner = null
+	visible_message(SPAN_WARNING("[src] dissipates into nothingness, as if it were air all along!"))
+	return ..()
