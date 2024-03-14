@@ -752,6 +752,22 @@
 		"nav_camp_antag"
 	)
 
+	var/list/lightup
+	var/lightlevel = 0.3 //This default makes turfs not generate light. Adjust to have exoplanents be lit.
+
+/obj/effect/overmap/visitable/sector/camp/Initialize()
+	..()
+
+	lightup = block(locate(world.maxx, world.maxy, max(map_z)), locate(1, 1, min(map_z)))
+	for(var/atom/A as anything in lightup)
+		if(!istype(A.loc, /area/psionic_school/outdoor) || A.density || istype(A.loc, /area/psionic_school/outdoor/cave))
+			lightup -= A
+	update_daynight()
+
+/obj/effect/overmap/visitable/sector/camp/proc/update_daynight(light = 0.7, light_color = "#e2d1b2")
+	for(var/turf/T as anything in lightup)
+		T.set_light(light, 0.1, 2, l_color = light_color)
+
 /obj/effect/submap_landmark/joinable_submap/camp
 	name = "Psionics Camp"
 	archetype = /decl/submap_archetype/camp
@@ -766,6 +782,7 @@
 		/datum/job/submap/camp/okita,
 		/datum/job/submap/camp/numerius,
 		/datum/job/submap/camp/julian,
+		/datum/job/submap/camp/zeza,
 
 		/datum/job/submap/camp/shtorn,
 		/datum/job/submap/camp/sara,
@@ -838,13 +855,15 @@
 /obj/effect/submap_landmark/spawnpoint/camp/saturio
 	name = "Saturio Amantes"
 
-//SATURIO CUSTOM ITEMS
+//SATURIO CUSTOM ITEMS//
 
 /obj/item/material/twohanded/sledgehammer/dwarf
 	icon = 'icons/fd/items/melee_inventory.dmi'
 	icon_state = "hammer_power0"
 	base_icon = "hammer_power"
 	item_state = "breacher1"
+
+// //
 
 /datum/job/submap/camp/maxim
 	title = "Maxim Kuznetsov"
@@ -870,7 +889,7 @@
 /obj/effect/submap_landmark/spawnpoint/camp/okita
 	name = "Okita Takeda"
 
-//OKITA CUSTOM ITEMS
+//OKITA CUSTOM ITEMS//
 
 /obj/item/clothing/head/helmet/custom/biker
 	name = "bike helmet"
@@ -888,6 +907,7 @@
 	siemens_coefficient = 0.7
 	flags_inv = BLOCKHAIR
 
+// //
 
 /datum/job/submap/camp/numerius
 	title = "Numerius De Vigo"
@@ -912,6 +932,18 @@
 
 /obj/effect/submap_landmark/spawnpoint/camp/julian
 	name = "Julian Morawski"
+
+/datum/job/submap/camp/zeza
+	title = "Kass Zeza"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/zeza
+	name = "Kass Zeza"
 
 ///GIRLS///
 
@@ -986,7 +1018,7 @@
 	loadout_allowed = TRUE
 	skill_points = 30
 
-//NAOKI CUSTOM ITEMS
+//NAOKI CUSTOM ITEMS//
 
 /obj/item/clothing/glasses/custom/aizawa_red
 	name = "red combat glasses"
@@ -1027,6 +1059,8 @@
 		update_clothing_icon()
 		update_vision()
 		usr.update_action_buttons()
+
+// //
 
 /obj/effect/submap_landmark/spawnpoint/camp/teacher1
 	name = "Psionic teacher 1"
@@ -1204,6 +1238,9 @@
 
 /area/psionic_school/indoor/sara/upper
 	base_turf = /turf/simulated/open
+
+/area/psionic_school/outdoor/cave
+	name = "\improper Cave"
 
 //CAMPUS
 

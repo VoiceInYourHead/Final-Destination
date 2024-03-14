@@ -6,6 +6,22 @@
 	color = "#6db8b8"
 	initial_generic_waypoints = list()
 
+	var/list/lightup
+	var/lightlevel = 0.3 //This default makes turfs not generate light. Adjust to have exoplanents be lit.
+
+/obj/effect/overmap/visitable/sector/forest_practice/Initialize()
+	..()
+
+	lightup = block(locate(world.maxx, world.maxy, max(map_z)), locate(1, 1, min(map_z)))
+	for(var/atom/A as anything in lightup)
+		if(!istype(A.loc, /area/psionic_school/outdoor) || A.density || istype(A.loc, /area/psionic_school/outdoor/cave))
+			lightup -= A
+	update_daynight()
+
+/obj/effect/overmap/visitable/sector/forest_practice/proc/update_daynight(light = 0.7, light_color = "#e2d1b2")
+	for(var/turf/T as anything in lightup)
+		T.set_light(light, 0.1, 2, l_color = light_color)
+
 /datum/map_template/ruin/away_site/forest_practice
 	name = "Jungle Planet 2"
 	id = "awaysite_forest_practice"
