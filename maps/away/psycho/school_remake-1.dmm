@@ -1544,7 +1544,7 @@
 "MV" = (/obj/effect/floor_decal/borderfloorwhite{dir = 8},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/kitchen/canteen)
 "MW" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/male/r3)
 "MX" = (/obj/structure/noticeboard{pixel_y = 28},/obj/structure/table/gamblingtable,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/sara)
-"MY" = (/obj/machinery/optable,/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/obj/effect/floor_decal/corner/paleblue{dir = 10},/obj/machinery/oxygen_pump{pixel_x = -32; pixel_y = 32},/obj/machinery/body_scan_display{pixel_y = 24},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
+"MY" = (/obj/machinery/optable,/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/obj/effect/floor_decal/corner/paleblue{dir = 10},/obj/machinery/oxygen_pump{pixel_x = -32; pixel_y = 32},/obj/machinery/body_scan_display{pixel_y = 24},/obj/effect/landmark/corpse/city/natarmay/light{brute_damage = 80},/turf/simulated/floor/tiled/white,/area/psionic_school/indoor/medbay)
 "MZ" = (/obj/effect/floor_decal{color = "grey"; dir = 1; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
 "Na" = (/obj/machinery/ntnet_relay,/turf/simulated/floor/bluegrid,/area/psionic_school/indoor/tcomms)
 "Nb" = (/obj/effect/floor_decal/techfloor{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
