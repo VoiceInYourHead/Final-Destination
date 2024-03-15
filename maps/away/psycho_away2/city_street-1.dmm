@@ -9,7 +9,6 @@
 "bs" = (/obj/effect/paint/red,/turf/simulated/wall/r_wall/invincible,/area/psionic_school/outdoor)
 "bt" = (/obj/effect/floor_decal/techfloor{dir = 1},/obj/structure/bed/chair/pew/left/mahogany,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2,/obj/item/haircomb/brush,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor)
 "bF" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
-"bL" = (/obj/effect/submap_landmark/spawnpoint/camp/psionic2,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "bQ" = (/obj/effect/floor_decal/borderfloor/corner{dir = 4},/obj/machinery/vending/coffee{pixel_y = 9},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "cb" = (/obj/effect/floor_decal/corner/blue/half{dir = 4},/obj/structure/bed/chair/padded/blue{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
 "cn" = (/obj/effect/floor_decal/borderfloorwhite{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/psionic_school/indoor)
@@ -17,12 +16,10 @@
 "cF" = (/obj/machinery/vending/npc/police{icon_state = "npc_police1"},/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "cN" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/turf/simulated/floor/tiled/tile3,/area/psionic_school/outdoor)
 "db" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/obj/effect/landmark/light/school,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
-"dl" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/effect/submap_landmark/spawnpoint/camp/psionic2,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "dn" = (/obj/effect/floor_decal{color = "grey"; dir = 8; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "ds" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/lime/bordercorner{dir = 1},/turf/simulated/floor/tiled,/area/psionic_school/indoor)
 "dt" = (/obj/machinery/light{dir = 1},/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
 "dy" = (/obj/structure/coatrack{pixel_x = 8; pixel_y = 21},/obj/structure/coatrack,/obj/item{anchored = 1; icon = 'icons/fd/items/weapons.dmi'; icon_state = "gcenser"; layer = 4.08; name = "censer"; pixel_x = -1; pixel_y = 17},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor)
-"dC" = (/obj/effect/submap_landmark/spawnpoint/camp/psionic2,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "dE" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/structure/table/reinforced,/obj/item/material/clipboard/ebony,/obj/item/paper{pixel_x = 2},/obj/item/paper{pixel_x = -4; pixel_y = -3},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "dM" = (/obj/effect/floor_decal/techfloor{dir = 8},/obj/structure/table/reinforced,/obj/machinery/vending/npc/civilian/armyman{dir = 8; pixel_x = 23; pixel_y = -17},/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor)
 "dU" = (/obj/structure/catwalk,/obj/structure/table/mag,/turf/simulated/floor/plating,/area/psionic_school/indoor)
@@ -41,6 +38,7 @@
 "eZ" = (/obj/machinery/door/airlock/multi_tile/glass/command,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor)
 "fn" = (/obj/effect/floor_decal/borderfloor,/obj/structure/table/reinforced,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "fq" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 6},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
+"fs" = (/obj/effect/submap_landmark/spawnpoint/city_psi/psi_student,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "ft" = (/obj/effect/floor_decal/spline/plain/black{dir = 10},/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 4},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "fw" = (/obj/machinery/vending/npc/civilian{dir = 8; icon_state = "npc_civilian17"},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "fA" = (/obj/structure/flora/ausbushes/fernybush,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
@@ -96,6 +94,7 @@
 "kr" = (/obj/effect/floor_decal/corner/blue/half{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 8},/obj/structure/bed/chair/office/dark{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
 "kv" = (/obj/effect/floor_decal/spline/fancy/wood,/obj/structure/railing/mapped,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "kB" = (/obj/machinery/disposal,/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor)
+"kC" = (/obj/effect/submap_landmark/spawnpoint/city_psi/psi_student,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "kF" = (/obj/effect/floor_decal/corner/brown/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
 "kJ" = (/obj/effect/floor_decal/corner/blue/border{dir = 6},/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
 "kM" = (/obj/effect/floor_decal/techfloor{dir = 9},/obj/structure/bookcase,/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey{pixel_x = -7; pixel_y = 23},/obj/item/reagent_containers/food/drinks/bottle/rum{pixel_x = -2; pixel_y = 23},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor)
@@ -276,7 +275,7 @@
 "Cg" = (/obj/structure/table/mag,/obj/item/fd/ancient_items/corrupted_radio{pixel_x = 7; pixel_y = 10},/obj/item/fd/ancient_items/corrupted_crowbar,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
 "Ch" = (/obj/machinery/light/golden{dir = 1},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
 "CG" = (/obj/machinery/light,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
-"CI" = (/obj/effect/overmap/visitable/sector/city,/obj/effect/submap_landmark/joinable_submap/camp,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"CI" = (/obj/effect/overmap/visitable/sector/city,/obj/effect/submap_landmark/joinable_submap/city_psi,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "CU" = (/obj/structure/hygiene/sink{pixel_y = -15},/obj/item/storage/mirror{pixel_y = -30},/obj/effect/floor_decal/corner/green/border{dir = 6},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor)
 "CX" = (/obj/structure/table/rack/dark,/obj/effect/floor_decal/corner/lime/border{dir = 9},/obj/item/clothing/shoes/jackboots{pixel_x = -4; pixel_y = 16},/obj/item/clothing/shoes/orange{pixel_y = 3},/obj/item/clothing/accessory/ubac/green,/turf/simulated/floor/tiled,/area/psionic_school/indoor)
 "Dc" = (/obj/effect/floor_decal/corner/brown/half{dir = 1},/obj/structure/table/rack,/obj/item/stack/material/steel/fifty{pixel_y = 7},/obj/item/stack/material/steel/fifty,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
@@ -404,7 +403,7 @@
 "NW" = (/obj/machinery/light{dir = 8},/obj/structure/table/reinforced,/obj/item/mech_equipment/mounted_system/taser/plasma{pixel_x = 2; pixel_y = 5},/obj/item/zipgunframe,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
 "NZ" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/structure/bed/chair/office/comfy/black{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "Og" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/tile2,/area/psionic_school/outdoor)
-"Oj" = (/obj/machinery/light,/obj/effect/submap_landmark/spawnpoint/camp/psionic2,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
+"Oj" = (/obj/machinery/light,/obj/effect/submap_landmark/spawnpoint/city_psi/psi_student,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "On" = (/obj/effect/floor_decal/spline/plain/black,/obj/machinery/vending/npc/civilian{dir = 4; icon_state = "npc_civilian9"},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 "Oo" = (/obj/machinery/papershredder{density = 0; pixel_y = 15},/obj/machinery/photocopier{pixel_y = -5},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor)
 "Ox" = (/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
@@ -524,6 +523,7 @@
 "ZK" = (/obj/structure/table/woodentable/mahogany,/obj/item/newspaper{pixel_x = -2; pixel_y = 10},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor)
 "ZM" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/fd/placeholder/better{opacity = 0},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor)
 "ZR" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/turf/simulated/floor/tiled/techmaint,/area/psionic_school/indoor)
+"ZU" = (/obj/effect/floor_decal/spline/plain/black{dir = 5},/obj/effect/submap_landmark/spawnpoint/city_psi/psi_student,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/outdoor)
 
 (1,1,1) = {"
 jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdjd
@@ -591,10 +591,10 @@ jdNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM
 jdxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOZvNMNMNMNMNMNMyDxOxOxOxOxOxOxOxOxOxOxOxOxOxOZvNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMyDxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOjd
 jdtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXwiNMNMNMNMWGtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXgdgdwiNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMWGgdgdtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXtXjd
 jdWIWIWIWIWIWIWIWIWIWIWIWIWIWIWIvvulwfwfwfwfrVAixzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzAiAinmmYwfwfwfwfwfwfNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMWGgdgdtXtXtXtXtXtXtXnmnmnmnmnmnmnmnmnmnmnmnmnmnmjd
-jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdWIrbzdNMNMNMNMNGtXxzzRnNnNnNnNnNnNnNnNTOxzbQbkpKbabLtXtXbLwiNMNMNMyDXvxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOtXtXtXtXtXtXtXtXtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdqkaIzdNMgLNMNMNGtXxzDqgBqIqIqIqIKqKOhEQlBoptptptbatXtXtXtXdlNMNMWGtXRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmtXQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdqkGAzdNMNMNMNMNGtXxzeZMdxzxzxzxzxzxzKOQlxzelelelbaEedCOjtXhjNMNMNGtXRmjdjdjdjdjdjdjdjdjdjdjdjdjdjdRmtXQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdWIlnzdNMNMNMNMNGtXxzynKOxzititititxzvbQlxzYIYIYIxzeBhDxzbLhjNMNMNGtXRmjdjdjdjdjdjdjdjdjdjdjdjdjdjdRmtXQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdWIrbzdNMNMNMNMNGtXxzzRnNnNnNnNnNnNnNnNTOxzbQbkpKbafstXfstXZUNMNMNMyDXvxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOxOtXtXtXtXtXtXtXtXtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdqkaIzdNMgLNMNMNGtXxzDqgBqIqIqIqIKqKOhEQlBoptptptbafstXtXfshjNMNMWGtXRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmtXQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdqkGAzdNMNMNMNMNGtXxzeZMdxzxzxzxzxzxzKOQlxzelelelbakCEeOjtXhjNMNMNGtXRmjdjdjdjdjdjdjdjdjdjdjdjdjdjdRmtXQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdWIlnzdNMNMNMNMNGtXxzynKOxzititititxzvbQlxzYIYIYIxzeBhDxzfshjNMNMNGtXRmjdjdjdjdjdjdjdjdjdjdjdjdjdjdRmtXQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
 jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdWIIezdNMNMNMNMNGtXxzHcwDxzxzxzxzxzxzBHQlFQnNnNnNMWnNnNxztXhjNMNMNGtXPrPrPrPrIAPrPrjdjdPrPrPrIAPrPrPrtXQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmtXtXnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
 jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdqklnzdNMNMNMNMNGtXxzHcELxzoKAnDdbtxzwDQlxzjNgBGuqIqIqIxzvChjNMNMNGvCPrEgrTpIWBzOPrjdjdPrCXdsKBIuZhPrvCQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmvCvCnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd
 jdjdjdjdjdjdjdjdjdjdjdjdjdjdjdqkjvzdNMNMNMNMNGtXxzkrwDFQXeKpVRVRxzwDQlFQcbYLxzXKUoXMxzxHvwNMNMftxHPrFrsVhRjtpaPrjdjdPrxUITHvsyOJPrxHQmjdjdjdjdjdjdjdjdjdjdjdjdjdjdjdQmxHxHnmjdjdjdjdjdjdjdjdjdjdjdjdjdjd

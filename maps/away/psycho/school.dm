@@ -789,7 +789,6 @@
 		/datum/job/submap/camp/vivian,
 		/datum/job/submap/camp/mara,
 
-		/datum/job/submap/camp/psionic2,
 		/datum/job/submap/camp/teacher1,
 		/datum/job/submap/camp/teacher2,
 		/datum/job/submap/camp/teacher3,
@@ -997,7 +996,7 @@
 
 ///END///
 
-/datum/job/submap/camp/psionic2
+/*/datum/job/submap/camp/psionic2
 	title = "New Student"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
@@ -1007,7 +1006,7 @@
 	skill_points = 25
 
 /obj/effect/submap_landmark/spawnpoint/camp/psionic2
-	name = "New Student"
+	name = "New Student"*/
 
 /datum/job/submap/camp/teacher1
 	title = "Psionic teacher 1"
