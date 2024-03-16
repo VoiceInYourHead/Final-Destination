@@ -789,6 +789,7 @@
 		/datum/job/submap/camp/sara,
 		/datum/job/submap/camp/vivian,
 		/datum/job/submap/camp/mara,
+		/datum/job/submap/camp/demetra,
 
 		/datum/job/submap/camp/teacher1,
 		/datum/job/submap/camp/teacher2,
@@ -970,6 +971,18 @@
 
 /obj/effect/submap_landmark/spawnpoint/camp/shtorn
 	name = "Shtorn Avasarala"
+
+/datum/job/submap/camp/demetra
+	title = "Demetra Ionian"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/demetra
+	name = "Demetra Ionian"
 
 /datum/job/submap/camp/sara
 	title = "Sara Mayer"

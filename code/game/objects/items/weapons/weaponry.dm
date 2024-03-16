@@ -63,6 +63,9 @@
 	force = 0
 	var/net_type = /obj/effect/energy_net
 
+/obj/item/energy_net/hard
+	net_type = /obj/effect/energy_net/strong
+
 /obj/item/energy_net/safari
 	name = "animal net"
 	desc = "An energized net meant to subdue animals."
@@ -113,6 +116,11 @@
 	var/mob/living/carbon/captured = null
 	var/min_free_time = 50
 	var/max_free_time = 85
+
+/obj/effect/energy_net/strong
+	health = 1000
+	min_free_time = 100
+	max_free_time = 150
 
 /obj/effect/energy_net/safari
 	name = "animal net"

@@ -88,12 +88,28 @@
 	matter = list(MATERIAL_STEEL = 720)
 	marking_color = COLOR_PALE_PURPLE_GRAY
 
+/obj/item/ammo_magazine/shotholder/net/hard
+	ammo_type = /obj/item/ammo_casing/shotgun/net/hard
+
 /obj/item/ammo_casing/shotgun/net
 	name = "net shell"
 	desc = "A net shell."
 	icon_state = "netshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net
 	matter = list(MATERIAL_STEEL = 180)
+
+/obj/item/ammo_casing/shotgun/net/hard
+	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net_hard
+
+/obj/item/projectile/bullet/shotgun/beanbag/net_hard
+	name = "netshell"
+	damage = 5
+	agony = 10
+
+/obj/item/projectile/bullet/shotgun/beanbag/net_hard/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
+	var/obj/item/energy_net/hard/net = new(loc)
+	net.try_capture_mob(target)
+	return TRUE
 
 /obj/item/projectile/bullet/shotgun/beanbag/net
 	name = "netshell"

@@ -196,6 +196,7 @@
 	#include "../away/psycho/school.dm"
 	#include "../away/psycho_away1/forest_practice.dm"
 	#include "../away/psycho_away2/city.dm"
+	#include "../away/psycho_away3/bigger_ruins.dm"
 	#include "../away/sfv_interceptor/shikra.dm"
 	#include "../away/sfv_bomber/comet.dm"
 	#include "../away/sfv_saboteur/saboteur.dm"
