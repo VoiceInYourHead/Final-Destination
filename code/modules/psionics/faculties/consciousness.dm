@@ -540,10 +540,10 @@
 	response_disarm = "shoves"
 	response_harm = "hits"
 	speed = 1
-	maxHealth = 50
-	health = 50
-	harm_intent_damage = 10
-	natural_weapon = /obj/item/natural_weapon/punch
+	maxHealth = 10
+	health = 10
+	harm_intent_damage = 5
+	natural_weapon = /obj/item/natural_weapon/punch/holo
 	a_intent = I_HURT
 	status_flags = CANPUSH
 

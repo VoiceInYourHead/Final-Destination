@@ -13,7 +13,7 @@
 
 /mob/living/carbon/human/Life()
 	if(src.levitation)
-		src.psi.spend_power(15)
+		src.psi.spend_power(8)
 	..()
 
 /obj/screen/psi/armour/Click()

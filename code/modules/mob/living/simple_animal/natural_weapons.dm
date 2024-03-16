@@ -63,6 +63,9 @@
 	attack_verb = list("punched")
 	force = 10
 
+/obj/item/natural_weapon/punch/holo
+	damtype = PAIN
+
 /obj/item/natural_weapon/pincers
 	name = "pincers"
 	hitsound = 'sound/weapons/slice.ogg'
