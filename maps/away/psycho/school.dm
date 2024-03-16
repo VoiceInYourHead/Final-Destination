@@ -783,6 +783,7 @@
 		/datum/job/submap/camp/numerius,
 		/datum/job/submap/camp/julian,
 		/datum/job/submap/camp/zeza,
+		/datum/job/submap/camp/akira,
 
 		/datum/job/submap/camp/shtorn,
 		/datum/job/submap/camp/sara,
@@ -829,6 +830,18 @@
 	back = /obj/item/storage/backpack/satchel/pocketbook/brown
 
 ///BOYS///
+
+/datum/job/submap/camp/akira
+	title = "Akiro Tendo"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/akira
+	name = "Akiro Tendo"
 
 /datum/job/submap/camp/ardent
 	title = "Ardent Mire"
