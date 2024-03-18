@@ -241,4 +241,4 @@ useful things:
 
 /obj/item/reagent_containers/food/drinks/bottle/small/blackout/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/ethanol/forget_me_shot, 30)
+	reagents.add_reagent(/datum/reagent/ethanol/blackout_stout, 30)
