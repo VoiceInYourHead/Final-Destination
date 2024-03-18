@@ -98,8 +98,12 @@ GLOBAL_LIST_INIT(diagonals, list(NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST))
 		var/list/possible_blockers = blocked_turf.contents + blocked_turf
 
 		for(var/atom/thing as obj|mob|turf in possible_blockers)
+			if(thing == parent)
+				continue
+
 			if(!thing.density)
 				continue
+
 			possible_blockers += thing
 
 		slave.ClickOn(pick(possible_blockers))
