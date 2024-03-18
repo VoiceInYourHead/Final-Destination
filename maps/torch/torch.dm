@@ -152,6 +152,7 @@
 	#include "../away/empty.dmm"
 	#include "../away/small_away/small_away.dm"
 	#include "../away/shade/_mining.dm"
+	#include "../away/gccv_ulyanovsk/gccv_ulyanovsk.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
