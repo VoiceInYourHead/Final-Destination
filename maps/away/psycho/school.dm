@@ -740,6 +740,14 @@
 /obj/machinery/fabricator/school/on_update_icon()
 	return
 
+/obj/structure/closet/secure_closet/freezer/fridge/empty
+	name = "refrigerator"
+	icon = 'icons/obj/closets/fridge.dmi'
+	closet_appearance = null
+
+/obj/structure/closet/secure_closet/freezer/fridge/empty/WillContain()
+	return list()
+
 /obj/effect/overmap/visitable/sector/camp
 	name = "jungle planet"
 	desc = "A jungle planet."
@@ -1301,6 +1309,9 @@
 
 /area/psionic_school/indoor/campus/girls/r4
 	name = "\improper Girls Block(Room 4)"
+
+/area/psionic_school/indoor/campus/girls/kitchen
+	name = "\improper Girls Kitchen"
 
 /area/psionic_school/indoor/campus/male
 	name = "\improper Male Block"
