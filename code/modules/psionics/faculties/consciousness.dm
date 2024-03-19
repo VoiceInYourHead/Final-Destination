@@ -54,6 +54,8 @@
 /decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
 	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
+	if(user.a_intent != I_DISARM)
+		return FALSE
 	. = ..()
 	if(!.)
 		return
