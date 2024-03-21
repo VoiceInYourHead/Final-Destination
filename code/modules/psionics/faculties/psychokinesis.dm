@@ -91,7 +91,7 @@
 
 ///WHAT CAN'T BE PUCNED///
 
-/obj/
+/obj
 	var/can_be_telepunched = 1
 
 /obj/structure/shuttle
