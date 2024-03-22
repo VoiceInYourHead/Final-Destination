@@ -2,6 +2,7 @@
 	name = "\improper GCCV Ulyanovsk"
 	icon_state = "green"
 	req_access = list(access_iccg)
+	requires_power = FALSE // FOR DEBUGGING
 
 /area/turbolift/ulyanovsk1
 	name = "lift 1 (thirt deck)"

@@ -463,36 +463,6 @@
 	desc = "Merchant"
 	access_type = ACCESS_TYPE_NONE
 
-/var/const/access_iccg = "ACCESS_ICCG"
-/datum/access/iccg
-	id = access_iccg
-	desc = "ICCG Crew"
-	region = ACCESS_REGION_NONE
-
-/var/const/access_iccg_engi = "ACCESS_ICCG_ENGI"
-/datum/access/iccg_engi
-	id = access_iccg_engi
-	desc = "ICCG Engineering"
-	region = ACCESS_REGION_NONE
-
-/var/const/access_iccg_sec = "ACCESS_ICCG_SEC"
-/datum/access/iccg_sec
-	id = access_iccg_sec
-	desc = "ICCG Security"
-	region = ACCESS_REGION_NONE
-
-/var/const/access_iccg_med = "ACCESS_ICCG_MED"
-/datum/access/iccg_med
-	id = access_iccg_med
-	desc = "ICCG Medical"
-	region = ACCESS_REGION_NONE
-
-/var/const/access_iccg_com = "ACCESS_ICCG_COM"
-/datum/access/iccg_com
-	id = access_iccg_com
-	desc = "ICCG Command"
-	region = ACCESS_REGION_NONE
-
 // Ascent access.
 /var/const/access_ascent = "ACCESS_ASCENT"
 /datum/access/ascent

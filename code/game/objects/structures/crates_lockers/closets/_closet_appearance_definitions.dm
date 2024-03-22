@@ -211,65 +211,6 @@
 /decl/closet_appearance/secure_closet
 	can_lock = TRUE
 
-/decl/closet_appearance/secure_closet/iccg
-	can_lock = TRUE
-	color = COLOR_DARK_BLUE_GRAY
-	decals = list(
-		"upper_side_vent",
-		"lower_holes"
-	)
-	extra_decals = list(
-		"stripe_vertical_right_partial" = COLOR_NAVY_BLUE,
-		"stripe_vertical_left_partial" = COLOR_NAVY_BLUE,
-		"stripe_horizontal" = COLOR_WALL_GUNMETAL
-	)
-
-/decl/closet_appearance/secure_closet/iccg/command
-	can_lock = TRUE
-	decals = list(
-		"lower_holes"
-	)
-	extra_decals = list(
-		"stripe_vertical_right_partial" = COLOR_SILVER,
-		"stripe_vertical_left_partial" = COLOR_GOLD,
-		"stripe_horizontal" = COLOR_WALL_GUNMETAL,
-		"command" = COLOR_SILVER
-	)
-
-/decl/closet_appearance/secure_closet/iccg/engineering
-	can_lock = TRUE
-	decals = list(
-		"lower_holes"
-	)
-	extra_decals = list(
-		"stripe_vertical_left_partial" = COLOR_YELLOW_GRAY,
-		"stripe_horizontal" = COLOR_WALL_GUNMETAL,
-		"tool" = COLOR_GOLD
-	)
-
-/decl/closet_appearance/secure_closet/iccg/security
-	can_lock = TRUE
-	decals = list(
-		"lower_holes"
-	)
-	extra_decals = list(
-		"stripe_vertical_right_partial" = COLOR_MAROON,
-		"stripe_vertical_left_partial" = COLOR_MAROON,
-		"stripe_horizontal" = COLOR_WALL_GUNMETAL,
-		"security" = COLOR_MAROON
-	)
-
-/decl/closet_appearance/secure_closet/iccg/medical
-	can_lock = TRUE
-	decals = list(
-		"lower_half_solid"
-	)
-	extra_decals = list(
-		"medical" = COLOR_BOTTLE_GREEN,
-		"stripe_vertical_left_full" = COLOR_PALE_BTL_GREEN,
-		"stripe_horizontal_upper" = COLOR_WALL_GUNMETAL
-	)
-
 /decl/closet_appearance/secure_closet/engineering
 	can_lock = TRUE
 	color = COLOR_YELLOW_GRAY

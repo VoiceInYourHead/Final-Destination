@@ -22,18 +22,3 @@
 		unzoom(user)
 	else
 		zoom(user, zoom_offset, zoom_size)
-
-/obj/item/device/binoculars/New()
-	icon_state = pick("binoculars","binoculars1","binoculars_nvg")
-	switch(icon_state)
-		if("binoculars1")
-			zoom_offset = 16
-			zoom_size = 9
-		if("binoculars_nvg")
-			zoom_offset = 19
-			zoom_size = 11
-		else
-			zoom_offset = 14
-			zoom_size = 9
-	update_icon()
-	. = ..()

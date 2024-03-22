@@ -28,6 +28,46 @@
 
 // Misc
 
+/var/const/access_iccg = "ACCESS_ICCG"
+/datum/access/iccg
+	id = access_iccg
+	desc = "ICCG Crew"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_iccg_engi = "ACCESS_ICCG_ENGI"
+/datum/access/iccg_engi
+	id = access_iccg_engi
+	desc = "ICCG Engineering"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_iccg_sec = "ACCESS_ICCG_SEC"
+/datum/access/iccg_sec
+	id = access_iccg_sec
+	desc = "ICCG Security"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_iccg_med = "ACCESS_ICCG_MED"
+/datum/access/iccg_med
+	id = access_iccg_med
+	desc = "ICCG Medical"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_iccg_com = "ACCESS_ICCG_COM"
+/datum/access/iccg_com
+	id = access_iccg_com
+	desc = "ICCG Command"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_iccg_com_cap = "ACCESS_ICCG_COM_CAP"
+/datum/access/iccg_com_cap
+	id = access_iccg_com_cap
+	desc = "ICCG Command - Captain"
+	region = ACCESS_REGION_NONE
+
+
+/obj/effect/paint/dark_blue_gray
+	color = COLOR_DARK_BLUE_GRAY
+
 /turf/simulated/wall/iccg
 	paint_color = COLOR_DARK_BLUE_GRAY
 
@@ -267,6 +307,11 @@
 		rad = ARMOR_RAD_RESISTANT
 		)
 
+/obj/item/rig/combat/equipped/iccg
+	cell_type =  /obj/item/cell/hyper
+	air_type =   /obj/item/tank/oxygen/full
+	req_access = list(access_iccg)
+
 /obj/machinery/suit_storage_unit/iccg
 	name = "Voidsuit Storage Unit"
 	suit = /obj/item/clothing/suit/space/void/iccg
@@ -302,6 +347,105 @@
 	tank = /obj/item/tank/oxygen/full
 	mask = /obj/item/clothing/mask/gas/swat
 	req_access = list(access_iccg_com)
+
+/obj/item/storage/firstaid/combat/iccg
+	name = "C-GCC medical kit"
+	desc = "Contains advanced medical treatments prepared by GCC specs."
+	icon_state = "bezerk"
+	item_state = "firstaid-advanced"
+
+	startswith = list(
+		/obj/item/storage/pill_bottle/bicaridine,
+		/obj/item/storage/pill_bottle/keloderm,
+		/obj/item/storage/pill_bottle/dexalin_plus,
+		/obj/item/storage/pill_bottle/dylovene,
+		/obj/item/storage/pill_bottle/tramadol,
+		/obj/item/storage/pill_bottle/spaceacillin,
+		/obj/item/stack/medical/splint,
+		)
+
+/mob/living/exosuit/premade/combat/iccg
+	name = "G-EXO-12 Combat Exosuit"
+	desc = "A sleek, modern combat exosuit with ICCG markings."
+	decal = "cammo2"
+
+/mob/living/exosuit/premade/combat/iccg/Initialize()
+	body = new /obj/item/mech_component/chassis/combat(src)
+	head = new /obj/item/mech_component/sensors/combat(src)
+	. = ..()
+	for(var/obj/thing in list(arms,legs,head,body))
+		thing.color = COLOR_NAVY_BLUE
+
+/mob/living/exosuit/premade/combat/iccg/spawn_mech_equipment()
+	install_system(new /obj/item/mech_equipment/mounted_system/taser/laser(src), HARDPOINT_RIGHT_HAND)
+	install_system(new /obj/item/mech_equipment/ballistic_shield(src), HARDPOINT_LEFT_HAND)
+	install_system(new /obj/item/mech_equipment/mounted_system/taser/plasma(src), HARDPOINT_LEFT_SHOULDER)
+	//install_system(new /obj/item/mech_equipment/flash(src), HARDPOINT_RIGHT_SHOULDER)
+	install_system(new /obj/item/mech_equipment/light(src), HARDPOINT_HEAD)
+	install_system(new /obj/item/mech_equipment/shields(src), HARDPOINT_BACK)
+
+//
+//		C L O S E T S
+//
+
+/decl/closet_appearance/secure_closet/iccg
+	can_lock = TRUE
+	color = COLOR_DARK_BLUE_GRAY
+	decals = list(
+		"upper_side_vent",
+		"lower_holes"
+	)
+	extra_decals = list(
+		"stripe_vertical_right_partial" = COLOR_NAVY_BLUE,
+		"stripe_vertical_left_partial" = COLOR_NAVY_BLUE,
+		"stripe_horizontal" = COLOR_WALL_GUNMETAL
+	)
+
+/decl/closet_appearance/secure_closet/iccg/command
+	can_lock = TRUE
+	decals = list(
+		"lower_holes"
+	)
+	extra_decals = list(
+		"stripe_vertical_right_partial" = COLOR_SILVER,
+		"stripe_vertical_left_partial" = COLOR_GOLD,
+		"stripe_horizontal" = COLOR_WALL_GUNMETAL,
+		"command" = COLOR_SILVER
+	)
+
+/decl/closet_appearance/secure_closet/iccg/engineering
+	can_lock = TRUE
+	decals = list(
+		"lower_holes"
+	)
+	extra_decals = list(
+		"stripe_vertical_left_partial" = COLOR_YELLOW_GRAY,
+		"stripe_horizontal" = COLOR_WALL_GUNMETAL,
+		"tool" = COLOR_GOLD
+	)
+
+/decl/closet_appearance/secure_closet/iccg/security
+	can_lock = TRUE
+	decals = list(
+		"lower_holes"
+	)
+	extra_decals = list(
+		"stripe_vertical_right_partial" = COLOR_MAROON,
+		"stripe_vertical_left_partial" = COLOR_MAROON,
+		"stripe_horizontal" = COLOR_WALL_GUNMETAL,
+		"security" = COLOR_MAROON
+	)
+
+/decl/closet_appearance/secure_closet/iccg/medical
+	can_lock = TRUE
+	decals = list(
+		"lower_half_solid"
+	)
+	extra_decals = list(
+		"medical" = COLOR_BOTTLE_GREEN,
+		"stripe_vertical_left_full" = COLOR_PALE_BTL_GREEN,
+		"stripe_horizontal_upper" = COLOR_WALL_GUNMETAL
+	)
 
 /obj/structure/closet/secure_closet/iccg
 	name = "ICCG locker"
@@ -342,7 +486,7 @@
 		/obj/item/device/flashlight/maglight,
 		/obj/item/storage/firstaid/individual/military,
 		/obj/item/material/knife/combat,
-		/obj/item/device/binoculars,
+		/obj/item/device/binoculars/random,
 		/obj/item/device/gps,
 		/obj/item/clothing/accessory/buddy_tag,
 		/obj/item/clothing/accessory/storage/black_vest,
@@ -361,15 +505,16 @@
 		/obj/item/device/flashlight/maglight,
 		/obj/item/storage/firstaid/individual/military,
 		/obj/item/material/knife/combat,
-		/obj/item/device/binoculars,
+		/obj/item/device/binoculars/nvg,
 		/obj/item/device/gps,
 		/obj/item/clothing/suit/iccgn/service_officer,
 		/obj/item/clothing/suit/storage/hazardvest/blue,
 		/obj/item/clothing/head/helmet/solgov/pilot,
+		/obj/item/clothing/under/iccgn/service,
+		/obj/item/clothing/under/iccgn/utility,
 		/obj/item/clothing/accessory/buddy_tag,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/storage/backpack/satchel/sec,
-		/obj/item/gun/projectile/revolver/rsh21,
 		/obj/item/ammo_magazine/speedloader/rifle = 3
 	)
 
@@ -380,6 +525,7 @@
 	return list(
 		/obj/item/clothing/suit/iccgn/service_enlisted,
 		/obj/item/clothing/under/sterile,
+		/obj/item/clothing/under/iccgn/utility,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/medical_chest_rig,
 		/obj/item/clothing/mask/surgical,
@@ -398,12 +544,13 @@
 	)
 
 /obj/structure/closet/secure_closet/iccg/engineering/engineer
-	name = "Deck Engineer locker"
+	name = "Mechanic locker"
 
 /obj/structure/closet/secure_closet/iccg/engineering/engineer/WillContain()
 	return list(
 		/obj/item/clothing/suit/iccgn/service_enlisted,
 		/obj/item/clothing/under/hazard,
+		/obj/item/clothing/under/iccgn/utility,
 		/obj/item/gun/energy/plasmacutter,
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/clothing/mask/gas,
@@ -419,11 +566,93 @@
 		/obj/item/storage/backpack/satchel/eng
 	)
 
+/obj/structure/closet/secure_closet/iccg/command/officer
+	name = "Officer locker"
+
+/obj/structure/closet/secure_closet/iccg/command/officer/WillContain()
+	return list(
+		/obj/item/clothing/suit/iccgn/dress_officer,
+		/obj/item/clothing/head/iccgn/service,
+		/obj/item/clothing/under/iccgn/service,
+		/obj/item/clothing/under/iccgn/utility,
+		/obj/item/device/radio/headset/map_preset/ulyanovsk,
+		/obj/item/device/radio/map_preset/ulyanovsk,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/clothing/glasses/sunglasses,
+		/obj/item/storage/belt/general,
+		/obj/item/storage/backpack/satchel/com,
+		/obj/item/ammo_magazine/pistol/iccgn = 2
+	)
+
+/obj/structure/closet/secure_closet/iccg/command/starpom
+	name = "Starpom locker"
+
+/obj/structure/closet/secure_closet/iccg/command/starpom/WillContain()
+	return list(
+		/obj/item/clothing/suit/iccgn/dress_command,
+		/obj/item/clothing/head/iccgn/service_command,
+		/obj/item/clothing/under/iccgn/service_command,
+		/obj/item/clothing/under/iccgn/utility,
+		/obj/item/device/radio/headset/map_preset/ulyanovsk,
+		/obj/item/device/radio/map_preset/ulyanovsk,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/clothing/glasses/sunglasses,
+		/obj/item/storage/belt/general,
+		/obj/item/storage/backpack/satchel/com,
+		/obj/item/melee/telebaton,
+		/obj/item/device/binoculars/random,
+		/obj/item/ammo_magazine/pistol/iccgn = 2
+	)
+
+/obj/structure/closet/secure_closet/iccg/command/commander
+	name = "Commander locker"
+
+/obj/structure/closet/secure_closet/iccg/command/commander/WillContain()
+	return list(
+		/obj/item/clothing/suit/iccgn/dress_command,
+		/obj/item/clothing/head/iccgn/service_command,
+		/obj/item/clothing/under/iccgn/service_command,
+		/obj/item/clothing/under/iccgn/utility,
+		/obj/item/device/radio/headset/map_preset/ulyanovsk,
+		/obj/item/device/radio/map_preset/ulyanovsk,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
+		/obj/item/storage/belt/general,
+		/obj/item/storage/backpack/satchel/com,
+		/obj/item/melee/telebaton,
+		/obj/item/gun/magnetic/railgun/automatic,
+		/obj/item/ammo_magazine/pistol/iccgn = 2,
+		/obj/item/rcd_ammo/large = 2
+	)
+
+/obj/structure/closet/secure_closet/iccg/command/chief_mechanic
+	name = "Starshiy Mechanic locker"
+
+/obj/structure/closet/secure_closet/iccg/command/chief_mechanic/WillContain()
+	return list(
+		/obj/item/clothing/suit/iccgn/dress_officer,
+		/obj/item/clothing/head/iccgn/service,
+		/obj/item/clothing/under/iccgn/service,
+		/obj/item/clothing/under/iccgn/utility,
+		/obj/item/clothing/under/hazard,
+		/obj/item/device/radio/headset/map_preset/ulyanovsk,
+		/obj/item/device/radio/map_preset/ulyanovsk,
+		/obj/item/device/flashlight/upgraded,
+		/obj/item/clothing/glasses/meson,
+		/obj/item/clothing/glasses/material,
+		/obj/item/storage/belt/utility/full,
+		/obj/item/storage/backpack/satchel/com,
+		/obj/item/melee/telebaton,
+		/obj/item/gun/energy/plasmacutter,
+		/obj/item/rcd,
+		/obj/item/rcd_ammo/large = 2
+	)
 
 
 
-/*
-/obj/machinery/rotating_alarm/door
+
+
+/obj/machinery/rotating_alarm/door // like SM Alarm, but MY :3
 	name = "door alarm"
 	desc = "An industrial rotating alarm light. This one is used to monitor door state."
 
@@ -432,26 +661,159 @@
 	base_type = /obj/machinery/rotating_alarm/door
 	stock_part_presets = list(/decl/stock_part_preset/radio/basic_transmitter/button = 1)
 
+	alarm_light_color = COLOR_MAROON
+	// FALSE = Closed -> Off // TRUE = Closed -> On
+	var/invert_state = FALSE
+	// this is list of connected doors
+	var/list/doors
+
 /obj/machinery/rotating_alarm/door/Initialize()
 	. = ..()
-	GLOB.supermatter_status.register_global(src, .proc/check_supermatter)
+	if(!id_tag)
+		id_tag = "ERROR"
+	update_icon()
+
+	spawn(10)		// allow map load
+		doors = list()
+		for(var/obj/machinery/door/D in SSmachines.machinery)
+			if(D.id_tag == id_tag)
+				doors += D
+				GLOB.density_set_event.register(D, src, .proc/check_doors)
+	check_doors()
 
 /obj/machinery/rotating_alarm/door/Destroy()
-	GLOB.supermatter_status.unregister_global(src, .proc/check_supermatter)
 	. = ..()
+	for(var/door in doors)
+		GLOB.density_set_event.unregister(door, src, .proc/check_doors)
 
-/obj/machinery/rotating_alarm/door/proc/check_door(obj/machinery/door/door, opened)
-	if (door)
-		if (SM.z in GetConnectedZlevels(src.z))
-			if (danger && !on)
-				set_on()
-			else if (!danger && on)
-				set_off()
+/*
+/obj/machinery/rotating_alarm/door/proc/check_doors()
+	var/votes = 0
+	for(var/atom/door as() in doors)
+		if(door.density)
+			votes--
+			continue
+		votes++
+
+	if(votes >= 0)
+		return set_on()
+
+	return set_off()
+*/
+
+/obj/machinery/rotating_alarm/door/proc/check_doors()
+	var/set_alarm = invert_state
+	for(var/atom/door as() in doors)
+		if(!door.density)
+			set_alarm = !set_alarm
+			break
+
+	if(set_alarm)
+		return set_on()
+
+	return set_off()
 
 /obj/item/frame/door_alarm
-	name = "supermatter alarm frame"
+	name = "door alarm frame"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "bulb-construct-item"
 	refund_amt = 1
 	build_machine_type = /obj/machinery/rotating_alarm/door
-*/
+
+
+/obj/machinery/disposal/deliveryChute/ammo_loader
+	name = "Ammunition chute"
+	desc = "A chute for ammo loading. There's flaps in there, so you can't go in."
+	color = "#948484"
+
+/obj/machinery/disposal/deliveryChute/ammo_loader/Bumped(var/atom/movable/AM) //Go straight into the chute
+	if(istype(AM, /obj/item/projectile) || istype(AM, /obj/effect))	return
+	switch(dir)
+		if(NORTH)
+			if(AM.loc.y != src.loc.y+1) return
+		if(EAST)
+			if(AM.loc.x != src.loc.x+1) return
+		if(SOUTH)
+			if(AM.loc.y != src.loc.y-1) return
+		if(WEST)
+			if(AM.loc.x != src.loc.x-1) return
+
+	var/mob/living/L = AM
+	if (istype(L) && L.ckey)
+		log_and_message_admins("has flushed themselves down \the [src].", L)
+	if(istype(AM, /obj))
+		var/obj/O = AM
+		O.forceMove(src)
+	else if(istype(AM, /mob))
+		var/mob/M = AM
+		to_chat(M, "You can't go inside.")
+		//M.forceMove(src)
+	src.flush()
+
+/obj/machinery/disposal/deliveryChute/ammo_loader/flush()
+	flushing = 1
+	flick("intake-closing", src)
+	var/obj/structure/disposalholder/H = new()	// virtual holder object which actually
+												// travels through the pipes.
+	//air_contents = new()		// new empty gas resv.
+
+	sleep(10)
+	playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
+	sleep(5) // wait for animation to finish
+
+	if(prob(35))
+		for(var/mob/living/carbon/human/L in src)
+			var/list/obj/item/organ/external/crush = L.get_damageable_organs()
+			if(!crush.len)
+				return
+
+			var/obj/item/organ/external/E = pick(crush)
+
+			E.take_external_damage(45, used_weapon = "Blunt Trauma")
+			to_chat(L, "\The [src]'s mechanisms crush your [E.name]!")
+
+	H.init(src)	// copy the contents of disposer to holder
+
+	H.start(src) // start the holder processing movement
+	flushing = 0
+	// now reset disposal state
+	flush = 0
+	if(mode == 2)	// if was ready,
+		mode = 1	// switch to charging
+	update_icon()
+	return
+
+/obj/machinery/conveyor_switch/AltClick(user) // because sometimes they don't connect to all the conveyors.
+	if(user)
+		src.New()
+		to_chat(user, "You reattached conveyors with [src], that have the same ID.")
+
+/obj/item/device/binoculars/blue
+	icon_state = "binoculars1"
+	zoom_offset = 16
+	zoom_size = 9
+
+/obj/item/device/binoculars/nvg
+	icon_state = "binoculars_nvg"
+	zoom_offset = 19
+	zoom_size = 11
+
+/obj/item/device/binoculars/random/New()
+	icon_state = pick("binoculars","binoculars1","binoculars_nvg")
+	switch(icon_state)
+		if("binoculars1")
+			zoom_offset = 16
+			zoom_size = 9
+		if("binoculars_nvg")
+			zoom_offset = 19
+			zoom_size = 11
+		else
+			zoom_offset = 14
+			zoom_size = 9
+	update_icon()
+	. = ..()
+
+/obj/item/clothing/suit/iccgn/Initialize()
+	. = ..()
+	allowed += /obj/item/gun
+	allowed += /obj/item/device/flashlight

@@ -1,6 +1,21 @@
 // Ulyanovsk Jobs
+/*
+https://yandex.ru/q/question/kakie_est_dolzhnosti_na_korable_8a6eaca0/?ysclid=ltzmzsv57x865681182
+
+Comandir Korablya
+Starpom
+Officer - не забыть добавить при спавне /obj/item/gun/projectile/pistol/iccgn
+Starshiy Mehanic
+Mehanic (Elektromehanik)
+Bocman
+
+Pilot - Не забыть добавить при спавне /obj/item/gun/projectile/revolver/rsh21
+Gunner (Cannoneer)
+Landing Crew (Landing Party Member) - Корабельный Десант, абордажная команда.
+*/
+
 /decl/submap_archetype/gccv_ulyanovsk
-	descriptor = "GCCV - Ulyanovsk, Waterloo-Class Heavy Cruiser"
+	descriptor = "GCCV - Ulyanovsk, Heavy Cruiser"
 	map = "GCCV - Ulyanovsk"
 	crew_jobs = list(/datum/job/submap/gccv_ulyanovsk_crew, )
 
