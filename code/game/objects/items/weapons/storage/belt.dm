@@ -1,5 +1,6 @@
-#define BELT_OVERLAY_ITEMS		1
-#define BELT_OVERLAY_HOLSTER	2
+#define BELT_OVERLAY_ITEMS				1
+#define BELT_OVERLAY_HOLSTER			2
+#define BELT_OVERLAY_HOLSTER_FD			3
 
 /obj/item/storage/belt
 	name = "belt"
@@ -53,7 +54,7 @@
 	item_state = "holster"
 	desc = "Can holster various things."
 	storage_slots = 2
-	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER
+	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER|BELT_OVERLAY_HOLSTER_FD
 	var/list/can_holster //List of objects which this item can store in the designated holster slot(if unset, it will default to any holsterable items)
 	var/sound_in = 'sound/effects/holster/holsterin.ogg'
 	var/sound_out = 'sound/effects/holster/holsterout.ogg'
@@ -96,6 +97,8 @@
 	if(overlay_flags)
 		for(var/obj/item/I in contents)
 			if(I == H.holstered)
+				if(overlay_flags & BELT_OVERLAY_HOLSTER_FD)
+					overlays += image('icons/fd/guns/obj_belt_overlays.dmi', "[initial(I.icon_state)]")
 				if(overlay_flags & BELT_OVERLAY_HOLSTER)
 					overlays += image('icons/obj/clothing/obj_belt_overlays.dmi', "[I.icon_state]")
 			else if(overlay_flags & BELT_OVERLAY_ITEMS)
@@ -205,7 +208,7 @@
 	icon_state = "securitybelt"
 	item_state = "security"
 	storage_slots = 8
-	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER
+	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER|BELT_OVERLAY_HOLSTER_FD
 	can_hold = list(
 		/obj/item/crowbar,
 		/obj/item/grenade,
@@ -342,7 +345,7 @@
 	icon_state = "commandbelt"
 	item_state = "command"
 	storage_slots = 7
-	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER
+	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER|BELT_OVERLAY_HOLSTER_FD
 	can_hold = list(
 		/obj/item/device/flash,
 		/obj/item/melee/telebaton,
@@ -388,7 +391,7 @@
 	icon_state = "forensicbelt"
 	item_state = "forensic"
 	storage_slots = 8
-	overlay_flags = BELT_OVERLAY_HOLSTER
+	overlay_flags = BELT_OVERLAY_HOLSTER|BELT_OVERLAY_HOLSTER_FD
 	can_hold = list(
 		/obj/item/reagent_containers/spray/luminol,
 		/obj/item/device/uv_light,
