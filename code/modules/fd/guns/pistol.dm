@@ -58,6 +58,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/pistol/automatic
 	caliber = CALIBER_PISTOL
 	force = 7
+	slot_flags = SLOT_HOLSTER|SLOT_BELT
 	accuracy = 0
 	fire_delay = 2
 	one_hand_penalty = 2
