@@ -1608,11 +1608,9 @@
 /datum/reagent/ethanol/blackout_stout/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
 	if(alien == IS_DIONA)
-		M.sleeping = max(M.sleeping, 10) //even dioneia :D
 		return
 	M.jitteriness = max(M.jitteriness - 5, 0)
 	M.add_chemical_effect(CE_SEDATE, 1)
 	M.add_chemical_effect(CE_MIND, 2)
 	M.add_chemical_effect(CE_STABLE, 2)
 	M.add_chemical_effect(CE_PULSE, -1)
-	M.sleeping = max(M.sleeping, 10)

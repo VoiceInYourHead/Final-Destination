@@ -212,6 +212,7 @@
 	#include "../away/ecoffice/ecoffice.dm"
 	#include "../away/constructed_station/main.dm"
 	#include "../away/snow_cage/snow_cage.dm"
+	#include "../away/rancho/farm.dm"
 
 //alternative future stuff
 	#include "../away/airfield/airfield.dm"
