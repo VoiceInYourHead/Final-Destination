@@ -91,7 +91,7 @@
 
 ///WHAT CAN'T BE PUCNED///
 
-/obj/
+/obj
 	var/can_be_telepunched = 1
 
 /obj/structure/shuttle
@@ -554,9 +554,6 @@
 	use_ranged =     TRUE
 	min_rank =       PSI_RANK_OPERANT
 
-	var/range = 3
-	var/turf/previousturf = null
-
 	use_description = "Выберите любую ногу или пятку на жёлтом интенте, а затем нажмите по ближайшему куску земли, чтобы поднять его вверх."
 
 /decl/psionic_power/psychokinesis/rock_shield/invoke(var/mob/living/carbon/user, var/turf/unsimulated/target)
@@ -564,47 +561,16 @@
 		return FALSE
 
 	if(!target)
-		to_chat(target, SPAN_NOTICE("Данный материал слабо подойдёт для тех задач, для которых вы хотите использовать его!"))
+		to_chat(user, SPAN_NOTICE("Данный материал слабо подойдёт для тех задач, для которых вы хотите использовать его!"))
 		return FALSE
-
-	var/tele_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
 
 	. = ..()
 	if(.)
 		if(istype(target, /turf/unsimulated/floor/exoplanet))
 			var/turf/A = target
-			if(tele_rank >= PSI_RANK_MASTER)
-				if(do_after(user, 30))
-					user.visible_message("<span class='danger'>[user] возводит каменную стену!</span>")
-					var/turf/target_turf = get_turf(A)
-					if(target_turf)
-						var/turflist = getline(user, target_turf)
-						spawn_rock(turflist)
 			if(do_after(user, 10))
 				user.visible_message("<span class='danger'>[user] возводит каменную стену!</span>")
-				new /obj/effect/temporary(A, 3, 'icons/fd/marines/effects2.dmi', "earth_pillar_0")
-				sleep(1)
-				new /obj/structure/girder/rock(get_turf(A))
+				new /obj/effect/temporary(A, 9, 'icons/fd/marines/effects2.dmi', "earth_pillar_0")
+				spawn(1 SECONDS)
+					new /obj/structure/girder/rock(get_turf(A))
 				return TRUE
-
-/decl/psionic_power/psychokinesis/rock_shield/proc/spawn_rock(list/turflist)
-	var/length = LAZYLEN(turflist)
-	if(length < 1)
-		return
-	turflist.len = min(length, range)
-
-	playsound(src, pick('sound/weapons/guns/flamethrower1.ogg','sound/weapons/guns/flamethrower2.ogg','sound/weapons/guns/flamethrower3.ogg' ), 50, TRUE, -3)
-
-	for(var/turf/T in turflist)
-		if(T.density || istype(T, /turf/space))
-			break
-		if(!previousturf && length(turflist)>1)
-			previousturf = get_turf(src)
-			continue	//so we don't burn the tile we be standin on
-		if(previousturf && (!T.CanPass(null, previousturf, 0,0) || !previousturf.CanPass(null, T, 0,0)))
-			break
-		previousturf = T
-
-		new /obj/structure/girder/rock(get_turf(T))
-		sleep(1)
-	previousturf = null
