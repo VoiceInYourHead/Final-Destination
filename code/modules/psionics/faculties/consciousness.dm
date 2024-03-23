@@ -52,9 +52,7 @@
 			return
 
 /decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
-	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH)
-		return FALSE
-	if(user.a_intent != I_DISARM)
+	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH || user.a_intent != I_HELP)
 		return FALSE
 	. = ..()
 	if(!.)
@@ -161,7 +159,7 @@
 	use_description = "Выберите голову на зелёном интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
 
 /decl/psionic_power/consciousness/mindread/invoke(var/mob/living/user, var/mob/living/target)
-	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD)
+	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD || user.a_intent != I_HELP)
 		return FALSE
 	. = ..()
 	if(!.)
@@ -235,7 +233,7 @@
 	use_description = "Схватите цель, затем выберите рот на зелёном интенте и нажмите по ней захватом ещё раз, дабы частично очистить её сознание от возможного урона."
 
 /decl/psionic_power/consciousness/focus/invoke(var/mob/living/user, var/mob/living/target)
-	if(user.zone_sel.selecting != BP_MOUTH)
+	if(user.zone_sel.selecting != BP_MOUTH || user.a_intent != I_HELP)
 		return FALSE
 	. = ..()
 	if(.)
@@ -268,7 +266,7 @@
 	use_description = "Схватите цель, затем выберите голову и зелёном интент. После этого, нажмите по цели захватом, чтобы погрузится в глубины её разума и отыскать там скрытый потенциал."
 
 /decl/psionic_power/consciousness/assay/invoke(var/mob/living/user, var/mob/living/target)
-	if(user.zone_sel.selecting != BP_HEAD)
+	if(user.zone_sel.selecting != BP_HEAD || user.a_intent != I_HELP)
 		return FALSE
 	. = ..()
 	if(.)
@@ -295,7 +293,7 @@
 
 /decl/psionic_power/consciousness/absorb/invoke(var/mob/living/user, var/mob/living/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
-	if(user.zone_sel.selecting != BP_CHEST)
+	if(user.zone_sel.selecting != BP_CHEST || user.a_intent != I_HELP)
 		return FALSE
 	. = ..()
 	if(.)
@@ -381,7 +379,7 @@
 
 /decl/psionic_power/consciousness/invis/invoke(var/mob/living/user, var/mob/living/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
-	if(user.zone_sel.selecting != BP_EYES)
+	if(user.zone_sel.selecting != BP_EYES || user.a_intent != I_HELP)
 		return FALSE
 	. = ..()
 	if(.)
@@ -431,7 +429,7 @@
 
 /decl/psionic_power/consciousness/curse/invoke(var/mob/living/user, var/mob/living/carbon/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
-	if(user.zone_sel.selecting != BP_CHEST)
+	if(user.zone_sel.selecting != BP_CHEST || user.a_intent != I_HELP)
 		return FALSE
 	if(target == user)
 		return FALSE
@@ -453,6 +451,9 @@
 	var/cn_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
 
 	if(!istype(target))
+		return FALSE
+
+	if(user.a_intent != I_HELP)
 		return FALSE
 
 	if(!(user.zone_sel.selecting in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)))
