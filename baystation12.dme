@@ -1859,6 +1859,7 @@
 #include "code\modules\fd\campfire.dm"
 #include "code\modules\fd\christmas.dm"
 #include "code\modules\fd\mapping.dm"
+#include "code\modules\fd\npc.dm"
 #include "code\modules\fd\particles.dm"
 #include "code\modules\fd\clothing\pieces.dm"
 #include "code\modules\fd\clothing\suits.dm"

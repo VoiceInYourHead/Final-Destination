@@ -39,4 +39,5 @@
 	name = "mounted machinegun"
 	desc = "An exosuit-mounted machinegun. Handle with care."
 	icon_state = "mech_ballistic2"
+	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
 	holding_type = /obj/item/gun/energy/machingegun/mounted/mech
