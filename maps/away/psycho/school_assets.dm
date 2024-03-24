@@ -52,6 +52,22 @@
 
 //ASSETS
 
+/obj/item/clothing/suit/storage/vest/practice
+	name = "practice vest"
+	desc = "Semi-green battle armor with light plates."
+	icon = 'icons/fd/shiptest/armor.dmi'
+	icon_state = "vest_stealth"
+	item_icons = list(
+		slot_wear_suit_str = 'icons/fd/shiptest/onmob/armor.dmi')
+
+/obj/item/clothing/under/practice
+	name = "practice clothing"
+	desc = "Black tactical suit for training."
+	icon = 'icons/fd/shiptest/syndicate.dmi'
+	icon_state = "practice"
+	item_icons = list(
+		slot_w_uniform_str = 'icons/fd/mob/onmob_under.dmi')
+
 /obj/item/fd/fake_melee
 	name = "melee"
 	desc = "An old weaponry, very rare and valuable."

@@ -127,6 +127,42 @@
 /obj/effect/submap_landmark/spawnpoint/camp/zeza
 	name = "Kass Zeza"
 
+/datum/job/submap/camp/manea
+	title = "Dionisie Manea"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/manea
+	name = "Dionisie Manea"
+
+/datum/job/submap/camp/allen
+	title = "John Allen"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/allen
+	name = "John Allen"
+
+/datum/job/submap/camp/trueman
+	title = "Ron Trueman"
+	info = "You here to learn how to beat the bad guys"
+	supervisors = "a Teachers."
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	total_positions = 30
+	loadout_allowed = TRUE
+	skill_points = 25
+
+/obj/effect/submap_landmark/spawnpoint/camp/trueman
+	name = "Ron Trueman"
+
 ///GIRLS///
 
 /datum/job/submap/camp/shtorn

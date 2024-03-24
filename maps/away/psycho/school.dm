@@ -54,6 +54,9 @@
 		/datum/job/submap/camp/julian,
 		/datum/job/submap/camp/zeza,
 		/datum/job/submap/camp/akira,
+		/datum/job/submap/camp/manea,
+		/datum/job/submap/camp/allen,
+		/datum/job/submap/camp/trueman,
 
 		/datum/job/submap/camp/shtorn,
 		/datum/job/submap/camp/sara,

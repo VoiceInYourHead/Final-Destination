@@ -47,11 +47,11 @@
 	maxHealth = 80
 	ranged = 1
 	speed = 1
-	projectiletype = /obj/item/projectile/beam/smalllaser
+	projectiletype = /obj/item/projectile/bullet/pistol/rubber
 	base_attack_cooldown = 3 SECONDS
 	loot_drop = /obj/item/stack/school/coin5
 
-	ai_holder = /datum/ai_holder/simple_animal/hivebot/ranged
+	ai_holder = /datum/ai_holder/simple_animal/humanoid/hostile
 
 /mob/living/simple_animal/hostile/school_robot/death()
 	..(null, "blows apart!")
