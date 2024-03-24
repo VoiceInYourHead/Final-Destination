@@ -1,64 +1,11 @@
-/obj/item/mech_component/control_module/universal
-	max_installed_software = 3
-
 //COWBOY MECH//
 
 /obj/item/mech_component/sensors/heavy/universal
-	var/obj/item/mech_component/control_module/universal/software_new
-
-/obj/item/mech_component/sensors/heavy/universal/show_missing_parts(var/mob/user)
-	if(!radio)
-		to_chat(user, SPAN_WARNING("It is missing a radio."))
-	if(!camera)
-		to_chat(user, SPAN_WARNING("It is missing a camera."))
-	if(!software_new)
-		to_chat(user, SPAN_WARNING("It is missing a software control module."))
-
-/obj/item/mech_component/sensors/heavy/universal/update_components()
-	radio = locate() in src
-	camera = locate() in src
-	software_new = locate() in src
-
-/obj/item/mech_component/sensors/heavy/universal/attackby(var/obj/item/thing, var/mob/user)
-	if(istype(thing, /obj/item/mech_component/control_module))
-		if(software_new)
-			to_chat(user, SPAN_WARNING("\The [src] already has a control modules installed."))
-			return
-		if(install_component(thing, user)) software_new = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/radio))
-		if(radio)
-			to_chat(user, SPAN_WARNING("\The [src] already has a radio installed."))
-			return
-		if(install_component(thing, user)) radio = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/camera))
-		if(camera)
-			to_chat(user, SPAN_WARNING("\The [src] already has a camera installed."))
-			return
-		if(install_component(thing, user)) camera = thing
-	else
-		return ..()
-
-/obj/item/mech_component/sensors/heavy/universal/return_diagnostics(mob/user)
-	..()
-	if(software_new)
-		to_chat(user, SPAN_NOTICE(" Installed Software"))
-		for(var/exosystem_software in software.installed_software)
-			to_chat(user, SPAN_NOTICE(" - <b>[capitalize(exosystem_software)]</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Control Module Missing or Non-functional."))
-	if(radio)
-		to_chat(user, SPAN_NOTICE(" Radio Integrity: <b>[round((((radio.max_dam - radio.total_dam) / radio.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Radio Missing or Non-functional."))
-	if(camera)
-		to_chat(user, SPAN_NOTICE(" Camera Integrity: <b>[round((((camera.max_dam - camera.total_dam) / camera.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Camera Missing or Non-functional."))
 
 /obj/item/mech_component/sensors/heavy/universal/prebuild()
 	..()
-	software_new = new(src)
-	software_new.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_ENGINEERING, MECH_SOFTWARE_WEAPONS)
+	software = new(src)
+	software.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_WEAPONS)
 
 /mob/living/exosuit/premade/farm/cowboy
 	name = "SPIDER"
@@ -91,61 +38,11 @@
 //NERD MECH//
 
 /obj/item/mech_component/sensors/combat/universal
-	var/obj/item/mech_component/control_module/universal/software_new
-
-/obj/item/mech_component/sensors/combat/universal/show_missing_parts(var/mob/user)
-	if(!radio)
-		to_chat(user, SPAN_WARNING("It is missing a radio."))
-	if(!camera)
-		to_chat(user, SPAN_WARNING("It is missing a camera."))
-	if(!software_new)
-		to_chat(user, SPAN_WARNING("It is missing a software control module."))
-
-/obj/item/mech_component/sensors/combat/universal/update_components()
-	radio = locate() in src
-	camera = locate() in src
-	software_new = locate() in src
-
-/obj/item/mech_component/sensors/combat/universal/attackby(var/obj/item/thing, var/mob/user)
-	if(istype(thing, /obj/item/mech_component/control_module))
-		if(software_new)
-			to_chat(user, SPAN_WARNING("\The [src] already has a control modules installed."))
-			return
-		if(install_component(thing, user)) software_new = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/radio))
-		if(radio)
-			to_chat(user, SPAN_WARNING("\The [src] already has a radio installed."))
-			return
-		if(install_component(thing, user)) radio = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/camera))
-		if(camera)
-			to_chat(user, SPAN_WARNING("\The [src] already has a camera installed."))
-			return
-		if(install_component(thing, user)) camera = thing
-	else
-		return ..()
-
-/obj/item/mech_component/sensors/combat/universal/return_diagnostics(mob/user)
-	..()
-	if(software_new)
-		to_chat(user, SPAN_NOTICE(" Installed Software"))
-		for(var/exosystem_software in software.installed_software)
-			to_chat(user, SPAN_NOTICE(" - <b>[capitalize(exosystem_software)]</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Control Module Missing or Non-functional."))
-	if(radio)
-		to_chat(user, SPAN_NOTICE(" Radio Integrity: <b>[round((((radio.max_dam - radio.total_dam) / radio.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Radio Missing or Non-functional."))
-	if(camera)
-		to_chat(user, SPAN_NOTICE(" Camera Integrity: <b>[round((((camera.max_dam - camera.total_dam) / camera.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Camera Missing or Non-functional."))
 
 /obj/item/mech_component/sensors/combat/universal/prebuild()
 	..()
-	software_new = new(src)
-	software_new.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_ENGINEERING, MECH_SOFTWARE_WEAPONS)
+	software = new(src)
+	software.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_WEAPONS)
 
 /obj/item/mech_component/propulsion/tracks/techman
 	turn_delay = 4
@@ -193,61 +90,11 @@
 //LUMBERJACK MECH//
 
 /obj/item/mech_component/sensors/light/combat/universal
-	var/obj/item/mech_component/control_module/universal/software_new
-
-/obj/item/mech_component/sensors/light/combat/universal/show_missing_parts(var/mob/user)
-	if(!radio)
-		to_chat(user, SPAN_WARNING("It is missing a radio."))
-	if(!camera)
-		to_chat(user, SPAN_WARNING("It is missing a camera."))
-	if(!software_new)
-		to_chat(user, SPAN_WARNING("It is missing a software control module."))
-
-/obj/item/mech_component/sensors/light/combat/universal/update_components()
-	radio = locate() in src
-	camera = locate() in src
-	software_new = locate() in src
-
-/obj/item/mech_component/sensors/light/combat/universal/attackby(var/obj/item/thing, var/mob/user)
-	if(istype(thing, /obj/item/mech_component/control_module))
-		if(software_new)
-			to_chat(user, SPAN_WARNING("\The [src] already has a control modules installed."))
-			return
-		if(install_component(thing, user)) software_new = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/radio))
-		if(radio)
-			to_chat(user, SPAN_WARNING("\The [src] already has a radio installed."))
-			return
-		if(install_component(thing, user)) radio = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/camera))
-		if(camera)
-			to_chat(user, SPAN_WARNING("\The [src] already has a camera installed."))
-			return
-		if(install_component(thing, user)) camera = thing
-	else
-		return ..()
-
-/obj/item/mech_component/sensors/light/combat/universal/return_diagnostics(mob/user)
-	..()
-	if(software_new)
-		to_chat(user, SPAN_NOTICE(" Installed Software"))
-		for(var/exosystem_software in software.installed_software)
-			to_chat(user, SPAN_NOTICE(" - <b>[capitalize(exosystem_software)]</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Control Module Missing or Non-functional."))
-	if(radio)
-		to_chat(user, SPAN_NOTICE(" Radio Integrity: <b>[round((((radio.max_dam - radio.total_dam) / radio.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Radio Missing or Non-functional."))
-	if(camera)
-		to_chat(user, SPAN_NOTICE(" Camera Integrity: <b>[round((((camera.max_dam - camera.total_dam) / camera.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Camera Missing or Non-functional."))
 
 /obj/item/mech_component/sensors/light/combat/universal/prebuild()
 	..()
-	software_new = new(src)
-	software_new.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_ENGINEERING, MECH_SOFTWARE_WEAPONS)
+	software = new(src)
+	software.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_WEAPONS)
 
 /mob/living/exosuit/premade/farm/forestman
 	name = "INVINCIBLE IV"
@@ -278,62 +125,12 @@
 //SWAMPMAN MECH//
 
 /obj/item/mech_component/sensors/powerloader/universal
-	var/obj/item/mech_component/control_module/universal/software_new
 	max_damage = 200
-
-/obj/item/mech_component/sensors/powerloader/universal/show_missing_parts(var/mob/user)
-	if(!radio)
-		to_chat(user, SPAN_WARNING("It is missing a radio."))
-	if(!camera)
-		to_chat(user, SPAN_WARNING("It is missing a camera."))
-	if(!software_new)
-		to_chat(user, SPAN_WARNING("It is missing a software control module."))
-
-/obj/item/mech_component/sensors/powerloader/universal/update_components()
-	radio = locate() in src
-	camera = locate() in src
-	software_new = locate() in src
-
-/obj/item/mech_component/sensors/powerloader/universal/attackby(var/obj/item/thing, var/mob/user)
-	if(istype(thing, /obj/item/mech_component/control_module))
-		if(software_new)
-			to_chat(user, SPAN_WARNING("\The [src] already has a control modules installed."))
-			return
-		if(install_component(thing, user)) software_new = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/radio))
-		if(radio)
-			to_chat(user, SPAN_WARNING("\The [src] already has a radio installed."))
-			return
-		if(install_component(thing, user)) radio = thing
-	else if(istype(thing,/obj/item/robot_parts/robot_component/camera))
-		if(camera)
-			to_chat(user, SPAN_WARNING("\The [src] already has a camera installed."))
-			return
-		if(install_component(thing, user)) camera = thing
-	else
-		return ..()
-
-/obj/item/mech_component/sensors/powerloader/universal/return_diagnostics(mob/user)
-	..()
-	if(software_new)
-		to_chat(user, SPAN_NOTICE(" Installed Software"))
-		for(var/exosystem_software in software.installed_software)
-			to_chat(user, SPAN_NOTICE(" - <b>[capitalize(exosystem_software)]</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Control Module Missing or Non-functional."))
-	if(radio)
-		to_chat(user, SPAN_NOTICE(" Radio Integrity: <b>[round((((radio.max_dam - radio.total_dam) / radio.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Radio Missing or Non-functional."))
-	if(camera)
-		to_chat(user, SPAN_NOTICE(" Camera Integrity: <b>[round((((camera.max_dam - camera.total_dam) / camera.max_dam)) * 100)]%</b>"))
-	else
-		to_chat(user, SPAN_WARNING(" Camera Missing or Non-functional."))
 
 /obj/item/mech_component/sensors/powerloader/universal/prebuild()
 	..()
-	software_new = new(src)
-	software_new.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_ENGINEERING, MECH_SOFTWARE_WEAPONS)
+	software = new(src)
+	software.installed_software = list(MECH_SOFTWARE_UTILITY, MECH_SOFTWARE_ENGINEERING)
 
 /obj/item/mech_component/manipulators/heavy/swampman
 	melee_damage = 35
