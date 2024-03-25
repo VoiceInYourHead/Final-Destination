@@ -214,7 +214,7 @@
 
 		if(psi_shot == "Standart")
 			user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
-			if(user_rank == PSI_RANK_APPRENTICE)
+			if(user_rank < PSI_RANK_MASTER)
 				pew = new /obj/item/projectile/psi(get_turf(user))
 				pew.name = "small psionic bullet"
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
@@ -260,7 +260,7 @@
 
 		if(psi_shot == "Explosive")
 			user.visible_message("<span class='danger'>[user] делает резкий выпад рукой, запуская в полёт огромный сгусток энергии!</span>")
-			if(user_rank == PSI_RANK_APPRENTICE)
+			if(user_rank < PSI_RANK_MASTER)
 				if(prob(10))
 					pew = new /obj/item/projectile/psi/strong(get_turf(user))
 					pew.name = "explosive psionic round"

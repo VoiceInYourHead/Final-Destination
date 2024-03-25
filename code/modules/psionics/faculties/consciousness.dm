@@ -7,13 +7,16 @@
 /decl/psionic_power/consciousness
 	faculty = PSI_CONSCIOUSNESS
 
-/decl/psionic_power/consciousnessa/invoke(var/mob/living/user, var/mob/living/target)
-	if (!istype(target))
-		to_chat(user, SPAN_WARNING("You cannot mentally attack \the [target]."))
+/decl/psionic_power/consciousness/invoke(var/mob/living/user, var/mob/living/target)
+	. = ..()
+	if (!.)
 		return FALSE
 
-	. = ..()
-	if(. && target.deflect_psionic_attack(user))
+	if (!istype(target))
+		to_chat(user, SPAN_WARNING("Вы не можете пробиться в сознание [target]."))
+		return FALSE
+
+	if(. && target.deflect_psionic_attack(user) && target != user)
 		return FALSE
 
 /decl/psionic_power/consciousness/telepathy
@@ -52,100 +55,96 @@
 			return
 
 /decl/psionic_power/consciousness/telepathy/invoke(var/mob/living/user, var/mob/living/target)
-	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_MOUTH || user.a_intent != I_HELP)
+	if(user.zone_sel.selecting != BP_MOUTH || user.a_intent != I_HELP || target == user)
 		return FALSE
 	. = ..()
-	if(!.)
-		return
+	if(.)
+		if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
+			to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
+			return FALSE
 
-	if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
-		to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
-		return FALSE
-
-	if(user.psi.get_rank(PSI_CONSCIOUSNESS) >= PSI_RANK_MASTER && target != user)
-		var/option = input(user, "Связь!", "Что вы хотите сделать?") in list("Поговорить", "Привязать", "Отвязать")
-		if (!option)
-			return
-		if(option == "Привязать")
-			if(user.space >= 1)
-				to_chat(user, SPAN_NOTICE("<b>Вы не можете поддерживать столь личную связь с более чем одним человеком! Это неправильно!</b>"))
-				return 0
-			var/answer = alert(target, "[user] пытается связать ваши разумы воедино. Вы позволите ему сделать это?", "Слияние", "Да", "Нет")
-			switch(answer)
-				if("Да")
-					user.linked_soul = target
-					user.space = 1
-					user.verbs += /mob/living/proc/ContactSoulmate
-					to_chat(user, SPAN_NOTICE("<b>Вы ощущаете, как ваше сознание становится единым целым с сознанием [target]</b>"))
+		if(user.psi.get_rank(PSI_CONSCIOUSNESS) >= PSI_RANK_MASTER && target != user)
+			var/option = input(user, "Связь!", "Что вы хотите сделать?") in list("Поговорить", "Привязать", "Отвязать")
+			if (!option)
+				return
+			if(option == "Привязать")
+				if(user.space >= 1)
+					to_chat(user, SPAN_NOTICE("<b>Вы не можете поддерживать столь личную связь с более чем одним человеком! Это неправильно!</b>"))
+					return 0
+				var/answer = alert(target, "[user] пытается связать ваши разумы воедино. Вы позволите ему сделать это?", "Слияние", "Да", "Нет")
+				switch(answer)
+					if("Да")
+						user.linked_soul = target
+						user.space = 1
+						user.verbs += /mob/living/proc/ContactSoulmate
+						to_chat(user, SPAN_NOTICE("<b>Вы ощущаете, как ваше сознание становится единым целым с сознанием [target]</b>"))
+						return 0
+					else
+						to_chat(user, SPAN_NOTICE("<b>[target] отказался от вашего предложения.</b>"))
+						return 0
+			if(option == "Отвязать")
+				if(user.linked_soul == target)
+					user.verbs -= /mob/living/proc/ContactSoulmate
+					user.linked_soul = null
+					user.space = 0
+					to_chat(user, SPAN_NOTICE("<b>Вы раз и навсегда рвёте ваши узы с [target]!</b>"))
+					to_chat(target, SPAN_WARNING("Вы ощущаете странную потерю..."))
 					return 0
 				else
-					to_chat(user, SPAN_NOTICE("<b>[target] отказался от вашего предложения.</b>"))
+					to_chat(user, SPAN_NOTICE("<b>У вас нет никаких уз с [target]!</b>"))
+			if(option == "Поговорить")
+
+	///Yes. And no, i don't know how to do it better///
+
+				var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
+				if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
 					return 0
-		if(option == "Отвязать")
-			if(user.linked_soul == target)
-				user.verbs -= /mob/living/proc/ContactSoulmate
-				user.linked_soul = null
-				user.space = 0
-				to_chat(user, SPAN_NOTICE("<b>Вы раз и навсегда рвёте ваши узы с [target]!</b>"))
-				to_chat(target, SPAN_WARNING("Вы ощущаете странную потерю..."))
-				return 0
-			else
-				to_chat(user, SPAN_NOTICE("<b>У вас нет никаких уз с [target]!</b>"))
-		if(option == "Поговорить")
 
-///Yes. And no, i don't know how to do it better///
+				var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+				to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
+				if(target.psi)
+					var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+					if(con_rank_target >= con_rank_user)
+						to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
+					if(con_rank_target > con_rank_user)
+						var/what =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
+						switch(what)
+							if("Да")
+								var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+								to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
+							else
+								return 0
+					else
+						to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
+				else if(!target.psi)
+					to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
+				return 1
 
-			var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
-			if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
-				return 0
+	/// ///
 
-			var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
-			to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
-			if(target.psi)
-				var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
-				if(con_rank_target >= con_rank_user)
-					to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
+		var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
+		if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
+			return FALSE
+
+		var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+		to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
+		if(target.psi)
+			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+			if(con_rank_target >= con_rank_user)
+				to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
 				if(con_rank_target > con_rank_user)
-					var/what =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
-					switch(what)
+					var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
+					switch(option)
 						if("Да")
-							var/answer =  input(user, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
+							var/answer =  input(target, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
 							to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
 						else
-							return 0
-				else
-					to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
-			else if(!target.psi)
+							return
+			else
 				to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
-			return 1
-
-/// ///
-
-	if(target != user)
-		return FALSE
-	var/phrase =  input(user, "Что вы хотите сказать?", "Связаться", "Ты меня слышишь?") as null|text
-	if(!phrase || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
-		return FALSE
-
-	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
-	to_chat(user, SPAN_NOTICE("<b>Вы пытаетесь установить контакт с сознанием [target], дабы донести до него следующее: <i>[phrase]</i></b>"))
-	if(target.psi)
-		var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
-		if(con_rank_target >= con_rank_user)
-			to_chat(target, SPAN_OCCULT("<b>Вы слышите отчётливый голос [user] в своей голове, он говорит вам: <i>[phrase]</i></b>"))
-			if(con_rank_target > con_rank_user)
-				var/option =  alert(target, "Вы хотите ответить этому зову?", "Обратная связь", "Да", "Нет")
-				switch(option)
-					if("Да")
-						var/answer =  input(target, "Что вы хотите передать в ответ?", "Связаться", "...") as null|text
-						to_chat(user, SPAN_OCCULT("<b>[target] отвечает вам: <i>[answer]</i></b>"))
-					else
-						return
-		else
+		else if(!target.psi)
 			to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
-	else if(!target.psi)
-		to_chat(target, SPAN_OCCULT("<b>Вы слышите чей-то отдалённый голос в своей голове, больше напоминающий шёпот...голос говорит вам: <i>[phrase]</i></b>"))
-	return TRUE
+		return TRUE
 
 
 /decl/psionic_power/consciousness/mindread
@@ -159,69 +158,68 @@
 	use_description = "Выберите голову на зелёном интенте и затем нажмите по цели находясь на любом расстоянии, чтобы попытаться прочитать его мысли."
 
 /decl/psionic_power/consciousness/mindread/invoke(var/mob/living/user, var/mob/living/target)
-	if(!isliving(target) || !istype(target) || user.zone_sel.selecting != BP_HEAD || user.a_intent != I_HELP)
+	if(user.zone_sel.selecting != BP_HEAD || user.a_intent != I_HELP || target == user)
 		return FALSE
 	. = ..()
-	if(!.)
-		return
+	if(.)
 
-	if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
-		to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
-		return FALSE
+		if(target.stat == DEAD || (target.status_flags & FAKEDEATH) || !target.client)
+			to_chat(user, SPAN_WARNING("[target] не в состоянии ответить вам. Его мозг погрузился в вечный сон."))
+			return FALSE
 
-	var/question =  input(user, "Что вы хотите сказать?", "Чтение мыслей", "Идеи?") as null|text
-	if(!question || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
-		return FALSE
+		var/question =  input(user, "Что вы хотите сказать?", "Чтение мыслей", "Идеи?") as null|text
+		if(!question || user.incapacitated() || !do_after(user, 40 / user.psi.get_rank(PSI_CONSCIOUSNESS)))
+			return FALSE
 
-	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
-	var/started_mindread = world.time
-	to_chat(user, SPAN_NOTICE("<b>Вы погружаетесь в глубины сознания [target], ища ответ на вопрос: <i>[question]</i></b>"))
-	var/option = alert(target, "Кто-то пытается проникнуть в ваше сознание, дабы получить доступ к его воспоминаниям! Вы позволите этому случиться?", "Выбирай!", "Да", "Нет")
-	if (!option)
-		if(target.psi)
-			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
-			if(con_rank_target > con_rank_user)
-				to_chat(user, SPAN_NOTICE("<b>[target]без каких-либо проблем блокирует ваши попытки узнать что-либо!</b>"))
-				to_chat(target, SPAN_NOTICE("<b>Вы без проблем защитили свой разум от вторжения!</b>"))
-				return
-			else
+		var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
+		var/started_mindread = world.time
+		to_chat(user, SPAN_NOTICE("<b>Вы погружаетесь в глубины сознания [target], ища ответ на вопрос: <i>[question]</i></b>"))
+		var/option = alert(target, "Кто-то пытается проникнуть в ваше сознание, дабы получить доступ к его воспоминаниям! Вы позволите этому случиться?", "Выбирай!", "Да", "Нет")
+		if (!option)
+			if(target.psi)
+				var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+				if(con_rank_target > con_rank_user)
+					to_chat(user, SPAN_NOTICE("<b>[target]без каких-либо проблем блокирует ваши попытки узнать что-либо!</b>"))
+					to_chat(target, SPAN_NOTICE("<b>Вы без проблем защитили свой разум от вторжения!</b>"))
+					return
+				else
+					target.adjustBrainLoss(25)
+					to_chat(user, SPAN_NOTICE("<b>[target] удаётся предотвратить ваше проникновение, но часть его мозга была повреждена в процессе!</b>"))
+					to_chat(target, SPAN_NOTICE("<b>Вам удаётся защитить свои воспоминания, но ваше сопротивление повлекло за собой куда больше проблем. Ваша голова просто раскалывается.</b>"))
+					return
+			else if(!target.psi)
 				target.adjustBrainLoss(25)
 				to_chat(user, SPAN_NOTICE("<b>[target] удаётся предотвратить ваше проникновение, но часть его мозга была повреждена в процессе!</b>"))
 				to_chat(target, SPAN_NOTICE("<b>Вам удаётся защитить свои воспоминания, но ваше сопротивление повлекло за собой куда больше проблем. Ваша голова просто раскалывается.</b>"))
 				return
-		else if(!target.psi)
-			target.adjustBrainLoss(25)
-			to_chat(user, SPAN_NOTICE("<b>[target] удаётся предотвратить ваше проникновение, но часть его мозга была повреждена в процессе!</b>"))
-			to_chat(target, SPAN_NOTICE("<b>Вам удаётся защитить свои воспоминания, но ваше сопротивление повлекло за собой куда больше проблем. Ваша голова просто раскалывается.</b>"))
-			return
-	if(option == "Yes")
-		to_chat(target, SPAN_NOTICE("<b>Некто пытается получить ответ на вопрос: <i>[question]</i></b>"))
-	if(option == "No")
-		if(target.psi)
-			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
-			if(con_rank_target > con_rank_user)
-				to_chat(user, SPAN_NOTICE("<b>[target]без каких-либо проблем блокирует ваши попытки узнать что-либо!</b>"))
-				to_chat(target, SPAN_NOTICE("<b>Вы без проблем защитили свой разум от вторжения!</b>"))
-				return
-			else
+		if(option == "Yes")
+			to_chat(target, SPAN_NOTICE("<b>Некто пытается получить ответ на вопрос: <i>[question]</i></b>"))
+		if(option == "No")
+			if(target.psi)
+				var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
+				if(con_rank_target > con_rank_user)
+					to_chat(user, SPAN_NOTICE("<b>[target]без каких-либо проблем блокирует ваши попытки узнать что-либо!</b>"))
+					to_chat(target, SPAN_NOTICE("<b>Вы без проблем защитили свой разум от вторжения!</b>"))
+					return
+				else
+					target.adjustBrainLoss(25)
+					to_chat(user, SPAN_NOTICE("<b>[target] удаётся предотвратить ваше проникновение, но часть его мозга была повреждена в процессе!</b>"))
+					to_chat(target, SPAN_NOTICE("<b>Вам удаётся защитить свои воспоминания, но ваше сопротивление повлекло за собой куда больше проблем. Ваша голова просто раскалывается.</b>"))
+					return
+			else if(!target.psi)
 				target.adjustBrainLoss(25)
 				to_chat(user, SPAN_NOTICE("<b>[target] удаётся предотвратить ваше проникновение, но часть его мозга была повреждена в процессе!</b>"))
 				to_chat(target, SPAN_NOTICE("<b>Вам удаётся защитить свои воспоминания, но ваше сопротивление повлекло за собой куда больше проблем. Ваша голова просто раскалывается.</b>"))
 				return
-		else if(!target.psi)
-			target.adjustBrainLoss(25)
-			to_chat(user, SPAN_NOTICE("<b>[target] удаётся предотвратить ваше проникновение, но часть его мозга была повреждена в процессе!</b>"))
-			to_chat(target, SPAN_NOTICE("<b>Вам удаётся защитить свои воспоминания, но ваше сопротивление повлекло за собой куда больше проблем. Ваша голова просто раскалывается.</b>"))
-			return
 
 
-	var/answer =  input(target, question, "Чтение мыслей") as null|text
-	if(!answer || world.time > started_mindread + 60 SECONDS || user.stat != CONSCIOUS || target.stat == DEAD)
-		to_chat(user, SPAN_NOTICE("<b>Вам не удалось добиться чего-либо полезного от [target].</b>"))
-	else
-		to_chat(user, SPAN_NOTICE("<b>В поисках ответов в голове [target], вы нахоите следующее: <i>[answer]</i></b>"))
-	msg_admin_attack("[key_name(user)] использует чтение мыслей на [key_name(target)] с вопросом \"[question]\" и [answer?"следующим ответом \"[answer]\".":"не получил никакого ответа."]")
-	return TRUE
+		var/answer =  input(target, question, "Чтение мыслей") as null|text
+		if(!answer || world.time > started_mindread + 60 SECONDS || user.stat != CONSCIOUS || target.stat == DEAD)
+			to_chat(user, SPAN_NOTICE("<b>Вам не удалось добиться чего-либо полезного от [target].</b>"))
+		else
+			to_chat(user, SPAN_NOTICE("<b>В поисках ответов в голове [target], вы нахоите следующее: <i>[answer]</i></b>"))
+		msg_admin_attack("[key_name(user)] использует чтение мыслей на [key_name(target)] с вопросом \"[question]\" и [answer?"следующим ответом \"[answer]\".":"не получил никакого ответа."]")
+		return TRUE
 
 /decl/psionic_power/consciousness/focus
 	name =          "Focus"
@@ -381,41 +379,44 @@
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
 	if(user.zone_sel.selecting != BP_EYES || user.a_intent != I_HELP)
 		return FALSE
-	. = ..()
-	if(.)
-		if(istype(target, /mob/living/carbon) && target != user && con_rank_user == PSI_RANK_MASTER)
-			if(do_after(user, 30))
-				user.visible_message(SPAN_WARNING("[user] касается [target] и тот исчезает на глазах!"))
-				target.alpha = 200
-				spawn(1 SECONDS)
-					target.alpha = 150
-				spawn(2 SECONDS)
-					target.alpha = 100
-				spawn(3 SECONDS)
-					target.alpha = 50
-				spawn(4 SECONDS)
-					target.alpha = 25
-				spawn(5 SECONDS)
-					target.alpha = 10
-				target.run_timer_invisibility()
-				return TRUE
 
-		user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
-		user.alpha = 200
-		spawn(1 SECONDS)
-			user.alpha = 150
-		spawn(2 SECONDS)
-			user.alpha = 100
-		spawn(3 SECONDS)
-			user.alpha = 50
-		spawn(4 SECONDS)
-			user.alpha = 25
-		spawn(5 SECONDS)
-			user.alpha = 10
-		if(con_rank_user == PSI_RANK_GRANDMASTER)
-			user.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
-		user.run_timer_invisibility()
-		return TRUE
+	if (!istype(target))
+		to_chat(user, SPAN_WARNING("Вы не можете сделать [target] невидимым."))
+		return FALSE
+
+	if(istype(target, /mob/living/carbon) && target != user && con_rank_user >= PSI_RANK_MASTER)
+		if(do_after(user, 30))
+			user.visible_message(SPAN_WARNING("[user] касается [target] и тот исчезает на глазах!"))
+			target.alpha = 200
+			spawn(1 SECONDS)
+				target.alpha = 150
+			spawn(2 SECONDS)
+				target.alpha = 100
+			spawn(3 SECONDS)
+				target.alpha = 50
+			spawn(4 SECONDS)
+				target.alpha = 25
+			spawn(5 SECONDS)
+				target.alpha = 10
+			target.run_timer_invisibility()
+			return TRUE
+
+	user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
+	user.alpha = 200
+	spawn(1 SECONDS)
+		user.alpha = 150
+	spawn(2 SECONDS)
+		user.alpha = 100
+	spawn(3 SECONDS)
+		user.alpha = 50
+	spawn(4 SECONDS)
+		user.alpha = 25
+	spawn(5 SECONDS)
+		user.alpha = 10
+	if(con_rank_user == PSI_RANK_GRANDMASTER)
+		user.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
+	user.run_timer_invisibility()
+	return TRUE
 
 /decl/psionic_power/consciousness/curse
 	name =            "Hallucinations"
@@ -445,6 +446,7 @@
 	cooldown =       100
 	use_ranged =     TRUE
 	min_rank =       PSI_RANK_MASTER
+	suppress_parent_proc = TRUE
 	use_description = "Выберите пятки или ноги на зелёном интенте. Затем, нажмите по цели на дистанции, чтобы незаметно обменяться с ней местами."
 
 /decl/psionic_power/consciousness/swap/invoke(var/mob/living/user, var/mob/living/carbon/human/target)
