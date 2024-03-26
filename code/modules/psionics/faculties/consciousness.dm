@@ -282,7 +282,7 @@
 /decl/psionic_power/consciousness/absorb
 	name =            "Absorption"
 	cost =            10
-	cooldown =        100
+	cooldown =        40
 	use_ranged =     TRUE
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_APPRENTICE
@@ -300,7 +300,7 @@
 			return 0
 		if(target.psi)
 			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
-			if(con_rank_user >= con_rank_target)
+			if(con_rank_user > con_rank_target)
 				sound_to(user, 'sound/effects/psi/power_fail.ogg')
 				if(prob(30))
 					to_chat(user, SPAN_DANGER("Вы попытались проникнуть в разум [target], но тот ловко ускользнул из под вашего воздействия."))
@@ -308,40 +308,40 @@
 					return 0
 				to_chat(user, SPAN_NOTICE("Вы с лёгкостью разбили защиту [target], забрав часть его сил себе."))
 				to_chat(target, SPAN_DANGER("Вы ощущаете сильную головную боль, пока [user] пристально сверлит вас взглядом. Ваше тело ослабевает..."))
-				target.adjustBrainLoss(15)
-				user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(15,20))
-				target.psi.spend_power(rand(10,20))
+				target.adjustBrainLoss(20)
+				user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(25,30))
+				target.psi.spend_power(rand(15,25))
 			if(con_rank_user == con_rank_target)
 				sound_to(user, 'sound/effects/psi/power_fail.ogg')
 				if(prob(50))
 					to_chat(user, SPAN_WARNING("Вы попытались проникнуть в разум [target], но в ходе битвы сами получаете значительный урон!"))
 					to_chat(target, SPAN_DANGER("Вы что есть силы пытались отбить атаки [user] на ваш разум, но в конечном счёте всё равно проиграли. По-крайней мере, ему тоже досталось."))
-					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(5,15))
-					target.psi.spend_power(rand(5,15))
-					user.adjustBrainLoss(10)
-					target.adjustBrainLoss(10)
+					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(10,20))
+					target.psi.spend_power(rand(10,20))
+					user.adjustBrainLoss(20)
+					target.adjustBrainLoss(20)
 					user.emote("scream")
 					target.emote("scream")
 					return 0
 				to_chat(user, SPAN_WARNING("Вы с лёгкостью разбили защиту [target], забрав часть его сил себе."))
 				to_chat(target, SPAN_DANGER("Вы ощущаете сильную головную боль, пока [user] пристально сверлит вас взглядом. Ваше тело ослабевает..."))
-				target.adjustBrainLoss(15)
-				user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(15,20))
-				target.psi.spend_power(rand(10,20))
-			if(con_rank_user <= con_rank_target)
+				target.adjustBrainLoss(20)
+				user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(25,30))
+				target.psi.spend_power(rand(15,25))
+			if(con_rank_user < con_rank_target)
 				sound_to(user, 'sound/effects/psi/power_fail.ogg')
 				if(prob(30))
 					to_chat(user, SPAN_WARNING("Каким-то чудом, но вам удалось пробиться через псионическую завесу [target]!"))
 					to_chat(target, SPAN_DANGER("Вопреки всякой логике и здравому смыслу, [user] пробился в ваш разум чистой, грубой силой, нанеся в процессе значительный урон."))
-					target.adjustBrainLoss(15)
-					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(25,30))
-					target.psi.spend_power(30)
+					target.adjustBrainLoss(20)
+					user.psi.stamina = min(user.psi.max_stamina, user.psi.stamina + rand(30,45))
+					target.psi.spend_power(35)
 					return 0
 				to_chat(user, SPAN_DANGER("Вы пытаетесь пробиться через барьер [target], но встречаете серьёзное сопротивление!"))
 				to_chat(target, SPAN_NOTICE("[user] только что попытался пробиться в ваше сознание...к его сожалению - безуспешно."))
 				user.emote("scream")
-				user.adjustBrainLoss(25)
-				user.psi.spend_power(30)
+				user.adjustBrainLoss(30)
+				user.psi.spend_power(50)
 		else
 			to_chat(user, SPAN_NOTICE("Вы не обнаружили у [target] каких-либо псионических способностей для подпитки."))
 			return 0
@@ -511,13 +511,13 @@
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
 
 	if(con_rank_user == PSI_RANK_OPERANT)
-		amount = 2
-
-	if(con_rank_user == PSI_RANK_MASTER)
 		amount = 3
 
+	if(con_rank_user == PSI_RANK_MASTER)
+		amount = 4
+
 	if(con_rank_user == PSI_RANK_GRANDMASTER)
-		amount = 5
+		amount = 6
 
 	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
@@ -544,9 +544,9 @@
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 1
-	maxHealth = 10
-	health = 10
+	movement_cooldown = 0
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/punch/holo
 	a_intent = I_HURT
