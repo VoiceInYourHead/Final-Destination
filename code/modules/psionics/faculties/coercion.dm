@@ -25,7 +25,7 @@
 	cooldown =       120
 	use_ranged =     TRUE
 	use_melee =      TRUE
-	min_rank =       PSI_RANK_APPRENTICE
+	min_rank =       PSI_RANK_OPERANT
 	use_description = "Выберите глаза и переключитесь на синий интент. Затем, нажмите куда угодно чтобы применить радиальную атаку, слепящую и оглушающую всех, кто оказался поблизости."
 
 /decl/psionic_power/coercion/blindstrike/invoke(var/mob/living/user, var/mob/living/target)

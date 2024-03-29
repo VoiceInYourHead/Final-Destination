@@ -158,6 +158,9 @@
 /obj/structure/fireaxecabinet
 	can_be_telepunched = 0
 
+/obj/structure/catwalk
+	can_be_telepunched = 0
+
 /obj/structure/fd
 	can_be_telepunched = 0
 
@@ -574,3 +577,5 @@
 				spawn(1 SECONDS)
 					new /obj/structure/girder/rock(get_turf(A))
 				return TRUE
+		else
+			return FALSE
