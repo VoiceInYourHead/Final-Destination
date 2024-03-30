@@ -24,40 +24,58 @@
 		user.visible_message("<span class='danger'>Глаза [user] загораются ярким светом!</span>")
 
 		var/user_rank = user.psi.get_rank(faculty)
+		var/meta_rank = user.psi.get_rank(PSI_METAKINESIS)
 		var/obj/item/projectile/pew
 		var/pew_sound
 
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
 				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/beam/stun/shock/heavy(get_turf(user))
-					pew.name = "gigawatt mental beam"
-					pew_sound = 'sound/weapons/taser2.ogg'
+					if(meta_rank >= PSI_RANK_MASTER)
+						pew = new /obj/item/projectile/beam/stun/shock/heavy(get_turf(user))
+						pew.name = "gigawatt mental beam"
+						pew_sound = 'sound/weapons/taser2.ogg'
+					else
+						pew = new /obj/item/projectile/beam/stun(get_turf(user))
+						pew.name = "mental beam"
+						pew.color = "#3ca7b1"
+						pew_sound = 'sound/weapons/taser2.ogg'
 				if(user.a_intent == I_HURT)
 					pew = new /obj/item/projectile/beam/heavylaser(get_turf(user))
 					pew.name = "gigawatt mental laser"
+					pew.color = "#3ca7b1"
 					pew_sound = 'sound/weapons/pulse.ogg'
 			if(PSI_RANK_MASTER)
 				if(user.a_intent == I_HELP)
-					pew = new /obj/item/projectile/beam/stun/shock(get_turf(user))
-					pew.name = "megawatt mental beam"
-					pew_sound = 'sound/weapons/taser2.ogg'
+					if(meta_rank == PSI_RANK_OPERANT)
+						pew = new /obj/item/projectile/beam/stun/shock(get_turf(user))
+						pew.name = "megawatt mental beam"
+						pew_sound = 'sound/weapons/taser2.ogg'
+					else
+						pew = new /obj/item/projectile/beam/stun(get_turf(user))
+						pew.name = "mental beam"
+						pew.color = "#3ca7b1"
+						pew_sound = 'sound/weapons/taser2.ogg'
 				if(user.a_intent == I_HURT)
 					pew = new /obj/item/projectile/beam/megabot(get_turf(user))
 					pew.name = "megawatt mental laser"
+					pew.color = "#3ca7b1"
 					pew_sound = 'sound/weapons/Laser.ogg'
 			if(PSI_RANK_OPERANT)
 				if(user.a_intent == I_HELP)
 					pew = new /obj/item/projectile/beam/stun(get_turf(user))
 					pew.name = "mental beam"
+					pew.color = "#3ca7b1"
 					pew_sound = 'sound/weapons/taser2.ogg'
 				if(user.a_intent == I_HURT)
 					pew = new /obj/item/projectile/beam/midlaser(get_turf(user))
 					pew.name = "mental laser"
+					pew.color = "#3ca7b1"
 					pew_sound = 'sound/weapons/scan.ogg'
 			if(PSI_RANK_APPRENTICE)
 				pew = new /obj/item/projectile/beam/stun/smalllaser(get_turf(user))
 				pew.name = "mental beam"
+				pew.color = "#3ca7b1"
 				pew_sound = 'sound/weapons/taser2.ogg'
 
 		if(istype(pew))
@@ -81,6 +99,8 @@
 /decl/psionic_power/energistics/disrupt/invoke(var/mob/living/user, var/mob/living/target)
 	var/en_rank = user.psi.get_rank(PSI_ENERGISTICS)
 	if(user.zone_sel.selecting != BP_EYES)
+		return FALSE
+	if(user.a_intent != I_HURT)
 		return FALSE
 	if(istype(target, /turf))
 		return FALSE
@@ -204,13 +224,16 @@
 		var/obj/item/projectile/pew
 		var/pew_sound
 
-		if(target == user)
+		if(target == user && user.a_intent == I_HELP)
 			var/chosen_option = show_radial_menu(user, user, options, radius = 20, require_near = TRUE)
 			if (!chosen_option)
 				return
 			psi_shot = chosen_option
-			to_chat(user, "<span class='warning'>Теперь, ты будешь выпускать снаряды типа '[chosen_option]' при использовании псионики.</span>")
+			to_chat(user, "<span class='warning'>Теперь, ты будешь выпускать снаряды типа '[chosen_option]' при использовании данной способности.</span>")
 			return TRUE
+
+		if(user.a_intent != I_HURT)
+			return FALSE
 
 		if(psi_shot == "Standart")
 			user.visible_message("<span class='danger'>[user] изображает пальцами пистолет, делая выстрел!</span>")
@@ -260,7 +283,7 @@
 
 		if(psi_shot == "Explosive")
 			user.visible_message("<span class='danger'>[user] делает резкий выпад рукой, запуская в полёт огромный сгусток энергии!</span>")
-			if(user_rank < PSI_RANK_MASTER)
+			if(user_rank < PSI_RANK_OPERANT)
 				if(prob(10))
 					pew = new /obj/item/projectile/psi/strong(get_turf(user))
 					pew.name = "explosive psionic round"
@@ -274,11 +297,10 @@
 				pew.name = "explosive psionic round"
 				pew_sound = 'sound/weapons/guns/ricochet4.ogg'
 
-
 		if(psi_shot == "Piercing Charges")
 			user.visible_message("<span class='danger'>[user] выставляет перед собой руку, создавая импровизированную трубу и пропускает через неё сжатый сгусток энергии!</span>")
 			if(user_rank <= PSI_RANK_OPERANT)
-				if(prob(10))
+				if(prob(30))
 					pew = new /obj/item/projectile/psi/strong_piercing(get_turf(user))
 					pew.name = "piercing psionic round"
 					pew.color = "#a70909"
@@ -327,15 +349,32 @@
 	min_rank =         PSI_RANK_APPRENTICE
 	use_melee =        TRUE
 	use_description = "Выберите рот на красном интенте и нажмите в любое место около себя, чтобы создать рой псионических снарядов, летящих в разные стороны."
+	var/psi_shot = "Standart"
 
 /decl/psionic_power/energistics/storm/invoke(var/mob/living/user, var/mob/living/target)
+	var/list/options = list(
+		"Explosive" = image('icons/screen/psi.dmi', "EXP"),
+		"Standart" = image('icons/screen/psi.dmi', "DEF")
+	)
+
 	if(user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message("<span class='danger'>[user] создаёт вокруг себя рой из вращающихся пуль, запуская их в полёт!</span>")
-
 		var/user_rank = user.psi.get_rank(faculty)
+
+		if(target == user && user.a_intent == I_HELP && user_rank == PSI_RANK_GRANDMASTER)
+			var/chosen_option = show_radial_menu(user, user, options, radius = 20, require_near = TRUE)
+			if (!chosen_option)
+				return
+			psi_shot = chosen_option
+			to_chat(user, "<span class='warning'>Теперь, ты будешь выпускать снаряды типа '[chosen_option]' при использовании данной способности.</span>")
+			return TRUE
+
+		if(user.a_intent != I_HURT)
+			return FALSE
+
+		user.visible_message("<span class='danger'>[user] создаёт вокруг себя рой из вращающихся пуль, запуская их в полёт!</span>")
 
 		user.psi.set_cooldown(cooldown)
 		sleep(4)
@@ -343,7 +382,10 @@
 		var/turf/O = get_turf(src)
 		switch(user_rank)
 			if(PSI_RANK_GRANDMASTER)
-				user.fragmentate(O, 40, 7, list(/obj/item/projectile/psi = 1))
+				if(psi_shot == "Explosive")
+					user.fragmentate(O, 10, 4, list(/obj/item/projectile/psi/strong = 1))
+				else
+					user.fragmentate(O, 40, 7, list(/obj/item/projectile/psi = 1))
 			if(PSI_RANK_MASTER)
 				user.fragmentate(O, 30, 6, list(/obj/item/projectile/psi = 1))
 			if(PSI_RANK_OPERANT)
