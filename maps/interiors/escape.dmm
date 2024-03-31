@@ -1,0 +1,135 @@
+"af" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"bG" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"bU" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"ce" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/table/reinforced,/obj/item/modular_computer/tablet/preset/custom_loadout/advanced{pixel_y = 9},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"ck" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/effect/floor_decal/borderfloorblack/corner,/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"dp" = (/obj/machinery/portable_atmospherics/canister/air/high,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/effect/floor_decal/industrial/hatch/blue{color = "#50a0d3"},/turf/simulated/floor/tiled/steel_grid,/area/interior)
+"et" = (/obj/effect/floor_decal/techfloor/orange{dir = 9},/obj/structure/table/rack,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"ey" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"eQ" = (/obj/effect/floor_decal/hull{dir = 8},/obj/effect/floor_decal/hull{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"gh" = (/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
+"hL" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/table/rack,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"hT" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"hV" = (/turf/unsimulated/wall{color = "black"},/area/interior)
+"ib" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/bed/chair/shuttle/black,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"je" = (/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/interior)
+"jk" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/structure/bed/chair/shuttle/black,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"jl" = (/obj/effect/floor_decal/borderfloor{dir = 10},/obj/effect/floor_decal/corner/orange/bordercorner{dir = 4},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"jw" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/orange/border,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"kB" = (/obj/machinery/computer/dummy{dir = 1},/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/effect/floor_decal/borderfloorblack/corner,/obj/effect/floor_decal/corner/blue/bordercorner,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"kF" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/effect/floor_decal/borderfloorblack/corner{dir = 8},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"kI" = (/obj/machinery/computer/dummy,/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/corner/blue/border{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"lb" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/obj/effect/floor_decal/industrial/outline/orange,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/interior)
+"ld" = (/obj/effect/floor_decal/techfloor/orange{dir = 9},/obj/effect/floor_decal/borderfloorblack/corner,/obj/effect/floor_decal/corner/blue/bordercorner,/obj/structure/table/reinforced,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"ls" = (/obj/structure/storage/vehicles{dir = 4; pixel_x = -12},/obj/effect/floor_decal/industrial/outline/orange,/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"mG" = (/obj/structure/fd/placeholder/better{opacity = 0},/obj/structure/railing/mapped,/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
+"mM" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/floor_decal/industrial/warning,/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/tiled/steel_ridged,/area/interior)
+"op" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal{pixel_x = -3; pixel_y = 11},/obj/item/reagent_containers/food/drinks/pitcher{pixel_y = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"oC" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/effect/floor_decal/corner/orange/border{dir = 5},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"pj" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"pl" = (/obj/effect/floor_decal/techfloor/orange,/obj/effect/floor_decal/borderfloorblack/corner{dir = 4},/obj/effect/floor_decal/corner/blue/bordercorner{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"pI" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"pW" = (/obj/effect/floor_decal/borderfloor{dir = 9},/obj/effect/floor_decal/corner/orange/bordercorner,/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"qe" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/effect/floor_decal/borderfloorblack{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"qG" = (/obj/effect/floor_decal/techfloor/orange,/obj/effect/floor_decal/borderfloorblack/corner{dir = 1},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"rA" = (/obj/effect/floor_decal/techfloor/orange/corner{dir = 1},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"rQ" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/effect/floor_decal/borderfloorblack,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"sL" = (/obj/effect/floor_decal/techfloor/orange,/obj/effect/floor_decal/borderfloorblack/corner{dir = 4},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"tn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/table/reinforced,/turf/simulated/floor/tiled/dark,/area/interior)
+"tx" = (/obj/machinery/atmospherics/pipe/simple/hidden/red{dir = 6},/obj/effect/floor_decal/industrial/warning,/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/steel_ridged,/area/interior)
+"tY" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/machinery/computer/dummy{dir = 4},/obj/effect/floor_decal/techfloor/orange{dir = 6},/obj/effect/floor_decal/borderfloorblack/corner{dir = 1},/obj/effect/floor_decal/corner/blue/bordercorner{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"uv" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"uS" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/orange/border{dir = 4},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"vp" = (/obj/machinery/atmospherics/pipe/simple/hidden/universal{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/steel_ridged,/area/interior)
+"vZ" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/dark,/area/interior)
+"wl" = (/obj/machinery/atmospherics/pipe/simple/hidden/blue{dir = 6},/obj/effect/floor_decal/industrial/outline,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/interior)
+"xs" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/dark,/area/interior)
+"xI" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/structure/table/reinforced,/obj/item/boombox{pixel_x = -12; pixel_y = 5},/turf/simulated/floor/tiled/dark,/area/interior)
+"yQ" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/dark,/area/interior)
+"zT" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/steel_ridged,/area/interior)
+"zZ" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"AL" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/interior)
+"AT" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/orange/border{dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"CY" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Dz" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall/invincible,/area/interior)
+"Eg" = (/obj/effect/floor_decal/techfloor/orange{dir = 10},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/dark,/area/interior)
+"El" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"ER" = (/obj/effect/floor_decal/techfloor/orange{dir = 9},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/dark,/area/interior)
+"Fr" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"FR" = (/obj/structure/fd/placeholder/better{opacity = 0},/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
+"FV" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"Gc" = (/obj/structure/vehicledoor/airlock,/obj/structure/fd/placeholder/better{opacity = 0},/turf/simulated/floor/plating,/area/interior)
+"GF" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/machinery/computer/dummy{dir = 8},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Hj" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Hq" = (/obj/effect/floor_decal/borderfloor{dir = 6},/obj/effect/floor_decal/corner/orange/bordercorner{dir = 1},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"Ig" = (/obj/effect/floor_decal/techfloor/orange{dir = 5},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/dark,/area/interior)
+"Ij" = (/obj/structure/fd/placeholder/better{opacity = 0},/obj/effect/wingrille_spawn/reinforced/crescent,/obj/effect/paint/black,/turf/simulated/floor/plating,/area/interior)
+"Jd" = (/obj/effect/floor_decal/industrial/warning{dir = 5},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"JU" = (/obj/structure/storage/vehicles{dir = 8; pixel_x = 12},/obj/effect/floor_decal/industrial/outline/orange,/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"KL" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/orange/border,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"Lb" = (/obj/machinery/computer/dummy{dir = 1},/obj/effect/floor_decal/techfloor/orange{dir = 9},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Lr" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"Ls" = (/obj/structure/fd/placeholder/better{opacity = 0},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
+"Lt" = (/obj/structure/catwalk,/obj/structure/bed/chair/comfy/blue,/turf/simulated/floor/plating,/area/interior)
+"LD" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/effect/floor_decal/industrial/hatch/red{color = "#940004"},/turf/simulated/floor/tiled/steel_grid,/area/interior)
+"LM" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/orange/border{dir = 1},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"MS" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/structure/table/reinforced,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"MU" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/structure/bed/chair/shuttle/black{dir = 1},/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Nd" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/orange/border{dir = 1},/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"NA" = (/obj/effect/floor_decal/techfloor/orange{dir = 6},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/dark,/area/interior)
+"Oy" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+"Pp" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"PK" = (/obj/effect/floor_decal/techfloor/orange{dir = 10},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Qj" = (/obj/effect/catwalk_plated/dark,/obj/effect/vehicle_entrance,/turf/simulated/floor/plating,/area/interior)
+"QP" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/bed/chair/comfy/blue{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"RS" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/dark,/area/interior)
+"Tu" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/effect/floor_decal/industrial/outline/orange,/obj/machinery/light/small{dir = 4},/obj/structure/closet,/turf/simulated/floor/tiled/steel_grid,/area/interior)
+"TJ" = (/obj/machinery/light/invisible,/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
+"TZ" = (/obj/machinery/atmospherics/pipe/simple/hidden/universal{dir = 4},/obj/effect/floor_decal/industrial/warning{dir = 5},/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/turf/simulated/floor/tiled/steel_ridged,/area/interior)
+"Ub" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"Ut" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"UW" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/structure/bed/chair/comfy/captain{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/interior)
+"Vm" = (/obj/effect/floor_decal/industrial/warning{dir = 9},/obj/machinery/door/airlock/civilian,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"VD" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/effect/floor_decal/corner/orange/bordercorner{dir = 8},/obj/machinery/light,/turf/simulated/floor/tiled/dark/monotile,/area/interior)
+"Wh" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/catwalk_plated/dark,/turf/simulated/floor/plating,/area/interior)
+"Ws" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/bed/chair/shuttle/black{dir = 1},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"YC" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/machinery/door/airlock/glass/civilian,/turf/simulated/floor/tiled/steel_ridged,/area/interior)
+"YI" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/floor_decal/hull{dir = 8},/obj/effect/floor_decal/hull{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
+
+(1,1,1) = {"
+hVhVhVhVhVhVhVhVhVhVhVhVhV
+hVghghghghghghghghghghghhV
+hVghghghTJghghghTJghghghhV
+hVghghghghghghghghghghghhV
+hVTJghghTJghghghTJghghTJhV
+hVghghghghghFRmGmGFRFRghhV
+hVghghghDzDzDzrQrQDzFRghhV
+hVghghghDzldDzAToCqeLsghhV
+hVTJghDzDzCYVmJduSqeLsTJhV
+hVghghDzetrADzLruSDzFRghhV
+hVghghDzhLpIDzIjIjDzghghhV
+hVghghDzUbpIDzkIkIDzghghhV
+hVTJghDzPKpltYUWPpDzghTJhV
+hVghghDzbGbGuvbGLtIjghghhV
+hVghghDztxTZFVLbkBIjghghhV
+hVghghDzLDzTafzZpIIjghghhV
+hVTJghDzwlvpElQPGFDzghTJhV
+hVghghDzdpzTFrUbopDzghghhV
+hVghghDzDzDzYCDzDzDzghghhV
+hVghghghDzlbOyTuDzghghghhV
+hVTJghDzDzDzmMDzDzDzghTJhV
+hVghghDzLMHqWhjlNdDzghghhV
+hVghghIjkFIgWhERckIjghghhV
+hVghghIjeyvZWhRSpjIjghghhV
+hVTJghDzlsbUYIhTJUDzghTJhV
+hVghghDzibvZWhRSjkDzghghhV
+hVghghIjcexIALtnMSIjghghhV
+hVghghDzWsyQjexsMUDzghghhV
+hVTJghDzlsbUeQhTJUDzghTJhV
+hVghghIjHjyQjexsUtIjghghhV
+hVghghIjqGNAjeEgsLIjghghhV
+hVghghDzKLVDQjpWjwDzghghhV
+hVTJghDzDzDzGcDzDzDzghTJhV
+hVghghghghghghghghghghghhV
+hVhVhVhVhVhVhVhVhVhVhVhVhV
+"}

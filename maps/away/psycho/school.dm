@@ -4,6 +4,7 @@
 #include "school_mobs.dm"
 #include "school_npcs.dm"
 #include "school_assets.dm"
+#include "school_escape.dm"
 
 //jobs
 #include "jobs/school_teachers.dm"

@@ -1,7 +1,6 @@
 "ab" = (/obj/structure/table/woodentable/walnut,/obj/item/device/flashlight/lamp/lava/purple{pixel_x = 8; pixel_y = 4},/turf/simulated/floor/carpet/purple,/area/psionic_school/indoor/campus/girls/kitchen)
 "ad" = (/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom4)
 "ah" = (/obj/effect/floor_decal/borderfloorblack/corner{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 5},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
-"ai" = (/obj/structure/bed/padded,/obj/structure/window/reinforced/tinted{dir = 8},/obj/item/bedsheet/brown,/obj/structure/bedsheetbin{pixel_y = 7},/obj/effect/submap_landmark/spawnpoint/camp/teacher2,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "aj" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
 "al" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/machinery/light_switch{pixel_x = -23; pixel_y = -9},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/campus/teacherroom3/toilet)
 "ar" = (/obj/structure/bed/chair/pew/left/mahogany,/obj/effect/floor_decal/corner/lightgrey/border,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena1)
@@ -12,6 +11,7 @@
 "aO" = (/obj/machinery/camera/network/thunder{alpha = 0; anchored = 0; c_tag = "School Brawl 1-31"; name = "Movable Camera"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "aT" = (/obj/machinery/door/airlock/civilian,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/main/class2)
 "aX" = (/obj/structure/table/gamblingtable,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/sara/upper)
+"ba" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/outdoor)
 "bd" = (/obj/structure/table/woodentable/walnut,/obj/structure/flora/pottedplant/tropical{pixel_x = 3; pixel_y = 11},/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/campus/teacherroom2)
 "be" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/corner/grey/border,/obj/structure/table/woodentable/ebony,/obj/item/deck/tarot{pixel_x = 3; pixel_y = 7},/obj/item/pen/multi,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "bh" = (/obj/effect/floor_decal/spline/plain/black,/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/open,/area/psionic_school/outdoor)
@@ -25,23 +25,19 @@
 "bP" = (/obj/structure/table/reinforced,/obj/item/paper{pixel_x = -14; pixel_y = 7},/obj/item/paper,/obj/item/pen{pixel_y = 18},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/main/class1)
 "bT" = (/obj/effect/floor_decal/corner/orange/bordercorner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "bX" = (/obj/machinery/light{dir = 4},/turf/simulated/open,/area/psionic_school/indoor/main/arena1)
-"cj" = (/obj/structure/bed/sofa/black/right{dir = 1},/obj/effect/submap_landmark/spawnpoint/camp/teacher2,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "ck" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/lightgrey/border{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom4)
 "cl" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
 "cv" = (/obj/structure/table/woodentable/walnut,/obj/item/device/camera{pixel_x = 3; pixel_y = 8},/obj/item/device/camera_film{pixel_x = -5},/obj/item/device/camera_film{pixel_y = -9},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/campus/teacherroom2)
 "cx" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena2)
 "cy" = (/obj/effect/floor_decal/spline/plain/black{dir = 10},/turf/simulated/floor/tiled/techmaint,/area/psionic_school/outdoor)
-"cz" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/lightgrey/border{dir = 9},/obj/effect/floor_decal/corner/black/bordercorner,/obj/item/paper_bin{pixel_x = 4; pixel_y = 6},/obj/item/pen/multi{pixel_y = -7},/obj/item/device/flashlight/lamp/green{pixel_x = -8; pixel_y = 13},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
 "cI" = (/obj/random/junkyard/obstruction,/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "cY" = (/obj/effect/floor_decal/techfloor{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/outdoor)
-"da" = (/obj/machinery/disposal,/obj/machinery/light,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "db" = (/obj/effect/floor_decal/borderfloor,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "dd" = (/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
 "di" = (/obj/effect/floor_decal/corner/lightgrey/half{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "dj" = (/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "dt" = (/obj/structure/catwalk,/obj/machinery/light/invisible{dir = 4},/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
 "du" = (/obj/structure/bed/sofa/black/left{dir = 8},/obj/machinery/light{dir = 4},/turf/simulated/floor/carpet/purple,/area/psionic_school/indoor/campus/girls/kitchen)
-"dy" = (/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "dB" = (/obj/structure/catwalk,/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
 "dD" = (/obj/effect/floor_decal/borderfloorwhite/full,/obj/machinery/door/unpowered/simple/iron{dir = 4},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/main)
 "dE" = (/obj/machinery/light{dir = 8},/turf/simulated/open,/area/psionic_school/indoor/main/arena1)
@@ -78,6 +74,7 @@
 "fp" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/machinery/light{dir = 1},/obj/structure/holoplant,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/main/arena1)
 "ft" = (/obj/effect/floor_decal/techfloor{dir = 5},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/outdoor)
 "fu" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/main/arena2)
+"fz" = (/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "fA" = (/obj/machinery/camera/network/thunder{alpha = 0; anchored = 0; c_tag = "School Brawl 1-23"; name = "Movable Camera"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "fC" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/campus/teacher_hall)
 "fD" = (/obj/structure/railing/mapped,/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/effect/floor_decal/spline/plain/black,/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
@@ -112,7 +109,6 @@
 "hn" = (/obj/structure/table/reinforced,/obj/item/paper{pixel_x = 10},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/main/class1)
 "hp" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/black/bordercorner{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "hr" = (/obj/effect/floor_decal/spline/plain/black,/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/campus/teacherroom1)
-"hs" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "ht" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/machinery/washing_machine{pixel_x = -6; pixel_y = 4},/obj/item/storage/laundry_basket{pixel_x = 3; pixel_y = -13},/obj/item/towel/random{pixel_y = 15},/obj/machinery/light_switch{pixel_x = -23; pixel_y = -9},/obj/item/haircomb/brush{pixel_x = -5; pixel_y = 14},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/campus/teacherroom1/toilet)
 "hw" = (/obj/structure/curtain/black{icon_state = "open"; opacity = 0},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/outdoor)
 "hx" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
@@ -140,7 +136,7 @@
 "iP" = (/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "iR" = (/obj/structure/bed/chair/padded/blue{dir = 4},/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/main/class2)
 "iV" = (/obj/effect/floor_decal/spline/plain/black{dir = 8},/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/open,/area/psionic_school/outdoor)
-"iX" = (/obj/effect/floor_decal/industrial/outline,/obj/structure/bed/chair/comfy/black,/obj/effect/submap_landmark/spawnpoint/camp/teacher2,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
+"iX" = (/obj/item/toy/torchmodel{pixel_x = -5; pixel_y = 7},/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "iZ" = (/obj/effect/floor_decal/borderfloor/corner{dir = 1},/obj/effect/floor_decal/corner/lightgrey/border{dir = 6},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacher_hall)
 "ja" = (/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/floordetail/edgedrain,/obj/structure/hygiene/shower{dir = 8},/obj/item/soap,/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/campus/teacherroom4/toilet)
 "jb" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
@@ -150,18 +146,18 @@
 "jj" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "jm" = (/obj/structure/catwalk,/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
 "jo" = (/obj/structure/bed/chair/comfy/black{dir = 8},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/kitchen)
-"jp" = (/obj/structure/table/woodentable/ebony,/obj/item/clothing/head/solgov/utility/fleet{pixel_x = 4; pixel_y = 9},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom3)
+"jp" = (/turf/simulated/open,/area/psionic_school/indoor/campus/teacherroom3)
 "jq" = (/obj/effect/floor_decal/techfloor/orange,/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/railing/mapped,/obj/structure/table/reinforced,/obj/item/paper_bin{pixel_x = -4; pixel_y = 5},/obj/item/pen/multi{pixel_y = 8},/obj/item/reagent_containers/food/drinks/pitcher{pixel_x = 4; pixel_y = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena1)
 "ju" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/lightgrey/border{dir = 4},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacher_hall)
 "jy" = (/obj/effect/floor_decal/techfloor{dir = 6},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/outdoor)
 "jD" = (/obj/effect/floor_decal/borderfloorblack{dir = 6},/obj/effect/floor_decal/corner/grey/bordercorner{dir = 1},/obj/machinery/light_switch{pixel_y = 28},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "jG" = (/obj/effect/floor_decal/corner/orange/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "jL" = (/obj/effect/floor_decal/borderfloor,/obj/structure/railing/mapped,/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
-"jO" = (/obj/machinery/button/windowtint{id = "school_g13_windows"; name = "main hall window tint"; pixel_y = -25; range = 2},/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/shot{pixel_y = 3; icon_state = "shot"; pixel_x = 5},/obj/item/reagent_containers/food/drinks/glass2/shot{pixel_y = 3; icon_state = "shot"; pixel_x = -6},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
+"jO" = (/obj/machinery/button/windowtint{id = "school_g13_windows"; name = "main hall window tint"; pixel_y = -25; range = 2},/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/shot{icon_state = "shot"; pixel_x = 5; pixel_y = 3},/obj/item/reagent_containers/food/drinks/glass2/shot{icon_state = "shot"; pixel_x = -6; pixel_y = 3},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
 "jP" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 4},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "jT" = (/obj/effect/floor_decal/borderfloorblack{dir = 5},/obj/effect/floor_decal/corner/grey/bordercorner{dir = 8},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "jW" = (/obj/item/clothing/shoes/black{pixel_x = -8; pixel_y = 1},/obj/machinery/button/alternate/door/bolts{id_tag = "twelfth_room"; pixel_y = 28},/obj/structure/storage/chest/wardrobe2,/obj/structure/coatrack{pixel_x = 13; pixel_y = -9},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom4)
-"jX" = (/obj/structure/table/woodentable/ebony,/obj/item/material/ashtray/bronze{pixel_x = 6; pixel_y = -3},/obj/item/reagent_containers/food/drinks/glass2/coffeecup/SCG{pixel_x = 17; pixel_y = 8},/obj/item/reagent_containers/food/drinks/pitcher{pixel_x = -4; pixel_y = 2},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom3)
+"jX" = (/obj/structure/table/woodentable/ebony,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom3)
 "jY" = (/obj/structure/catwalk,/obj/structure/railing/mapped,/obj/machinery/light/invisible,/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
 "jZ" = (/obj/item/storage/laundry_basket{pixel_x = 3; pixel_y = 9},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/campus/teacherroom2)
 "ka" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/monotile,/area/psionic_school/indoor/main/class1)
@@ -184,7 +180,6 @@
 "kP" = (/obj/structure/bed/chair/padded/blue{dir = 8},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/main/class1)
 "kR" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
 "kV" = (/obj/structure/table/reinforced,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/main/class2)
-"kX" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/effect/floor_decal/corner/lightgrey/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
 "kY" = (/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 4},/obj/effect/floor_decal/corner/orange/bordercorner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "kZ" = (/obj/structure/closet,/turf/simulated/floor/wood/walnut,/area/psionic_school/outdoor)
 "le" = (/obj/effect/floor_decal/spline/plain/black,/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
@@ -235,10 +230,9 @@
 "nW" = (/obj/effect/floor_decal/floordetail/tiled,/obj/effect/floor_decal/floordetail/edgedrain,/obj/structure/hygiene/drain,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/campus/teacherroom3/toilet)
 "nX" = (/obj/effect/floor_decal/corner/lime/border{dir = 10},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom4)
 "oa" = (/obj/structure/table/woodentable/mahogany,/obj/item/reagent_containers/food/drinks/bottle/sake{pixel_x = 5; pixel_y = 16},/obj/item/clothing/accessory/wristwatches{pixel_x = -6; pixel_y = 5},/obj/item/reagent_containers/food/drinks/glass2/shot{pixel_x = 4; pixel_y = 5},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom1)
-"oc" = (/obj/structure/table/woodentable/ebony,/obj/structure/flora/pottedplant/smallcactus{pixel_x = 5; pixel_y = 21},/obj/item/folder/blue{pixel_x = -5},/obj/item/folder/red,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
+"oc" = (/obj/structure/table/woodentable/ebony,/obj/structure/flora/pottedplant/smallcactus{pixel_x = 5; pixel_y = 21},/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "od" = (/obj/effect/floor_decal/borderfloorblack/corner{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena2)
 "of" = (/obj/structure/railing/mapped,/turf/simulated/open,/area/psionic_school/indoor/main)
-"oi" = (/obj/structure/bed/sofa/black/left{dir = 1},/obj/effect/submap_landmark/spawnpoint/camp/teacher2,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "oj" = (/obj/structure/table/reinforced,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/main/class1)
 "on" = (/obj/structure/bookcase,/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/corner/grey/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom2)
 "oo" = (/obj/random/trash,/obj/random/trash,/obj/random/trash,/obj/random/trash,/turf/simulated/floor/plating,/area/psionic_school/indoor)
@@ -290,6 +284,7 @@
 "rF" = (/obj/structure/table/woodentable/walnut,/obj/structure/fd/school/prop4{pixel_y = 31},/obj/item/paper/school/amore{pixel_y = 6},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/campus/teacherroom2)
 "rJ" = (/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/campus/girls/kitchen)
 "rK" = (/obj/structure/table/woodentable/mahogany,/obj/item/reagent_containers/food/drinks/glass2/shot{pixel_y = 3},/obj/item/modular_computer/laptop/preset/custom_loadout/advanced{pixel_y = 22},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom1)
+"rU" = (/turf/simulated/floor/plating,/area/psionic_school/outdoor)
 "sb" = (/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/main/arena3)
 "se" = (/obj/structure/bed/chair/armchair/black{dir = 8},/obj/effect/floor_decal/corner/lime/border{dir = 6},/obj/effect/submap_landmark/spawnpoint/camp/doctor,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom4)
 "sg" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 4},/obj/structure/bed/sofa/black/left,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
@@ -301,8 +296,9 @@
 "sr" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacherroom1)
 "sB" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/machinery/light{dir = 1},/obj/structure/holoplant,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/main/arena1)
 "sP" = (/obj/structure/table/steel,/obj/structure/window/reinforced/tinted,/obj/structure/window/reinforced/tinted{dir = 8},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/library)
-"sS" = (/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/campus/teacherroom3)
-"sT" = (/obj/structure/table/woodentable/walnut,/obj/item/device/flashlight/lamp/lava/red{pixel_y = 6},/obj/item/reagent_containers/food/drinks/teapot{pixel_y = -9; pixel_x = 3},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/kitchen)
+"sS" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
+"sT" = (/obj/structure/table/woodentable/walnut,/obj/item/device/flashlight/lamp/lava/red{pixel_y = 6},/obj/item/reagent_containers/food/drinks/teapot{pixel_x = 3; pixel_y = -9},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/kitchen)
+"sW" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/outdoor)
 "sX" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/structure/table/standard,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "sY" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/campus/teacherroom1)
 "tc" = (/obj/structure/catwalk,/obj/machinery/light/invisible{dir = 8},/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
@@ -344,8 +340,10 @@
 "vJ" = (/obj/effect/floor_decal/borderfloor{dir = 9},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "vN" = (/obj/machinery/light{dir = 1},/turf/simulated/open,/area/psionic_school/indoor/campus/teacher_hall)
 "vP" = (/obj/structure/bed/chair/comfy/red{dir = 8},/turf/simulated/floor/tiled,/area/psionic_school/indoor/main/class1)
+"vV" = (/obj/item/folder/blue{pixel_x = -5; pixel_y = 8},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "wa" = (/obj/effect/floor_decal/corner/lightgrey/border,/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "wb" = (/obj/structure/table/reinforced,/obj/item/paper,/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/main/class1)
+"wi" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/psionic_school/outdoor)
 "wj" = (/obj/item/clothing/suit/ianshirt{pixel_x = 11; pixel_y = 13},/obj/item/clothing/glasses/sunglasses/big{pixel_x = 26; pixel_y = 9},/turf/simulated/floor/wood/walnut,/area/psionic_school/outdoor)
 "wp" = (/obj/machinery/light/blue,/obj/structure/table/rack,/turf/simulated/floor/carpet/green,/area/psionic_school/indoor/campus/teacherroom2)
 "wq" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
@@ -402,6 +400,7 @@
 "zE" = (/obj/structure/hygiene/toilet{dir = 8},/obj/effect/floor_decal/borderfloorwhite{dir = 8},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/main)
 "zI" = (/obj/structure/table/reinforced,/obj/item/paper_bin{pixel_x = -8; pixel_y = 6},/obj/item/device/taperecorder{pixel_x = 3; pixel_y = 2},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom4)
 "zM" = (/obj/machinery/vending/snack{dir = 4},/obj/effect/floor_decal/industrial/hatch/yellow,/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
+"zN" = (/obj/item/folder/red{pixel_x = -14; pixel_y = 35},/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "zS" = (/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/main/class1)
 "zV" = (/obj/structure/bed/chair/pew/left/mahogany,/obj/effect/floor_decal/corner/lightgrey/border,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena1)
 "zX" = (/obj/effect/floor_decal{color = "grey"; dir = 8; icon_state = "stairs"},/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/floor/plating,/area/psionic_school/indoor/main/class2)
@@ -420,7 +419,7 @@
 "AH" = (/turf/simulated/floor/wood/ebony,/area/psionic_school/outdoor)
 "AK" = (/obj/effect/floor_decal/borderfloorblack{dir = 10},/obj/effect/floor_decal/corner/grey/bordercorner{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "AO" = (/obj/structure/table/reinforced,/obj/item/pen{pixel_x = -12; pixel_y = 12},/turf/simulated/floor/carpet/red,/area/psionic_school/indoor/main/class1)
-"AR" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/rocks{icon_state = "rocks"; pixel_y = 15},/obj/item/reagent_containers/food/drinks/glass2/rocks{icon_state = "rocks"; pixel_y = 10; pixel_x = 7},/obj/item/reagent_containers/food/drinks/glass2/rocks{icon_state = "rocks"; pixel_y = 10; pixel_x = -7},/obj/effect/floor_decal/spline/fancy/black,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
+"AR" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/rocks{icon_state = "rocks"; pixel_y = 15},/obj/item/reagent_containers/food/drinks/glass2/rocks{icon_state = "rocks"; pixel_x = 7; pixel_y = 10},/obj/item/reagent_containers/food/drinks/glass2/rocks{icon_state = "rocks"; pixel_x = -7; pixel_y = 10},/obj/effect/floor_decal/spline/fancy/black,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
 "AT" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/black/bordercorner{dir = 4},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "AV" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/grey/border,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom1)
 "AY" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/psionic_school/outdoor)
@@ -475,13 +474,12 @@
 "Ek" = (/obj/structure/table/reinforced,/obj/item/paper{pixel_x = 4; pixel_y = 14},/obj/item/pen{pixel_x = -4; pixel_y = 33},/turf/simulated/floor/carpet/blue2,/area/psionic_school/indoor/main/class2)
 "El" = (/obj/effect/floor_decal/borderfloor,/obj/structure/railing/mapped,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
 "Eq" = (/obj/effect/wallframe_spawn/reinforced,/obj/effect/paint/black,/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom2)
-"EA" = (/obj/structure/filingcabinet{layer = 2.24; pixel_y = 10},/obj/structure/filingcabinet{layer = 2.24; pixel_x = 11; pixel_y = 10},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom3)
+"EA" = (/obj/structure/filingcabinet{layer = 2.24; pixel_y = 10},/obj/structure/filingcabinet{layer = 2.24; pixel_x = 11; pixel_y = 10},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom3)
 "EC" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/lightgrey/border,/obj/machinery/door/airlock/civilian{id_tag = "twelfth_room"; name = "Doctor Dianthus' Room"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom4)
 "EE" = (/obj/structure/bed/chair/wood/ebony{dir = 8},/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/sara/upper)
 "EF" = (/obj/effect/floor_decal/borderfloorblack/corner{dir = 1},/obj/effect/floor_decal/corner/grey/border{dir = 6},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "EO" = (/obj/machinery/light,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "EQ" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
-"EX" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/effect/floor_decal/corner/lightgrey/border,/obj/machinery/button/alternate/door/bolts{id_tag = "fourteenth_room"; pixel_y = 28},/obj/structure/storage/chest{pixel_y = 6},/obj/structure/coatrack{pixel_x = -9; pixel_y = -2},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
 "Fm" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "Fn" = (/obj/structure/fd/school/prop6{color = "#7b8383"; icon_state = "9"; pixel_x = -18; pixel_y = 1},/obj/structure/storage/chest/wardrobe{density = 0; pixel_y = 19},/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/campus/teacherroom2)
 "Fp" = (/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/open,/area/psionic_school/outdoor)
@@ -495,7 +493,7 @@
 "FU" = (/obj/structure/bookcase,/obj/item/book/manual/psionics,/obj/item/book/manual/robotics_cyborgs,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/library)
 "FW" = (/obj/effect/floor_decal/corner/orange/bordercorner,/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "FZ" = (/obj/structure/bed/sofa/left{dir = 4},/obj/machinery/light/blue{dir = 8},/obj/effect/submap_landmark/spawnpoint/camp/cook,/turf/simulated/floor/wood/maple,/area/psionic_school/indoor/campus/teacherroom2)
-"Gc" = (/obj/structure/closet/cabinet,/obj/item/card/id{access = list("ACCESS_CAMP_TEACHER4"); assignment = "Teacher"; color = "#9b0101"; name = "Teacher Morvar's card"; registered_name = "Andrew Morvar"},/obj/item/clothing/under/solgov/utility/fleet/combat,/obj/item/clothing/ears/earmuffs,/obj/item/bikehorn/airhorn,/obj/item/paper/school/note,/obj/item/fd/ancient_items/psionic,/obj/item/clothing/accessory/armor_plate/sneaky/tactical,/obj/item/clothing/accessory/armor_plate/tactical,/obj/item/device/remote_device,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
+"Gc" = (/obj/item/device/taperecorder{pixel_x = -5},/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "Gg" = (/obj/structure/curtain/open/bed,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom4)
 "Gm" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lightgrey/border{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
 "Gr" = (/obj/structure/bed/sofa/black/left{dir = 4},/obj/effect/submap_landmark/spawnpoint/camp/doctor,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/campus/teacherroom4)
@@ -522,7 +520,7 @@
 "HL" = (/obj/item/flame/candle{pixel_x = -5; pixel_y = -10},/obj/item/flame/candle{pixel_x = 8; pixel_y = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacherroom1)
 "HN" = (/obj/structure/table/rack,/obj/item/clothing/shoes/sandal{pixel_y = 11},/obj/machinery/light{dir = 8},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom1)
 "HP" = (/obj/effect/floor_decal/borderfloorblack{dir = 6},/obj/structure/bed/sofa/black/left{dir = 10},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/main/arena3)
-"HQ" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/lightgrey/border{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 8},/obj/item/toy/torchmodel{pixel_x = -5; pixel_y = 7},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
+"HQ" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/lightgrey/border{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
 "HR" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/structure/railing/mapped{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacher_hall)
 "HW" = (/obj/machinery/camera/network/thunder{alpha = 0; anchored = 0; c_tag = "School Brawl 1-28"; name = "Movable Camera"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "HY" = (/obj/structure/flora/pottedplant/minitree,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/main/class2)
@@ -582,7 +580,7 @@
 "Lk" = (/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/outdoor)
 "Ll" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/corner/grey/border,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "Ln" = (/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/corner/grey/bordercorner{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom2)
-"Lp" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/black/half,/obj/structure/undies_wardrobe,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom3)
+"Lp" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacher_hall)
 "Lq" = (/obj/structure/table/woodentable/walnut,/obj/item/device/flashlight/lamp/lava/red{pixel_y = 6},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
 "Lw" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "LB" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lightgrey/border,/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
@@ -603,6 +601,7 @@
 "Mi" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/open,/area/psionic_school/outdoor)
 "Mj" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/structure/railing/mapped{dir = 4},/obj/structure/flora/pottedplant/thinbush{pixel_y = 16},/turf/simulated/floor/tiled/techmaint,/area/psionic_school/outdoor)
 "Ml" = (/obj/machinery/door/airlock/civilian,/turf/simulated/floor/tiled/steel_ridged,/area/psionic_school/indoor/main/class1)
+"Mp" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/psionic_school/outdoor)
 "Mt" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/structure/table/standard,/obj/structure/flora/pottedplant/deskfern{pixel_y = 6},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "MA" = (/obj/effect/floor_decal/borderfloorblack/corner{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena2)
 "MB" = (/turf/simulated/open,/area/psionic_school/indoor/main/arena1)
@@ -610,7 +609,7 @@
 "MH" = (/obj/item/trash/cigbutt/spitgum{pixel_x = 12; pixel_y = 10},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/main/class1)
 "MI" = (/turf/simulated/wall/ebony,/area/psionic_school/outdoor)
 "MJ" = (/obj/effect/floor_decal/borderfloor{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena1)
-"MK" = (/obj/effect/floor_decal/spline/fancy/wood,/obj/machinery/light,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
+"MK" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacher_hall)
 "MN" = (/obj/item/device/flashlight/lantern{pixel_x = 7; pixel_y = 10},/turf/simulated/floor/wood/walnut,/area/psionic_school/outdoor)
 "MQ" = (/obj/effect/floor_decal{color = "grey"; dir = 8; icon_state = "stairs"},/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/floor/plating,/area/psionic_school/indoor/main/class1)
 "MS" = (/obj/effect/floor_decal/borderfloorblack,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena2)
@@ -618,6 +617,7 @@
 "MU" = (/turf/simulated/open,/area/psionic_school/indoor)
 "MY" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/bed/chair/pew/mahogany,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena2)
 "MZ" = (/obj/machinery/camera/network/thunder{alpha = 0; anchored = 0; c_tag = "School Brawl 1-24"; name = "Movable Camera"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
+"Na" = (/obj/item/reagent_containers/food/drinks/pitcher{pixel_x = -4; pixel_y = 2},/obj/item/material/ashtray/bronze{pixel_x = 11; pixel_y = -16},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "Nd" = (/obj/structure/closet/secure_closet/freezer/fridge/empty,/obj/machinery/light{dir = 1},/obj/effect/floor_decal/spline/fancy/black,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
 "Ne" = (/obj/effect/floor_decal/techfloor{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/outdoor)
 "No" = (/obj/random/junkyard/obstruction,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/indoor)
@@ -672,7 +672,7 @@
 "QG" = (/obj/machinery/disposal{pixel_x = -8},/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "QH" = (/obj/machinery/washing_machine{pixel_y = 7},/obj/structure/bedsheetbin{pixel_x = 4; pixel_y = -12},/turf/simulated/floor/wood/walnut,/area/psionic_school/outdoor)
 "QI" = (/obj/structure/storage/chest{pixel_x = -6; pixel_y = 6},/obj/item/device/flashlight/lamp/floor{pixel_x = 11; pixel_y = 9},/obj/structure/flora/pottedplant/shoot{pixel_x = -6; pixel_y = 25},/obj/effect/floor_decal/spline/fancy/black,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
-"QK" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/lightgrey/border{dir = 8},/obj/effect/floor_decal/corner/black/border{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
+"QK" = (/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "QS" = (/obj/structure/curtain/black,/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/outdoor)
 "QU" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "QV" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/corner/grey/border,/obj/structure/table/woodentable/ebony,/obj/item/paper_bin{pixel_x = 21; pixel_y = 5},/obj/item/device/flashlight/lamp/lava/orange{pixel_y = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
@@ -725,11 +725,11 @@
 "TZ" = (/obj/machinery/light{dir = 4},/obj/structure/coatrack{pixel_x = 8; pixel_y = -1},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/main/class2)
 "Ub" = (/obj/effect/floor_decal/techfloor/orange{dir = 4},/obj/effect/floor_decal/borderfloor{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
 "Ud" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/black/bordercorner{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
-"Ug" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/square{icon_state = "square"; pixel_y = 7; pixel_x = -5},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/kitchen)
+"Ug" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/square{icon_state = "square"; pixel_x = -5; pixel_y = 7},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/girls/kitchen)
 "Ur" = (/obj/structure/table/woodentable/walnut,/obj/structure/window/reinforced/tinted{dir = 4},/obj/machinery/chemical_dispenser/bar_coffee/full{pixel_y = 12},/obj/item/reagent_containers/food/drinks/glass2/coffeecup/foundation{pixel_x = -3},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom4)
 "Ut" = (/obj/structure/filingcabinet/filingcabinet{pixel_x = -6; pixel_y = 6},/obj/structure/filingcabinet/chestdrawer{pixel_x = 8; pixel_y = 12},/obj/effect/floor_decal/spline/plain/black{dir = 1},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacherroom1)
 "Uv" = (/obj/effect/floor_decal/borderfloorblack,/obj/effect/floor_decal/corner/grey/border{dir = 1},/obj/structure/table/woodentable/ebony,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
-"UO" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/cans/coffeecola{pixel_x = 5; pixel_y = 10},/obj/item/reagent_containers/food/drinks/cans/coffeecola{pixel_x = -5; pixel_y = 12},/obj/item/device/flashlight/lamp/small{pixel_y = 4; pixel_x = -14},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
+"UO" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/cans/coffeecola{pixel_x = 5; pixel_y = 10},/obj/item/reagent_containers/food/drinks/cans/coffeecola{pixel_x = -5; pixel_y = 12},/obj/item/device/flashlight/lamp/small{pixel_x = -14; pixel_y = 4},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/girls/kitchen)
 "UY" = (/obj/effect/floor_decal{color = "grey"; dir = 4; icon_state = "stairs"},/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/floor/plating,/area/psionic_school/indoor/main/class1)
 "UZ" = (/obj/machinery/disposal{density = 0; pixel_x = 8; pixel_y = 11},/obj/structure/coatrack{pixel_x = -3; pixel_y = -2},/obj/item/clothing/shoes/slippers{pixel_x = -16; pixel_y = -5},/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/corner/grey/border,/obj/structure/fd/school/prop6{color = "#7d7181"; icon_state = "6"; pixel_x = -25; pixel_y = 22},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom2)
 "Vh" = (/obj/machinery/papershredder{density = 0; pixel_y = 15},/obj/machinery/photocopier{pixel_y = -5},/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/black/half,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom3)
@@ -740,6 +740,7 @@
 "Vz" = (/obj/machinery/door/window/brigdoor/southright,/obj/effect/floor_decal/spline/fancy/black,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/campus/teacherroom4)
 "VA" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/effect/floor_decal/corner/black/bordercorner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "VB" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena1)
+"VC" = (/obj/structure/undies_wardrobe,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "VE" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/machinery/washing_machine{pixel_x = -6; pixel_y = 7},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/campus/teacherroom2/toilet)
 "VH" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/wood/mahogany,/area/psionic_school/indoor/sara/upper)
 "VM" = (/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
@@ -751,7 +752,7 @@
 "Wd" = (/obj/structure/flora/pottedplant/stoutbush,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "Wg" = (/obj/effect/floor_decal/spline/plain/black,/obj/effect/floor_decal/spline/plain/black{dir = 4},/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
 "Wj" = (/obj/machinery/camera/network/thunder{alpha = 0; anchored = 0; c_tag = "School Brawl 1-32"; name = "Movable Camera"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
-"Wt" = (/obj/effect/floor_decal/borderfloor,/obj/machinery/light_switch{pixel_x = 26; pixel_y = 9},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom3)
+"Wt" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/campus/teacherroom3)
 "Wu" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/structure/table/standard,/obj/structure/flora/pottedplant/deskfern{pixel_y = 6},/obj/item/deck/cards{pixel_x = 7; pixel_y = -3},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "Ww" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
 "Wz" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/hygiene/sink{dir = 8; pixel_x = -12; pixel_y = 2},/obj/item/storage/mirror{pixel_x = -23; pixel_y = 11},/obj/item/clothing/under/bathrobe{pixel_y = 18},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor/campus/teacherroom4/toilet)
@@ -763,6 +764,7 @@
 "WM" = (/obj/structure/table/woodentable/walnut,/obj/item/reagent_containers/food/drinks/glass2/goblet{pixel_y = 7},/turf/simulated/floor/carpet/blue,/area/psionic_school/indoor/campus/teacherroom4)
 "WN" = (/obj/structure/catwalk,/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
 "WO" = (/obj/effect/floor_decal/spline/plain/black{dir = 5},/turf/simulated/floor/tiled/techmaint,/area/psionic_school/outdoor)
+"WS" = (/obj/effect/decal/cleanable/dirt,/obj/item/reagent_containers/food/drinks/glass2/coffeecup/SCG{pixel_x = 17; pixel_y = 8},/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "WT" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8},/obj/effect/floor_decal/spline/plain/black,/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
 "WU" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/structure/bed/sofa/black/left,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/main/arena1)
 "WW" = (/obj/effect/floor_decal/spline/plain/black,/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
@@ -775,9 +777,8 @@
 "Xl" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/campus/girls/kitchen)
 "Xs" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/bed/chair/pew/left/mahogany,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/main/arena2)
 "Xv" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/structure/bed/sofa/black,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
-"XC" = (/obj/effect/floor_decal/borderfloor{dir = 5},/obj/effect/floor_decal/corner/lightgrey/bordercorner{dir = 8},/obj/structure/railing/mapped{dir = 4},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacher_hall)
+"XC" = (/obj/structure/railing/mapped{dir = 4},/turf/simulated/open,/area/psionic_school/indoor/campus/teacher_hall)
 "XD" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/walnut,/area/psionic_school/indoor/main/class1)
-"XF" = (/obj/item/clothing/shoes/black{pixel_y = 14},/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/black/border{dir = 1},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom3)
 "XG" = (/obj/effect/floor_decal/corner/black/border{dir = 1},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main/arena2)
 "XH" = (/obj/effect/floor_decal/borderfloorblack/corner{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 10},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/library)
 "XK" = (/obj/structure/bookcase,/obj/item/book/tome,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/library)
@@ -788,7 +789,7 @@
 "Ya" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/main/class2)
 "Yb" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/psionic_school/outdoor)
 "Yd" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall,/area/psionic_school/indoor/campus/teacherroom2/toilet)
-"Yg" = (/obj/effect/floor_decal/spline/fancy/wood,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
+"Yg" = (/obj/effect/floor_decal/spline/fancy/wood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor/campus/teacher_hall)
 "Yl" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/structure/table/standard,/obj/structure/flora/pottedplant/deskferntrim,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "Yn" = (/obj/effect/floor_decal/borderfloor/corner,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "Yq" = (/obj/structure/table/steel_reinforced,/obj/item/modular_computer/laptop/preset/custom_loadout/advanced{pixel_y = 9},/turf/simulated/floor/tiled/monotile,/area/psionic_school/indoor/main/class2)
@@ -798,7 +799,7 @@
 "YK" = (/obj/effect/floor_decal/borderfloor,/obj/structure/railing/mapped,/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/turf/simulated/floor/tiled/techfloor,/area/psionic_school/indoor/main/arena3)
 "YL" = (/turf/simulated/open,/area/psionic_school/indoor/main/arena3)
 "YN" = (/obj/effect/floor_decal/borderfloorblack{dir = 1},/obj/effect/floor_decal/corner/grey/border,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom2)
-"YT" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/lightgrey/border{dir = 5},/obj/effect/floor_decal/corner/black/bordercorner{dir = 8},/obj/item/device/taperecorder{pixel_x = -5},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
+"YT" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/corner/lightgrey/border{dir = 5},/obj/effect/floor_decal/corner/black/bordercorner{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/campus/teacherroom3)
 "YU" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/structure/bed/sofa/black{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor/main/arena3)
 "YV" = (/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/structure/bed/sofa/black/left,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "YZ" = (/obj/effect/floor_decal/spline/plain/black,/obj/machinery/light,/turf/simulated/floor/wood/bamboo,/area/psionic_school/indoor/campus/teacherroom1)
@@ -821,7 +822,7 @@
 "ZI" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/lightgrey/border{dir = 1},/obj/structure/bed/sofa/black/right,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
 "ZQ" = (/obj/structure/railing/mapped{dir = 8},/obj/effect/floor_decal/spline/plain/black{dir = 4},/obj/effect/floor_decal/spline/plain/black{dir = 8},/turf/simulated/open,/area/psionic_school/indoor/main/arena2)
 "ZT" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/lightgrey/border{dir = 8},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor/main)
-"ZW" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/black/border,/obj/machinery/door/airlock/civilian{id_tag = "fourteenth_room"; name = "Teacher Morvar's Room"},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor/campus/teacherroom3)
+"ZW" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/psionic_school/indoor/campus/teacherroom3)
 "ZY" = (/obj/machinery/camera/network/thunder{alpha = 0; anchored = 0; c_tag = "School Brawl 1-26"; name = "Movable Camera"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
 
 (1,1,1) = {"
@@ -898,23 +899,23 @@ nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMT
 nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCngjjjjfCfCRpBuBuBuBuBuvNBuBuBuBuBuBujujbfCQUzZkhmSqCmSmSkhmwMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtmtVnNMNMNMNMNMNMNMNMzkNMNMNMNMzkNMNMNMNMNMNMNMNMVnYlHtfIzpPOPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
 nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCVqjjjjHoBuBuBuBuBuBuBuBuBuBuBuBuBuBujujjjjLLtPOrplUvUvJEahzZMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtsXVndEMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBbXVnmkHtfIzpPOPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
 nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCgIjjjjHoBuBuBuBuBuBuBuBuBuBuBuBuBuBujujjjjLLPBxcVRZsBPZsqxzZMTMTMTMTMTMTKAPOPOPOzpzpzpzpzpzpzpzpzpLwHtZoVnMBMBMBtZMBMBMBMBMBMBMBMBMBMBMBMBMBMByqMBMBMBVnaIHtfIzpPOPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCQGjjjjfCblXCBuBuBuBuBuBuBuBuBuBugablfCjjjjxZzZFzMgMgMgMgAKmwMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtIaVnMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBVnDcHtfIzpzpzpzpzpzpzpzpzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCfCWdjjjjjjqzBuBuBuBuBuBuBuBuBuBujujjjjjjjjfCzZEeZsZsXKZsSBmwMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwibkJVndEMBMBMBMBMBMBMBMBtdMBMBtdMBMBMBMBMBMBMBMBbXVnDuibkYzpwshOJApkzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCfCqkYgMKoyrffCBuBuBuBuBuBuBuBufCiZjjEOjjjffCzZfQmSmSCcmStUzZMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwibkJVnMBMBMBMBtdMBMBMBMBMBMBMBMBMBMBMBMBtdMBMBMBMBVnDuibjGxhfYlJBSwYzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOqcqcZWqcFmjjrfblblblblblblblbliZjjjjiCECiCiCzZzZzZzZzZzZzZzZMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtBgVnVnMBjdMBMBMBjdMBMBjdMBMBjdMBMBjdMBMBMBjdMBVnVnnwHtDkzpJAxHNIBlzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOqcEXkXqcqcQXjjjjEOjjjjjjkBEOjjjjjbiCiCadjWiCKSoAQHKSMIMcMIMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtmIMbVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnYnFGHtfIzpJAmlzpzpzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOqcXFWtqcqcqcqcHZHZHZfCfCHEHEHEiCiCiCiCzueTiCKSwjKSKShwPOMjMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwibibmIjPqQqQqQhaIjIqZcTiDBpxJpsgTiZIhaIjIqqQqQqQxSFGibibRvzpxwuNdDzEzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTPHPOPOPOqcsSsSaidydyDvtCVlHZNqNqHEZAhjDAHfxdUrHfCeiCAdKSumPGMINXbIMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpkpnjibHtHtibibibHtHtibibibHtHtHtHtibibibHtHtibibibHtHtibnjGUzpfYmlzpzpzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOhsdydydydyocqcalTyHZNqNqHEWzPliCHfkikmVzfUGgKSKSKSMNQSPObIMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpzpWXZlPtPtPtKZRyPtPtPtPtKvPtPtPtPtKvPtPtPtPtwaKZPtPtPtFWWXzpzpeHuNdDzEzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOqcjXjpdydyKJqcDEeXHZNqNqHENySQiCGrRSSfkFkFiCdFKSKSKSQSPOVjMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLeIeIMleIeIzAzAeIeIeIzAzAeIeIeIzpzplululukxkxlululukxkxluluaTluluzpzpzpzpzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOqcoicjdydyKJqcnWMeHZNqNqHEhmjaiClMWMckZkgLiCKSKSKSKSQSPOpcMTMTMTMTMTMTMTKAPOPOPOzpzphLhLhLhLhLhLeIXjzSJoxWzSBhBhBhzSojBvzSzqeIPOPOlusmtsBHkVhblQlQlQhbkVqbhbqXluhLhLhLhLhLhLzpzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOqcdaGczfzfEAqcHZHZHZNqNqHEHEHEiCONphcknXseiCkZSCKSKSMIPOuzMTMTMTMTMTMTMTKAPOPOPOPOzpzpzpzpzpzpzpeIfhzSoGzSzShnAODYMHzSoGzSXDeIPOPOluYahbpbhbhbCfCfDyhbhbpbhbTZluzpzpzpzpzpzpzpPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOqcqcqcLphRVhqcNqNqNqNqNqNqNqNqiCqDfbAqiCiCiCMIMISzSzMIPOMIMTMTMTMTMTMTMTMTAtPOPOPOPOPOPOPOPOPOPOeIzSvITLojzSBFBFBFzSojORkPzSeIPOPOluhbiRCfkVhbqaqaqahbkVCfCUhbluPOPOPOPOPOPOPOPOPOPOiVMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOqccziXYTqcNqXlXlXlXlXlXlXliCThzIckiCNqYbPOPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIyivIDYvhUYOfVOkaMQxiDYkPzSeIPOPOluhbiREkHYTpbLYqAgzXHYpWCUhbluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOqcQKLGHQqcNqXlejQINdARpmgBiCoQJNckiCNqYbMcPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIzSDYbPzSUYkavPhMMQzSwbDYzSeIPOPOluhbCfKUhbTpfPCoAgzXhbCfCfhbluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOqcqcqcqcqcYbXlvfvfvfvfvfvfiCiCiCiCiCXlXlXlPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIzrzSzSzSUYFtWYFtMQzSzSzSzreIPOPOluqVhbhbhbTpRtyfRtzXhbhbhbqVluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOPOPOPOPOPOPOXlJnsTjoLPIoIoaxZCQeHijejeNEXlPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIeIzAzAzAzAeIeIeIzAzAzAzAeIeIPOPOlulukxkxkxkxlululukxkxkxkxluluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
-nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOPOPOPOPOPOPOXlLhOVjoverJrJrJBIksnRabZfduXlPOPOPOPOPOiLMTMTMTMTMTMTMTMTMTFpFpFpFpFpFpFpFpFpFpMTMTMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTFpFpFpFpFpFpFpFpFpFpMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCQGjjjjfCBuXCBuBuBuBuBuBuBuBuBuBugablfCjjjjxZzZFzMgMgMgMgAKmwMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtIaVnMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBMBVnDcHtfIzpzpzpzpzpzpzpzpzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCfCWdLpjjBuqzBuBuBuBuBuBuBuBuBuBujujjjjjjjjfCzZEeZsZsXKZsSBmwMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwibkJVndEMBMBMBMBMBMBMBMBtdMBMBtdMBMBMBMBMBMBMBMBbXVnDuibkYzpwshOJApkzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOfCfCqkYgMKLprffCBuBuBuBuBuBuBuBufCiZjjEOjjjffCzZfQmSmSCcmStUzZMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwibkJVnMBMBMBMBtdMBMBMBMBMBMBMBMBMBMBMBMBtdMBMBMBMBVnDuibjGxhfYlJBSwYzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOqcQKZWZWLpjjrfblblblblblblblbliZjjjjiCECiCiCzZzZzZzZzZzZzZzZMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtBgVnVnMBjdMBMBMBjdMBMBjdMBMBjdMBMBjdMBMBMBjdMBVnVnnwHtDkzpJAxHNIBlzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOqcQKZWZWzNLpjjjjEOjjjjjjkBEOjjjjjbiCiCadjWiCKSoAQHKSMIMcMIMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwHtmIMbVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnVnYnFGHtfIzpJAmlzpzpzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOqcZWWtZWQKQKqcHZHZHZfCfCHEHEHEiCiCiCiCzueTiCKSwjKSKShwPOMjMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpLwibibmIjPqQqQqQhaIjIqZcTiDBpxJpsgTiZIhaIjIqqQqQqQxSFGibibRvzpxwuNdDzEzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTPHPOPOrUqcsSfzQKjpvVDvtCVlHZNqNqHEZAhjDAHfxdUrHfCeiCAdKSumPGMINXbIMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpkpnjibHtHtibibibHtHtibibibHtHtHtHtibibibHtHtibibibHtHtibnjGUzpfYmlzpzpzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOrUrUQKNajpWSQKocqcalTyHZNqNqHEWzPliCHfkikmVzfUGgKSKSKSMNQSPObIMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLzpzpWXZlPtPtPtKZRyPtPtPtPtKvPtPtPtPtKvPtPtPtPtwaKZPtPtPtFWWXzpzpeHuNdDzEzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPObasWjpjXjpZWQKKJqcDEeXHZNqNqHENySQiCGrRSSfkFkFiCdFKSKSKSQSPOVjMTMTMTMTMTMTMTKAPOPOPOzphLhLhLhLhLhLhLeIeIMleIeIzAzAeIeIeIzAzAeIeIeIzpzplululukxkxlululukxkxluluaTluluzpzpzpzpzphLhLzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOrUrUQKQKjpjpWtKJqcnWMeHZNqNqHEhmjaiClMWMckZkgLiCKSKSKSKSQSPOpcMTMTMTMTMTMTMTKAPOPOPOzpzphLhLhLhLhLhLeIXjzSJoxWzSBhBhBhzSojBvzSzqeIPOPOlusmtsBHkVhblQlQlQhbkVqbhbqXluhLhLhLhLhLhLzpzpPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOqcQKGcQKzfEAqcHZHZHZNqNqHEHEHEiCONphcknXseiCkZSCKSKSMIPOuzMTMTMTMTMTMTMTKAPOPOPOPOzpzpzpzpzpzpzpeIfhzSoGzSzShnAODYMHzSoGzSXDeIPOPOluYahbpbhbhbCfCfDyhbhbpbhbTZluzpzpzpzpzpzpzpPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOqcQKQKhRhRVhqcNqNqNqNqNqNqNqNqiCqDfbAqiCiCiCMIMISzSzMIPOMIMTMTMTMTMTMTMTMTAtPOPOPOPOPOPOPOPOPOPOeIzSvITLojzSBFBFBFzSojORkPzSeIPOPOluhbiRCfkVhbqaqaqahbkVCfCUhbluPOPOPOPOPOPOPOPOPOPOiVMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOZWZWiXYTqcNqXlXlXlXlXlXlXliCThzIckiCNqYbPOPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIyivIDYvhUYOfVOkaMQxiDYkPzSeIPOPOluhbiREkHYTpbLYqAgzXHYpWCUhbluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOrUbaQKQKLGHQqcNqXlejQINdARpmgBiCoQJNckiCNqYbMcPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIzSDYbPzSUYkavPhMMQzSwbDYzSeIPOPOluhbCfKUhbTpfPCoAgzXhbCfCfhbluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOwiQKVCqcqcqcYbXlvfvfvfvfvfvfiCiCiCiCiCXlXlXlPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIzrzSzSzSUYFtWYFtMQzSzSzSzreIPOPOluqVhbhbhbTpRtyfRtzXhbhbhbqVluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOwirUrUPOPOPOPOXlJnsTjoLPIoIoaxZCQeHijejeNEXlPOPOPOPOPOiLMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPOeIeIzAzAzAzAeIeIeIzAzAzAzAeIeIPOPOlulukxkxkxkxlululukxkxkxkxluluPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
+nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOrUPOPOMpPOPOPOXlLhOVjoverJrJrJBIksnRabZfduXlPOPOPOPOPOiLMTMTMTMTMTMTMTMTMTFpFpFpFpFpFpFpFpFpFpMTMTMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTFpFpFpFpFpFpFpFpFpFpMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
 nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTYbYbPOPOPOPOPOPOPOPOPOPOXlzlUgjoverJrJrJBIyoPJPJPJBVXlPOPOPOPOYbYbMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTPHAYAYAYAYAYAYAYAYAYAYWOMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
 nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTYbYbAyAyAyAyAyAyAyAyAyAyXlvfRkvfvejOLqUOZxgoBwBwBwBwXlAyAyAyAyYbYbMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTKAPOPOPOPOPOPOPOPOPOPORUMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOPOPOPOPOPOiLMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
 nDMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTXlXlXlpopoXlpopoXlXltJtJtJtJXlMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTFpFpFpFpFpFpFpFpFpFpMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTMTDzPOPOPOPOPOPOPOPOPOPOiLMTMTMTMTMTMTMTMTMTMTMTMTMTMTWCMTMTMTMTMTMTMTMTnD
