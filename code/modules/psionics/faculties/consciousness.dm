@@ -354,11 +354,10 @@
 	use_melee =     TRUE
 	min_rank =        PSI_RANK_OPERANT
 	suppress_parent_proc = TRUE
-	use_description = "Выберите глаза на зелёном интенте, и затем нажмите куда угодно, чтобы временно исчезнуть."
+	use_description = "Выберите глаза на зелёном интенте, и затем нажмите по себе или другому человеку(начиная с мастера), чтобы временно сделать его или себя невидимым для остальных."
 
 /mob/living/proc/run_timer_invisibility()
 	var/invis_timer = 30
-	var/con_rank_user = src.psi.get_rank(PSI_CONSCIOUSNESS)
 	set waitfor = 0
 	var/T = invis_timer
 	while(T > 0)
@@ -372,8 +371,10 @@
 		src.alpha = 200
 	spawn(3 SECONDS)
 		src.alpha = 255
-	if(con_rank_user == PSI_RANK_GRANDMASTER)
-		src.RemoveMovementHandler(/datum/movement_handler/mob/incorporeal)
+	if(src.psi)
+		var/con_rank_user = src.psi.get_rank(PSI_CONSCIOUSNESS)
+		if(con_rank_user == PSI_RANK_GRANDMASTER)
+			src.RemoveMovementHandler(/datum/movement_handler/mob/incorporeal)
 
 /decl/psionic_power/consciousness/invis/invoke(var/mob/living/user, var/mob/living/target)
 	var/con_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
@@ -401,22 +402,23 @@
 			target.run_timer_invisibility()
 			return TRUE
 
-	user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
-	user.alpha = 200
-	spawn(1 SECONDS)
-		user.alpha = 150
-	spawn(2 SECONDS)
-		user.alpha = 100
-	spawn(3 SECONDS)
-		user.alpha = 50
-	spawn(4 SECONDS)
-		user.alpha = 25
-	spawn(5 SECONDS)
-		user.alpha = 10
-	if(con_rank_user == PSI_RANK_GRANDMASTER)
-		user.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
-	user.run_timer_invisibility()
-	return TRUE
+	if(target == user)
+		user.visible_message(SPAN_WARNING("[user] исчезает у всех на глазах!"))
+		user.alpha = 200
+		spawn(1 SECONDS)
+			user.alpha = 150
+		spawn(2 SECONDS)
+			user.alpha = 100
+		spawn(3 SECONDS)
+			user.alpha = 50
+		spawn(4 SECONDS)
+			user.alpha = 25
+		spawn(5 SECONDS)
+			user.alpha = 10
+		if(con_rank_user == PSI_RANK_GRANDMASTER)
+			user.AddMovementHandler(/datum/movement_handler/mob/incorporeal)
+		user.run_timer_invisibility()
+		return TRUE
 
 /decl/psionic_power/consciousness/curse
 	name =            "Hallucinations"
