@@ -23,8 +23,7 @@
 		psi.set_rank(faculty, rank, defer_update, temporary)
 
 /mob/living/proc/deflect_psionic_attack(var/attacker)
-	var/blocked = 70 * get_blocked_ratio(null, PSIONIC)
-	to_chat(src, SPAN_NOTICE("BLOCK CHANCE WAS [blocked]"))
+	var/blocked = 80 * get_blocked_ratio(null, PSIONIC)
 	if(prob(blocked))
 		if(attacker)
 			to_chat(attacker, SPAN_WARNING("Your mental attack is deflected by \the [src]'s defenses!"))
