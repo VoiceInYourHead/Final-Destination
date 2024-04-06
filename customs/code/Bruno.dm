@@ -19,7 +19,6 @@
 	icon = 'customs/icons/obj/broken_glasses.dmi'
 	icon_state = "brokenglasses"
 	item_icons = list(slot_glasses_str = 'customs/icons/mob/broken_glasses.dmi')
-	item_state_slots = list(slot_glasses_str = "brokenglasses")
 
 /obj/item/clothing/suit/storage/oversize_jacket
 	name = "oversize jacket"
