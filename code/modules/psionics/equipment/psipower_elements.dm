@@ -193,12 +193,25 @@
 
 	..()
 
-/obj/item/psychic_power/psifire/AltClick(mob/user)
-	combat_mode = !combat_mode
-	if(combat_mode)
-		to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет поджигать людей</span>")
-	if(!combat_mode)
-		to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+/obj/item/psychic_power/psifire/AltClick(mob/living/carbon/user)
+	var/list/options = list(
+		"HELP" = image('icons/screen/psi.dmi', "HELP"),
+		"HARM" = image('icons/screen/psi.dmi', "HARM")
+	)
+
+	var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+	if (!chosen_option)
+		return 0
+	if(user.psi.suppressed)
+		return 0
+	switch(chosen_option)
+		if("HARM")
+			combat_mode = TRUE
+			to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет поджигать людей.</span>")
+		if("HELP")
+			combat_mode = FALSE
+			to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+
 
 /obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 //TURFS
@@ -328,6 +341,7 @@
 	item_state = "cryo"
 	attack_cooldown = 5
 	var/combat_mode = TRUE
+	var/structure_attack = "ICE WALL"
 	var/range = 2
 	var/cooldown = 0
 	var/turf/previousturf = null
@@ -341,6 +355,16 @@
 	range += cryo_rank
 
 	..()
+
+/obj/item/projectile/bullet/pellet/ice
+	damage = 20
+	pellets = 4
+	range_step = 1
+	spread_step = 50
+	armor_penetration = 20
+	icon = 'proxima/icons/obj/guns/projectiles.dmi'
+	icon_state = "syringeproj_many"
+	color = "#9ee0dd"
 
 /obj/structure/girder/ice_wall
 	icon_state = "ice wall"
@@ -413,22 +437,89 @@
 
 	. = ..()
 
-/obj/item/psychic_power/psiice/AltClick(mob/user)
-	combat_mode = !combat_mode
+/obj/item/psychic_power/psiice/attack_self(var/mob/living/user as mob)
+	var/cryo_rank = user.psi.get_rank(PSI_METAKINESIS)
 	if(combat_mode)
-		to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет замораживать людей</span>")
-	if(!combat_mode)
-		to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+		var/list/options = list(
+			"ICE WALL" = image('icons/screen/psi.dmi', "WALL"),
+			"ICE SPIKES" = image('icons/screen/psi.dmi', "SPIKES"),
+			"ICE FISTS" = image('icons/screen/psi.dmi', "FISTS"),
+			"ICE SWORD" = image('icons/screen/psi.dmi', "SWORD")
+		)
+		var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+		if (!chosen_option)
+			return 0
+		if(user.psi.suppressed)
+			return 0
+		if(!combat_mode)
+			return 0
+		switch(chosen_option)
+			if("ICE WALL")
+				structure_attack = "ICE WALL"
+				to_chat(user, "<span class='warning'>Теперь вы будете возводить ледяные стены при использовании дальней атаки!</span>")
+				return 1
+			if("ICE SPIKES")
+				if(cryo_rank < PSI_RANK_OPERANT)
+					to_chat(user, "<span class='warning'>Вы ещё недостаточно обучены для подобного приёма!</span>")
+					return 0
+				structure_attack = "ICE SPIKES"
+				to_chat(user, "<span class='warning'>Теперь вы будете метать ледяные иглы при использовании дальней атаки!</span>")
+				return 1
+			if("ICE FISTS")
+				user.put_in_hands(new /obj/item/cryokinesis/fists(user))
+				qdel(src)
+				return 1
+			if("ICE SWORD")
+				return 0
+
+/obj/item/psychic_power/psiice/AltClick(var/mob/living/user as mob)
+	var/list/options = list(
+		"HELP" = image('icons/screen/psi.dmi', "HELP"),
+		"HARM" = image('icons/screen/psi.dmi', "HARM")
+	)
+
+	var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+	if (!chosen_option)
+		return 0
+	if(user.psi.suppressed)
+		return 0
+	switch(chosen_option)
+		if("HARM")
+			combat_mode = TRUE
+			to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет замораживать людей, вы сможете создавать ледяные стены и прочие приспособления.</span>")
+		if("HELP")
+			combat_mode = FALSE
+			to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
 
 /obj/item/psychic_power/psiice/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 	var/cryo_rank = user.psi.get_rank(PSI_METAKINESIS)
+
+	if(cooldown > 0)
+		to_chat(user, "<span class='warning'>Ты не можешь использовать данную способность настолько часто!</span>")
+		return
+
+	if(!proximity && cryo_rank >= PSI_RANK_OPERANT && structure_attack == "ICE SPIKES")
+		var/obj/item/projectile/pew
+		var/pew_sound
+		cooldown += 2
+		user.visible_message("<span class='danger'>[user] запускает вперёд град ледяных пик!</span>")
+		pew = new /obj/item/projectile/bullet/pellet/ice(get_turf(user))
+		pew.name = "stack of ice spikes"
+		pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+		if(istype(pew))
+			playsound(pew.loc, pew_sound, 25, 1)
+			pew.original = A
+			pew.current = A
+			pew.starting = get_turf(user)
+			pew.shot_from = user
+			pew.launch(A, user.zone_sel.selecting, (A.x-user.x), (A.y-user.y))
 
 //TURFS
 
 	if(istype(A, /turf/))
 		var/turf/target = A
 		if(combat_mode)
-			if(!proximity && cryo_rank >= PSI_RANK_MASTER)
+			if(!proximity && cryo_rank >= PSI_RANK_MASTER && structure_attack == "ICE WALL")
 				if(do_after(user, 10))
 					cooldown += 2
 					user.visible_message("<span class='danger'>[user] возводит стену из льда!</span>")
@@ -455,10 +546,6 @@
 				sim.wet_floor(5 * cryo_rank)
 				new /obj/effect/temporary(sim,3, 'icons/effects/effects.dmi', "blueshatter")
 				return TRUE
-
-	if(cooldown > 0)
-		to_chat(user, "<span class='warning'>Ты не можешь использовать данную способность настолько часто!</span>")
-		return
 
 	if(!proximity)
 		return
