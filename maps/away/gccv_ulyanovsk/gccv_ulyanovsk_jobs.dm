@@ -12,6 +12,7 @@ Bocman
 Pilot - Не забыть добавить при спавне /obj/item/gun/projectile/revolver/rsh21
 Gunner (Cannoneer)
 Landing Crew (Landing Party Member) - Корабельный Десант, абордажная команда.
+Operative - Не забыть добавить при спавне /obj/item/gun/projectile/pistol/iccgn
 */
 
 /decl/submap_archetype/gccv_ulyanovsk

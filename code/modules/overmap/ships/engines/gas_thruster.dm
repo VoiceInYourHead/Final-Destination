@@ -230,30 +230,3 @@
 	base_type = /obj/machinery/atmospherics/unary/engine
 	stock_part_presets = list(/decl/stock_part_preset/terminal_setup)
 	uncreated_component_parts = list(/obj/item/stock_parts/power/terminal/buildable = 1)
-
-/obj/machinery/atmospherics/unary/engine/wall
-	name = "rocket nozzle"
-	desc = "Advanced rocket nozzle, expelling gas at hypersonic velocities to propell the ship."
-	icon_state = "nozzle-wall"
-	maximum_component_parts = list(/obj/item/stock_parts = 8)
-	uncreated_component_parts = list(/obj/item/stock_parts/power/apc/buildable = 1, /obj/item/stock_parts/capacitor/super = 2)
-
-	use_power = POWER_USE_OFF
-	power_channel = EQUIP
-	idle_power_usage = 500
-
-	thrust_limit = 1
-	moles_per_burn = 5.0
-	charge_per_burn = 5000
-	boot_time = 45
-
-/obj/item/stock_parts/circuitboard/unary_atmos/engine/advanced
-	name = T_BOARD("advanced gas thruster")
-	build_path = /obj/machinery/atmospherics/unary/engine/wall
-	origin_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 3)
-	req_components = list(
-		/obj/item/stack/cable_coil = 30,
-		/obj/item/pipe = 3)
-	additional_spawn_components = list(
-		/obj/item/stock_parts/matter_bin/super = 1,
-		/obj/item/stock_parts/capacitor/adv = 2)

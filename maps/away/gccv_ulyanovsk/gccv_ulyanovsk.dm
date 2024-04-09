@@ -2,6 +2,7 @@
 #include "gccv_ulyanovsk_radio.dm"
 #include "gccv_ulyanovsk_shuttles.dm"
 #include "gccv_ulyanovsk_jobs.dm"
+#include "reactor.dm"
 
 /obj/effect/overmap/visitable/ship/gccv_ulyanovsk
 	name = "GCCV - Ulyanovsk"
@@ -78,7 +79,7 @@
 	paint_color = COLOR_DARK_BLUE_GRAY
 	icon_state = "r_generic"
 	explosion_resistance_add = 50
-	floor_type = /turf/simulated/floor/reinforced
+	floor_type = /turf/simulated/floor/armored
 
 /turf/simulated/wall/r_iccg/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL,MATERIAL_PLASTEEL)
@@ -180,7 +181,9 @@
 /obj/item/clothing/suit/space/void/iccg
 	name = "armored terran voidsuit"
 	desc = "A somewhat clumsy voidsuit layered with impact and laser-resistant armor plating. Specially designed to dissipate minor electrical charges."
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
 	icon_state = "rig_iccg"
+	icon_override = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
 	item_state_slots = list(
 		slot_l_hand_str = "sec_voidsuit",
 		slot_r_hand_str = "sec_voidsuit",
@@ -201,6 +204,8 @@
 	desc = "A comfortable voidsuit helmet with cranial armor and eight-channel surround sound."
 	icon_state = "rig_iccg"
 	item_state = "rig_iccg"
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_override = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
 	item_state_slots = list(
 		slot_l_hand_str = "sec_helm",
 		slot_r_hand_str = "sec_helm",
@@ -518,6 +523,32 @@
 		/obj/item/ammo_magazine/speedloader/rifle = 3
 	)
 
+/obj/structure/closet/secure_closet/iccg/security/operative
+	name = "Operative locker"
+
+/obj/structure/closet/secure_closet/iccg/security/operative/WillContain()
+	return list(
+		/obj/item/device/radio/headset/map_preset/ulyanovsk,
+		/obj/item/device/radio/map_preset/ulyanovsk,
+		/obj/item/storage/belt/holster/security,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/storage/firstaid/individual/military,
+		/obj/item/material/knife/combat,
+		/obj/item/device/binoculars/nvg,
+		/obj/item/clothing/suit/iccgn/service_enlisted,
+		/obj/item/clothing/suit/iccgn/service_enlisted,
+		/obj/item/clothing/gloves/guards,
+		/obj/item/clothing/suit/storage/vest/merc,
+		/obj/item/clothing/head/helmet/swat,
+		/obj/item/clothing/under/iccgn/service,
+		/obj/item/clothing/under/iccgn/utility,
+		/obj/item/clothing/under/syndicate/combat,
+		/obj/item/clothing/accessory/buddy_tag,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/storage/backpack/satchel/sec,
+		/obj/item/ammo_magazine/pistol/iccgn = 2
+	)
+
 /obj/structure/closet/secure_closet/iccg/medical/doctor
 	name = "Vrach locker"
 
@@ -655,6 +686,7 @@
 /obj/machinery/rotating_alarm/door // like SM Alarm, but MY :3
 	name = "door alarm"
 	desc = "An industrial rotating alarm light. This one is used to monitor door state."
+	anchored = TRUE
 
 	frame_type = /obj/item/frame/door_alarm
 	construct_state = /decl/machine_construction/default/item_chassis
@@ -662,44 +694,29 @@
 	stock_part_presets = list(/decl/stock_part_preset/radio/basic_transmitter/button = 1)
 
 	alarm_light_color = COLOR_MAROON
-	// FALSE = Closed -> Off // TRUE = Closed -> On
+	/// FALSE = Closed -> Off // TRUE = Closed -> On
 	var/invert_state = FALSE
-	// this is list of connected doors
+	/// This is list of connected doors
 	var/list/doors
 
 /obj/machinery/rotating_alarm/door/Initialize()
 	. = ..()
-	if(!id_tag)
-		id_tag = "ERROR"
 	update_icon()
 
-	spawn(10)		// allow map load
+	spawn(50)		// allow map load
+		if(!id_tag)
+			id_tag = locate_door()
 		doors = list()
 		for(var/obj/machinery/door/D in SSmachines.machinery)
 			if(D.id_tag == id_tag)
 				doors += D
 				GLOB.density_set_event.register(D, src, .proc/check_doors)
-	check_doors()
+		check_doors()
 
 /obj/machinery/rotating_alarm/door/Destroy()
 	. = ..()
 	for(var/door in doors)
 		GLOB.density_set_event.unregister(door, src, .proc/check_doors)
-
-/*
-/obj/machinery/rotating_alarm/door/proc/check_doors()
-	var/votes = 0
-	for(var/atom/door as() in doors)
-		if(door.density)
-			votes--
-			continue
-		votes++
-
-	if(votes >= 0)
-		return set_on()
-
-	return set_off()
-*/
 
 /obj/machinery/rotating_alarm/door/proc/check_doors()
 	var/set_alarm = invert_state
@@ -712,6 +729,12 @@
 		return set_on()
 
 	return set_off()
+
+/obj/machinery/rotating_alarm/door/proc/locate_door()
+	var/obj/machinery/door/blast/door = locate() in range(2,src)
+	if(!door)
+		return
+	return door.id_tag
 
 /obj/item/frame/door_alarm
 	name = "door alarm frame"
@@ -740,14 +763,14 @@
 
 	var/mob/living/L = AM
 	if (istype(L) && L.ckey)
-		log_and_message_admins("has flushed themselves down \the [src].", L)
+		return
 	if(istype(AM, /obj))
 		var/obj/O = AM
 		O.forceMove(src)
 	else if(istype(AM, /mob))
 		var/mob/M = AM
 		to_chat(M, "You can't go inside.")
-		//M.forceMove(src)
+		return
 	src.flush()
 
 /obj/machinery/disposal/deliveryChute/ammo_loader/flush()
@@ -760,17 +783,6 @@
 	sleep(10)
 	playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
 	sleep(5) // wait for animation to finish
-
-	if(prob(35))
-		for(var/mob/living/carbon/human/L in src)
-			var/list/obj/item/organ/external/crush = L.get_damageable_organs()
-			if(!crush.len)
-				return
-
-			var/obj/item/organ/external/E = pick(crush)
-
-			E.take_external_damage(45, used_weapon = "Blunt Trauma")
-			to_chat(L, "\The [src]'s mechanisms crush your [E.name]!")
 
 	H.init(src)	// copy the contents of disposer to holder
 
@@ -789,11 +801,13 @@
 		to_chat(user, "You reattached conveyors with [src], that have the same ID.")
 
 /obj/item/device/binoculars/blue
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
 	icon_state = "binoculars1"
 	zoom_offset = 16
 	zoom_size = 9
 
 /obj/item/device/binoculars/nvg
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
 	icon_state = "binoculars_nvg"
 	zoom_offset = 19
 	zoom_size = 11
@@ -817,3 +831,260 @@
 	. = ..()
 	allowed += /obj/item/gun
 	allowed += /obj/item/device/flashlight
+
+/obj/machinery/atmospherics/unary/engine/wall
+	name = "rocket nozzle"
+	desc = "Advanced rocket nozzle, expelling gas at hypersonic velocities to propell the ship."
+	icon_state = "nozzle-wall"
+	maximum_component_parts = list(/obj/item/stock_parts = 8)
+	uncreated_component_parts = list(/obj/item/stock_parts/power/apc/buildable = 1, /obj/item/stock_parts/capacitor/super = 2)
+
+	use_power = POWER_USE_OFF
+	power_channel = EQUIP
+	idle_power_usage = 500
+
+	thrust_limit = 1
+	moles_per_burn = 5.0
+	charge_per_burn = 5000
+	boot_time = 45
+
+/obj/machinery/atmospherics/unary/engine/wall/check_blockage()
+	return FALSE
+
+/obj/item/stock_parts/circuitboard/unary_atmos/engine/advanced
+	name = T_BOARD("advanced gas thruster")
+	build_path = /obj/machinery/atmospherics/unary/engine/wall
+	origin_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 3)
+	req_components = list(
+		/obj/item/stack/cable_coil = 30,
+		/obj/item/pipe = 3)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/matter_bin/super = 1,
+		/obj/item/stock_parts/capacitor/adv = 2)
+
+/turf/simulated/wall/Initialize()
+	. = ..()
+	blend_objects += /obj/machinery/atmospherics/unary/engine/wall
+
+/*
+/obj/machinery/ak630
+	name = "AK630"
+	icon = 'icons/obj/artillery.dmi'
+	icon_state = "pointdefense"
+	desc = "AK630 Anti-Missile system."
+	density = TRUE
+	anchored = TRUE
+	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
+	idle_power_usage = 0.1 KILOWATTS
+	construct_state = /decl/machine_construction/default/panel_closed
+	maximum_component_parts = list(/obj/item/stock_parts = 10)
+	base_type = /obj/machinery/ak630
+	stock_part_presets = list(/decl/stock_part_preset/terminal_setup)
+	uncreated_component_parts = null
+	appearance_flags = DEFAULT_APPEARANCE_FLAGS | PIXEL_SCALE | LONG_GLIDE
+	machine_name = "AK630"
+	machine_desc = "AK630 Anti-Missile system."
+	var/active = TRUE
+	var/charge_cooldown = 1 SECOND  //time between it can fire at different targets
+	var/last_shot = 0
+	var/kill_range = 40
+	var/rotation_speed = 0.25 SECONDS  //How quickly we turn to face threats
+	var/engaging = FALSE
+	var/initial_id_tag
+	var/targets
+
+/obj/machinery/ak630/proc/space_los(missile)
+	for(var/turf/T in getline(src,missile))
+		if(T.density)
+			return FALSE
+	return TRUE
+
+/obj/machinery/ak630/proc/Shoot(var/target)
+	var/obj/structure/missile/M = target
+	if(!istype(M))
+		return
+	engaging = TRUE
+	var/Angle = round(Get_Angle(src,M))
+	var/matrix/rot_matrix = matrix()
+	rot_matrix.Turn(Angle)
+	addtimer(CALLBACK(src, .proc/finish_shot, target), rotation_speed)
+	animate(src, transform = rot_matrix, rotation_speed, easing = SINE_EASING)
+
+	set_dir(transform.get_angle() > 0 ? NORTH : SOUTH)
+
+/obj/machinery/ak630/proc/finish_shot(var/target)
+	engaging = FALSE
+	last_shot = world.time
+	var/obj/structure/missile/M = target
+	if(!istype(M))
+		return
+	var/obj/item/projectile/bullet/rifle/bullet = new (get_turf(src))
+	playsound(src, 'sound/effects/heavy_cannon_blast.ogg', 75, 1)
+	use_power_oneoff(idle_power_usage * 10)
+	bullet.launch(M.loc)
+
+/obj/machinery/ak630/Process()
+	..()
+	var/desiredir = transform.get_angle() > 0 ? NORTH : SOUTH
+	if(dir != desiredir)
+		set_dir(desiredir)
+	if(engaging || ((world.time - last_shot) < charge_cooldown))
+		return
+
+	for(var/obj/structure/missile/M in range(kill_range, src))
+		if(get_dist(M, src) > kill_range)
+			continue
+		if(space_los(M))
+			targets = M
+			Shoot(M)
+			Shoot(M)
+			Shoot(M)
+			targets = null
+			return
+
+/obj/item/projectile/bullet/rifle/ak630
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_state = "bullet"
+*/
+/turf/simulated/floor/armored
+	name = "armored floor"
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_state = "reinforced"
+	initial_flooring = /decl/flooring/armored
+
+/turf/simulated/floor/armored/ex_act(severity, derection)
+	switch(severity)
+		if(200 to 400)
+			if (prob(30))
+				src.break_tile()
+				src.hotspot_expose(500,CELL_VOLUME)
+		if(400 to 600)
+			if (prob(40))
+				src.break_tile()
+				src.hotspot_expose(1000,CELL_VOLUME)
+		if(600 to 1000)
+			switch(pick(40;1,40;2,3))
+				if (1)
+					if(prob(33)) new /obj/item/stack/material/plasteel(src)
+					src.ReplaceWithLattice()
+				if(2)
+					src.ChangeTurf(get_base_turf_by_area(src))
+				if(3)
+					if(prob(33)) new /obj/item/stack/material/plasteel(src)
+					if(prob(80))
+						src.break_tile_to_plating()
+					else
+						src.break_tile()
+					src.hotspot_expose(1000,CELL_VOLUME)
+		if(1000 to INFINITY)
+			src.ChangeTurf(get_base_turf_by_area(src))
+	return
+
+/decl/flooring/armored
+	name = "armored floor"
+	desc = "Heavily armored with plasteel plating."
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_base = "reinforced"
+	flags = TURF_REMOVE_WRENCH | TURF_ACID_IMMUNE
+	build_type = /obj/item/stack/material/plasteel
+	build_cost = 1
+	build_time = 40
+	apply_thermal_conductivity = 0.025
+	apply_heat_capacity = 405000
+	can_paint = 1
+	footstep_type = /decl/footsteps/plating
+
+/turf/simulated/floor/armored/airless
+	initial_gas = null
+
+
+// D E C A L S
+
+/obj/effect/floor_decal/industrial/outline/blood_red
+	name = "red outline"
+	color = "#940004"
+
+/obj/effect/floor_decal/corner/blood_red
+	name = "blood red corner"
+	color = "#940004"
+
+/obj/effect/floor_decal/corner/blood_red/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/blood_red/three_quarters
+	icon_state = "corner_white_three_quarters"
+
+/obj/effect/floor_decal/corner/blood_red/full
+	icon_state = "corner_white_full"
+
+/obj/effect/floor_decal/corner/blood_red/border
+	icon_state = "bordercolor"
+
+/obj/effect/floor_decal/corner/blood_red/half
+	icon_state = "bordercolorhalf"
+
+/obj/effect/floor_decal/corner/blood_red/mono
+	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/blood_red/bordercorner
+	icon_state = "bordercolorcorner"
+
+/obj/effect/floor_decal/corner/blood_red/bordercorner2
+	icon_state = "bordercolorcorner2"
+
+/obj/effect/floor_decal/corner/blood_red/borderfull
+	icon_state = "bordercolorfull"
+
+/obj/effect/floor_decal/corner/blood_red/bordercee
+	icon_state = "bordercolorcee"
+
+/obj/effect/floor_decal/hull
+	name = "hull edges"
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_state = "hull_edges"
+
+/obj/effect/floor_decal/hull/corner
+	name = "hull corner"
+	icon_state = "hull_corners"
+
+/obj/effect/floor_decal/techfloor/blood_red
+	name = "techfloor edges"
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_state = "techfloorred_edges"
+
+/obj/effect/floor_decal/techfloor/blood_red/corner
+	name = "techfloor corner"
+	icon_state = "techfloorred_corners"
+
+/obj/effect/floor_decal/paint
+	name = "paint"
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_state = "paint"
+	alpha = 200
+	layer = 2.02
+
+/obj/effect/floor_decal/paint/corner
+	icon_state = "paint_corner"
+
+/obj/effect/floor_decal/paint/triangle
+	icon_state = "paint_triangle"
+
+/obj/effect/floor_decal/paint/blood_red
+	name = "red paint"
+	color = "#940004"
+
+/obj/effect/floor_decal/paint/blood_red/corner
+	icon_state = "paint_corner"
+
+/obj/effect/floor_decal/paint/blood_red/triangle
+	icon_state = "paint_triangle"
+
+/obj/effect/floor_decal/paint/navy
+	name = "red paint"
+	color = "#335166"
+
+/obj/effect/floor_decal/paint/navy/corner
+	icon_state = "paint_corner"
+
+/obj/effect/floor_decal/paint/navy/triangle
+	icon_state = "paint_triangle"

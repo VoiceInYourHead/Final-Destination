@@ -1384,11 +1384,3 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/stoneborder/corner
 	icon_state = "stoneborder_c"
-
-/obj/effect/floor_decal/hull
-	name = "hull edges"
-	icon_state = "hull_edges"
-
-/obj/effect/floor_decal/hull/corner
-	name = "hull corner"
-	icon_state = "hull_corners"
