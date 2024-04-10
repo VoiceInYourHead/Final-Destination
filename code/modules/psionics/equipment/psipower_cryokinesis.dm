@@ -12,22 +12,31 @@
 
 /obj/item/cryokinesis/Process()
 	if(uses <= 0)
-		qdel(src)
+		Destroy()
 
-/obj/item/cryokinesis/afterattack()
+/obj/item/cryokinesis/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	uses -= 1
+	..()
+
+/obj/item/cryokinesis/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob)
 	uses -= 1
 
-/obj/item/cryokinesis/dropped()
+/obj/item/cryokinesis/Destroy()
+	playsound(src, "shatter", 70, 1)
+	src.visible_message("<span class='danger'>[src] рассыпается на тысячи мелких льдинок!</span>")
+	..()
+
+/obj/item/cryokinesis/dropped(var/mob/living/user as mob)
 	..()
 	if(delete_on_drop)
-		qdel(src)
+		Destroy()
 
 /obj/item/cryokinesis/get_storage_cost()
 	return ITEM_SIZE_NO_CONTAINER
 
 /obj/item/cryokinesis/fists
 	name = "ice fists"
-	icon_state = "fists"
+	icon_state = "icefists"
 	desc = "A pair of cold, icy, punching gloves"
 	uses = 10
 	delete_on_drop = 1
@@ -47,3 +56,21 @@
 		if(tele_rank >= PSI_RANK_OPERANT && !user.psi.suppressed)
 			force = 45
 	..()
+
+/obj/item/cryokinesis/rapier
+	name = "ice sword"
+	icon_state = "iceblade"
+	desc = "Sword, made of very fragile and sharp ice"
+	uses = 7
+	force = 30
+	attack_cooldown = 4
+
+	sharp = TRUE
+	edge = TRUE
+
+	base_parry_chance = 40
+	have_stances = TRUE
+
+	lunge_dist = 3
+	fail_chance = 50
+	melee_strikes = list(/datum/melee_strike/swipe_strike/sword_slashes,/datum/melee_strike/swipe_strike/mixed_combo)
