@@ -52,6 +52,32 @@
 
 //ASSETS
 
+/obj/item/clothing/shoes/ice_boots
+	name = "ice boots"
+	icon = 'icons/fd/custom_items/icearmor.dmi'
+	item_icons = list(slot_shoes_str = 'icons/fd/custom_items/icearmor_worn.dmi')
+	icon_state = "iceboots"
+	item_state = "iceboots"
+	desc = "A very hard-looking ice boots."
+	body_parts_covered = LEGS|FEET
+	force = 10
+	armor = list(
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
+		laser = ARMOR_LASER_HEAVY,
+		energy = ARMOR_ENERGY_SHIELDED,
+		bomb = ARMOR_BOMB_SHIELDED
+		)
+
+/obj/item/clothing/shoes/ice_boots/dropped(var/mob/living/user as mob)
+	..()
+	Destroy()
+
+/obj/item/clothing/shoes/ice_boots/Destroy()
+	playsound(src, "shatter", 70, 1)
+	src.visible_message("<span class='danger'>[src] рассыпается на тысячи мелких льдинок!</span>")
+	..()
+
 /obj/item/clothing/head/helmet/ice_helmet
 	name = "ice helmet"
 	desc = "A very hard-looking ice knight helmet."
