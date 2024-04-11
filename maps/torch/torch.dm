@@ -190,6 +190,7 @@
 	#include "../away/psycho_away2/city.dm"
 	#include "../away/psycho_away3/bigger_ruins.dm"
 	#include "../away/psycho_away4/road.dm"
+	#include "../away/psycho_away5/ruins.dm"
 	#include "../away/sfv_interceptor/shikra.dm"
 	#include "../away/sfv_bomber/comet.dm"
 	#include "../away/sfv_saboteur/saboteur.dm"
