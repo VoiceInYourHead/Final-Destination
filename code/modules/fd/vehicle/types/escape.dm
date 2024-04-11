@@ -23,7 +23,7 @@
 	min_speed = 7
 	max_speed = 1
 
-	interior_template = /datum/map_template/exploration
+	interior_template = /datum/map_template/escape
 	size_x = 13
 	size_y = 35
 

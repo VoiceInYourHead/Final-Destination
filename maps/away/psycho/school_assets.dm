@@ -52,6 +52,58 @@
 
 //ASSETS
 
+/obj/item/clothing/head/helmet/ice_helmet
+	name = "ice helmet"
+	desc = "A very hard-looking ice knight helmet."
+	icon = 'icons/fd/custom_items/icearmor.dmi'
+	item_icons = list(slot_head_str = 'icons/fd/custom_items/icearmor_worn.dmi')
+	icon_state = "icehelmet"
+	item_state = "icehelmet"
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
+		laser = ARMOR_LASER_HEAVY,
+		energy = ARMOR_ENERGY_SHIELDED,
+		bomb = ARMOR_BOMB_SHIELDED
+		)
+	flags_inv = BLOCKHAIR
+
+/obj/item/clothing/head/helmet/ice_helmet/dropped(var/mob/living/user as mob)
+	..()
+	Destroy()
+
+/obj/item/clothing/head/helmet/ice_helmet/Destroy()
+	playsound(src, "shatter", 70, 1)
+	src.visible_message("<span class='danger'>[src] рассыпается на тысячи мелких льдинок!</span>")
+	..()
+
+/obj/item/clothing/suit/armor/ice_plate
+	name = "ice armor"
+	desc = "A very hard-looking ice plate."
+	icon = 'icons/fd/custom_items/icearmor.dmi'
+	icon_state = "iceplate"
+	item_icons = list(
+		slot_wear_suit_str = 'icons/fd/custom_items/icearmor_worn.dmi')
+
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
+	armor = list(
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
+		laser = ARMOR_LASER_HEAVY,
+		energy = ARMOR_ENERGY_SHIELDED,
+		bomb = ARMOR_BOMB_SHIELDED
+		)
+
+/obj/item/clothing/suit/armor/ice_plate/dropped(var/mob/living/user as mob)
+	..()
+	Destroy()
+
+/obj/item/clothing/suit/armor/ice_plate/Destroy()
+	playsound(src, "shatter", 70, 1)
+	src.visible_message("<span class='danger'>[src] рассыпается на тысячи мелких льдинок!</span>")
+	..()
+
 /obj/item/clothing/suit/storage/vest/practice
 	name = "practice vest"
 	desc = "Semi-green battle armor with light plates."

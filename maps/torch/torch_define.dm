@@ -8,12 +8,9 @@
 	admin_levels  = list(7)
 	escape_levels = list(8)
 	empty_levels  = list(9)
-	interior_levels = list(10)
 	accessible_z_levels = list("1"=1,"2"=3,"3"=1,"4"=1,"5"=1,"6"=1,"9"=30)
-	overmap_size = 55
-	overmap_event_areas = 62
-//	overmap_size = 5
-//	overmap_event_areas = 5
+	overmap_size = 10
+	overmap_event_areas = 0
 	usable_email_tlds = list("torch.ec.scg", "torch.fleet.mil", "army.mil", "freemail.net", "torch.scg")
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
@@ -54,8 +51,8 @@
 	use_overmap = 1
 	min_offmap_players = 12
 
-	num_traders = 6
-	num_exoplanets = 1
+	num_traders = 0
+	num_exoplanets = 0
 	away_site_budget = 0
 	num_junkyards = 0
 

@@ -160,7 +160,7 @@
 // some risky space-boarding stuff
 	var/obj/effect/overmap/visitable/linked = map_sectors["[z]"]
 	for (var/obj/effect/overmap/visitable/S in view(2,linked))
-		if (QDELETED(S) || S == linked || S.z != 12 || istype(S,/obj/effect/overmap/visitable/sector/residue) || istype(S,/obj/effect/overmap/visitable/sector/merc_base))
+		if (QDELETED(S) || S == linked || S.z != 11 || istype(S,/obj/effect/overmap/visitable/sector/residue) || istype(S,/obj/effect/overmap/visitable/sector/merc_base))
 			continue
 
 		var/actual_spread = world.maxx / 8
