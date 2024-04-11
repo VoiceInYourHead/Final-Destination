@@ -21,9 +21,9 @@
 
 	interior_template = templates_cache[interior_template]
 
-	var/list/interior_levels = GLOB.using_map.escape_levels // Transit levels
-	var/start = locate(TRANSITIONEDGE+1, TRANSITIONEDGE+1, min(interior_levels))
-	var/finish = locate(world.maxx-TRANSITIONEDGE-1, world.maxy-TRANSITIONEDGE-1, max(interior_levels))
+	var/interior_levels = 2
+	var/start = locate(TRANSITIONEDGE+1, TRANSITIONEDGE+1, interior_levels)
+	var/finish = locate(world.maxx-TRANSITIONEDGE-1, world.maxy-TRANSITIONEDGE-1, interior_levels)
 	for(var/turf/space/T in block(start, finish))
 		var/valid = TRUE
 		for(var/turf/check in interior_template.get_affected_turfs(T))
