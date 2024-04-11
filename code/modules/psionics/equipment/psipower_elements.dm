@@ -576,7 +576,7 @@
 
 //MOBS
 
-	if(istype(A, /mob/living))
+	if(istype(A, /mob/living) && combat_mode == TRUE)
 		if(A.do_psionics_check(maintain_cost, user))
 			to_chat(user, SPAN_WARNING("Your power skates across \the [A.name], but cannot get a grip..."))
 			return FALSE

@@ -40,7 +40,7 @@
 	desc = "A pair of cold, icy, punching gloves"
 	uses = 10
 	delete_on_drop = 1
-	force = 25
+	force = 15
 	attack_cooldown = 8
 
 	base_parry_chance = 10
@@ -54,15 +54,15 @@
 	if(user.psi)
 		var/tele_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
 		if(tele_rank >= PSI_RANK_OPERANT && !user.psi.suppressed)
-			force = 45
+			force = 35
 	..()
 
 /obj/item/cryokinesis/rapier
 	name = "ice sword"
 	icon_state = "iceblade"
 	desc = "Sword, made of very fragile and sharp ice"
-	uses = 7
-	force = 30
+	uses = 5
+	force = 25
 	attack_cooldown = 4
 
 	sharp = TRUE
