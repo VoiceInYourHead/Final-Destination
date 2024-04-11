@@ -3418,6 +3418,7 @@
 #include "code\unit_tests\virtual_mob_tests.dm"
 #include "code\unit_tests\zas_tests.dm"
 #include "code\unit_tests\~helpers.dm"
+#include "customs\code\Bruno.dm"
 #include "customs\code\chichi.dm"
 #include "customs\code\Jie.dm"
 #include "customs\code\skills.dm"
