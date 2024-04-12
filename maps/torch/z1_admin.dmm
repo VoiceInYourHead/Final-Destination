@@ -870,7 +870,7 @@
 "aFz" = (/obj/effect/floor_decal/corner/blue{dir = 9},/turf/simulated/floor/tiled/dark,/area/centcom/specops)
 "aFA" = (/obj/structure/table/rack,/obj/item/stack/material/plasteel/fifty,/obj/item/stack/material/plasteel/fifty,/obj/item/stack/material/plasteel/fifty,/obj/item/stack/material/plasteel/fifty,/obj/item/stack/material/plasteel/fifty,/turf/unsimulated/floor{icon = 'icons/turf/flooring/tiles.dmi'; icon_state = "dark"},/area/acting/backstage)
 "aFD" = (/turf/unsimulated/floor{icon = 'icons/turf/flooring/tiles.dmi'; icon_state = "steel_ridged"},/area/centcom/arrivals/docks)
-"aFF" = (/obj/machinery/camera/network/thunder{anchored = 0; c_tag = "Television"; name = "Movable Camera"},/turf/simulated/floor/tiled/monotile,/area/acting/stage)
+"aFF" = (/obj/machinery/camera/network/thunder{anchored = 0; c_tag = "Television"; name = "Movable Camera"},/obj/effect/landmark{name = "Observer-Start"},/turf/simulated/floor/tiled/monotile,/area/acting/stage)
 "aFK" = (/obj/structure/table/rack,/obj/item/gun/energy/chameleon,/obj/item/gun/energy/chameleon,/obj/item/gun/energy/chameleon,/turf/unsimulated/floor{icon = 'icons/turf/flooring/tiles.dmi'; icon_state = "monotiledark"},/area/acting/backstage)
 "aFL" = (/obj/structure/table/reinforced,/obj/item/gun/energy/gun/nuclear,/obj/prefab/hand_teleporter,/turf/simulated/floor/tiled/dark/monotile,/area/centcom/specops)
 "aFM" = (/obj/machinery/light/small{dir = 4; icon_state = "bulb1"},/obj/effect/floor_decal/corner/blue{dir = 6},/turf/simulated/floor/tiled,/area/centcom/arrivals/docks)

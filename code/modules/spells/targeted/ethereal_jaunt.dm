@@ -3,15 +3,15 @@
 	desc = "This spell creates your ethereal form, temporarily making you invisible and able to pass through walls."
 	feedback = "EJ"
 	school = "transmutation"
-	charge_max = 30 SECONDS
-	spell_flags = Z2NOCAST | NEEDSCLOTHES | INCLUDEUSER
+	charge_max = 5 SECONDS
+	spell_flags = Z2NOCAST | INCLUDEUSER
 	invocation = "none"
 	invocation_type = SpI_NONE
 	range = 0
 	max_targets = 1
 	level_max = list(Sp_TOTAL = 4, Sp_SPEED = 4, Sp_POWER = 3)
-	cooldown_min = 10 SECONDS //50 deciseconds reduction per rank
-	duration = 5 SECONDS
+	cooldown_min = 1 SECOND
+	duration = 3 SECONDS
 
 	hud_state = "wiz_jaunt"
 
@@ -43,7 +43,7 @@
 			animation.set_density(FALSE)
 			animation.anchored = TRUE
 			animation.icon = 'icons/mob/mob.dmi'
-			animation.layer = FLY_LAYER 
+			animation.layer = FLY_LAYER
 			target.ExtinguishMob()
 			if(target.buckled)
 				target.buckled = null

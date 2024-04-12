@@ -54,8 +54,8 @@
 								   0, 0, 0,  1)
 	width = 500
 	height = 500
-	count = 3000
-	spawning = 12
+	count = 4000
+	spawning = 20
 	bound1 = list(-500,-256,-10)
 	bound2 = list(500,500,10)
 	lifespan = 600
@@ -64,7 +64,7 @@
 	grow = list(-0.01,-0.01)
 	gravity = list(0, -10, 0.5)
 	drift = generator("circle", 0, 1)
-	friction = 0.3
+	friction = 0.1
 	transform = null
 
 /particles/dust
@@ -97,6 +97,15 @@
 	particles = new/particles/snow
 
 /obj/screenfilter/snow/Fade()
+	animate(src, alpha=0, time=10) //let's pretend there is no better way to do this shit
+	..()
+
+/obj/screenfilter/rain
+	mouse_opacity = 0
+	screen_loc = "CENTER"
+	particles = new/particles/rain
+
+/obj/screenfilter/rain/Fade()
 	animate(src, alpha=0, time=10) //let's pretend there is no better way to do this shit
 	..()
 

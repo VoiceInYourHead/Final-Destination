@@ -47,6 +47,9 @@
 			M.flash_eyes()
 			new /obj/effect/temporary(get_turf(user),6, 'icons/effects/effects.dmi', "summoning")
 			new /obj/effect/temporary(get_turf(M),3, 'icons/effects/effects.dmi', "purple_electricity_constant")
+			if(GLOB.paramounts.is_antagonist(M) && prob(80))
+				to_chat(M, SPAN_DANGER("Через тебя проходит мощная псионическая волна, но ты без особых проблем сопротивляешься её воздействию!"))
+				return TRUE
 			M.eye_blind = max(M.eye_blind,cn_rank)
 			M.ear_deaf = max(M.ear_deaf,cn_rank * 2)
 			M.confused = cn_rank * rand(1,3)
@@ -88,6 +91,9 @@
 			return 0
 		switch(chosen_option)
 			if("Joy")
+				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					return 0
 				var/funny_option = pick("вспоминаете крайне смешную шутку", "вспоминаете очень глупую историю", "всматриваетесь в лицо [user]")
 				to_chat(target, SPAN_WARNING("Внезапно, вы [funny_option], начиная истошно смеяться и кататься по полу."))
 				var/mob/living/carbon/C = target
@@ -100,6 +106,9 @@
 					C.emote("giggle")
 				return 1
 			if("Sadness")
+				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					return 0
 				var/sad_option = pick("погружаетесь в ваши детские воспоминания", "вспоминаете о ужасной потере", "на секунду замечаете перед собой знакомый силуэт", "вспоминаете о своих прошлых ошибках")
 				to_chat(target, SPAN_WARNING("Внезапно, вы [sad_option], не замечая, как по вашим щекам текут слёзы."))
 				var/mob/living/carbon/C = target
@@ -111,6 +120,14 @@
 					C.emote("whimper")
 				return 1
 			if("Fear")
+				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но вовремя заметив это, вы совершаете резкую контр-атаку, погружая вашего оппонента в пучины страха..."))
+					to_chat(user, SPAN_OCCULT("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [target]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))
+					var/cn_rank = user.psi.get_rank(PSI_COERCION)
+					var/mob/living/carbon/C = target
+					C.make_dizzy(10)
+					C.Stun(5 + cn_rank)
+					return 1
 				to_chat(target, SPAN_OCCULT("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [user]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))
 				var/cn_rank = user.psi.get_rank(PSI_COERCION)
 				var/mob/living/carbon/C = target
@@ -118,10 +135,16 @@
 				C.Stun(5 + cn_rank)
 				return 1
 			if("Caution")
+				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					return 0
 				var/strange_option = pick("ощущаете чьё-то зловещее присутствие", "сильно потеете", "чувствуете, что за вами что-то наблюдает", "ощущаете странный холод", "чувствуете, как что-то ползает по вам")
 				to_chat(target, SPAN_DANGER("Вы [strange_option]."))
 				return 1
 			if("Anger")
+				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					return 0
 				var/anger_option = pick("к самому себе", "к человеку, что стоит рядом", "к месту, в котором вы находитесь", "к своей жизни", "по отношению к данной ситуации", "к сегодняшнему дню", "к сегодняшней погоде", "к вашей работе", "к тому, что было вчера")
 				to_chat(target, SPAN_DANGER("Внезапно, вы ощущаете странную злобу [anger_option]."))
 				return 1
@@ -150,6 +173,9 @@
 		playsound(user.loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 		var/cn_rank = user.psi.get_rank(PSI_COERCION)
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "blue_electricity_constant")
+		if(GLOB.paramounts.is_antagonist(target) && prob(90))
+			target.stun_effect_act(0, cn_rank * 10, user.zone_sel.selecting)
+			return TRUE
 		target.stun_effect_act(0, cn_rank * 30, user.zone_sel.selecting)
 		return TRUE
 
@@ -212,6 +238,10 @@
 
 /decl/psionic_power/coercion/mind_control/invoke(mob/living/user, mob/living/target)
 	if(!istype(target))
+		return FALSE
+
+	if(GLOB.paramounts.is_antagonist(target) && prob(90))
+		to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 		return FALSE
 
 	if(user.zone_sel.selecting != BP_HEAD)

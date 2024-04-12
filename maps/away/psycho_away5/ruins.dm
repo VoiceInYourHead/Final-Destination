@@ -1,3 +1,6 @@
+/area/psionic_school/outdoor/rainy
+	screen_filter = /obj/screenfilter/rain
+
 /obj/effect/overmap/visitable/sector/psyonic_school_ruins2
 	name = "jungle planet 5"
 	desc = "A jungle planet."
@@ -18,7 +21,7 @@
 			lightup -= A
 	update_daynight()
 
-/obj/effect/overmap/visitable/sector/psyonic_school_ruins2/proc/update_daynight(light = 0.7, light_color = "#e2d1b2")
+/obj/effect/overmap/visitable/sector/psyonic_school_ruins2/proc/update_daynight(light = 0.4, light_color = "#5c5c5c")
 	for(var/turf/T as anything in lightup)
 		T.set_light(light, 0.1, 2, l_color = light_color)
 

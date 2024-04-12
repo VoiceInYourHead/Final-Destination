@@ -52,6 +52,40 @@
 
 //ASSETS
 
+/obj/item/clothing/under/butler
+	name = "butler clothing"
+	desc = "Black official clothing."
+	icon = 'icons/fd/custom_items/butler.dmi'
+	icon_state = "butler"
+	item_icons = list(
+		slot_w_uniform_str = 'icons/fd/custom_items/butler_worn.dmi')
+
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
+		laser = ARMOR_LASER_HEAVY,
+		energy = ARMOR_ENERGY_SHIELDED,
+		bomb = ARMOR_BOMB_SHIELDED
+		)
+
+/obj/item/clothing/head/helmet/v
+	name = "old helmet"
+	desc = "An old, rusty helmet with some kind of rebreather builded in."
+	icon = 'icons/fd/custom_items/v_helmet.dmi'
+	item_icons = list(slot_head_str = 'icons/fd/custom_items/v_helmet_worn.dmi')
+	icon_state = "v_helmet"
+	item_state = "v_helmet"
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
+		laser = ARMOR_LASER_HEAVY,
+		energy = ARMOR_ENERGY_SHIELDED,
+		bomb = ARMOR_BOMB_SHIELDED
+		)
+	flags_inv = BLOCKHAIR
+
 /obj/item/clothing/shoes/ice_boots
 	name = "ice boots"
 	icon = 'icons/fd/custom_items/icearmor.dmi'
