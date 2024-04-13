@@ -60,31 +60,63 @@
 	item_icons = list(
 		slot_w_uniform_str = 'icons/fd/custom_items/butler_worn.dmi')
 
+/obj/item/clothing/glasses/thermal/plain/monocle/butler
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED,
-		bullet = ARMOR_BALLISTIC_HEAVY,
-		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED,
-		bomb = ARMOR_BOMB_SHIELDED
+		melee = 150,
+		bullet = 150,
+		laser = 150,
+		energy = 150,
+		bomb = 150
 		)
+
+	siemens_coefficient = 0
+
+/obj/item/clothing/mask/killer_ninja
+	name = "combat equipment"
+	desc = "Black combat utility."
+	icon = 'icons/fd/custom_items/ninja.dmi'
+	icon_state = "ninja"
+	item_icons = list(
+		slot_wear_mask_str = 'icons/fd/custom_items/ninja_worn.dmi')
+
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 150,
+		bullet = 150,
+		laser = 150,
+		energy = 150,
+		bomb = 150
+		)
+
+	siemens_coefficient = 0
 
 /obj/item/clothing/head/helmet/v
 	name = "old helmet"
 	desc = "An old, rusty helmet with some kind of rebreather builded in."
-	icon = 'icons/fd/custom_items/v_helmet.dmi'
-	item_icons = list(slot_head_str = 'icons/fd/custom_items/v_helmet_worn.dmi')
-	icon_state = "v_helmet"
-	item_state = "v_helmet"
+	icon = 'icons/fd/custom_items/vhelmet.dmi'
+	item_icons = list(slot_head_str = 'icons/fd/custom_items/vhelmet_worn.dmi')
+	icon_state = "v_respirator"
+	item_state = "v_respirator"
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED,
-		bullet = ARMOR_BALLISTIC_HEAVY,
-		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED,
-		bomb = ARMOR_BOMB_SHIELDED
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 	flags_inv = BLOCKHAIR
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+	siemens_coefficient = 0
 
 /obj/item/clothing/shoes/ice_boots
 	name = "ice boots"
@@ -96,11 +128,11 @@
 	body_parts_covered = LEGS|FEET
 	force = 10
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED,
-		bullet = ARMOR_BALLISTIC_HEAVY,
-		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED,
-		bomb = ARMOR_BOMB_SHIELDED
+		melee = 150,
+		bullet = 150,
+		laser = 150,
+		energy = 150,
+		bomb = 150
 		)
 
 /obj/item/clothing/shoes/ice_boots/dropped(var/mob/living/user as mob)
@@ -121,11 +153,11 @@
 	item_state = "icehelmet"
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED,
-		bullet = ARMOR_BALLISTIC_HEAVY,
-		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED,
-		bomb = ARMOR_BOMB_SHIELDED
+		melee = 150,
+		bullet = 150,
+		laser = 150,
+		energy = 150,
+		bomb = 150
 		)
 	flags_inv = BLOCKHAIR
 
@@ -148,12 +180,21 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED,
-		bullet = ARMOR_BALLISTIC_HEAVY,
-		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED,
-		bomb = ARMOR_BOMB_SHIELDED
+		melee = 150,
+		bullet = 150,
+		laser = 150,
+		energy = 150,
+		bomb = 150
 		)
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0
 
 /obj/item/clothing/suit/armor/ice_plate/dropped(var/mob/living/user as mob)
 	..()

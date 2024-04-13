@@ -298,6 +298,9 @@
 		if(target == user)
 			to_chat(user, "<span class='warning'>Вы не можете применить эту способность на себе!</span>")
 			return 0
+		if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
+			to_chat(user, "<span class='danger'>Аура [target] слишком сильна...у меня ни единого шанса пробиться сквозь неё!</span>")
+			return FALSE
 		if(target.psi)
 			var/con_rank_target = target.psi.get_rank(PSI_CONSCIOUSNESS)
 			if(con_rank_user > con_rank_target)
@@ -455,6 +458,10 @@
 	var/cn_rank_user = user.psi.get_rank(PSI_CONSCIOUSNESS)
 
 	if(!istype(target))
+		return FALSE
+
+	if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
+		to_chat(user, "<span class='danger'>Я не смогу обмануть того, кто сам говорит с обманом на 'ты'...</span>")
 		return FALSE
 
 	if(user.a_intent != I_HELP)

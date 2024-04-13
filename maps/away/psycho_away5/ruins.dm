@@ -1,5 +1,52 @@
+/obj/effect/turf_fire/endless
+	fire_power = 30
+	interact_with_atmos = FALSE
+	passive_loss = FALSE
+
 /area/psionic_school/outdoor/rainy
 	screen_filter = /obj/screenfilter/rain
+
+/obj/structure/fd/placeholder/better/team1
+	name = "TEAM 1"
+
+/obj/structure/fd/placeholder/better/team2
+	name = "TEAM 2"
+
+/obj/structure/fd/placeholder/better/team3
+	name = "TEAM 3"
+
+/obj/structure/fd/placeholder/better/team4
+	name = "TEAM 4"
+
+/obj/effect/submap_landmark/joinable_submap/escape_route
+	name = "Train"
+	archetype = /decl/submap_archetype/escape_route
+
+/decl/submap_archetype/escape_route
+	descriptor = "Train"
+	map = "Train"
+	crew_jobs = list(
+		/datum/job/submap/camp/ardent,
+		/datum/job/submap/camp/maxim,
+		/datum/job/submap/camp/okita,
+		/datum/job/submap/camp/numerius,
+		/datum/job/submap/camp/julian,
+		/datum/job/submap/camp/zeza,
+		/datum/job/submap/camp/akira,
+		/datum/job/submap/camp/manea,
+		/datum/job/submap/camp/allen,
+		/datum/job/submap/camp/trueman,
+
+		/datum/job/submap/camp/vivian,
+		/datum/job/submap/camp/mara,
+		/datum/job/submap/camp/demetra,
+
+		/datum/job/submap/camp/teacher1,
+		/datum/job/submap/camp/teacher2,
+		/datum/job/submap/camp/teacher3,
+		/datum/job/submap/camp/cook,
+		/datum/job/submap/camp/doctor
+	)
 
 /obj/effect/overmap/visitable/sector/psyonic_school_ruins2
 	name = "jungle planet 5"

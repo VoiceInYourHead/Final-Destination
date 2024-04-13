@@ -33,21 +33,23 @@
 		return FALSE
 	. = ..()
 	if(.)
-		user.visible_message(SPAN_DANGER("[user] закидывает голову назад, издавая пронзительный крик!"))
-		to_chat(user, SPAN_DANGER("Вы издаёте пронзительный псионический крик, оглушая всех вокруг!"))
 		var/cn_rank = user.psi.get_rank(PSI_COERCION)
+
+		if(prob(cn_rank * 20) && iscarbon(user))
+			var/mob/living/carbon/C = user
+			if(C.can_feel_pain())
+				user.visible_message(SPAN_DANGER("[user] закидывает голову назад, издавая пронзительный крик!"))
+				to_chat(user, SPAN_DANGER("Вы издаёте пронзительный псионический крик, оглушая всех вокруг!"))
+				user.emote("scream")
+
 		for(var/mob/living/M in range(user, user.psi.get_rank(PSI_COERCION)))
 			if(M == user)
 				continue
-			if(prob(cn_rank * 20) && iscarbon(M))
-				var/mob/living/carbon/C = M
-				if(C.can_feel_pain())
-					M.emote("scream")
 			to_chat(M, SPAN_DANGER("Ты ощущаешь, как земля уходит у тебя из под ног!"))
 			M.flash_eyes()
 			new /obj/effect/temporary(get_turf(user),6, 'icons/effects/effects.dmi', "summoning")
 			new /obj/effect/temporary(get_turf(M),3, 'icons/effects/effects.dmi', "purple_electricity_constant")
-			if(GLOB.paramounts.is_antagonist(M) && prob(80))
+			if(GLOB.paramounts.is_antagonist(M.mind) && prob(80))
 				to_chat(M, SPAN_DANGER("Через тебя проходит мощная псионическая волна, но ты без особых проблем сопротивляешься её воздействию!"))
 				return TRUE
 			M.eye_blind = max(M.eye_blind,cn_rank)
@@ -91,8 +93,9 @@
 			return 0
 		switch(chosen_option)
 			if("Joy")
-				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+				if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 					return 0
 				var/funny_option = pick("вспоминаете крайне смешную шутку", "вспоминаете очень глупую историю", "всматриваетесь в лицо [user]")
 				to_chat(target, SPAN_WARNING("Внезапно, вы [funny_option], начиная истошно смеяться и кататься по полу."))
@@ -106,8 +109,9 @@
 					C.emote("giggle")
 				return 1
 			if("Sadness")
-				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+				if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 					return 0
 				var/sad_option = pick("погружаетесь в ваши детские воспоминания", "вспоминаете о ужасной потере", "на секунду замечаете перед собой знакомый силуэт", "вспоминаете о своих прошлых ошибках")
 				to_chat(target, SPAN_WARNING("Внезапно, вы [sad_option], не замечая, как по вашим щекам текут слёзы."))
@@ -120,7 +124,7 @@
 					C.emote("whimper")
 				return 1
 			if("Fear")
-				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+				if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но вовремя заметив это, вы совершаете резкую контр-атаку, погружая вашего оппонента в пучины страха..."))
 					to_chat(user, SPAN_OCCULT("Внезапно, ваше тело цепенеет от одного только взгляда в сторону [target]. Вы дрожите, словно ваш мозг испытывает какой-то подсознательный страх."))
 					var/cn_rank = user.psi.get_rank(PSI_COERCION)
@@ -135,21 +139,24 @@
 				C.Stun(5 + cn_rank)
 				return 1
 			if("Caution")
-				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+				if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 					return 0
 				var/strange_option = pick("ощущаете чьё-то зловещее присутствие", "сильно потеете", "чувствуете, что за вами что-то наблюдает", "ощущаете странный холод", "чувствуете, как что-то ползает по вам")
 				to_chat(target, SPAN_DANGER("Вы [strange_option]."))
 				return 1
 			if("Anger")
-				if(GLOB.paramounts.is_antagonist(target) && prob(90))
+				if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 					to_chat(target, SPAN_WARNING("Некто пытается манипулировать вашими эмоциями, но у него ничего не получается..."))
+					to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 					return 0
 				var/anger_option = pick("к самому себе", "к человеку, что стоит рядом", "к месту, в котором вы находитесь", "к своей жизни", "по отношению к данной ситуации", "к сегодняшнему дню", "к сегодняшней погоде", "к вашей работе", "к тому, что было вчера")
 				to_chat(target, SPAN_DANGER("Внезапно, вы ощущаете странную злобу [anger_option]."))
 				return 1
 			if("Stillness")
 				to_chat(target, SPAN_NOTICE("Вы ощущаете странное умиротворение."))
+				to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 				if(target.psi)
 					target.psi.stamina = min(target.psi.max_stamina, target.psi.stamina + rand(15,20))
 				return 1
@@ -173,7 +180,7 @@
 		playsound(user.loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 		var/cn_rank = user.psi.get_rank(PSI_COERCION)
 		new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "blue_electricity_constant")
-		if(GLOB.paramounts.is_antagonist(target) && prob(90))
+		if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 			target.stun_effect_act(0, cn_rank * 10, user.zone_sel.selecting)
 			return TRUE
 		target.stun_effect_act(0, cn_rank * 30, user.zone_sel.selecting)
@@ -198,21 +205,6 @@
 
 	if(.)
 		var/cn_rank = user.psi.get_rank(PSI_COERCION)
-		if(cn_rank == PSI_RANK_GRANDMASTER)
-//			if(target.psi.get_rank(PSI_COERCION > 4) || target.psi.get_rank(PSI_CONSCIOUSNESS) > 4)
-//				to_chat(user, "<span class='danger'>You lash out, trying to stab into \the [target], but fail to breach [target]'s defense!</span>")
-//				return TRUE
-			if(target.stunned == 0)
-				to_chat(user, "<span class='danger'>Вы совершаете выпад вперёд, поражая [target] 'копьём' из чистой пси-энергии.</span>")
-				to_chat(target, SPAN_DANGER("Вы ощущаете, как защемило каждую мышцу вашего тела. Боль невыносима!"))
-				target.Stun(1000)
-				user.emote("snap")
-			else if(target.stunned >= 10)
-				to_chat(user, "<span class='danger'>Вы взмахиваете рукой, разжимая мышцы [target].</span>")
-				to_chat(target, SPAN_DANGER("Вы ощущаете, как снова можете пошевелить рукой."))
-				target.AdjustStunned(target.stunned * -1)
-				user.emote("snap")
-			return TRUE
 		to_chat(user, "<span class='danger'>Вы совершаете выпад вперёд, поражая [target] 'копьём' из чистой пси-энергии.</span>")
 		to_chat(target, "<span class='danger'>Ваша кисть разжимается от внезапной боли, пронизывающей всю руку!</span>")
 		if(prob(80))
@@ -240,7 +232,7 @@
 	if(!istype(target))
 		return FALSE
 
-	if(GLOB.paramounts.is_antagonist(target) && prob(90))
+	if(GLOB.paramounts.is_antagonist(target.mind) && prob(90))
 		to_chat(user, "<span class='danger'>Насколько же вы наивны, если действительно надеетесь пробиться в мой разум?...</span>")
 		return FALSE
 

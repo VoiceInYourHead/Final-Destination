@@ -18,7 +18,7 @@
 			lightup -= A
 	update_daynight()
 
-/obj/effect/overmap/visitable/sector/roadmovie/proc/update_daynight(light = 0.7, light_color = "#e2d1b2")
+/obj/effect/overmap/visitable/sector/roadmovie/proc/update_daynight(light = 0.4, light_color = "#5c5c5c")
 	for(var/turf/T as anything in lightup)
 		T.set_light(light, 0.1, 2, l_color = light_color)
 

@@ -1,5 +1,38 @@
 //MOBS
 
+/mob/living/simple_animal/hostile/school_police
+	name = "\improper SWAT member"
+	desc = "I AM THE LAW."
+	icon = 'icons/mob/human_races/species/human/npc.dmi'
+	icon_state = "npc_police_special1"
+	icon_living = "npc_police_special1"
+	icon_dead = "npc_police_special_dead"
+	icon_gib = "npc_police_special_dead"
+	turns_per_move = 5
+	response_help = "pokes"
+	response_disarm = "shoves"
+	response_harm = "hits"
+	speed = 2
+	maxHealth = 10
+	health = 10
+	harm_intent_damage = 5
+	natural_weapon = /obj/item/natural_weapon/punch
+	can_escape = TRUE
+	a_intent = I_HURT
+	unsuitable_atmos_damage = 15
+	environment_smash = 1
+	faction = "police"
+	status_flags = CANPUSH
+
+/mob/living/simple_animal/hostile/school_police/ranged
+	ranged = 1
+	rapid = 1
+	icon_state = "npc_police_special2"
+	icon_living = "npc_police_special2"
+	casingtype = /obj/item/ammo_casing/pistol
+	projectilesound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	projectiletype = /obj/item/projectile/bullet/pistol
+
 /mob/living/simple_animal/hostile/school_robot
 	name = "bot"
 	desc = "A shiny humanoid robot with urge to kill."

@@ -1,13 +1,53 @@
 "a" = (/obj/effect/landmark/map_data{height = 2},/turf/unsimulated/wall{color = "black"},/area/psionic_school/outdoor)
+"c" = (/obj/structure/reagent_dispensers/beerkeg,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"d" = (/obj/item/fd/ancient_items/starmap{pixel_x = -10; pixel_y = 7},/obj/item/gun/energy/stunrevolver/rifle,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"e" = (/obj/effect/submap_landmark/spawnpoint/camp/cook,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"f" = (/obj/structure/bedsheetbin{pixel_x = -7; pixel_y = -22},/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"g" = (/obj/vehicles/large/escape,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "h" = (/turf/unsimulated/floor/exoplanet/water/shallow,/area/psionic_school/outdoor)
+"i" = (/obj/structure/table/woodentable/ebony,/obj/item/material/chopping_board/mahogany,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"j" = (/obj/effect/submap_landmark/spawnpoint/camp/teacher3,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"k" = (/obj/item/bedsheet{pixel_x = 12; pixel_y = 11},/obj/effect/submap_landmark/spawnpoint/camp/teacher1,/obj/item/reagent_containers/food/drinks/bottle/sake{pixel_x = 21; pixel_y = -10},/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"l" = (/obj/structure/barricade,/obj/structure/curtain/black,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 "m" = (/turf/unsimulated/wall{color = "black"},/area/psionic_school/outdoor)
+"n" = (/obj/item/material/hatchet/machete/steel{pixel_x = 17; pixel_y = 11},/obj/item/clothing/suit/storage/det_trench/grey,/obj/item/clothing/accessory/storage/holster/machete{pixel_x = -7},/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
 "o" = (/obj/random/flora/school,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"p" = (/obj/structure/curtain/black,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 "q" = (/obj/structure/fd/placeholder/better{opacity = 0},/obj/random/flora/school,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"r" = (/obj/item/stool/wood,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"s" = (/obj/effect/submap_landmark/spawnpoint/camp/doctor,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"t" = (/obj/structure/barricade,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"u" = (/obj/structure/barricade,/obj/structure/curtain/black{icon_state = "open"; opacity = 0},/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"v" = (/obj/effect/submap_landmark/spawnpoint/camp/vivian,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"w" = (/obj/item/bedsheet,/obj/effect/submap_landmark/spawnpoint/camp/demetra,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
 "x" = (/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"y" = (/obj/effect/submap_landmark/spawnpoint/camp/allen,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"z" = (/obj/structure/barricade,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"A" = (/obj/effect/submap_landmark/spawnpoint/camp/ardent,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"B" = (/obj/effect/submap_landmark/spawnpoint/camp/trueman,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
 "C" = (/obj/random/flora/school,/obj/random/flora/school,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"D" = (/obj/structure/table/woodentable/ebony,/obj/item/material/kitchen/rollingpin{pixel_x = -8; pixel_y = 4},/obj/item/reagent_containers/food/drinks/teapot{icon = 'icons/fd/items/drinks.dmi'; icon_state = "teapotold2"; pixel_x = 36; pixel_y = 9},/obj/item/material/knife/kitchen/cleaver{pixel_x = -8; pixel_y = 7},/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"E" = (/obj/effect/submap_landmark/spawnpoint/camp/maxim,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"F" = (/obj/effect/submap_landmark/spawnpoint/camp/akira,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
 "G" = (/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"H" = (/obj/effect/submap_landmark/spawnpoint/camp/zeza,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"I" = (/obj/structure/table/woodentable/ebony,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"J" = (/obj/structure/table/rack/dark,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"K" = (/obj/structure/table/rack/dark,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 "L" = (/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"M" = (/obj/structure/barricade,/obj/structure/curtain/black{icon_state = "open"; opacity = 0},/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"N" = (/obj/item/stool/wood,/obj/effect/submap_landmark/spawnpoint/camp/numerius,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"O" = (/obj/item/clothing/suit/storage/vest/practice{pixel_y = 10},/obj/item/clothing/suit/storage/vest/practice,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"P" = (/obj/item/bedsheet{pixel_y = -7},/obj/effect/submap_landmark/spawnpoint/camp/okita,/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey{pixel_y = 14},/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"Q" = (/obj/effect/submap_landmark/joinable_submap/escape_route,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"R" = (/obj/item/bedsheet{pixel_x = 8; pixel_y = 8},/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"S" = (/obj/effect/submap_landmark/spawnpoint/camp/manea,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"T" = (/obj/item/material/sword/katana/raiden{force = 20; max_force = 30},/obj/item/clothing/suit/storage/toggle/bomber,/obj/item/clothing/accessory/toggleable/corpjacket/nanotrasen,/obj/item/clothing/head/helmet/custom/biker,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"U" = (/obj/effect/submap_landmark/spawnpoint/camp/julian,/turf/unsimulated/floor/reinforced,/area/psionic_school/outdoor)
+"V" = (/obj/item/bedsheet{pixel_x = 10; pixel_y = 5},/obj/effect/submap_landmark/spawnpoint/camp/mara,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
+"W" = (/obj/structure/fd/campfire,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 "X" = (/obj/random/flora/school,/obj/random/flora/school,/obj/random/flora/school,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
+"Y" = (/obj/item/reagent_containers/glass/bucket/wood{pixel_x = 7; pixel_y = 16},/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/outdoor)
 "Z" = (/obj/random/flora/school,/turf/unsimulated/floor/exoplanet/grass,/area/psionic_school/outdoor)
 
 (1,1,1) = {"
@@ -32,11 +72,11 @@ mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZxxxxxxGoZZZZZZZZZZ
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZoZxGGGGxxoZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZxGGGGGGhhGGxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZxGGhhhhhhGxGxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGhhhhhhhhGGGxZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGxhhhhhhhhhGGxZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGhhhhhhhhhGGZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGGhhhhhhGxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGhhhGGGZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
+mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGhhhhhhhhGMtxZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
+mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGxhhhhhhhhhdOlZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
+mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGhhhhhhhhhwGlxZZZZZZZZZZZZZZZZZZZZZZZZZZZm
+mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGGhhhhhhnNuxZZZZZZZZZZZZZZZZZZZZZZZZZZZm
+mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGhhhGGtpzxZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZxxGhhhGxxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZxGGGGGxxxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZGGGxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
@@ -78,19 +118,19 @@ mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
 mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
-mZxZZZZZZZZZCxZCZCZZZZCCCZZCCxxZxZCZCZZxZZZZZZZZZZxZxxxZxZZxxZZZZZZZZZZZZZZZZZZZZZZZCZZZZZZZZZZZZZZm
-mZZCZGZxxZCZxxGxxxZZCZZZZZZCZCCZZZZxxxxxxxZZZZZZZxxxxZZZZxxGxxxxxZxZZZZZCZZZCxZZCZCxxxxxZZZZZxxZZZZm
-mxZxGxxGGxCZxxGGGGGGxxCZZZZxxxZZZxxZxxGGGxxZZZZZCxxZxZxZxxxGGGGGGxxZZZZCZxxxxxxxZZxxxZxGGGGxxxxZZZZm
-mZxZxZGGGGZZGGGGGGGGZxCZZZxxZxxZZCZGGGGGGxGxZZZZZZZxxZZZxGGGGGGGGxxxZZZZxxZZZxxxxZGGGGxGGGGGxZxxCZZm
-mGGGxZxxGGGGGGGGGGGGGGZZZCxxGGGGGGGGGGGGGxxGGGGGGZZxxZZZGGGGGGGGGGGxxxxxxGGGGGGGGGGGGGGGGGGGGGGxxZxm
+mZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZxzZZzxxxxxZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZm
+mZxZZZZZZZZZCxZCZCZZZZCCCZZCCxxZxZCZCZZxZZZZZZZZZZxZxxxzxxcKxkxxZZZZZZZZZZZZZZZZZZZZCZZZZZZZZZZZZZZm
+mZZCZGZxxZCZxxGxxxZZCZZZZZZCZCCZZZZxxxxxxxZZZZZZZxxxxZxzxQsJRWPTxZxZZZZZCZZZCxZZCZCxxxxxZZZZZxxZZZZm
+mxZxGxxGGxCZxxGGGGGGxxCZZZZxxxZZZxxZxxGGGxxZZZZZCxxZxZxxxxxYGVGGGxxZZZZCZxxxxxxxZZxxxZxGGGGxxxxZZZZm
+mZxZxZGGGGZZGGGGGGGGZxCZZZxxZxxZZCZGGGGGGxGxZZZZZZZxxZZZxerGtGGGGZxxZZZZxxZZZxxxxZGGGGxGGGGGxZxxCZZm
+mGGGxZxxGGGGGGGGGGGGGGZZZCxxGGGGGGGGGGGGGxxGGGGGGZZxxZZZiDIGtfGGGGGxxxxxxGGGGGGGGGGGGGGGGGGGGGGxxZxm
 mGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGm
+mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLyLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
+mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLULLLLLLALLSHLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
 mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
-mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
-mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
-mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
-mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
-mGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGm
+mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLvjLgLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
+mLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLm
+mGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGBGGGEGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGm
 mGGGGGGGGGGxxxxZGGGGGGGGGGGGZxZZxxGGGGGGGGGGGGGGGGGGGGGGGxxZZGGGGGGGGGGGGGGGGGGGGGZxZZZZxxGGGGGGGGGm
 mGGGGGGGxxZZZZxZZxGGGGGGGGGGxxCCZCxGGxxGGGGGGGGGGGGGGGGGGxZZZZZGGGGxxZZxGGGGGGGGxxxZZCZZxxZZGGGGGGGm
 mGGGGGZxxZCZZxxxxZxxGGGGGGGxZZCxZCZxZZGGGGGGGGGGZGGGGGGxxxCCCZZCZZxxZxZZZCGGGGGZxxCXZCZZZxxxxxxxZZZm
