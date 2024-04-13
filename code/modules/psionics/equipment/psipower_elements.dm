@@ -8,7 +8,13 @@
 	attack_cooldown = 5
 	var/charge = 0
 	var/cooldown = 0
-	var/ranged = FALSE
+//	var/ranged = FALSE
+
+/obj/item/psychic_power/psielectro/attack_self(var/mob/living/user as mob)
+	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
+	if(el_rank >= PSI_RANK_MASTER)
+		user.put_in_hands(new /obj/item/psychic_power/electric_whip(user))
+		qdel(src)
 
 /obj/item/psychic_power/psielectro/Process()
 	if(cooldown > 0)
@@ -20,9 +26,20 @@
 	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
 	maintain_cost -= el_rank
 
-	if(user.psi && !user.psi.suppressed && user.psi.get_rank(PSI_METAKINESIS) == PSI_RANK_GRANDMASTER)
-		ranged = TRUE
+	..()
 
+/obj/item/psychic_power/psielectro/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
+
+	if(target.psi && !target.psi.suppressed)
+		var/el_rank_target = target.psi.get_rank(PSI_METAKINESIS)
+		if(el_rank_target >= el_rank && prob(50))
+			user.visible_message("<span class='danger'>[target] пропускает ток через себя, возвращая его [user] в виде молнии!</span>")
+			user.electrocute_act(rand(el_rank_target * 2, el_rank_target * 5), target, 1, target.zone_sel.selecting)
+			new /obj/effect/temporary(get_turf(user),3, 'icons/effects/effects.dmi', "electricity_constant")
+			..()
+	target.electrocute_act(rand(el_rank * 2, el_rank * 5), user, 1, user.zone_sel.selecting)
+	new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "electricity_constant")
 	..()
 
 /obj/item/psychic_power/psielectro/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
@@ -34,7 +51,7 @@
 		sparks.set_up(3, 0, get_turf(A))
 		sparks.start()
 
-	if(!proximity && !ranged)
+	if(!proximity)
 		return
 
 	var/el_rank = user.psi.get_rank(PSI_METAKINESIS)
@@ -193,12 +210,30 @@
 
 	..()
 
-/obj/item/psychic_power/psifire/AltClick(mob/user)
-	combat_mode = !combat_mode
+/obj/item/psychic_power/psifire/AltClick(mob/living/carbon/user)
+	var/list/options = list(
+		"HELP" = image('icons/screen/psi.dmi', "HELP"),
+		"HARM" = image('icons/screen/psi.dmi', "HARM")
+	)
+
+	var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+	if (!chosen_option)
+		return 0
+	if(user.psi.suppressed)
+		return 0
+	switch(chosen_option)
+		if("HARM")
+			combat_mode = TRUE
+			to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет поджигать людей.</span>")
+		if("HELP")
+			combat_mode = FALSE
+			to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+
+/obj/item/psychic_power/psifire/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	if(combat_mode)
-		to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет поджигать людей</span>")
-	if(!combat_mode)
-		to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+		user.visible_message("<span class='danger'>[user] прислоняет руку к [target], зажигая его как спичку!</span>")
+		target.fire_act(exposed_temperature = 300, exposed_volume = 250)
+	..()
 
 /obj/item/psychic_power/psifire/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 //TURFS
@@ -243,44 +278,6 @@
 
 	if(istype(A, /mob/living) && combat_mode)
 		var/mob/living/target = A
-
-		// Оставлено до момента как разберемся с этим
-
-		/* if(A.do_psionics_check(maintain_cost, user))
-			var/fire_rank = user.psi.get_rank(PSI_METAKINESIS)
-			var/telerank = user.psi.get_rank(PSI_PSYCHOKINESIS)
-			if(telerank == PSI_RANK_BLUNT)
-				telerank = PSI_RANK_LATENT
-			to_chat(user, "<span class ='danger' Ты чувствуешь как теряешь концентрацию, прислоняя руку к нему.</span>")
-			to_chat(user, "[telerank]")
-			switch(fire_rank)
-				if(PSI_RANK_APPRENTICE)
-					if(prob(80/telerank))
-						to_chat(user, "<span class ='danger' Ты теряешь концентрацию над щитом, удерживающим огонь от тебя!</span>")
-						user.visible_message("<span class='danger'[user] прислоняет руку к [target] и они оба зажигаются!</span>")
-						user.visible_message("pizdec")
-						target.fire_act(exposed_temperature = 300, exposed_volume = 250)
-						target.psi.spend_power(rand(10,20))
-				if(PSI_RANK_OPERANT)
-					if(prob(50/telerank))
-						to_chat(user, "<span class ='danger' Ты теряешь концентрацию над щитом, удерживающим огонь от тебя!</span>")
-						user.visible_message("<span class='danger'[user] прислоняет руку к [target] и они оба зажигаются!</span>")
-						target.fire_act(exposed_temperature = 250, exposed_volume = 250)
-						target.psi.spend_power(rand(10,20))
-				if(PSI_RANK_MASTER)
-					if(prob(30/telerank))
-						to_chat(user, "<span class ='danger' Ты теряешь концентрацию над щитом, удерживающим огонь от тебя!</span>")
-						user.visible_message("<span class='danger'[user] прислоняет руку к [target] и они оба зажигаются!</span>")
-						target.fire_act(exposed_temperature = 200, exposed_volume = 200)
-						target.psi.spend_power(rand(5,10))
-				if(PSI_RANK_GRANDMASTER)
-					if(prob(20/telerank))
-						to_chat(user, "<span class ='danger' Ты теряешь концентрацию над щитом, удерживающим огонь от тебя!</span>")
-						user.visible_message("<span class='danger'[user] прислоняет руку к [target] и они оба зажигаются!</span>")
-						target.fire_act(exposed_temperature = 150, exposed_volume = 150)
-						target.psi.spend_power(rand(5,10))
-				else
-					return */
 
 		user.visible_message("<span class='danger'>[user] прислоняет руку к [target], зажигая его как спичку!</span>")
 		target.fire_act(exposed_temperature = 300, exposed_volume = 250)
@@ -328,6 +325,7 @@
 	item_state = "cryo"
 	attack_cooldown = 5
 	var/combat_mode = TRUE
+	var/structure_attack = "ICE WALL"
 	var/range = 2
 	var/cooldown = 0
 	var/turf/previousturf = null
@@ -341,6 +339,16 @@
 	range += cryo_rank
 
 	..()
+
+/obj/item/projectile/bullet/pellet/ice
+	damage = 20
+	pellets = 4
+	range_step = 1
+	spread_step = 50
+	armor_penetration = 20
+	icon = 'proxima/icons/obj/guns/projectiles.dmi'
+	icon_state = "syringeproj_many"
+	color = "#9ee0dd"
 
 /obj/structure/girder/ice_wall
 	icon_state = "ice wall"
@@ -367,9 +375,9 @@
 			if(!cutter.slice(user))
 				return
 		playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
-		to_chat(user, "<span class='notice'>Now slicing apart the girder...</span>")
+		to_chat(user, "<span class='notice'>Now slicing apart the wall...</span>")
 		if(do_after(user,reinf_material ? 40: 20,src))
-			to_chat(user, "<span class='notice'>You slice apart the girder!</span>")
+			to_chat(user, "<span class='notice'>You slice apart the wall!</span>")
 			if(reinf_material)
 				reinf_material.place_dismantled_product(get_turf(src))
 			dismantle()
@@ -378,7 +386,7 @@
 	if(istype(W, /obj/item/pickaxe/diamonddrill))
 		playsound(src.loc, 'sound/weapons/Genhit.ogg', 100, 1)
 		if(do_after(user,reinf_material ? 60 : 40,src))
-			to_chat(user, "<span class='notice'>You drill through the girder!</span>")
+			to_chat(user, "<span class='notice'>You drill through the wall!</span>")
 			if(reinf_material)
 				reinf_material.place_dismantled_product(get_turf(src))
 			dismantle()
@@ -413,22 +421,129 @@
 
 	. = ..()
 
-/obj/item/psychic_power/psiice/AltClick(mob/user)
-	combat_mode = !combat_mode
+/obj/item/psychic_power/psiice/attack_self(var/mob/living/user as mob)
+	var/cryo_rank = user.psi.get_rank(PSI_METAKINESIS)
 	if(combat_mode)
-		to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет замораживать людей</span>")
-	if(!combat_mode)
-		to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+		var/list/options = list(
+			"ICE WALL" = image('icons/screen/psi.dmi', "WALL"),
+			"ICE SPIKES" = image('icons/screen/psi.dmi', "SPIKES"),
+			"ICE FISTS" = image('icons/screen/psi.dmi', "FISTS"),
+			"ICE SWORD" = image('icons/screen/psi.dmi', "SWORD")
+		)
+		var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+		if (!chosen_option)
+			return 0
+		if(user.psi.suppressed)
+			return 0
+		if(!combat_mode)
+			return 0
+		switch(chosen_option)
+			if("ICE WALL")
+				structure_attack = "ICE WALL"
+				to_chat(user, "<span class='warning'>Теперь вы будете возводить ледяные стены при использовании дальней атаки!</span>")
+				return 1
+			if("ICE SPIKES")
+				if(cryo_rank < PSI_RANK_OPERANT)
+					to_chat(user, "<span class='warning'>Вы ещё недостаточно обучены для подобного приёма!</span>")
+					return 0
+				structure_attack = "ICE SPIKES"
+				to_chat(user, "<span class='warning'>Теперь вы будете метать ледяные иглы при использовании дальней атаки!</span>")
+				return 1
+			if("ICE FISTS")
+				user.put_in_hands(new /obj/item/cryokinesis/fists(user))
+				qdel(src)
+				return 1
+			if("ICE SWORD")
+				user.put_in_hands(new /obj/item/cryokinesis/rapier(user))
+				qdel(src)
+				return 1
+
+/obj/item/psychic_power/psiice/AltClick(var/mob/living/user as mob)
+	var/list/options = list(
+		"HELP" = image('icons/screen/psi.dmi', "HELP"),
+		"HARM" = image('icons/screen/psi.dmi', "HARM")
+	)
+
+	var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+	if (!chosen_option)
+		return 0
+	if(user.psi.suppressed)
+		return 0
+	switch(chosen_option)
+		if("HARM")
+			combat_mode = TRUE
+			to_chat(user, "<span class='warning'>Вы приготовились к бою. Теперь, ваше касание будет замораживать людей, вы сможете создавать ледяные стены и прочие приспособления.</span>")
+		if("HELP")
+			combat_mode = FALSE
+			to_chat(user, "<span class='warning'>Вы вновь можете безопасно прикасаться к вещам вокруг.</span>")
+
+/obj/item/psychic_power/psiice/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	var/cryo_rank = user.psi.get_rank(PSI_METAKINESIS)
+
+	if(target.do_psionics_check(maintain_cost, user))
+		to_chat(user, SPAN_WARNING("Your power skates across \the [target.name], but cannot get a grip..."))
+		return FALSE
+	cooldown += 2
+
+	if(target == user && cryo_rank >= PSI_RANK_MASTER)
+		var/list/targets = list()
+		for(var/turf/point in oview_or_orange(outer_radius, user, "range"))
+			if(!(point in oview_or_orange(inner_radius, user, "range")))
+				if(point.density)
+					continue
+				if(istype(point, /turf/space))
+					continue
+				targets += point
+
+		if(!targets.len)
+			return FALSE
+
+		var/turf/user_turf = get_turf(user)
+		for(var/turf/T in targets)
+			var/obj/structure/girder/ice_wall/IW = new(T)
+			if(istype(IW))
+				IW.pixel_x = (user_turf.x - T.x) * world.icon_size
+				IW.pixel_y = (user_turf.y - T.y) * world.icon_size
+				animate(IW, pixel_x = 0, pixel_y = 0, time = 3, easing = EASE_OUT)
+
+		..()
+
+	new /obj/structure/girder/ice_wall(get_turf(target))
+	new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "extinguish")
+	target.Stun(3*cryo_rank)
+	user.visible_message("<span class='danger'>[user] прикасается к телу [target] побледневшей рукой, обращая его в лёд!</span>")
+	target.bodytemperature = 500 / cryo_rank
+	..()
 
 /obj/item/psychic_power/psiice/afterattack(atom/A as mob|obj|turf|area, var/mob/living/user as mob, proximity)
 	var/cryo_rank = user.psi.get_rank(PSI_METAKINESIS)
+
+	if(cooldown > 0)
+		to_chat(user, "<span class='warning'>Ты не можешь использовать данную способность настолько часто!</span>")
+		return
+
+	if(!proximity && cryo_rank >= PSI_RANK_OPERANT && structure_attack == "ICE SPIKES")
+		var/obj/item/projectile/pew
+		var/pew_sound
+		cooldown += 2
+		user.visible_message("<span class='danger'>[user] запускает вперёд град ледяных пик!</span>")
+		pew = new /obj/item/projectile/bullet/pellet/ice(get_turf(user))
+		pew.name = "stack of ice spikes"
+		pew_sound = 'sound/weapons/guns/ricochet4.ogg'
+		if(istype(pew))
+			playsound(pew.loc, pew_sound, 25, 1)
+			pew.original = A
+			pew.current = A
+			pew.starting = get_turf(user)
+			pew.shot_from = user
+			pew.launch(A, user.zone_sel.selecting, (A.x-user.x), (A.y-user.y))
 
 //TURFS
 
 	if(istype(A, /turf/))
 		var/turf/target = A
 		if(combat_mode)
-			if(!proximity && cryo_rank >= PSI_RANK_MASTER)
+			if(!proximity && cryo_rank >= PSI_RANK_MASTER && structure_attack == "ICE WALL")
 				if(do_after(user, 10))
 					cooldown += 2
 					user.visible_message("<span class='danger'>[user] возводит стену из льда!</span>")
@@ -456,23 +571,19 @@
 				new /obj/effect/temporary(sim,3, 'icons/effects/effects.dmi', "blueshatter")
 				return TRUE
 
-	if(cooldown > 0)
-		to_chat(user, "<span class='warning'>Ты не можешь использовать данную способность настолько часто!</span>")
-		return
-
 	if(!proximity)
 		return
 
 //MOBS
 
-	if(istype(A, /mob/living))
+	if(istype(A, /mob/living) && combat_mode == TRUE)
 		if(A.do_psionics_check(maintain_cost, user))
 			to_chat(user, SPAN_WARNING("Your power skates across \the [A.name], but cannot get a grip..."))
 			return FALSE
 		cooldown += 2
 		var/mob/living/target = A
 
-		if(target == user && cryo_rank >= PSI_RANK_MASTER && combat_mode)
+		if(target == user && cryo_rank >= PSI_RANK_MASTER)
 			var/list/targets = list()
 
 			for(var/turf/point in oview_or_orange(outer_radius, user, "range"))
