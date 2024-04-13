@@ -63,11 +63,11 @@
 /obj/item/clothing/glasses/thermal/plain/monocle/butler
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 150,
-		bullet = 150,
-		laser = 150,
-		energy = 150,
-		bomb = 150
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 
 	siemens_coefficient = 0
@@ -82,11 +82,11 @@
 
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 150,
-		bullet = 150,
-		laser = 150,
-		energy = 150,
-		bomb = 150
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 
 	siemens_coefficient = 0
@@ -100,11 +100,11 @@
 	item_state = "v_respirator"
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
 		)
 	flags_inv = BLOCKHAIR
 
@@ -128,11 +128,11 @@
 	body_parts_covered = LEGS|FEET
 	force = 10
 	armor = list(
-		melee = 150,
-		bullet = 150,
-		laser = 150,
-		energy = 150,
-		bomb = 150
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 
 /obj/item/clothing/shoes/ice_boots/dropped(var/mob/living/user as mob)
@@ -153,11 +153,11 @@
 	item_state = "icehelmet"
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
-		melee = 150,
-		bullet = 150,
-		laser = 150,
-		energy = 150,
-		bomb = 150
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 	flags_inv = BLOCKHAIR
 
@@ -180,11 +180,11 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
 	armor = list(
-		melee = 150,
-		bullet = 150,
-		laser = 150,
-		energy = 150,
-		bomb = 150
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 
 	gas_transfer_coefficient = 0.90

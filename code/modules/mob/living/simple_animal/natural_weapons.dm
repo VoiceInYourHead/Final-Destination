@@ -64,6 +64,7 @@
 	force = 10
 
 /obj/item/natural_weapon/punch/holo
+	force = 5
 	damtype = PAIN
 
 /obj/item/natural_weapon/pincers

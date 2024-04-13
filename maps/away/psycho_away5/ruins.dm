@@ -5,6 +5,7 @@
 
 /area/psionic_school/outdoor/rainy
 	screen_filter = /obj/screenfilter/rain
+	ambience = list('sound/ambience/rainforest.ogg', 'sound/ambience/rainout.ogg')
 
 /obj/structure/fd/placeholder/better/team1
 	name = "TEAM 1"
