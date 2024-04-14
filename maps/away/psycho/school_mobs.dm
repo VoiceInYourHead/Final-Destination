@@ -12,9 +12,9 @@
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 1
-	maxHealth = 20
-	health = 20
+	speed = 2
+	maxHealth = 10
+	health = 10
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/punch
 	can_escape = TRUE

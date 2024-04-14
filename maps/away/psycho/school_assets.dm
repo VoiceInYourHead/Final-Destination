@@ -52,6 +52,112 @@
 
 //ASSETS
 
+/obj/item/clothing/head/helmet/officialninja
+	name = "high-tech helmet"
+	desc = "An professional mercenary equipment."
+	icon = 'icons/fd/custom_items/officialhelmet.dmi'
+	item_icons = list(slot_head_str = 'icons/fd/custom_items/officialhelmet_worn.dmi')
+	icon_state = "officialhelmet"
+	item_state = "officialhelmet"
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
+		)
+	flags_inv = BLOCKHAIR
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+	siemens_coefficient = 0
+
+	var/overrun = 0
+
+/obj/item/clothing/head/helmet/officialninja/AltClick(mob/living/carbon/user)
+	. = ..()
+
+	if(overrun == 1)
+		icon_state = "officialhelmet"
+		item_state = "officialhelmet"
+		overrun = 0
+		update_clothing_icon()
+		return TRUE
+	if(overrun == 0)
+		icon_state = "officialhelmet_red"
+		item_state = "officialhelmet_red"
+		overrun = 1
+		update_clothing_icon()
+		return TRUE
+
+/obj/item/clothing/suit/armor/officialninja
+	name = "black coat"
+	desc = "A very stylish coat."
+	icon = 'icons/fd/custom_items/bladerunner.dmi'
+	icon_state = "blackcoat"
+	item_icons = list(
+		slot_wear_suit_str = 'icons/fd/custom_items/bladerunner_worn.dmi')
+
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
+		)
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0
+
+	var/overrun = 0
+
+/obj/item/clothing/suit/armor/officialninja/AltClick(mob/living/carbon/user)
+	. = ..()
+
+	if(overrun == 1)
+		icon_state = "blackcoat"
+		overrun = 0
+		update_clothing_icon()
+		return TRUE
+	if(overrun == 0)
+		icon_state = "blackcoat_overrun"
+		overrun = 1
+		update_clothing_icon()
+		return TRUE
+
+/obj/item/clothing/under/officialninja
+	name = "official suit"
+	desc = "Black official clothing."
+	icon = 'icons/fd/custom_items/officialunder.dmi'
+	icon_state = "blacksuit"
+	item_icons = list(
+		slot_w_uniform_str = 'icons/fd/custom_items/officialunder_worn.dmi')
+
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
+		)
+
+	siemens_coefficient = 0
+
 /obj/item/clothing/under/butler
 	name = "butler clothing"
 	desc = "Black official clothing."
@@ -60,7 +166,19 @@
 	item_icons = list(
 		slot_w_uniform_str = 'icons/fd/custom_items/butler_worn.dmi')
 
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
+		)
+
+	siemens_coefficient = 0
+
 /obj/item/clothing/glasses/thermal/plain/monocle/butler
+
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
 		melee = 200,
@@ -128,11 +246,11 @@
 	body_parts_covered = LEGS|FEET
 	force = 10
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
 		)
 
 /obj/item/clothing/shoes/ice_boots/dropped(var/mob/living/user as mob)
@@ -153,11 +271,11 @@
 	item_state = "icehelmet"
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
 		)
 	flags_inv = BLOCKHAIR
 
@@ -180,11 +298,11 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
 		)
 
 	gas_transfer_coefficient = 0.90
