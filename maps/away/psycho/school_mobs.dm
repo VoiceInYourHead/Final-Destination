@@ -13,8 +13,8 @@
 	response_disarm = "shoves"
 	response_harm = "hits"
 	speed = 2
-	maxHealth = 10
-	health = 10
+	maxHealth = 5
+	health = 5
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/punch
 	can_escape = TRUE

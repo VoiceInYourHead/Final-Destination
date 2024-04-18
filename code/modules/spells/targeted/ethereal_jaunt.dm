@@ -4,7 +4,7 @@
 	feedback = "EJ"
 	school = "transmutation"
 	charge_max = 5 SECONDS
-	spell_flags = Z2NOCAST | INCLUDEUSER
+	spell_flags = INCLUDEUSER
 	invocation = "none"
 	invocation_type = SpI_NONE
 	range = 0

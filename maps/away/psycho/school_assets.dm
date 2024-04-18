@@ -243,14 +243,14 @@
 	icon_state = "iceboots"
 	item_state = "iceboots"
 	desc = "A very hard-looking ice boots."
-	body_parts_covered = LEGS|FEET
 	force = 10
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 300,
-		bullet = 300,
-		laser = 300,
-		energy = 300,
-		bomb = 300
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 
 /obj/item/clothing/shoes/ice_boots/dropped(var/mob/living/user as mob)
@@ -269,13 +269,13 @@
 	item_icons = list(slot_head_str = 'icons/fd/custom_items/icearmor_worn.dmi')
 	icon_state = "icehelmet"
 	item_state = "icehelmet"
-	body_parts_covered = HEAD|FACE|EYES
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 300,
-		bullet = 300,
-		laser = 300,
-		energy = 300,
-		bomb = 300
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 	flags_inv = BLOCKHAIR
 
@@ -296,13 +296,13 @@
 	item_icons = list(
 		slot_wear_suit_str = 'icons/fd/custom_items/icearmor_worn.dmi')
 
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 300,
-		bullet = 300,
-		laser = 300,
-		energy = 300,
-		bomb = 300
+		melee = 200,
+		bullet = 200,
+		laser = 200,
+		energy = 200,
+		bomb = 200
 		)
 
 	gas_transfer_coefficient = 0.90

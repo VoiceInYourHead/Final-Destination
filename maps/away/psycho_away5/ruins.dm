@@ -79,7 +79,7 @@
 	spawn_cost = 1000 //NO BITCHES??
 	player_cost = 4
 	description = "PSY ruins with 2 z-lvls. For events only."
-	suffixes = list("psycho_away5/ruins-1.dmm", "psycho_away5/ruins-2.dmm")
+	suffixes = list("psycho_away5/ruins-1.dmm", "psycho_away5/ruins-2.dmm", "psycho_away5/ruins-3.dmm")
 	area_usage_test_exempted_root_areas = list(/area/psionic_school)
 	apc_test_exempt_areas = list(
 		/area/psionic_school = NO_SCRUBBER|NO_VENT|NO_APC,
