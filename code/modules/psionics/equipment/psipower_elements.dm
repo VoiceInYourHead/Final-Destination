@@ -216,7 +216,7 @@
 	var/pyro_rank = user.psi.get_rank(PSI_METAKINESIS)
 	if(combat_mode)
 		var/list/options = list(
-			"FIRE WALL" = image('icons/screen/psi.dmi', "FIRE WALL"),
+			"FIRE WALL" = image('icons/screen/psi.dmi', "FIRE PUNCH"),
 			"FIRE JUMP" = image('icons/screen/psi.dmi', "FIRE JUMP")
 		)
 		var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
@@ -284,8 +284,8 @@
 				var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(T, user.dir, user)
 				D.alpha = min(150 + i*15, 255)
 				animate(D, alpha = 0, time = 2 + i*2)
-				user.visible_message("<span class='danger'>[user] делает рывок, используя свои ноги как двигатели!</span>")
 			user.forceMove(target_turf)
+			user.visible_message("<span class='danger'>[user] делает рывок, используя свои ноги как двигатели!</span>")
 			flame_turf(line_list)
 	else if(!proximity)
 		return
