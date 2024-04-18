@@ -421,6 +421,7 @@
 						for(var/zone in list(BP_CHEST, BP_GROIN, BP_HEAD))
 							target.apply_damage(rand(25,40),BRUTE,def_zone=zone)
 						new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "smash")
+						new /obj/effect/temporary(get_turf(target),6, 'icons/fd/heavyimpact.dmi', "heavyimpact")
 						target.throw_at(get_edge_target_turf(target, get_dir(user, target)), 3, 2, user)
 						return TRUE
 
@@ -430,6 +431,7 @@
 						for(var/zone in list(BP_CHEST, BP_GROIN, BP_HEAD))
 							user.apply_damage(rand(25,40),BRUTE,def_zone=zone)
 						new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "smash")
+						new /obj/effect/temporary(get_turf(target),6, 'icons/fd/heavyimpact.dmi', "heavyimpact")
 						user.throw_at(get_edge_target_turf(user, get_dir(target, user)), 3, 2, target)
 						user.visible_message(SPAN_DANGER("Мощное силовое поле [target] отбрасывает [user] назад, создавая мощную обратную волну!"))
 						return TRUE
@@ -442,6 +444,7 @@
 				to_chat(user, SPAN_WARNING("Ваше неподготовленное тело не выдерживает отдачи от удара, и вашу руку выворачивает наизнанку!"))
 
 			new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "smash")
+			new /obj/effect/temporary(get_turf(target),6, 'icons/fd/heavyimpact.dmi', "heavyimpact")
 			target.visible_message(SPAN_DANGER("[target] ловит лицом кулак, улетая назад!"))
 			for(var/zone in list(BP_CHEST, BP_GROIN, BP_HEAD))
 				target.apply_damage(rand(25,40),BRUTE,def_zone=zone)
@@ -493,6 +496,7 @@
 						for(var/zone in list(BP_CHEST, BP_GROIN, BP_HEAD))
 							target.apply_damage(rand(40,60),BRUTE,def_zone=zone)
 						new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "smash")
+						new /obj/effect/temporary(get_turf(target),6, 'icons/fd/heavyimpact.dmi', "heavyimpact")
 						target.throw_at(get_edge_target_turf(target, get_dir(user, target)), 6, 2, user)
 						return TRUE
 
@@ -502,6 +506,7 @@
 						for(var/zone in list(BP_CHEST, BP_GROIN, BP_HEAD))
 							user.apply_damage(rand(40,60),BRUTE,def_zone=zone)
 						new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "smash")
+						new /obj/effect/temporary(get_turf(target),6, 'icons/fd/heavyimpact.dmi', "heavyimpact")
 						user.throw_at(get_edge_target_turf(user, get_dir(target, user)), 6, 2, target)
 						user.visible_message(SPAN_DANGER("Мощное силовое поле [target] отбрасывает [user] назад, создавая мощную обратную волну!"))
 						return TRUE
@@ -514,6 +519,7 @@
 				to_chat(user, SPAN_WARNING("Ваше неподготовленное тело не выдерживает отдачи от удара, и вашу руку выворачивает наизнанку!"))
 
 			new /obj/effect/temporary(get_turf(target),3, 'icons/effects/effects.dmi', "smash")
+			new /obj/effect/temporary(get_turf(target),6, 'icons/fd/heavyimpact.dmi', "heavyimpact")
 			target.visible_message(SPAN_DANGER("[target] ловит лицом кулак, улетая назад!"))
 			for(var/zone in list(BP_CHEST, BP_GROIN, BP_HEAD))
 				target.apply_damage(rand(40,60),BRUTE,def_zone=zone)

@@ -193,6 +193,8 @@
 	var/combat_mode = TRUE
 	var/turf/previousturf = null
 
+	var/attack_type = "FIRE WALL"
+
 	var/range = 2
 	var/flame_power = 25
 	var/flame_color = COLOR_RED
@@ -209,6 +211,33 @@
 		flame_power += 5
 
 	..()
+
+/obj/item/psychic_power/psifire/attack_self(var/mob/living/user as mob)
+	var/pyro_rank = user.psi.get_rank(PSI_METAKINESIS)
+	if(combat_mode)
+		var/list/options = list(
+			"FIRE WALL" = image('icons/screen/psi.dmi', "FIRE PUNCH"),
+			"FIRE JUMP" = image('icons/screen/psi.dmi', "FIRE JUMP")
+		)
+		var/chosen_option = show_radial_menu(user, user, options, radius = 25, require_near = TRUE)
+		if (!chosen_option)
+			return 0
+		if(user.psi.suppressed)
+			return 0
+		if(!combat_mode)
+			return 0
+		switch(chosen_option)
+			if("FIRE WALL")
+				attack_type = "FIRE WALL"
+				to_chat(user, "<span class='warning'>Теперь вы будете стрелять огнём из рук!</span>")
+				return 1
+			if("FIRE JUMP")
+				if(pyro_rank < PSI_RANK_OPERANT)
+					to_chat(user, "<span class='warning'>Вы ещё недостаточно обучены для подобного приёма!</span>")
+					return 0
+				attack_type = "FIRE JUMP"
+				to_chat(user, "<span class='warning'>Теперь вы будете использовать огонь в качестве средства передвижения!</span>")
+				return 1
 
 /obj/item/psychic_power/psifire/AltClick(mob/living/carbon/user)
 	var/list/options = list(
@@ -239,12 +268,25 @@
 //TURFS
 
 	if(istype(A, /turf/) && !proximity && combat_mode)
-		var/turf/target_turf = get_turf(A)
-		if(target_turf)
-			var/turflist = getline(user, target_turf)
-			flame_turf(turflist)
-			user.visible_message("<span class='danger'>[user] взмахивает рукой, создавая стену из огня!</span>")
-
+		if(attack_type == "FIRE WALL")
+			var/turf/target_turf = get_turf(A)
+			if(target_turf)
+				var/turflist = getline(user, target_turf)
+				flame_turf(turflist)
+				user.visible_message("<span class='danger'>[user] взмахивает рукой, создавая стену из огня!</span>")
+		if(attack_type == "FIRE JUMP")
+			if(get_dist(user, A) > range)
+				return 0
+			var/turf/target_turf = get_step(get_turf(A), pick(GLOB.alldirs))
+			var/list/line_list = getline(user, target_turf)
+			for(var/i = 1 to length(line_list))
+				var/turf/T = line_list[i]
+				var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(T, user.dir, user)
+				D.alpha = min(150 + i*15, 255)
+				animate(D, alpha = 0, time = 2 + i*2)
+			user.forceMove(target_turf)
+			user.visible_message("<span class='danger'>[user] делает рывок, используя свои ноги как двигатели!</span>")
+			flame_turf(line_list)
 	else if(!proximity)
 		return
 
