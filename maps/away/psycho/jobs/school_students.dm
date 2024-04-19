@@ -10,6 +10,11 @@
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/obj/item/storage/box/large/school/akira
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list()
+
 /obj/effect/submap_landmark/spawnpoint/camp/akira
 	name = "Akiro Tendo"
 
@@ -21,6 +26,11 @@
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/obj/item/storage/box/large/school/ardent
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list(/obj/item/fd/ancient_items/bs_shard = 1)
 
 /obj/effect/submap_landmark/spawnpoint/camp/ardent
 	name = "Ardent Mire"
@@ -56,6 +66,11 @@
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/obj/item/storage/box/large/school/maxim
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list()
+
 /obj/effect/submap_landmark/spawnpoint/camp/maxim
 	name = "Maxim Kuznetsov"
 
@@ -68,10 +83,18 @@
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/obj/item/storage/box/large/school/okita
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list(/obj/item/material/knife/kitchen/plasteelchefknife = 1, /obj/item/clothing/head/helmet/custom/biker = 1, /obj/item/material/sword/katana/raiden/okita = 1, /obj/item/clothing/suit/storage/toggle/bomber = 1, /obj/item/clothing/accessory/toggleable/corpjacket/nanotrasen = 1)
+
 /obj/effect/submap_landmark/spawnpoint/camp/okita
 	name = "Okita Takeda"
 
 //OKITA CUSTOM ITEMS//
+
+/obj/item/material/sword/katana/raiden/okita
+	force = 20
 
 /obj/item/clothing/head/helmet/custom/biker
 	name = "bike helmet"
@@ -99,6 +122,14 @@
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/obj/item/storage/box/large/school/numerius
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list(/obj/item/fd/ancient_items/lighting_staff = 1, /obj/item/clothing/suit/storage/det_trench/grey = 1, /obj/item/material/sword/katana/vibro/numerius = 1)
+
+/obj/item/material/sword/katana/vibro/numerius
+	force = 20
 
 /obj/effect/submap_landmark/spawnpoint/camp/numerius
 	name = "Numerius De Vigo"
@@ -136,6 +167,11 @@
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/obj/item/storage/box/large/school/manea
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list(/obj/item/clothing/suit/storage/oversize_jacket = 1)
+
 /obj/effect/submap_landmark/spawnpoint/camp/manea
 	name = "Dionisie Manea"
 
@@ -159,6 +195,11 @@
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/obj/item/storage/box/large/school/trueman
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list()
 
 /obj/effect/submap_landmark/spawnpoint/camp/trueman
 	name = "Ron Trueman"
@@ -186,6 +227,11 @@
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/obj/item/storage/box/large/school/demetra
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list()
+
 /obj/effect/submap_landmark/spawnpoint/camp/demetra
 	name = "Demetra Ionian"
 
@@ -210,6 +256,11 @@
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/obj/item/storage/box/large/school/vivian
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list()
+
 /obj/effect/submap_landmark/spawnpoint/camp/vivian
 	name = "Vivian Rockwell"
 
@@ -221,6 +272,11 @@
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/obj/item/storage/box/large/school/mara
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_GARGANTUAN
+	startswith = list(/obj/item/storage/fancy/cigarettes/luckystars = 1)
 
 /obj/effect/submap_landmark/spawnpoint/camp/mara
 	name = "Mara Sumitomo"

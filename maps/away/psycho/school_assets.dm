@@ -59,25 +59,15 @@
 	item_icons = list(slot_head_str = 'icons/fd/custom_items/officialhelmet_worn.dmi')
 	icon_state = "officialhelmet"
 	item_state = "officialhelmet"
-	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 40,
+		bullet = 40,
+		laser = 40,
+		energy = 40,
+		bomb = 40
 		)
 	flags_inv = BLOCKHAIR
-
-	gas_transfer_coefficient = 0.90
-	permeability_coefficient = 0.50
-	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
-	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
-
-	max_pressure_protection = FIRESUIT_MAX_PRESSURE
-	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-
-	siemens_coefficient = 0
 
 	var/overrun = 0
 
@@ -105,23 +95,14 @@
 	item_icons = list(
 		slot_wear_suit_str = 'icons/fd/custom_items/bladerunner_worn.dmi')
 
-	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 50,
+		bullet = 50,
+		laser = 50,
+		energy = 50,
+		bomb = 50
 		)
-
-	gas_transfer_coefficient = 0.90
-	permeability_coefficient = 0.50
-	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
-	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
-
-	max_pressure_protection = FIRESUIT_MAX_PRESSURE
-	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-	siemens_coefficient = 0
 
 	var/overrun = 0
 
@@ -146,17 +127,6 @@
 	icon_state = "blacksuit"
 	item_icons = list(
 		slot_w_uniform_str = 'icons/fd/custom_items/officialunder_worn.dmi')
-
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
-	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
-		)
-
-	siemens_coefficient = 0
 
 /obj/item/clothing/under/butler
 	name = "butler clothing"
@@ -198,16 +168,14 @@
 	item_icons = list(
 		slot_wear_mask_str = 'icons/fd/custom_items/ninja_worn.dmi')
 
-	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	body_parts_covered = FACE|EYES
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 30,
+		bullet = 30,
+		laser = 30,
+		energy = 30,
+		bomb = 30
 		)
-
-	siemens_coefficient = 0
 
 /obj/item/clothing/head/helmet/v
 	name = "old helmet"

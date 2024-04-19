@@ -1,7 +1,7 @@
 "af" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
 "bG" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
 "bU" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
-"ce" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/table/reinforced,/obj/item{icon = 'icons/fd/items/artefacts.dmi'; icon_state = "mandragora"; name = "strange eyed plant"; pixel_x = -5; pixel_y = 18},/obj/item/fd/ancient_items/gold_necklace{pixel_x = 7},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"ce" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/table/reinforced,/obj/item/fd/ancient_items/gold_necklace{pixel_x = 7},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "ck" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/effect/floor_decal/borderfloorblack/corner,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "dp" = (/obj/machinery/portable_atmospherics/canister/air/high,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/effect/floor_decal/industrial/hatch/blue{color = "#50a0d3"},/turf/simulated/floor/tiled/steel_grid,/area/interior)
 "et" = (/obj/effect/floor_decal/techfloor/orange{dir = 9},/obj/machinery/vending/medical{req_access = list("ACCESS_CAMP_MED")},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
@@ -11,7 +11,7 @@
 "fk" = (/obj/structure/storage/vehicles{dir = 8; pixel_x = 12},/obj/effect/floor_decal/industrial/outline/orange,/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled/dark/monotile,/area/interior)
 "gh" = (/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
 "gz" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/iv_drip,/turf/simulated/floor/tiled/steel_ridged,/area/interior)
-"hL" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/table/rack,/obj/item/material/twohanded/sledgehammer/dwarf,/obj/item/clothing/glasses/welding/superior{color = "#5d8fbe"; desc = "Welding goggles made from unknown materials."; name = "eyes of truth"; pixel_y = 4},/obj/item/clothing/glasses/welding/superior{color = "#5d8fbe"; desc = "Welding goggles made from unknown materials."; name = "eyes of truth"; pixel_y = -6},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
+"hL" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/table/rack,/obj/item/material/twohanded/sledgehammer/dwarf,/obj/item/clothing/glasses/welding/superior{color = "#5d8fbe"; desc = "Welding goggles made from unknown materials."; name = "eyes of truth"; pixel_y = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "hT" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/item/boombox{pixel_x = -13; pixel_y = 16},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
 "hV" = (/turf/unsimulated/wall{color = "black"},/area/interior)
 "ib" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/bed/chair/shuttle/black,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
@@ -57,7 +57,7 @@
 "zT" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled/steel_ridged,/area/interior)
 "zZ" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/structure/curtain/black,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "AL" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/effect/catwalk_plated/dark,/obj/structure/closet/crate/large,/obj/item/storage/firstaid/combat{pixel_y = 6},/obj/item/storage/firstaid/combat,/obj/item/storage/firstaid/trauma,/obj/item/storage/firstaid/stab,/obj/item/storage/firstaid/stab,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/regular,/obj/item/storage/firstaid/adv,/obj/item/storage/box/gloves,/obj/item/storage/box/freezer,/obj/item/storage/box/masks,/turf/simulated/floor/plating,/area/interior)
-"AT" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/orange/border{dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/obj/structure/closet/crate,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/turf/simulated/floor/tiled/techfloor,/area/interior)
+"AT" = (/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/orange/border{dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/obj/structure/closet/crate,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/suit/storage/vest/practice,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/obj/item/clothing/gloves/thick/duty/solgov/sec,/turf/simulated/floor/tiled/techfloor,/area/interior)
 "CY" = (/obj/effect/floor_decal/techfloor/orange{dir = 8},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/item/reagent_containers/glass/beaker/insulated/large{pixel_x = -9; pixel_y = 16},/obj/item/storage/box/syringes,/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "Dz" = (/obj/effect/paint/black,/turf/simulated/wall/r_wall/invincible,/area/interior)
 "Eg" = (/obj/effect/floor_decal/techfloor/orange{dir = 10},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/dark,/area/interior)
@@ -68,7 +68,6 @@
 "FR" = (/obj/structure/fd/placeholder/better{opacity = 0},/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
 "FV" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/obj/structure/curtain/black{icon_state = "open"; opacity = 0},/mob/living/simple_animal/passive/chicken{desc = "Billy the chick. Most valuable creature there."; name = "\improper Billy"},/turf/simulated/floor/plating,/area/interior)
 "Gc" = (/obj/structure/vehicledoor/airlock,/obj/structure/fd/placeholder/better{opacity = 0},/turf/simulated/floor/plating,/area/interior)
-"Gv" = (/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/item/clothing/suit/storage/toggle/agent_jacket{pixel_x = -8; pixel_y = 10},/obj/item/clothing/accessory/badge/agent{pixel_y = 6},/turf/simulated/floor/tiled/dark/monotile,/area/interior)
 "GF" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/machinery/light{dir = 4},/obj/item/defibrillator/loaded{pixel_y = 12},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "Hg" = (/obj/structure/closet/crate,/obj/item/fd/ancient_items/eye_of_the_maw,/obj/item/fd/ancient_items/lighting_staff,/obj/item/fd/ancient_items/bs_shard,/obj/item/bone/skull/deer,/obj/item/paper/school/amore,/obj/item/clothing/suit/storage/toggle/labcoat/institutecoat,/obj/item/clothing/under/gentlesuit,/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
 "Hj" = (/obj/effect/floor_decal/borderfloorblack{dir = 8},/obj/effect/floor_decal/corner/grey/border{dir = 8},/obj/structure/bed/chair/shuttle/black{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
@@ -88,7 +87,6 @@
 "MS" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal{pixel_x = 11; pixel_y = 13},/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal{pixel_x = 4; pixel_y = 7},/obj/item/storage/fancy/cigarettes/luckystars{pixel_x = 9},/obj/item/storage/fancy/cigarettes/luckystars{pixel_x = 3},/obj/item/storage/fancy/cigarettes/luckystars{pixel_x = -3},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "MU" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/grey/border{dir = 4},/obj/machinery/light/small{dir = 4; pixel_y = 8},/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal{pixel_x = 6; pixel_y = 9},/obj/item/storage/box/matches{pixel_x = -6; pixel_y = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "Nd" = (/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/orange/border{dir = 1},/obj/machinery/light/small{dir = 4; pixel_y = 8},/obj/machinery/vending/boozeomat{pixel_y = 18},/obj/machinery/chemical_dispenser/bar_alc/full,/turf/simulated/floor/tiled/dark/monotile,/area/interior)
-"Ny" = (/obj/effect/floor_decal/borderfloorblack{dir = 4},/obj/effect/floor_decal/corner/blue/border{dir = 4},/obj/item/material/knife/combat{pixel_x = -12; pixel_y = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/interior)
 "NA" = (/obj/effect/floor_decal/techfloor/orange{dir = 6},/obj/structure/bed/chair/shuttle/black,/turf/simulated/floor/tiled/dark,/area/interior)
 "Oi" = (/obj/structure/closet/crate,/obj/item/material/twohanded/sledgehammer,/obj/item/clothing/suit/ianshirt,/obj/item/clothing/glasses/sunglasses/big,/obj/item/clothing/head/welding/carp,/obj/item/clothing/under/carp,/turf/unsimulated/floor/exoplanet/grass/moving,/area/interior)
 "Oy" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating,/area/interior)
@@ -126,7 +124,7 @@ hVghghghDzldDzAToCeILsghhV
 hVTJghDzDzCYVmJduSqeLsTJhV
 hVghghDzetrADzLrYADzFRghhV
 hVghghDzhLpIDzIjIjDzghghhV
-hVghghDzUbNyDzkIXPDzghghhV
+hVghghDzUbpIDzkIXPDzghghhV
 hVTJghDzPKpltYUWPpDzghTJhV
 hVghghDzbGbGuvbGLtIjghghhV
 hVghghDztxTZFVLbkBIjghghhV
@@ -139,7 +137,7 @@ hVTJghDzDzDzmMDzDzDzghTJhV
 hVghghDzLMHqrtjlNdDzghghhV
 hVghghIjkFIgWhERckIjghghhV
 hVghghIjeyvZWhRSpjIjghghhV
-hVTJghDztRGvYIhTJUDzghTJhV
+hVTJghDztRbUYIhTJUDzghTJhV
 hVghghDzibvZWhLijkDzghghhV
 hVghghIjcexIALtnMSIjghghhV
 hVghghDzWsyQjeFbMUDzghghhV

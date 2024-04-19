@@ -20,22 +20,19 @@
 	name = "TEAM 4"
 
 /obj/effect/submap_landmark/joinable_submap/escape_route
-	name = "Train"
+	name = "Season Ending"
 	archetype = /decl/submap_archetype/escape_route
 
 /decl/submap_archetype/escape_route
-	descriptor = "Train"
-	map = "Train"
+	descriptor = "Season Ending"
+	map = "Season Ending"
 	crew_jobs = list(
 		/datum/job/submap/camp/ardent,
 		/datum/job/submap/camp/maxim,
 		/datum/job/submap/camp/okita,
 		/datum/job/submap/camp/numerius,
-		/datum/job/submap/camp/julian,
-		/datum/job/submap/camp/zeza,
 		/datum/job/submap/camp/akira,
 		/datum/job/submap/camp/manea,
-		/datum/job/submap/camp/allen,
 		/datum/job/submap/camp/trueman,
 
 		/datum/job/submap/camp/vivian,
