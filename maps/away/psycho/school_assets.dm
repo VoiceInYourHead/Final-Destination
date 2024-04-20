@@ -128,6 +128,58 @@
 	item_icons = list(
 		slot_w_uniform_str = 'icons/fd/custom_items/officialunder_worn.dmi')
 
+/obj/item/clothing/suit/armor/butler
+	name = "black coat"
+	desc = "A very stylish coat."
+	icon = 'icons/fd/custom_items/butlercoat.dmi'
+	icon_state = "butlercoat"
+	item_icons = list(
+		slot_wear_suit_str = 'icons/fd/custom_items/butlercoat_worn.dmi')
+
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
+		)
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0
+
+/obj/item/clothing/head/helmet/butler
+	name = "black hat"
+	desc = "An old-fashion hat."
+	icon = 'icons/fd/custom_items/butlerhat.dmi'
+	item_icons = list(slot_head_str = 'icons/fd/custom_items/butlerhat_worn.dmi')
+	icon_state = "butlerhat"
+	item_state = "butlerhat"
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
+		)
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+	siemens_coefficient = 0
+
 /obj/item/clothing/under/butler
 	name = "butler clothing"
 	desc = "Black official clothing."
@@ -138,12 +190,20 @@
 
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 200,
-		bullet = 200,
-		laser = 200,
-		energy = 200,
-		bomb = 200
+		melee = 300,
+		bullet = 300,
+		laser = 300,
+		energy = 300,
+		bomb = 300
 		)
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 
 	siemens_coefficient = 0
 
