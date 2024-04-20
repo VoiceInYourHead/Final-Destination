@@ -52,6 +52,16 @@
 
 //ASSETS
 
+/obj/effect/smoke_notimer
+	icon_state = "smoke wall"
+	anchored = TRUE
+	opacity = FALSE
+	layer = ABOVE_HUMAN_LAYER
+	icon = 'icons/fd/structures/smoke.dmi'
+	icon_state = "smoke"
+	pixel_x = -9
+	pixel_y = -6
+
 /obj/item/clothing/head/helmet/officialninja
 	name = "high-tech helmet"
 	desc = "An professional mercenary equipment."
