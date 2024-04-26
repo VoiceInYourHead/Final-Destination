@@ -22,10 +22,13 @@
 	title = "Ardent Mire"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/ardent
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/decl/hierarchy/outfit/job/psionic/student/ardent
+	r_pocket = /obj/item/storage/box/large/school/ardent
 
 /obj/item/storage/box/large/school/ardent
 	w_class = ITEM_SIZE_TINY
@@ -61,15 +64,18 @@
 	title = "Maxim Kuznetsov"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/maxim
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/decl/hierarchy/outfit/job/psionic/student/maxim
+	r_pocket = /obj/item/storage/box/large/school/maxim
+
 /obj/item/storage/box/large/school/maxim
 	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_GARGANTUAN
-	startswith = list()
+	startswith = list(/obj/item/gun/energy/stunrevolver/rifle = 1, /obj/item/clothing/suit/storage/vest/practice = 1)
 
 /obj/effect/submap_landmark/spawnpoint/camp/maxim
 	name = "Maxim Kuznetsov"
@@ -78,10 +84,13 @@
 	title = "Okita Takeda"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/okita
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/decl/hierarchy/outfit/job/psionic/student/okita
+	r_pocket = /obj/item/storage/box/large/school/okita
 
 /obj/item/storage/box/large/school/okita
 	w_class = ITEM_SIZE_TINY
@@ -118,10 +127,13 @@
 	title = "Numerius De Vigo"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/numerius
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/decl/hierarchy/outfit/job/psionic/student/numerius
+	r_pocket = /obj/item/storage/box/large/school/numerius
 
 /obj/item/storage/box/large/school/numerius
 	w_class = ITEM_SIZE_TINY
@@ -162,10 +174,13 @@
 	title = "Dionisie Manea"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/manea
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
+
+/decl/hierarchy/outfit/job/psionic/student/manea
+	r_pocket = /obj/item/storage/box/large/school/manea
 
 /obj/item/storage/box/large/school/manea
 	w_class = ITEM_SIZE_TINY
@@ -191,15 +206,18 @@
 	title = "Ron Trueman"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/trueman
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/decl/hierarchy/outfit/job/psionic/student/trueman
+	r_pocket = /obj/item/storage/box/large/school/trueman
+
 /obj/item/storage/box/large/school/trueman
 	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_GARGANTUAN
-	startswith = list()
+	startswith = list(/obj/item/gun/projectile/pistol/scg/assasin = 1, /obj/item/clothing/accessory/storage/holster/armpit = 1)
 
 /obj/effect/submap_landmark/spawnpoint/camp/trueman
 	name = "Ron Trueman"
@@ -222,15 +240,18 @@
 	title = "Demetra Ionian"
 	info = "You here to learn how to beat the bad guys"
 	supervisors = "a Teachers."
-	outfit_type = /decl/hierarchy/outfit/job/psionic/student
+	outfit_type = /decl/hierarchy/outfit/job/psionic/student/demetra
 	total_positions = 30
 	loadout_allowed = TRUE
 	skill_points = 25
 
+/decl/hierarchy/outfit/job/psionic/student/demetra
+	r_pocket = /obj/item/storage/box/large/school/demetra
+
 /obj/item/storage/box/large/school/demetra
 	w_class = ITEM_SIZE_TINY
 	max_w_class = ITEM_SIZE_GARGANTUAN
-	startswith = list()
+	startswith = list(/obj/item/clothing/suit/storage/vest/practice = 1, /obj/item/fd/ancient_items/starmap = 1)
 
 /obj/effect/submap_landmark/spawnpoint/camp/demetra
 	name = "Demetra Ionian"

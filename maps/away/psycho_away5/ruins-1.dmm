@@ -47,7 +47,7 @@
 "lS" = (/obj/structure/mattress/dirty,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "lT" = (/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
 "me" = (/obj/effect/catwalk_plated/white,/obj/item/storage/firstaid/surgery{pixel_x = 12; pixel_y = 10},/turf/simulated/floor/plating,/area/psionic_school/indoor)
-"mh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/indoor)
+"mh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "ms" = (/obj/machinery/door/unpowered/simple/iron,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
 "mC" = (/obj/structure/girder/displaced,/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "mS" = (/obj/structure/stasis_cage,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
@@ -93,7 +93,7 @@
 "uT" = (/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/black/border{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "vr" = (/obj/effect/floor_decal/techfloor{dir = 8},/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet/crate,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "vv" = (/obj/effect/floor_decal{color = "grey"; icon_state = "stairs"},/turf/unsimulated/floor/exoplanet/water/shallow{color = "#32472a"},/area/psionic_school/indoor)
-"vA" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
+"vA" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "vJ" = (/obj/effect/floor_decal/techfloor{dir = 9},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small/red{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techfloor/grid,/area/psionic_school/indoor)
 "wn" = (/obj/structure/wall_frame/concrete,/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "wE" = (/turf/simulated/floor/plating,/area/psionic_school/indoor)
@@ -104,12 +104,12 @@
 "yX" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
 "zv" = (/obj/item/clothing/suit/storage/vest/practice{pixel_x = 8; pixel_y = 8},/turf/unsimulated/floor/exoplanet/water/shallow{color = "#32472a"},/area/psionic_school/indoor)
 "zB" = (/obj/structure/bed/roller,/obj/effect/floor_decal/borderfloorwhite,/obj/effect/floor_decal/corner/blue/border,/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor)
-"zP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/indoor)
+"zP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "At" = (/obj/effect/floor_decal/borderfloor{dir = 8},/obj/structure/iv_drip,/obj/item/reagent_containers/ivbag/nanoblood{pixel_x = -14; pixel_y = 8},/turf/simulated/floor/tiled/old_cargo,/area/psionic_school/indoor)
 "Aw" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood/ebony,/area/psionic_school/indoor)
 "AL" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
 "Ba" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
-"Bi" = (/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/indoor)
+"Bi" = (/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/asteroid.dmi'; base_icon_state = "asteroid"; icon = 'icons/turf/flooring/asteroid.dmi'; icon_state = "asteroid"},/area/psionic_school/indoor)
 "Bm" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/monotile,/area/psionic_school/indoor)
 "Bt" = (/obj/item/stack/material/rods,/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
 "BI" = (/obj/effect/decal/cleanable/generic,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
@@ -138,7 +138,7 @@
 "Ik" = (/obj/effect/floor_decal/borderfloorwhite{dir = 1},/obj/effect/floor_decal/corner/blue/border{dir = 1},/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor)
 "ID" = (/obj/effect/decal/cleanable/dirt,/obj/structure/closet/crate/large,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "IO" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating,/area/psionic_school/indoor)
-"IS" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
+"IS" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "IU" = (/obj/structure/catwalk,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "JZ" = (/obj/effect/smoke_notimer{color = "#3d3d3d"; pixel_y = -10},/turf/unsimulated/floor/exoplanet/volcanic,/area/psionic_school/indoor)
 "Kc" = (/turf/simulated/wall/concrete,/area/psionic_school/indoor)
@@ -146,7 +146,7 @@
 "Kh" = (/obj/structure/table/rack/dark,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Kl" = (/obj/item{icon = 'icons/fd/items/artefacts.dmi'; icon_state = "mandragora"; name = "strange eyed plant"; pixel_x = -4; pixel_y = 20},/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Km" = (/obj/structure/catwalk,/obj/effect/decal/cleanable/dirt{alpha = 100; color = "#547243"; icon = 'icons/misc/beach.dmi'; icon_state = "seashallow"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
-"Ku" = (/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
+"Ku" = (/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "KQ" = (/obj/effect/decal/cleanable/generic,/obj/structure/skele_stand/maint,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Lb" = (/obj/structure/closet/secure_closet/freezer/fridge/empty,/obj/item/reagent_containers/ivbag/nanoblood,/obj/item/reagent_containers/ivbag/nanoblood,/obj/item/reagent_containers/ivbag/nanoblood,/obj/item/reagent_containers/ivbag/nanoblood,/obj/effect/floor_decal/borderfloor{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/psionic_school/indoor)
 "Lm" = (/obj/structure/catwalk,/turf/simulated/floor/plating,/area/psionic_school/indoor)
@@ -158,16 +158,15 @@
 "MW" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Ne" = (/obj/effect/submap_landmark/spawnpoint/camp/ardent,/obj/effect/decal/cleanable/dirt{alpha = 100; color = "#547243"; icon = 'icons/misc/beach.dmi'; icon_state = "seashallow"},/turf/simulated/floor/plating,/area/psionic_school/indoor)
 "Nw" = (/obj/structure/catwalk,/obj/structure/closet/crate/large,/turf/simulated/floor/plating,/area/psionic_school/indoor)
-"Ny" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/indoor)
 "NQ" = (/obj/effect/smoke_notimer{color = "#3d3d3d"; pixel_y = -10},/turf/unsimulated/floor/exoplanet/grass{color = "#2c3825"; dirt_color = "#2c3825"},/area/psionic_school/indoor)
 "NV" = (/turf/unsimulated/mineral,/area/psionic_school/indoor)
 "Oj" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark,/area/psionic_school/indoor)
 "Pa" = (/turf/unsimulated/floor/exoplanet/water/shallow{color = "#32472a"},/area/psionic_school/indoor)
 "Pw" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/table/steel,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Px" = (/obj/structure/largecrate,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
-"PB" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/barren,/area/psionic_school/indoor)
+"PB" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/asteroid.dmi'; base_icon_state = "asteroid"; icon = 'icons/turf/flooring/asteroid.dmi'; icon_state = "asteroid"},/area/psionic_school/indoor)
 "PJ" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/table/gamblingtable,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
-"PK" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
+"PK" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "Qe" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack/dark,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Qq" = (/obj/structure/catwalk,/obj/structure/ore_box,/turf/unsimulated/floor/exoplanet/water/shallow{color = "#32472a"},/area/psionic_school/indoor)
 "QQ" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/steel,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
@@ -212,7 +211,7 @@
 "Yu" = (/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "YI" = (/obj/structure/fd/campfire{icon_state = "fire_barrel_lit"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "Zb" = (/obj/effect/catwalk_plated/white,/obj/structure/storage/chestdrawer,/turf/simulated/floor/plating,/area/psionic_school/indoor)
-"Ze" = (/obj/effect/decal/cleanable/generic,/obj/effect/turf_fire/endless,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
+"Ze" = (/obj/effect/decal/cleanable/generic,/obj/effect/turf_fire/endless,/turf/simulated/floor/plating{base_icon = 'icons/turf/flooring/misc.dmi'; base_icon_state = "concrete"; icon = 'icons/turf/flooring/misc.dmi'; icon_state = "concrete"},/area/psionic_school/indoor)
 "Zj" = (/obj/structure/ore_box,/obj/effect/decal/cleanable/dirt,/turf/unsimulated/floor/exoplanet/concrete,/area/psionic_school/indoor)
 "ZT" = (/obj/effect/floor_decal/borderfloorwhite,/obj/effect/floor_decal/corner/blue/border,/turf/simulated/floor/tiled/old_tile,/area/psionic_school/indoor)
 "ZV" = (/turf/unsimulated/wall{color = "black"},/area/psionic_school/indoor)
@@ -297,8 +296,8 @@ ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
 ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVKcYuZZoxPaPaPaPaPaPaPaPaPaPaPaGiENCKwEUpqQqQwEuOIOVOISMWtFzPeYVqadNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
 ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVKcYuZZoxPaPaPaPaPaPaPaPaNVPaPaUVNeuRlmslpdWnpdlmpdeZvAzPVqTtjFTtVqNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
 ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVKcMWYuoxPaPaPaPaPaPaNVPaPaPaPaENwElmwEsllmIOuOuOWnnvYuYuVqeYeYVvVqNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
-ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVKcYuYuoxPaPaPaPaNVNVNVNVPadtPaPaUVUVENwEpdpdlmlmlmIUZZmhNyPBBiNVNVNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
-ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVcgYuZZoxPaPaNVNVNVNVNVNVPaPazvPaPaPaUVENwEwEwEwEwEfrPKBiKcNVNVNVNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
+ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVKcYuYuoxPaPaPaPaNVNVNVNVPadtPaPaUVUVENwEpdpdlmlmlmIUZZmhPKPBBiNVNVNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
+ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVcgYuZZoxPaPaNVNVNVNVNVNVPaPazvPaPaPaUVENwEwEwEwEwEfrPKKuKcNVNVNVNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
 ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVcgYuZZoxoxPaNVNVNVNVNVNVNVNVPaPaPaPaUVUVENENwEwELmKmZZKuKcNVNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
 ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVcgZZZZZZoxPaPaNVNVNVNVNVNVNVNVPaPaPaNVUVENNVNVUVKmnNRsKhKcNVNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
 ZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVNVcgBIZZZZoxoxPaPaNVNVNVNVPaNVNVPaPaPaNVNVNVNVPaoxcAFfNVZZererNVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZVZV
