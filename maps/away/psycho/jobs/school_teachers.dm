@@ -108,6 +108,23 @@
 
 //AMORE CUSTOM ITEMS
 
+/obj/item/clothing/mask/bandage
+	name = "eye bandage"
+	desc = "Bloody bandages, covering the injury on his eye."
+	icon = 'icons/fd/custom_items/amorebandage.dmi'
+	icon_state = "bandage"
+	item_icons = list(
+		slot_wear_mask_str = 'icons/fd/custom_items/amorebandage_worn.dmi')
+
+	body_parts_covered = FACE|EYES
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		laser = 10,
+		energy = 10,
+		bomb = 10
+		)
+
 /obj/item/paper/school/amore
 	icon = 'icons/fd/items/mrakiizar_book.dmi'
 	icon_state = "mrakiizar_book1"
