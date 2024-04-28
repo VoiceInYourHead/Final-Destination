@@ -225,13 +225,65 @@
 	item_state = "v_respirator"
 	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
 	armor = list(
-		melee = 300,
-		bullet = 300,
-		laser = 300,
-		energy = 300,
-		bomb = 300
+		melee = 500,
+		bullet = 500,
+		laser = 500,
+		energy = 500,
+		bomb = 500
 		)
 	flags_inv = BLOCKHAIR
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+	siemens_coefficient = 0
+
+/obj/item/clothing/suit/armor/v_cloak
+	name = "black cloak"
+	desc = "A very stylish shemag."
+	icon = 'icons/fd/custom_items/vcloak.dmi'
+	icon_state = "cloak"
+	item_icons = list(
+		slot_wear_suit_str = 'icons/fd/custom_items/vcloak_worn.dmi')
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 500,
+		bullet = 500,
+		laser = 500,
+		energy = 500,
+		bomb = 500
+		)
+
+	gas_transfer_coefficient = 0.90
+	permeability_coefficient = 0.50
+	heat_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	cold_protection = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+	siemens_coefficient = 0
+
+/obj/item/clothing/under/v_official
+	name = "official suit"
+	desc = "Gray official clothing."
+	icon = 'icons/fd/custom_items/vform.dmi'
+	icon_state = "vform"
+	item_icons = list(
+		slot_w_uniform_str = 'icons/fd/custom_items/vform_worn.dmi')
+	body_parts_covered = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|FEET|HANDS
+	armor = list(
+		melee = 500,
+		bullet = 500,
+		laser = 500,
+		energy = 500,
+		bomb = 500
+		)
 
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
