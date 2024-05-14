@@ -6,7 +6,7 @@
 			This modification has an expanded funnel for fuel and a coolant tank, thanks to the removal of excess lead sheets inside the reactor, sacrificing protection from radiation. \
 			Rated for 360 KW maximum safe output on a full coolant tank for one hour. Exceeding this is likely to result in nuclear detonation and is not recommended."}
 	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
-	icon_state = "potato"
+	icon_state = "mod"
 	power_gen = 20000
 	max_safe_output = 4
 	max_power_output = 8
@@ -27,7 +27,7 @@
 	/// Coolant usage
 	var/coolant_use = 0.15
 	/// Our coolant
-	var/coolant_reagent = /datum/reagent/coolant
+	var/list/coolant_reagent = list(/datum/reagent/coolant, /datum/reagent/water)
 
 /obj/machinery/power/port_gen/pacman/super/module/New()
 	create_reagents(coolant_volume)
@@ -39,9 +39,23 @@
 
 /obj/machinery/power/port_gen/pacman/super/module/UseFuel()
 	if(reagents.has_reagent(coolant_reagent))
-		temperature_gain -= 50
-		if(temperature_gain < 10)
-			temperature_gain = 10
+		switch(reagents.has_reagent(coolant_reagent))
+			if(/datum/reagent/coolant)
+				temperature_gain -= 50
+			if(/datum/reagent/water)
+				temperature_gain -= 15
+			if(/datum/reagent/nutriment/mint)
+				temperature_gain -= 30
+			if(/datum/reagent/frostoil)
+				temperature_gain -= 40
+			if(/datum/reagent/ethanol/antifreeze)
+				temperature_gain -= 30
+			if(/datum/reagent/ethanol/vodka)
+				temperature_gain -= 20
+			if(/datum/reagent/adminordrazine)
+				temperature_gain -= 666
+		if(temperature_gain < 5)
+			temperature_gain = 5
 		reagents.remove_any(coolant_use)
 	else
 		temperature_gain = initial(temperature_gain)
@@ -51,7 +65,7 @@
 	if(..())
 		return 1
 	if(power_output > max_safe_output)
-		icon_state = "potatodanger"
+		icon_state = "moddanger"
 
 /obj/machinery/power/port_gen/pacman/super/module/explode()
 	var/rads = rad_power*10 + (sheets + sheet_left)
@@ -146,12 +160,16 @@
 	if(reactor.power_gen >= 60000)
 		if(unimprove)
 			reactor.power_gen -= 5000
+			reactor.temperature_gain -= 10
 			return
 		reactor.power_gen += 5000
+		reactor.temperature_gain += 10
 	if(unimprove)
 		reactor.power_gen -= 15000
+		reactor.temperature_gain -= 10
 		return
 	reactor.power_gen += 15000
+	reactor.temperature_gain += 10
 
 /obj/machinery/reactor_enchancer/Destroy()
 	upgrade(TRUE)
@@ -166,8 +184,10 @@
 /obj/machinery/reactor_enchancer/radiation/upgrade(unimprove)
 	if(unimprove)
 		reactor.rad_power -= 5
+		reactor.power_gen += 1000
 		return
 	reactor.rad_power += 5
+	reactor.power_gen -= 1000
 
 /obj/machinery/reactor_enchancer/range
 	name = "ICRER-6 Range Module"
@@ -188,8 +208,10 @@
 /obj/machinery/reactor_enchancer/fuel_efficiency/upgrade(unimprove)
 	if(unimprove)
 		reactor.time_per_sheet -= 30
+		reactor.power_gen += 1000
 		return
 	reactor.time_per_sheet += 30
+	reactor.power_gen -= 1000
 
 /obj/machinery/reactor_enchancer/coolant_tank
 	name = "ICRER-6 Coolant Tank Module"
@@ -198,8 +220,10 @@
 /obj/machinery/reactor_enchancer/coolant_tank/upgrade(unimprove)
 	if(unimprove)
 		reactor.reagents.maximum_volume -= 30
+		reactor.rad_power -= 1
 		return
 	reactor.reagents.maximum_volume += 30
+	reactor.rad_power += 1
 
 /// CIRCUIT
 
@@ -217,12 +241,59 @@
 	build_path = /obj/machinery/reactor_enchancer
 	origin_tech = list(TECH_DATA = 5, TECH_POWER = 6, TECH_ENGINEERING = 3)
 	req_components = list(
-		/obj/item/stock_parts/matter_bin/super = 3,
-		/obj/item/stock_parts/micro_laser = 3,
+		/obj/item/stock_parts/matter_bin/adv = 3,
+		/obj/item/stock_parts/micro_laser/high = 3,
 		/obj/item/stack/cable_coil = 60,
 		/obj/item/stock_parts/scanning_module = 1)
 	additional_spawn_components = list(
-		/obj/item/stock_parts/console_screen = 1,
-		/obj/item/stock_parts/keyboard = 1,
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
+/obj/item/stock_parts/circuitboard/pacman/super/module/enchancer/radiation
+	name = T_BOARD("ICRER-6 Radiation Improver")
+	build_path = /obj/machinery/reactor_enchancer/radiation
+	origin_tech = list(TECH_DATA = 3, TECH_POWER = 1, TECH_ENGINEERING = 4)
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stock_parts/micro_laser = 4,
+		/obj/item/stack/cable_coil = 60,
+		/obj/item/stock_parts/scanning_module = 1)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
+/obj/item/stock_parts/circuitboard/pacman/super/module/enchancer/range
+	name = T_BOARD("ICRER-6 Range Booster")
+	build_path = /obj/machinery/reactor_enchancer/range
+	origin_tech = list(TECH_DATA = 6, TECH_POWER = 1, TECH_ENGINEERING = 2)
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/cable_coil = 30,
+		/obj/item/stock_parts/scanning_module/adv = 3,
+		/obj/item/stock_parts/scanning_module/phasic = 1)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
+/obj/item/stock_parts/circuitboard/pacman/super/module/enchancer/fuel_efficiency
+	name = T_BOARD("ICRER-6 Nuclear Decay Moderator")
+	build_path = /obj/machinery/reactor_enchancer/fuel_efficiency
+	origin_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 5)
+	req_components = list(
+		/obj/item/stock_parts/manipulator/nano = 3,
+		/obj/item/stock_parts/micro_laser/high = 3)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
+/obj/item/stock_parts/circuitboard/pacman/super/module/enchancer/coolant_tank
+	name = T_BOARD("ICRER-6 Expansion Tank")
+	build_path = /obj/machinery/reactor_enchancer/coolant_tank
+	origin_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 2)
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 5,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/cable_coil = 30)
+	additional_spawn_components = list(
 		/obj/item/stock_parts/power/apc/buildable = 1
 	)

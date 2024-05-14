@@ -439,7 +439,7 @@
 	caliber = CALIBER_RIFLE_MILITARY
 	ammo_type = /obj/item/ammo_casing/rifle/military
 
-/obj/item/ammo_magazine/box/rifle/military
+/obj/item/ammo_magazine/box/rifle/military/rus
 	name = "12.7 rounds crate"
 	icon_state = "rbox_r"
 	caliber = CALIBER_RIFLE_RUSSIA
