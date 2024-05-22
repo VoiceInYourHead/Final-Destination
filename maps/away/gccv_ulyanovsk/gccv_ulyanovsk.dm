@@ -975,6 +975,23 @@
 	icon_state = "napalmtank"
 	initial_reagent_types = list(/datum/reagent/napalm = 1)
 
+/obj/structure/sign/ul_iccg
+	name = "\improper ICCG Seal"
+	desc = "A sign which signifies who this vessel belongs to."
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+	icon_state = "iccg_seal"
+
+/obj/structure/sign/double/ul_iccg
+	name = "ICCG Flag"
+	desc = "The flag of the Independent Colonial Confederation of Gilgamesh."
+	icon = 'maps/away/gccv_ulyanovsk/ulyanovsk.dmi'
+
+/obj/structure/sign/double/ul_iccg/left
+	icon_state = "GCCflag-left"
+
+/obj/structure/sign/double/ul_iccg/right
+	icon_state = "GCCflag-right"
+
 // Proc for rotating bullets.
 
 /obj/item/ammo_casing/New()

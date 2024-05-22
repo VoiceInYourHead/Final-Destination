@@ -150,6 +150,10 @@
 /area/map_template/gccv_ulyanovsk/deck1/command/bluespace_drive/core
 	name = "\improper Command - Bluespace Drive - Core"
 
+/area/map_template/gccv_ulyanovsk/deck1/command/defence
+	name = "\improper GCCV - Ulyanovsk - Defence"
+	req_access = list(access_iccg_com)
+
 // SPECIAL OPERATIONS
 
 /area/map_template/gccv_ulyanovsk/deck1/specops
@@ -332,6 +336,9 @@
 
 /area/map_template/gccv_ulyanovsk/deck1/maintenance/starboard/oxy_regenerator
 	name = "\improper 1-D Starboard Oxygen Regenerator"
+
+/area/map_template/gccv_ulyanovsk/deck1/maintenance/starboard/office
+	name = "\improper 1-D Starboard Office"
 
 /// DECK 2
 
@@ -574,6 +581,12 @@
 /area/map_template/gccv_ulyanovsk/deck2/hallway/aft
 	name = "\improper 2-D Aft Hallway"
 
+/area/map_template/gccv_ulyanovsk/deck2/hallway/eva
+	name = "\improper 2-D E.V.A."
+
+/area/map_template/gccv_ulyanovsk/deck2/hallway/armory
+	name = "\improper 2-D Boarding Armory"
+
 // MAINTENANCE
 
 /area/map_template/gccv_ulyanovsk/deck2/maintenance
@@ -607,6 +620,9 @@
 /area/map_template/gccv_ulyanovsk/deck2/maintenance/port/engineering
 	name = "\improper 2-D Port Engineering Maint"
 
+/area/map_template/gccv_ulyanovsk/deck2/maintenance/port/ladder
+	name = "\improper Port Ladder Shaft"
+
 /area/map_template/gccv_ulyanovsk/deck2/maintenance/starboard
 	name = "\improper 2-D Midship Starboard Maint"
 
@@ -631,10 +647,247 @@
 /area/map_template/gccv_ulyanovsk/deck2/maintenance/starboard/service
 	name = "\improper 2-D Service Maint"
 
+/area/map_template/gccv_ulyanovsk/deck2/maintenance/starboard/ladder
+	name = "\improper Starboard Ladder Shaft"
 
+// ENGINES
 
+/area/map_template/gccv_ulyanovsk/deck2/engines
+	name = "\improper 2-D Ship Thrusters"
+	icon_state = "22"
+	req_access = list(list(access_iccg_engi, access_iccg_sec, access_iccg_com))
 
+/area/map_template/gccv_ulyanovsk/deck2/engines/port
+	name = "\improper Port Thrusters"
+
+/area/map_template/gccv_ulyanovsk/deck2/engines/starboard
+	name = "\improper Starboard Thrusters"
+
+/area/map_template/gccv_ulyanovsk/deck2/engines/midship_port
+	name = "\improper Midship Port Thrusters"
+
+/area/map_template/gccv_ulyanovsk/deck2/engines/midship_starboard
+	name = "\improper Midship Starboard Thrusters"
+
+/// DECK 3
 
 /area/map_template/gccv_ulyanovsk/deck3
 	name = "\improper GCCV Ulyanovsk Deck 3"
 	icon_state = "3"
+
+// Living Rooms
+
+/area/map_template/gccv_ulyanovsk/deck3/living
+	name = "\improper Living Hallway"
+	icon_state = "12"
+	req_access = list(access_iccg)
+
+/area/map_template/gccv_ulyanovsk/deck3/living/library
+	name = "\improper Library"
+
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms
+	name = "\improper Living Rooms"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_1
+	name = "\improper Crew Room 'Alpha'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_2
+	name = "\improper Crew Room 'Bravo'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_3
+	name = "\improper Crew Room 'Charlie'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_4
+	name = "\improper Crew Room 'Delta'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_5
+	name = "\improper Crew Room 'Foxtrot'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_6
+	name = "\improper Crew Room 'Golf'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_7
+	name = "\improper Crew Room 'Hotel'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/fore_8
+	name = "\improper Crew Room 'India'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/midship_1
+	name = "\improper Crew Room 'Juliett'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/midship_2
+	name = "\improper Crew Room 'Kilo'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/midship_3
+	name = "\improper Crew Room 'Lima'"
+/area/map_template/gccv_ulyanovsk/deck3/living/rooms/midship_4
+	name = "\improper Crew Room 'Mike'"
+
+// HARDPOINTS 3-DECK
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint
+	name = "\improper Hardpoints"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/a
+	name = "\improper Hardpoint Foxtrot"
+	icon_state = "a"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/b
+	name = "\improper Hardpoint Golf"
+	icon_state = "b"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/c
+	name = "\improper Hardpoint Hotel"
+	icon_state = "c"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/d
+	name = "\improper Hardpoint India"
+	icon_state = "d"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/missile_port
+	name = "\improper Port Missile Shaft"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/missile_starboard
+	name = "\improper Starboard Missile Shaft"
+
+/area/map_template/gccv_ulyanovsk/deck3/hardpoint/miss_ass // :p
+	name = "\improper Missile Assembly"
+
+// ORDNANCE
+
+/area/map_template/gccv_ulyanovsk/deck3/ordnance
+	name = "\improper Ordnance Hallway"
+	icon_state = "21"
+	req_access = list(list(access_iccg_engi, access_iccg_sec, access_iccg_com))
+
+/area/map_template/gccv_ulyanovsk/deck3/ordnance/ordnance
+	name = "\improper Ordnance Chemistry"
+
+/area/map_template/gccv_ulyanovsk/deck3/ordnance/exosuit
+	name = "\improper Exosuit Maintenance"
+
+/area/map_template/gccv_ulyanovsk/deck3/ordnance/maintenance
+	name = "\improper Ordnance Maintenance"
+
+/area/map_template/gccv_ulyanovsk/deck3/ordnance/power
+	name = "\improper 3-D Auxiliary Power Substation"
+
+// HANGAR
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar
+	name = "\improper Hangar Deck"
+	icon_state = "5"
+	req_access = list(list(access_iccg_engi, access_iccg_sec, access_iccg_com))
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/eva
+	name = "\improper Hangar E.V.A."
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/preps
+	name = "\improper Hangar Preparations"
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/briefing
+	name = "\improper Hangar Briefing Room"
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/storage
+	name = "\improper Hangar Storage"
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/fuel
+	name = "\improper Fuel Bay"
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/ammo
+	name = "\improper Ammunitions Storage"
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/pilot_office_1
+	name = "\improper Pilot Office 1"
+
+/area/map_template/gccv_ulyanovsk/deck3/hangar/pilot_office_2
+	name = "\improper Pilot Office 2"
+
+// HALLWAY
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway
+	name = "\improper 3-D Fore Hallway"
+	icon_state = "13"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/toilet
+	name = "\improper 3-D Toilet"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/tool
+	name = "\improper 3-D Tool Storage"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/janitor
+	name = "\improper 3-D Janitorial Closet"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/armory
+	name = "\improper 3-D Boarding Armory"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/fore_hp
+	name = "\improper 3-D Fore Hardpoint Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/midship
+	name = "\improper 3-D Midship Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/midship_hp
+	name = "\improper 3-D Midship Hardpoint Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/midship_lift
+	name = "\improper 3-D Midship Lift Hall"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/hangar_fore
+	name = "\improper 3-D Fore Hangar Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/hangar_fore/starboard
+	name = "\improper 3-D Fore Starboard Hangar Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/hangar_aft
+	name = "\improper 3-D Aft Hangar Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/hangar_aft/port
+	name = "\improper 3-D Aft Port Hangar Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/hangar_port
+	name = "\improper 3-D Port Hangar Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/hangar_starboard
+	name = "\improper 3-D Starboard Hangar Hallway"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/aft_armory
+	name = "\improper 3-D Aft Boarding Armory"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/aft_cryo
+	name = "\improper 3-D Aft Cryo"
+
+/area/map_template/gccv_ulyanovsk/deck3/hallway/eva
+	name = "\improper 3-D E.V.A."
+
+// ENGINES
+
+/area/map_template/gccv_ulyanovsk/deck3/engines
+	name = "\improper 3-D Ship Thrusters"
+	icon_state = "22"
+	req_access = list(list(access_iccg_engi, access_iccg_sec, access_iccg_com))
+
+/area/map_template/gccv_ulyanovsk/deck3/engines/port
+	name = "\improper Port Thrusters"
+
+/area/map_template/gccv_ulyanovsk/deck3/engines/starboard
+	name = "\improper Starboard Thrusters"
+
+/area/map_template/gccv_ulyanovsk/deck3/engines/midship_port
+	name = "\improper Midship Port Thrusters"
+
+/area/map_template/gccv_ulyanovsk/deck3/engines/midship_starboard
+	name = "\improper Midship Starboard Thrusters"
+
+// MAINTENANCE
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance
+	name = "\improper 3-D Maintenance"
+	icon_state = "6"
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance/port
+	name = "\improper 3-D Fore Port Maintenance"
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance/port/midship
+	name = "\improper 3-D Midship Port Maintenance"
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance/port/storage
+	name = "\improper 3-D Port Storage Maintenance"
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance/port/smes
+	name = "\improper 3-D Substation"
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance/starboard
+	name = "\improper 3-D Midship Starboard Maintenance"
+
+/area/map_template/gccv_ulyanovsk/deck3/maintenance/starboard/aft
+	name = "\improper 3-D Aft Starboard Maintenance"
