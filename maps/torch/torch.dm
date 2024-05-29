@@ -200,6 +200,7 @@
 	#include "../away/cowboy_bebop/swordfish.dm"
 	#include "../away/cowboy_bebop/truck.dm"
 	#include "../away/cowboy_bebop/truck_broken.dm"
+	#include "../away/sfv_dropship/delman.dm"
 	#include "../away/lighthouse/beacon_working.dm"
 	#include "../away/verne/verne.dm"
 	#include "../away/itv_providence/providence.dm"
