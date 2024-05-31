@@ -211,6 +211,8 @@
 	#include "../away/constructed_station/main.dm"
 	#include "../away/snow_cage/snow_cage.dm"
 	#include "../away/rancho/farm.dm"
+	#include "../away/utility_shuttle_1/us1.dm"
+	#include "../away/utility_shuttle_2/us2.dm"
 
 //alternative future stuff
 	#include "../away/airfield/airfield.dm"
