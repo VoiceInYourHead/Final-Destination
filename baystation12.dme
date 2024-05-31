@@ -3421,6 +3421,7 @@
 #include "customs\code\Bruno.dm"
 #include "customs\code\chichi.dm"
 #include "customs\code\Jie.dm"
+#include "customs\code\void.dm"
 #include "customs\code\skills.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
