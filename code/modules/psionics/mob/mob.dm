@@ -30,3 +30,32 @@
 			to_chat(src, SPAN_DANGER("\The [attacker] strikes out with a mental attack, but you deflect it!"))
 		return TRUE
 	return FALSE
+
+/mob/living/proc/thanos()
+	log_and_message_admins(SPAN_DANGER("[key_name_admin(usr)] щёлкнул пальцами подумав про [key_name(src)]."))
+	for(alpha, alpha >= 10, alpha -= 10)
+		switch(alpha)
+			if(255)
+				alpha = 250
+				to_chat(src, SPAN_DANGER("Ты чувствуешь как становишься тяжелее."))
+			if(200)
+				to_chat(src, SPAN_DANGER("Я... Слабею..."))
+			if(150)
+				to_chat(src, SPAN_DANGER("O нет..."))
+			if(120)
+				to_chat(src, SPAN_DANGER("<font size = 3> Почему я?"))
+			if(90)
+				to_chat(src, SPAN_DANGER("<font size = 4> Это и правда реально?"))
+			if(50)
+				to_chat(src, SPAN_DANGER("<font size = 5> Всё кончено..."))
+			if(20)
+				to_chat(src, SPAN_DANGER("<font size = 5> Ничего... He останется..."))
+		sleep(1 SECONDS)
+		alpha -= 10
+	if(alpha <= 10)
+		to_chat(src, SPAN_DANGER("<font size = 5> Там будет только пустота..."))
+		alpha = 0
+		mouse_opacity = FALSE
+		sleeping += 100000
+		paralysis += 100000
+		log_and_message_admins(SPAN_DANGER("[key_name_admin(usr)] Уничтожил [key_name(src)]. Низвёл до атомов."))
