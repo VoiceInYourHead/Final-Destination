@@ -32,7 +32,7 @@
 	return FALSE
 
 /mob/living/proc/thanos()
-	log_and_message_admins(SPAN_DANGER("[key_name_admin(usr)] щёлкнул пальцами подумав про [key_name(src)]."))
+	log_and_message_admins(SPAN_DANGER("- щёлкнул пальцами подумав про [key_name(src)]."))
 	for(alpha, alpha >= 10, alpha -= 10)
 		switch(alpha)
 			if(255)
@@ -51,11 +51,10 @@
 			if(20)
 				to_chat(src, SPAN_DANGER("<font size = 5> Ничего... He останется..."))
 		sleep(1 SECONDS)
-		alpha -= 10
 	if(alpha <= 10)
 		to_chat(src, SPAN_DANGER("<font size = 5> Там будет только пустота..."))
 		alpha = 0
 		mouse_opacity = FALSE
 		sleeping += 100000
 		paralysis += 100000
-		log_and_message_admins(SPAN_DANGER("[key_name_admin(usr)] Уничтожил [key_name(src)]. Низвёл до атомов."))
+		log_and_message_admins(SPAN_DANGER("- уничтожил [key_name(src)]. Низвёл до атомов."))
